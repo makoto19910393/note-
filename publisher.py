@@ -110,6 +110,7 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
                 if attempt.value.status not in (200, 201, 204):
                     raise WorkflowError("noteのログイン処理が拒否されました。ログイン情報または接続方法の確認が必要です。")
                 attempt.value.finished()
+                payload = None
                 try:
                     payload = attempt.value.json()
                     print("ログイン応答の構造:", json.dumps({
@@ -120,6 +121,14 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
                     }, ensure_ascii=False))
                 except Exception:
                     pass
+                if isinstance(payload, dict) and payload.get("error"):
+                    error = payload["error"]
+                    code = error.get("code") if isinstance(error, dict) else None
+                    if code == "auth":
+                        raise WorkflowError("noteが『メールアドレスあるいはパスワードが正しくありません』と返しました。")
+                    if code in ("invalid_recaptcha", "required_recaptcha"):
+                        raise WorkflowError("noteがロボット確認（reCAPTCHA）を要求しています。本人のブラウザで接続する必要があります。")
+                    raise WorkflowError("noteからログインのエラーが返されました。公開せず停止します。")
                 try:
                     page.wait_for_url(lambda url: not urlsplit(str(url)).path.startswith("/login"), timeout=10000)
                 except BrowserTimeout:
