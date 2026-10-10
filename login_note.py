@@ -9,13 +9,52 @@ import webbrowser
 from playwright.sync_api import sync_playwright
 
 
+def mac_dialog(message, buttons, default):
+    button_list = ", ".join(json.dumps(button, ensure_ascii=False) for button in buttons)
+    script = ('on run argv\n'
+              'set answer to display dialog (item 1 of argv) with title "note接続" '
+              'buttons {' + button_list + '} default button ' + json.dumps(default, ensure_ascii=False) + '\n'
+              'return button returned of answer\nend run')
+    return subprocess.run(["osascript", "-e", script, message],
+                          capture_output=True, text=True, check=True).stdout.strip()
+
+
+def register_session(encoded, output):
+    subprocess.run(["pbcopy"], input=encoded, text=True, check=True)
+    webbrowser.open("https://github.com/makoto19910393/note-/settings/secrets/actions/new")
+    while True:
+        choice = mac_dialog(
+            "GitHubへの登録をお願いします。\n\n"
+            "① Name（名前）欄：NOTE_STORAGE_STATE\n"
+            "② Secret欄をクリックして、Command＋Vで貼り付け\n"
+            "③ 緑の Add secret（シークレットを追加）を押す\n\n"
+            "貼り付ける情報はこちらでコピー済みです。GitHubのSecret欄だけに貼り付けてください。\n"
+            "登録が終わったら下の『登録できた』を押してください。",
+            ["あとで続ける", "もう一度案内", "登録できた"], "もう一度案内")
+        if choice == "登録できた":
+            output.unlink(missing_ok=True)
+            subprocess.run(["pbcopy"], input="", text=True, check=True)
+            mac_dialog("接続情報の登録操作が終わりました。\nCodexに『登録した』と伝えてください。\n"
+                       "これからCodexが接続と投稿を確認します。", ["閉じる"], "閉じる")
+            return
+        if choice == "あとで続ける":
+            subprocess.run(["pbcopy"], input="", text=True, check=True)
+            return
+        subprocess.run(["pbcopy"], input=encoded, text=True, check=True)
+        webbrowser.open("https://github.com/makoto19910393/note-/settings/secrets/actions/new")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, default=Path("note-session.json"))
     parser.add_argument("--copy-and-open", action="store_true",
                         help="Macのクリップボードに保存し、GitHubの登録画面を開く")
+    parser.add_argument("--guided-mac", action="store_true", help="Macの案内ボタンで進める")
     args = parser.parse_args()
     if args.output.exists():
+        if args.guided_mac:
+            register_session(args.output.read_text(), args.output)
+            return
         raise SystemExit("保存先にファイルがあります。別名を指定してください。")
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
@@ -23,7 +62,14 @@ def main():
         page = context.new_page()
         page.goto("https://note.com/login")
         print("開いたブラウザでnoteにログインしてください。パスワードはこのプログラムには入力しません。")
-        input("ログインが完了したら、この画面でEnterを押してください: ")
+        if args.guided_mac:
+            mac_dialog("新しく開いたnote画面でログインしてください。\n"
+                       "ロボット確認が出た場合も、画面で操作してください。\n\n"
+                       "ログインができたら、この小さな案内画面に戻って\n"
+                       "『ログインできた』ボタンを押してください。",
+                       ["ログインできた"], "ログインできた")
+        else:
+            input("ログインが完了したら、この画面でEnterを押してください: ")
         page.goto("https://note.com/notes/new", wait_until="domcontentloaded")
         try:
             page.locator("textarea[placeholder='記事タイトル'], input[placeholder='記事タイトル']").first.wait_for(
@@ -46,6 +92,9 @@ def main():
         with os.fdopen(fd, "w") as stream:
             stream.write(encoded)
         browser.close()
+    if args.guided_mac:
+        register_session(encoded, args.output)
+        return
     if args.copy_and_open:
         subprocess.run(["pbcopy"], input=encoded, text=True, check=True)
         webbrowser.open("https://github.com/makoto19910393/note-/settings/secrets/actions/new")
