@@ -109,6 +109,23 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
                     page.get_by_role("button", name="ログイン", exact=True).click()
                 if attempt.value.status not in (200, 201, 204):
                     raise WorkflowError("noteのログイン処理が拒否されました。ログイン情報または接続方法の確認が必要です。")
+                attempt.value.finished()
+                try:
+                    payload = attempt.value.json()
+                    print("ログイン応答の構造:", json.dumps({
+                        "keys": list(payload.keys()) if isinstance(payload, dict) else [],
+                        "data_keys": list(payload.get("data", {}).keys()) if isinstance(payload, dict) and isinstance(payload.get("data"), dict) else [],
+                        "error_present": bool(payload.get("error")) if isinstance(payload, dict) else False,
+                        "sets_cookie": bool(attempt.value.header_value("set-cookie")),
+                    }, ensure_ascii=False))
+                except Exception:
+                    pass
+                try:
+                    page.wait_for_url(lambda url: not urlsplit(str(url)).path.startswith("/login"), timeout=10000)
+                except BrowserTimeout:
+                    pass
+                print("noteログインCookie名:", json.dumps([cookie["name"] for cookie in context.cookies()
+                      if cookie["domain"].lstrip('.').endswith('note.com')], ensure_ascii=False))
                 # A successful login need not redirect immediately. The authenticated
                 # editor below is the actual verification, including session cookies.
             editor_url = record.get("note_editor_url")
