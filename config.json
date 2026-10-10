@@ -1,0 +1,24 @@
+{
+  "timezone": "Asia/Tokyo",
+  "model": "gpt-5-mini",
+  "author": "mako",
+  "note_profile": "https://note.com/quiet_spirea2390",
+  "max_news_age_hours": 48,
+  "min_article_chars": 1200,
+  "previous_topics": [
+    {"title": "ChatGPT×Kindle出版", "sources": []},
+    {"title": "Higgsfieldの使い方・生成検証", "sources": []},
+    {"title": "NIKKEI KAI MCP", "sources": []}
+  ],
+  "publisher": {
+    "new_article_url": "https://editor.note.com/notes/new",
+    "title_selector": "textarea[placeholder='記事タイトル'], input[placeholder='記事タイトル']",
+    "body_selector": ".ProseMirror[contenteditable='true']",
+    "proceed_button": "公開に進む",
+    "publish_button": "投稿する"
+  },
+  "slots": {
+    "morning": "07:00",
+    "evening": "19:00"
+  }
+}

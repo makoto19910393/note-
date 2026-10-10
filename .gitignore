@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.env
+content/.automation.lock
+content/.publisher.lock
+note-session*.json
+.venv/
+.browsers/
