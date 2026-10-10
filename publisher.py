@@ -105,8 +105,12 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
                 page.goto("https://note.com/login", wait_until="domcontentloaded")
                 page.get_by_label("メールアドレス または note ID", exact=True).fill(os.environ["NOTE_EMAIL"])
                 page.get_by_label("パスワード", exact=True).fill(os.environ["NOTE_PASSWORD"])
-                page.get_by_role("button", name="ログイン", exact=True).click()
-                page.wait_for_url(lambda url: not urlsplit(str(url)).path.startswith("/login"), timeout=60000)
+                with page.expect_response(lambda response: urlsplit(response.url).path.endswith("/sessions/sign_in"), timeout=60000) as attempt:
+                    page.get_by_role("button", name="ログイン", exact=True).click()
+                if attempt.value.status not in (200, 201, 204):
+                    raise WorkflowError("noteのログイン処理が拒否されました。ログイン情報または接続方法の確認が必要です。")
+                # A successful login need not redirect immediately. The authenticated
+                # editor below is the actual verification, including session cookies.
             editor_url = record.get("note_editor_url")
             stage = "編集画面への移動"
             page.goto(editor_url or ui["new_article_url"], wait_until="domcontentloaded")
@@ -175,6 +179,13 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
                           note_url=published_url, published_at=datetime.now(ZoneInfo(config["timezone"])).isoformat())
             print("note公開を確認しました:", published_url)
         except BrowserTimeout:
+            if stage != "ログイン":
+                print("編集画面確認:", json.dumps({"login_page": urlsplit(page.url).path.startswith('/login'),
+                      "host": urlsplit(page.url).hostname,
+                      "fields": page.locator('textarea, input').evaluate_all(
+                          "els => els.map(el => ({tag:el.tagName, type:el.type, placeholder:el.getAttribute('placeholder')}))"),
+                      "editable_classes": page.locator('[contenteditable=true]').evaluate_all(
+                          "els => els.map(el => el.className)")}, ensure_ascii=False))
             if stage == "ログイン":
                 # Only inspect known login messages, never dump page text or credentials.
                 messages = ["メールアドレスまたはパスワードが間違っています",
