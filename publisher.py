@@ -65,6 +65,12 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
         page = context.new_page()
         page.set_default_timeout(30000)
         stage = "ログイン"
+        login_responses = []
+        def observe_login(response):
+            path = urlsplit(response.url).path
+            if stage == "ログイン" and re.search(r"/api/.*(?:login|auth|session)", path):
+                login_responses.append(response.status)
+        page.on("response", observe_login)
         try:
             if storage is None:
                 page.goto("https://note.com/login", wait_until="domcontentloaded")
@@ -140,6 +146,18 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
                           note_url=published_url, published_at=datetime.now(ZoneInfo(config["timezone"])).isoformat())
             print("note公開を確認しました:", published_url)
         except BrowserTimeout:
+            if stage == "ログイン":
+                # Only inspect known login messages, never dump page text or credentials.
+                messages = ["メールアドレスまたはパスワードが間違っています",
+                            "メールアドレスまたはパスワードが正しくありません",
+                            "ログインに失敗しました", "認証に失敗しました",
+                            "ロボットではない", "しばらく時間をおいて"]
+                found = [message for message in messages
+                         if page.get_by_text(message, exact=False).count()]
+                captcha = page.locator("iframe[src*='recaptcha'], iframe[src*='hcaptcha']").count() > 0
+                print("ログイン確認:", json.dumps({"login_page": urlsplit(page.url).path.startswith('/login'),
+                      "response_statuses": login_responses, "known_messages": found,
+                      "captcha_frame_present": captcha}, ensure_ascii=False))
             raise WorkflowError(stage + "でタイムアウトしました。ログイン切れや画面変更を確認してください。") from None
         except BrowserError:
             raise WorkflowError(stage + "でブラウザ操作に失敗しました。画面変更、認証、接続状況の確認が必要です。") from None
