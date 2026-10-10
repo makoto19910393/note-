@@ -72,16 +72,33 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
                 # Static API route and matched error categories only; no bodies or tokens.
                 route = re.sub(r"[^a-zA-Z/_-]", "", path)[:100]
                 categories = []
+                message = None
                 if response.status >= 400:
                     try:
                         error = response.text().lower()
                         categories = [word for word in ("captcha", "recaptcha", "forbidden",
                                       "invalid", "password", "unauthorized", "パスワード",
                                       "メールアドレス", "ロボット", "too many") if word in error]
+                        payload = response.json()
+                        candidates = [payload] if isinstance(payload, dict) else []
+                        if candidates:
+                            candidates.extend(value for value in list(payload.values()) if isinstance(value, dict))
+                        for item in candidates:
+                            value = item.get("message")
+                            if not isinstance(value, str) or not re.search(
+                                    r"ログイン|アクセス|メール|パスワード|認証|許可|拒否|不正|失敗", value):
+                                continue
+                            for key in ("NOTE_EMAIL", "NOTE_PASSWORD"):
+                                secret = os.environ.get(key)
+                                if secret:
+                                    value = value.replace(secret, "[非表示]")
+                            value = re.sub(r"https?://\S+|[\w.+-]+@[\w.-]+|[A-Za-z0-9_-]{20,}", "[非表示]", value)
+                            message = value[:160]
+                            break
                     except Exception:
                         pass
                 login_responses.append({"route": route, "status": response.status,
-                                        "error_categories": categories})
+                                        "error_categories": categories, "login_error_message": message})
         page.on("response", observe_login)
         try:
             if storage is None:
