@@ -7,9 +7,678 @@
   "max_tool_calls": 5,
   "min_article_chars": 1200,
   "previous_topics": [
-    {"title": "ChatGPT×Kindle出版", "sources": []},
-    {"title": "Higgsfieldの使い方・生成検証", "sources": []},
-    {"title": "NIKKEI KAI MCP", "sources": []}
+    {
+      "title": "Higgsfieldはなぜ人気？397回生成・21機能使った僕が「結局これを選ぶ理由」を本音レビュー【第4弾】",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n40a149109bb1"
+      ]
+    },
+    {
+      "title": "トランプ大統領が「AI Force」創設を表明――“AI軍”なの？狙いと未確定点",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/na25b50d28846"
+      ]
+    },
+    {
+      "title": "OpenAIが「自分専用の同僚AI」を配り始めた――新機能「Dots」を解説",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n6295051dd97f"
+      ]
+    },
+    {
+      "title": "Google新AI「Gemini 4 Argon」正式発表、Xでも話題に――GPT-6 Astra級の性能と“15%”の意味",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n5b4dd9ed0470"
+      ]
+    },
+    {
+      "title": "【2026年版】ChatGPT・Claude・Gemini、結局どれを使えばいい？70本以上のAIニュースから作った「普通の人のAI仕事術」",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n0cc8ce90b42e"
+      ]
+    },
+    {
+      "title": "Higgsfield第3弾｜397回生成・9,782クレジット使って見えた「新機能・著作権・伸ばし方」",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n7576419a7b3b"
+      ]
+    },
+    {
+      "title": "Claude Designとは？AnthropicがFigma・Canva領域に本格参入",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/ncad062bb1097"
+      ]
+    },
+    {
+      "title": "ChatGPT利用者の画像53件が外部サイトに投稿――OpenAIが認めた「想定外のデータ流出」",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n3e83dfe3cf82"
+      ]
+    },
+    {
+      "title": "OpenAIが3か月足らずで2度目のAI訓練停止――米国株先物・半導体株まで動いた理由",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n517e73102cd8"
+      ]
+    },
+    {
+      "title": "AIエージェント約700体が連携してHugging Faceを侵害――OpenAI・METR報告",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n37ab61828bab"
+      ]
+    },
+    {
+      "title": "社内チャットにAIが「同僚」として参加する時代へ――新興企業Ando",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nf39fd5fa6717"
+      ]
+    },
+    {
+      "title": "医師向けAI「OpenEvidence」が約2.4兆円評価に？2.5億ドル調達報道",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nbb8c49b1f4af"
+      ]
+    },
+    {
+      "title": "Google「Live Avatar」とは？AIと“顔を見ながら”話す時代へ",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/ne7872cf16936"
+      ]
+    },
+    {
+      "title": "AnthropicのAI開発、26%をClaudeが「主導」――3万AIエージェントが動く",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n9b961ce559bc"
+      ]
+    },
+    {
+      "title": "Higgsfieldの使い方【2026年版】374回生成・8,425クレジット使って8.6万VIEW。初心者向け実践ガイド",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n9e2b22bd4a4e"
+      ]
+    },
+    {
+      "title": "Higgsfield AIの使い方【2026年最新】料金・Seedance・MCP｜3,000クレジット実体験",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nb549d6453a95"
+      ]
+    },
+    {
+      "title": "Anthropicが上場準備へ？創業者7人で「50.1%」の議決権を握る仕組み",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n0d207e48049d"
+      ]
+    },
+    {
+      "title": "Google・OpenAI・AnthropicがAI安全基準団体「SAFA」を検討　“政府の監督なし”の自主ルールとは？",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n7f5e6127652d"
+      ]
+    },
+    {
+      "title": "AIに「これ買って」で支払いまで進む時代へ――Shopify×Meta「Muse」とShop Pay提携",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nc7ba86fe13d0"
+      ]
+    },
+    {
+      "title": "ChatGPT一強は崩れた？Claudeのプロンプトシェア5.5倍、Gemini30%へ――Comscore最新調査",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nf51d921cb3f6"
+      ]
+    },
+    {
+      "title": "Xiaomiが「Claude Opus 5・GPT-5.6 Sol級」のAIをオープンソース化",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n2d24151a9356"
+      ]
+    },
+    {
+      "title": "OpenAI・Anthropic CEOが国連安保理へ――米中AI企業も加わった「AIと国際安全保障」会合",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nfe6f94fdf58c"
+      ]
+    },
+    {
+      "title": "OpenAI「GPT-6 Sol・Luna」登場、API料金を約半額へ――AIの値下げ競争を学生向けに解説",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n27c11fb85fbd"
+      ]
+    },
+    {
+      "title": "ソフトバンクが取得したAI国際規格「ISO/IEC 42001」とは？――“AIそのもの”ではなく「管理の仕組み」を認証",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n2510c1bb91a5"
+      ]
+    },
+    {
+      "title": "NIKKEI KAI MCPとは？ChatGPT・Claudeから日経2,000万件超のビジネス情報を呼び出せる新機能を学生向けに解説",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n38d85008404d"
+      ]
+    },
+    {
+      "title": "Google「Gemini」がテスト中に実在3社へ侵入――“AIが暴走した”だけではない。",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n36b76ebada42"
+      ]
+    },
+    {
+      "title": "AnthropicがAccentureを“社内に入れてAIを監視”へ――5年で約3,100億円、異例の安全性評価を学生向けに解説",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/na87dce8d31ec"
+      ]
+    },
+    {
+      "title": "Claude×アンケートモニター副業｜“通る回答”より大事だった、具体的に伝える文章の作り方とAIの注意点",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nca34ff4363dc"
+      ]
+    },
+    {
+      "title": "ChatGPT×せどりリサーチ代行は副業になる？在庫ゼロで始める商品リサーチの売り方・価格・実践手順",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n6a91e34e4d4b"
+      ]
+    },
+    {
+      "title": "Claude×本要約で副業はできる？note販売の需要・値付け・著作権まで実際に調べてみた",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nd898bc39d99f"
+      ]
+    },
+    {
+      "title": "MITの手術支援AI「xvr」とは？手術中のX線と患者本人のCT・MRIを数秒で照合",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n9b73f2d3e17d"
+      ]
+    },
+    {
+      "title": "Sony Music PublishingとWarner ChappellがAnthropicを提訴――CEO個人も被告、「歌詞を無断取得してClaudeに利用」と主張",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n2ee9b3d2cb5d"
+      ]
+    },
+    {
+      "title": "「超知能AI禁止に違反で最大20年」米サンダース氏らが発表した“AI禁止法案”とは？学生向けに解説",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n9c265051f2c8"
+      ]
+    },
+    {
+      "title": "富士通「MONAKA」が2026年11月販売開始へ｜国産2nm CPU・144コア・「AI推論2倍」を学生向けに解説",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n991964003074"
+      ]
+    },
+    {
+      "title": "Cohere×Aleph Alphaが正式統合へ｜社員1000人超「欧州・カナダ連合」が米AI大手に挑む理由",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n1e8166c274e4"
+      ]
+    },
+    {
+      "title": "OpenAI・Anthropic・Google DeepMindがAI安全性で異例の連携｜「減速提言」の前から水面下で協議していた",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nd4fe38333b4a"
+      ]
+    },
+    {
+      "title": "Google Home MCPとは？ClaudeやChatGPTから家電操作へ｜AIエージェントが“家を動かす”時代を学生向けに解説",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n318a77ce92d5"
+      ]
+    },
+    {
+      "title": "Claude×Notionテンプレート販売の始め方｜無料AIで需要確認→初購入まで。学生・主婦でもできる副業を実体験で解説",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n65ecf61dcdc3"
+      ]
+    },
+    {
+      "title": "かんぽ生命×日本IBM、AI駆動開発で工数50％削減へ｜「IBM Bob」「ALSEA」を学生向けにやさしく解説",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n8ddbe4c860fb"
+      ]
+    },
+    {
+      "title": "NVIDIA時価総額が1日で約1,766億ドル減｜Anthropic CEOの「AI減速論」で半導体株が急落した理由",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nbf01b623f879"
+      ]
+    },
+    {
+      "title": "Samsungも出資、元ASML CEOが会長へ｜2億ユーロ超を集めたEuclyd「AI推論チップ」の正体",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n420390a06ab8"
+      ]
+    },
+    {
+      "title": "M6 Mac miniはAI処理最大4.8倍｜9月22日発売、「机の上でAIエージェントを常時動かすMac」を初心者向けに解説",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/ncd4a4e5c1fd7"
+      ]
+    },
+    {
+      "title": "AI減速論でソフトバンクG株が一時13％安｜孫正義氏「資産1.2兆円減」の衝撃",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n7d5a820b5cdd"
+      ]
+    },
+    {
+      "title": "【国内AI学び】AIアバターが接客・販売する時代へ｜AnyMind「AnyLive」が生成・分析機能を大幅強化",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n2646a2ab729f"
+      ]
+    },
+    {
+      "title": "NVIDIA一強の“ネットワーク”に挑む元Intel技術者たち｜Cornelisが2億500万ドル調達した理由",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n43dd9622a783"
+      ]
+    },
+    {
+      "title": "中国「国務院令第841号」施行｜輸出管理・技術移転違反で出国制限も、半導体・AI技術者への影響は？",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nf3064a315a7b"
+      ]
+    },
+    {
+      "title": "トランプ大統領「AIが人類を滅ぼすはHOAX」｜AI減速論に反発、中国との競争を強調",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n1dc58a837fbd"
+      ]
+    },
+    {
+      "title": "【海外AI解説・目玉ニュース】Claudeを支える契約が最大5,170億ドル｜Anthropic「77兆円級」AIインフラ投資の正体",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/na8f0bd7ee89e"
+      ]
+    },
+    {
+      "title": "【海外AI解説】PerplexityがGPT-6 Astraを本番運用へ｜コード変更・監視・E2EテストまでAIに任せ始めた",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n6234cfd2a59e"
+      ]
+    },
+    {
+      "title": "【海外AI解説】Metaが減らした管理職をAI部門で戻し始めた｜「50人を1人で管理」の超フラット組織に起きた揺り戻し",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/ncbbfe7ec72dc"
+      ]
+    },
+    {
+      "title": "【海外AI解説】Anthropic・Google DeepMindの安全研究者が相次いで退社｜「誰も助けに来ない」と語った理由",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n5b621825cb01"
+      ]
+    },
+    {
+      "title": "【海外AI解説】2026年テック解雇が12万8,536人、すでに2025年通年超え｜AI時代の雇用で何が起きている？",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n9c4a533abd64"
+      ]
+    },
+    {
+      "title": "【国内AI学び】富士通「FUJITSU-MONAKA」とは？競合CPU比2倍を掲げる国産2nm CPU、2027年投入へ",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n8148daa41d7f"
+      ]
+    },
+    {
+      "title": "【海外AI解説】Anthropic・OpenAI・xAIトップが「AI減速」で一致｜マスクのたった3語「Dario is right」が話題に",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nd05965fd3b44"
+      ]
+    },
+    {
+      "title": "海外AI解説】Claude Fable 5.1が「実務AIテスト」で1位｜Real-SWEが測る“本当に仕事で使えるAI”とは？",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nad41a58da8c9"
+      ]
+    },
+    {
+      "title": "【海外AI解説】Oracleがリストラ費用28億ドルへ拡大｜AIブームで売上急増、それでも人員削減を進める理由",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n7de12a82c6b2"
+      ]
+    },
+    {
+      "title": "【海外AI解説】イギリスでAI生成がらみの犯罪が3年で16倍に。ディープフェイク急増から見えること",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nc0c3a2e188e8"
+      ]
+    },
+    {
+      "title": "【海外AI解説】Instagram・Facebookの顔写真がAI学習に？Meta集団訴訟で問われる「投稿後のデータ利用」",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/na082e908108d"
+      ]
+    },
+    {
+      "title": "【海外AI解説】OpenAIが2026年IPOを見送り｜評価額1兆ドルでも「今は上場すべきでない」と判断した理由",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nba883ee8f8e7"
+      ]
+    },
+    {
+      "title": "【海外AI解説・続報】OpenAI→Anthropic研究者の警告が1.5億回閲覧｜マスクは疑念、Anthropic研究責任者は「彼は正しい」",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n277edac6918e"
+      ]
+    },
+    {
+      "title": "【海外AI解説】人間なら約2週間のサイバー侵入をAIが10時間未満に短縮｜「マシンスピード攻撃」が始まった話",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n91e0145c0c67"
+      ]
+    },
+    {
+      "title": "【国内AI学び】RIZAPで「許可されていない生成AI」に顧客情報を入力｜地方職員共済組合726人分が漏えいの可能性",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n1235e96c1696"
+      ]
+    },
+    {
+      "title": "【海外AI解説】フィールズ賞受賞者25人が異例の共同声明。「AIの数学証明レースは急ぎすぎ」と警告した理由",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n8873c8d10398"
+      ]
+    },
+    {
+      "title": "中国発「Kimi K3」でMoonshot AI急成長｜売上は2カ月で3倍超、評価額500億ドルで香港上場へ",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/na04771bf4395"
+      ]
+    },
+    {
+      "title": "ChatGPT×Kindle出版【前編】AIは代筆ではなく「構成担当」｜初心者・学生でもできる安全なKDP出版術",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nc37f40cd5dbd"
+      ]
+    },
+    {
+      "title": "Claude×クラウドソーシングで“最初の1件”を取る技術【後編】実績0でも通った提案文・プロンプトを公開",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n13dd9d1ac335"
+      ]
+    },
+    {
+      "title": "Claude×クラウドソーシングで“最初の1件”を取る技術【前編】提案文20件全滅だった私が見直したこと",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n15504b532b46"
+      ]
+    },
+    {
+      "title": "OpenAIとAnthropic両方で働いた研究者が退職。「AI開発競争は無責任」と警告した理由【超知能・AI安全性を解説】",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nf25eeee118f2"
+      ]
+    },
+    {
+      "title": "「カタカナに翻訳して」でClaudeを騙す？Anthropicが公開した悪用事例と“AI蒸留攻撃”を初心者向けに解説",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nd02fee0494e8"
+      ]
+    },
+    {
+      "title": "OpenAIのAIたちが、誰も見ていない過疎Wikiで“裏掲示板”を作っていた話｜AIエージェントのミスアライメントとは？",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n600dfccf0db5"
+      ]
+    },
+    {
+      "title": "Grokがイーロン・マスク本人への「暗殺を促す文言」を投稿した日｜プロンプトインジェクションとは？初心者向けに解説",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nfa7d12cbe51f"
+      ]
+    },
+    {
+      "title": "「社長の声」も信用できない？ボイスフィッシング被害約45億円、AI音声クローン詐欺が他人事じゃなかった",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n1aab71d52128"
+      ]
+    },
+    {
+      "title": "Xのタイムラインが「全部Grok」になった？｜Grokとは・使い方・無料版・ChatGPTとの違いまで初心者向けに解説【2026年最新】",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nef872cc2aecd"
+      ]
+    },
+    {
+      "title": "AI生成メニュー画像炎上事件から学ぶこと｜「AIが悪い」で終わらせない、仕事・副業での正しい使い方",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nadcf376f85dc"
+      ]
+    },
+    {
+      "title": "「iPhone 18」が出たと聞いて調べてみたら、実は“無印”は出ていなかった件【価格・発売日・iPhone Duoまとめ】",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/na5fb117f4d82"
+      ]
+    },
+    {
+      "title": "「Claude Code」って結局エンジニア専用ツールなんでしょ？と思っていたら、兄弟ツール「Cowork」では9割以上がコード以外に使われていた話",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nf7b4b947419d"
+      ]
+    },
+    {
+      "title": "ChatGPT×写真素材サイトで作る“資産型”スマホ副",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/ndf1b8622937f"
+      ]
+    },
+    {
+      "title": "Claude×楽天ROOMで始める、スキマ時間の紹介副業",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n4fa7199747f1"
+      ]
+    },
+    {
+      "title": "Claudeで書いた文章はバレる？見えない電子透かし（ウォーターマーク）の仕組み・コピペ・note・SEOへの影響",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n02f197bf2438"
+      ]
+    },
+    {
+      "title": "Apple発表会2026は9月10日午前2時｜何が出る？iPhone 18 Pro・折りたたみiPhone・Apple Watch最新予想",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/ndc599a9c7098"
+      ]
+    },
+    {
+      "title": "GPT-6 Astraとは？【2026年9月最新】使い方・料金・提供状況・GPT-5.6との違いを初心者向けに解説",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/ncf2ea31c16a2"
+      ]
+    },
+    {
+      "title": "1物件6,000円から ― 周辺15施設をまとめる不動産「生活情報シート」制作副業",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n05d83241cad8"
+      ]
+    },
+    {
+      "title": "PDF20ページを8,000円から ― 商品カタログを使えるスプレッドシートに変える副業",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n95274d238bc9"
+      ]
+    },
+    {
+      "title": "営業日報20件を6,000円から ― 1週間の失注理由と次の行動をまとめる分析副業",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n3b5f316d40ea"
+      ]
+    },
+    {
+      "title": "60分動画を4,000円から ― YouTubeのチャプター＋概要欄を整えるAI副業",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n7d779fb2c23a"
+      ]
+    },
+    {
+      "title": "1業務8,000円から ― 新人でも迷わない「1枚業務フロー」を作る副業",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n129413452759"
+      ]
+    },
+    {
+      "title": "アンケート100件を6,000円から ― 自由回答を5分類して改善案まで出すAI集計副業",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nceab67675c7e"
+      ]
+    },
+    {
+      "title": "Webサイト10ページを8,000円から ― 誤字・リンク・表記ゆれを洗い出すサイト点検副業",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n9bbd4e1fc5d4"
+      ]
+    },
+    {
+      "title": "商品30点を6,000円から ― ECの商品情報を比較しやすい表に整えるデータ整理副業",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n2bbe9fcf43ce"
+      ]
+    },
+    {
+      "title": "求人票1職種を5,000円から ― 応募前の疑問まで整理する採用ページ改善副業",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n9f4404773e65"
+      ]
+    },
+    {
+      "title": "30分の商談を5,000円から ― 議事録＋担当者別ToDoを作るAI整理副業",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/na9862cc9eb64"
+      ]
+    },
+    {
+      "title": "8ページ2.5万円から ― Canvaで見込み客向け小冊子を作る副業",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/ne2701b38c1f0"
+      ]
+    },
+    {
+      "title": "10分音声を5,000円の記事に ― 経営者ブログ代筆副業",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n05e6ab76dbe6"
+      ]
+    },
+    {
+      "title": "競合5社を1.5万円から ― AI市場調査レポート代行",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n193ddcd4b73a"
+      ]
+    },
+    {
+      "title": "問い合わせ文3案で1万円 ― AI営業文セット作成代行",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nef922bf33136"
+      ]
+    },
+    {
+      "title": "FAQ20問を2万円から ― AIで新人向け業務マニュアルを作る副業",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/ne4ededde1fb0"
+      ]
+    },
+    {
+      "title": "海外20人を比較して売る ― 日本向けAI実践レポートの作り方",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nec2eab951a8c"
+      ]
+    },
+    {
+      "title": "1社月1.5万円から ― 業界特化の海外AI動向レポート副業",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n372dd3ade304"
+      ]
+    },
+    {
+      "title": "30分の会話を1万円の記事に ― AIインタビュー記事代行",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n6e0d0646848f"
+      ]
+    },
+    {
+      "title": "1店舗月8,000円から ― Google口コミ返信案を作る継続副業",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/ne3b2b869feb8"
+      ]
+    },
+    {
+      "title": "10商品3,000円から ― 写真だけで作るメルカリ出品セット代行",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nd8afaebb2605"
+      ]
+    },
+    {
+      "title": "半年〜1年で月30万円へ ― AI副業の成長ロードマップ",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n9175986e7eca"
+      ]
+    },
+    {
+      "title": "まずは月3万円 ― 誰でも到達できる最初のゴール設定",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nd48a885f7fae"
+      ]
+    },
+    {
+      "title": "画像10枚3,000円から ― AIクリエイティブ代行パッケージの作り方",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nf41e7b53ca16"
+      ]
+    },
+    {
+      "title": "1記事2,000円から ― AI下書き+ファクトチェックで稼ぐライティング術",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n8270c9206d04"
+      ]
+    },
+    {
+      "title": "副業ゼロからのスタート ― AI画像生成の受注で月1〜2万円を作る",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nf4810976e00d"
+      ]
+    },
+    {
+      "title": "繁忙期だけで月8万円 ― AI要約学習ガイドを作って売る方法",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nbcae4aa7ec88"
+      ]
+    },
+    {
+      "title": "大学生でも月25万円 ― AI活用SNS運用代行パッケージの作り方",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n533d9c568e48"
+      ]
+    },
+    {
+      "title": "「動画編集ゼロ」で月10万円 ― 主婦がThreadsで発信するAI活用術",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nc64020499eac"
+      ]
+    },
+    {
+      "title": "元教員が「絵心ゼロ」でも月15万円 ― ChatGPT無料版とCanva無料プランで作る企業SNS画像",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/nb71f32f64df7"
+      ]
+    },
+    {
+      "title": "挫折しないための失敗回避マニュアル ― よくあるつまずきと対処法",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n2a35bd02df2f"
+      ]
+    },
+    {
+      "title": "プログラミング素人の営業マンが、AIで会社を興し3ヶ月で売った話",
+      "sources": [
+        "https://note.com/quiet_spirea2390/n/n77abb6dc8e53"
+      ]
+    }
   ],
   "publisher": {
     "new_article_url": "https://note.com/notes/new",

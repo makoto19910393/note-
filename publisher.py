@@ -67,7 +67,7 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
         try:
             if storage is None:
                 page.goto("https://note.com/login", wait_until="domcontentloaded")
-                page.get_by_label("メールアドレス", exact=True).fill(os.environ["NOTE_EMAIL"])
+                page.get_by_label("メールアドレス または note ID", exact=True).fill(os.environ["NOTE_EMAIL"])
                 page.get_by_label("パスワード", exact=True).fill(os.environ["NOTE_PASSWORD"])
                 page.get_by_role("button", name="ログイン", exact=True).click()
                 page.wait_for_url(lambda url: not urlsplit(str(url)).path.startswith("/login"), timeout=60000)

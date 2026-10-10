@@ -73,3 +73,10 @@
   意図しない操作の報告。原稿と2件の参考URLのHTTP200を確認。note公開はしていない。
 - 認証にNOTE_EMAIL／NOTE_PASSWORDの代替方式を追加。画面を実検証してから使用。
   Google/Apple専用ログイン・CAPTCHA・2FAを回避する処理は実装しない。
+- GitHub上の公開ブラウザ確認38026285170は成功。note.com/notes/newが
+  note.com/login?redirectPath=/notes/newへ移動すること、入力ラベルが
+  「メールアドレス または note ID」「パスワード」であることを確認し実装に反映。
+- ユーザーはGoogleまたはAppleログインと回答。Google/Appleのパスワードを
+  チャットやGitHubに登録するよう求めない。note側の対応する認証方法を確認して案内。
+- 公開記事一覧を最終ページまで読み取り、112件のタイトル・URLをconfig.jsonの
+  previous_topicsへ反映。過去本文の全確認や販売実績の確認を意味しない。
