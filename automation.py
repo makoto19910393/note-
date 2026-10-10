@@ -107,12 +107,26 @@ def call_api(payload):
     except HTTPError as e:
         hints = {
             "insufficient_quota": "AI APIの利用残高または利用上限を確認してください。",
+            "usage_limit_reached": "AI APIの利用残高または利用上限を確認してください。",
+            "billing_hard_limit_reached": "AI APIの請求上限に達しています。",
+            "billing_not_active": "AI APIの請求設定が有効になっていません。",
             "invalid_api_key": "登録されたAI APIキーが有効ではありません。",
             "model_not_found": "設定したモデルをこのAPIアカウントで利用できません。",
             "rate_limit_exceeded": "AI APIの一時的な利用制限です。",
         }
         try:
-            code = json.loads(e.read()).get("error", {}).get("code")
+            data = json.loads(e.read())
+            error = data.get("error", data)
+            if isinstance(error, str):
+                error = {"message": error}
+            code = error.get("code") or error.get("type")
+            message = str(error.get("message", "")).lower()
+            # Diagnose recognized API wording without logging its raw body.
+            if code not in hints:
+                if "check your plan and billing" in message:
+                    code = "insufficient_quota"
+                elif "rate limit reached" in message:
+                    code = "rate_limit_exceeded"
         except (ValueError, AttributeError, TypeError):
             code = None
         if code in hints:

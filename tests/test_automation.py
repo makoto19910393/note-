@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from urllib.error import HTTPError
 from unittest.mock import patch
 from zoneinfo import ZoneInfo
 
@@ -65,6 +66,16 @@ class AutomationTests(unittest.TestCase):
                 a.run("morning", self.root, CONFIG, NOW)
         self.assertFalse((self.root / "state.json").exists())
         self.assertFalse((self.root / ".automation.lock").exists())
+
+    def test_quota_error_with_null_code_is_diagnosed_without_leaking_body(self):
+        error = HTTPError('https://api.openai.com/v1/responses', 429, 'limit', {},
+                          io.BytesIO(json.dumps({'error': {'code': None, 'type': 'insufficient_quota',
+                                                         'message': 'PRIVATE_TEST_DATA'}}).encode()))
+        with patch.dict('os.environ', {'OPENAI_API_KEY': 'fake-test-key'}), patch.object(a, 'urlopen', side_effect=error):
+            with self.assertRaises(a.WorkflowError) as raised:
+                a.call_api({})
+        self.assertIn('利用残高', str(raised.exception))
+        self.assertNotIn('PRIVATE_TEST_DATA', str(raised.exception))
 
     def test_rejects_unsearched_article(self):
         data = response()
