@@ -59,7 +59,7 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
     html = markdown.markdown(html_module.escape(body), extensions=["tables", "fenced_code"])
     ui = config["publisher"]
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        browser = p.chromium.launch(headless=os.environ.get("NOTE_HEADLESS", "true") != "false")
         context = browser.new_context(storage_state=storage,
                                       permissions=["clipboard-read", "clipboard-write"])
         page = context.new_page()

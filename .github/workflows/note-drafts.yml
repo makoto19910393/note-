@@ -71,12 +71,13 @@ jobs:
           NOTE_STORAGE_STATE: ${{ secrets.NOTE_STORAGE_STATE }}
           NOTE_EMAIL: ${{ secrets.NOTE_EMAIL || secrets.MAIL }}
           NOTE_PASSWORD: ${{ secrets.NOTE_PASSWORD }}
+          NOTE_HEADLESS: 'false'
           EXISTING_RUN_ID: ${{ github.event.inputs.run_id }}
         run: |
           if [ -n "$EXISTING_RUN_ID" ]; then
-            python run_workflow.py --run-id "$EXISTING_RUN_ID"
+            xvfb-run -a python run_workflow.py --run-id "$EXISTING_RUN_ID"
           else
-            python run_workflow.py --slot "$RUN_SLOT"
+            xvfb-run -a python run_workflow.py --slot "$RUN_SLOT"
           fi
       - name: 原稿をGitHubに保存
         if: always()
