@@ -61,3 +61,5 @@
 - ユーザーはGitHubへのキー登録を完了したと報告。名前・対象リポジトリを確認する必要がある。
   SecretsのAPI読み取りは403のまま。ユーザーの一覧画面で、値を見せず名前だけ確認する。
 - GitHubへの配置とActions起動は確認済み。AI生成・note公開・定時実行の成功は未確認。
+- ユーザーの一覧画像で登録名はNOTEと確認。workflowがOPENAI_API_KEYへ
+  secrets.OPENAI_API_KEYまたはsecrets.NOTEを渡すように修正。ユーザーの再登録は不要。

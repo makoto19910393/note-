@@ -105,6 +105,18 @@ def call_api(payload):
         with urlopen(request, timeout=240) as response:
             return json.load(response)
     except HTTPError as e:
+        hints = {
+            "insufficient_quota": "AI APIの利用残高または利用上限を確認してください。",
+            "invalid_api_key": "登録されたAI APIキーが有効ではありません。",
+            "model_not_found": "設定したモデルをこのAPIアカウントで利用できません。",
+            "rate_limit_exceeded": "AI APIの一時的な利用制限です。",
+        }
+        try:
+            code = json.loads(e.read()).get("error", {}).get("code")
+        except (ValueError, AttributeError, TypeError):
+            code = None
+        if code in hints:
+            raise WorkflowError(hints[code] + " 原稿は保存していません。") from None
         raise WorkflowError(f"AI APIがHTTP {e.code}を返しました。原稿は保存していません。") from None
     except (URLError, TimeoutError) as e:
         raise WorkflowError("AI APIとの通信に失敗しました。原稿は保存していません。") from None

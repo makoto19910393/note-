@@ -38,7 +38,7 @@ jobs:
           python -m playwright install --with-deps chromium
       - name: 最新AIニュースを調べて執筆・noteへ投稿
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY || secrets.NOTE }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
           RUN_SLOT: ${{ github.event.inputs.slot || 'auto' }}
           NOTE_MODE: ${{ vars.NOTE_MODE || 'disabled' }}

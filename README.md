@@ -49,6 +49,8 @@ GitHub Actionsで動くため、このチャットやパソコンを開き続け
    この作業中にGitHub側へ反映したとは限りません。
 2. GitHubのリポジトリ → Settings → Secrets and variables → Actions → Secretsに
    `OPENAI_API_KEY`を登録する。APIの請求画面で予算・利用量通知も確認する。
+   このリポジトリで登録済みの`NOTE`という名前もAPIキーとして使用できます。
+   `OPENAI_API_KEY`がある場合はそちらを優先します。`NOTE`はnoteのログイン情報ではありません。
 3. 手動実行でニュース生成を1回確認する。
    モデル変更はVariablesの`OPENAI_MODEL`（既定`gpt-5-mini`）。Web検索対応モデルを選ぶ。
 4. 手元のブラウザでnoteにログインし、下記のログイン補助で状態を保存。
