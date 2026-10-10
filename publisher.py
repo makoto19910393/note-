@@ -46,13 +46,15 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
         raise WorkflowError("原稿が生成後に変更されています。確認が必要です。")
     body = data.decode().split("\n", 1)[1].strip()
     raw_session = os.environ.get("NOTE_STORAGE_STATE")
-    if not raw_session:
-        raise WorkflowError("noteのログイン状態が未設定です。NOTE_STORAGE_STATEをGitHub Secretsに登録してください。")
-    try:
-        storage = json.loads(raw_session)
-    except ValueError:
-        raise WorkflowError("noteのログイン状態を読み取れません。値はログに出力しません。") from None
-    from playwright.sync_api import sync_playwright, TimeoutError as BrowserTimeout
+    storage = None
+    if raw_session:
+        try:
+            storage = json.loads(raw_session)
+        except ValueError:
+            raise WorkflowError("noteのログイン状態を読み取れません。値はログに出力しません。") from None
+    elif not (os.environ.get("NOTE_EMAIL") and os.environ.get("NOTE_PASSWORD")):
+        raise WorkflowError("noteログイン用のNOTE_EMAILとNOTE_PASSWORD、またはNOTE_STORAGE_STATEが必要です。")
+    from playwright.sync_api import sync_playwright, TimeoutError as BrowserTimeout, Error as BrowserError
     import markdown
     html = markdown.markdown(html_module.escape(body), extensions=["tables", "fenced_code"])
     ui = config["publisher"]
@@ -63,6 +65,12 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
         page = context.new_page()
         page.set_default_timeout(30000)
         try:
+            if storage is None:
+                page.goto("https://note.com/login", wait_until="domcontentloaded")
+                page.get_by_label("メールアドレス", exact=True).fill(os.environ["NOTE_EMAIL"])
+                page.get_by_label("パスワード", exact=True).fill(os.environ["NOTE_PASSWORD"])
+                page.get_by_role("button", name="ログイン", exact=True).click()
+                page.wait_for_url(lambda url: not urlsplit(str(url)).path.startswith("/login"), timeout=60000)
             editor_url = record.get("note_editor_url")
             page.goto(editor_url or ui["new_article_url"], wait_until="domcontentloaded")
             title = page.locator(ui["title_selector"])
@@ -128,6 +136,8 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
             print("note公開を確認しました:", published_url)
         except BrowserTimeout:
             raise WorkflowError("noteの画面操作がタイムアウトしました。ログイン切れや画面変更を確認してください。") from None
+        except BrowserError:
+            raise WorkflowError("noteのブラウザ操作に失敗しました。画面変更、認証、接続状況の確認が必要です。") from None
         finally:
             context.close()
             browser.close()

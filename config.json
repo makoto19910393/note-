@@ -12,7 +12,7 @@
     {"title": "NIKKEI KAI MCP", "sources": []}
   ],
   "publisher": {
-    "new_article_url": "https://editor.note.com/notes/new",
+    "new_article_url": "https://note.com/notes/new",
     "title_selector": "textarea[placeholder='記事タイトル'], input[placeholder='記事タイトル']",
     "body_selector": ".ProseMirror[contenteditable='true']",
     "proceed_button": "公開に進む",

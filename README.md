@@ -55,7 +55,11 @@ GitHub Actionsで動くため、このチャットやパソコンを開き続け
    `OPENAI_API_KEY`がある場合はそちらを優先します。`NOTE`はnoteのログイン情報ではありません。
 3. 手動実行でニュース生成を1回確認する。
    モデル変更はVariablesの`OPENAI_MODEL`（既定`gpt-5-mini`）。Web検索対応モデルを選ぶ。
-4. 手元のブラウザでnoteにログインし、下記のログイン補助で状態を保存。
+4. GitHub Secretsに`NOTE_EMAIL`（noteのログインメール）と`NOTE_PASSWORD`を登録する。
+   メール・パスワードログインが使えるアカウントが対象です。Google/Appleログインのみ、
+   追加認証やCAPTCHAを要求された場合は止めて、対応する認証方法を確認します。
+   認証情報はチャットに貼らず、自分のGitHub Secretsに登録してください。
+   代替として、手元のブラウザでnoteにログインし、下記のログイン補助で状態を保存。
    そのJSONをGitHub Secretsの`NOTE_STORAGE_STATE`に登録する。
    ログイン権限を含むため、Git・チャット・共有ドライブには置かない。
 5. Variablesの`NOTE_MODE`を`draft`にして手動実行。
@@ -108,4 +112,5 @@ Linuxで不足するブラウザのOS依存関係はPlaywrightの公式手順で
 - 認証期限切れ：ログイン補助を再実行し、GitHub Secretを更新。
 - 60日間活動のない公開リポジトリではGitHubの定時実行が無効化される場合があります。
 
-現状では通信制限と未設定認証があるため、実API・実note・新しいGitHub実行の成功は未確認です。
+2026-10-10、GitHub Actionsで実APIによる記事No.1の生成・保存が成功しました。
+noteの認証・下書き保存・公開は未完了です。通常のGitHub実行では証明書検証を有効にしたまま接続します。

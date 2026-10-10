@@ -6,3 +6,4 @@ content/.publisher.lock
 note-session*.json
 .venv/
 .browsers/
+browser-check/

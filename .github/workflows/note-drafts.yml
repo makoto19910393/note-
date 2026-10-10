@@ -44,6 +44,8 @@ jobs:
           NOTE_MODE: ${{ vars.NOTE_MODE || 'disabled' }}
           NOTE_UI_VERIFIED: ${{ vars.NOTE_UI_VERIFIED }}
           NOTE_STORAGE_STATE: ${{ secrets.NOTE_STORAGE_STATE }}
+          NOTE_EMAIL: ${{ secrets.NOTE_EMAIL }}
+          NOTE_PASSWORD: ${{ secrets.NOTE_PASSWORD }}
         run: python run_workflow.py --slot "$RUN_SLOT"
       - name: 原稿をGitHubに保存
         if: always()

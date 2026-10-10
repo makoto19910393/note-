@@ -52,7 +52,8 @@ def main():
     if mode not in ("disabled", "draft", "publish"):
         raise WorkflowError("NOTE_MODEはdisabled、draft、publishのいずれかを指定してください。")
     # Check before spending on generation.
-    if mode != "disabled" and not os.environ.get("NOTE_STORAGE_STATE"):
+    if mode != "disabled" and not (os.environ.get("NOTE_STORAGE_STATE") or
+                                    (os.environ.get("NOTE_EMAIL") and os.environ.get("NOTE_PASSWORD"))):
         raise WorkflowError("noteのログイン状態がありません。")
     if mode == "publish" and os.environ.get("NOTE_UI_VERIFIED") != "true":
         raise WorkflowError("note画面の下書き保存テストが未完了です。NOTE_UI_VERIFIEDを確認してください。")
