@@ -1,0 +1,35 @@
+name: note接続設定の確認
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: 値を表示せず登録名と入力形式を確認
+        env:
+          PRIMARY_EMAIL: ${{ secrets.NOTE_EMAIL }}
+          ALTERNATE_EMAIL: ${{ secrets.MAIL }}
+          LOGIN_PASSWORD: ${{ secrets.NOTE_PASSWORD }}
+        run: |
+          python3 - <<'PY'
+          import json, os, re
+          primary = os.environ.get('PRIMARY_EMAIL', '')
+          alternate = os.environ.get('ALTERNATE_EMAIL', '')
+          password = os.environ.get('LOGIN_PASSWORD', '')
+          selected = primary or alternate
+          print(json.dumps({
+              'NOTE_EMAIL_present': bool(primary),
+              'MAIL_present': bool(alternate),
+              'selected_email_secret': 'NOTE_EMAIL' if primary else 'MAIL' if alternate else 'missing',
+              'both_email_values_differ': bool(primary and alternate and primary != alternate),
+              'selected_email_has_outer_whitespace': selected != selected.strip(),
+              'selected_email_has_email_format': bool(re.fullmatch(r'[^\s@]+@[^\s@]+\.[^\s@]+', selected)),
+              'NOTE_PASSWORD_present': bool(password),
+              'password_has_outer_whitespace': password != password.strip(),
+              'password_looks_like_api_key': password.startswith('sk-'),
+              'password_is_setting_name': password in ('NOTE_PASSWORD', 'パスワード'),
+          }, ensure_ascii=False))
+          PY
