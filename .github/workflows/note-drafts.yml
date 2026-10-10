@@ -69,7 +69,7 @@ jobs:
           NOTE_MODE: ${{ steps.settings.outputs.mode }}
           NOTE_UI_VERIFIED: ${{ vars.NOTE_UI_VERIFIED }}
           NOTE_STORAGE_STATE: ${{ secrets.NOTE_STORAGE_STATE }}
-          NOTE_EMAIL: ${{ secrets.NOTE_EMAIL }}
+          NOTE_EMAIL: ${{ secrets.NOTE_EMAIL || secrets.MAIL }}
           NOTE_PASSWORD: ${{ secrets.NOTE_PASSWORD }}
           EXISTING_RUN_ID: ${{ github.event.inputs.run_id }}
         run: |
