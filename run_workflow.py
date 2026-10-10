@@ -43,26 +43,34 @@ def scheduled_slot(config, now, requested="auto"):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--slot", choices=["auto", "morning", "evening"], default="auto")
+    parser.add_argument("--run-id", help="既存原稿の投稿だけを行う。AI APIを再実行しない。")
     args = parser.parse_args()
     config = json.loads((ROOT / "config.json").read_text())
     actual_now = datetime.now(ZoneInfo(config["timezone"]))
     scheduled, slot = scheduled_slot(config, actual_now, args.slot)
     output = ROOT / "content"
-    mode = os.environ.get("NOTE_MODE", "disabled")
+    mode = os.environ.get("NOTE_MODE", "auto")
+    if mode == "auto":
+        mode = config["publisher"].get("mode", "disabled")
     if mode not in ("disabled", "draft", "publish"):
         raise WorkflowError("NOTE_MODEはdisabled、draft、publishのいずれかを指定してください。")
     # Check before spending on generation.
     if mode != "disabled" and not (os.environ.get("NOTE_STORAGE_STATE") or
                                     (os.environ.get("NOTE_EMAIL") and os.environ.get("NOTE_PASSWORD"))):
         raise WorkflowError("noteのログイン状態がありません。")
-    if mode == "publish" and os.environ.get("NOTE_UI_VERIFIED") != "true":
+    if mode == "publish" and not (os.environ.get("NOTE_UI_VERIFIED") == "true" or
+                                  config["publisher"].get("ui_verified") is True):
         raise WorkflowError("note画面の下書き保存テストが未完了です。NOTE_UI_VERIFIEDを確認してください。")
     # Generation evaluates source freshness against actual execution time.
     # The date of the run ID follows the scheduled time even if a job is delayed.
-    run(slot, output, config, actual_now, run_date=scheduled.strftime("%Y-%m-%d"))
+    if args.run_id:
+        if mode == "disabled":
+            raise WorkflowError("既存原稿の投稿にはdraftまたはpublishを指定してください。")
+    else:
+        run(slot, output, config, actual_now, run_date=scheduled.strftime("%Y-%m-%d"))
     if mode != "disabled":
         from publisher import publish
-        run_id = scheduled.strftime("%Y-%m-%d") + "-" + slot
+        run_id = args.run_id or scheduled.strftime("%Y-%m-%d") + "-" + slot
         publish(output, config, run_id, dry_run=mode == "draft", before_publish=persist_before_publish)
 
 

@@ -64,6 +64,7 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
                                       permissions=["clipboard-read", "clipboard-write"])
         page = context.new_page()
         page.set_default_timeout(30000)
+        stage = "ログイン"
         try:
             if storage is None:
                 page.goto("https://note.com/login", wait_until="domcontentloaded")
@@ -72,14 +73,17 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
                 page.get_by_role("button", name="ログイン", exact=True).click()
                 page.wait_for_url(lambda url: not urlsplit(str(url)).path.startswith("/login"), timeout=60000)
             editor_url = record.get("note_editor_url")
+            stage = "編集画面への移動"
             page.goto(editor_url or ui["new_article_url"], wait_until="domcontentloaded")
             title = page.locator(ui["title_selector"])
             content = page.locator(ui["body_selector"])
+            stage = "タイトルと本文の入力欄の確認"
             title.wait_for(state="visible")
             content.wait_for(state="visible")
             if title.count() != 1 or content.count() != 1:
                 raise WorkflowError("noteの編集画面を一意に特定できません。公開せず停止します。")
             title.fill(record["title"])
+            stage = "本文入力"
             # Paste through the browser so the editor receives its normal change events.
             page.evaluate("""async ({html, text}) => {
                 await navigator.clipboard.write([new ClipboardItem({
@@ -103,6 +107,7 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
                 raise WorkflowError("下書きの保存先を確認できません。公開せず停止します。")
             editor_url = "https://editor.note.com/notes/" + match.group(1) + "/edit"
             update_record(state_path, state, record, status="draft_saved", note_editor_url=editor_url)
+            stage = "公開設定画面の確認"
             page.get_by_role("button", name=ui["proceed_button"], exact=True).click()
             publish_button = page.get_by_role("button", name=ui["publish_button"], exact=True)
             publish_button.wait_for(state="visible")
@@ -135,9 +140,9 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
                           note_url=published_url, published_at=datetime.now(ZoneInfo(config["timezone"])).isoformat())
             print("note公開を確認しました:", published_url)
         except BrowserTimeout:
-            raise WorkflowError("noteの画面操作がタイムアウトしました。ログイン切れや画面変更を確認してください。") from None
+            raise WorkflowError(stage + "でタイムアウトしました。ログイン切れや画面変更を確認してください。") from None
         except BrowserError:
-            raise WorkflowError("noteのブラウザ操作に失敗しました。画面変更、認証、接続状況の確認が必要です。") from None
+            raise WorkflowError(stage + "でブラウザ操作に失敗しました。画面変更、認証、接続状況の確認が必要です。") from None
         finally:
             context.close()
             browser.close()

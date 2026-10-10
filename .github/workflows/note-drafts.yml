@@ -12,6 +12,15 @@ on:
         type: choice
         default: auto
         options: [auto, morning, evening]
+      mode:
+        description: autoは設定に従う、draftは下書きテスト、publishは公開
+        type: choice
+        default: auto
+        options: [auto, disabled, draft, publish]
+      run_id:
+        description: 既存原稿を使う場合のみ指定（例 2026-10-10-morning）
+        type: string
+        required: false
 
 permissions:
   contents: write
@@ -24,6 +33,8 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      REQUESTED_NOTE_MODE: ${{ github.event.inputs.mode || vars.NOTE_MODE || 'auto' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -31,8 +42,22 @@ jobs:
           python-version: '3.12'
       - name: 保存処理と失敗時の挙動を確認
         run: python -m unittest discover -s tests -v
+      - name: 実行する投稿モードを決定
+        id: settings
+        run: |
+          python - <<'PY'
+          import json, os
+          mode = os.environ['REQUESTED_NOTE_MODE']
+          if mode == 'auto':
+              mode = json.load(open('config.json'))['publisher'].get('mode', 'disabled')
+          if mode not in ('disabled', 'draft', 'publish'):
+              raise SystemExit('Invalid note mode')
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write('mode=' + mode + '\n')
+          print('note mode:', mode)
+          PY
       - name: 投稿処理の依存関係を導入
-        if: vars.NOTE_MODE == 'draft' || vars.NOTE_MODE == 'publish'
+        if: steps.settings.outputs.mode == 'draft' || steps.settings.outputs.mode == 'publish'
         run: |
           python -m pip install -r requirements-publish.txt
           python -m playwright install --with-deps chromium
@@ -41,12 +66,18 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY || secrets.NOTE }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
           RUN_SLOT: ${{ github.event.inputs.slot || 'auto' }}
-          NOTE_MODE: ${{ vars.NOTE_MODE || 'disabled' }}
+          NOTE_MODE: ${{ steps.settings.outputs.mode }}
           NOTE_UI_VERIFIED: ${{ vars.NOTE_UI_VERIFIED }}
           NOTE_STORAGE_STATE: ${{ secrets.NOTE_STORAGE_STATE }}
           NOTE_EMAIL: ${{ secrets.NOTE_EMAIL }}
           NOTE_PASSWORD: ${{ secrets.NOTE_PASSWORD }}
-        run: python run_workflow.py --slot "$RUN_SLOT"
+          EXISTING_RUN_ID: ${{ github.event.inputs.run_id }}
+        run: |
+          if [ -n "$EXISTING_RUN_ID" ]; then
+            python run_workflow.py --run-id "$EXISTING_RUN_ID"
+          else
+            python run_workflow.py --slot "$RUN_SLOT"
+          fi
       - name: 原稿をGitHubに保存
         if: always()
         run: |
