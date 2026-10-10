@@ -87,6 +87,7 @@ AI初心者にも分かる言葉で、事実と推測を分ける。収益や効
         "tools": [{"type": "web_search"}],
         "include": ["web_search_call.action.sources"],
         "max_output_tokens": 12000,
+        "max_tool_calls": config.get("max_tool_calls", 5),
         "text": {"format": {"type": "json_schema", "name": "note_article",
                              "strict": True, "schema": article_schema()}}
     }
