@@ -69,7 +69,19 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
         def observe_login(response):
             path = urlsplit(response.url).path
             if stage == "ログイン" and re.search(r"/api/.*(?:login|auth|session)", path):
-                login_responses.append(response.status)
+                # Static API route and matched error categories only; no bodies or tokens.
+                route = re.sub(r"[^a-zA-Z/_-]", "", path)[:100]
+                categories = []
+                if response.status >= 400:
+                    try:
+                        error = response.text().lower()
+                        categories = [word for word in ("captcha", "recaptcha", "forbidden",
+                                      "invalid", "password", "unauthorized", "パスワード",
+                                      "メールアドレス", "ロボット", "too many") if word in error]
+                    except Exception:
+                        pass
+                login_responses.append({"route": route, "status": response.status,
+                                        "error_categories": categories})
         page.on("response", observe_login)
         try:
             if storage is None:
