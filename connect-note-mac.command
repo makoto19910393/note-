@@ -13,7 +13,7 @@ python3 -m venv .note-connect-venv
 umask 077
 session_file=$(mktemp "${TMPDIR:-/tmp}/note-session.XXXXXXXX")
 rm "$session_file"
-trap 'rm -f "$session_file"' EXIT
+trap 'rm -f "$session_file"; printf "%s" "" | pbcopy' EXIT
 .note-connect-venv/bin/python login_note.py --output "$session_file" --copy-and-open
 read -r -p 'GitHubへの登録が終わったらEnterを押してください。'
 printf '%s' '' | pbcopy

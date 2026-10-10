@@ -65,41 +65,6 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
         page = context.new_page()
         page.set_default_timeout(30000)
         stage = "ログイン"
-        login_responses = []
-        def observe_login(response):
-            path = urlsplit(response.url).path
-            if stage == "ログイン" and re.search(r"/api/.*(?:login|auth|session)", path):
-                # Static API route and matched error categories only; no bodies or tokens.
-                route = re.sub(r"[^a-zA-Z/_-]", "", path)[:100]
-                categories = []
-                message = None
-                if response.status >= 400:
-                    try:
-                        error = response.text().lower()
-                        categories = [word for word in ("captcha", "recaptcha", "forbidden",
-                                      "invalid", "password", "unauthorized", "パスワード",
-                                      "メールアドレス", "ロボット", "too many") if word in error]
-                        payload = response.json()
-                        candidates = [payload] if isinstance(payload, dict) else []
-                        if candidates:
-                            candidates.extend(value for value in list(payload.values()) if isinstance(value, dict))
-                        for item in candidates:
-                            value = item.get("message")
-                            if not isinstance(value, str) or not re.search(
-                                    r"ログイン|アクセス|メール|パスワード|認証|許可|拒否|不正|失敗", value):
-                                continue
-                            for key in ("NOTE_EMAIL", "NOTE_PASSWORD"):
-                                secret = os.environ.get(key)
-                                if secret:
-                                    value = value.replace(secret, "[非表示]")
-                            value = re.sub(r"https?://\S+|[\w.+-]+@[\w.-]+|[A-Za-z0-9_-]{20,}", "[非表示]", value)
-                            message = value[:160]
-                            break
-                    except Exception:
-                        pass
-                login_responses.append({"route": route, "status": response.status,
-                                        "error_categories": categories, "login_error_message": message})
-        page.on("response", observe_login)
         try:
             if storage is None:
                 page.goto("https://note.com/login", wait_until="domcontentloaded")
@@ -109,16 +74,9 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
                     page.get_by_role("button", name="ログイン", exact=True).click()
                 if attempt.value.status not in (200, 201, 204):
                     raise WorkflowError("noteのログイン処理が拒否されました。ログイン情報または接続方法の確認が必要です。")
-                attempt.value.finished()
                 payload = None
                 try:
                     payload = attempt.value.json()
-                    print("ログイン応答の構造:", json.dumps({
-                        "keys": list(payload.keys()) if isinstance(payload, dict) else [],
-                        "data_keys": list(payload.get("data", {}).keys()) if isinstance(payload, dict) and isinstance(payload.get("data"), dict) else [],
-                        "error_present": bool(payload.get("error")) if isinstance(payload, dict) else False,
-                        "sets_cookie": bool(attempt.value.header_value("set-cookie")),
-                    }, ensure_ascii=False))
                 except Exception:
                     pass
                 if isinstance(payload, dict) and payload.get("error"):
@@ -133,8 +91,6 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
                     page.wait_for_url(lambda url: not urlsplit(str(url)).path.startswith("/login"), timeout=10000)
                 except BrowserTimeout:
                     pass
-                print("noteログインCookie名:", json.dumps([cookie["name"] for cookie in context.cookies()
-                      if cookie["domain"].lstrip('.').endswith('note.com')], ensure_ascii=False))
                 # A successful login need not redirect immediately. The authenticated
                 # editor below is the actual verification, including session cookies.
             editor_url = record.get("note_editor_url")
@@ -222,7 +178,7 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
                          if page.get_by_text(message, exact=False).count()]
                 captcha = page.locator("iframe[src*='recaptcha'], iframe[src*='hcaptcha']").count() > 0
                 print("ログイン確認:", json.dumps({"login_page": urlsplit(page.url).path.startswith('/login'),
-                      "response_statuses": login_responses, "known_messages": found,
+                      "known_messages": found,
                       "captcha_frame_present": captcha}, ensure_ascii=False))
             raise WorkflowError(stage + "でタイムアウトしました。ログイン切れや画面変更を確認してください。") from None
         except BrowserError:
