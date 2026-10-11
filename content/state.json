@@ -29,9 +29,11 @@
         "https://www.washingtonpost.com/technology/2026/10/09/ai-system-submits-false-homicide-tip-philadelphia-police"
       ],
       "sha256": "294503928599e83bd4f9b46cbc96bacfae0033dffa359e23346434e92e7db3a4",
-      "status": "publishing",
-      "note_posted": false,
-      "note_editor_url": "https://editor.note.com/notes/nbf9f9dd8769e/edit"
+      "status": "published",
+      "note_posted": true,
+      "note_editor_url": "https://editor.note.com/notes/nbf9f9dd8769e/edit",
+      "note_url": "https://note.com/quiet_spirea2390/n/nbf9f9dd8769e",
+      "published_at": "2026-10-11T10:47:11.361715+09:00"
     }
   ]
 }
