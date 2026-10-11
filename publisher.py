@@ -87,10 +87,22 @@ def inspect_editor(output, run_id):
             page.locator("textarea[placeholder='記事タイトル'], input[placeholder='記事タイトル']").first.wait_for(state="visible")
             print("記事編集ボタン:", json.dumps(page.get_by_role("button").all_text_contents(), ensure_ascii=False))
             print("記事編集リンク名:", json.dumps(page.get_by_role("link").all_text_contents(), ensure_ascii=False))
+            print("編集ボタンの識別子:", json.dumps(page.get_by_role("button").evaluate_all(
+                "els => els.map(el => ({text:el.textContent.trim().slice(0,50),label:el.getAttribute('aria-label'),title:el.getAttribute('title'),className:el.className,svg:el.querySelector('svg')?.getAttribute('class')}))"), ensure_ascii=False))
             page.goto(record["note_url"], wait_until="domcontentloaded")
             page.get_by_role("heading", name=record["title"], exact=True).first.wait_for(state="visible")
             print("公開記事の管理ボタン:", json.dumps(page.get_by_role("button").evaluate_all(
                 "els => els.map(el => ({text:el.textContent.trim().slice(0,80),label:el.getAttribute('aria-label'),title:el.getAttribute('title')}))"), ensure_ascii=False))
+            page.goto("https://note.com/notes", wait_until="domcontentloaded")
+            note_id = re.search(r'/notes/([^/]+)/', record['note_editor_url']).group(1)
+            link = page.locator("a[href*='" + note_id + "']").first
+            link.wait_for(state="visible", timeout=30000)
+            print("対象記事の管理行:", json.dumps(link.evaluate("""el => {
+                const results=[];
+                for(let i=0;el && i<5;i++,el=el.parentElement) results.push({tag:el.tagName,className:el.className,
+                    buttons:Array.from(el.querySelectorAll('button')).map(b=>({text:b.textContent.trim(),label:b.getAttribute('aria-label'),className:b.className}))});
+                return results;
+            }"""), ensure_ascii=False))
         finally:
             browser.close()
 
