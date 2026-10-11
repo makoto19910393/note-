@@ -99,6 +99,14 @@ def inspect_editor(output, run_id):
             print("記事編集リンク名:", json.dumps(page.get_by_role("link").all_text_contents(), ensure_ascii=False))
             print("編集ボタンの識別子:", json.dumps(page.get_by_role("button").evaluate_all(
                 "els => els.map(el => ({text:el.textContent.trim().slice(0,50),label:el.getAttribute('aria-label'),title:el.getAttribute('title'),className:el.className,svg:el.querySelector('svg')?.getAttribute('class')}))"), ensure_ascii=False))
+            if not record.get('note_posted'):
+                note_id=re.search(r'/notes/(n[A-Za-z0-9]+)/',record['note_editor_url']).group(1)
+                response=context.request.get('https://note.com/api/v3/notes/'+note_id)
+                data=response.json().get('data',{}) if response.ok else {}
+                print('下書き画像メタデータ:',json.dumps({k:data.get(k) for k in
+                      ('status','is_my_note','is_draft','eyecatch','draft_eyecatch','eyecatch_url')},ensure_ascii=False))
+                print('画像要素:',json.dumps(page.locator('img').evaluate_all("els=>els.map(el=>({src:el.src,inBody:!!el.closest('.ProseMirror'),parent:el.parentElement.className,grandparent:el.parentElement.parentElement.className}))"),ensure_ascii=False))
+                return
             page.goto(record["note_url"], wait_until="domcontentloaded")
             page.get_by_role("heading", name=record["title"], exact=True).first.wait_for(state="visible")
             print("公開記事の管理ボタン:", json.dumps(page.get_by_role("button").evaluate_all(

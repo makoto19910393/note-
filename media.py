@@ -16,6 +16,7 @@ from api_costs import record_usage
 COMMON = '''ONLY ONE IMAGE. Single standalone image. No collage. No split panels containing other diagrams. Do not include the other diagrams.
 Create one independent landscape 16:9 Japanese AI tech news graphic. Black/deep navy background, neon cyan/blue, white and yellow bold Japanese lettering.
 Large sparse typography readable on a phone, generous safe margins, crisp high contrast. One theme only. Correct Japanese and accurate product names.
+Use a small generic AI orb or clean three-dimensional icons as accents when helpful; the explanation must remain easy to follow.
 No fabricated official UI, no invented statistics, no unsupported claims. Match the article's facts and distinguish the author's suggestions from product features.
 Render ONLY the provided exact Japanese labels and the specified diagram number. Do not add explanatory bullets, captions, dates, claims, or company statements.
 Do not invent details to fill space. Follow the label whitelist even when an older layout description asks for extra bullet points.
@@ -66,8 +67,10 @@ def call_image_api(payload):
 def review_image(data,item,article,config):
     schema={'type':'object','additionalProperties':False,
             'properties':{'approved':{'type':'boolean'},'issues':{'type':'string'},
-                          'observed_title':{'type':'string'}},
-            'required':['approved','issues','observed_title']}
+                          'observed_title':{'type':'string'},
+                          'observed_diagram_label':{'type':'string'},
+                          'unsupported_claims':{'type':'array','items':{'type':'string'}}},
+            'required':['approved','issues','observed_title','observed_diagram_label','unsupported_claims']}
     prompt={'article':article[:9000],'image_number':item['number'],'theme':item['theme'],
             'expected_labels':item['labels']}
     payload={'model':config['model'],'store':False,'reasoning':{'effort':'low'},
@@ -80,6 +83,9 @@ def review_image(data,item,article,config):
 追加された文字も全て読む。expected_labelsの重要なラベルと図解番号が欠けていれば不合格。
 図解の比較表や一つのフローのカードはコラージュとは扱わない。フォントや引用符の軽微な違いは許容する。
 0はサムネイルで図解番号は不要。1〜4は該当する図解①〜④の番号が必要。
+observed_diagram_labelには、画像に実際に読める「図解①」などを転記する。ない場合は空文字。
+入力のimage_numberやファイルの順番から補完せず、必ず画像の文字を読む。
+unsupported_claimsに本文や指定ラベルにない事実・断定を列挙する。なければ空配列。
 不合格の理由は短い日本語で具体的に書く。''',
              'input':[{'role':'user','content':[{'type':'input_text','text':json.dumps(prompt,ensure_ascii=False)},
                         {'type':'input_image','image_url':'data:image/png;base64,'+base64.b64encode(data).decode(),
@@ -95,6 +101,11 @@ def review_image(data,item,article,config):
         raise WorkflowError('画像の日本語・内容の確認が完了しませんでした。') from None
     if response.get('status')!='completed' or type(decision.get('approved')) is not bool:
         raise WorkflowError('画像の日本語・内容の確認が完了しませんでした。')
+    expected='図解'+'①②③④'[item['number']-1] if item['number'] else ''
+    if expected and expected not in decision.get('observed_diagram_label',''):
+        decision.update(approved=False,issues='指定の図解番号を大きく表示してください。'+decision.get('issues',''))
+    if decision.get('unsupported_claims'):
+        decision.update(approved=False,issues='本文にない断定を削除してください。'+ ' '.join(decision['unsupported_claims']))
     return decision
 
 
@@ -135,7 +146,9 @@ def ensure_images(output,config,run_id,checkpoint=None):
                 number=item['number']
                 label='サムネイル' if number==0 else '図解'+ '①②③④'[number-1]
                 labels=item['labels'] if number==0 else [label]+item['labels']
-                prompt=COMMON+f'\nThis image is {label}. The literal title must include {label}. Theme: {item["theme"]}.\nExact short Japanese labels: '+json.dumps(labels,ensure_ascii=False)+'\nLayout: '+item['prompt']+'\nDo not add any text beyond the exact labels above.'
+                title_rule=f'The literal title must include {label}.' if number else 'Create the article thumbnail. Do not render internal labels such as サムネイル.'
+                style=COMMON if 'higgsfield' not in record['title'].lower() else COMMON.replace('neon cyan/blue','neon yellow-green')
+                prompt=style+f'\n{title_rule} Theme: {item["theme"]}.\nExact short Japanese labels: '+json.dumps(labels,ensure_ascii=False)+'\nLayout: '+item['prompt']+'\nDo not add any text beyond the exact labels above.'
                 if item.get('review',{}).get('issues'):
                     prompt+='\nCorrect only this image based on these issues: '+item['review']['issues']
                 item.update(status='generating',attempts=item.get('attempts',0)+1,

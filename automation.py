@@ -193,6 +193,9 @@ personal_viewは正直な感想、faqは質問と回答、summaryはまとめ。
 sections合計3,000〜4,000文字を目安。各説明節400〜600字程度、感想300〜500字程度。
 contentに見出し・図解マーカー・図解挿入位置の一覧を重ねて書かない。images.anchorは空文字でよい。
 """
+    if config.get('articles_per_slot',1)>1:
+        instructions+='\n最近の記事と同じ発表・事件は選ばない。最初はpreferred_searchの領域で探し、未報道の新しい出来事が見つからなければ他社や国内のAIニュースへ切り替える。会社名だけを変えた同じ事件は不可。\n最近の既出の話題：'+json.dumps([x['title'] for x in state['articles'][-8:]],ensure_ascii=False)
+    preferences=['OpenAI以外も含む最新の主要AIニュース','Microsoft・NVIDIA・Metaなどの最新AIニュース','日本国内のAI導入・新製品・制度の最新ニュース']
     return {
         "model": os.environ.get("OPENAI_MODEL") or config["model"],
         "store": False,
@@ -202,6 +205,7 @@ contentに見出し・図解マーカー・図解挿入位置の一覧を重ね�
                              "author": config["author"],
                              "batch_article_index": config.get('_batch_index'),
                              "batch_article_count": config.get('articles_per_slot',1),
+                             "preferred_search":preferences[(config.get('_batch_index',1)-1)%3],
                              "previous_articles": previous}, ensure_ascii=False),
         "tools": [{"type": "web_search"}],
         "include": ["web_search_call.action.sources"],

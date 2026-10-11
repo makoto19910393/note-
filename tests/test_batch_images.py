@@ -93,7 +93,7 @@ class BatchTests(unittest.TestCase):
 class ImageTests(unittest.TestCase):
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory();self.output=Path(self.temp.name)
-        self.record={'number':1,'run_id':'test','path':'article.md','media_plan':'media/0001/plan.json'}
+        self.record={'number':1,'run_id':'test','title':'確認用の記事','path':'article.md','media_plan':'media/0001/plan.json'}
         (self.output/'article.md').write_text('本文')
         self.record['sha256']=hashlib.sha256('本文'.encode()).hexdigest()
         self.plan={'items':[{'number':i,'filename':f'{i}.png','status':'planned','attempts':0,'theme':'確認用','labels':['確認用'],'prompt':'one image','anchor':f'【ここに図解{"①②③④"[i-1]}を挿入｜確認用】' if i else ''} for i in range(5)]}
