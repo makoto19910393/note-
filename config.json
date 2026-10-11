@@ -719,5 +719,6 @@
   },
   "trend_selection": {
     "enabled": true
-  }
+  },
+  "research_first": true
 }

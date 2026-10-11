@@ -508,7 +508,12 @@ def run(slot, output, config, now=None, fixture=None, run_date=None, run_id=None
                     inputs["rejected_candidate"] = feedback
                     payload["input"] = json.dumps(inputs, ensure_ascii=False)
                     payload["instructions"] += "\n前回の候補は検証で不採用。理由を修正し、重複の場合は違う会社・製品の別の出来事を選ぶ。"
-                response = call_api(payload)
+                if config.get('research_first'):
+                    from news_research import research,write_from_research
+                    data,research_response=research(config,state,now,feedback)
+                    response=write_from_research(payload,data,research_response)
+                else:
+                    response = call_api(payload)
             try:
                 article, evidence = extract_article(response)
             except WorkflowError as error:
