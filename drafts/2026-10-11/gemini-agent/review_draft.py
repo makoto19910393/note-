@@ -60,14 +60,13 @@ with sync_playwright() as p:
             with page.expect_file_chooser() as chooser:
                 page.get_by_role('button',name='画像をアップロード',exact=False).click()
             chooser.value.set_files(str(ROOT / 'assets' / 'thumbnail.png'))
-            page.wait_for_timeout(1500)
-            print('cover_after_upload_buttons',json.dumps(page.get_by_role('button').all_text_contents(),ensure_ascii=False))
             dialog = page.get_by_role('dialog')
-            if dialog.count():
-                print('cover_dialog_buttons',json.dumps(dialog.get_by_role('button').all_text_contents(),ensure_ascii=False))
-            page.screenshot(path='/tmp/review-editor.png')
-            # The cover dialog's confirmation control is verified from this inspection first.
-            raise RuntimeError('見出し画像の確認ボタンを検証します。公開はしていません。')
+            dialog.get_by_role('button',name='保存',exact=True).wait_for(state='visible')
+            dialog.get_by_role('button',name='保存',exact=True).click()
+            dialog.wait_for(state='hidden')
+            page.get_by_role('button',name='下書き保存',exact=True).click()
+            saved['cover_uploaded']=True
+            MANIFEST.write_text(json.dumps(saved,ensure_ascii=False,indent=2)+'\n')
         for i in range(saved.get('uploaded_diagrams',0),4):
             marker = content.locator('p').filter(has_text=f'【ここに図解{"①②③④"[i]}を挿入')
             marker.click()
@@ -88,6 +87,22 @@ with sync_playwright() as p:
         content.wait_for(state='visible')
         assert content.locator('img').count()==4
         assert 'この記事について' in content.inner_text()
+        response=context.request.get('https://note.com/api/v3/notes/'+saved['note_id'])
+        if response.ok:
+            data=response.json().get('data',{})
+            print('saved_owner_metadata',json.dumps({k:data.get(k) for k in
+                ('status','is_my_note','can_read','is_draft','eyecatch','publish_at')},ensure_ascii=False))
+            if data.get('is_my_note') is not True:
+                raise RuntimeError('本人の下書きであることを確認できません。')
+            if not data.get('eyecatch'):
+                raise RuntimeError('見出し画像の保存を確認できません。')
+        public=browser.new_context()
+        try:
+            check=public.request.get('https://note.com/quiet_spirea2390/n/'+saved['note_id'])
+            if check.status not in (404,410):
+                raise RuntimeError('確認用記事の非公開状態を確認できません。')
+        finally:
+            public.close()
         saved['status']='draft_images_verified'
         MANIFEST.write_text(json.dumps(saved,ensure_ascii=False,indent=2)+'\n')
         print('verified_draft',json.dumps(saved,ensure_ascii=False))
