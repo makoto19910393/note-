@@ -91,7 +91,7 @@
       ],
       "prompt": "Two balanced large cards. Everyday icons. State this is the author’s explanation, not a company statement. No extra bullets.",
       "filename": "diagram245.png",
-      "status": "generated",
+      "status": "review_pending",
       "attempts": 2,
       "artifact_run_id": "38108203018",
       "sha256": "d2e45bd631fcac3b47a57304521f3454a74d6cfc60442015319d28bb914da775",
