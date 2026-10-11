@@ -100,7 +100,8 @@
       "note_editor_url": "https://editor.note.com/notes/n1b5e26bf3f65/edit",
       "media_upload": {
         "cover_uploaded": true,
-        "diagrams": 4
+        "diagrams": 4,
+        "verified": true
       },
       "cover_needs_refresh": false,
       "media_hashes": [
