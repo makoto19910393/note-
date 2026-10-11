@@ -49,9 +49,11 @@
         "https://www.techradar.com/pro/google-reveals-gemini-agents-a-single-universal-agent-for-work-which-will-even-get-their-own-gmail-account"
       ],
       "sha256": "4cef2e7edf757c088da98030a3a5d4417495edceb5a359a180b8d6c5c69d9a14",
-      "status": "publishing",
-      "note_posted": false,
-      "note_editor_url": "https://editor.note.com/notes/n58087f706191/edit"
+      "status": "published",
+      "note_posted": true,
+      "note_editor_url": "https://editor.note.com/notes/n58087f706191/edit",
+      "note_url": "https://note.com/quiet_spirea2390/n/n58087f706191",
+      "published_at": "2026-10-11T11:03:42.136743+09:00"
     }
   ]
 }
