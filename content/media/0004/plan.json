@@ -50,7 +50,7 @@
       ],
       "prompt": "16:9 図解①。背景は黒。上部に見出し「出来事の時系列①」。左から右へ矢印の流れで4つのボックス：『社内事象』→『調査・対応』→『解雇発表（10月上旬）』→『研究者の公開書簡と反論』。各ボックス下に短い要点3点ずつ（白文字）。アクセントにネオンシアンの線と黄色い丸印。",
       "filename": "diagram244.png",
-      "status": "generated",
+      "status": "review_pending",
       "attempts": 1,
       "artifact_run_id": "38107631755",
       "sha256": "1f708cc3f01126fbfca55a3f9af6dc572e642b85a68ba0e8f5924aacc36df8a8",
