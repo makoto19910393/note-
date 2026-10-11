@@ -106,6 +106,8 @@ def inspect_editor(output, run_id):
                 print('下書き画像メタデータ:',json.dumps({k:data.get(k) for k in
                       ('status','is_my_note','is_draft','eyecatch','draft_eyecatch','eyecatch_url')},ensure_ascii=False))
                 print('画像要素:',json.dumps(page.locator('img').evaluate_all("els=>els.map(el=>({src:el.src,inBody:!!el.closest('.ProseMirror'),parent:el.parentElement.className,grandparent:el.parentElement.parentElement.className}))"),ensure_ascii=False))
+                print('サムネイル操作要素:',json.dumps(page.locator('img').evaluate_all("els=>els.filter(el=>!el.closest('.ProseMirror')).map(el=>el.parentElement.parentElement.outerHTML.slice(0,6000))"),ensure_ascii=False))
+                print('画像操作アイコン:',json.dumps(page.locator('svg[aria-label]').evaluate_all("els=>els.map(el=>({label:el.getAttribute('aria-label'),button:el.closest('button')?.getAttribute('aria-label')}))"),ensure_ascii=False))
                 return
             page.goto(record["note_url"], wait_until="domcontentloaded")
             page.get_by_role("heading", name=record["title"], exact=True).first.wait_for(state="visible")
