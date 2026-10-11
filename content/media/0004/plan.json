@@ -128,24 +128,24 @@
       ],
       "prompt": "Three question cards and one prominent uncertainty caption. These are possible outcomes, not events that have occurred. No additional claims.",
       "filename": "diagram246.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 2,
       "artifact_run_id": "38108203018",
-      "sha256": "454384c721387882009512a73abb7b056b3d6b30b90a233873b172d8ce26d4df",
+      "sha256": "d5222e0c0d28ab3f67f37fdb4a249c6ceb7862322315ad98c9e0960ee1f42d4a",
       "width": 1536,
       "height": 864,
       "usage": {
-        "input_tokens": 264,
+        "input_tokens": 328,
         "input_tokens_details": {
           "image_tokens": 0,
-          "text_tokens": 264
+          "text_tokens": 328
         },
         "output_tokens": 280,
         "output_tokens_details": {
           "image_tokens": 280,
           "text_tokens": 0
         },
-        "total_tokens": 544
+        "total_tokens": 608
       },
       "review": {
         "approved": false,
