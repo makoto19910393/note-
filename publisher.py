@@ -179,7 +179,7 @@ def withdraw_duplicate(output, config, run_id):
 
 
 def publish(output, config, run_id, dry_run=False, before_publish=None):
-    if config["publisher"].get("manual_first_publication"):
+    if config.get("publisher", {}).get("manual_first_publication"):
         dry_run = True  # Explicit publish options cannot bypass the user review period.
     state_path = output / "state.json"
     state = json.loads(state_path.read_text())
