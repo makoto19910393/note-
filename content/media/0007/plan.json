@@ -133,7 +133,7 @@
       ],
       "prompt": "図解③。作業の危険度と人の確認を示す一つの概念図。具体的な数値は描かない。 指定のlabelsと該当する図解番号だけを正確に表示。実際の製品画面や導入済み仕様ではなく、発言・筆者の提案の説明図。濃紺、シアンの光、白と黄色の太い立体文字。",
       "filename": "diagram258.png",
-      "status": "review_pending",
+      "status": "ready",
       "attempts": 1,
       "artifact_run_id": "38134213834",
       "sha256": "36a7a1341909c52c367b830bfd775b81efa610ba993109ba58b4c3eac2ac116f",
@@ -151,6 +151,13 @@
           "text_tokens": 0
         },
         "total_tokens": 2279
+      },
+      "review": {
+        "approved": true,
+        "issues": "",
+        "observed_title": "危険度に応じた確認",
+        "observed_diagram_label": "図解③",
+        "unsupported_claims": []
       }
     },
     {
