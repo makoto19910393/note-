@@ -126,7 +126,7 @@
       ],
       "prompt": "濃紺背景、図解③見出しを左上。円グラフ風に『技術の限界』『運用の負荷』『法的懸念』を3分割で表示。各セグメントに短い補足テキストを黄色と白で配置。16:9。",
       "filename": "diagram250.png",
-      "status": "generated",
+      "status": "review_pending",
       "attempts": 1,
       "artifact_run_id": "38108879984",
       "sha256": "a5d85f1b070ad5b59976e186ba37027fcddd8f385867ec1aab773c27edde54ba",
