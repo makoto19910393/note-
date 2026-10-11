@@ -74,3 +74,4 @@ python -m unittest discover -s tests -vで保存、重複防止、参照資料�
 TLS証明書の検証は有効なまま使用します。
 
 検証で止めた原稿はcontent/reviewにrejected_not_publishedとして保存します。noteへ公開しません。
+完成候補が検証不合格の場合は一度だけ別候補を調べ直します。API通信エラー・残高不足では自動再請求しません。

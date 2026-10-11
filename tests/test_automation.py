@@ -60,6 +60,35 @@ class AutomationTests(unittest.TestCase):
         self.assertFalse(saved["articles"][0]["note_posted"])
         self.assertFalse((self.root / ".automation.lock").exists())
 
+    def test_invalid_candidate_is_preserved_and_alternate_gets_only_one_number(self):
+        invalid = response()
+        candidate = json.loads(invalid["output"][1]["content"][0]["text"])
+        candidate["body"] = "短い未検証の原稿"
+        invalid["output"][1]["content"][0]["text"] = json.dumps(candidate)
+        payload = {"input": "{}", "instructions": "test"}
+        with patch.object(a, "make_request", return_value=payload), patch.object(a, "call_api", side_effect=[invalid, response()]) as api:
+            with contextlib.redirect_stdout(io.StringIO()):
+                a.run("morning", self.root, CONFIG, NOW)
+        saved = json.loads((self.root / "state.json").read_text())
+        self.assertEqual(saved["next_number"], 2)
+        self.assertEqual(len(saved["articles"]), 1)
+        self.assertEqual(api.call_count, 2)
+        review = json.loads((self.root / "review" / "2026-10-10-morning-rejected.json").read_text())
+        self.assertEqual(review["status"], "rejected_not_published")
+
+    def test_two_invalid_candidates_stop_without_a_saved_article(self):
+        invalid = response()
+        candidate = json.loads(invalid["output"][1]["content"][0]["text"])
+        candidate["body"] = "短い未検証の原稿"
+        invalid["output"][1]["content"][0]["text"] = json.dumps(candidate)
+        payload = {"input": "{}", "instructions": "test"}
+        with patch.object(a, "make_request", return_value=payload), patch.object(a, "call_api", return_value=invalid) as api:
+            with contextlib.redirect_stdout(io.StringIO()), self.assertRaises(a.WorkflowError):
+                a.run("morning", self.root, CONFIG, NOW)
+        self.assertEqual(api.call_count, 2)
+        self.assertFalse((self.root / "state.json").exists())
+        self.assertFalse((self.root / ".automation.lock").exists())
+
     def test_failed_api_does_not_advance_number_or_leave_lock(self):
         with patch.object(a, "make_request", return_value={}), patch.object(a, "call_api", side_effect=a.WorkflowError("失敗")):
             with self.assertRaises(a.WorkflowError):
