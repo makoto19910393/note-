@@ -101,7 +101,15 @@
       "media_upload": {
         "cover_uploaded": false,
         "diagrams": 0
-      }
+      },
+      "cover_needs_refresh": true,
+      "media_hashes": [
+        "34017068bc0b2053354d520c150715afa1669e7d541174e1a78c53d4fbd805df",
+        "b899c930e95974ecc863be0566e8e16c41cb7a39e18764b08717ab7e77fd837f",
+        "d2e45bd631fcac3b47a57304521f3454a74d6cfc60442015319d28bb914da775",
+        "d5222e0c0d28ab3f67f37fdb4a249c6ceb7862322315ad98c9e0960ee1f42d4a",
+        "8f8229061d633e770f205424eff5da699a8de1c32ad4f5133c07258396cdbcac"
+      ]
     }
   ],
   "next_diagram": 248
