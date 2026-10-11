@@ -1,6 +1,6 @@
 # 【海外AI解説】韓国の銀行攻撃にClaudeの利用履歴――履歴書から人物像が浮上、犯人は未確定
 
-![サムネイル](https://assets.st-note.com/production/uploads/images/323326050/rectangle_large_type_2_293c2853e81018ac94b00c3dcac01ce5.png?fit=bounds&quality=85&width=1280)
+![サムネイル](https://assets.st-note.com/production/uploads/images/323328346/rectangle_large_type_2_7607cf241a47fcadaae57cc5d2967016.png?fit=bounds&quality=85&width=1280)
 
 AIを使っていた履歴から、攻撃者の人物像につながる手がかりが見つかった。しかも、その一つが履歴書の作成を頼んだ会話だったそうです。
 
