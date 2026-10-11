@@ -256,14 +256,15 @@
       ],
       "media_upload": {
         "cover_uploaded": true,
-        "diagrams": 4
+        "diagrams": 4,
+        "verified": true
       },
       "image_urls": [
-        "https://assets.st-note.com/production/uploads/images/323241101/rectangle_large_type_2_0064d404e14c297904e1b1bfe3fc3e9a.png?fit=bounds&quality=85&width=1280",
-        "https://assets.st-note.com/img/1791715820-6wnGlRskHiEFtNu0a3jYyLOb.png",
-        "https://assets.st-note.com/img/1791715826-HL8JuUy7Q53MpzCTbZvn2Vsg.png",
-        "https://assets.st-note.com/img/1791715832-A6UR1FLxymq5N2fC4jMOTgs9.png",
-        "https://assets.st-note.com/img/1791715838-OsbcwKARqFhLklQWfujJn5tN.png"
+        "https://assets.st-note.com/production/uploads/images/323326050/rectangle_large_type_2_293c2853e81018ac94b00c3dcac01ce5.png?fit=bounds&quality=85&width=1280",
+        "https://assets.st-note.com/img/1791729349-gGH4lLjhMF8Zbnci7TONPRrI.png",
+        "https://assets.st-note.com/img/1791729357-A9MlrFZ7LnTuqG6xpEefPQhg.png",
+        "https://assets.st-note.com/img/1791729364-mM0FQdSHZf9U7GoaqBLECcYO.png",
+        "https://assets.st-note.com/img/1791729370-yzadbEQhp2T0xBckKO8vIq19.png"
       ],
       "draft_source_sha256": "4d3c3291f45a528181d2be8a0b0421e8a31c7760de0c1d017b1763c694f80b8d",
       "authorized_draft_revision": {
