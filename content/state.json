@@ -248,7 +248,7 @@
       "note_editor_url": "https://editor.note.com/notes/nae194d380626/edit",
       "cover_needs_refresh": true,
       "media_hashes": [
-        "b69bbc45791b91249d6dcd4decd9993eb0e5d265611abe8c98966789437b6336",
+        "147ab9bf16d81b0148fdd5f87cba29982d54332479fdb7bc164e79501d87a89a",
         "8eefeec2544efeb78b83111827c729e4b1a70834ba527bcc99a51fe319364178",
         "a2831a261029a3738d00798ba7d32fcacb3b073c2edffd7132f604087f84450b",
         "37c390ac044c79e372df33ebf7b8ef9e93d2ec01c53fb6cb954585c8939d0503",
@@ -278,7 +278,8 @@
       "layout_revision": "2026-10-11-original-user-style-and-beginner-rewrite",
       "previous_owner_draft_backup_sha256": "fe6a51e4f597034a8502ac9b49b143b99b59ed3a4bbc429faa2b8bd495e58ce4",
       "owner_backup_for_source_sha256": "7c048fea0216f43e3d410a7236f10f3aa7f326f86855d86c7c316dbe73817963",
-      "original_owner_backup_run": "38147115014"
+      "original_owner_backup_run": "38147115014",
+      "pending_cover_url": "https://assets.st-note.com/production/uploads/images/323328346/rectangle_large_type_2_7607cf241a47fcadaae57cc5d2967016.png"
     },
     {
       "number": 7,
