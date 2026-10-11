@@ -88,9 +88,25 @@
       ],
       "prompt": "濃紺背景、図解タイトル『② LLMが担う仕事』。中央にLLMアイコン、周囲に矢印で『解析』『生成』『コマンド化』の3円を配置。各円に短い説明を白と黄色で。ネオンシアンのアクセント。16:9。",
       "filename": "diagram253.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "38131866970"
+      "artifact_run_id": "38131866970",
+      "sha256": "16c05b4daeea3820da10ccc5634da20ce4342cc9bd72019dfd1608ea07857ee4",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1955,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 447
+        },
+        "output_tokens": 280,
+        "output_tokens_details": {
+          "image_tokens": 280,
+          "text_tokens": 0
+        },
+        "total_tokens": 2235
+      }
     },
     {
       "number": 3,
