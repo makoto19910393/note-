@@ -1,5 +1,5 @@
 {
-  "next_number": 7,
+  "next_number": 8,
   "articles": [
     {
       "number": 1,
@@ -242,7 +242,39 @@
         "https://assets.st-note.com/img/1791715838-OsbcwKARqFhLklQWfujJn5tN.png"
       ],
       "draft_source_sha256": "4d3c3291f45a528181d2be8a0b0421e8a31c7760de0c1d017b1763c694f80b8d"
+    },
+    {
+      "number": 7,
+      "run_id": "2026-10-11-evening-2",
+      "title": "【海外AI解説】「AIが暴走した」で終わらせていい？――専門家が問い直す、人が任せた権限",
+      "created_at": "2026-10-11T20:00:42.466079+09:00",
+      "path": "articles/2026-10-11/0007-evening.md",
+      "sources": [
+        "https://www.techradar.com/pro/calling-an-ai-agent-rogue-is-a-dangerous-way-of-deflecting-blame-tenable-field-cto-on-the-implications-of-ai-agent-escapes-and-how-they-can-be-regulated",
+        "https://www.tenable.com/cybersecurity-guide/principles/ai-governance"
+      ],
+      "sha256": "c42457a50d959b5667dd84fc99b55d982cb692fc488334529e3be9688b8fd2ee",
+      "status": "draft",
+      "note_posted": false,
+      "media_plan": "media/0007/plan.json",
+      "source_details": [
+        {
+          "title": "‘Calling an AI agent “rogue” is a dangerous way of deflecting blame’: Tenable Field CTO on the implications of AI agent escapes and how they can be regulated",
+          "url": "https://www.techradar.com/pro/calling-an-ai-agent-rogue-is-a-dangerous-way-of-deflecting-blame-tenable-field-cto-on-the-implications-of-ai-agent-escapes-and-how-they-can-be-regulated",
+          "published_at": "2026-10-11T09:00:00+00:00",
+          "supports": "TechRadarの最新インタビュー。Bernard Montel氏の見解として、暴走という呼称への懸念、権限や実行環境の管理、危険度に応じた人の確認、読みやすい確認画面の必要性を紹介。法的責任の確定やTenable製品の実装済み仕様とは扱わない。"
+        },
+        {
+          "title": "What is AI governance? Frameworks, compliance, and controls | Tenable®",
+          "url": "https://www.tenable.com/cybersecurity-guide/principles/ai-governance",
+          "published_at": "2026-09-16T13:58:41-04:00",
+          "supports": "Tenable公式のAIガバナンス解説。組織のルール・責任・技術的な管理を組み合わせる考え方の背景資料。本文では具体的な製品機能や導入効果を断定しない。",
+          "updated_at": "2026-09-29T12:44:59-04:00"
+        }
+      ],
+      "manual_editorial_review": true,
+      "source_dates_verified_from_page_metadata": true
     }
   ],
-  "next_diagram": 256
+  "next_diagram": 260
 }
