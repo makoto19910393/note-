@@ -1,0 +1,140 @@
+{
+  "status": "rejected_not_published",
+  "reason": "記事タイトルが執筆ルールを満たしていません。",
+  "article": {
+    "title": "",
+    "sources": [],
+    "sections": {
+      "intro": "",
+      "conclusions": [
+        "",
+        "",
+        ""
+      ],
+      "explanations": [
+        {
+          "heading": "",
+          "content": ""
+        },
+        {
+          "heading": "",
+          "content": ""
+        },
+        {
+          "heading": "",
+          "content": ""
+        },
+        {
+          "heading": "",
+          "content": ""
+        }
+      ],
+      "personal_view": "",
+      "faq": [
+        {
+          "question": "",
+          "answer": ""
+        },
+        {
+          "question": "",
+          "answer": ""
+        },
+        {
+          "question": "",
+          "answer": ""
+        }
+      ],
+      "summary": ""
+    },
+    "images": [
+      {
+        "number": 0,
+        "anchor": "",
+        "theme": "",
+        "labels": [
+          ""
+        ],
+        "prompt": ""
+      },
+      {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜】",
+        "theme": "",
+        "labels": [
+          ""
+        ],
+        "prompt": ""
+      },
+      {
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜】",
+        "theme": "",
+        "labels": [
+          ""
+        ],
+        "prompt": ""
+      },
+      {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜】",
+        "theme": "",
+        "labels": [
+          ""
+        ],
+        "prompt": ""
+      },
+      {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜】",
+        "theme": "",
+        "labels": [
+          ""
+        ],
+        "prompt": ""
+      }
+    ],
+    "hashtags": [
+      "#AI",
+      "#人工知能",
+      "#ニュース",
+      "#mako",
+      "#note",
+      "#調査中",
+      "#最新情報",
+      "#要確認",
+      "#公開情報のみ",
+      "#執筆保留"
+    ],
+    "threads": "",
+    "body": "\n\n---\n\n## 30秒で結論\n\n- \n- \n- \n\n---\n\n## \n\n\n\n【ここに図解①を挿入｜】\n\n---\n\n## \n\n\n\n【ここに図解②を挿入｜】\n\n---\n\n## \n\n\n\n【ここに図解③を挿入｜】\n\n---\n\n## \n\n\n\n【ここに図解④を挿入｜】\n\n---\n\n## 私の正直な感想\n\n\n\n---\n\n## よくある質問\n\n### \n\n\n\n### \n\n\n\n### \n\n\n\n---\n\n## まとめ\n\n\n\n---\n\n## この記事について\n\n確認日：2026年10月11日（日本時間）。公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。\n\n---\n\n## 参考リンク\n\n"
+  },
+  "evidence": [
+    "https://about.fb.com/news/2026/08/the-future-is-for-everyone/amp",
+    "https://about.fb.com/news/2026/09/introducing-muse-small-business?trk=public_post_comment-text",
+    "https://about.fb.com/news/2026/09/launching-meta-enterprise-platform",
+    "https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026?trk=article-ssr-frontend-pulse_little-text-block",
+    "https://ai.meta.com/blog",
+    "https://apnews.com/article/32064fde8ad68c68f71d82336f7db525",
+    "https://apnews.com/article/f590b51073d8977a984c7c42b8f2a7a2",
+    "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot?trk=article-ssr-frontend-pulse_little-text-block",
+    "https://blogs.windows.com/windowsexperience/2026/10/07/building-windows-for-hybrid-intelligence?trk=article-ssr-frontend-pulse_little-text-block",
+    "https://investor.nvidia.com/files/doc_financials/2027/NVDA-2027-Q2-10Q-Final-including-exhibits.pdf",
+    "https://investor.nvidia.com/files/doc_presentations/2025/10/NVIDIA-2025-NDR-Deck-1.pdf",
+    "https://lmmarketcap.com/news/archive/2026/10",
+    "https://nvidianews.nvidia.com/_gallery/download_pdf/68d173273d633288cb44040b",
+    "https://nvidianews.nvidia.com/news?c=21926",
+    "https://s21.q4cdn.com/399680738/files/doc_financials/2026/q1/META-Q1-2026-Prepared-Remarks.pdf",
+    "https://techandbusiness.org/newswire/entity/nvidia",
+    "https://www.axios.com/2026/10/07/microsoft-looks-to-reboot-the-ai-pc-with-nvidia",
+    "https://www.axios.com/newsletters/axios-am-77e3ac65-2f83-4383-9a96-089a464209ae",
+    "https://www.crn.com/news/ai/2026/microsoft-s-ai-powered-windows-strategy-5-things-to-know",
+    "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q3/press-release-webcast",
+    "https://www.reddit.com/r/NVDA_Stock/comments/1x1biaq/daily_thread_and_discussion_20261009_friday",
+    "https://www.reddit.com/r/NVDA_Stock/comments/1x25jey/weekend_thread_and_discussion_20261010_to_20261011",
+    "https://www.reddit.com/r/microsoft/comments/1wxmihw/september_2026_monthly_microsoft_ai_update",
+    "https://www.t3.com/tech/computers-pcs/windows-is-getting-its-most-significant-upgrade-in-half-a-decade-heres-what-that-means",
+    "https://www.techradar.com/pro/microsoft-teams-will-soon-be-able-to-spot-third-party-deepfakes-on-your-morning-meeting",
+    "https://www.tomshardware.com/tech-industry/artificial-intelligence/spacex-reportedly-seeking-usd40-billion-debt-package-for-nvidia-ai-hardware-massive-raise-could-fund-roughly-360-000-vera-rubin-gpus-across-5-000-nvl72-racks",
+    "https://www.youtube.com/watch?v=jw_o0xr8MWU"
+  ]
+}
