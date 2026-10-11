@@ -88,8 +88,9 @@
       ],
       "prompt": "濃紺背景、図解②見出しを配置。3列の比較表風ビジュアル。左列『検出のみ』中列『検出＋ポリシー』右列『検出＋人レビュー』。各列にアイコン（虫眼鏡、盾、人物）と短い要点3つをネオンシアンで表示。16:9。",
       "filename": "diagram249.png",
-      "status": "planned",
-      "attempts": 0
+      "status": "generating",
+      "attempts": 1,
+      "artifact_run_id": "38108879984"
     },
     {
       "number": 3,
