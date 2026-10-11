@@ -61,6 +61,8 @@ def batch_run_ids(config,state,date,slot):
 def run_batch(output,config,actual_now,scheduled,slot,mode,checkpoint=None,run_ids=None):
     from publisher import publish
     from media import ensure_images
+    if config.get('publisher',{}).get('manual_first_publication') and mode=='publish':
+        mode='draft'
     checkpoint=checkpoint or persist_before_publish
     state_path=output/'state.json'
     state=json.loads(state_path.read_text()) if state_path.exists() else {'articles':[]}
@@ -77,6 +79,11 @@ def run_batch(output,config,actual_now,scheduled,slot,mode,checkpoint=None,run_i
             record=pick_article(current,run_id)
             if record.get('note_posted'):
                 print('公開済みのため再生成・再投稿しません:',run_id)
+                continue
+            if (mode=='draft' and record.get('status')=='draft_saved' and
+                    record.get('draft_source_sha256')==record.get('sha256') and
+                    record.get('media_upload',{}).get('verified')):
+                print('確認済みの下書きを保持します。note上での手動編集を上書きしません:',run_id)
                 continue
             if record.get('media_plan'):
                 ensure_images(output,config,run_id,checkpoint)

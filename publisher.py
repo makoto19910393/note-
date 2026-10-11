@@ -314,6 +314,7 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
                 stage='画像5枚の挿入と保存'
                 upload_images(page,context,output,state_path,state,record,plan,before_publish)
             if dry_run:
+                update_record(state_path,state,record,draft_source_sha256=record['sha256'])
                 print('note下書きの本文と画像を保存・確認しました。公開操作は行っていません。')
                 return
             stage = "公開設定画面の確認"

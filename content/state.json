@@ -124,7 +124,7 @@
     },
     {
       "number": 5,
-      "run_id": "2026-10-11-morning-2",
+      "run_id": "2026-10-11-evening-1",
       "title": "【海外AI解説】Teamsで「その顔、本物？」を確かめる時代へ――AIなりすまし対策、11月提供予定",
       "created_at": "2026-10-11T12:35:54.934262+09:00",
       "path": "articles/2026-10-11/0005-morning.md",
@@ -155,13 +155,13 @@
           "title": "Microsoft Teams will soon be able to spot third-party deepfakes on your morning meeting (TechRadar)",
           "url": "https://www.techradar.com/pro/microsoft-teams-will-soon-be-able-to-spot-third-party-deepfakes-on-your-morning-meeting",
           "published_at": "2026-10-09T13:05:00+00:00",
-          "supports": "直接読み直した報道。合成検出と身元に注意を促す保護は別の計画。検出信号連携と11月提供予定。詳細な判定方法や料金は確認できない。"
+          "supports": "直接読み直した報道。2026-10-09T13:05:00+00:00の公開日時をページ内メタデータでも確認。二つの計画と11月予定。"
         },
         {
           "title": "Microsoft Teams to get support for third-party deepfake detection (BleepingComputer)",
           "url": "https://www.bleepingcomputer.com/news/security/microsoft-teams-to-add-third-party-deepfake-detection-impersonation-protection/",
           "published_at": "2026-10-08T00:00:00+00:00",
-          "supports": "直接読み直した報道。2026-10-09T13:05:00+00:00の公開日時をページ内メタデータでも確認。二つの計画と11月予定。"
+          "supports": "直接読み直した報道。合成検出と身元に注意を促す保護は別の計画。検出信号連携と11月提供予定。詳細な判定方法や料金は確認できない。"
         }
       ],
       "layout_revision": "2026-10-11-user-review",
@@ -185,7 +185,10 @@
         "https://assets.st-note.com/img/1791712946-aKsvbN6w71SdxChgBpko8Jy3.png",
         "https://assets.st-note.com/img/1791712953-QGXdWbKEzfw7OrexlBtiaDh8.png",
         "https://assets.st-note.com/img/1791712959-QTcwzMVHFCyve7PmZiEuYn01.png"
-      ]
+      ],
+      "draft_source_sha256": "b0e28e70fd804410c42f6f7db4315c25190e55a972fa4dbe3d3e686b568917bb",
+      "rescheduled_from": "2026-10-11-morning-2",
+      "saved_draft_verification_run": "38130450495"
     }
   ],
   "next_diagram": 252

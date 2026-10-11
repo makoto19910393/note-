@@ -102,7 +102,7 @@ def reader_insights(dashboard):
             if len(cells)!=len(headers):continue
             row=dict(zip(headers,cells))
             if '公開中' not in row['タイトル']:continue
-            title=row['タイトル'].split('\n',1)[0].strip()
+            title=row['タイトル'].strip().split('\n',1)[0].strip()
             def count(name):
                 value=row.get(name,'').strip().replace(',','')
                 return int(value) if value.isdecimal() else 0
