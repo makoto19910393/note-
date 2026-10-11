@@ -1,0 +1,33 @@
+name: 過去記事の文章と画像を調査
+on:
+  workflow_dispatch:
+    inputs:
+      public_key:
+        description: 調査資料を暗号化するための公開鍵（秘密鍵を入力しない）
+        type: string
+        required: true
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: ブラウザを準備
+        run: |
+          python -m pip install -r requirements-publish.txt
+          python -m playwright install --with-deps chromium
+      - name: 本人の記事を読む（ログやリポジトリに本文を出さない）
+        env:
+          NOTE_STORAGE_STATE: ${{ secrets.NOTE_STORAGE_STATE }}
+          RESEARCH_PUBLIC_KEY: ${{ github.event.inputs.public_key }}
+        run: xvfb-run -a python research_notes.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: private-note-corpus-encrypted
+          path: /tmp/private-note-corpus/
+          retention-days: 1
