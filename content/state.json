@@ -220,7 +220,16 @@
       ],
       "editorial_review": "Title corrected to distinguish attacker tools from bank targets; primary and secondary sources reread; identity remains unconfirmed.",
       "manual_editorial_review": true,
-      "note_editor_url": "https://editor.note.com/notes/nae194d380626/edit"
+      "note_editor_url": "https://editor.note.com/notes/nae194d380626/edit",
+      "cover_needs_refresh": true,
+      "media_hashes": [
+        "ceb1d5b29143216919f360420bb15919e4c6ea5a56d74b1286d063e86eb2c281",
+        "b7179a39e93145dd08d02961ef53fee78075d12bb481e6e774ec5048d2433297",
+        "6117c76ec8fcf61d47937fc7a745ac0e494ea1c512d80528bb85a4a93eb07d8c",
+        "23b22659b44dbbd439cf12b4f2cef3e7bee5d9099994a01f358cbe60a549ef9f",
+        "32478e84ed971ea3285175d095468bbf6ee3b9dab22cb1cd22656d780e2a767d"
+      ],
+      "pending_cover_url": "https://assets.st-note.com/production/uploads/images/323241101/rectangle_large_type_2_0064d404e14c297904e1b1bfe3fc3e9a.png"
     }
   ],
   "next_diagram": 256
