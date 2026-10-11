@@ -90,7 +90,7 @@
       ],
       "prompt": "図解②を大きく表示。立体的な球体AIの周りに3つのシアン発光カード。文字はlabelsの指定表現だけ。下に役割のイメージと表示。別の言い換えや説明文を追加しない。",
       "filename": "diagram253.png",
-      "status": "review_pending",
+      "status": "rejected",
       "attempts": 3,
       "artifact_run_id": "38132586766",
       "sha256": "4db0df9031477fc8733f34362022dad1ab9b0c437a40a30e25e7efa5f472f9b3",
@@ -111,8 +111,8 @@
       },
       "review": {
         "approved": false,
-        "issues": "図解内の重要ラベルが記事のexpected_labelsと一致していません（期待: プロンプト生成、解析支援、行動計画化 → 画像: 「解析」「生成」「コマンド化」）。図解番号は正しいが、期待ラベルの語句が欠けているため不合格。",
-        "observed_title": "② LLMが担う仕事",
+        "issues": "画像に図解①と図解②が両方含まれるコラージュになっている（1画像1テーマの要件違反）。期待ラベルのうち「指示を作る」「情報を読む」「次の作業を考える」が画像内に見えない（重要ラベル欠落）。",
+        "observed_title": "LLMの役割",
         "observed_diagram_label": "図解②",
         "unsupported_claims": []
       },
