@@ -692,5 +692,6 @@
   "slots": {
     "morning": "07:00",
     "evening": "19:00"
-  }
+  },
+  "semantic_duplicate_check": true
 }

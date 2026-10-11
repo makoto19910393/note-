@@ -87,6 +87,10 @@ def inspect_editor(output, run_id):
             page.locator("textarea[placeholder='記事タイトル'], input[placeholder='記事タイトル']").first.wait_for(state="visible")
             print("記事編集ボタン:", json.dumps(page.get_by_role("button").all_text_contents(), ensure_ascii=False))
             print("記事編集リンク名:", json.dumps(page.get_by_role("link").all_text_contents(), ensure_ascii=False))
+            page.goto(record["note_url"], wait_until="domcontentloaded")
+            page.get_by_role("heading", name=record["title"], exact=True).first.wait_for(state="visible")
+            print("公開記事の管理ボタン:", json.dumps(page.get_by_role("button").evaluate_all(
+                "els => els.map(el => ({text:el.textContent.trim().slice(0,80),label:el.getAttribute('aria-label'),title:el.getAttribute('title')}))"), ensure_ascii=False))
         finally:
             browser.close()
 

@@ -128,6 +128,19 @@ class AutomationTests(unittest.TestCase):
         with self.assertRaises(a.WorkflowError):
             self.validate(response())
 
+    def test_rejects_same_announcement_at_a_different_site_path(self):
+        data = response()
+        article = json.loads(data["output"][1]["content"][0]["text"])
+        announcement = "https://example.org/news/investigating-unintended-model-actions"
+        article["body"] = article["body"].replace(article["sources"][0]["url"], announcement)
+        article["sources"][0]["url"] = announcement
+        data["output"][0]["action"]["sources"] = article["sources"]
+        data["output"][1]["content"][0]["text"] = json.dumps(article)
+        self.state["articles"] = [{"title": "別の表現のタイトル", "sources": [
+            "https://example.org/research/investigating-unintended-model-actions"]}]
+        with self.assertRaises(a.WorkflowError):
+            self.validate(data)
+
     def test_rolls_back_new_draft_if_state_save_fails(self):
         article, _ = a.extract_article(response())
         with patch.object(a, "atomic_json", side_effect=OSError("disk error")):
