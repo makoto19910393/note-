@@ -283,7 +283,11 @@
         "36a7a1341909c52c367b830bfd775b81efa610ba993109ba58b4c3eac2ac116f",
         "2f8eff094654878b0f1fa262a3c4d0c154a006feb381e2fa158be9f1a3dbbc9c"
       ],
-      "pending_cover_url": "https://assets.st-note.com/production/uploads/images/323247752/rectangle_large_type_2_dd5f460c1aa1f356731ab9567348d825.png"
+      "pending_cover_url": "https://assets.st-note.com/production/uploads/images/323247752/rectangle_large_type_2_dd5f460c1aa1f356731ab9567348d825.png",
+      "media_upload": {
+        "cover_uploaded": true,
+        "diagrams": 0
+      }
     }
   ],
   "next_diagram": 260
