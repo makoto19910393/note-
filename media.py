@@ -70,7 +70,11 @@ def call_image_api(payload):
 def style_reference(config, title, number):
     settings=config.get('images',{})
     field='higgsfield_style_reference_urls' if 'higgsfield' in title.lower() else 'style_reference_urls'
-    return settings.get(field,{}).get('thumbnail' if number==0 else 'diagram')
+    references=settings.get(field,{})
+    if number:
+        matching=references.get('diagrams',{}).get(str(number))
+        if matching:return matching
+    return references.get('thumbnail' if number==0 else 'diagram')
 
 
 def review_image(data,item,article,config):
