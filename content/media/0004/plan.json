@@ -87,8 +87,9 @@
       ],
       "prompt": "16:9 図解②。背景は濃紺。中央に“対立”を示す天秤図（左右で対比）。左に『機密管理』の要点3行、右に『安全研究』の要点3行。天秤の下に短い注釈『手続き vs 公開性』を黄色文字で配置。ネオンシアンで強調線。",
       "filename": "diagram245.png",
-      "status": "planned",
-      "attempts": 0
+      "status": "generating",
+      "attempts": 1,
+      "artifact_run_id": "38107631755"
     },
     {
       "number": 3,
