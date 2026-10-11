@@ -217,7 +217,8 @@ class AutomationTests(unittest.TestCase):
             command.return_value.returncode = 1
             with self.assertRaisesRegex(a.WorkflowError, "公開操作は行っていません"):
                 persist_before_publish()
-            self.assertEqual(command.call_count, 1)
+            self.assertEqual(command.call_count, 2)
+            self.assertFalse(any(call.args[0][1] in ('commit', 'push') for call in command.call_args_list))
 
     def test_delayed_job_retains_slot_date_but_checks_actual_freshness(self):
         with patch.object(a, "call_api", return_value=response()), patch.object(a, "make_request", return_value={}), contextlib.redirect_stdout(io.StringIO()):

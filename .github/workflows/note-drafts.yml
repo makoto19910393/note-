@@ -37,6 +37,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
 
 concurrency:
   group: note-drafts
@@ -45,8 +46,10 @@ concurrency:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 60
     env:
+      GH_TOKEN: ${{ github.token }}
+      NOTE_USAGE_DIR: content/usage
       REQUESTED_NOTE_MODE: ${{ github.event.inputs.mode || vars.NOTE_MODE || 'auto' }}
     steps:
       - uses: actions/checkout@v4
@@ -111,7 +114,8 @@ jobs:
           git config user.name 'note-draft-bot'
           git config user.email 'note-draft-bot@users.noreply.github.com'
           git commit -m '朝・夜のnote原稿を保存'
-          git push
+          git pull --rebase origin main
+          git push origin HEAD:main
       - name: 原稿をダウンロードできる形で保管
         if: always()
         uses: actions/upload-artifact@v4

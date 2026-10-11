@@ -50,6 +50,16 @@ def verify_public_article(browser, config, record):
                     state="visible", timeout=5000)
                 page.wait_for_function("""() => ['30秒で結論', '私の正直な感想', '参考リンク']
                     .every(text => document.body.innerText.includes(text))""", timeout=5000)
+                if record.get('media_plan'):
+                    response=public.request.get('https://note.com/api/v3/notes/'+match.group(1))
+                    data=response.json().get('data',{}) if response.ok else {}
+                    if data.get('status')!='published' or not data.get('eyecatch') or data.get('price') not in (0,None):
+                        raise WorkflowError('無料公開とサムネイルを確認できません。')
+                    article=page.locator('article')
+                    if not article.count():
+                        raise WorkflowError('公開本文を確認できません。')
+                    if article.locator('img').count()<4:
+                        raise WorkflowError('公開本文の図解4枚を確認できません。')
                 return url
             except Exception:
                 continue
@@ -175,6 +185,10 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
     if hashlib.sha256(data).hexdigest() != record["sha256"]:
         raise WorkflowError("原稿が生成後に変更されています。確認が必要です。")
     body = data.decode().split("\n", 1)[1].strip()
+    from media import verified_media
+    from publisher_images import prepare_body, owner_draft, upload_images
+    plan=verified_media(output,record)
+    body=prepare_body(body,plan)
     raw_session = os.environ.get("NOTE_STORAGE_STATE")
     storage = None
     if raw_session:
@@ -233,18 +247,32 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
             content.wait_for(state="visible")
             if title.count() != 1 or content.count() != 1:
                 raise WorkflowError("noteの編集画面を一意に特定できません。公開せず停止します。")
+            if editor_url:
+                note_id=re.search(r'/notes/(n[A-Za-z0-9]+)/',editor_url+'/').group(1)
+                owner_draft(context,note_id)
+            existing_images=content.locator('img').count()
+            if existing_images and not plan:
+                raise WorkflowError('予定外の画像があります。既存下書きの上書きを止めます。')
+            if existing_images and title.input_value()!=record['title']:
+                raise WorkflowError('画像付き下書きのタイトルが一致しません。')
+            if not existing_images:
+                should_fill=True
+            else:
+                should_fill=False
             title.fill(record["title"])
             stage = "本文入力"
             # Paste through the browser so the editor receives its normal change events.
-            page.evaluate("""async ({html, text}) => {
+            if should_fill:
+                page.evaluate("""async ({html, text}) => {
                 await navigator.clipboard.write([new ClipboardItem({
                     'text/html': new Blob([html], {type: 'text/html'}),
                     'text/plain': new Blob([text], {type: 'text/plain'})
                 })]);
             }""", {"html": html, "text": body})
-            content.click()
-            page.keyboard.press("ControlOrMeta+A")
-            page.keyboard.press("ControlOrMeta+V")
+                content.click()
+                content.evaluate("""el=>{el.focus();const r=document.createRange();r.selectNodeContents(el);
+                    const s=window.getSelection();s.removeAllRanges();s.addRange(r);} """)
+                page.keyboard.press("ControlOrMeta+V")
             # Confirm text reaches the editor rather than treating a click as success.
             page.wait_for_function("""({selector, minimum}) => {
                 const el = document.querySelector(selector);
@@ -257,7 +285,18 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
             if not match or match.group(1) == "new":
                 raise WorkflowError("下書きの保存先を確認できません。公開せず停止します。")
             editor_url = "https://editor.note.com/notes/" + match.group(1) + "/edit"
+            page.get_by_role('button',name='下書き保存',exact=True).click()
             update_record(state_path, state, record, status="draft_saved", note_editor_url=editor_url)
+            if before_publish:
+                before_publish()
+            page.goto(editor_url,wait_until='domcontentloaded')
+            content.wait_for(state='visible')
+            if plan:
+                stage='画像5枚の挿入と保存'
+                upload_images(page,context,output,state_path,state,record,plan,before_publish)
+            if dry_run:
+                print('note下書きの本文と画像を保存・確認しました。公開操作は行っていません。')
+                return
             stage = "公開設定画面の確認"
             page.get_by_role("button", name=ui["proceed_button"], exact=True).click()
             publish_button = page.get_by_role("button", name=ui["publish_button"], exact=True)

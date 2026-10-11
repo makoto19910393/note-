@@ -10,3 +10,4 @@ note-session*.json
 browser-check/
 
 .private-editorial/
+content/media/**/*.png

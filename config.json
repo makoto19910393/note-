@@ -5,7 +5,7 @@
   "note_profile": "https://note.com/quiet_spirea2390",
   "max_news_age_hours": 48,
   "max_tool_calls": 5,
-  "min_article_chars": 1200,
+  "min_article_chars": 1800,
   "previous_topics": [
     {
       "title": "Higgsfieldはなぜ人気？397回生成・21機能使った僕が「結局これを選ぶ理由」を本音レビュー【第4弾】",
@@ -693,5 +693,16 @@
     "morning": "07:00",
     "evening": "19:00"
   },
-  "semantic_duplicate_check": true
+  "semantic_duplicate_check": true,
+  "articles_per_slot": 3,
+  "max_article_chars": 7000,
+  "images": {
+    "enabled": true,
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1536x864",
+    "max_attempts": 2,
+    "first_diagram": 244,
+    "ui_verified": false
+  }
 }
