@@ -14,6 +14,7 @@ import os
 from pathlib import Path
 import re
 import sys
+import time
 from urllib.parse import urlsplit
 from zoneinfo import ZoneInfo
 
@@ -30,6 +31,47 @@ def pick_article(state, run_id):
     if len(matches) != 1:
         raise WorkflowError("指定された時間枠の原稿が一意に見つかりません。")
     return matches[0]
+
+
+def verify_public_article(browser, config, record):
+    match = re.search(r"/notes/(n[A-Za-z0-9]+)/", record.get("note_editor_url", "") + "/")
+    if not match:
+        raise WorkflowError("公開記事の確認先を特定できません。")
+    username = urlsplit(config["note_profile"]).path.strip("/")
+    url = "https://note.com/" + username + "/n/" + match.group(1)
+    public = browser.new_context()
+    page = public.new_page()
+    deadline = time.monotonic() + 60
+    try:
+        while time.monotonic() < deadline:
+            try:
+                page.goto(url, wait_until="domcontentloaded", timeout=15000)
+                page.get_by_role("heading", name=record["title"], exact=True).first.wait_for(
+                    state="visible", timeout=5000)
+                page.wait_for_function("""() => ['30秒で結論', '私の正直な感想', '参考リンク']
+                    .every(text => document.body.innerText.includes(text))""", timeout=5000)
+                return url
+            except Exception:
+                continue
+        raise WorkflowError("ログインなしで記事のタイトルと本文を確認できません。")
+    finally:
+        public.close()
+
+
+def verify_saved_publication(output, config, run_id):
+    from playwright.sync_api import sync_playwright
+    state_path = output / "state.json"
+    state = json.loads(state_path.read_text())
+    record = pick_article(state, run_id)
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=os.environ.get("NOTE_HEADLESS", "true") != "false")
+        try:
+            url = verify_public_article(browser, config, record)
+        finally:
+            browser.close()
+    update_record(state_path, state, record, status="published", note_posted=True,
+                  note_url=url, public_verified_at=datetime.now(ZoneInfo(config["timezone"])).isoformat())
+    print("再投稿せず、noteの公開済み記事を確認しました:", url)
 
 
 def publish(output, config, run_id, dry_run=False, before_publish=None):
@@ -145,15 +187,9 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
                 before_publish()
             try:
                 publish_button.click()
-                username = urlsplit(config["note_profile"]).path.strip("/")
-                page.wait_for_url(re.compile(r"https://note\.com/" + re.escape(username) + r"/n/n[a-zA-Z0-9]+(?:[?#].*)?$"), timeout=60000)
-                published_url = page.url
-                # A second, unauthenticated context must see the title: a redirect alone is insufficient.
-                public = browser.new_context()
-                public_page = public.new_page()
-                public_page.goto(published_url, wait_until="domcontentloaded")
-                public_page.get_by_role("heading", name=record["title"], exact=True).first.wait_for(state="visible")
-                public.close()
+                # note can stay on the editor after posting. Verify the known article
+                # in a separate unauthenticated context, independent of redirects.
+                published_url = verify_public_article(browser, config, record)
             except Exception:
                 update_record(state_path, state, record, status="publication_uncertain")
                 raise WorkflowError("公開操作後の確認に失敗しました。重複防止のため自動再投稿を止めています。") from None
@@ -193,6 +229,7 @@ def main():
     parser.add_argument("--output", type=Path, default=ROOT / "content")
     parser.add_argument("--run-id", required=True, help="例: 2026-10-10-morning")
     parser.add_argument("--draft-only", action="store_true")
+    parser.add_argument("--verify-only", action="store_true", help="再投稿せず公開済み記事を確認する")
     args = parser.parse_args()
     lock = args.output / ".publisher.lock"
     locked = False
@@ -201,7 +238,10 @@ def main():
         os.close(fd)
         locked = True
         config = json.loads((ROOT / "config.json").read_text())
-        publish(args.output, config, args.run_id, args.draft_only)
+        if args.verify_only:
+            verify_saved_publication(args.output, config, args.run_id)
+        else:
+            publish(args.output, config, args.run_id, args.draft_only)
     except (WorkflowError, OSError, ValueError, KeyError, ImportError) as e:
         print("note投稿を停止しました:", e, file=sys.stderr)
         return 1

@@ -21,6 +21,10 @@ on:
         description: 既存原稿を使う場合のみ指定（例 2026-10-10-morning）
         type: string
         required: false
+      verify_only:
+        description: 再投稿せず既存記事の公開状態だけを確認
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -73,8 +77,11 @@ jobs:
           NOTE_PASSWORD: ${{ secrets.NOTE_PASSWORD }}
           NOTE_HEADLESS: 'false'
           EXISTING_RUN_ID: ${{ github.event.inputs.run_id }}
+          VERIFY_PUBLIC_ONLY: ${{ github.event.inputs.verify_only || 'false' }}
         run: |
-          if [ -n "$EXISTING_RUN_ID" ]; then
+          if [ "$VERIFY_PUBLIC_ONLY" = "true" ]; then
+            xvfb-run -a python publisher.py --run-id "$EXISTING_RUN_ID" --verify-only
+          elif [ -n "$EXISTING_RUN_ID" ]; then
             xvfb-run -a python run_workflow.py --run-id "$EXISTING_RUN_ID"
           else
             xvfb-run -a python run_workflow.py --slot "$RUN_SLOT"
