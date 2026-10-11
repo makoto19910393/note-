@@ -18,7 +18,7 @@ on:
         default: auto
         options: [auto, disabled, draft, publish]
       run_id:
-        description: 既存原稿を使う場合のみ指定（例 2026-10-10-morning）
+        description: 既存原稿ID（複数はカンマ区切り・最大6件。新規作成しない）
         type: string
         required: false
       verify_only:
@@ -123,4 +123,12 @@ jobs:
         with:
           name: note-drafts-${{ github.run_id }}
           path: content/
+          retention-days: 7
+      - name: 改稿前の下書きを暗号化して保管
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: original-drafts-encrypted-${{ github.run_id }}
+          path: /tmp/draft-revision-backup/
+          if-no-files-found: ignore
           retention-days: 7

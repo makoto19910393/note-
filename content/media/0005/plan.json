@@ -4,282 +4,406 @@
     {
       "number": 0,
       "anchor": "",
-      "theme": "その顔、本物？",
-      "labels": [
-        "Microsoft Teams",
-        "その顔、本物？",
-        "AIなりすまし対策へ",
-        "外部の検出ツールと連携",
-        "2026年11月 提供予定"
-      ],
-      "prompt": "黒と濃紺背景、ネオンシアンの太い見出し文字で「Teamsがディープフェイク警告」を中央に配置。下部に小さく日付『2026年11月予定』を白で配置。視覚はニュース見出し風、スマホで読みやすい大きめ文字、16:9。",
+      "theme": "Microsoft TeamsがAIなりすまし対策へ――会議の顔と声を調べる、11月提供予定",
+      "labels": [],
+      "prompt": "過去の本人の対応画像を直接見本としてimage_genツールで生成。濃紺・シアンの立体感、白黄色の大文字、短い説明。全テキストと企業ロゴ・役割・矢印を目視校閲。",
       "filename": "thumbnail.png",
       "status": "ready",
-      "attempts": 1,
-      "sha256": "c9a457978631aae214b830ee657517743fffa60d0668645a64e364fc6c627c66",
+      "attempts": 2,
+      "sha256": "f6ecb7ede1dde2baf6422a37593e1e608db9262c81be9ca87c628c58747248c4",
       "width": 1672,
       "height": 941,
-      "usage": {
-        "input_tokens": 339,
-        "input_tokens_details": {
-          "image_tokens": 0,
-          "text_tokens": 339
+      "previous_generation": {
+        "number": 0,
+        "anchor": "",
+        "theme": "その顔、本物？",
+        "labels": [
+          "Microsoft Teams",
+          "その顔、本物？",
+          "AIなりすまし対策へ",
+          "外部の検出ツールと連携",
+          "2026年11月 提供予定"
+        ],
+        "prompt": "黒と濃紺背景、ネオンシアンの太い見出し文字で「Teamsがディープフェイク警告」を中央に配置。下部に小さく日付『2026年11月予定』を白で配置。視覚はニュース見出し風、スマホで読みやすい大きめ文字、16:9。",
+        "filename": "thumbnail.png",
+        "status": "ready",
+        "attempts": 1,
+        "sha256": "c9a457978631aae214b830ee657517743fffa60d0668645a64e364fc6c627c66",
+        "width": 1672,
+        "height": 941,
+        "usage": {
+          "input_tokens": 339,
+          "input_tokens_details": {
+            "image_tokens": 0,
+            "text_tokens": 339
+          },
+          "output_tokens": 280,
+          "output_tokens_details": {
+            "image_tokens": 280,
+            "text_tokens": 0
+          },
+          "total_tokens": 619
         },
-        "output_tokens": 280,
-        "output_tokens_details": {
-          "image_tokens": 280,
-          "text_tokens": 0
+        "review": {
+          "approved": true,
+          "reviewed_by": "Codex visual inspection",
+          "issues": "",
+          "observed_diagram_label": "",
+          "unsupported_claims": []
         },
-        "total_tokens": 619
+        "previous_generation": {
+          "status": "ready",
+          "attempts": 1,
+          "artifact_run_id": "38108879984",
+          "sha256": "48d16faa2037a6b4c5c7df50fd965e3f22935aed2f1d7cadc85da659379ae98a",
+          "review": {
+            "approved": true,
+            "issues": "",
+            "observed_title": "Teamsがディープフェイク警告",
+            "observed_diagram_label": "",
+            "unsupported_claims": []
+          }
+        },
+        "generation_method": "image_gen_with_style_reference",
+        "visual_review_at": "2026-10-11T19:01:14.658558+09:00"
       },
+      "generation_method": "image_gen_with_original_user_image_reference",
+      "generated_source_filename": "exec-6fa15f32-3be4-4353-afb6-49dd36805db6.png",
+      "visual_review_at": "2026-10-11T23:03:51.562484+09:00",
       "review": {
         "approved": true,
         "reviewed_by": "Codex visual inspection",
-        "issues": "",
         "observed_diagram_label": "",
+        "issues": "",
         "unsupported_claims": []
       },
-      "previous_generation": {
-        "status": "ready",
-        "attempts": 1,
-        "artifact_run_id": "38108879984",
-        "sha256": "48d16faa2037a6b4c5c7df50fd965e3f22935aed2f1d7cadc85da659379ae98a",
-        "review": {
-          "approved": true,
-          "issues": "",
-          "observed_title": "Teamsがディープフェイク警告",
-          "observed_diagram_label": "",
-          "unsupported_claims": []
-        }
-      },
-      "generation_method": "image_gen_with_style_reference",
-      "visual_review_at": "2026-10-11T19:01:14.658558+09:00"
+      "tool_correction": {
+        "previous_generated_source_filename": "exec-cccdae55-cf09-46d9-bb50-a3d03c55b531.png",
+        "reason": "無関係なOpenAIロゴをツールの編集で削除"
+      }
     },
     {
       "number": 1,
-      "anchor": "【ここに図解①を挿入｜外部ツールとTeamsの役割】",
-      "theme": "外部ツールとTeamsの役割",
-      "labels": [
-        "外部ツールとTeamsの役割",
-        "会議の映像・音声",
-        "外部の検出ツール",
-        "Teamsへ検出情報",
-        "提供予定の仕組み",
-        "表示の詳細は未確認"
-      ],
-      "prompt": "濃紺背景、図解①見出しを左上に配置。中央にTeams会議ウィンドウを象徴する矩形、左から『音声解析』『映像解析』『メタ情報』の3つの矢印が会議ウィンドウへ向かい、右側に『スコア/警告』のバッジ表示。重点ワードをネオンシアンと白で目立たせる。16:9。",
+      "anchor": "【ここに図解①を挿入｜Teamsの新しい対策とは？】",
+      "theme": "Teamsの新しい対策とは？",
+      "labels": [],
+      "prompt": "過去の本人の対応画像を直接見本としてimage_genツールで生成。濃紺・シアンの立体感、白黄色の大文字、短い説明。全テキストと企業ロゴ・役割・矢印を目視校閲。",
       "filename": "diagram248.png",
       "status": "ready",
       "attempts": 1,
-      "sha256": "1163c014bb23b8e204f5aba6d22b0ba67c1aa8cf432daafe2dca7f6d6d1ae593",
+      "sha256": "cef10235c0909bdddd645a8e704049fb199b63fe30d53ddb0dfa17a8204a5de3",
       "width": 1672,
       "height": 941,
-      "usage": {
-        "input_tokens": 361,
-        "input_tokens_details": {
-          "image_tokens": 0,
-          "text_tokens": 361
+      "previous_generation": {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜外部ツールとTeamsの役割】",
+        "theme": "外部ツールとTeamsの役割",
+        "labels": [
+          "外部ツールとTeamsの役割",
+          "会議の映像・音声",
+          "外部の検出ツール",
+          "Teamsへ検出情報",
+          "提供予定の仕組み",
+          "表示の詳細は未確認"
+        ],
+        "prompt": "濃紺背景、図解①見出しを左上に配置。中央にTeams会議ウィンドウを象徴する矩形、左から『音声解析』『映像解析』『メタ情報』の3つの矢印が会議ウィンドウへ向かい、右側に『スコア/警告』のバッジ表示。重点ワードをネオンシアンと白で目立たせる。16:9。",
+        "filename": "diagram248.png",
+        "status": "ready",
+        "attempts": 1,
+        "sha256": "1163c014bb23b8e204f5aba6d22b0ba67c1aa8cf432daafe2dca7f6d6d1ae593",
+        "width": 1672,
+        "height": 941,
+        "usage": {
+          "input_tokens": 361,
+          "input_tokens_details": {
+            "image_tokens": 0,
+            "text_tokens": 361
+          },
+          "output_tokens": 280,
+          "output_tokens_details": {
+            "image_tokens": 280,
+            "text_tokens": 0
+          },
+          "total_tokens": 641
         },
-        "output_tokens": 280,
-        "output_tokens_details": {
-          "image_tokens": 280,
-          "text_tokens": 0
+        "review": {
+          "approved": true,
+          "reviewed_by": "Codex visual inspection",
+          "issues": "",
+          "observed_diagram_label": "図解①",
+          "unsupported_claims": []
         },
-        "total_tokens": 641
+        "previous_generation": {
+          "status": "ready",
+          "attempts": 1,
+          "artifact_run_id": "38108879984",
+          "sha256": "a9f1109f3a5c2ae4e760ced8c09cae4df61cb00193d9e7b934bd78dfeaa0c0f2",
+          "review": {
+            "approved": true,
+            "issues": "",
+            "observed_title": "検出の全体像",
+            "observed_diagram_label": "図解①",
+            "unsupported_claims": []
+          }
+        },
+        "generation_method": "image_gen_with_style_reference",
+        "visual_review_at": "2026-10-11T19:01:14.661352+09:00"
       },
+      "generation_method": "image_gen_with_original_user_image_reference",
+      "generated_source_filename": "exec-4067c808-8b9b-48a8-95a1-56e9369d7bdc.png",
+      "visual_review_at": "2026-10-11T23:03:51.562484+09:00",
       "review": {
         "approved": true,
         "reviewed_by": "Codex visual inspection",
-        "issues": "",
         "observed_diagram_label": "図解①",
+        "issues": "",
         "unsupported_claims": []
-      },
-      "previous_generation": {
-        "status": "ready",
-        "attempts": 1,
-        "artifact_run_id": "38108879984",
-        "sha256": "a9f1109f3a5c2ae4e760ced8c09cae4df61cb00193d9e7b934bd78dfeaa0c0f2",
-        "review": {
-          "approved": true,
-          "issues": "",
-          "observed_title": "検出の全体像",
-          "observed_diagram_label": "図解①",
-          "unsupported_claims": []
-        }
-      },
-      "generation_method": "image_gen_with_style_reference",
-      "visual_review_at": "2026-10-11T19:01:14.661352+09:00"
+      }
     },
     {
       "number": 2,
-      "anchor": "【ここに図解②を挿入｜二つの対策の違い】",
-      "theme": "二つの対策の違い",
-      "labels": [
-        "二つの対策の違い",
-        "合成の検出",
-        "映像・音声を調べる",
-        "なりすまし保護",
-        "不審な参加者に注意",
-        "どちらも開発中"
-      ],
-      "prompt": "濃紺背景、図解②見出しを配置。3列の比較表風ビジュアル。左列『検出のみ』中列『検出＋ポリシー』右列『検出＋人レビュー』。各列にアイコン（虫眼鏡、盾、人物）と短い要点3つをネオンシアンで表示。16:9。",
+      "anchor": "【ここに図解②を挿入｜見た目だけで信じない】",
+      "theme": "見た目だけで信じない",
+      "labels": [],
+      "prompt": "過去の本人の対応画像を直接見本としてimage_genツールで生成。濃紺・シアンの立体感、白黄色の大文字、短い説明。全テキストと企業ロゴ・役割・矢印を目視校閲。",
       "filename": "diagram249.png",
       "status": "ready",
       "attempts": 1,
-      "sha256": "f0fb64ca975e3d61a05f1fe5e7f0842e31b9845b90ad8e29031698679bdebafa",
+      "sha256": "83a054d25277a2fe1b182540012c72c989c862d6d3e244f11cafefbf85ce4fe4",
       "width": 1672,
       "height": 941,
-      "usage": {
-        "input_tokens": 349,
-        "input_tokens_details": {
-          "image_tokens": 0,
-          "text_tokens": 349
+      "previous_generation": {
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜二つの対策の違い】",
+        "theme": "二つの対策の違い",
+        "labels": [
+          "二つの対策の違い",
+          "合成の検出",
+          "映像・音声を調べる",
+          "なりすまし保護",
+          "不審な参加者に注意",
+          "どちらも開発中"
+        ],
+        "prompt": "濃紺背景、図解②見出しを配置。3列の比較表風ビジュアル。左列『検出のみ』中列『検出＋ポリシー』右列『検出＋人レビュー』。各列にアイコン（虫眼鏡、盾、人物）と短い要点3つをネオンシアンで表示。16:9。",
+        "filename": "diagram249.png",
+        "status": "ready",
+        "attempts": 1,
+        "sha256": "f0fb64ca975e3d61a05f1fe5e7f0842e31b9845b90ad8e29031698679bdebafa",
+        "width": 1672,
+        "height": 941,
+        "usage": {
+          "input_tokens": 349,
+          "input_tokens_details": {
+            "image_tokens": 0,
+            "text_tokens": 349
+          },
+          "output_tokens": 280,
+          "output_tokens_details": {
+            "image_tokens": 280,
+            "text_tokens": 0
+          },
+          "total_tokens": 629
         },
-        "output_tokens": 280,
-        "output_tokens_details": {
-          "image_tokens": 280,
-          "text_tokens": 0
+        "review": {
+          "approved": true,
+          "reviewed_by": "Codex visual inspection",
+          "issues": "",
+          "observed_diagram_label": "図解②",
+          "unsupported_claims": []
         },
-        "total_tokens": 629
+        "previous_generation": {
+          "status": "ready",
+          "attempts": 1,
+          "artifact_run_id": "38108879984",
+          "sha256": "8fe68ef112a51917302b0498fba8cdf1d29213277cdaecc764cc633702137c5c",
+          "review": {
+            "approved": true,
+            "issues": "",
+            "observed_title": "図解②",
+            "observed_diagram_label": "図解②",
+            "unsupported_claims": []
+          }
+        },
+        "generation_method": "image_gen_with_style_reference",
+        "visual_review_at": "2026-10-11T19:01:14.664012+09:00"
       },
+      "generation_method": "image_gen_with_original_user_image_reference",
+      "generated_source_filename": "exec-9752aed9-2b1c-42ea-ac19-634b530aa66d.png",
+      "visual_review_at": "2026-10-11T23:03:51.562484+09:00",
       "review": {
         "approved": true,
         "reviewed_by": "Codex visual inspection",
-        "issues": "",
         "observed_diagram_label": "図解②",
+        "issues": "",
         "unsupported_claims": []
-      },
-      "previous_generation": {
-        "status": "ready",
-        "attempts": 1,
-        "artifact_run_id": "38108879984",
-        "sha256": "8fe68ef112a51917302b0498fba8cdf1d29213277cdaecc764cc633702137c5c",
-        "review": {
-          "approved": true,
-          "issues": "",
-          "observed_title": "図解②",
-          "observed_diagram_label": "図解②",
-          "unsupported_claims": []
-        }
-      },
-      "generation_method": "image_gen_with_style_reference",
-      "visual_review_at": "2026-10-11T19:01:14.664012+09:00"
+      }
     },
     {
       "number": 3,
-      "anchor": "【ここに図解③を挿入｜確認できたことと未確認の点】",
-      "theme": "確認できたことと未確認の点",
-      "labels": [
-        "分かること・まだ不明なこと",
-        "確認できた計画",
-        "2026年11月 提供予定",
-        "外部ツールと連携",
-        "これから確認",
-        "料金・対応製品",
-        "会議データの扱い",
-        "具体的な画面表示"
-      ],
-      "prompt": "濃紺背景、図解③見出しを左上。円グラフ風に『技術の限界』『運用の負荷』『法的懸念』を3分割で表示。各セグメントに短い補足テキストを黄色と白で配置。16:9。",
+      "anchor": "【ここに図解③を挿入｜提供予定と確認ポイント】",
+      "theme": "提供予定と確認ポイント",
+      "labels": [],
+      "prompt": "過去の本人の対応画像を直接見本としてimage_genツールで生成。濃紺・シアンの立体感、白黄色の大文字、短い説明。全テキストと企業ロゴ・役割・矢印を目視校閲。",
       "filename": "diagram250.png",
       "status": "ready",
-      "attempts": 1,
-      "sha256": "fa60320892353fed217acb2e85e2d2a1a62f0f50e094420123a89baec7b075b8",
+      "attempts": 2,
+      "sha256": "a2f99266fd95bffa1051b339dc3d38774209c62dd99c748206f29dc531c3a52e",
       "width": 1672,
       "height": 941,
-      "usage": {
-        "input_tokens": 333,
-        "input_tokens_details": {
-          "image_tokens": 0,
-          "text_tokens": 333
+      "previous_generation": {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜確認できたことと未確認の点】",
+        "theme": "確認できたことと未確認の点",
+        "labels": [
+          "分かること・まだ不明なこと",
+          "確認できた計画",
+          "2026年11月 提供予定",
+          "外部ツールと連携",
+          "これから確認",
+          "料金・対応製品",
+          "会議データの扱い",
+          "具体的な画面表示"
+        ],
+        "prompt": "濃紺背景、図解③見出しを左上。円グラフ風に『技術の限界』『運用の負荷』『法的懸念』を3分割で表示。各セグメントに短い補足テキストを黄色と白で配置。16:9。",
+        "filename": "diagram250.png",
+        "status": "ready",
+        "attempts": 1,
+        "sha256": "fa60320892353fed217acb2e85e2d2a1a62f0f50e094420123a89baec7b075b8",
+        "width": 1672,
+        "height": 941,
+        "usage": {
+          "input_tokens": 333,
+          "input_tokens_details": {
+            "image_tokens": 0,
+            "text_tokens": 333
+          },
+          "output_tokens": 280,
+          "output_tokens_details": {
+            "image_tokens": 280,
+            "text_tokens": 0
+          },
+          "total_tokens": 613
         },
-        "output_tokens": 280,
-        "output_tokens_details": {
-          "image_tokens": 280,
-          "text_tokens": 0
+        "review": {
+          "approved": true,
+          "reviewed_by": "Codex visual inspection",
+          "issues": "",
+          "observed_diagram_label": "図解③",
+          "unsupported_claims": []
         },
-        "total_tokens": 613
+        "previous_generation": {
+          "status": "ready",
+          "attempts": 1,
+          "artifact_run_id": "38108879984",
+          "sha256": "a5d85f1b070ad5b59976e186ba37027fcddd8f385867ec1aab773c27edde54ba",
+          "review": {
+            "approved": true,
+            "issues": "",
+            "observed_title": "図解③",
+            "observed_diagram_label": "図解③",
+            "unsupported_claims": []
+          }
+        },
+        "generation_method": "image_gen_with_style_reference",
+        "visual_review_at": "2026-10-11T19:01:14.666585+09:00"
       },
+      "generation_method": "image_gen_with_original_user_image_reference",
+      "generated_source_filename": "exec-4a81daf4-0eca-41af-9dd6-62a7058f3c0b.png",
+      "visual_review_at": "2026-10-11T23:03:51.562484+09:00",
       "review": {
         "approved": true,
         "reviewed_by": "Codex visual inspection",
-        "issues": "",
         "observed_diagram_label": "図解③",
+        "issues": "",
         "unsupported_claims": []
       },
-      "previous_generation": {
-        "status": "ready",
-        "attempts": 1,
-        "artifact_run_id": "38108879984",
-        "sha256": "a5d85f1b070ad5b59976e186ba37027fcddd8f385867ec1aab773c27edde54ba",
-        "review": {
-          "approved": true,
-          "issues": "",
-          "observed_title": "図解③",
-          "observed_diagram_label": "図解③",
-          "unsupported_claims": []
-        }
-      },
-      "generation_method": "image_gen_with_style_reference",
-      "visual_review_at": "2026-10-11T19:01:14.666585+09:00"
+      "tool_correction": {
+        "previous_generated_source_filename": "exec-0b7082e3-278a-4eb7-bfb1-16b4f32eaf10.png",
+        "reason": "問いの途中切れと見出しの対応をツール編集で修正"
+      }
     },
     {
       "number": 4,
-      "anchor": "【ここに図解④を挿入｜筆者の提案・別の経路で確認】",
-      "theme": "筆者の提案・別の経路で確認",
-      "labels": [
-        "大事な依頼は、別の経路で確認",
-        "筆者の提案",
-        "急な依頼は保留",
-        "普段の番号に連絡",
-        "本人に確かめる",
-        "相手が今渡した連絡先だけに頼らない"
-      ],
-      "prompt": "A simple sequence of four large checklist cards. Use exactly the labels. Put 筆者の提案 visibly beneath 図解④. It is the author’s proposal, not Microsoft’s actual rollout process. No additional explanatory text.",
+      "anchor": "【ここに図解④を挿入｜大事なお願いは別の方法で確認】",
+      "theme": "大事なお願いは別の方法で確認",
+      "labels": [],
+      "prompt": "過去の本人の対応画像を直接見本としてimage_genツールで生成。濃紺・シアンの立体感、白黄色の大文字、短い説明。全テキストと企業ロゴ・役割・矢印を目視校閲。",
       "filename": "diagram251.png",
       "status": "ready",
-      "attempts": 2,
-      "sha256": "17604a0302601b9ff9207f2c6eb17f8dd1ff19e0915d046cd052195b2e8861ce",
+      "attempts": 1,
+      "sha256": "6a478765f83266a16b1d638b5bb70b16e748c72381ff9a64baf1fa8d5fb44ea8",
       "width": 1672,
       "height": 941,
-      "usage": {
-        "input_tokens": 378,
-        "input_tokens_details": {
-          "image_tokens": 0,
-          "text_tokens": 378
+      "previous_generation": {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜筆者の提案・別の経路で確認】",
+        "theme": "筆者の提案・別の経路で確認",
+        "labels": [
+          "大事な依頼は、別の経路で確認",
+          "筆者の提案",
+          "急な依頼は保留",
+          "普段の番号に連絡",
+          "本人に確かめる",
+          "相手が今渡した連絡先だけに頼らない"
+        ],
+        "prompt": "A simple sequence of four large checklist cards. Use exactly the labels. Put 筆者の提案 visibly beneath 図解④. It is the author’s proposal, not Microsoft’s actual rollout process. No additional explanatory text.",
+        "filename": "diagram251.png",
+        "status": "ready",
+        "attempts": 2,
+        "sha256": "17604a0302601b9ff9207f2c6eb17f8dd1ff19e0915d046cd052195b2e8861ce",
+        "width": 1672,
+        "height": 941,
+        "usage": {
+          "input_tokens": 378,
+          "input_tokens_details": {
+            "image_tokens": 0,
+            "text_tokens": 378
+          },
+          "output_tokens": 280,
+          "output_tokens_details": {
+            "image_tokens": 280,
+            "text_tokens": 0
+          },
+          "total_tokens": 658
         },
-        "output_tokens": 280,
-        "output_tokens_details": {
-          "image_tokens": 280,
-          "text_tokens": 0
+        "review": {
+          "approved": true,
+          "reviewed_by": "Codex visual inspection",
+          "issues": "",
+          "observed_diagram_label": "図解④",
+          "unsupported_claims": []
         },
-        "total_tokens": 658
+        "max_attempts": 3,
+        "manual_correction": "図解の表現を本文に合わせ、筆者の提案であることを明示して1回だけ再生成。",
+        "previous_generation": {
+          "status": "rejected",
+          "attempts": 2,
+          "artifact_run_id": "38108879984",
+          "sha256": "90da5ded696353dff58885b29292bfd39c1615eb6954d068551b89bd5c07b7cf",
+          "review": {
+            "approved": false,
+            "issues": "期待ラベルの「ベンダー比較」が画像に含まれていません（画像は「ベンダー選定」と表記）。expected_labelsにある重要ラベルが欠落しているため不合格。図解番号は表示されています。",
+            "observed_title": "図解④",
+            "observed_diagram_label": "図解④",
+            "unsupported_claims": []
+          }
+        },
+        "generation_method": "image_gen_with_style_reference",
+        "visual_review_at": "2026-10-11T19:01:14.668633+09:00"
       },
+      "generation_method": "image_gen_with_original_user_image_reference",
+      "generated_source_filename": "exec-932177e9-e7d5-4fb3-bbdd-43d77fd8b4e7.png",
+      "visual_review_at": "2026-10-11T23:03:51.562484+09:00",
       "review": {
         "approved": true,
         "reviewed_by": "Codex visual inspection",
-        "issues": "",
         "observed_diagram_label": "図解④",
+        "issues": "",
         "unsupported_claims": []
-      },
-      "max_attempts": 3,
-      "manual_correction": "図解の表現を本文に合わせ、筆者の提案であることを明示して1回だけ再生成。",
-      "previous_generation": {
-        "status": "rejected",
-        "attempts": 2,
-        "artifact_run_id": "38108879984",
-        "sha256": "90da5ded696353dff58885b29292bfd39c1615eb6954d068551b89bd5c07b7cf",
-        "review": {
-          "approved": false,
-          "issues": "期待ラベルの「ベンダー比較」が画像に含まれていません（画像は「ベンダー選定」と表記）。expected_labelsにある重要ラベルが欠落しているため不合格。図解番号は表示されています。",
-          "observed_title": "図解④",
-          "observed_diagram_label": "図解④",
-          "unsupported_claims": []
-        }
-      },
-      "generation_method": "image_gen_with_style_reference",
-      "visual_review_at": "2026-10-11T19:01:14.668633+09:00"
+      }
     }
   ],
   "status": "ready",
-  "manual_revision": "Past article style, original prompt, and source facts reviewed on 2026-10-11."
+  "manual_revision": "ユーザーの作風指定に従う最新3本の改稿",
+  "reviewed_against_source_sha256": "1a06c0275203824702abb241a74fab8068848d5aef0eb0d410a8281292876c6c"
 }

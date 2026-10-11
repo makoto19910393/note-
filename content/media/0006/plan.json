@@ -4,198 +4,315 @@
     {
       "number": 0,
       "anchor": "",
-      "theme": "サムネイル見出し",
-      "labels": [
-        "ARTEXが攻撃に使われた",
-        "韓国の銀行が標的",
-        "Claude痕跡を確認"
-      ],
-      "prompt": "黒い背景に濃紺グラデーション。中央に大きな太字日本語タイトル『ARTEXが攻撃に使われた』、下に三つの要点を白と黄色で縦に配置。ネオンシアンのアクセントライン。スマホで読みやすい構図。①を小さく配置。16:9。",
+      "theme": "韓国の銀行攻撃にClaudeの利用履歴――履歴書から人物像が浮上、犯人は未確定",
+      "labels": [],
+      "prompt": "過去の本人の対応画像を直接見本としてimage_genツールで生成。濃紺・シアンの立体感、白黄色の大文字、短い説明。全テキストと企業ロゴ・役割・矢印を目視校閲。",
       "filename": "thumbnail.png",
       "status": "ready",
       "attempts": 1,
-      "artifact_run_id": "38131866970",
-      "sha256": "ceb1d5b29143216919f360420bb15919e4c6ea5a56d74b1286d063e86eb2c281",
-      "width": 1536,
-      "height": 864,
-      "usage": {
-        "input_tokens": 1311,
-        "input_tokens_details": {
-          "image_tokens": 840,
-          "text_tokens": 471
+      "sha256": "b69bbc45791b91249d6dcd4decd9993eb0e5d265611abe8c98966789437b6336",
+      "width": 1672,
+      "height": 941,
+      "previous_generation": {
+        "number": 0,
+        "anchor": "",
+        "theme": "サムネイル見出し",
+        "labels": [
+          "ARTEXが攻撃に使われた",
+          "韓国の銀行が標的",
+          "Claude痕跡を確認"
+        ],
+        "prompt": "黒い背景に濃紺グラデーション。中央に大きな太字日本語タイトル『ARTEXが攻撃に使われた』、下に三つの要点を白と黄色で縦に配置。ネオンシアンのアクセントライン。スマホで読みやすい構図。①を小さく配置。16:9。",
+        "filename": "thumbnail.png",
+        "status": "ready",
+        "attempts": 1,
+        "artifact_run_id": "38131866970",
+        "sha256": "ceb1d5b29143216919f360420bb15919e4c6ea5a56d74b1286d063e86eb2c281",
+        "width": 1536,
+        "height": 864,
+        "usage": {
+          "input_tokens": 1311,
+          "input_tokens_details": {
+            "image_tokens": 840,
+            "text_tokens": 471
+          },
+          "output_tokens": 280,
+          "output_tokens_details": {
+            "image_tokens": 280,
+            "text_tokens": 0
+          },
+          "total_tokens": 1591
         },
-        "output_tokens": 280,
-        "output_tokens_details": {
-          "image_tokens": 280,
-          "text_tokens": 0
-        },
-        "total_tokens": 1591
+        "review": {
+          "approved": true,
+          "issues": "",
+          "observed_title": "ARTEXが攻撃に使われた",
+          "observed_diagram_label": "①",
+          "unsupported_claims": []
+        }
       },
+      "generation_method": "image_gen_with_original_user_image_reference",
+      "generated_source_filename": "exec-8027fb01-51fd-4ea4-a6fe-368216914bb7.png",
+      "visual_review_at": "2026-10-11T23:12:13.479852+09:00",
       "review": {
         "approved": true,
+        "reviewed_by": "Codex visual inspection",
+        "observed_diagram_label": "",
         "issues": "",
-        "observed_title": "ARTEXが攻撃に使われた",
-        "observed_diagram_label": "①",
         "unsupported_claims": []
       }
     },
     {
       "number": 1,
-      "anchor": "【ここに図解①を挿入｜ARTEXの仕組み】",
-      "theme": "ARTEXの仕組み",
-      "labels": [
-        "①エージェント起動",
-        "②探索・収集",
-        "③行動自動化"
-      ],
-      "prompt": "濃紺背景、図解タイトル『① ARTEXの仕組み』。左から右へ流れる3つの大きなアイコン（起動、探索、実行）と短い要点を白と黄色で配置。ネオンシアンのラインで接続。16:9。",
+      "anchor": "【ここに図解①を挿入｜攻撃する側がAIを利用】",
+      "theme": "攻撃する側がAIを利用",
+      "labels": [],
+      "prompt": "過去の本人の対応画像を直接見本としてimage_genツールで生成。濃紺・シアンの立体感、白黄色の大文字、短い説明。全テキストと企業ロゴ・役割・矢印を目視校閲。",
       "filename": "diagram252.png",
       "status": "ready",
       "attempts": 1,
-      "artifact_run_id": "38131866970",
-      "sha256": "b7179a39e93145dd08d02961ef53fee78075d12bb481e6e774ec5048d2433297",
-      "width": 1536,
-      "height": 864,
-      "usage": {
-        "input_tokens": 1957,
-        "input_tokens_details": {
-          "image_tokens": 1508,
-          "text_tokens": 449
+      "sha256": "8eefeec2544efeb78b83111827c729e4b1a70834ba527bcc99a51fe319364178",
+      "width": 1672,
+      "height": 941,
+      "previous_generation": {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜ARTEXの仕組み】",
+        "theme": "ARTEXの仕組み",
+        "labels": [
+          "①エージェント起動",
+          "②探索・収集",
+          "③行動自動化"
+        ],
+        "prompt": "濃紺背景、図解タイトル『① ARTEXの仕組み』。左から右へ流れる3つの大きなアイコン（起動、探索、実行）と短い要点を白と黄色で配置。ネオンシアンのラインで接続。16:9。",
+        "filename": "diagram252.png",
+        "status": "ready",
+        "attempts": 1,
+        "artifact_run_id": "38131866970",
+        "sha256": "b7179a39e93145dd08d02961ef53fee78075d12bb481e6e774ec5048d2433297",
+        "width": 1536,
+        "height": 864,
+        "usage": {
+          "input_tokens": 1957,
+          "input_tokens_details": {
+            "image_tokens": 1508,
+            "text_tokens": 449
+          },
+          "output_tokens": 280,
+          "output_tokens_details": {
+            "image_tokens": 280,
+            "text_tokens": 0
+          },
+          "total_tokens": 2237
         },
-        "output_tokens": 280,
-        "output_tokens_details": {
-          "image_tokens": 280,
-          "text_tokens": 0
-        },
-        "total_tokens": 2237
+        "review": {
+          "approved": true,
+          "issues": "",
+          "observed_title": "ARTEXの仕組み",
+          "observed_diagram_label": "図解①",
+          "unsupported_claims": []
+        }
       },
+      "generation_method": "image_gen_with_original_user_image_reference",
+      "generated_source_filename": "exec-a477aef5-0aaf-4ee4-88de-b616c14ac91b.png",
+      "visual_review_at": "2026-10-11T23:12:13.479852+09:00",
       "review": {
         "approved": true,
-        "issues": "",
-        "observed_title": "ARTEXの仕組み",
+        "reviewed_by": "Codex visual inspection",
         "observed_diagram_label": "図解①",
+        "issues": "",
         "unsupported_claims": []
       }
     },
     {
       "number": 2,
-      "anchor": "【ここに図解②を挿入｜LLMの役割】",
-      "theme": "LLMの役割",
-      "labels": [
-        "LLMの役割",
-        "指示を作る",
-        "情報を読む",
-        "次の作業を考える",
-        "役割のイメージ"
-      ],
-      "prompt": "図解②を大きく表示。立体的な球体AIの周りに3つのシアン発光カード。文字はlabelsの指定表現だけ。下に役割のイメージと表示。別の言い換えや説明文を追加しない。",
+      "anchor": "【ここに図解②を挿入｜二種類の記録を分けて読む】",
+      "theme": "二種類の記録を分けて読む",
+      "labels": [],
+      "prompt": "過去の本人の対応画像を直接見本としてimage_genツールで生成。濃紺・シアンの立体感、白黄色の大文字、短い説明。全テキストと企業ロゴ・役割・矢印を目視校閲。",
       "filename": "diagram253.png",
       "status": "ready",
-      "attempts": 3,
-      "sha256": "6117c76ec8fcf61d47937fc7a745ac0e494ea1c512d80528bb85a4a93eb07d8c",
+      "attempts": 1,
+      "sha256": "a2831a261029a3738d00798ba7d32fcacb3b073c2edffd7132f604087f84450b",
       "width": 1672,
       "height": 941,
-      "usage": {
-        "input_tokens": 2047,
-        "input_tokens_details": {
-          "image_tokens": 1508,
-          "text_tokens": 539
-        },
-        "output_tokens": 280,
-        "output_tokens_details": {
-          "image_tokens": 280,
-          "text_tokens": 0
-        },
-        "total_tokens": 2327
-      },
-      "review": {
-        "approved": true,
-        "issues": "",
-        "observed_title": "LLMの役割",
-        "observed_diagram_label": "図解②",
-        "unsupported_claims": []
-      },
-      "max_attempts": 3,
-      "manual_correction": "校閲で語句の不一致が判明。初心者向けの短いラベルへ修正し、対象画像だけ追加1回。",
       "previous_generation": {
-        "status": "rejected",
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜LLMの役割】",
+        "theme": "LLMの役割",
+        "labels": [
+          "LLMの役割",
+          "指示を作る",
+          "情報を読む",
+          "次の作業を考える",
+          "役割のイメージ"
+        ],
+        "prompt": "図解②を大きく表示。立体的な球体AIの周りに3つのシアン発光カード。文字はlabelsの指定表現だけ。下に役割のイメージと表示。別の言い換えや説明文を追加しない。",
+        "filename": "diagram253.png",
+        "status": "ready",
         "attempts": 3,
-        "artifact_run_id": "38132586766",
-        "sha256": "4db0df9031477fc8733f34362022dad1ab9b0c437a40a30e25e7efa5f472f9b3",
+        "sha256": "6117c76ec8fcf61d47937fc7a745ac0e494ea1c512d80528bb85a4a93eb07d8c",
+        "width": 1672,
+        "height": 941,
+        "usage": {
+          "input_tokens": 2047,
+          "input_tokens_details": {
+            "image_tokens": 1508,
+            "text_tokens": 539
+          },
+          "output_tokens": 280,
+          "output_tokens_details": {
+            "image_tokens": 280,
+            "text_tokens": 0
+          },
+          "total_tokens": 2327
+        },
         "review": {
-          "approved": false,
-          "issues": "画像に図解①と図解②が両方含まれるコラージュになっている（1画像1テーマの要件違反）。期待ラベルのうち「指示を作る」「情報を読む」「次の作業を考える」が画像内に見えない（重要ラベル欠落）。",
+          "approved": true,
+          "issues": "",
           "observed_title": "LLMの役割",
           "observed_diagram_label": "図解②",
           "unsupported_claims": []
-        }
+        },
+        "max_attempts": 3,
+        "manual_correction": "校閲で語句の不一致が判明。初心者向けの短いラベルへ修正し、対象画像だけ追加1回。",
+        "previous_generation": {
+          "status": "rejected",
+          "attempts": 3,
+          "artifact_run_id": "38132586766",
+          "sha256": "4db0df9031477fc8733f34362022dad1ab9b0c437a40a30e25e7efa5f472f9b3",
+          "review": {
+            "approved": false,
+            "issues": "画像に図解①と図解②が両方含まれるコラージュになっている（1画像1テーマの要件違反）。期待ラベルのうち「指示を作る」「情報を読む」「次の作業を考える」が画像内に見えない（重要ラベル欠落）。",
+            "observed_title": "LLMの役割",
+            "observed_diagram_label": "図解②",
+            "unsupported_claims": []
+          }
+        },
+        "generation_method": "image_gen",
+        "manual_visual_review": true
       },
-      "generation_method": "image_gen",
-      "manual_visual_review": true
+      "generation_method": "image_gen_with_original_user_image_reference",
+      "generated_source_filename": "exec-11e1b90a-df15-4cd4-94a5-33b33eed9d8e.png",
+      "visual_review_at": "2026-10-11T23:12:13.479852+09:00",
+      "review": {
+        "approved": true,
+        "reviewed_by": "Codex visual inspection",
+        "observed_diagram_label": "図解②",
+        "issues": "",
+        "unsupported_claims": []
+      }
     },
     {
       "number": 3,
-      "anchor": "【ここに図解③を挿入｜攻撃の記録と調査】",
-      "theme": "攻撃の記録と調査",
-      "labels": [
-        "銀行への攻撃",
-        "残ったAI利用の記録",
-        "研究者が分析"
-      ],
-      "prompt": "図解③を大きく表示。銀行の立体アイコン、記録ファイルの立体アイコン、研究者の虫眼鏡アイコンを横に並べ、順にシアンの矢印でつなぐ。文字は指定labelsだけ。銀行の公開ディレクトリ侵入と断定する図は描かない。",
+      "anchor": "【ここに図解③を挿入｜履歴書は手がかり、犯人は未確定】",
+      "theme": "履歴書は手がかり、犯人は未確定",
+      "labels": [],
+      "prompt": "過去の本人の対応画像を直接見本としてimage_genツールで生成。濃紺・シアンの立体感、白黄色の大文字、短い説明。全テキストと企業ロゴ・役割・矢印を目視校閲。",
       "filename": "diagram254.png",
       "status": "ready",
-      "attempts": 0,
-      "previous_generation": {
-        "status": "planned",
-        "attempts": 0
-      },
-      "sha256": "23b22659b44dbbd439cf12b4f2cef3e7bee5d9099994a01f358cbe60a549ef9f",
+      "attempts": 1,
+      "sha256": "37c390ac044c79e372df33ebf7b8ef9e93d2ec01c53fb6cb954585c8939d0503",
       "width": 1672,
-      "height": 941,
-      "generation_method": "image_gen",
-      "manual_visual_review": true,
+      "height": 940,
+      "previous_generation": {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜攻撃の記録と調査】",
+        "theme": "攻撃の記録と調査",
+        "labels": [
+          "銀行への攻撃",
+          "残ったAI利用の記録",
+          "研究者が分析"
+        ],
+        "prompt": "図解③を大きく表示。銀行の立体アイコン、記録ファイルの立体アイコン、研究者の虫眼鏡アイコンを横に並べ、順にシアンの矢印でつなぐ。文字は指定labelsだけ。銀行の公開ディレクトリ侵入と断定する図は描かない。",
+        "filename": "diagram254.png",
+        "status": "ready",
+        "attempts": 0,
+        "previous_generation": {
+          "status": "planned",
+          "attempts": 0
+        },
+        "sha256": "23b22659b44dbbd439cf12b4f2cef3e7bee5d9099994a01f358cbe60a549ef9f",
+        "width": 1672,
+        "height": 941,
+        "generation_method": "image_gen",
+        "manual_visual_review": true,
+        "review": {
+          "approved": true,
+          "issues": "",
+          "observed_title": "攻撃の記録と調査",
+          "observed_diagram_label": "図解③",
+          "unsupported_claims": []
+        }
+      },
+      "generation_method": "image_gen_with_original_user_image_reference",
+      "generated_source_filename": "exec-c9b515ee-4286-412f-b170-677d2e42f7df.png",
+      "visual_review_at": "2026-10-11T23:12:13.479852+09:00",
       "review": {
         "approved": true,
-        "issues": "",
-        "observed_title": "攻撃の記録と調査",
+        "reviewed_by": "Codex visual inspection",
         "observed_diagram_label": "図解③",
+        "issues": "",
         "unsupported_claims": []
       }
     },
     {
       "number": 4,
-      "anchor": "【ここに図解④を挿入｜防御のチェックリスト】",
-      "theme": "防御のチェックリスト",
-      "labels": [
-        "防御のチェックリスト",
-        "筆者の提案",
-        "作業記録を残す",
-        "使える権限を絞る",
-        "環境を分ける",
-        "安全性を点検"
-      ],
-      "prompt": "図解④を大きく表示、筆者の提案を目立つ黄色のラベルで明記。四つのシアン発光カードに短い指定ラベルだけを置く。全体を立体的にし、会社の公式手順や実際に導入済みの機能とは描かない。",
+      "anchor": "【ここに図解④を挿入｜渡す情報と共有先を確認】",
+      "theme": "渡す情報と共有先を確認",
+      "labels": [],
+      "prompt": "過去の本人の対応画像を直接見本としてimage_genツールで生成。濃紺・シアンの立体感、白黄色の大文字、短い説明。全テキストと企業ロゴ・役割・矢印を目視校閲。",
       "filename": "diagram255.png",
       "status": "ready",
-      "attempts": 0,
-      "previous_generation": {
-        "status": "planned",
-        "attempts": 0
-      },
-      "sha256": "32478e84ed971ea3285175d095468bbf6ee3b9dab22cb1cd22656d780e2a767d",
+      "attempts": 1,
+      "sha256": "7569745ce9cc3df7975dba26a32e9e31f8ecb7cda473ec22aef90c3b60dbaa44",
       "width": 1672,
       "height": 941,
-      "generation_method": "image_gen",
-      "manual_visual_review": true,
+      "previous_generation": {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜防御のチェックリスト】",
+        "theme": "防御のチェックリスト",
+        "labels": [
+          "防御のチェックリスト",
+          "筆者の提案",
+          "作業記録を残す",
+          "使える権限を絞る",
+          "環境を分ける",
+          "安全性を点検"
+        ],
+        "prompt": "図解④を大きく表示、筆者の提案を目立つ黄色のラベルで明記。四つのシアン発光カードに短い指定ラベルだけを置く。全体を立体的にし、会社の公式手順や実際に導入済みの機能とは描かない。",
+        "filename": "diagram255.png",
+        "status": "ready",
+        "attempts": 0,
+        "previous_generation": {
+          "status": "planned",
+          "attempts": 0
+        },
+        "sha256": "32478e84ed971ea3285175d095468bbf6ee3b9dab22cb1cd22656d780e2a767d",
+        "width": 1672,
+        "height": 941,
+        "generation_method": "image_gen",
+        "manual_visual_review": true,
+        "review": {
+          "approved": true,
+          "issues": "",
+          "observed_title": "防御のチェックリスト",
+          "observed_diagram_label": "図解④",
+          "unsupported_claims": []
+        }
+      },
+      "generation_method": "image_gen_with_original_user_image_reference",
+      "generated_source_filename": "exec-973acf61-f1ac-4142-8410-2be4d562ea13.png",
+      "visual_review_at": "2026-10-11T23:12:13.479852+09:00",
       "review": {
         "approved": true,
-        "issues": "",
-        "observed_title": "防御のチェックリスト",
+        "reviewed_by": "Codex visual inspection",
         "observed_diagram_label": "図解④",
+        "issues": "",
         "unsupported_claims": []
       }
     }
   ],
-  "status": "ready"
+  "status": "ready",
+  "manual_revision": "ユーザーの作風指定に従う最新3本の改稿",
+  "reviewed_against_source_sha256": "7c048fea0216f43e3d410a7236f10f3aa7f326f86855d86c7c316dbe73817963"
 }

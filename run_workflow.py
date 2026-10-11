@@ -166,8 +166,11 @@ def main():
         from news_candidates import current_candidates
         config["_news_candidates"] = current_candidates(actual_now,config.get("max_news_age_hours",48))
         print("実行時の最新記事一覧を取得しました。候補数:",len(config["_news_candidates"]))
-    run_batch(output,config,actual_now,scheduled,slot,mode,
-              run_ids=[args.run_id] if args.run_id else None)
+    selected_ids = args.run_id.split(',') if args.run_id else None
+    if selected_ids and (len(selected_ids)>6 or len(set(selected_ids))!=len(selected_ids)
+                         or any(not value or value.strip()!=value for value in selected_ids)):
+        raise WorkflowError('既存原稿IDは空白なし・重複なしで6件まで指定してください。')
+    run_batch(output,config,actual_now,scheduled,slot,mode,run_ids=selected_ids)
 
 
 if __name__ == "__main__":

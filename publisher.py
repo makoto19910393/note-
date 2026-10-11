@@ -261,14 +261,22 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
                 raise WorkflowError("noteの編集画面を一意に特定できません。公開せず停止します。")
             if editor_url:
                 note_id=re.search(r'/notes/(n[A-Za-z0-9]+)/',editor_url+'/').group(1)
-                owner_draft(context,note_id)
+                existing_draft = owner_draft(context,note_id)
             existing_images=content.locator('img').count()
             wanted_hashes=[x['sha256'] for x in plan['items']] if plan else None
             changed_media=plan and record.get('media_hashes')!=wanted_hashes
             if existing_images and not plan:
                 raise WorkflowError('予定外の画像があります。既存下書きの上書きを止めます。')
-            if existing_images and title.input_value()!=record['title']:
+            allowed_titles = [record['title']]
+            revision = record.get('authorized_draft_revision', {})
+            if (revision.get('note_editor_url') == editor_url and
+                    revision.get('previous_source_sha256') == record.get('draft_source_sha256')):
+                allowed_titles.append(revision.get('previous_title'))
+            if existing_images and title.input_value() not in allowed_titles:
                 raise WorkflowError('画像付き下書きのタイトルが一致しません。')
+            if revision and editor_url and record.get('draft_source_sha256') != record['sha256']:
+                from draft_revision import backup_owner_draft
+                record['previous_owner_draft_backup_sha256'] = backup_owner_draft(existing_draft, note_id)
             if not existing_images or changed_media:
                 should_fill=True
             else:

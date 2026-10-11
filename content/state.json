@@ -125,7 +125,7 @@
     {
       "number": 5,
       "run_id": "2026-10-11-evening-1",
-      "title": "【海外AI解説】Teamsで「その顔、本物？」を確かめる時代へ――AIなりすまし対策、11月提供予定",
+      "title": "【海外AI解説】Microsoft TeamsがAIなりすまし対策へ――会議の顔と声を調べる、11月提供予定",
       "created_at": "2026-10-11T12:35:54.934262+09:00",
       "path": "articles/2026-10-11/0005-morning.md",
       "sources": [
@@ -134,7 +134,7 @@
         "https://www.techradar.com/pro/microsoft-teams-will-soon-be-able-to-spot-third-party-deepfakes-on-your-morning-meeting",
         "https://www.bleepingcomputer.com/news/security/microsoft-teams-to-add-third-party-deepfake-detection-impersonation-protection/"
       ],
-      "sha256": "b0e28e70fd804410c42f6f7db4315c25190e55a972fa4dbe3d3e686b568917bb",
+      "sha256": "1a06c0275203824702abb241a74fab8068848d5aef0eb0d410a8281292876c6c",
       "status": "draft_saved",
       "note_posted": false,
       "media_plan": "media/0005/plan.json",
@@ -164,7 +164,7 @@
           "supports": "直接読み直した報道。合成検出と身元に注意を促す保護は別の計画。検出信号連携と11月提供予定。詳細な判定方法や料金は確認できない。"
         }
       ],
-      "layout_revision": "2026-10-11-user-review",
+      "layout_revision": "2026-10-11-original-user-style-and-beginner-rewrite",
       "note_editor_url": "https://editor.note.com/notes/ne9dd7bc5f076/edit",
       "cover_needs_refresh": false,
       "media_hashes": [
@@ -188,19 +188,41 @@
       ],
       "draft_source_sha256": "b0e28e70fd804410c42f6f7db4315c25190e55a972fa4dbe3d3e686b568917bb",
       "rescheduled_from": "2026-10-11-morning-2",
-      "saved_draft_verification_run": "38130450495"
+      "saved_draft_verification_run": "38130450495",
+      "authorized_draft_revision": {
+        "requested_at": "2026-10-11T22:56:22.527617+09:00",
+        "previous_title": "【海外AI解説】Teamsで「その顔、本物？」を確かめる時代へ――AIなりすまし対策、11月提供予定",
+        "previous_source_sha256": "b0e28e70fd804410c42f6f7db4315c25190e55a972fa4dbe3d3e686b568917bb",
+        "note_editor_url": "https://editor.note.com/notes/ne9dd7bc5f076/edit",
+        "reason": "ユーザー指定：過去投稿の作風、初心者向け本文、タイトル、画像5枚を改稿"
+      },
+      "manual_editorial_review": true,
+      "editorial_review": "過去112本の作風を参照、初心者への用語説明、事実と見解・提案の区別、株価の日時と因果の区別を目視校閲",
+      "stock_snapshot": {
+        "symbol": "MSFT",
+        "exchange": "NASDAQ",
+        "currency": "USD",
+        "session": "regular",
+        "trade_date": "2026-10-09",
+        "close": 535.07,
+        "previous_close": 522.61,
+        "change_percent": 2.38,
+        "verified_at": "2026-10-11",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=1mo&interval=1d",
+        "news_causation_verified": false
+      }
     },
     {
       "number": 6,
       "run_id": "2026-10-11-evening-3",
-      "title": "【海外AI解説】韓国の銀行攻撃でARTEXとClaude Codeの履歴を発見――履歴書から人物像、犯人は未確定",
+      "title": "【海外AI解説】韓国の銀行攻撃にClaudeの利用履歴――履歴書から人物像が浮上、犯人は未確定",
       "created_at": "2026-10-11T19:25:30.272377+09:00",
       "path": "articles/2026-10-11/0006-evening.md",
       "sources": [
         "https://www.bleepingcomputer.com/news/security/hacker-used-artex-ai-and-claude-agents-to-target-south-korean-banks",
         "https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance"
       ],
-      "sha256": "4d3c3291f45a528181d2be8a0b0421e8a31c7760de0c1d017b1763c694f80b8d",
+      "sha256": "7c048fea0216f43e3d410a7236f10f3aa7f326f86855d86c7c316dbe73817963",
       "status": "draft_saved",
       "note_posted": false,
       "media_plan": "media/0006/plan.json",
@@ -214,11 +236,11 @@
         {
           "title": "Hacker used ARTEX AI and Claude agents to target South Korean banks",
           "url": "https://www.bleepingcomputer.com/news/security/hacker-used-artex-ai-and-claude-agents-to-target-south-korean-banks/",
-          "published_at": "2026-10-10T10:16:00+00:00",
-          "supports": "BleepingComputerの報道。CrowdStrikeの分析を要約し、対象とされた銀行名（Shinhan, KB Kookmin, Hana）、顧客データ流出やシステム障害の影響、ARTEX開発者の対応（クローズド化）を伝える。"
+          "published_at": "2026-10-10T10:16:17-04:00",
+          "supports": "10/11に本文とdatePublishedを再確認。標的の銀行名・報道された影響と、CrowdStrikeの分析を紹介。犯人・総被害件数を確定しない。"
         }
       ],
-      "editorial_review": "Title corrected to distinguish attacker tools from bank targets; primary and secondary sources reread; identity remains unconfirmed.",
+      "editorial_review": "過去112本の作風を参照、初心者への用語説明、事実と見解・提案の区別、株価の日時と因果の区別を目視校閲",
       "manual_editorial_review": true,
       "note_editor_url": "https://editor.note.com/notes/nae194d380626/edit",
       "cover_needs_refresh": false,
@@ -241,19 +263,28 @@
         "https://assets.st-note.com/img/1791715832-A6UR1FLxymq5N2fC4jMOTgs9.png",
         "https://assets.st-note.com/img/1791715838-OsbcwKARqFhLklQWfujJn5tN.png"
       ],
-      "draft_source_sha256": "4d3c3291f45a528181d2be8a0b0421e8a31c7760de0c1d017b1763c694f80b8d"
+      "draft_source_sha256": "4d3c3291f45a528181d2be8a0b0421e8a31c7760de0c1d017b1763c694f80b8d",
+      "authorized_draft_revision": {
+        "requested_at": "2026-10-11T22:56:22.527617+09:00",
+        "previous_title": "【海外AI解説】韓国の銀行攻撃でARTEXとClaude Codeの履歴を発見――履歴書から人物像、犯人は未確定",
+        "previous_source_sha256": "4d3c3291f45a528181d2be8a0b0421e8a31c7760de0c1d017b1763c694f80b8d",
+        "note_editor_url": "https://editor.note.com/notes/nae194d380626/edit",
+        "reason": "ユーザー指定：過去投稿の作風、初心者向け本文、タイトル、画像5枚を改稿"
+      },
+      "stock_editorial_note": "Claudeは製品名。Forgeの未上場株案内を10/11閲覧。取引所のAnthropic株の終値を確認できないためチャート・価格を省略。",
+      "layout_revision": "2026-10-11-original-user-style-and-beginner-rewrite"
     },
     {
       "number": 7,
       "run_id": "2026-10-11-evening-2",
-      "title": "【海外AI解説】「AIが暴走した」で終わらせていい？――専門家が問い直す、人が任せた権限",
+      "title": "【海外AI解説】AIの「暴走」は誰の問題？――Tenableの専門家が語る、任せる範囲と人の確認",
       "created_at": "2026-10-11T20:00:42.466079+09:00",
       "path": "articles/2026-10-11/0007-evening.md",
       "sources": [
         "https://www.techradar.com/pro/calling-an-ai-agent-rogue-is-a-dangerous-way-of-deflecting-blame-tenable-field-cto-on-the-implications-of-ai-agent-escapes-and-how-they-can-be-regulated",
         "https://www.tenable.com/cybersecurity-guide/principles/ai-governance"
       ],
-      "sha256": "c42457a50d959b5667dd84fc99b55d982cb692fc488334529e3be9688b8fd2ee",
+      "sha256": "900a356e49d0038fbe39fec6a05033b99396485312d6541e42da9eb66b5a9888",
       "status": "draft_saved",
       "note_posted": false,
       "media_plan": "media/0007/plan.json",
@@ -295,7 +326,29 @@
         "https://assets.st-note.com/img/1791716841-dhLK3k4cMB5p1nODrZtiu9GT.png",
         "https://assets.st-note.com/img/1791716846-CKudkR9b40M1IhzNjGDBgQTe.png"
       ],
-      "draft_source_sha256": "c42457a50d959b5667dd84fc99b55d982cb692fc488334529e3be9688b8fd2ee"
+      "draft_source_sha256": "c42457a50d959b5667dd84fc99b55d982cb692fc488334529e3be9688b8fd2ee",
+      "authorized_draft_revision": {
+        "requested_at": "2026-10-11T22:56:22.527617+09:00",
+        "previous_title": "【海外AI解説】「AIが暴走した」で終わらせていい？――専門家が問い直す、人が任せた権限",
+        "previous_source_sha256": "c42457a50d959b5667dd84fc99b55d982cb692fc488334529e3be9688b8fd2ee",
+        "note_editor_url": "https://editor.note.com/notes/nca8f22e035b0/edit",
+        "reason": "ユーザー指定：過去投稿の作風、初心者向け本文、タイトル、画像5枚を改稿"
+      },
+      "editorial_review": "過去112本の作風を参照、初心者への用語説明、事実と見解・提案の区別、株価の日時と因果の区別を目視校閲",
+      "stock_snapshot": {
+        "symbol": "TENB",
+        "exchange": "NASDAQ",
+        "currency": "USD",
+        "session": "regular",
+        "trade_date": "2026-10-09",
+        "close": 41.59,
+        "previous_close": 39.01,
+        "change_percent": 6.61,
+        "verified_at": "2026-10-11",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/TENB?range=1mo&interval=1d",
+        "news_causation_verified": false
+      },
+      "layout_revision": "2026-10-11-original-user-style-and-beginner-rewrite"
     }
   ],
   "next_diagram": 260

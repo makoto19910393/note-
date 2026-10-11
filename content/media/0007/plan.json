@@ -4,79 +4,76 @@
     {
       "number": 0,
       "anchor": "",
-      "theme": "見出しサムネイル",
-      "labels": [
-        "AIが暴走？",
-        "任せ方を見直そう",
-        "専門家の見解"
-      ],
-      "prompt": "球体AIと人物の立体アイコン、短い見出しだけ。内部の図解番号は描かない。 指定のlabelsと該当する図解番号だけを正確に表示。実際の製品画面や導入済み仕様ではなく、発言・筆者の提案の説明図。濃紺、シアンの光、白と黄色の太い立体文字。",
+      "theme": "AIの「暴走」は誰の問題？――Tenableの専門家が語る、任せる範囲と人の確認",
+      "labels": [],
+      "prompt": "過去の本人の対応画像を直接見本としてimage_genツールで生成。濃紺・シアンの立体感、白黄色の大文字、短い説明。全テキストと企業ロゴ・役割・矢印を目視校閲。",
       "filename": "thumbnail.png",
       "status": "ready",
       "attempts": 1,
-      "artifact_run_id": "38134004474",
-      "sha256": "55eea83ef317c033359f839949cca4560b9ffddd66231337d74f536b7e2322b0",
-      "width": 1536,
-      "height": 864,
-      "usage": {
-        "input_tokens": 1319,
-        "input_tokens_details": {
-          "image_tokens": 840,
-          "text_tokens": 479
+      "sha256": "d0620218d11d32c9fb904f3ced7de4ee83a74615bcb744a88058d8e344dfa830",
+      "width": 1672,
+      "height": 941,
+      "previous_generation": {
+        "number": 0,
+        "anchor": "",
+        "theme": "見出しサムネイル",
+        "labels": [
+          "AIが暴走？",
+          "任せ方を見直そう",
+          "専門家の見解"
+        ],
+        "prompt": "球体AIと人物の立体アイコン、短い見出しだけ。内部の図解番号は描かない。 指定のlabelsと該当する図解番号だけを正確に表示。実際の製品画面や導入済み仕様ではなく、発言・筆者の提案の説明図。濃紺、シアンの光、白と黄色の太い立体文字。",
+        "filename": "thumbnail.png",
+        "status": "ready",
+        "attempts": 1,
+        "artifact_run_id": "38134004474",
+        "sha256": "55eea83ef317c033359f839949cca4560b9ffddd66231337d74f536b7e2322b0",
+        "width": 1536,
+        "height": 864,
+        "usage": {
+          "input_tokens": 1319,
+          "input_tokens_details": {
+            "image_tokens": 840,
+            "text_tokens": 479
+          },
+          "output_tokens": 280,
+          "output_tokens_details": {
+            "image_tokens": 280,
+            "text_tokens": 0
+          },
+          "total_tokens": 1599
         },
-        "output_tokens": 280,
-        "output_tokens_details": {
-          "image_tokens": 280,
-          "text_tokens": 0
-        },
-        "total_tokens": 1599
+        "review": {
+          "approved": true,
+          "issues": "",
+          "observed_title": "AIが暴走? 任せ方を見直そう（専門家の見解）",
+          "observed_diagram_label": "",
+          "unsupported_claims": []
+        }
       },
+      "generation_method": "image_gen_with_original_user_image_reference",
+      "generated_source_filename": "exec-c23b1f4d-ee47-4896-baec-393390519a45.png",
+      "visual_review_at": "2026-10-11T23:24:35.286716+09:00",
       "review": {
         "approved": true,
-        "issues": "",
-        "observed_title": "AIが暴走? 任せ方を見直そう（専門家の見解）",
+        "reviewed_by": "Codex visual inspection",
         "observed_diagram_label": "",
+        "issues": "",
         "unsupported_claims": []
       }
     },
     {
       "number": 1,
-      "anchor": "【ここに図解①を挿入｜言葉だけで終わらせない】",
-      "theme": "言葉だけで終わらせない",
-      "labels": [
-        "言葉だけで終わらせない",
-        "専門家の見解",
-        "何を頼んだ？",
-        "何を許した？"
-      ],
-      "prompt": "図解①。AIと依頼メモ、鍵の3Dアイコン。2つの問いを大きな発光カードに。 指定のlabelsと該当する図解番号だけを正確に表示。実際の製品画面や導入済み仕様ではなく、発言・筆者の提案の説明図。濃紺、シアンの光、白と黄色の太い立体文字。",
+      "anchor": "【ここに図解①を挿入｜暴走の一言で終わらせない】",
+      "theme": "暴走の一言で終わらせない",
+      "labels": [],
+      "prompt": "過去の本人の対応画像を直接見本としてimage_genツールで生成。濃紺・シアンの立体感、白黄色の大文字、短い説明。全テキストと企業ロゴ・役割・矢印を目視校閲。",
       "filename": "diagram256.png",
       "status": "ready",
-      "attempts": 2,
-      "artifact_run_id": "38134213834",
-      "sha256": "a22a19d996dc1b7d231f5c5f750fc785e828c2d048300db42a5fee19d66a2e72",
-      "width": 1536,
-      "height": 864,
-      "usage": {
-        "input_tokens": 2000,
-        "input_tokens_details": {
-          "image_tokens": 1508,
-          "text_tokens": 492
-        },
-        "output_tokens": 280,
-        "output_tokens_details": {
-          "image_tokens": 280,
-          "text_tokens": 0
-        },
-        "total_tokens": 2280
-      },
-      "review": {
-        "approved": true,
-        "issues": "",
-        "observed_title": "言葉だけで終わらせない",
-        "observed_diagram_label": "図解①",
-        "unsupported_claims": []
-      },
+      "attempts": 1,
+      "sha256": "e20ef544e01341e525e888c586a3257e25163a3ae4ceebd3669e5a3dc570e151",
+      "width": 1672,
+      "height": 941,
       "previous_generation": {
         "number": 1,
         "anchor": "【ここに図解①を挿入｜言葉だけで終わらせない】",
@@ -89,10 +86,10 @@
         ],
         "prompt": "図解①。AIと依頼メモ、鍵の3Dアイコン。2つの問いを大きな発光カードに。 指定のlabelsと該当する図解番号だけを正確に表示。実際の製品画面や導入済み仕様ではなく、発言・筆者の提案の説明図。濃紺、シアンの光、白と黄色の太い立体文字。",
         "filename": "diagram256.png",
-        "status": "generated",
-        "attempts": 1,
-        "artifact_run_id": "38134004474",
-        "sha256": "1ef0fbb6012f5c72dbec1aeb670dc5c808076de4236d46e286303c5b89ba5d41",
+        "status": "ready",
+        "attempts": 2,
+        "artifact_run_id": "38134213834",
+        "sha256": "a22a19d996dc1b7d231f5c5f750fc785e828c2d048300db42a5fee19d66a2e72",
         "width": 1536,
         "height": 864,
         "usage": {
@@ -107,133 +104,257 @@
             "text_tokens": 0
           },
           "total_tokens": 2280
+        },
+        "review": {
+          "approved": true,
+          "issues": "",
+          "observed_title": "言葉だけで終わらせない",
+          "observed_diagram_label": "図解①",
+          "unsupported_claims": []
+        },
+        "previous_generation": {
+          "number": 1,
+          "anchor": "【ここに図解①を挿入｜言葉だけで終わらせない】",
+          "theme": "言葉だけで終わらせない",
+          "labels": [
+            "言葉だけで終わらせない",
+            "専門家の見解",
+            "何を頼んだ？",
+            "何を許した？"
+          ],
+          "prompt": "図解①。AIと依頼メモ、鍵の3Dアイコン。2つの問いを大きな発光カードに。 指定のlabelsと該当する図解番号だけを正確に表示。実際の製品画面や導入済み仕様ではなく、発言・筆者の提案の説明図。濃紺、シアンの光、白と黄色の太い立体文字。",
+          "filename": "diagram256.png",
+          "status": "generated",
+          "attempts": 1,
+          "artifact_run_id": "38134004474",
+          "sha256": "1ef0fbb6012f5c72dbec1aeb670dc5c808076de4236d46e286303c5b89ba5d41",
+          "width": 1536,
+          "height": 864,
+          "usage": {
+            "input_tokens": 2000,
+            "input_tokens_details": {
+              "image_tokens": 1508,
+              "text_tokens": 492
+            },
+            "output_tokens": 280,
+            "output_tokens_details": {
+              "image_tokens": 280,
+              "text_tokens": 0
+            },
+            "total_tokens": 2280
+          }
+        },
+        "checkpoint_failure": {
+          "run_id": "38134004474",
+          "phase": "after_image_response",
+          "actual_result": "Generated image recovered from artifact, not yet reviewed.",
+          "recovery_error": "One duplicate image request was made before the artifact was inspected; explanation corrected to user."
         }
       },
-      "checkpoint_failure": {
-        "run_id": "38134004474",
-        "phase": "after_image_response",
-        "actual_result": "Generated image recovered from artifact, not yet reviewed.",
-        "recovery_error": "One duplicate image request was made before the artifact was inspected; explanation corrected to user."
+      "generation_method": "image_gen_with_original_user_image_reference",
+      "generated_source_filename": "exec-0e8aece7-60f3-41b1-9b67-7a5405042824.png",
+      "visual_review_at": "2026-10-11T23:24:35.286716+09:00",
+      "review": {
+        "approved": true,
+        "reviewed_by": "Codex visual inspection",
+        "observed_diagram_label": "図解①",
+        "issues": "",
+        "unsupported_claims": []
       }
     },
     {
       "number": 2,
-      "anchor": "【ここに図解②を挿入｜任せる範囲を分ける】",
-      "theme": "任せる範囲を分ける",
-      "labels": [
-        "任せる範囲を分ける",
-        "専門家の提案",
-        "読む",
-        "変更する"
-      ],
-      "prompt": "図解②。読む・変更するの二つの発光カード。権限を分ける概念図。 指定のlabelsと該当する図解番号だけを正確に表示。実際の製品画面や導入済み仕様ではなく、発言・筆者の提案の説明図。濃紺、シアンの光、白と黄色の太い立体文字。",
+      "anchor": "【ここに図解②を挿入｜読む作業と変更する作業を分ける】",
+      "theme": "読む作業と変更する作業を分ける",
+      "labels": [],
+      "prompt": "過去の本人の対応画像を直接見本としてimage_genツールで生成。濃紺・シアンの立体感、白黄色の大文字、短い説明。全テキストと企業ロゴ・役割・矢印を目視校閲。",
       "filename": "diagram257.png",
       "status": "ready",
-      "attempts": 2,
-      "artifact_run_id": "38134213834",
-      "sha256": "0941874a16b668cd1465a8f558319d8db9ae35c5bab7a055283453bf3555216a",
-      "width": 1536,
-      "height": 864,
-      "usage": {
-        "input_tokens": 2049,
-        "input_tokens_details": {
-          "image_tokens": 1508,
-          "text_tokens": 541
+      "attempts": 1,
+      "sha256": "88a08a0bce54a9cdc5702d9527e16562aa7b0f7cc80bcc3252e19f5792640e2e",
+      "width": 1672,
+      "height": 941,
+      "previous_generation": {
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜任せる範囲を分ける】",
+        "theme": "任せる範囲を分ける",
+        "labels": [
+          "任せる範囲を分ける",
+          "専門家の提案",
+          "読む",
+          "変更する"
+        ],
+        "prompt": "図解②。読む・変更するの二つの発光カード。権限を分ける概念図。 指定のlabelsと該当する図解番号だけを正確に表示。実際の製品画面や導入済み仕様ではなく、発言・筆者の提案の説明図。濃紺、シアンの光、白と黄色の太い立体文字。",
+        "filename": "diagram257.png",
+        "status": "ready",
+        "attempts": 2,
+        "artifact_run_id": "38134213834",
+        "sha256": "0941874a16b668cd1465a8f558319d8db9ae35c5bab7a055283453bf3555216a",
+        "width": 1536,
+        "height": 864,
+        "usage": {
+          "input_tokens": 2049,
+          "input_tokens_details": {
+            "image_tokens": 1508,
+            "text_tokens": 541
+          },
+          "output_tokens": 280,
+          "output_tokens_details": {
+            "image_tokens": 280,
+            "text_tokens": 0
+          },
+          "total_tokens": 2329
         },
-        "output_tokens": 280,
-        "output_tokens_details": {
-          "image_tokens": 280,
-          "text_tokens": 0
-        },
-        "total_tokens": 2329
+        "review": {
+          "approved": true,
+          "issues": "",
+          "observed_title": "図解②　任せる範囲を分ける",
+          "observed_diagram_label": "図解②",
+          "unsupported_claims": []
+        }
       },
+      "generation_method": "image_gen_with_original_user_image_reference",
+      "generated_source_filename": "exec-74b97c37-ad9a-453d-80aa-6e92f2d14b77.png",
+      "visual_review_at": "2026-10-11T23:24:35.286716+09:00",
       "review": {
         "approved": true,
-        "issues": "",
-        "observed_title": "図解②　任せる範囲を分ける",
+        "reviewed_by": "Codex visual inspection",
         "observed_diagram_label": "図解②",
+        "issues": "",
         "unsupported_claims": []
       }
     },
     {
       "number": 3,
-      "anchor": "【ここに図解③を挿入｜危険度に応じた確認】",
-      "theme": "危険度に応じた確認",
-      "labels": [
-        "危険度に応じた確認",
-        "専門家の提案",
-        "作業の危険度",
-        "人の確認"
-      ],
-      "prompt": "図解③。作業の危険度と人の確認を示す一つの概念図。具体的な数値は描かない。 指定のlabelsと該当する図解番号だけを正確に表示。実際の製品画面や導入済み仕様ではなく、発言・筆者の提案の説明図。濃紺、シアンの光、白と黄色の太い立体文字。",
+      "anchor": "【ここに図解③を挿入｜危険度に合わせて人が確認】",
+      "theme": "危険度に合わせて人が確認",
+      "labels": [],
+      "prompt": "過去の本人の対応画像を直接見本としてimage_genツールで生成。濃紺・シアンの立体感、白黄色の大文字、短い説明。全テキストと企業ロゴ・役割・矢印を目視校閲。",
       "filename": "diagram258.png",
       "status": "ready",
-      "attempts": 1,
-      "artifact_run_id": "38134213834",
-      "sha256": "36a7a1341909c52c367b830bfd775b81efa610ba993109ba58b4c3eac2ac116f",
-      "width": 1536,
-      "height": 864,
-      "usage": {
-        "input_tokens": 1999,
-        "input_tokens_details": {
-          "image_tokens": 1508,
-          "text_tokens": 491
+      "attempts": 2,
+      "sha256": "91d06566edde26648bb69b0a65fd008fabe25f324aa6cd793e2d11878b86a7d2",
+      "width": 1672,
+      "height": 941,
+      "previous_generation": {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜危険度に応じた確認】",
+        "theme": "危険度に応じた確認",
+        "labels": [
+          "危険度に応じた確認",
+          "専門家の提案",
+          "作業の危険度",
+          "人の確認"
+        ],
+        "prompt": "図解③。作業の危険度と人の確認を示す一つの概念図。具体的な数値は描かない。 指定のlabelsと該当する図解番号だけを正確に表示。実際の製品画面や導入済み仕様ではなく、発言・筆者の提案の説明図。濃紺、シアンの光、白と黄色の太い立体文字。",
+        "filename": "diagram258.png",
+        "status": "ready",
+        "attempts": 1,
+        "artifact_run_id": "38134213834",
+        "sha256": "36a7a1341909c52c367b830bfd775b81efa610ba993109ba58b4c3eac2ac116f",
+        "width": 1536,
+        "height": 864,
+        "usage": {
+          "input_tokens": 1999,
+          "input_tokens_details": {
+            "image_tokens": 1508,
+            "text_tokens": 491
+          },
+          "output_tokens": 280,
+          "output_tokens_details": {
+            "image_tokens": 280,
+            "text_tokens": 0
+          },
+          "total_tokens": 2279
         },
-        "output_tokens": 280,
-        "output_tokens_details": {
-          "image_tokens": 280,
-          "text_tokens": 0
-        },
-        "total_tokens": 2279
+        "review": {
+          "approved": true,
+          "issues": "",
+          "observed_title": "危険度に応じた確認",
+          "observed_diagram_label": "図解③",
+          "unsupported_claims": []
+        }
       },
+      "generation_method": "image_gen_with_original_user_image_reference",
+      "generated_source_filename": "exec-7f365307-d15c-49b8-b602-20ddc8595817.png",
+      "visual_review_at": "2026-10-11T23:24:35.286716+09:00",
       "review": {
         "approved": true,
-        "issues": "",
-        "observed_title": "危険度に応じた確認",
+        "reviewed_by": "Codex visual inspection",
         "observed_diagram_label": "図解③",
+        "issues": "",
         "unsupported_claims": []
+      },
+      "tool_correction": {
+        "previous_generated_source_filename": "exec-9fb0b1fb-e3ff-4bd9-9d64-9083f8b96176.png",
+        "reason": "無関係なOpenAIロゴを削除し、三つのカードの見出し対応を修正"
       }
     },
     {
       "number": 4,
-      "anchor": "【ここに図解④を挿入｜自分ならここを確認】",
-      "theme": "自分ならここを確認",
-      "labels": [
-        "自分ならここを確認",
-        "筆者の提案",
-        "送る",
-        "消す",
-        "お金"
-      ],
-      "prompt": "図解④。メール、ゴミ箱、コインの3Dアイコンと3枚の発光カード。 指定のlabelsと該当する図解番号だけを正確に表示。実際の製品画面や導入済み仕様ではなく、発言・筆者の提案の説明図。濃紺、シアンの光、白と黄色の太い立体文字。",
+      "anchor": "【ここに図解④を挿入｜実行前に見るポイント】",
+      "theme": "実行前に見るポイント",
+      "labels": [],
+      "prompt": "過去の本人の対応画像を直接見本としてimage_genツールで生成。濃紺・シアンの立体感、白黄色の大文字、短い説明。全テキストと企業ロゴ・役割・矢印を目視校閲。",
       "filename": "diagram259.png",
       "status": "ready",
       "attempts": 1,
-      "artifact_run_id": "38134213834",
-      "sha256": "2f8eff094654878b0f1fa262a3c4d0c154a006feb381e2fa158be9f1a3dbbc9c",
-      "width": 1536,
-      "height": 864,
-      "usage": {
-        "input_tokens": 1984,
-        "input_tokens_details": {
-          "image_tokens": 1508,
-          "text_tokens": 476
+      "sha256": "886b09caab52c296badccd0e6bd66e8425b08c624221e0ec1f622ec6e6e58b75",
+      "width": 1672,
+      "height": 941,
+      "previous_generation": {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜自分ならここを確認】",
+        "theme": "自分ならここを確認",
+        "labels": [
+          "自分ならここを確認",
+          "筆者の提案",
+          "送る",
+          "消す",
+          "お金"
+        ],
+        "prompt": "図解④。メール、ゴミ箱、コインの3Dアイコンと3枚の発光カード。 指定のlabelsと該当する図解番号だけを正確に表示。実際の製品画面や導入済み仕様ではなく、発言・筆者の提案の説明図。濃紺、シアンの光、白と黄色の太い立体文字。",
+        "filename": "diagram259.png",
+        "status": "ready",
+        "attempts": 1,
+        "artifact_run_id": "38134213834",
+        "sha256": "2f8eff094654878b0f1fa262a3c4d0c154a006feb381e2fa158be9f1a3dbbc9c",
+        "width": 1536,
+        "height": 864,
+        "usage": {
+          "input_tokens": 1984,
+          "input_tokens_details": {
+            "image_tokens": 1508,
+            "text_tokens": 476
+          },
+          "output_tokens": 280,
+          "output_tokens_details": {
+            "image_tokens": 280,
+            "text_tokens": 0
+          },
+          "total_tokens": 2264
         },
-        "output_tokens": 280,
-        "output_tokens_details": {
-          "image_tokens": 280,
-          "text_tokens": 0
-        },
-        "total_tokens": 2264
+        "review": {
+          "approved": true,
+          "issues": "",
+          "observed_title": "図解④ 自分ならここを確認",
+          "observed_diagram_label": "図解④",
+          "unsupported_claims": []
+        }
       },
+      "generation_method": "image_gen_with_original_user_image_reference",
+      "generated_source_filename": "exec-0209aa3a-6fb0-4689-8ea4-b1ddeed4046c.png",
+      "visual_review_at": "2026-10-11T23:24:35.286716+09:00",
       "review": {
         "approved": true,
-        "issues": "",
-        "observed_title": "図解④ 自分ならここを確認",
+        "reviewed_by": "Codex visual inspection",
         "observed_diagram_label": "図解④",
+        "issues": "",
         "unsupported_claims": []
       }
     }
   ],
-  "status": "ready"
+  "status": "ready",
+  "manual_revision": "ユーザーの作風指定に従う最新3本の改稿",
+  "reviewed_against_source_sha256": "900a356e49d0038fbe39fec6a05033b99396485312d6541e42da9eb66b5a9888"
 }

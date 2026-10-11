@@ -699,8 +699,8 @@
   "max_article_chars": 7000,
   "images": {
     "enabled": true,
-    "model": "gpt-image-2.5-flare",
-    "quality": "medium",
+    "model": "gpt-image-2.5-sunburst",
+    "quality": "high",
     "size": "1536x864",
     "max_attempts": 2,
     "first_diagram": 244,
@@ -709,10 +709,10 @@
       "thumbnail": "https://assets.st-note.com/production/uploads/images/320278344/rectangle_large_type_2_04748bf198433582631a340b239e6a67.png?fit=bounds&quality=85&width=1280",
       "diagram": "https://assets.st-note.com/img/1791008398-AXLV6MzNB7xvPr0RmhpU93oT.png",
       "diagrams": {
-        "1": "https://assets.st-note.com/img/1791712940-zCuc9lw5HNtsTDSRjW8daiJy.png",
-        "2": "https://assets.st-note.com/img/1791712946-aKsvbN6w71SdxChgBpko8Jy3.png",
-        "3": "https://assets.st-note.com/img/1791712953-QGXdWbKEzfw7OrexlBtiaDh8.png",
-        "4": "https://assets.st-note.com/img/1791712959-QTcwzMVHFCyve7PmZiEuYn01.png"
+        "1": "https://assets.st-note.com/img/1791008398-AXLV6MzNB7xvPr0RmhpU93oT.png",
+        "2": "https://assets.st-note.com/img/1791008435-IsdXfO8PgEime7c6bhn9GNx1.png",
+        "3": "https://assets.st-note.com/img/1791008293-vi0PyGXtRpI1FYWs7UfAlB2E.png",
+        "4": "https://assets.st-note.com/img/1791008318-M06oFOQlITHVKn2S4fPiby5t.png"
       }
     },
     "higgsfield_style_reference_urls": {
