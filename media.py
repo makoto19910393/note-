@@ -17,6 +17,8 @@ COMMON = '''ONLY ONE IMAGE. Single standalone image. No collage. No split panels
 Create one independent landscape 16:9 Japanese AI tech news graphic. Black/deep navy background, neon cyan/blue, white and yellow bold Japanese lettering.
 Large sparse typography readable on a phone, generous safe margins, crisp high contrast. One theme only. Correct Japanese and accurate product names.
 No fabricated official UI, no invented statistics, no unsupported claims. Match the article's facts and distinguish the author's suggestions from product features.
+Render ONLY the provided exact Japanese labels and the specified diagram number. Do not add explanatory bullets, captions, dates, claims, or company statements.
+Do not invent details to fill space. Follow the label whitelist even when an older layout description asks for extra bullet points.
 '''
 
 
@@ -73,6 +75,9 @@ def review_image(data,item,article,config):
 文字が判読できるか、企業・製品名と図解番号が正しいか、事実・関係・矢印が本文と一致するか確認する。
 1画像1テーマで他の図解をまとめたコラージュではないか確認する。
 文字が欠ける、重大な誤字、根拠のない数値、提供前の機能を全員利用可能と見せる場合はapproved=false。
+本文にない具体的な事実が画像に追加されていれば不合格。例えば社内調査の実施、対象者非公表、書簡での撤回要求を推測で描いてはいけない。
+予測や筆者の提案は、画像にも未確定・筆者の見立て・提案などの表示が必要。実際に起きたこととして描いていたら不合格。
+追加された文字も全て読む。expected_labelsの重要なラベルと図解番号が欠けていれば不合格。
 図解の比較表や一つのフローのカードはコラージュとは扱わない。フォントや引用符の軽微な違いは許容する。
 0はサムネイルで図解番号は不要。1〜4は該当する図解①〜④の番号が必要。
 不合格の理由は短い日本語で具体的に書く。''',
@@ -129,7 +134,8 @@ def ensure_images(output,config,run_id,checkpoint=None):
             if item['status'] not in ('generated','review_pending'):
                 number=item['number']
                 label='サムネイル' if number==0 else '図解'+ '①②③④'[number-1]
-                prompt=COMMON+f'\nThis image is {label}. Theme: {item["theme"]}.\nExact short Japanese labels: '+json.dumps(item['labels'],ensure_ascii=False)+'\n'+item['prompt']
+                labels=item['labels'] if number==0 else [label]+item['labels']
+                prompt=COMMON+f'\nThis image is {label}. The literal title must include {label}. Theme: {item["theme"]}.\nExact short Japanese labels: '+json.dumps(labels,ensure_ascii=False)+'\nLayout: '+item['prompt']+'\nDo not add any text beyond the exact labels above.'
                 if item.get('review',{}).get('issues'):
                     prompt+='\nCorrect only this image based on these issues: '+item['review']['issues']
                 item.update(status='generating',attempts=item.get('attempts',0)+1,

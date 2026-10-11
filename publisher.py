@@ -251,11 +251,13 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
                 note_id=re.search(r'/notes/(n[A-Za-z0-9]+)/',editor_url+'/').group(1)
                 owner_draft(context,note_id)
             existing_images=content.locator('img').count()
+            wanted_hashes=[x['sha256'] for x in plan['items']] if plan else None
+            changed_media=plan and record.get('media_hashes')!=wanted_hashes
             if existing_images and not plan:
                 raise WorkflowError('予定外の画像があります。既存下書きの上書きを止めます。')
             if existing_images and title.input_value()!=record['title']:
                 raise WorkflowError('画像付き下書きのタイトルが一致しません。')
-            if not existing_images:
+            if not existing_images or changed_media:
                 should_fill=True
             else:
                 should_fill=False
@@ -292,6 +294,11 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
             page.goto(editor_url,wait_until='domcontentloaded')
             content.wait_for(state='visible')
             if plan:
+                if changed_media:
+                    old_hashes=record.get('media_hashes',[])
+                    record['cover_needs_refresh']=not old_hashes or old_hashes[0]!=wanted_hashes[0]
+                    record['media_hashes']=wanted_hashes
+                    update_record(state_path,state,record)
                 stage='画像5枚の挿入と保存'
                 upload_images(page,context,output,state_path,state,record,plan,before_publish)
             if dry_run:

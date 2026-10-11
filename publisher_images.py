@@ -76,7 +76,8 @@ def upload_images(page, context, output, state_path, state, record, plan, checkp
         return data, count
 
     data = owner_draft(context, note_id)
-    if not data.get('eyecatch'):
+    if not data.get('eyecatch') or record.get('cover_needs_refresh'):
+        before=page.locator('img').evaluate_all("els=>els.filter(el=>!el.closest('.ProseMirror')).map(el=>el.src)")
         page.locator('button').filter(has=page.locator("svg[aria-label='画像を追加']")).click()
         with page.expect_file_chooser() as chooser:
             page.get_by_role('button', name='画像をアップロード', exact=False).click()
@@ -84,9 +85,15 @@ def upload_images(page, context, output, state_path, state, record, plan, checkp
         dialog = page.get_by_role('dialog').filter(has=page.get_by_role('button', name='保存', exact=True))
         dialog.get_by_role('button', name='保存', exact=True).click()
         page.locator('.CropModal__content').wait_for(state='hidden')
+        page.wait_for_function('''previous => Array.from(document.querySelectorAll('img'))
+            .some(img => !img.closest('.ProseMirror') && img.src.startsWith('https:') &&
+                !previous.includes(img.src) && img.complete && img.naturalWidth>0)''',arg=before)
         data, _ = save()
         if not data.get('eyecatch'):
             raise WorkflowError('サムネイルの保存を確認できません。')
+        record['cover_needs_refresh']=False
+        atomic_json(state_path,state)
+        if checkpoint:checkpoint()
 
     count = uploaded_count(content, plan)
     for item in plan['items'][count + 1:]:

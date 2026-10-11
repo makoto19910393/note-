@@ -40,17 +40,19 @@
     },
     {
       "number": 1,
-      "anchor": "【ここに図解①を挿入｜出来事の時系列】",
-      "theme": "出来事の時系列",
+      "anchor": "【ここに図解①を挿入｜双方の主張】",
+      "theme": "双方の主張",
       "labels": [
-        "解雇発表",
-        "研究者の書簡",
-        "報道",
-        "現状"
+        "解雇の説明",
+        "研究者側の反論",
+        "OpenAI：規定違反と説明",
+        "研究者：不当だと主張",
+        "主張が対立",
+        "未確定の点もある"
       ],
-      "prompt": "16:9 図解①。背景は黒。上部に見出し「出来事の時系列①」。左から右へ矢印の流れで4つのボックス：『社内事象』→『調査・対応』→『解雇発表（10月上旬）』→『研究者の公開書簡と反論』。各ボックス下に短い要点3点ずつ（白文字）。アクセントにネオンシアンの線と黄色い丸印。",
+      "prompt": "Two parallel large cards showing opposing claims, linked to a neutral uncertainty caption. No chronology or extra bullets.",
       "filename": "diagram244.png",
-      "status": "ready",
+      "status": "rejected",
       "attempts": 1,
       "artifact_run_id": "38107631755",
       "sha256": "1f708cc3f01126fbfca55a3f9af6dc572e642b85a68ba0e8f5924aacc36df8a8",
@@ -70,24 +72,25 @@
         "total_tokens": 556
       },
       "review": {
-        "approved": true,
-        "issues": "",
-        "observed_title": "出来事の時系列①"
+        "approved": false,
+        "issues": "図解番号がない、または本文にない断定・説明が追加されている。指定ラベルだけで描き直す。"
       }
     },
     {
       "number": 2,
-      "anchor": "【ここに図解②を挿入｜手続きと安全研究の対立】",
-      "theme": "手続きと安全研究の対立",
+      "anchor": "【ここに図解②を挿入｜情報保護と安全研究】",
+      "theme": "情報保護と安全研究",
       "labels": [
-        "機密管理",
-        "安全調査",
-        "外部連携",
-        "認識差"
+        "情報を守る",
+        "リスクを調べる",
+        "外に出せない情報",
+        "危険を見つけて知らせる",
+        "両立が必要",
+        "筆者の整理"
       ],
-      "prompt": "16:9 図解②。背景は濃紺。中央に“対立”を示す天秤図（左右で対比）。左に『機密管理』の要点3行、右に『安全研究』の要点3行。天秤の下に短い注釈『手続き vs 公開性』を黄色文字で配置。ネオンシアンで強調線。",
+      "prompt": "Two balanced large cards. Everyday icons. State this is the author’s explanation, not a company statement. No extra bullets.",
       "filename": "diagram245.png",
-      "status": "ready",
+      "status": "rejected",
       "attempts": 1,
       "artifact_run_id": "38107631755",
       "sha256": "e563ebaea2198c91c475784973c57178b0c6d735753e519996124d22ae670535",
@@ -107,24 +110,23 @@
         "total_tokens": 537
       },
       "review": {
-        "approved": true,
-        "issues": "",
-        "observed_title": "図解② 手続きと安全研究の対立"
+        "approved": false,
+        "issues": "図解番号がない、または本文にない断定・説明が追加されている。指定ラベルだけで描き直す。"
       }
     },
     {
       "number": 3,
-      "anchor": "【ここに図解③を挿入｜影響の連鎖】",
-      "theme": "影響の連鎖",
+      "anchor": "【ここに図解③を挿入｜気になる今後】",
+      "theme": "気になる今後",
       "labels": [
-        "社内文化",
-        "外部監査",
-        "規制強化",
-        "研究の萎縮"
+        "声を上げにくくなる？",
+        "外部の点検が増える？",
+        "ルール作りが進む？",
+        "筆者の見立て・未確定"
       ],
-      "prompt": "16:9 図解③。背景は黒。左上に『社内文化』、右上に『外部監査』、左下に『規制強化』、右下に『研究の萎縮』を四象限で配置。中心に相互作用を示す円と矢印。各象限に3つ以内の短い箇条書き。ネオンシアンのループ線で連結。",
+      "prompt": "Three question cards and one prominent uncertainty caption. These are possible outcomes, not events that have occurred. No additional claims.",
       "filename": "diagram246.png",
-      "status": "ready",
+      "status": "rejected",
       "attempts": 1,
       "artifact_run_id": "38107631755",
       "sha256": "454384c721387882009512a73abb7b056b3d6b30b90a233873b172d8ce26d4df",
@@ -144,24 +146,23 @@
         "total_tokens": 544
       },
       "review": {
-        "approved": true,
-        "issues": "",
-        "observed_title": "影響の連鎖"
+        "approved": false,
+        "issues": "図解番号がない、または本文にない断定・説明が追加されている。指定ラベルだけで描き直す。"
       }
     },
     {
       "number": 4,
-      "anchor": "【ここに図解④を挿入｜利用者向けチェックリスト】",
-      "theme": "利用者向けチェックリスト",
+      "anchor": "【ここに図解④を挿入｜サービス選びの確認点】",
+      "theme": "サービス選びの確認点",
       "labels": [
-        "透明性レポート",
-        "第三者監査",
-        "ログ管理",
-        "契約条項"
+        "外部による点検",
+        "データの扱い",
+        "問題を知らせる窓口",
+        "筆者の提案"
       ],
-      "prompt": "16:9 図解④。背景は濃紺。見出し『ユーザーのチェックリスト』。縦に4つのチェックボックス（透明性、監査、データアクセス、通報窓口）。各チェック横に短い確認項目1行。下に小さく『重要データは二重確認を』と黄色文字。",
+      "prompt": "Three simple checklist rows and a prominent author suggestion label. No extra explanatory text.",
       "filename": "diagram247.png",
-      "status": "ready",
+      "status": "rejected",
       "attempts": 1,
       "artifact_run_id": "38107631755",
       "sha256": "e77ae13a6942fb3d5d0713be9fd6f232202e89f5fce490a7ab387d411ae0bda2",
@@ -181,11 +182,10 @@
         "total_tokens": 528
       },
       "review": {
-        "approved": true,
-        "issues": "",
-        "observed_title": "ユーザーのチェックリスト"
+        "approved": false,
+        "issues": "図解番号がない、または本文にない断定・説明が追加されている。指定ラベルだけで描き直す。"
       }
     }
   ],
-  "status": "ready"
+  "status": "review_required"
 }
