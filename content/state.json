@@ -244,13 +244,13 @@
       "editorial_review": "過去112本の作風を参照、初心者への用語説明、事実と見解・提案の区別、株価の日時と因果の区別を目視校閲",
       "manual_editorial_review": true,
       "note_editor_url": "https://editor.note.com/notes/nae194d380626/edit",
-      "cover_needs_refresh": false,
+      "cover_needs_refresh": true,
       "media_hashes": [
-        "ceb1d5b29143216919f360420bb15919e4c6ea5a56d74b1286d063e86eb2c281",
-        "b7179a39e93145dd08d02961ef53fee78075d12bb481e6e774ec5048d2433297",
-        "6117c76ec8fcf61d47937fc7a745ac0e494ea1c512d80528bb85a4a93eb07d8c",
-        "23b22659b44dbbd439cf12b4f2cef3e7bee5d9099994a01f358cbe60a549ef9f",
-        "32478e84ed971ea3285175d095468bbf6ee3b9dab22cb1cd22656d780e2a767d"
+        "b69bbc45791b91249d6dcd4decd9993eb0e5d265611abe8c98966789437b6336",
+        "8eefeec2544efeb78b83111827c729e4b1a70834ba527bcc99a51fe319364178",
+        "a2831a261029a3738d00798ba7d32fcacb3b073c2edffd7132f604087f84450b",
+        "37c390ac044c79e372df33ebf7b8ef9e93d2ec01c53fb6cb954585c8939d0503",
+        "7569745ce9cc3df7975dba26a32e9e31f8ecb7cda473ec22aef90c3b60dbaa44"
       ],
       "media_upload": {
         "cover_uploaded": true,
