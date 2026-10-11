@@ -12,7 +12,7 @@
       ],
       "prompt": "球体AIと人物の立体アイコン、短い見出しだけ。内部の図解番号は描かない。 指定のlabelsと該当する図解番号だけを正確に表示。実際の製品画面や導入済み仕様ではなく、発言・筆者の提案の説明図。濃紺、シアンの光、白と黄色の太い立体文字。",
       "filename": "thumbnail.png",
-      "status": "generated",
+      "status": "review_pending",
       "attempts": 1,
       "artifact_run_id": "38134004474",
       "sha256": "55eea83ef317c033359f839949cca4560b9ffddd66231337d74f536b7e2322b0",
