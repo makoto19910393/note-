@@ -17,6 +17,23 @@ from test_automation import CONFIG, NOW, response
 
 
 class BatchTests(unittest.TestCase):
+    def test_structured_news_always_has_ordered_headings_and_four_markers(self):
+        data=response();article=json.loads(data['output'][1]['content'][0]['text'])
+        del article['body']
+        article['sections']={'intro':'確認用の導入です。','conclusions':['確認用']*3,
+            'explanations':[{'heading':'確認用'+str(i),'content':'検証用の本文です。'} for i in range(4)],
+            'personal_view':'例えばという想定例。','faq':[{'question':'確認用？','answer':'確認用です。'}]*3,
+            'summary':'確認用のまとめ。','about':'実ニュースではありません。'}
+        article['images']=[{'number':i,'theme':'確認用','anchor':'','labels':['確認用'],'prompt':'one standalone image'} for i in range(5)]
+        article.update(hashtags=['#確認'+str(i) for i in range(10)],threads='確認用です。どう思いますか？')
+        data['output'][1]['content'][0]['text']=json.dumps(article)
+        composed,evidence=a.extract_article(data)
+        urls=a.validate_article(composed,evidence,{**CONFIG,'images':{'enabled':True}}, {'articles':[]},NOW)
+        self.assertEqual(len(urls),2)
+        self.assertEqual(composed['body'].count('【ここに図解'),4)
+        self.assertLess(composed['body'].index('## 私の正直な感想'),composed['body'].index('## よくある質問'))
+        self.assertNotIn('body',a.article_schema(True)['required'])
+
     def test_illustrated_draft_reserves_four_diagrams_and_reuses_plan(self):
         data=response();article=json.loads(data['output'][1]['content'][0]['text'])
         markers=[f'【ここに図解{x}を挿入｜確認用】' for x in '①②③④']

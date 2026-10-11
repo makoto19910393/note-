@@ -104,7 +104,21 @@ def article_schema(illustrated=False):
         }, "required": ["title", "body", "sources"]
     }
     if illustrated:
+        # The program assembles the layout; the model supplies the prose.
+        # This makes heading order and four insertion positions deterministic.
+        del schema['properties']['body']
+        schema['required'].remove('body')
+        pair=lambda fields:{'type':'object','additionalProperties':False,
+                            'properties':{x:{'type':'string'} for x in fields},'required':fields}
         schema['properties'].update({
+            'sections':{'type':'object','additionalProperties':False,'properties':{
+                'intro':{'type':'string'},
+                'conclusions':{'type':'array','minItems':3,'maxItems':4,'items':{'type':'string'}},
+                'explanations':{'type':'array','minItems':4,'maxItems':4,'items':pair(['heading','content'])},
+                'personal_view':{'type':'string'},
+                'faq':{'type':'array','minItems':3,'maxItems':5,'items':pair(['question','answer'])},
+                'summary':{'type':'string'},'about':{'type':'string'}},
+                'required':['intro','conclusions','explanations','personal_view','faq','summary','about']},
             'images': {'type':'array','minItems':5,'maxItems':5,'items':{
                 'type':'object','additionalProperties':False,'properties':{
                     'number':{'type':'integer','minimum':0,'maximum':4},
@@ -114,7 +128,7 @@ def article_schema(illustrated=False):
                 'required':['number','anchor','theme','labels','prompt']}},
             'hashtags':{'type':'array','minItems':10,'maxItems':13,'items':{'type':'string'}},
             'threads':{'type':'string'}})
-        schema['required'] += ['images','hashtags','threads']
+        schema['required'] += ['sections','images','hashtags','threads']
     return schema
 
 
@@ -167,6 +181,12 @@ themeは15文字程度の短い日本語。labelsの各ラベルも原則15文�
 hashtagsは#で始まる10〜13個。本文に重ねて入れない。threadsは改行なし、約80字以内、
 事実と個人的な感想、最後は読者への質問。本文にThreads投稿文を入れない。
 過去記事へのリンクは入力にある確認済みnote URLだけを使う。新しいニュースの出典と混同しない。
+出力はsectionsに分けて書く。本文全体と図解位置はプログラムが組み立てる。
+introは読者の疑問から入る短い導入。conclusionsは結論3〜4点。explanationsはちょうど4節で、
+headingは読者の疑問、contentは完成した段落。各節は図解①〜④にそれぞれ対応する内容にする。
+personal_viewは正直な感想、faqは質問と回答、summaryはまとめ、aboutは確認日と情報の区分。
+sections合計3,000〜4,000文字を目安。各説明節400〜600字程度、感想300〜500字程度。
+contentに見出し・図解マーカー・図解挿入位置の一覧を重ねて書かない。images.anchorは空文字でよい。
 """
     return {
         "model": os.environ.get("OPENAI_MODEL") or config["model"],
@@ -262,7 +282,31 @@ def extract_article(response):
         article = json.loads("".join(texts))
     except (ValueError, TypeError):
         raise WorkflowError("AIの原稿データを読み取れません。") from None
+    if 'sections' in article:
+        article=compose_article(article)
     return article, evidence
+
+
+def compose_article(article):
+    sections=article['sections']
+    if len(sections['explanations'])!=4 or len(article['images'])!=5:
+        raise WorkflowError('本文4節と画像5枚が必要です。')
+    parts=[sections['intro'],'## 30秒で結論',
+           '\n'.join('- '+x for x in sections['conclusions'])]
+    for index,section in enumerate(sections['explanations'],1):
+        image=article['images'][index]
+        anchor=f'【ここに図解{"①②③④"[index-1]}を挿入｜{image["theme"]}】'
+        image['anchor']=anchor
+        prose=re.sub(r'【ここに図解[^\n】]*】','',section['content']).strip()
+        heading=section['heading'].lstrip('# ').strip()
+        parts.extend(['## '+heading,prose,anchor])
+    article['images'][0]['anchor']=''
+    parts.extend(['## 私の正直な感想',sections['personal_view'],'## よくある質問',
+                  '\n\n'.join('### '+x['question']+'\n\n'+x['answer'] for x in sections['faq']),
+                  '## まとめ',sections['summary'],'## この記事について',sections['about'],
+                  '## 参考リンク','\n'.join('- ['+x['title']+']('+x['url']+')' for x in article['sources'])])
+    article['body']='\n\n'.join(parts)
+    return article
 
 
 def validate_article(article, evidence, config, state, now):
