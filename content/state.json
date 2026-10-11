@@ -97,7 +97,11 @@
           "supports": "企業コメントと研究者の公開書簡の要旨、業界への波及を解説。"
         }
       ],
-      "note_editor_url": "https://editor.note.com/notes/n1b5e26bf3f65/edit"
+      "note_editor_url": "https://editor.note.com/notes/n1b5e26bf3f65/edit",
+      "media_upload": {
+        "cover_uploaded": false,
+        "diagrams": 0
+      }
     }
   ],
   "next_diagram": 248
