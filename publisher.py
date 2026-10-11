@@ -97,12 +97,11 @@ def inspect_editor(output, run_id):
             note_id = re.search(r'/notes/([^/]+)/', record['note_editor_url']).group(1)
             link = page.locator("a[href*='" + note_id + "']").first
             link.wait_for(state="visible", timeout=30000)
-            print("対象記事の管理行:", json.dumps(link.evaluate("""el => {
-                const results=[];
-                for(let i=0;el && i<5;i++,el=el.parentElement) results.push({tag:el.tagName,className:el.className,
-                    buttons:Array.from(el.querySelectorAll('button')).map(b=>({text:b.textContent.trim(),label:b.getAttribute('aria-label'),className:b.className}))});
-                return results;
-            }"""), ensure_ascii=False))
+            row = link.locator("xpath=ancestor::li[1]")
+            row.get_by_role("button").click()
+            print("対象記事のメニュー:", json.dumps(page.get_by_role("menuitem").all_text_contents(), ensure_ascii=False))
+            print("メニューのボタン:", json.dumps(page.get_by_role("button").all_text_contents(), ensure_ascii=False))
+
         finally:
             browser.close()
 
