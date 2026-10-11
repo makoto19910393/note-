@@ -51,12 +51,13 @@
       ],
       "prompt": "図解①。AIと依頼メモ、鍵の3Dアイコン。2つの問いを大きな発光カードに。 指定のlabelsと該当する図解番号だけを正確に表示。実際の製品画面や導入済み仕様ではなく、発言・筆者の提案の説明図。濃紺、シアンの光、白と黄色の太い立体文字。",
       "filename": "diagram256.png",
-      "status": "planned",
-      "attempts": 0,
+      "status": "generating",
+      "attempts": 1,
       "pre_request_failure": {
         "run_id": "38134004474",
         "reason": "Git checkpoint raised before call_image_api; no image request started."
-      }
+      },
+      "artifact_run_id": "38134213834"
     },
     {
       "number": 2,
