@@ -1,5 +1,5 @@
 {
-  "next_number": 3,
+  "next_number": 4,
   "articles": [
     {
       "number": 1,
@@ -36,6 +36,22 @@
       "published_at": "2026-10-11T10:47:11.361715+09:00",
       "original_run_id": "2026-10-11-morning",
       "withdrawn_at": "2026-10-11T10:58:55.037269+09:00"
+    },
+    {
+      "number": 3,
+      "run_id": "2026-10-11-morning",
+      "title": "【海外AI解説】Googleが「Gemini agent」を発表——Workspace内に“自分専用の同僚”を作り、Anthropicのモデルも動かせる構想",
+      "created_at": "2026-10-11T11:01:41.377188+09:00",
+      "path": "articles/2026-10-11/0003-morning.md",
+      "sources": [
+        "https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026",
+        "https://venturebeat.com/orchestration/google-cloud-unveils-persistent-gemini-agents-for-long-running-tasks-and-they-get-their-own-gmail-calendar-and-drive-storage",
+        "https://www.techradar.com/pro/google-reveals-gemini-agents-a-single-universal-agent-for-work-which-will-even-get-their-own-gmail-account"
+      ],
+      "sha256": "4cef2e7edf757c088da98030a3a5d4417495edceb5a359a180b8d6c5c69d9a14",
+      "status": "publishing",
+      "note_posted": false,
+      "note_editor_url": "https://editor.note.com/notes/n58087f706191/edit"
     }
   ]
 }
