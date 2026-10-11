@@ -200,5 +200,6 @@
         "unsupported_claims": []
       }
     }
-  ]
+  ],
+  "status": "ready"
 }
