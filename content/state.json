@@ -193,14 +193,14 @@
     {
       "number": 6,
       "run_id": "2026-10-11-evening-3",
-      "title": "【海外AI解説】ARTEXとClaudeエージェントが狙われた：韓国銀行への攻撃で明らかになった“エージェント化ツール”の実態と対策",
+      "title": "【海外AI解説】韓国の銀行攻撃でARTEXとClaude Codeの履歴を発見――履歴書から人物像、犯人は未確定",
       "created_at": "2026-10-11T19:25:30.272377+09:00",
       "path": "articles/2026-10-11/0006-evening.md",
       "sources": [
         "https://www.bleepingcomputer.com/news/security/hacker-used-artex-ai-and-claude-agents-to-target-south-korean-banks",
         "https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance"
       ],
-      "sha256": "14d36ac57d7e6938f018d24725828e994945c6d9a5b993b8b9ecbbec81cbe247",
+      "sha256": "62b99a518053f4c83ec8f13fdac1aee6cf6b915c377faf821e576a5d584469c7",
       "status": "draft",
       "note_posted": false,
       "media_plan": "media/0006/plan.json",
@@ -217,7 +217,8 @@
           "published_at": "2026-10-10T10:16:00+00:00",
           "supports": "BleepingComputerの報道。CrowdStrikeの分析を要約し、対象とされた銀行名（Shinhan, KB Kookmin, Hana）、顧客データ流出やシステム障害の影響、ARTEX開発者の対応（クローズド化）を伝える。"
         }
-      ]
+      ],
+      "editorial_review": "Title corrected to distinguish attacker tools from bank targets; primary and secondary sources reread; identity remains unconfirmed."
     }
   ],
   "next_diagram": 256

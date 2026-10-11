@@ -320,6 +320,7 @@ def compose_article(article):
         anchor=f'【ここに図解{"①②③④"[index-1]}を挿入｜{image["theme"]}】'
         image['anchor']=anchor
         prose=re.sub(r'[【（(]ここに図解[^\n】）)]*[】）)]','',section['content']).strip()
+        prose=re.sub(r'(?m)^###\s*(?:図解対応|図解挿入位置|図解の挿入位置)\s*$','',prose).strip()
         heading=section['heading'].lstrip('# ').strip()
         parts.extend(['## '+heading,prose,anchor])
     article['images'][0]['anchor']=''
