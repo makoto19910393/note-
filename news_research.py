@@ -36,6 +36,11 @@ factsには確認した事実だけ、unknownsにはまだ断定できない点�
     except ValueError:raise WorkflowError('ニュースの下調べを読み取れません。')from None
     evidence=set()
     for x in response.get('output',[]):
+        if x.get('type')=='message':
+            for c in x.get('content',[]):
+                for annotation in c.get('annotations',[]):
+                    if annotation.get('type')=='url_citation' and annotation.get('url'):
+                        evidence.add(canonical_url(annotation['url']))
         if x.get('type')!='web_search_call' or x.get('status')!='completed':continue
         action=x.get('action',{})
         if action.get('url'):evidence.add(canonical_url(action['url']))

@@ -200,7 +200,7 @@
         "https://www.bleepingcomputer.com/news/security/hacker-used-artex-ai-and-claude-agents-to-target-south-korean-banks",
         "https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance"
       ],
-      "sha256": "62b99a518053f4c83ec8f13fdac1aee6cf6b915c377faf821e576a5d584469c7",
+      "sha256": "aa567d2eaf7e586d57f9d657eb315639a698ed8702bbe78814793e5c8156a9db",
       "status": "draft",
       "note_posted": false,
       "media_plan": "media/0006/plan.json",

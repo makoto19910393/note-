@@ -11,7 +11,7 @@ import sys
 import tempfile
 from datetime import datetime, timedelta
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlsplit, urlunsplit
+from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
 from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
 
@@ -30,7 +30,9 @@ def canonical_url(url):
     parts = urlsplit(url)
     if parts.scheme != "https" or not parts.hostname or parts.username or parts.password:
         raise WorkflowError("参考URLが有効なHTTPS URLではありません。")
-    return urlunsplit(("https", parts.netloc.lower(), parts.path.rstrip("/"), parts.query, ""))
+    query=urlencode([(k,v) for k,v in parse_qsl(parts.query,keep_blank_values=True)
+                     if not k.lower().startswith("utm_") and k.lower() not in ("trk","fbclid","gclid")])
+    return urlunsplit(("https", parts.netloc.lower(), parts.path.rstrip("/"), query, ""))
 
 
 def story_source_key(url):
