@@ -313,17 +313,34 @@ def run(slot, output, config, now=None, fixture=None, run_date=None):
                     raise WorkflowError("作成済み原稿が欠落・変更しています。自動再生成せず停止しました。")
                 print("この時間枠の原稿は作成済みです。APIを再実行しません。")
                 return target
-        response = json.loads(fixture.read_text()) if fixture else call_api(make_request(config, state, now, slot))
-        article, evidence = extract_article(response)
-        try:
-            urls = validate_article(article, evidence, config, state, now)
-            verify_topic_novelty(article, config, state, output)
-        except WorkflowError as error:
-            # Keep only the generated news draft and public evidence, not the raw API response.
-            atomic_json(output / "review" / (run_id + "-rejected.json"),
-                        {"status": "rejected_not_published", "reason": str(error),
-                         "article": article, "evidence": sorted(evidence)})
-            raise
+        review_path = output / "review" / (run_id + "-rejected.json")
+        feedback = None
+        if review_path.is_file():
+            rejected = json.loads(review_path.read_text())
+            feedback = {"title": rejected["article"]["title"], "reason": rejected["reason"]}
+        for attempt in range(1 if fixture else 2):
+            if fixture:
+                response = json.loads(fixture.read_text())
+            else:
+                payload = make_request(config, state, now, slot)
+                if feedback:
+                    inputs = json.loads(payload["input"])
+                    inputs["rejected_candidate"] = feedback
+                    payload["input"] = json.dumps(inputs, ensure_ascii=False)
+                    payload["instructions"] += "\n前回の候補は検証で不採用。理由を修正し、重複の場合は違う会社・製品の別の出来事を選ぶ。"
+                response = call_api(payload)
+            article, evidence = extract_article(response)
+            try:
+                urls = validate_article(article, evidence, config, state, now)
+                verify_topic_novelty(article, config, state, output)
+                break
+            except WorkflowError as error:
+                atomic_json(review_path, {"status": "rejected_not_published", "reason": str(error),
+                           "article": article, "evidence": sorted(evidence)})
+                if fixture or attempt == 1:
+                    raise
+                feedback = {"title": article["title"], "reason": str(error)}
+                print("候補の検証で不採用。別の候補を1回だけ調べ直します。")
         result = save_article(output, state, state_path, config, now, slot, article, urls, run_date)
         print("原稿を保存しました:", result)
         return result
