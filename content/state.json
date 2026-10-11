@@ -1,5 +1,5 @@
 {
-  "next_number": 4,
+  "next_number": 5,
   "articles": [
     {
       "number": 1,
@@ -54,6 +54,50 @@
       "note_editor_url": "https://editor.note.com/notes/n58087f706191/edit",
       "note_url": "https://note.com/quiet_spirea2390/n/n58087f706191",
       "published_at": "2026-10-11T11:03:42.136743+09:00"
+    },
+    {
+      "number": 4,
+      "run_id": "2026-10-11-morning-3",
+      "title": "【海外AI解説】OpenAIが“安全チーム”の研究者3名を解雇 — 背景と今後の意味をわかりやすく解説",
+      "created_at": "2026-10-11T12:12:59.045377+09:00",
+      "path": "articles/2026-10-11/0004-morning.md",
+      "sources": [
+        "https://apnews.com/article/789d4f5293fba45a22fcb62ebfbc2a41",
+        "https://techcrunch.com/2026/10/08/fired-openai-safety-researchers-dispute-misconduct-claims-warn-of-chilling-effect?trk=article-ssr-frontend-pulse_little-text-block",
+        "https://www.theinformation.com/briefings/openai-researchers-say-fired-prioritizing-safety",
+        "https://www.washingtonpost.com/business/2026/10/09/openai-chatgpt-ai-artificial-intelligence-safety/96046fae-c3d1-11f1-8170-681419af1cc9_story.html"
+      ],
+      "sha256": "80c05053a120790f790f95845ed66fd8b155cf990a0fdd70a46865b184a5c568",
+      "status": "draft",
+      "note_posted": false,
+      "media_plan": "media/0004/plan.json",
+      "source_details": [
+        {
+          "title": "OpenAI fires 3 safety researchers in dispute over AI risks — AP News",
+          "url": "https://apnews.com/article/789d4f5293fba45a22fcb62ebfbc2a41",
+          "published_at": "2026-10-09T11:06:33+00:00",
+          "supports": "解雇の事実、OpenAI側の公式見解（機密情報取り扱いポリシー違反）を報告。"
+        },
+        {
+          "title": "Fired OpenAI safety researchers dispute misconduct claims, warn of chilling effect — TechCrunch",
+          "url": "https://techcrunch.com/2026/10/08/fired-openai-safety-researchers-dispute-misconduct-claims-warn-of-chilling-effect/?trk=article-ssr-frontend-pulse_little-text-block",
+          "published_at": "2026-10-08T13:04:00-07:00",
+          "supports": "解雇された研究者側の反論や公開書簡の内容、社内への影響を報告。"
+        },
+        {
+          "title": "OpenAI Researchers Say They Were Fired for “Prioritizing Safety” — The Information",
+          "url": "https://www.theinformation.com/briefings/openai-researchers-say-fired-prioritizing-safety",
+          "published_at": "2026-10-08T13:20:00-07:00",
+          "supports": "研究者の主張（安全優先を理由に解雇されたとする立場）と一部経緯の詳細を報告。"
+        },
+        {
+          "title": "OpenAI fires 3 safety researchers in dispute over AI risks — The Washington Post",
+          "url": "https://www.washingtonpost.com/business/2026/10/09/openai-chatgpt-ai-artificial-intelligence-safety/96046fae-c3d1-11f1-8170-681419af1cc9_story.html",
+          "published_at": "2026-10-09T07:07:00-04:00",
+          "supports": "企業コメントと研究者の公開書簡の要旨、業界への波及を解説。"
+        }
+      ]
     }
-  ]
+  ],
+  "next_diagram": 248
 }
