@@ -276,9 +276,11 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
                 allowed_titles.append(revision.get('previous_title'))
             if existing_images and title.input_value() not in allowed_titles:
                 raise WorkflowError('画像付き下書きのタイトルが一致しません。')
-            if revision and editor_url and record.get('draft_source_sha256') != record['sha256']:
+            if (revision and editor_url and record.get('draft_source_sha256') != record['sha256']
+                    and record.get('owner_backup_for_source_sha256') != record['sha256']):
                 from draft_revision import backup_owner_draft
                 record['previous_owner_draft_backup_sha256'] = backup_owner_draft(existing_draft, note_id)
+                record['owner_backup_for_source_sha256'] = record['sha256']
             if not existing_images or changed_media:
                 should_fill=True
             else:

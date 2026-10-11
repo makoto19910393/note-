@@ -89,6 +89,18 @@ def upload_images(page, context, output, state_path, state, record, plan, checkp
         record.pop('pending_cover_url',None)
     if not data.get('eyecatch') or record.get('cover_needs_refresh'):
         before=page.locator('img').evaluate_all("els=>els.filter(el=>!el.closest('.ProseMirror')).map(el=>el.src)")
+        cover = page.locator('img[alt="eyecatch"]')
+        if cover.count() > 1:
+            raise WorkflowError('差し替えるサムネイルを一意に確認できません。')
+        if cover.count() == 1:
+            # Existing covers expose only a remove control. Remove this cover in
+            # the native editor, then use its normal add/upload/crop controls.
+            container = cover.locator('xpath=ancestor::div[@data-dragging][1]')
+            remove = container.locator('button').filter(has=page.locator('svg[aria-label="削除"]'))
+            if remove.count() != 1:
+                raise WorkflowError('サムネイルの差し替え操作を確認できません。')
+            remove.click()
+            cover.wait_for(state='hidden')
         page.locator('button').filter(has=page.locator("svg[aria-label='画像を追加']")).click()
         with page.expect_file_chooser() as chooser:
             page.get_by_role('button', name='画像をアップロード', exact=False).click()

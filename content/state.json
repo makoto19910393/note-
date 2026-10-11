@@ -211,7 +211,9 @@
         "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=1mo&interval=1d",
         "news_causation_verified": false
       },
-      "previous_owner_draft_backup_sha256": "1ac33dfb94af98f7b2435fe0441b037c89b9cccac7eed21c6d3b6db7eb1b4c20"
+      "previous_owner_draft_backup_sha256": "1ac33dfb94af98f7b2435fe0441b037c89b9cccac7eed21c6d3b6db7eb1b4c20",
+      "owner_backup_for_source_sha256": "1a06c0275203824702abb241a74fab8068848d5aef0eb0d410a8281292876c6c",
+      "original_owner_backup_run": "38147115014"
     },
     {
       "number": 6,
@@ -274,7 +276,9 @@
       },
       "stock_editorial_note": "Claudeは製品名。Forgeの未上場株案内を10/11閲覧。取引所のAnthropic株の終値を確認できないためチャート・価格を省略。",
       "layout_revision": "2026-10-11-original-user-style-and-beginner-rewrite",
-      "previous_owner_draft_backup_sha256": "fe6a51e4f597034a8502ac9b49b143b99b59ed3a4bbc429faa2b8bd495e58ce4"
+      "previous_owner_draft_backup_sha256": "fe6a51e4f597034a8502ac9b49b143b99b59ed3a4bbc429faa2b8bd495e58ce4",
+      "owner_backup_for_source_sha256": "7c048fea0216f43e3d410a7236f10f3aa7f326f86855d86c7c316dbe73817963",
+      "original_owner_backup_run": "38147115014"
     },
     {
       "number": 7,
@@ -351,7 +355,9 @@
         "news_causation_verified": false
       },
       "layout_revision": "2026-10-11-original-user-style-and-beginner-rewrite",
-      "previous_owner_draft_backup_sha256": "6bfe909c4e48760dbf7092b14f626b074ebfddf5dbef3acb29d35d211389598b"
+      "previous_owner_draft_backup_sha256": "6bfe909c4e48760dbf7092b14f626b074ebfddf5dbef3acb29d35d211389598b",
+      "owner_backup_for_source_sha256": "900a356e49d0038fbe39fec6a05033b99396485312d6541e42da9eb66b5a9888",
+      "original_owner_backup_run": "38147115014"
     }
   ],
   "next_diagram": 260
