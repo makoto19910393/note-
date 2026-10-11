@@ -145,6 +145,9 @@ def make_request(config, state, now, slot):
     previous += config.get("previous_topics", [])
     illustrated = config.get('images', {}).get('enabled', False)
     instructions = (ROOT / 'editorial_prompt.md').read_text().split('運用：', 1)[0]
+    region=config.get('_target_region')
+    if region:
+        instructions+='\n今回は'+('【国内AI学び】の国内' if region=='domestic' else '【海外AI解説】の海外')+'ニュース枠。指定のタグをタイトル先頭に使い、国内外を勝手に変更しない。'
     instructions += """
 今回は無料ニュース1記事の完成原稿を指定JSONで返す。記事番号・価格・作成工程は本文へ出さない。
 最新の出来事をweb_searchで確認。sourcesは実際に開いたURL、タイムゾーン付きISO8601の発行日時、裏づける事実。最低1件は直近48時間。確認できなければtitle/bodyを空、sourcesを空配列にする。
@@ -291,6 +294,10 @@ def compose_article(article):
 
 
 def validate_article(article, evidence, config, state, now):
+    region=config.get('_target_region')
+    required_tag={'domestic':'【国内AI学び】','overseas':'【海外AI解説】'}.get(region)
+    if required_tag and not article.get('title','').startswith(required_tag):
+        raise WorkflowError('記事タイトルが指定の国内・海外枠に一致しません。')
     title = article.get("title", "")
     body = article.get("body", "")
     sources = article.get("sources", [])
@@ -410,6 +417,8 @@ def save_article(output, state, state_path, config, now, slot, article, urls, ru
               "created_at": now.isoformat(), "path": str(relative), "sources": urls,
               "sha256": hashlib.sha256(text.encode()).hexdigest(),
               "status": "draft", "note_posted": False}
+    if config.get('_target_region'):
+        record['news_region']=config['_target_region']
     if media:
         atomic_json(output/media_relative,media)
         record.update({'media_plan':str(media_relative),'source_details':article['sources']})

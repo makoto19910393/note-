@@ -10,6 +10,9 @@ def research(config,state,now,feedback=None):
     candidates=[candidate for candidate in config.get('_news_candidates',[])
                 if canonical_url(candidate['url']) not in previous_urls
                 and candidate['url'] not in attempted]
+    region=config.get('_target_region')
+    from news_candidates import candidates_for_region
+    candidates=candidates_for_region(candidates,region)
     if not candidates:
         raise WorkflowError('未確認の最新ニュース候補がありません。')
     selected=candidates[0]
@@ -22,6 +25,11 @@ def research(config,state,now,feedback=None):
         'unknowns':{'type':'array','items':{'type':'string'}},
         'sources':{'type':'array','minItems':2,'maxItems':4,'items':source_schema}},
         'required':['event','facts','unknowns','sources']}
+    if region:
+        schema['properties'].update({
+            'region':{'type':'string','enum':['domestic','overseas']},
+            'region_reason':{'type':'string'}})
+        schema['required']+=['region','region_reason']
     instructions='''AIニュースの下調べだけを行う。完成記事や画像案は書かない。
 読者はAI初心者の学生・主婦・会社員。専門用語を説明できる根拠と、身近な意味を確認する。
 株価の価格・終値・値動きは調査しない。必要なら関連する上場企業名だけ確認し、note標準埋め込みを利用する。
@@ -34,6 +42,8 @@ URLを推測・創作しない。RSSを読んだだけでは本文確認とし�
 factsには確認した事実だけ、unknownsにはまだ断定できない点を短く書く。
 具体的な日時、人数、料金、犯人の断定には特に注意する。企業の計画、研究者の主張、筆者の意見を混ぜない。
 見つからない場合はeventを空文字にし、sourcesのurlも空文字にする。架空のURLで埋めない。'''
+    if region:
+        instructions+='\n今回の枠は'+('国内' if region=='domestic' else '海外')+'AIニュース。regionには実際の出来事の区分、region_reasonには根拠を記す。国内は日本企業・機関の発表や日本での導入・制度・日本向け提供。海外発表を日本語で報じただけなら海外。本文で確認し、枠に合わない場合も区分を偽らない。'
     previous=[a['title']for a in state['articles']]+[a['title']for a in config.get('previous_topics',[])]
     payload={'model':config['model'],'store':False,'reasoning':{'effort':'low'},'instructions':instructions,
              'input':json.dumps({'now':now.isoformat(),'selected_candidate':selected,
@@ -47,6 +57,8 @@ factsには確認した事実だけ、unknownsにはまだ断定できない点�
               for c in x.get('content',[])if c.get('type')=='output_text']
     try:data=json.loads(''.join(messages))
     except ValueError:raise WorkflowError('ニュースの下調べを読み取れません。')from None
+    if region and (data.get('region')!=region or not data.get('region_reason','').strip()):
+        raise WorkflowError('調べたニュースが指定の国内・海外枠に一致しません。別区分で穴埋めしません。')
     evidence=set()
     for x in response.get('output',[]):
         if x.get('type')=='message':

@@ -88,7 +88,13 @@ def run_batch(output,config,actual_now,scheduled,slot,mode,checkpoint=None,run_i
     for i,run_id in enumerate(ids,1):
         try:
             if run_ids is None:
-                run(slot,output,{**config,'_batch_index':i},actual_now,
+                plan=config.get('news_region_plan',{}).get(slot,[])
+                if plan and len(plan)!=len(ids):
+                    raise WorkflowError('国内・海外の配分と記事数が一致しません。')
+                article_config={**config,'_batch_index':i}
+                if plan:
+                    article_config['_target_region']=plan[i-1]
+                run(slot,output,article_config,actual_now,
                     run_date=scheduled.strftime('%Y-%m-%d'),run_id=run_id)
                 checkpoint()
             current=json.loads(state_path.read_text())

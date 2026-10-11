@@ -728,5 +728,17 @@
   },
   "research_first": true,
   "editorial_audit": true,
-  "automation_start_at": "2026-10-13T07:00:00+09:00"
+  "automation_start_at": "2026-10-13T07:00:00+09:00",
+  "news_region_plan": {
+    "morning": [
+      "overseas",
+      "overseas",
+      "domestic"
+    ],
+    "evening": [
+      "domestic",
+      "domestic",
+      "overseas"
+    ]
+  }
 }

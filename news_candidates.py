@@ -1,5 +1,6 @@
 """Read current public RSS headlines; publication still requires checked sources."""
 from datetime import timezone
+from concurrent.futures import ThreadPoolExecutor
 from email.utils import parsedate_to_datetime
 import re
 from urllib.parse import urlsplit, parse_qs
@@ -8,8 +9,36 @@ import xml.etree.ElementTree as ET
 
 FEEDS=('https://www.bleepingcomputer.com/feed/',
        'https://www.techradar.com/rss',
+       'https://rss.itmedia.co.jp/rss/2.0/aiplus.xml',
+       'https://www.bing.com/news/search?q=AI+%E6%97%A5%E6%9C%AC%E4%BC%81%E6%A5%AD&format=rss&mkt=ja-JP',
        'https://www.bing.com/news/search?q=AI&format=rss&mkt=ja-JP')
 AI=re.compile(r'AI(?![a-z])|人工知能|生成|Claude|ChatGPT|Anthropic|OpenAI|Gemini|NVIDIA|Copilot|Higgsfield',re.I)
+DOMESTIC=re.compile(r'日本|国内|国産|東京|\bJapan(?:ese)?\b|\bTokyo\b|富士通|FUJITSU|日立|NTT|みずほ|三菱|三井|経産省|金融庁|総務省|ソフトバンク|SoftBank|楽天|サイバーエージェント|CyberAgent|NEC|トヨタ|Toyota|ソニー|Sony|パナソニック|Panasonic',re.I)
+OVERSEAS=re.compile(r'OpenAI|Anthropic|Claude|Google|Gemini|Microsoft|NVIDIA|Meta\b|Apple|Higgsfield|韓国|中国|米国|アメリカ|英国|欧州|\bKorea|\bChina|\bUS\b|\bUK\b',re.I)
+
+
+def candidate_region(candidate):
+    # Language and publication country do not determine the event's region.
+    if DOMESTIC.search(candidate['title']):return 'domestic'
+    if OVERSEAS.search(candidate['title']):return 'overseas'
+    return 'unknown'
+
+
+def candidates_for_region(candidates,region):
+    if not region:return candidates
+    if region not in ('domestic','overseas'):
+        raise ValueError('Invalid news region')
+    return ([x for x in candidates if candidate_region(x)==region]+
+            [x for x in candidates if candidate_region(x)=='unknown'])
+
+
+def read_feed(feed):
+    try:
+        request=Request(feed,headers={'User-Agent':'mako-note-news-research/1.0'})
+        with urlopen(request,timeout=20) as response:
+            return ET.fromstring(response.read(3000000))
+    except Exception:
+        return None
 
 INTERESTS={
     'OpenAI':r'openai|chatgpt|gpt[-\s]?[0-9]',
@@ -48,11 +77,11 @@ def prioritize_candidates(candidates, insights):
 
 def current_candidates(now,max_age_hours=48):
     candidates=[];seen=set()
-    for feed in FEEDS:
+    with ThreadPoolExecutor(max_workers=len(FEEDS)) as pool:
+        roots=list(pool.map(read_feed,FEEDS))
+    for root in roots:
         try:
-            request=Request(feed,headers={'User-Agent':'mako-note-news-research/1.0'})
-            with urlopen(request,timeout=20) as response:
-                root=ET.fromstring(response.read(3000000))
+            if root is None:continue
             for item in root.findall('.//item'):
                 title=item.findtext('title','').strip()
                 if not AI.search(title):continue
@@ -71,4 +100,9 @@ def current_candidates(now,max_age_hours=48):
                                    'evidence_note':'RSSの見出しと日時。記事本文・一次資料の裏取りは別途必要。'})
         except Exception:
             continue # A missing feed is optional, never treated as verified news.
-    return sorted(candidates,key=lambda x:x['feed_published_at'],reverse=True)[:35]
+    ordered=sorted(candidates,key=lambda x:x['feed_published_at'],reverse=True)
+    # Keep domestic candidates even when newer overseas headlines fill the feed.
+    chosen=[]
+    for region,limit in (('domestic',15),('overseas',15),('unknown',5)):
+        chosen.extend([x for x in ordered if candidate_region(x)==region][:limit])
+    return sorted(chosen,key=lambda x:x['feed_published_at'],reverse=True)

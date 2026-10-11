@@ -8,6 +8,20 @@ from news_research import write_from_research, research
 
 
 class ResearchCitationTests(unittest.TestCase):
+    def test_domestic_slot_rejects_actual_overseas_event_despite_matching_headline_hint(self):
+        selected='https://example.org/new-story'
+        sources=[{'url':selected},{'url':'https://example.net/verified'}]
+        data={'event':'A global product announcement','facts':[],'unknowns':[],
+              'sources':sources,'region':'overseas','region_reason':'日本語の報道だが世界向け発表'}
+        response={'status':'completed','output':[
+            {'type':'web_search_call','status':'completed','action':{'sources':sources}},
+            {'type':'message','content':[{'type':'output_text','text':json.dumps(data)}]}]}
+        config={'model':'fixture','_target_region':'domestic','_news_candidates':[
+            {'title':'日本向けかもしれない新しいAI発表','url':selected}]}
+        with patch('news_research.call_api',return_value=response),self.assertRaisesRegex(
+                WorkflowError,'国内・海外枠'):
+            research(config,{'articles':[]},datetime.fromisoformat('2026-10-13T07:00:00+09:00'))
+
     def test_research_cannot_replace_selected_news_with_popular_old_story(self):
         sources=[{'url': 'https://example.org/old-story'},
                  {'url': 'https://example.net/old-story'}]

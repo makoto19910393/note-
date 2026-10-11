@@ -12,6 +12,7 @@ def audit(article,research,model,previous=None):
 主語の逆転、事実・予定・未確定情報・意見の混同、未確認の料金・性能・犯人・使用体験、偽の公式画面は不合格。筆者の提案は画像にもその旨を明記。
 タイトルは会社・サービスと出来事が分かり、AI初心者にも専門語を説明し、短い段落で読めること。本文へ作成指示を残さない。
 株価はnote標準の$企業名埋め込みのみ。具体的な株価を追加しない。サービス名と上場企業を混同しない。
+調査資料のregion・region_reasonと実際の出来事が一致し、タイトルの国内／海外タグも合うこと。日本語の海外報道を国内ニュースにしない。
 previousがある場合、言い換えや角度違いでも同じ発表・事件は不合格。同じ会社の別の発表、根拠のある新展開は許容。修正理由は具体的に短く示し、新しい事実を創作しない。''',
              'input':json.dumps({'research':research,
                                 'article':{k:v for k,v in article.items() if k not in ('sections','hashtags','threads')},

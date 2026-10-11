@@ -1,7 +1,7 @@
 from datetime import datetime
 import unittest
 
-from news_candidates import prioritize_candidates
+from news_candidates import prioritize_candidates, candidates_for_region
 from run_workflow import generation_has_started
 
 
@@ -21,3 +21,11 @@ class StartAndInterestTests(unittest.TestCase):
         self.assertEqual(ranked,[candidates[1],candidates[2],candidates[0]])
         self.assertEqual(len(ranked),len(candidates))
         self.assertEqual(prioritize_candidates(candidates,{'available':False}),candidates)
+
+    def test_japanese_reporting_of_overseas_product_is_not_domestic(self):
+        overseas={'title':'OpenAIが新しいAIモデルを発表'}
+        domestic={'title':'日本の銀行がGoogle Geminiの導入を発表'}
+        unknown={'title':'AIの新しい活用事例を発表'}
+        candidates=[overseas,domestic,unknown]
+        self.assertEqual(candidates_for_region(candidates,'domestic'),[domestic,unknown])
+        self.assertEqual(candidates_for_region(candidates,'overseas'),[overseas,unknown])
