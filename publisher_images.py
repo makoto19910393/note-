@@ -21,6 +21,48 @@ def caption(item):
     return '図解' + '①②③④'[item['number'] - 1] + '｜' + item['theme']
 
 
+def stock_markers(body):
+    """Only standalone company commands are stock widgets; prices are never commands."""
+    names=re.findall(r'^\$([^\n$]{1,80})$', body, re.M)
+    return list(dict.fromkeys(name for name in names
+                            if re.match(r'^[A-Za-z\u3040-\u30ff\u3400-\u9fff]',name)))
+
+
+def insert_stock_embeds(page, content, companies):
+    """Use note's own $ company + Enter command and require a native chart."""
+    from playwright.sync_api import TimeoutError as BrowserTimeout
+    selector=('[data-src^="https://money.note.com/"],'
+              'iframe[src^="https://money.note.com/"]')
+    for company in companies:
+        command='$'+company
+        paragraph=content.locator('p').filter(has_text=re.compile('^'+re.escape(command)+'$'))
+        if not paragraph.count():
+            continue  # A previously saved native widget no longer contains its command.
+        if paragraph.count()!=1:
+            raise WorkflowError('株価の挿入位置が重複しています。')
+        count=content.locator(selector).count()
+        paragraph.click()
+        paragraph.evaluate('''el => {
+            const range=document.createRange(); range.selectNodeContents(el);
+            const selection=window.getSelection(); selection.removeAllRanges(); selection.addRange(range);
+        }''')
+        # Normal key events activate note's command; pasting plain text alone does not.
+        page.keyboard.type(command,delay=40)
+        page.keyboard.press('Enter')
+        try:
+            page.wait_for_function('''({selector, count}) => {
+                const body=document.querySelector('.ProseMirror');
+                return body && body.querySelectorAll(selector).length>count;
+            }''',arg={'selector':selector,'count':count},timeout=12000)
+        except BrowserTimeout:
+            raise WorkflowError('note標準の株価埋め込みを確認できません。数値や自作画像で代用しません。') from None
+    urls=content.locator(selector).evaluate_all(
+        'els=>Array.from(new Set(els.map(el=>el.dataset.src || el.src)))')
+    if len(urls)<len(companies):
+        raise WorkflowError('指定した株価チャートの保存前確認ができません。')
+    return urls
+
+
 def owner_draft(context, note_id):
     response = context.request.get('https://note.com/api/v3/notes/' + note_id)
     if not response.ok:

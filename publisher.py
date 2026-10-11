@@ -204,7 +204,8 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
         raise WorkflowError("原稿が生成後に変更されています。確認が必要です。")
     body = data.decode().split("\n", 1)[1].strip()
     from media import verified_media
-    from publisher_images import prepare_body, owner_draft, upload_images, save_draft
+    from publisher_images import (prepare_body, owner_draft, upload_images, save_draft,
+                                  stock_markers, insert_stock_embeds)
     plan=verified_media(output,record)
     body=prepare_body(body,plan)
     if 'ここに図解' in body:
@@ -320,6 +321,15 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
                 before_publish()
             page.goto(editor_url,wait_until='domcontentloaded')
             content.wait_for(state='visible')
+            companies=stock_markers(body)
+            if companies:
+                stage='note標準の株価埋め込み'
+                charts=insert_stock_embeds(page,content,companies)
+                save_draft(page)
+                saved=owner_draft(context,match.group(1))
+                if any(chart not in saved.get('body','') for chart in charts):
+                    raise WorkflowError('note標準の株価チャートが保存されていません。')
+                record['stock_embed_urls']=charts
             if plan:
                 if changed_media:
                     old_hashes=record.get('media_hashes',[])
