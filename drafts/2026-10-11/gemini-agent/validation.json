@@ -1,5 +1,5 @@
 {
-  "visible_characters_without_whitespace": 6877,
+  "visible_characters_without_whitespace": 6878,
   "images": [
     [
       "diagram240.png",
@@ -30,5 +30,14 @@
   "diagram_markers": 4,
   "hashtags": 12,
   "status": "draft_not_public",
-  "sources_checked": "Google official, VentureBeat, TechRadar on 2026-10-11"
+  "sources_checked": "Google official, VentureBeat, TechRadar on 2026-10-11",
+  "note_draft": {
+    "editor_url": "https://editor.note.com/notes/nfb5b6402e6b0/edit",
+    "status": "draft",
+    "owner_verified": true,
+    "cover_uploaded": true,
+    "body_images_after_reload": 4,
+    "public_response_without_login": 404,
+    "successful_workflow": 38105603125
+  }
 }

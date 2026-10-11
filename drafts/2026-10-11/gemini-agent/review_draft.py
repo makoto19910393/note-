@@ -47,6 +47,14 @@ with sync_playwright() as p:
         if title.input_value() != title_text:
             raise RuntimeError('対象の下書きタイトルが一致しません。')
         print('draft',json.dumps(saved,ensure_ascii=False))
+        metadata=context.request.get('https://note.com/api/v3/notes/'+saved['note_id'])
+        if not metadata.ok:
+            raise RuntimeError('下書きの状態を確認できません。')
+        existing=metadata.json().get('data',{})
+        if existing.get('is_my_note') is not True or existing.get('status')!='draft':
+            raise RuntimeError('本人の未公開下書きだけを編集します。')
+        if existing.get('eyecatch'):
+            saved['cover_uploaded']=True
         if not saved.get('uploaded_diagrams'):
             # Correct the plain hashtag line before adding media; never touch a published article.
             page.evaluate("""async ({html,text}) => navigator.clipboard.write([new ClipboardItem({
@@ -59,13 +67,6 @@ with sync_playwright() as p:
             page.wait_for_function("() => document.querySelector('.ProseMirror').innerText.includes('この記事について')")
             assert content.inner_text().count('30秒で結論')==1
             assert 6000<=len(re.sub(r'\s','',content.inner_text()))<=7000
-        metadata=context.request.get('https://note.com/api/v3/notes/'+saved['note_id'])
-        if metadata.ok:
-            existing=metadata.json().get('data',{})
-            if existing.get('is_my_note') is not True:
-                raise RuntimeError('本人の記事ではありません。')
-            if existing.get('eyecatch'):
-                saved['cover_uploaded']=True
         if not saved.get('cover_uploaded'):
             page.locator('button').filter(has=page.locator("svg[aria-label='画像を追加']")).click()
             with page.expect_file_chooser() as chooser:
