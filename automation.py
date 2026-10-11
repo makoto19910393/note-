@@ -200,7 +200,9 @@ contentにH2見出し・図解マーカー・図解挿入位置の一覧を重�
     if config.get('reader_analysis',{}).get('enabled'):
         instructions+='\nreader_insightsは読者の関心を考える内部資料。記事タイトルは過去の実績であり新ニュースの根拠ではない。これらの指標・分析内容・運営の内部事情を本文や画像に出さない。反応のあるジャンルに関連する新しい出来事を探すが、既出の同じ発表を繰り返さない。'
     if config.get('trend_selection',{}).get('enabled'):
-        instructions+='\n今回の調査時点で、公開情報として読めるX、Instagram Reels、Yahoo!リアルタイム検索、noteのランキング・注目記事のAI関連話題もweb_searchで確認する。最新トレンドは候補を選ぶ手掛かりにし、ニュースの事実は公式や信頼できる報道で確認する。ランキングや投稿の反響を確認できなければ取得できたふりをしない。再生数・順位・売れ行きを推測で足さない。AIと関係のない話題を無理に結び付けない。'
+        instructions+='\n今回の調査時点で、公開情報として読めるX、Instagram Reels、Yahoo!リアルタイム検索、noteのランキング・注目記事のAI関連話題も、取得できる範囲でweb_searchで確認する。一記事で全プラットフォームを巡回する必要はない。まずニュース本文と一次資料の裏取りを優先する。最新トレンドは候補を選ぶ手掛かりにし、ニュースの事実は公式や信頼できる報道で確認する。ランキングや投稿の反響を確認できなければ取得できたふりをしない。再生数・順位・売れ行きを推測で足さない。AIと関係のない話題を無理に結び付けない。'
+    if config.get('_news_candidates'):
+        instructions+='\nnews_candidatesは実行時に読んだ48時間以内のRSS見出し。まずこの候補から未掲載の具体的な新しい出来事を探し、記事本文・一次資料をweb_searchで確認する。RSS掲載日時と発表そのものの日時は区別する。preferred_searchの会社名より、鮮度・裏付け・読者との関連を優先する。RSSやSNSだけを出典に完成記事を作らない。'
     preferences=['OpenAI以外も含む最新の主要AIニュース','Microsoft・NVIDIA・Metaなどの最新AIニュース','日本国内のAI導入・新製品・制度の最新ニュース']
     return {
         "model": os.environ.get("OPENAI_MODEL") or config["model"],
@@ -213,6 +215,7 @@ contentにH2見出し・図解マーカー・図解挿入位置の一覧を重�
                              "batch_article_count": config.get('articles_per_slot',1),
                              "preferred_search":preferences[(config.get('_batch_index',1)-1)%3],
                              "reader_insights": config.get("_reader_insights", {"available":False}),
+                             "news_candidates": config.get("_news_candidates", []),
                              "previous_articles": previous}, ensure_ascii=False),
         "tools": [{"type": "web_search"}],
         "include": ["web_search_call.action.sources"],
@@ -295,7 +298,10 @@ def extract_article(response):
     if not searched:
         raise WorkflowError("Web検索の実行が確認できません。")
     try:
-        article = json.loads("".join(texts))
+        raw = "".join(texts).strip()
+        if raw.startswith("```json") and raw.endswith("```"):
+            raw = raw[7:-3].strip()
+        article = json.loads(raw)
     except (ValueError, TypeError):
         raise WorkflowError("AIの原稿データを読み取れません。") from None
     if 'sections' in article:
@@ -503,7 +509,19 @@ def run(slot, output, config, now=None, fixture=None, run_date=None, run_id=None
                     payload["input"] = json.dumps(inputs, ensure_ascii=False)
                     payload["instructions"] += "\n前回の候補は検証で不採用。理由を修正し、重複の場合は違う会社・製品の別の出来事を選ぶ。"
                 response = call_api(payload)
-            article, evidence = extract_article(response)
+            try:
+                article, evidence = extract_article(response)
+            except WorkflowError as error:
+                snippets=[c['text'] for x in response.get('output',[]) if x.get('type')=='message'
+                          for c in x.get('content',[]) if c.get('type')=='output_text']
+                atomic_json(output/'review'/(run_id+'-format-error.json'),{
+                    'status':'not_published','reason':str(error),'response_status':response.get('status'),
+                    'output_types':[x.get('type') for x in response.get('output',[])],
+                    'text_chars':sum(map(len,snippets)),
+                    'text_start':''.join(snippets)[:400],'text_end':''.join(snippets)[-400:]})
+                if fixture or attempt==1:raise
+                feedback={'title':'','reason':str(error)+' 指定のJSON形式のみで返し、ニュース候補の本文を裏取りする。'}
+                continue
             # Only repair heading markup, without changing facts or adding text.
             headings=['30秒で結論','私の正直な感想','よくある質問','まとめ','この記事について','参考リンク']
             for heading in headings:
