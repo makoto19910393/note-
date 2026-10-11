@@ -176,8 +176,16 @@
       ],
       "media_upload": {
         "cover_uploaded": true,
-        "diagrams": 4
-      }
+        "diagrams": 4,
+        "verified": true
+      },
+      "image_urls": [
+        "https://assets.st-note.com/production/uploads/images/323223542/rectangle_large_type_2_fe6c494647d569a99973cbdf9cdfc5c6.png?fit=bounds&quality=85&width=1280",
+        "https://assets.st-note.com/img/1791712940-zCuc9lw5HNtsTDSRjW8daiJy.png",
+        "https://assets.st-note.com/img/1791712946-aKsvbN6w71SdxChgBpko8Jy3.png",
+        "https://assets.st-note.com/img/1791712953-QGXdWbKEzfw7OrexlBtiaDh8.png",
+        "https://assets.st-note.com/img/1791712959-QTcwzMVHFCyve7PmZiEuYn01.png"
+      ]
     }
   ],
   "next_diagram": 252
