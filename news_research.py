@@ -65,4 +65,13 @@ sourcesは検証済み資料のURL・日付・内容をそのまま使い、追�
     result=call_api(payload)
     # Preserve real search evidence from the research call, not synthetic citations.
     result['output']=[x for x in response['output']if x.get('type')=='web_search_call']+result.get('output',[])
+    citations=[annotation for message in response.get('output',[]) if message.get('type')=='message'
+               for content in message.get('content',[])
+               for annotation in content.get('annotations',[])
+               if annotation.get('type')=='url_citation' and annotation.get('url')]
+    for message in result.get('output',[]):
+        if message.get('type')=='message':
+            for content in message.get('content',[]):
+                if content.get('type')=='output_text':
+                    content.setdefault('annotations',[]).extend(citations)
     return result

@@ -90,12 +90,11 @@
       ],
       "prompt": "図解②を大きく表示。立体的な球体AIの周りに3つのシアン発光カード。文字はlabelsの指定表現だけ。下に役割のイメージと表示。別の言い換えや説明文を追加しない。",
       "filename": "diagram253.png",
-      "status": "rejected",
+      "status": "ready",
       "attempts": 3,
-      "artifact_run_id": "38132586766",
-      "sha256": "4db0df9031477fc8733f34362022dad1ab9b0c437a40a30e25e7efa5f472f9b3",
-      "width": 1536,
-      "height": 864,
+      "sha256": "6117c76ec8fcf61d47937fc7a745ac0e494ea1c512d80528bb85a4a93eb07d8c",
+      "width": 1672,
+      "height": 941,
       "usage": {
         "input_tokens": 2047,
         "input_tokens_details": {
@@ -110,14 +109,29 @@
         "total_tokens": 2327
       },
       "review": {
-        "approved": false,
-        "issues": "画像に図解①と図解②が両方含まれるコラージュになっている（1画像1テーマの要件違反）。期待ラベルのうち「指示を作る」「情報を読む」「次の作業を考える」が画像内に見えない（重要ラベル欠落）。",
+        "approved": true,
+        "issues": "",
         "observed_title": "LLMの役割",
         "observed_diagram_label": "図解②",
         "unsupported_claims": []
       },
       "max_attempts": 3,
-      "manual_correction": "校閲で語句の不一致が判明。初心者向けの短いラベルへ修正し、対象画像だけ追加1回。"
+      "manual_correction": "校閲で語句の不一致が判明。初心者向けの短いラベルへ修正し、対象画像だけ追加1回。",
+      "previous_generation": {
+        "status": "rejected",
+        "attempts": 3,
+        "artifact_run_id": "38132586766",
+        "sha256": "4db0df9031477fc8733f34362022dad1ab9b0c437a40a30e25e7efa5f472f9b3",
+        "review": {
+          "approved": false,
+          "issues": "画像に図解①と図解②が両方含まれるコラージュになっている（1画像1テーマの要件違反）。期待ラベルのうち「指示を作る」「情報を読む」「次の作業を考える」が画像内に見えない（重要ラベル欠落）。",
+          "observed_title": "LLMの役割",
+          "observed_diagram_label": "図解②",
+          "unsupported_claims": []
+        }
+      },
+      "generation_method": "image_gen",
+      "manual_visual_review": true
     },
     {
       "number": 3,
@@ -130,8 +144,24 @@
       ],
       "prompt": "図解③を大きく表示。銀行の立体アイコン、記録ファイルの立体アイコン、研究者の虫眼鏡アイコンを横に並べ、順にシアンの矢印でつなぐ。文字は指定labelsだけ。銀行の公開ディレクトリ侵入と断定する図は描かない。",
       "filename": "diagram254.png",
-      "status": "planned",
-      "attempts": 0
+      "status": "ready",
+      "attempts": 0,
+      "previous_generation": {
+        "status": "planned",
+        "attempts": 0
+      },
+      "sha256": "23b22659b44dbbd439cf12b4f2cef3e7bee5d9099994a01f358cbe60a549ef9f",
+      "width": 1672,
+      "height": 941,
+      "generation_method": "image_gen",
+      "manual_visual_review": true,
+      "review": {
+        "approved": true,
+        "issues": "",
+        "observed_title": "攻撃の記録と調査",
+        "observed_diagram_label": "図解③",
+        "unsupported_claims": []
+      }
     },
     {
       "number": 4,
@@ -147,8 +177,25 @@
       ],
       "prompt": "図解④を大きく表示、筆者の提案を目立つ黄色のラベルで明記。四つのシアン発光カードに短い指定ラベルだけを置く。全体を立体的にし、会社の公式手順や実際に導入済みの機能とは描かない。",
       "filename": "diagram255.png",
-      "status": "planned",
-      "attempts": 0
+      "status": "ready",
+      "attempts": 0,
+      "previous_generation": {
+        "status": "planned",
+        "attempts": 0
+      },
+      "sha256": "32478e84ed971ea3285175d095468bbf6ee3b9dab22cb1cd22656d780e2a767d",
+      "width": 1672,
+      "height": 941,
+      "generation_method": "image_gen",
+      "manual_visual_review": true,
+      "review": {
+        "approved": true,
+        "issues": "",
+        "observed_title": "防御のチェックリスト",
+        "observed_diagram_label": "図解④",
+        "unsupported_claims": []
+      }
     }
-  ]
+  ],
+  "status": "ready"
 }
