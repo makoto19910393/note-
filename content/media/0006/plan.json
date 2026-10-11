@@ -9,57 +9,83 @@
       "prompt": "過去の本人の対応画像を直接見本としてimage_genツールで生成。濃紺・シアンの立体感、白黄色の大文字、短い説明。全テキストと企業ロゴ・役割・矢印を目視校閲。",
       "filename": "thumbnail.png",
       "status": "ready",
-      "attempts": 1,
-      "sha256": "b69bbc45791b91249d6dcd4decd9993eb0e5d265611abe8c98966789437b6336",
+      "attempts": 2,
+      "sha256": "147ab9bf16d81b0148fdd5f87cba29982d54332479fdb7bc164e79501d87a89a",
       "width": 1672,
       "height": 941,
       "previous_generation": {
         "number": 0,
         "anchor": "",
-        "theme": "サムネイル見出し",
-        "labels": [
-          "ARTEXが攻撃に使われた",
-          "韓国の銀行が標的",
-          "Claude痕跡を確認"
-        ],
-        "prompt": "黒い背景に濃紺グラデーション。中央に大きな太字日本語タイトル『ARTEXが攻撃に使われた』、下に三つの要点を白と黄色で縦に配置。ネオンシアンのアクセントライン。スマホで読みやすい構図。①を小さく配置。16:9。",
+        "theme": "韓国の銀行攻撃にClaudeの利用履歴――履歴書から人物像が浮上、犯人は未確定",
+        "labels": [],
+        "prompt": "過去の本人の対応画像を直接見本としてimage_genツールで生成。濃紺・シアンの立体感、白黄色の大文字、短い説明。全テキストと企業ロゴ・役割・矢印を目視校閲。",
         "filename": "thumbnail.png",
         "status": "ready",
         "attempts": 1,
-        "artifact_run_id": "38131866970",
-        "sha256": "ceb1d5b29143216919f360420bb15919e4c6ea5a56d74b1286d063e86eb2c281",
-        "width": 1536,
-        "height": 864,
-        "usage": {
-          "input_tokens": 1311,
-          "input_tokens_details": {
-            "image_tokens": 840,
-            "text_tokens": 471
+        "sha256": "b69bbc45791b91249d6dcd4decd9993eb0e5d265611abe8c98966789437b6336",
+        "width": 1672,
+        "height": 941,
+        "previous_generation": {
+          "number": 0,
+          "anchor": "",
+          "theme": "サムネイル見出し",
+          "labels": [
+            "ARTEXが攻撃に使われた",
+            "韓国の銀行が標的",
+            "Claude痕跡を確認"
+          ],
+          "prompt": "黒い背景に濃紺グラデーション。中央に大きな太字日本語タイトル『ARTEXが攻撃に使われた』、下に三つの要点を白と黄色で縦に配置。ネオンシアンのアクセントライン。スマホで読みやすい構図。①を小さく配置。16:9。",
+          "filename": "thumbnail.png",
+          "status": "ready",
+          "attempts": 1,
+          "artifact_run_id": "38131866970",
+          "sha256": "ceb1d5b29143216919f360420bb15919e4c6ea5a56d74b1286d063e86eb2c281",
+          "width": 1536,
+          "height": 864,
+          "usage": {
+            "input_tokens": 1311,
+            "input_tokens_details": {
+              "image_tokens": 840,
+              "text_tokens": 471
+            },
+            "output_tokens": 280,
+            "output_tokens_details": {
+              "image_tokens": 280,
+              "text_tokens": 0
+            },
+            "total_tokens": 1591
           },
-          "output_tokens": 280,
-          "output_tokens_details": {
-            "image_tokens": 280,
-            "text_tokens": 0
-          },
-          "total_tokens": 1591
+          "review": {
+            "approved": true,
+            "issues": "",
+            "observed_title": "ARTEXが攻撃に使われた",
+            "observed_diagram_label": "①",
+            "unsupported_claims": []
+          }
         },
+        "generation_method": "image_gen_with_original_user_image_reference",
+        "generated_source_filename": "exec-8027fb01-51fd-4ea4-a6fe-368216914bb7.png",
+        "visual_review_at": "2026-10-11T23:12:13.479852+09:00",
         "review": {
           "approved": true,
+          "reviewed_by": "Codex visual inspection",
+          "observed_diagram_label": "",
           "issues": "",
-          "observed_title": "ARTEXが攻撃に使われた",
-          "observed_diagram_label": "①",
           "unsupported_claims": []
         }
       },
       "generation_method": "image_gen_with_original_user_image_reference",
-      "generated_source_filename": "exec-8027fb01-51fd-4ea4-a6fe-368216914bb7.png",
-      "visual_review_at": "2026-10-11T23:12:13.479852+09:00",
+      "generated_source_filename": "exec-21c64803-f192-4bc2-8d70-9f2520266d6b.png",
+      "visual_review_at": "2026-10-11T23:41:35.045705+09:00",
       "review": {
         "approved": true,
         "reviewed_by": "Codex visual inspection",
         "observed_diagram_label": "",
         "issues": "",
         "unsupported_claims": []
+      },
+      "tool_correction": {
+        "reason": "noteの横長サムネイル枠でClaude表記が切れないよう、画像生成ツールで上部余白を調整"
       }
     },
     {

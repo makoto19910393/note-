@@ -246,7 +246,7 @@
       "editorial_review": "過去112本の作風を参照、初心者への用語説明、事実と見解・提案の区別、株価の日時と因果の区別を目視校閲",
       "manual_editorial_review": true,
       "note_editor_url": "https://editor.note.com/notes/nae194d380626/edit",
-      "cover_needs_refresh": false,
+      "cover_needs_refresh": true,
       "media_hashes": [
         "b69bbc45791b91249d6dcd4decd9993eb0e5d265611abe8c98966789437b6336",
         "8eefeec2544efeb78b83111827c729e4b1a70834ba527bcc99a51fe319364178",
@@ -257,7 +257,7 @@
       "media_upload": {
         "cover_uploaded": true,
         "diagrams": 4,
-        "verified": true
+        "verified": false
       },
       "image_urls": [
         "https://assets.st-note.com/production/uploads/images/323326050/rectangle_large_type_2_293c2853e81018ac94b00c3dcac01ce5.png?fit=bounds&quality=85&width=1280",

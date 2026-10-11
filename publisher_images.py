@@ -99,6 +99,7 @@ def upload_images(page, context, output, state_path, state, record, plan, checkp
             remove = container.locator('button').filter(has=page.locator('svg[aria-label="削除"]'))
             if remove.count() != 1:
                 raise WorkflowError('サムネイルの差し替え操作を確認できません。')
+            cover.hover()
             remove.click()
             cover.wait_for(state='hidden')
         page.locator('button').filter(has=page.locator("svg[aria-label='画像を追加']")).click()
@@ -119,10 +120,12 @@ def upload_images(page, context, output, state_path, state, record, plan, checkp
         if checkpoint:checkpoint()
         data, _ = save()
         deadline=time.monotonic()+15
-        while not data.get('eyecatch') and time.monotonic()<deadline:
+        expected_cover_path=urlsplit(record['pending_cover_url']).path
+        while (urlsplit(data.get('eyecatch') or '').path != expected_cover_path
+               and time.monotonic()<deadline):
             time.sleep(1)
             data=owner_draft(context,note_id)
-        if not data.get('eyecatch'):
+        if urlsplit(data.get('eyecatch') or '').path != expected_cover_path:
             raise WorkflowError('サムネイルの保存を確認できません。')
         record['cover_needs_refresh']=False
         record.pop('pending_cover_url',None)

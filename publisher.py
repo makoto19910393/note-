@@ -180,6 +180,12 @@ def withdraw_duplicate(output, config, run_id):
             browser.close()
 
 
+def should_replace_body(record, image_count, wanted_hashes):
+    if not image_count or record.get('draft_source_sha256') != record['sha256']:
+        return True
+    return bool(wanted_hashes and record.get('media_hashes', [])[1:] != wanted_hashes[1:])
+
+
 def publish(output, config, run_id, dry_run=False, before_publish=None):
     if config.get("publisher", {}).get("manual_first_publication"):
         dry_run = True  # Explicit publish options cannot bypass the user review period.
@@ -281,10 +287,7 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
                 from draft_revision import backup_owner_draft
                 record['previous_owner_draft_backup_sha256'] = backup_owner_draft(existing_draft, note_id)
                 record['owner_backup_for_source_sha256'] = record['sha256']
-            if not existing_images or changed_media:
-                should_fill=True
-            else:
-                should_fill=False
+            should_fill = should_replace_body(record, existing_images, wanted_hashes)
             title.fill(record["title"])
             stage = "本文入力"
             # Paste through the browser so the editor receives its normal change events.
