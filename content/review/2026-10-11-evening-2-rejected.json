@@ -1,140 +1,176 @@
 {
   "status": "rejected_not_published",
-  "reason": "記事タイトルが執筆ルールを満たしていません。",
+  "reason": "検索結果と本文の参考リンクが一致しません。",
   "article": {
-    "title": "",
-    "sources": [],
+    "title": "【海外AI解説】AIエージェントとマルバタイジングが結びつく現場：Claude関連の“ClickFix”攻撃と韓国銀行へのARTEX/Claude活用事例を読み解く",
+    "sources": [
+      {
+        "title": "Hackers abuse Google Ads, Bing redirects to push Claude ClickFix attacks",
+        "url": "https://www.bleepingcomputer.com/news/security/hackers-abuse-google-ads-bing-redirects-to-push-claude-clickfix-attacks/",
+        "published_at": "2026-10-09T20:31:00+00:00",
+        "supports": "Google広告→Bingリダイレクト経由で偽Claudeインストーラへ誘導するClickFix型マルバタイジング攻撃の技術解説と検証。"
+      },
+      {
+        "title": "CrowdStrike says China-based suspect used AI tools in South Korean bank hacks",
+        "url": "https://www.reuters.com/technology/crowdstrike-says-china-based-suspect-used-ai-tools-south-korean-bank-hacks-2026-10-08/",
+        "published_at": "2026-10-08T02:35:00+00:00",
+        "supports": "CrowdStrikeと報道による、ARTEX（中国発の自動ペンテスト/エージェント）とClaude系セッション履歴が関係する韓国金融機関向け攻撃の報告。"
+      },
+      {
+        "title": "South Korean Banks Were Hacked Using Chinese AI Agent, Researchers Say",
+        "url": "https://www.theinformation.com/briefings/south-korean-banks-hacked-using-chinese-ai-agent-researchers-say",
+        "published_at": "2026-10-08T18:39:00+00:00",
+        "supports": "追加報道として、ARTEXと複数の大規模言語モデル（Claude含む）を組み合わせた攻撃の詳細と被害規模の報告。"
+      }
+    ],
     "sections": {
-      "intro": "",
+      "intro": "最近、2件の異なる“AI絡みの攻撃手法”が注目されています。一つは検索広告と正規リダイレクトを悪用し、偽のClaudeインストーラでマルウェアを配布する手口（いわゆるClickFix）。もう一つは、ARTEXと呼ばれる自動化されたエージェントツールとClaude系のセッション履歴が組み合わされた、韓国銀行を標的にした攻撃です。本稿は直近の報道を確認し、仕組み・危険度・現場で取れる対策をやさしく整理します（確認日：2026年10月11日）。",
       "conclusions": [
-        "",
-        "",
-        ""
+        "マルバタイジング経由の“偽インストーラ”は、正規の広告配信パイプラインを巧妙に通すことで検出を回避しており、ユーザー側の注意だけでは防ぎきれない場合がある。",
+        "金融機関への攻撃では、ARTEXなどの自動化エージェントとLLM（Claudeなど）の組合せが使われ、従来の攻撃より速く広範に探査・侵入できる点が問題視されている。",
+        "事業者側は広告配信の監査、クリック追跡（例：bing.com/ck）の挙動理解、エンドポイントの最小権限化、外部接続の監視やエージェント認証の実装が急務。",
+        "ユーザーは公式サイト以外からのダウンロードや、ターミナル／PowerShellのコピペ実行を避けるとともに、広告経由の流入を疑う習慣が重要。"
       ],
       "explanations": [
         {
-          "heading": "",
-          "content": ""
+          "heading": "検索広告からマルウェアが届く仕組みはどうなっているの？",
+          "content": "今回のClickFix型攻撃は、**有料検索広告（Google Ads）を入口に**、一度Bingのクリック追跡URL（bing.com/ck/a のような正規のリダイレクト）を経由させる点が特徴です。攻撃の流れは概ねこうです：1) 攻撃者が「Claude Mac」などのキーワードで広告を出稿、2) クリックは一見正規のBingリダイレクトを通るため自動判定を逃し、3) 最終的に乗っ取られた（或いは悪用された）中間サイトへ転送、4) 偽のインストーラページが表示されユーザーに「修正コマンドをコピー＆実行」させる。コマンド実行型の手口（ClickFix）は、技術的な権限昇格を招きやすく、エンドポイントが脆弱だと即座にマルウェア感染に繋がります（図解①）。【ここに図解①を挿入｜短いテーマ】"
         },
         {
-          "heading": "",
-          "content": ""
+          "heading": "ARTEX＋Claudeの組合せがなぜ危険と言われるのか？",
+          "content": "韓国の銀行を標的にした攻撃では、研究者やセキュリティ企業の調査で**ARTEX（自動化された攻撃・ペンテスト用エージェント）とClaude系セッションの履歴**が確認されたと報告されています。ポイントは、ARTEXのようなフレームワークが“脆弱性探索→侵入→横展開”を自動化し、そこにLLM（例えばClaude）を使ったコード生成やエクスプロイト手順の自動作成・調整が噛み合うことで、非熟練者でも高度な攻撃が短時間で成立し得ることです。結果として侵入のスピードと規模が増し、被害範囲が広がりやすくなります（図解②）。【ここに図解②を挿入｜短いテーマ】"
         },
         {
-          "heading": "",
-          "content": ""
+          "heading": "企業・組織は具体的にどんな対策をすればいい？",
+          "content": "対策は多層で考える必要があります。広告経路を含む外部からのトラフィック監査、リダイレクトや中間サイトのホワイトリスト化、広告クリックの異常検知、重要システムへのエージェント認証（信頼できるエージェントIDのみ受け入れる）などが挙げられます。加えて、エンドポイント側では**スクリプト実行の制限（PowerShell/Terminalの実行ポリシー）**、ソフトウェアのSLSAやSBOMなどサプライチェーンの可視化、疑わしいリダイレクトをブロックするProxyルールも有効です。金融機関では特に顧客データアクセスの監査ログを短時間で検出する仕組みが重要です（図解③）。【ここに図解③を挿入｜短いテーマ】"
         },
         {
-          "heading": "",
-          "content": ""
+          "heading": "個人ユーザーが今日からできる安全習慣は？",
+          "content": "まず公式配布ルート以外からのソフトウェアをインストールしないこと。検索結果の上位広告であっても安全とは限りません。見慣れない“修正コマンド”やインストール手順をコピー＆実行する前に、公式サイトとリリースノートで確認する習慣をつけましょう。Mac/iPhone/Windowsいずれも、未知のインストーラはサンドボックスや仮想環境で検証する、OSの標準セキュリティ（Gatekeeperなど）を有効にする、二段階認証（MFA）を厳格にする、が現実的で効果的です（図解④）。【ここに図解④を挿入｜短いテーマ】"
         }
       ],
-      "personal_view": "",
+      "personal_view": "正直に言うと、今回の2件は技術的には“目新しさ”というより既に見えていたリスクが組み合わさった結果だと感じます。広告配信や正規リダイレクトを“攻撃インフラの一部”として悪用する手口は以前からあり、ARTEXのような自動化ツールとLLMの結合も警告されていました。とはいえ、**実際に大手金融機関の現場でこれらが使われ、実害が出た疑いがある点は重要**で、対策の急務さが現場レベルで鮮明になったのは事実です。例えば、普段から広告でソフトを検索してインストールする習慣がある人は、今すぐ“公式ストアのみ”に切り替えるべきでしょう。事業者側の対応も待ったなしです。",
       "faq": [
         {
-          "question": "",
-          "answer": ""
+          "question": "Q1：広告をクリックするだけで感染しますか？",
+          "answer": "A：通常はクリックだけで完了するケースは少ないですが、ClickFixのように“クリック→画面上の指示に従ってコマンドを貼り付ける”流れに誘導されると感染リスクが高まります。クリック後の指示を鵜呑みにしないことが鍵です。"
         },
         {
-          "question": "",
-          "answer": ""
+          "question": "Q2：Claudeや他のLLMの“せい”ですか？",
+          "answer": "A：LLM自体はツールであり、それを攻撃に使うのは攻撃者の選択です。問題は**LLMを悪用しやすくする自動化ツールや未整備のガバナンス**で、モデル提供者・事業者・利用者それぞれに責任分担があります。"
         },
         {
-          "question": "",
-          "answer": ""
+          "question": "Q3：企業がすぐにできる“優先対策”は？",
+          "answer": "A：1) 広告経路を含む外部流入の監査、2) クリック追跡リダイレクトの把握とブロックルール、3) エージェントIDベースのアクセス制御、4) エンドポイントでのスクリプト実行制限、が優先度高めです。"
+        },
+        {
+          "question": "Q4：被害を受けたか確認する方法は？",
+          "answer": "A：不自然なログイン、未知の管理者アカウント、急増する外部コール、顧客データへの不正アクセスログなどを調べると手掛かりが得られます。疑わしければ速やかに専門のCSIRT/フォレンジックに相談を。"
         }
       ],
-      "summary": ""
+      "summary": "広告経路の悪用（ClickFix）と、ARTEXのような自動エージェント＋LLMの組合せは、攻撃の“敷居を下げ速さを上げる”点で共通しています。個人は公式ルート厳守・不審なコマンド実行回避を、組織は外部流入の監査とエージェント認証、エンドポイントの実行制限を優先してください。"
     },
     "images": [
       {
         "number": 0,
         "anchor": "",
-        "theme": "",
+        "theme": "ClickFix被害注意",
         "labels": [
-          ""
+          "トップ広告に要注意",
+          "偽インストーラ誘導",
+          "copy&pasteの罠"
         ],
-        "prompt": ""
+        "prompt": "16:9、黒に濃紺背景、ネオンシアンのアクセント。大きな日本語見出し「ClickFixに注意」。下部に3つの丸アイコンと短いラベル（上から：トップ広告、偽インストーラ、コマンド実行）。スマホで読みやすく、文字は白と黄色の太字で。"
       },
       {
         "number": 1,
-        "anchor": "【ここに図解①を挿入｜】",
-        "theme": "",
+        "anchor": "【ここに図解①を挿入｜広告→リダイレクトの流れ】",
+        "theme": "広告→リダイレクトの流れ",
         "labels": [
-          ""
+          "検索広告",
+          "Bingリダイレクト",
+          "中間サイト",
+          "偽インストーラ"
         ],
-        "prompt": ""
+        "prompt": "16:9、黒に濃紺背景。左から右へ矢印で流れる図。上段に『検索広告』→『bing.com/ck/a（リダイレクト）』→『中間サイト（乗っ取り）』→『偽インストーラ』。各ボックスはネオンシアン枠、白と黄色の太字ラベル。スマホで視認性重視。"
       },
       {
         "number": 2,
-        "anchor": "【ここに図解②を挿入｜】",
-        "theme": "",
+        "anchor": "【ここに図解②を挿入｜ARTEX＋LLM攻撃の構成】",
+        "theme": "ARTEX＋LLM攻撃の構成",
         "labels": [
-          ""
+          "ARTEX（自動化）",
+          "LLM（Claude等）",
+          "スキャン→侵入→横展開",
+          "被害拡大"
         ],
-        "prompt": ""
+        "prompt": "16:9、黒に濃紺背景。四つの要素を円状に配置し中央に『攻撃フロー』。矢印で『ARTEX→LLM→実行→被害』を示す。各要素はネオンシアンの丸アイコン、短い白文字ラベル。"
       },
       {
         "number": 3,
-        "anchor": "【ここに図解③を挿入｜】",
-        "theme": "",
+        "anchor": "【ここに図解③を挿入｜企業の多層防御】",
+        "theme": "企業の多層防御",
         "labels": [
-          ""
+          "広告監査",
+          "エージェント認証",
+          "ログ監視",
+          "エンドポイント制御"
         ],
-        "prompt": ""
+        "prompt": "16:9、黒に濃紺背景。四つの盾アイコンを格子状に配置。各盾に上記ラベル。中央に小さく『多層防御』。色はネオンシアン＋黄色のアクセント。"
       },
       {
         "number": 4,
-        "anchor": "【ここに図解④を挿入｜】",
-        "theme": "",
+        "anchor": "【ここに図解④を挿入｜個人の安全チェック】",
+        "theme": "個人の安全チェック",
         "labels": [
-          ""
+          "公式のみDL",
+          "コマンド実行禁止",
+          "MFA有効化",
+          "疑わしければ確認"
         ],
-        "prompt": ""
+        "prompt": "16:9、黒に濃紺背景。スマホ画面風のモックアップ。チェックリスト形式で4項目を大きめ文字で表示。色は白と黄色、ネオンシアンで強調。"
       }
     ],
     "hashtags": [
-      "#AI",
-      "#人工知能",
-      "#ニュース",
-      "#mako",
-      "#note",
-      "#調査中",
-      "#最新情報",
-      "#要確認",
-      "#公開情報のみ",
-      "#執筆保留"
+      "#サイバーセキュリティ",
+      "#AIエージェント",
+      "#マルバタイジング",
+      "#ClickFix",
+      "#Claude",
+      "#ARTEX",
+      "#フィッシング対策",
+      "#広告セキュリティ",
+      "#エンドポイント保護",
+      "#金融機関セキュリティ",
+      "#CrowdStrike",
+      "#bleepingcomputer"
     ],
-    "threads": "",
-    "body": "\n\n---\n\n## 30秒で結論\n\n- \n- \n- \n\n---\n\n## \n\n\n\n【ここに図解①を挿入｜】\n\n---\n\n## \n\n\n\n【ここに図解②を挿入｜】\n\n---\n\n## \n\n\n\n【ここに図解③を挿入｜】\n\n---\n\n## \n\n\n\n【ここに図解④を挿入｜】\n\n---\n\n## 私の正直な感想\n\n\n\n---\n\n## よくある質問\n\n### \n\n\n\n### \n\n\n\n### \n\n\n\n---\n\n## まとめ\n\n\n\n---\n\n## この記事について\n\n確認日：2026年10月11日（日本時間）。公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。\n\n---\n\n## 参考リンク\n\n"
+    "threads": "広告経路とAIエージェントの悪用が現実に。個人は公式DL、企業は広告経路の監査を優先すべきだと感じます。あなたの会社では広告流入の監査をしていますか？",
+    "body": "最近、2件の異なる“AI絡みの攻撃手法”が注目されています。一つは検索広告と正規リダイレクトを悪用し、偽のClaudeインストーラでマルウェアを配布する手口（いわゆるClickFix）。もう一つは、ARTEXと呼ばれる自動化されたエージェントツールとClaude系のセッション履歴が組み合わされた、韓国銀行を標的にした攻撃です。本稿は直近の報道を確認し、仕組み・危険度・現場で取れる対策をやさしく整理します（確認日：2026年10月11日）。\n\n---\n\n## 30秒で結論\n\n- マルバタイジング経由の“偽インストーラ”は、正規の広告配信パイプラインを巧妙に通すことで検出を回避しており、ユーザー側の注意だけでは防ぎきれない場合がある。\n- 金融機関への攻撃では、ARTEXなどの自動化エージェントとLLM（Claudeなど）の組合せが使われ、従来の攻撃より速く広範に探査・侵入できる点が問題視されている。\n- 事業者側は広告配信の監査、クリック追跡（例：bing.com/ck）の挙動理解、エンドポイントの最小権限化、外部接続の監視やエージェント認証の実装が急務。\n- ユーザーは公式サイト以外からのダウンロードや、ターミナル／PowerShellのコピペ実行を避けるとともに、広告経由の流入を疑う習慣が重要。\n\n---\n\n## 検索広告からマルウェアが届く仕組みはどうなっているの？\n\n今回のClickFix型攻撃は、**有料検索広告（Google Ads）を入口に**、一度Bingのクリック追跡URL（bing.com/ck/a のような正規のリダイレクト）を経由させる点が特徴です。攻撃の流れは概ねこうです：1) 攻撃者が「Claude Mac」などのキーワードで広告を出稿、2) クリックは一見正規のBingリダイレクトを通るため自動判定を逃し、3) 最終的に乗っ取られた（或いは悪用された）中間サイトへ転送、4) 偽のインストーラページが表示されユーザーに「修正コマンドをコピー＆実行」させる。コマンド実行型の手口（ClickFix）は、技術的な権限昇格を招きやすく、エンドポイントが脆弱だと即座にマルウェア感染に繋がります（図解①）。\n\n【ここに図解①を挿入｜広告→リダイレクトの流れ】\n\n---\n\n## ARTEX＋Claudeの組合せがなぜ危険と言われるのか？\n\n韓国の銀行を標的にした攻撃では、研究者やセキュリティ企業の調査で**ARTEX（自動化された攻撃・ペンテスト用エージェント）とClaude系セッションの履歴**が確認されたと報告されています。ポイントは、ARTEXのようなフレームワークが“脆弱性探索→侵入→横展開”を自動化し、そこにLLM（例えばClaude）を使ったコード生成やエクスプロイト手順の自動作成・調整が噛み合うことで、非熟練者でも高度な攻撃が短時間で成立し得ることです。結果として侵入のスピードと規模が増し、被害範囲が広がりやすくなります（図解②）。\n\n【ここに図解②を挿入｜ARTEX＋LLM攻撃の構成】\n\n---\n\n## 企業・組織は具体的にどんな対策をすればいい？\n\n対策は多層で考える必要があります。広告経路を含む外部からのトラフィック監査、リダイレクトや中間サイトのホワイトリスト化、広告クリックの異常検知、重要システムへのエージェント認証（信頼できるエージェントIDのみ受け入れる）などが挙げられます。加えて、エンドポイント側では**スクリプト実行の制限（PowerShell/Terminalの実行ポリシー）**、ソフトウェアのSLSAやSBOMなどサプライチェーンの可視化、疑わしいリダイレクトをブロックするProxyルールも有効です。金融機関では特に顧客データアクセスの監査ログを短時間で検出する仕組みが重要です（図解③）。\n\n【ここに図解③を挿入｜企業の多層防御】\n\n---\n\n## 個人ユーザーが今日からできる安全習慣は？\n\nまず公式配布ルート以外からのソフトウェアをインストールしないこと。検索結果の上位広告であっても安全とは限りません。見慣れない“修正コマンド”やインストール手順をコピー＆実行する前に、公式サイトとリリースノートで確認する習慣をつけましょう。Mac/iPhone/Windowsいずれも、未知のインストーラはサンドボックスや仮想環境で検証する、OSの標準セキュリティ（Gatekeeperなど）を有効にする、二段階認証（MFA）を厳格にする、が現実的で効果的です（図解④）。\n\n【ここに図解④を挿入｜個人の安全チェック】\n\n---\n\n## 私の正直な感想\n\n正直に言うと、今回の2件は技術的には“目新しさ”というより既に見えていたリスクが組み合わさった結果だと感じます。広告配信や正規リダイレクトを“攻撃インフラの一部”として悪用する手口は以前からあり、ARTEXのような自動化ツールとLLMの結合も警告されていました。とはいえ、**実際に大手金融機関の現場でこれらが使われ、実害が出た疑いがある点は重要**で、対策の急務さが現場レベルで鮮明になったのは事実です。例えば、普段から広告でソフトを検索してインストールする習慣がある人は、今すぐ“公式ストアのみ”に切り替えるべきでしょう。事業者側の対応も待ったなしです。\n\n---\n\n## よくある質問\n\n### Q1：広告をクリックするだけで感染しますか？\n\nA：通常はクリックだけで完了するケースは少ないですが、ClickFixのように“クリック→画面上の指示に従ってコマンドを貼り付ける”流れに誘導されると感染リスクが高まります。クリック後の指示を鵜呑みにしないことが鍵です。\n\n### Q2：Claudeや他のLLMの“せい”ですか？\n\nA：LLM自体はツールであり、それを攻撃に使うのは攻撃者の選択です。問題は**LLMを悪用しやすくする自動化ツールや未整備のガバナンス**で、モデル提供者・事業者・利用者それぞれに責任分担があります。\n\n### Q3：企業がすぐにできる“優先対策”は？\n\nA：1) 広告経路を含む外部流入の監査、2) クリック追跡リダイレクトの把握とブロックルール、3) エージェントIDベースのアクセス制御、4) エンドポイントでのスクリプト実行制限、が優先度高めです。\n\n### Q4：被害を受けたか確認する方法は？\n\nA：不自然なログイン、未知の管理者アカウント、急増する外部コール、顧客データへの不正アクセスログなどを調べると手掛かりが得られます。疑わしければ速やかに専門のCSIRT/フォレンジックに相談を。\n\n---\n\n## まとめ\n\n広告経路の悪用（ClickFix）と、ARTEXのような自動エージェント＋LLMの組合せは、攻撃の“敷居を下げ速さを上げる”点で共通しています。個人は公式ルート厳守・不審なコマンド実行回避を、組織は外部流入の監査とエージェント認証、エンドポイントの実行制限を優先してください。\n\n---\n\n## この記事について\n\n確認日：2026年10月11日（日本時間）。公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。\n\n---\n\n## 参考リンク\n\n- [Hackers abuse Google Ads, Bing redirects to push Claude ClickFix attacks](https://www.bleepingcomputer.com/news/security/hackers-abuse-google-ads-bing-redirects-to-push-claude-clickfix-attacks/)\n- [CrowdStrike says China-based suspect used AI tools in South Korean bank hacks](https://www.reuters.com/technology/crowdstrike-says-china-based-suspect-used-ai-tools-south-korean-bank-hacks-2026-10-08/)\n- [South Korean Banks Were Hacked Using Chinese AI Agent, Researchers Say](https://www.theinformation.com/briefings/south-korean-banks-hacked-using-chinese-ai-agent-researchers-say)"
   },
   "evidence": [
-    "https://about.fb.com/news/2026/08/the-future-is-for-everyone/amp",
-    "https://about.fb.com/news/2026/09/introducing-muse-small-business?trk=public_post_comment-text",
-    "https://about.fb.com/news/2026/09/launching-meta-enterprise-platform",
-    "https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026?trk=article-ssr-frontend-pulse_little-text-block",
-    "https://ai.meta.com/blog",
-    "https://apnews.com/article/32064fde8ad68c68f71d82336f7db525",
     "https://apnews.com/article/f590b51073d8977a984c7c42b8f2a7a2",
-    "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot?trk=article-ssr-frontend-pulse_little-text-block",
-    "https://blogs.windows.com/windowsexperience/2026/10/07/building-windows-for-hybrid-intelligence?trk=article-ssr-frontend-pulse_little-text-block",
-    "https://investor.nvidia.com/files/doc_financials/2027/NVDA-2027-Q2-10Q-Final-including-exhibits.pdf",
-    "https://investor.nvidia.com/files/doc_presentations/2025/10/NVIDIA-2025-NDR-Deck-1.pdf",
-    "https://lmmarketcap.com/news/archive/2026/10",
-    "https://nvidianews.nvidia.com/_gallery/download_pdf/68d173273d633288cb44040b",
-    "https://nvidianews.nvidia.com/news?c=21926",
-    "https://s21.q4cdn.com/399680738/files/doc_financials/2026/q1/META-Q1-2026-Prepared-Remarks.pdf",
-    "https://techandbusiness.org/newswire/entity/nvidia",
-    "https://www.axios.com/2026/10/07/microsoft-looks-to-reboot-the-ai-pc-with-nvidia",
-    "https://www.axios.com/newsletters/axios-am-77e3ac65-2f83-4383-9a96-089a464209ae",
-    "https://www.crn.com/news/ai/2026/microsoft-s-ai-powered-windows-strategy-5-things-to-know",
-    "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q3/press-release-webcast",
-    "https://www.reddit.com/r/NVDA_Stock/comments/1x1biaq/daily_thread_and_discussion_20261009_friday",
-    "https://www.reddit.com/r/NVDA_Stock/comments/1x25jey/weekend_thread_and_discussion_20261010_to_20261011",
-    "https://www.reddit.com/r/microsoft/comments/1wxmihw/september_2026_monthly_microsoft_ai_update",
-    "https://www.t3.com/tech/computers-pcs/windows-is-getting-its-most-significant-upgrade-in-half-a-decade-heres-what-that-means",
-    "https://www.techradar.com/pro/microsoft-teams-will-soon-be-able-to-spot-third-party-deepfakes-on-your-morning-meeting",
-    "https://www.tomshardware.com/tech-industry/artificial-intelligence/spacex-reportedly-seeking-usd40-billion-debt-package-for-nvidia-ai-hardware-massive-raise-could-fund-roughly-360-000-vera-rubin-gpus-across-5-000-nvl72-racks",
-    "https://www.youtube.com/watch?v=jw_o0xr8MWU"
+    "https://noticias.derenzin.com/noticia/2026-10-09-hackers-abuse-google-ads-bing-redirects-to-push-claude-click-c85e183a.html",
+    "https://radar.offseq.com/threat/hackers-abuse-google-ads-bing-redirects-to-push-claude-clickfix-attacks-96d9dcf373bf3db6",
+    "https://techyorker.com/hackers-abuse-google-ads-and-bing-redirects-in-claude-clickfix-attack",
+    "https://www.bleepingcomputer.com/news/security/claude-llm-artifacts-abused-to-push-mac-infostealers-in-clickfix-attack",
+    "https://www.bleepingcomputer.com/news/security/hackers-abuse-google-ads-bing-redirects-to-push-claude-clickfix-attacks",
+    "https://www.cyberhappenings.com/happenings/2026/10/09/adception-google-ads-and-bing-redirect-claude-clickfix-campaign",
+    "https://www.hackerposts.org/en/blog/claude-clickfix-adception-bing-google-ads-malvertising",
+    "https://www.hallattorneys.com/investigations/claude-clickfix",
+    "https://www.investing.com/news/stock-market-news/crowdstrike-says-chinabased-suspect-used-ai-tools-in-south-korean-bank-hacks-4937965",
+    "https://www.newsminimalist.com/articles/hackers-use-google-ads-and-bing-redirects-to-deliver-fake-claude-installers-e7d5e751",
+    "https://www.reddit.com/r/AIDangers/comments/1x2ox7d/artex_ai_claude_agents_used_in_cyberattacks_on",
+    "https://www.reddit.com/r/NowInCyber/comments/1x23vdq/hackers_abuse_google_ads_bing_redirects_to_push",
+    "https://www.reddit.com/r/SecOpsDaily/comments/1x1wz5p/hackers_abuse_google_ads_bing_redirects_to_push",
+    "https://www.reddit.com/r/SecOpsDaily/comments/1x2hhqz/artex_ai_claude_agents_used_in_cyberattacks_on",
+    "https://www.reddit.com/r/SecOpsDaily/comments/1x2lsbb/secopsdaily_20261010_roundup",
+    "https://www.reddit.com/r/StopBadBots/comments/1x27blb/why_clicking_top_google_ad_results_for_claude",
+    "https://www.reddit.com/r/hackernews/comments/1x2t1uy/hackers_abuse_google_ads_bing_redirects_to_push",
+    "https://www.techradar.com/pro/nearly-40-000-phishing-attacks-hit-us-financial-firms-in-h1-2026-automated-ai-agents-and-a-new-seychelles-bulletproof-host-fuel-aggressive-new-campaigns",
+    "https://www.techradar.com/pro/security/chatgpt-gemini-and-claude-imitated-in-fake-ads-that-steal-credentials-and-mfa-codes",
+    "https://www.theinformation.com/briefings/south-korean-banks-hacked-using-chinese-ai-agent-researchers-say",
+    "https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-agent-fleet-likely-from-chinese-firm-tencent-pulled-data-from-rival-alibabas-maps-researchers-say-1-810-scans-in-one-day-some-runs-labeled-themselves-claude",
+    "https://www.tomshardware.com/tech-industry/cyber-security/hackers-suspected-of-using-ai-agents-for-cyberattacks-on-south-korean-banks-exposing-data-from-about-25-000-customers-officials-believe-ai-models-enable-actors-to-hack-with-ease-even-without-specialized-skills"
   ]
 }
