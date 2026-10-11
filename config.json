@@ -704,6 +704,14 @@
     "size": "1536x864",
     "max_attempts": 2,
     "first_diagram": 244,
-    "ui_verified": true
+    "ui_verified": true,
+    "style_reference_urls": {
+      "thumbnail": "https://assets.st-note.com/production/uploads/images/320278344/rectangle_large_type_2_04748bf198433582631a340b239e6a67.png?fit=bounds&quality=85&width=1280",
+      "diagram": "https://assets.st-note.com/img/1791008398-AXLV6MzNB7xvPr0RmhpU93oT.png"
+    },
+    "higgsfield_style_reference_urls": {
+      "thumbnail": "https://assets.st-note.com/production/uploads/images/319685501/rectangle_large_type_2_522533aa3bc188173c6a3a9c3f560617.png?fit=bounds&quality=85&width=1280",
+      "diagram": "https://assets.st-note.com/production/uploads/images/319685501/rectangle_large_type_2_522533aa3bc188173c6a3a9c3f560617.png?fit=bounds&quality=85&width=1280"
+    }
   }
 }

@@ -16,7 +16,9 @@ from api_costs import record_usage
 COMMON = '''ONLY ONE IMAGE. Single standalone image. No collage. No split panels containing other diagrams. Do not include the other diagrams.
 Create one independent landscape 16:9 Japanese AI tech news graphic. Black/deep navy background, neon cyan/blue, white and yellow bold Japanese lettering.
 Large sparse typography readable on a phone, generous safe margins, crisp high contrast. One theme only. Correct Japanese and accurate product names.
-Use a small generic AI orb or clean three-dimensional icons as accents when helpful; the explanation must remain easy to follow.
+Match the supplied previous-article reference: cinematic dimensional lighting, holographic glow, deep shadows, thick white headlines and yellow emphasis. Avoid flat slide decks, thin cyan-only typography, or plain outline icons.
+Use a friendly glossy spherical AI character with a NEUTRAL circular glowing core, plus three-dimensional icons and cyan illuminated cards. Never put an unrelated company logo on the character. The explanation must remain easy to follow.
+The reference is for appearance only. Remove ALL old words, dates, numbers, logos, brands, and factual claims from the reference. Replace with this article's whitelisted labels. Do not transfer old OpenAI/GPT branding to another company's news.
 No fabricated official UI, no invented statistics, no unsupported claims. Match the article's facts and distinguish the author's suggestions from product features.
 Render ONLY the provided exact Japanese labels and the specified diagram number. Do not add explanatory bullets, captions, dates, claims, or company statements.
 Do not invent details to fill space. Follow the label whitelist even when an older layout description asks for extra bullet points.
@@ -33,7 +35,8 @@ def call_image_api(payload):
     key=os.environ.get('OPENAI_API_KEY')
     if not key:
         raise WorkflowError('画像生成用APIキーがありません。')
-    request=Request('https://api.openai.com/v1/images/generations',
+    endpoint='edits' if payload.get('images') else 'generations'
+    request=Request('https://api.openai.com/v1/images/'+endpoint,
                     data=json.dumps(payload).encode(),method='POST',
                     headers={'Authorization':'Bearer '+key,'Content-Type':'application/json'})
     try:
@@ -64,6 +67,12 @@ def call_image_api(payload):
         raise APIError('画像APIの応答が不明です。重複請求を避けるため再生成しません。') from None
 
 
+def style_reference(config, title, number):
+    settings=config.get('images',{})
+    field='higgsfield_style_reference_urls' if 'higgsfield' in title.lower() else 'style_reference_urls'
+    return settings.get(field,{}).get('thumbnail' if number==0 else 'diagram')
+
+
 def review_image(data,item,article,config):
     schema={'type':'object','additionalProperties':False,
             'properties':{'approved':{'type':'boolean'},'issues':{'type':'string'},
@@ -92,6 +101,10 @@ unsupported_claimsに本文や指定ラベルにない事実・断定を列挙�
                          'detail':'high'}]}],
              'max_output_tokens':2500,
              'text':{'format':{'type':'json_schema','name':'image_review','strict':True,'schema':schema}}}
+    reference=style_reference(config,article.split('\n',1)[0],item['number'])
+    if reference:
+        payload['input'][0]['content'].append({'type':'input_image','image_url':reference,'detail':'high'})
+        payload['instructions']+='\n画像1が今回の候補、画像2は過去の作風見本。過去の文字・ブランド・事実は採用しない。候補が濃紺、シアン発光、立体感、太い白と黄色の文字という作風から大きく離れた平板なスライドなら不合格。Higgsfieldだけは黒と蛍光黄緑。無関係な企業ロゴの転写があれば不合格。'
     response=call_api(payload)
     texts=[c['text'] for x in response.get('output',[]) if x.get('type')=='message'
            for c in x.get('content',[]) if c.get('type')=='output_text']
@@ -157,9 +170,12 @@ def ensure_images(output,config,run_id,checkpoint=None):
                 item.update(status='generating',attempts=item.get('attempts',0)+1,
                             artifact_run_id=os.environ.get('GITHUB_RUN_ID'))
                 save() # Persist before the billed request; an ambiguous outcome must not be retried.
-                result=call_image_api({'model':settings['model'],'prompt':prompt,'n':1,
-                    'size':settings['size'],'quality':settings['quality'],'output_format':'png',
-                    'background':'opaque'})
+                payload={'model':settings['model'],'prompt':prompt,'n':1,
+                    'size':settings['size'],'quality':settings['quality'],'output_format':'png','background':'opaque'}
+                reference=style_reference(config,record['title'],number)
+                if reference:
+                    payload['images']=[{'image_url':reference}]
+                result=call_image_api(payload)
                 try:
                     data=base64.b64decode(result['data'][0]['b64_json'],validate=True)
                     size=png_size(data)

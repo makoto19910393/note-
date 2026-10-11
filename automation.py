@@ -191,7 +191,9 @@ headingは読者の疑問、contentは完成した段落。各節は図解①〜
 personal_viewは正直な感想、faqは質問と回答、summaryはまとめ。確認日・記事についてはプログラムが付ける。
 フィールド名や作成システムの説明を読者向けの文章へ出さない。
 sections合計3,000〜4,000文字を目安。各説明節400〜600字程度、感想300〜500字程度。
-contentに見出し・図解マーカー・図解挿入位置の一覧を重ねて書かない。images.anchorは空文字でよい。
+contentにH2見出し・図解マーカー・図解挿入位置の一覧を重ねて書かない。必要な小見出しは###で記す。images.anchorは空文字でよい。
+過去記事と同じスマホの読み心地を守る。一段落は原則1〜3文、40〜120字程度で改段落し、200字を超える塊を作らない。
+重要な言葉は**太字**で強調し、各説明節に必要なら###の小見出しを1〜2個使う。専門的な説明を短く具体的にする。
 """
     if config.get('articles_per_slot',1)>1:
         instructions+='\n最近の記事と同じ発表・事件は選ばない。最初はpreferred_searchの領域で探し、未報道の新しい出来事が見つからなければ他社や国内のAIニュースへ切り替える。会社名だけを変えた同じ事件は不可。\n最近の既出の話題：'+json.dumps([x['title'] for x in state['articles'][-8:]],ensure_ascii=False)
@@ -316,7 +318,7 @@ def compose_article(article):
                   datetime.now(ZoneInfo('Asia/Tokyo')).strftime('確認日：%Y年%m月%d日（日本時間）。')+
                   '公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。',
                   '## 参考リンク','\n'.join('- ['+x['title']+']('+x['url']+')' for x in article['sources'])])
-    article['body']='\n\n'.join(parts)
+    article['body']='\n\n'.join(('---\n\n'+part if part.startswith('## ') else part) for part in parts)
     return article
 
 
