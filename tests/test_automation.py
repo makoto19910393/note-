@@ -220,6 +220,31 @@ class AutomationTests(unittest.TestCase):
             self.assertEqual(command.call_count, 2)
             self.assertFalse(any(call.args[0][1] in ('commit', 'push') for call in command.call_args_list))
 
+    def test_remote_push_race_retries_only_git_synchronization(self):
+        import subprocess
+        okay=subprocess.CompletedProcess([],0,b'',b'')
+        changed=subprocess.CompletedProcess([],1,b'',b'')
+        rejected=subprocess.CompletedProcess([],1,b'',b'[rejected] fetch first')
+        results=[changed,okay]+[okay]*5+[rejected,okay,okay]
+        with patch.dict('os.environ',{'GITHUB_ACTIONS':'true'}), patch(
+                'run_workflow.subprocess.run',side_effect=results) as command:
+            persist_before_publish()
+        operations=[call.args[0][:2]for call in command.call_args_list]
+        self.assertEqual(operations.count(['git','commit']),1)
+        self.assertEqual(operations.count(['git','pull']),2)
+        self.assertEqual(operations.count(['git','push']),2)
+
+    def test_clean_worktree_still_pushes_pending_checkpoint_commit(self):
+        import subprocess
+        okay=subprocess.CompletedProcess([],0,b'',b'')
+        pending=subprocess.CompletedProcess([],0,b'1\n',b'')
+        with patch.dict('os.environ',{'GITHUB_ACTIONS':'true'}), patch(
+                'run_workflow.subprocess.run',side_effect=[okay,okay,pending,okay,okay]) as command:
+            persist_before_publish()
+        operations=[call.args[0][:2]for call in command.call_args_list]
+        self.assertEqual(operations.count(['git','commit']),0)
+        self.assertEqual(operations.count(['git','push']),1)
+
     def test_delayed_job_retains_slot_date_but_checks_actual_freshness(self):
         with patch.object(a, "call_api", return_value=response()), patch.object(a, "make_request", return_value={}), contextlib.redirect_stdout(io.StringIO()):
             result = a.run("evening", self.root, CONFIG, NOW, run_date="2026-10-09")

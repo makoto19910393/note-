@@ -52,11 +52,7 @@
       "prompt": "図解①。AIと依頼メモ、鍵の3Dアイコン。2つの問いを大きな発光カードに。 指定のlabelsと該当する図解番号だけを正確に表示。実際の製品画面や導入済み仕様ではなく、発言・筆者の提案の説明図。濃紺、シアンの光、白と黄色の太い立体文字。",
       "filename": "diagram256.png",
       "status": "ready",
-      "attempts": 1,
-      "pre_request_failure": {
-        "run_id": "38134004474",
-        "reason": "Git checkpoint raised before call_image_api; no image request started."
-      },
+      "attempts": 2,
       "artifact_run_id": "38134213834",
       "sha256": "a22a19d996dc1b7d231f5c5f750fc785e828c2d048300db42a5fee19d66a2e72",
       "width": 1536,
@@ -80,6 +76,44 @@
         "observed_title": "言葉だけで終わらせない",
         "observed_diagram_label": "図解①",
         "unsupported_claims": []
+      },
+      "previous_generation": {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜言葉だけで終わらせない】",
+        "theme": "言葉だけで終わらせない",
+        "labels": [
+          "言葉だけで終わらせない",
+          "専門家の見解",
+          "何を頼んだ？",
+          "何を許した？"
+        ],
+        "prompt": "図解①。AIと依頼メモ、鍵の3Dアイコン。2つの問いを大きな発光カードに。 指定のlabelsと該当する図解番号だけを正確に表示。実際の製品画面や導入済み仕様ではなく、発言・筆者の提案の説明図。濃紺、シアンの光、白と黄色の太い立体文字。",
+        "filename": "diagram256.png",
+        "status": "generated",
+        "attempts": 1,
+        "artifact_run_id": "38134004474",
+        "sha256": "1ef0fbb6012f5c72dbec1aeb670dc5c808076de4236d46e286303c5b89ba5d41",
+        "width": 1536,
+        "height": 864,
+        "usage": {
+          "input_tokens": 2000,
+          "input_tokens_details": {
+            "image_tokens": 1508,
+            "text_tokens": 492
+          },
+          "output_tokens": 280,
+          "output_tokens_details": {
+            "image_tokens": 280,
+            "text_tokens": 0
+          },
+          "total_tokens": 2280
+        }
+      },
+      "checkpoint_failure": {
+        "run_id": "38134004474",
+        "phase": "after_image_response",
+        "actual_result": "Generated image recovered from artifact, not yet reviewed.",
+        "recovery_error": "One duplicate image request was made before the artifact was inspected; explanation corrected to user."
       }
     },
     {

@@ -105,6 +105,39 @@ class ImageTests(unittest.TestCase):
 
     def tearDown(self):self.temp.cleanup()
 
+    def test_checkpoint_failure_before_image_request_is_safe_to_resume(self):
+        def fail():
+            raise a.WorkflowError('保存できません。')
+        with patch.object(media,'call_image_api') as api, self.assertRaises(a.WorkflowError):
+            media.ensure_images(self.output,self.config,'test',checkpoint=fail)
+        api.assert_not_called()
+        persisted=json.loads((self.output/self.record['media_plan']).read_text())
+        self.assertEqual(persisted['items'][0]['status'],'planned')
+        self.assertEqual(persisted['items'][0]['attempts'],0)
+
+    def test_artifact_response_is_recovered_only_for_unchanged_article_and_image(self):
+        import subprocess
+        item={**self.plan['items'][0],'status':'generating','attempts':1,'artifact_run_id':'123'}
+        saved={**item,'status':'generated','sha256':hashlib.sha256(self.png).hexdigest()}
+        def download(command,**kwargs):
+            root=Path(command[-1])
+            a.atomic_json(root/'state.json',{'articles':[self.record]})
+            (root/self.record['path']).write_text('本文')
+            a.atomic_json(root/self.record['media_plan'],{'items':[saved]})
+            ((root/self.record['media_plan']).parent/saved['filename']).write_bytes(self.png)
+            return subprocess.CompletedProcess(command,0,b'',b'')
+        target=self.output/'recovered.png'
+        with patch.object(media.subprocess,'run',side_effect=download), patch.object(media,'call_image_api') as api:
+            media.recover_image_result(self.output,self.record,item,target)
+            self.assertEqual(item['status'],'generated')
+            self.assertEqual(target.read_bytes(),self.png)
+            item['status']='generating'
+            saved['labels']=['別の記事']
+            with self.assertRaises(a.WorkflowError):
+                media.recover_image_result(self.output,self.record,item,target)
+            self.assertEqual(item['status'],'generating')
+        api.assert_not_called()
+
     def test_reviewed_draft_is_not_overwritten_even_with_publish_requested(self):
         record={**self.record,'status':'draft_saved',
                 'draft_source_sha256':self.record['sha256'],'media_upload':{'verified':True}}

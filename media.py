@@ -151,14 +151,15 @@ def ensure_images(output,config,run_id,checkpoint=None):
         limit=item.get('max_attempts',settings.get('max_attempts',2))
         if type(limit) is not int or not 1<=limit<=3:
             raise WorkflowError('画像の再生成回数の設定が不正です。')
+        if item['status']=='generating':
+            recover_image_result(output,record,item,target)
+            save()
         if item['status'] in ('ready','generated','review_pending') and not target.is_file():
             restore_image(output,record,item,target)
         if item['status']=='ready':
             if not target.is_file() or hashlib.sha256(target.read_bytes()).hexdigest()!=item['sha256']:
                 raise WorkflowError('保存済みの画像が欠落・変更しています。自動再生成は行いません。')
             continue
-        if item['status']=='generating':
-            raise WorkflowError('前回の画像APIの結果が未確認です。重複請求を避けるため再生成しません。')
         for _ in range(limit):
             if item.get('attempts',0)>=limit and item['status'] not in ('generated','review_pending'):
                 raise WorkflowError('画像の確認で不合格が続きました。本文は保存し、公開しません。')
@@ -248,3 +249,37 @@ def restore_image(output,record,item,target):
             raise WorkflowError('保管画像の一致を確認できません。再生成せず停止します。')
         target.parent.mkdir(parents=True,exist_ok=True)
         target.write_bytes(source.read_bytes())
+
+
+def recover_image_result(output,record,item,target):
+    """Recover a completed response from CI artifacts before considering another paid request."""
+    run_id=item.get('artifact_run_id')
+    message='前回の画像APIの結果が未確認です。重複請求を避けるため再生成しません。'
+    if not run_id or not str(run_id).isdigit():raise WorkflowError(message)
+    with tempfile.TemporaryDirectory() as directory:
+        result=subprocess.run(['gh','run','download',str(run_id),'-n','note-drafts-'+str(run_id),
+                               '-D',directory],capture_output=True,timeout=120)
+        if result.returncode:raise WorkflowError(message)
+        root=Path(directory)
+        try:
+            state=json.loads((root/'state.json').read_text())
+            prior=next(a for a in state['articles']if a['run_id']==record['run_id'])
+            if prior['sha256']!=record['sha256'] or hashlib.sha256(
+                    (root/prior['path']).read_bytes()).hexdigest()!=record['sha256']:
+                raise WorkflowError(message)
+            plan=json.loads((root/record['media_plan']).read_text())
+            saved=next(a for a in plan['items']if a['number']==item['number'])
+            if saved['status'] not in ('generated','review_pending','ready') or any(
+                    saved.get(field)!=item.get(field) for field in
+                    ('number','filename','theme','labels','prompt','anchor')):
+                raise WorkflowError(message)
+            source=(root/record['media_plan']).parent/saved['filename']
+            data=source.read_bytes()
+            if hashlib.sha256(data).hexdigest()!=saved['sha256']:raise WorkflowError(message)
+            png_size(data)
+        except (OSError,ValueError,KeyError,StopIteration):
+            raise WorkflowError(message)from None
+        target.parent.mkdir(parents=True,exist_ok=True)
+        target.write_bytes(data)
+        item.update(saved)
+        item['recovered_from_artifact']=str(run_id)

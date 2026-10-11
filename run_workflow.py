@@ -19,13 +19,19 @@ def persist_before_publish():
     untracked=subprocess.run(['git','ls-files','--others','--exclude-standard','content/'],cwd=ROOT,capture_output=True,timeout=30)
     if diff.returncode not in (0,1) or untracked.returncode:
         raise WorkflowError('公開前のGitHub保存を確認できません。noteの公開操作は行っていません。')
-    if diff.returncode==0 and untracked.returncode==0 and not untracked.stdout.strip():
-        return
-    commands = [
+    changed=diff.returncode==1 or bool(untracked.stdout.strip())
+    if not changed:
+        pending=subprocess.run(['git','rev-list','--count','origin/main..HEAD'],cwd=ROOT,
+                               capture_output=True,timeout=30)
+        if pending.returncode or not pending.stdout.strip().isdigit():
+            raise WorkflowError('GitHubへ未反映の記録を確認できません。公開操作は行っていません。')
+        if int(pending.stdout)==0:return
+    commands = ([
         ["git", "config", "user.name", "note-draft-bot"],
         ["git", "config", "user.email", "note-draft-bot@users.noreply.github.com"],
         ["git", "add", "content/"],
         ["git", "commit", "-m", "note公開前の状態を保存"],
+    ] if changed else [])+[
         ["git", "pull", "--rebase", "origin", "main"],
         ["git", "push", "origin", "HEAD:main"],
     ]
