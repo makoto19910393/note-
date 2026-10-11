@@ -210,7 +210,8 @@
         "verified_at": "2026-10-11",
         "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=1mo&interval=1d",
         "news_causation_verified": false
-      }
+      },
+      "previous_owner_draft_backup_sha256": "1ac33dfb94af98f7b2435fe0441b037c89b9cccac7eed21c6d3b6db7eb1b4c20"
     },
     {
       "number": 6,
