@@ -306,7 +306,7 @@ def compose_article(article):
         image=article['images'][index]
         anchor=f'【ここに図解{"①②③④"[index-1]}を挿入｜{image["theme"]}】'
         image['anchor']=anchor
-        prose=re.sub(r'【ここに図解[^\n】]*】','',section['content']).strip()
+        prose=re.sub(r'[【（(]ここに図解[^\n】）)]*[】）)]','',section['content']).strip()
         heading=section['heading'].lstrip('# ').strip()
         parts.extend(['## '+heading,prose,anchor])
     article['images'][0]['anchor']=''

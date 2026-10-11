@@ -158,11 +158,14 @@
       "anchor": "【ここに図解④を挿入｜導入チェックリスト】",
       "theme": "導入チェックリスト",
       "labels": [
-        "リスク評価",
-        "ベンダー比較",
-        "段階展開"
+        "導入の考え方",
+        "筆者の提案",
+        "リスクを確認",
+        "提供会社を比べる",
+        "小さく試す",
+        "結果を見て広げる"
       ],
-      "prompt": "濃紺背景、図解④見出し中央。縦に並んだチェックリスト形式で『リスク評価→ベンダー選定→試験導入→全社展開』を矢印でつなぐ。各項目の横に短い補足（1行）をネオンシアンで表示。16:9。",
+      "prompt": "A simple sequence of four large checklist cards. Use exactly the labels. Put 筆者の提案 visibly beneath 図解④. It is the author’s proposal, not Microsoft’s actual rollout process. No additional explanatory text.",
       "filename": "diagram251.png",
       "status": "rejected",
       "attempts": 2,
@@ -189,7 +192,10 @@
         "observed_title": "図解④",
         "observed_diagram_label": "図解④",
         "unsupported_claims": []
-      }
+      },
+      "max_attempts": 3,
+      "manual_correction": "図解の表現を本文に合わせ、筆者の提案であることを明示して1回だけ再生成。"
     }
-  ]
+  ],
+  "status": "review_required"
 }

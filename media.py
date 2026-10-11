@@ -131,6 +131,9 @@ def ensure_images(output,config,run_id,checkpoint=None):
 
     for item in plan['items']:
         target=plan_path.parent/item['filename']
+        limit=item.get('max_attempts',settings.get('max_attempts',2))
+        if type(limit) is not int or not 1<=limit<=3:
+            raise WorkflowError('画像の再生成回数の設定が不正です。')
         if item['status'] in ('ready','generated','review_pending') and not target.is_file():
             restore_image(output,record,item,target)
         if item['status']=='ready':
@@ -139,8 +142,8 @@ def ensure_images(output,config,run_id,checkpoint=None):
             continue
         if item['status']=='generating':
             raise WorkflowError('前回の画像APIの結果が未確認です。重複請求を避けるため再生成しません。')
-        for _ in range(settings.get('max_attempts',2)):
-            if item.get('attempts',0)>=settings.get('max_attempts',2) and item['status'] not in ('generated','review_pending'):
+        for _ in range(limit):
+            if item.get('attempts',0)>=limit and item['status'] not in ('generated','review_pending'):
                 raise WorkflowError('画像の確認で不合格が続きました。本文は保存し、公開しません。')
             if item['status'] not in ('generated','review_pending'):
                 number=item['number']
@@ -213,7 +216,7 @@ def restore_image(output,record,item,target):
                                '-D',directory],capture_output=True,timeout=120)
         if result.returncode:
             raise WorkflowError('前回の画像保管先を取得できません。再生成せず停止します。')
-        source=Path(directory)/target.relative_to(output)
+        source=(Path(directory)/target.relative_to(output)).with_name(item.get('artifact_filename',item['filename']))
         if not source.is_file() or hashlib.sha256(source.read_bytes()).hexdigest()!=item.get('sha256'):
             raise WorkflowError('保管画像の一致を確認できません。再生成せず停止します。')
         target.parent.mkdir(parents=True,exist_ok=True)

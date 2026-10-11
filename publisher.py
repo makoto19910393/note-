@@ -197,6 +197,8 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
     from publisher_images import prepare_body, owner_draft, upload_images, save_draft
     plan=verified_media(output,record)
     body=prepare_body(body,plan)
+    if 'ここに図解' in body:
+        raise WorkflowError('図解作成の指示が本文に残っています。公開せず修正します。')
     raw_session = os.environ.get("NOTE_STORAGE_STATE")
     storage = None
     if raw_session:
