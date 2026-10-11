@@ -229,7 +229,11 @@
         "23b22659b44dbbd439cf12b4f2cef3e7bee5d9099994a01f358cbe60a549ef9f",
         "32478e84ed971ea3285175d095468bbf6ee3b9dab22cb1cd22656d780e2a767d"
       ],
-      "pending_cover_url": "https://assets.st-note.com/production/uploads/images/323241101/rectangle_large_type_2_0064d404e14c297904e1b1bfe3fc3e9a.png"
+      "pending_cover_url": "https://assets.st-note.com/production/uploads/images/323241101/rectangle_large_type_2_0064d404e14c297904e1b1bfe3fc3e9a.png",
+      "media_upload": {
+        "cover_uploaded": true,
+        "diagrams": 0
+      }
     }
   ],
   "next_diagram": 256
