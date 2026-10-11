@@ -32,7 +32,17 @@ def persist_before_publish():
     for command in commands:
         result = subprocess.run(command, cwd=ROOT, capture_output=True, timeout=120)
         if result.returncode:
-            raise WorkflowError("公開前のGitHub保存に失敗しました。noteの公開操作は行っていません。")
+            # A concurrent repository update can reject a push after a successful rebase.
+            # Retry only the Git synchronization; never repeat publication or API calls.
+            if command[:2]==['git','push'] and any(marker in result.stderr for marker in
+                    (b'[rejected]',b'fetch first',b'non-fast-forward')):
+                pull=subprocess.run(['git','pull','--rebase','origin','main'],cwd=ROOT,
+                                    capture_output=True,timeout=120)
+                if pull.returncode==0:
+                    pushed=subprocess.run(command,cwd=ROOT,capture_output=True,timeout=120)
+                    if pushed.returncode==0:continue
+            operation=' '.join(command[:2])
+            raise WorkflowError("公開前のGitHub保存に失敗しました（"+operation+"）。noteの公開操作は行っていません。")
 
 
 def scheduled_slot(config, now, requested="auto"):

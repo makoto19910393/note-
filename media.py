@@ -171,9 +171,16 @@ def ensure_images(output,config,run_id,checkpoint=None):
                 prompt=style+f'\n{title_rule} Theme: {item["theme"]}.\nExact short Japanese labels: '+json.dumps(labels,ensure_ascii=False)+'\nLayout: '+item['prompt']+'\nDo not add any text beyond the exact labels above.'
                 if item.get('review',{}).get('issues'):
                     prompt+='\nCorrect only this image based on these issues: '+item['review']['issues']
+                before_request=dict(item)
                 item.update(status='generating',attempts=item.get('attempts',0)+1,
                             artifact_run_id=os.environ.get('GITHUB_RUN_ID'))
-                save() # Persist before the billed request; an ambiguous outcome must not be retried.
+                try:
+                    save() # Persist before the billed request; an ambiguous outcome must not be retried.
+                except WorkflowError:
+                    # The paid request below has not started. Do not record an ambiguous API result.
+                    item.clear();item.update(before_request)
+                    atomic_json(plan_path,plan)
+                    raise
                 payload={'model':settings['model'],'prompt':prompt,'n':1,
                     'size':settings['size'],'quality':settings['quality'],'output_format':'png','background':'opaque'}
                 reference=style_reference(config,record['title'],number)
