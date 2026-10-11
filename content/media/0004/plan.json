@@ -165,7 +165,7 @@
       ],
       "prompt": "Three simple checklist rows and a prominent author suggestion label. No extra explanatory text.",
       "filename": "diagram247.png",
-      "status": "review_pending",
+      "status": "ready",
       "attempts": 2,
       "artifact_run_id": "38108203018",
       "sha256": "8f8229061d633e770f205424eff5da699a8de1c32ad4f5133c07258396cdbcac",
@@ -185,8 +185,9 @@
         "total_tokens": 589
       },
       "review": {
-        "approved": false,
-        "issues": "図解番号がない、または本文にない断定・説明が追加されている。指定ラベルだけで描き直す。"
+        "approved": true,
+        "issues": "",
+        "observed_title": "図解④ サービス選びの確認点"
       }
     }
   ],
