@@ -132,7 +132,9 @@ def withdraw_duplicate(output, config, run_id):
                 confirm.wait_for(state="visible", timeout=5000)
                 confirm.click()
             except Exception:
-                print("下書き戻しの確認ボタン:", json.dumps(page.get_by_role("dialog").get_by_role("button").all_text_contents(), ensure_ascii=False))
+                dialog = page.get_by_role("dialog")
+                dialog.wait_for(state="visible", timeout=5000)
+                dialog.get_by_role("button", name="OK", exact=True).click()
             public = browser.new_context()
             check = public.new_page()
             deadline = time.monotonic() + 30
