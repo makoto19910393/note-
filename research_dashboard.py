@@ -33,11 +33,12 @@ def collect_dashboard(context):
     page.on('response', receive)
     try:
         page.goto('https://note.com/dashboard', wait_until='domcontentloaded', timeout=60000)
-        page.wait_for_function("document.body.innerText.includes('ページビュー') && document.body.innerText.includes('スキ')", timeout=45000)
+        page.get_by_text('ページビュー', exact=True).filter(visible=True).first.wait_for(timeout=45000)
+        page.get_by_text('スキ', exact=True).filter(visible=True).first.wait_for(timeout=45000)
         text = page.locator('body').inner_text()
-        tables = page.locator('table').evaluate_all("""tables=>tables.map(t=>({
-          headers:[...t.querySelectorAll('thead th')].map(c=>c.innerText),
-          rows:[...t.querySelectorAll('tbody tr')].map(r=>[...r.querySelectorAll('td')].map(c=>c.innerText))}))""")
+        tables = [{'headers':table.locator('thead th').all_inner_texts(),
+                   'rows':[row.locator('td').all_inner_texts() for row in table.locator('tbody tr').all()]}
+                  for table in page.locator('table').all()]
         return {'captured_at': datetime.now(timezone.utc).isoformat(), 'page': urlsplit(page.url).path,
                 'text': text, 'tables': tables, 'responses': captured,
                 'screenshot_png': base64.b64encode(page.screenshot(full_page=True)).decode()}
