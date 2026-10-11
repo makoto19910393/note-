@@ -513,7 +513,18 @@ def run(slot, output, config, now=None, fixture=None, run_date=None, run_id=None
                     payload["instructions"] += "\n前回の候補は検証で不採用。理由を修正し、重複の場合は違う会社・製品の別の出来事を選ぶ。"
                 if config.get('research_first'):
                     from news_research import research,write_from_research
-                    data,research_response=research(config,state,now,feedback)
+                    try:
+                        data,research_response=research(config,state,now,feedback)
+                    except APIError:
+                        raise
+                    except WorkflowError as error:
+                        atomic_json(output/'review'/(run_id+'-research-error.json'),{
+                            'status':'not_published','reason':str(error),
+                            'attempted_candidate_urls':config.get('_researched_candidate_urls',[])})
+                        if attempt==1:raise
+                        feedback={'title':'','reason':str(error)}
+                        print('裏付けを確認できない候補を外し、次の最新候補を1回だけ調べます。')
+                        continue
                     response=write_from_research(payload,data,research_response)
                 else:
                     response = call_api(payload)
