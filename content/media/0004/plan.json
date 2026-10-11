@@ -13,7 +13,7 @@
       ],
       "prompt": "16:9 サムネイル。背景は濃紺。中央に大きく白抜きで「OpenAI 研究者3名 解雇」太字、下に黄色で日付「2026-10」。左上にOpenAI風のロゴ風図形（実在ロゴを描かない抽象形状）。ネオンシアンのアクセント線。視認性重視、スマホで読みやすい構図。",
       "filename": "thumbnail.png",
-      "status": "review_pending",
+      "status": "ready",
       "attempts": 1,
       "artifact_run_id": "38107631755",
       "sha256": "34017068bc0b2053354d520c150715afa1669e7d541174e1a78c53d4fbd805df",
@@ -31,6 +31,11 @@
           "text_tokens": 0
         },
         "total_tokens": 543
+      },
+      "review": {
+        "approved": true,
+        "issues": "",
+        "observed_title": "OpenAI 研究者3名 解雇（サムネイル）"
       }
     },
     {
