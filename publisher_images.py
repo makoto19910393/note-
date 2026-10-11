@@ -2,6 +2,7 @@
 import hashlib
 import json
 import re
+import time
 from urllib.parse import urlsplit
 
 from automation import WorkflowError, atomic_json
@@ -76,6 +77,10 @@ def upload_images(page, context, output, state_path, state, record, plan, checkp
         return data, count
 
     data = owner_draft(context, note_id)
+    pending=record.get('pending_cover_url')
+    if data.get('eyecatch') and pending and urlsplit(data['eyecatch']).path==urlsplit(pending).path:
+        record['cover_needs_refresh']=False
+        record.pop('pending_cover_url',None)
     if not data.get('eyecatch') or record.get('cover_needs_refresh'):
         before=page.locator('img').evaluate_all("els=>els.filter(el=>!el.closest('.ProseMirror')).map(el=>el.src)")
         page.locator('button').filter(has=page.locator("svg[aria-label='画像を追加']")).click()
@@ -88,10 +93,21 @@ def upload_images(page, context, output, state_path, state, record, plan, checkp
         page.wait_for_function('''previous => Array.from(document.querySelectorAll('img'))
             .some(img => !img.closest('.ProseMirror') && img.src.startsWith('https:') &&
                 !previous.includes(img.src) && img.complete && img.naturalWidth>0)''',arg=before)
+        candidates=page.locator('img').evaluate_all("els=>els.filter(el=>!el.closest('.ProseMirror') && el.src.includes('assets.st-note.com')).map(el=>el.src)")
+        if len(candidates)!=1:
+            raise WorkflowError('見出し画像の保存先を一意に確認できません。')
+        record['pending_cover_url']=candidates[0]
+        atomic_json(state_path,state)
+        if checkpoint:checkpoint()
         data, _ = save()
+        deadline=time.monotonic()+15
+        while not data.get('eyecatch') and time.monotonic()<deadline:
+            time.sleep(1)
+            data=owner_draft(context,note_id)
         if not data.get('eyecatch'):
             raise WorkflowError('サムネイルの保存を確認できません。')
         record['cover_needs_refresh']=False
+        record.pop('pending_cover_url',None)
         atomic_json(state_path,state)
         if checkpoint:checkpoint()
 
