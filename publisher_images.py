@@ -33,10 +33,16 @@ def owner_draft(context, note_id):
 
 def save_draft(page):
     # A navigation immediately after the click can cancel the asynchronous save.
-    with page.expect_response(lambda r: r.request.method in ('POST','PUT','PATCH') and
-                              re.search(r'/api/[^/]+/(?:text_notes|notes)(?:/|$)',urlsplit(r.url).path),
-                              timeout=30000) as saved:
-        page.get_by_role('button', name='下書き保存', exact=True).click()
+    from playwright.sync_api import TimeoutError as BrowserTimeout
+    try:
+        with page.expect_response(lambda r: r.request.method in ('POST','PUT','PATCH') and
+                                  re.search(r'/api/[^/]+/(?:text_notes|notes)(?:/|$)',urlsplit(r.url).path),
+                                  timeout=10000) as saved:
+            page.get_by_role('button', name='下書き保存', exact=True).click()
+    except BrowserTimeout:
+        # note can finish autosaving before the click and send no second request.
+        # Callers still reload the editor and verify the server-saved body/images.
+        return
     if not saved.value.ok:
         raise WorkflowError('noteが下書き保存を拒否しました。')
 
@@ -113,6 +119,7 @@ def upload_images(page, context, output, state_path, state, record, plan, checkp
 
     count = uploaded_count(content, plan)
     for item in plan['items'][count + 1:]:
+        print('図解の挿入開始:',record['number'],item['number'])
         marker = content.locator('p').filter(has_text=caption(item))
         if marker.count() != 1 or marker.inner_text().strip() != caption(item):
             raise WorkflowError('図解の挿入位置を一意に確認できません。')
@@ -126,6 +133,7 @@ def upload_images(page, context, output, state_path, state, record, plan, checkp
         with page.expect_file_chooser() as chooser:
             option.dispatch_event('click')
         chooser.value.set_files(str(directory / item['filename']))
+        print('図解ファイルを送信:',record['number'],item['number'])
         page.wait_for_function('n => document.querySelectorAll(".ProseMirror img").length === n',
                                arg=item['number'])
         page.wait_for_function('''() => Array.from(document.querySelectorAll('.ProseMirror img'))
