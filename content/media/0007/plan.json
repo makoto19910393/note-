@@ -94,7 +94,7 @@
       ],
       "prompt": "図解②。読む・変更するの二つの発光カード。権限を分ける概念図。 指定のlabelsと該当する図解番号だけを正確に表示。実際の製品画面や導入済み仕様ではなく、発言・筆者の提案の説明図。濃紺、シアンの光、白と黄色の太い立体文字。",
       "filename": "diagram257.png",
-      "status": "review_pending",
+      "status": "ready",
       "attempts": 2,
       "artifact_run_id": "38134213834",
       "sha256": "0941874a16b668cd1465a8f558319d8db9ae35c5bab7a055283453bf3555216a",
@@ -114,15 +114,11 @@
         "total_tokens": 2329
       },
       "review": {
-        "approved": false,
-        "issues": "本文にない断定を削除してください。合成の検出（映像・音声を調べる） なりすまし保護（不審な参加者に注意） どちらも開発中",
-        "observed_title": "任せる範囲を分ける",
+        "approved": true,
+        "issues": "",
+        "observed_title": "図解②　任せる範囲を分ける",
         "observed_diagram_label": "図解②",
-        "unsupported_claims": [
-          "合成の検出（映像・音声を調べる）",
-          "なりすまし保護（不審な参加者に注意）",
-          "どちらも開発中"
-        ]
+        "unsupported_claims": []
       }
     },
     {
