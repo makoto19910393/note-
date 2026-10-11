@@ -258,4 +258,4 @@ GmailやDriveとのつながり。仕事の情報を引き継ぐ記憶。パソ�
 - [過去の記事：OpenAIの「Dots」を解説](https://note.com/quiet_spirea2390/n/n6295051dd97f)
 - [過去の記事：Claude CodeとCoworkの違い](https://note.com/quiet_spirea2390/n/nf7b4b947419d)
 
-#AI #Google #Gemini #Geminiagent #Claude #Anthropic #AIエージェント #生成AI #GoogleWorkspace #Gmail #仕事効率化 #AIニュース
+\#AI #Google #Gemini #Geminiagent #Claude #Anthropic #AIエージェント #生成AI #GoogleWorkspace #Gmail #仕事効率化 #AIニュース

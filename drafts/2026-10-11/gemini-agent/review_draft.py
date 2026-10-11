@@ -46,18 +46,53 @@ with sync_playwright() as p:
         if title.input_value() != title_text:
             raise RuntimeError('対象の下書きタイトルが一致しません。')
         print('draft',json.dumps(saved,ensure_ascii=False))
-        page.locator('button').filter(has=page.locator("svg[aria-label='画像を追加']")).click()
-        print('cover_menu',json.dumps(page.get_by_role('menuitem').all_text_contents(),ensure_ascii=False))
-        print('cover_buttons',json.dumps(page.get_by_role('button').all_text_contents(),ensure_ascii=False))
-        print('cover_inputs',json.dumps(page.locator("input[type='file']").evaluate_all("els=>els.map(x=>({accept:x.accept,multiple:x.multiple}))")))
-        page.keyboard.press('Escape')
-        content.locator('p').filter(has_text='【ここに図解①を挿入').click()
-        page.keyboard.press('End')
-        page.keyboard.press('Enter')
-        page.get_by_role('button',name='メニューを開く',exact=True).click()
-        print('body_menu',json.dumps(page.get_by_role('menuitem').all_text_contents(),ensure_ascii=False))
-        print('body_buttons',json.dumps(page.get_by_role('button').all_text_contents(),ensure_ascii=False))
-        page.screenshot(path='/tmp/review-editor.png')
+        if not saved.get('uploaded_diagrams'):
+            # Correct the plain hashtag line before adding media; never touch a published article.
+            page.evaluate("""async ({html,text}) => navigator.clipboard.write([new ClipboardItem({
+                'text/html':new Blob([html],{type:'text/html'}),
+                'text/plain':new Blob([text],{type:'text/plain'})})])""",{'html':html,'text':body})
+            content.click()
+            page.keyboard.press('ControlOrMeta+A')
+            page.keyboard.press('ControlOrMeta+V')
+            page.wait_for_function("() => document.querySelector('.ProseMirror').innerText.includes('この記事について')")
+        if not saved.get('cover_uploaded'):
+            page.locator('button').filter(has=page.locator("svg[aria-label='画像を追加']")).click()
+            with page.expect_file_chooser() as chooser:
+                page.get_by_role('button',name='画像をアップロード',exact=False).click()
+            chooser.value.set_files(str(ROOT / 'assets' / 'thumbnail.png'))
+            page.wait_for_timeout(1500)
+            print('cover_after_upload_buttons',json.dumps(page.get_by_role('button').all_text_contents(),ensure_ascii=False))
+            dialog = page.get_by_role('dialog')
+            if dialog.count():
+                print('cover_dialog_buttons',json.dumps(dialog.get_by_role('button').all_text_contents(),ensure_ascii=False))
+            page.screenshot(path='/tmp/review-editor.png')
+            # The cover dialog's confirmation control is verified from this inspection first.
+            raise RuntimeError('見出し画像の確認ボタンを検証します。公開はしていません。')
+        for i in range(saved.get('uploaded_diagrams',0),4):
+            marker = content.locator('p').filter(has_text=f'【ここに図解{"①②③④"[i]}を挿入')
+            marker.click()
+            page.keyboard.press('End')
+            page.keyboard.press('Enter')
+            page.get_by_role('button',name='メニューを開く',exact=True).click()
+            image_option=page.get_by_text('画像',exact=True)
+            image_option.wait_for(state='visible')
+            with page.expect_file_chooser() as chooser:
+                image_option.click()
+            chooser.value.set_files(str(ROOT/'assets'/f'diagram{240+i}.png'))
+            page.wait_for_function("n => document.querySelectorAll('.ProseMirror img').length >= n",arg=i+1)
+            page.get_by_role('button',name='下書き保存',exact=True).click()
+            saved['uploaded_diagrams']=i+1
+            MANIFEST.write_text(json.dumps(saved,ensure_ascii=False,indent=2)+'\n')
+            print('body_image_saved',i+1)
+        page.goto(saved['editor_url'],wait_until='domcontentloaded')
+        content.wait_for(state='visible')
+        assert content.locator('img').count()==4
+        assert 'この記事について' in content.inner_text()
+        saved['status']='draft_images_verified'
+        MANIFEST.write_text(json.dumps(saved,ensure_ascii=False,indent=2)+'\n')
+        print('verified_draft',json.dumps(saved,ensure_ascii=False))
     finally:
+        if 'page' in locals():
+            page.screenshot(path='/tmp/review-editor.png')
         context.close()
         browser.close()
