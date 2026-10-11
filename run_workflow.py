@@ -127,6 +127,15 @@ def main():
     if args.run_id:
         if mode == "disabled":
             raise WorkflowError("既存原稿の投稿にはdraftまたはpublishを指定してください。")
+    if not args.run_id and config.get("reader_analysis", {}).get("enabled"):
+        try:
+            from research_dashboard import current_reader_insights
+            config["_reader_insights"] = current_reader_insights()
+            print("読者実績を記事選定に反映します。私的な数値は出力しません。")
+        except Exception:
+            # Optional analytics failure is reported distinctly; publishing checks remain mandatory.
+            config["_reader_insights"] = {"available":False}
+            print("今回は読者実績を取得できませんでした。最新ニュースの調査・確認は続けます。")
     run_batch(output,config,actual_now,scheduled,slot,mode,
               run_ids=[args.run_id] if args.run_id else None)
 

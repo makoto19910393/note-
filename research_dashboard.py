@@ -7,6 +7,7 @@ import json
 import os
 import re
 from pathlib import Path
+import math
 import subprocess
 import tempfile
 from urllib.parse import urlsplit
@@ -22,6 +23,8 @@ def collect_dashboard(context):
         path = urlsplit(response.url).path
         if response.request.method != 'GET' or not path.startswith('/api/'):
             return
+        if not any(part in path.lower() for part in ('stats','analytics','impression','dashboard')):
+            return
         if response.ok and 'json' in response.headers.get('content-type', ''):
             try:
                 data = response.json()
@@ -36,6 +39,17 @@ def collect_dashboard(context):
         page.get_by_text('スキ', exact=True).filter(visible=True).first.wait_for(timeout=45000)
         page.locator('a[href*="/n/"]').filter(visible=True).first.wait_for(timeout=45000)
         page.get_by_text(re.compile(r'^\d[\d,]*$')).filter(visible=True).first.wait_for(timeout=45000)
+        from playwright.sync_api import expect
+        article_table=page.locator('table').filter(has_text='タイトル').first
+        for _ in range(10):
+            more=page.get_by_text('もっとみる',exact=True).filter(visible=True)
+            if not more.count():
+                break
+            count=article_table.locator('tbody tr').count()
+            more.first.click()
+            expect(article_table.locator('tbody tr')).not_to_have_count(count,timeout=30000)
+        else:
+            raise RuntimeError('記事実績の最終ページを確認できません。')
         text = page.locator('body').inner_text()
         tables = [{'headers':table.locator('thead th').all_inner_texts(),
                    'rows':[row.locator('td').all_inner_texts() for row in table.locator('tbody tr').all()]}
@@ -75,3 +89,46 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+def reader_insights(dashboard):
+    """Turn aggregate counts into planning context; never publish private metrics."""
+    rows=[]
+    for table in dashboard.get('tables',[]):
+        headers=[x.strip() for x in table['headers']]
+        if 'タイトル' not in headers or 'ページビュー' not in headers:
+            continue
+        for cells in table['rows']:
+            if len(cells)!=len(headers):continue
+            row=dict(zip(headers,cells))
+            if '公開中' not in row['タイトル']:continue
+            title=row['タイトル'].split('\n',1)[0].strip()
+            def count(name):
+                value=row.get(name,'').strip().replace(',','')
+                return int(value) if value.isdecimal() else 0
+            views,likes,comments,impressions=map(count,['ページビュー','スキ','コメント','インプレッション'])
+            # Page views, likes and comments express different actions. Likes can
+            # happen without opening a post, so likes/PV is not a conversion rate.
+            score=math.log1p(views)+0.5*math.log1p(likes)+0.5*math.log1p(comments)
+            rows.append({'title':title,'score':score,'views':views,'likes':likes,'comments':comments,'impressions':impressions})
+    if not rows:raise RuntimeError('読者実績を読み取れません。')
+    ranked=sorted(rows,key=lambda r:r['score'],reverse=True)
+    return {'available':True,'captured_at':dashboard['captured_at'],
+            'scope':'画面で選択されている過去28日間の公開記事。集計時刻は画面表示に従う。',
+            'articles_checked':len(rows),
+            'strong_article_titles':[r['title'] for r in ranked[:8]],
+            'high_view_titles':[r['title'] for r in sorted(rows,key=lambda r:r['views'],reverse=True)[:5]],
+            'high_like_titles':[r['title'] for r in sorted(rows,key=lambda r:r['likes'],reverse=True)[:5]],
+            'commented_titles':[r['title'] for r in ranked if r['comments']>0][:5],
+            'interpretation':'露出と本文閲覧とスキとコメントは別々の指標。PVやスキ数を売上・購入率とみなさない。少数の反応だけで好みを断定しない。'}
+
+
+def current_reader_insights():
+    from playwright.sync_api import sync_playwright
+    with sync_playwright() as p:
+        browser=p.chromium.launch(headless=os.environ.get('NOTE_HEADLESS','true')!='false')
+        context=browser.new_context(storage_state=json.loads(os.environ['NOTE_STORAGE_STATE']),viewport={'width':1440,'height':1000})
+        try:
+            return reader_insights(collect_dashboard(context))
+        finally:
+            context.close();browser.close()

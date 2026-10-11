@@ -713,5 +713,11 @@
       "thumbnail": "https://assets.st-note.com/production/uploads/images/319685501/rectangle_large_type_2_522533aa3bc188173c6a3a9c3f560617.png?fit=bounds&quality=85&width=1280",
       "diagram": "https://assets.st-note.com/production/uploads/images/319685501/rectangle_large_type_2_522533aa3bc188173c6a3a9c3f560617.png?fit=bounds&quality=85&width=1280"
     }
+  },
+  "reader_analysis": {
+    "enabled": true
+  },
+  "trend_selection": {
+    "enabled": true
   }
 }

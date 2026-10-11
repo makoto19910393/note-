@@ -197,6 +197,10 @@ contentにH2見出し・図解マーカー・図解挿入位置の一覧を重�
 """
     if config.get('articles_per_slot',1)>1:
         instructions+='\n最近の記事と同じ発表・事件は選ばない。最初はpreferred_searchの領域で探し、未報道の新しい出来事が見つからなければ他社や国内のAIニュースへ切り替える。会社名だけを変えた同じ事件は不可。\n最近の既出の話題：'+json.dumps([x['title'] for x in state['articles'][-8:]],ensure_ascii=False)
+    if config.get('reader_analysis',{}).get('enabled'):
+        instructions+='\nreader_insightsは読者の関心を考える内部資料。記事タイトルは過去の実績であり新ニュースの根拠ではない。これらの指標・分析内容・運営の内部事情を本文や画像に出さない。反応のあるジャンルに関連する新しい出来事を探すが、既出の同じ発表を繰り返さない。'
+    if config.get('trend_selection',{}).get('enabled'):
+        instructions+='\n今回の調査時点で、公開情報として読めるX、Instagram Reels、Yahoo!リアルタイム検索、noteのランキング・注目記事のAI関連話題もweb_searchで確認する。最新トレンドは候補を選ぶ手掛かりにし、ニュースの事実は公式や信頼できる報道で確認する。ランキングや投稿の反響を確認できなければ取得できたふりをしない。再生数・順位・売れ行きを推測で足さない。AIと関係のない話題を無理に結び付けない。'
     preferences=['OpenAI以外も含む最新の主要AIニュース','Microsoft・NVIDIA・Metaなどの最新AIニュース','日本国内のAI導入・新製品・制度の最新ニュース']
     return {
         "model": os.environ.get("OPENAI_MODEL") or config["model"],
@@ -208,6 +212,7 @@ contentにH2見出し・図解マーカー・図解挿入位置の一覧を重�
                              "batch_article_index": config.get('_batch_index'),
                              "batch_article_count": config.get('articles_per_slot',1),
                              "preferred_search":preferences[(config.get('_batch_index',1)-1)%3],
+                             "reader_insights": config.get("_reader_insights", {"available":False}),
                              "previous_articles": previous}, ensure_ascii=False),
         "tools": [{"type": "web_search"}],
         "include": ["web_search_call.action.sources"],
