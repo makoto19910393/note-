@@ -164,24 +164,24 @@
       ],
       "prompt": "濃紺背景、図解④見出し中央。縦に並んだチェックリスト形式で『リスク評価→ベンダー選定→試験導入→全社展開』を矢印でつなぐ。各項目の横に短い補足（1行）をネオンシアンで表示。16:9。",
       "filename": "diagram251.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 2,
       "artifact_run_id": "38108879984",
-      "sha256": "c8079ce2dc28a7f8aa592679f25a464ac5542fae74e1ad927fbafa80e839895b",
+      "sha256": "90da5ded696353dff58885b29292bfd39c1615eb6954d068551b89bd5c07b7cf",
       "width": 1536,
       "height": 864,
       "usage": {
-        "input_tokens": 335,
+        "input_tokens": 378,
         "input_tokens_details": {
           "image_tokens": 0,
-          "text_tokens": 335
+          "text_tokens": 378
         },
         "output_tokens": 280,
         "output_tokens_details": {
           "image_tokens": 280,
           "text_tokens": 0
         },
-        "total_tokens": 615
+        "total_tokens": 658
       },
       "review": {
         "approved": false,
