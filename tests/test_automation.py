@@ -89,6 +89,22 @@ class AutomationTests(unittest.TestCase):
         with self.assertRaises(a.WorkflowError):
             self.validate(data)
 
+    def test_accepts_verified_links_with_trailing_slash_variation(self):
+        data = response()
+        article = json.loads(data["output"][1]["content"][0]["text"])
+        for source in article["sources"]:
+            source["url"] += "/"
+        data["output"][1]["content"][0]["text"] = json.dumps(article)
+        self.assertEqual(len(self.validate(data)), 2)
+
+    def test_accepts_sources_actually_opened_by_web_tool(self):
+        data = response()
+        sources = data["output"][0]["action"].pop("sources")
+        data["output"].extend({"type": "web_search_call", "status": "completed",
+                               "action": {"type": "open_page", "url": source["url"]}}
+                              for source in sources)
+        self.assertEqual(len(self.validate(data)), 2)
+
     def test_rejects_old_news(self):
         data = response()
         article = json.loads(data["output"][1]["content"][0]["text"])

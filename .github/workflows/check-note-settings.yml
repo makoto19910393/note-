@@ -13,6 +13,7 @@ jobs:
           PRIMARY_EMAIL: ${{ secrets.NOTE_EMAIL }}
           ALTERNATE_EMAIL: ${{ secrets.MAIL }}
           LOGIN_PASSWORD: ${{ secrets.NOTE_PASSWORD }}
+          REPOSITORY_NOTE_MODE: ${{ vars.NOTE_MODE }}
         run: |
           python3 - <<'PY'
           import json, os, re
@@ -31,5 +32,6 @@ jobs:
               'password_has_outer_whitespace': password != password.strip(),
               'password_looks_like_api_key': password.startswith('sk-'),
               'password_is_setting_name': password in ('NOTE_PASSWORD', 'パスワード'),
+              'repository_mode_override': os.environ.get('REPOSITORY_NOTE_MODE', ''),
           }, ensure_ascii=False))
           PY

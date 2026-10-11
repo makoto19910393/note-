@@ -73,6 +73,8 @@ AI初心者にも分かる言葉で、事実と推測を分ける。収益や効
 『例えば』と明記した想定例にし、筆者の経験にはしない。実在・内容を確認できない過去記事番号は書かない。
 参考リンクは実際に検索した2件以上を載せ、sourcesにも同じURLと資料の発行日時、
 その資料が裏づける事実を入れる。published_atはタイムゾーン付きISO8601形式。
+sourcesのURLは検索・閲覧ツールに表示されたURLをそのままコピーする。
+本文の参考リンクにもsourcesと同じURLをコピーし、推測でURLを組み立てない。
 発行日時を推測しない。少なくとも1件は対象期間内の資料で、その最新の出来事を中心に書く。
 本文に記事番号・販売価格は入れない。今回は無料のニュース記事のみ。
 適切な最新ニュースや裏付けを確認できないときは、titleとbodyを空文字、sourcesを空配列にする。
@@ -146,6 +148,9 @@ def extract_article(response):
     for item in response.get("output", []):
         if item.get("type") == "web_search_call" and item.get("status") == "completed":
             searched = True
+            action = item.get("action", {})
+            if action.get("type") in ("open_page", "find") and action.get("url"):
+                evidence.add(canonical_url(action["url"]))
             for source in item.get("action", {}).get("sources", []):
                 if source.get("url"):
                     evidence.add(canonical_url(source["url"]))
@@ -180,10 +185,13 @@ def validate_article(article, evidence, config, state, now):
             raise WorkflowError("本文の構成が執筆ルールを満たしていません。")
         position = found
     urls = set()
+    body_urls = {canonical_url(url) for url in re.findall(r'https://[^\s<>"\[\]()]+', body)}
     recent = False
     for source in sources:
         url = canonical_url(source["url"])
-        if url not in evidence or source["url"] not in body:
+        if url not in evidence or url not in body_urls:
+            print("参考リンク照合:", json.dumps({"host": urlsplit(url).hostname,
+                  "searched_or_opened": url in evidence, "linked_in_body": url in body_urls}))
             raise WorkflowError("検索結果と本文の参考リンクが一致しません。")
         if not source.get("supports", "").strip():
             raise WorkflowError("参考資料が裏づける内容がありません。")
@@ -258,7 +266,14 @@ def run(slot, output, config, now=None, fixture=None, run_date=None):
                 return target
         response = json.loads(fixture.read_text()) if fixture else call_api(make_request(config, state, now, slot))
         article, evidence = extract_article(response)
-        urls = validate_article(article, evidence, config, state, now)
+        try:
+            urls = validate_article(article, evidence, config, state, now)
+        except WorkflowError as error:
+            # Keep only the generated news draft and public evidence, not the raw API response.
+            atomic_json(output / "review" / (run_id + "-rejected.json"),
+                        {"status": "rejected_not_published", "reason": str(error),
+                         "article": article, "evidence": sorted(evidence)})
+            raise
         result = save_article(output, state, state_path, config, now, slot, article, urls, run_date)
         print("原稿を保存しました:", result)
         return result
