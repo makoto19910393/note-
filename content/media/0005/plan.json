@@ -50,9 +50,25 @@
       ],
       "prompt": "濃紺背景、図解①見出しを左上に配置。中央にTeams会議ウィンドウを象徴する矩形、左から『音声解析』『映像解析』『メタ情報』の3つの矢印が会議ウィンドウへ向かい、右側に『スコア/警告』のバッジ表示。重点ワードをネオンシアンと白で目立たせる。16:9。",
       "filename": "diagram248.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "38108879984"
+      "artifact_run_id": "38108879984",
+      "sha256": "a9f1109f3a5c2ae4e760ced8c09cae4df61cb00193d9e7b934bd78dfeaa0c0f2",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 361,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 361
+        },
+        "output_tokens": 280,
+        "output_tokens_details": {
+          "image_tokens": 280,
+          "text_tokens": 0
+        },
+        "total_tokens": 641
+      }
     },
     {
       "number": 2,
