@@ -275,7 +275,7 @@
       "manual_editorial_review": true,
       "source_dates_verified_from_page_metadata": true,
       "note_editor_url": "https://editor.note.com/notes/nca8f22e035b0/edit",
-      "cover_needs_refresh": true,
+      "cover_needs_refresh": false,
       "media_hashes": [
         "55eea83ef317c033359f839949cca4560b9ffddd66231337d74f536b7e2322b0",
         "a22a19d996dc1b7d231f5c5f750fc785e828c2d048300db42a5fee19d66a2e72",
@@ -283,7 +283,6 @@
         "36a7a1341909c52c367b830bfd775b81efa610ba993109ba58b4c3eac2ac116f",
         "2f8eff094654878b0f1fa262a3c4d0c154a006feb381e2fa158be9f1a3dbbc9c"
       ],
-      "pending_cover_url": "https://assets.st-note.com/production/uploads/images/323247752/rectangle_large_type_2_dd5f460c1aa1f356731ab9567348d825.png",
       "media_upload": {
         "cover_uploaded": true,
         "diagrams": 0
