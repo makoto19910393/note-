@@ -685,7 +685,8 @@
     "title_selector": "textarea[placeholder='記事タイトル'], input[placeholder='記事タイトル']",
     "body_selector": ".ProseMirror[contenteditable='true']",
     "proceed_button": "公開に進む",
-    "publish_button": "投稿する"
+    "publish_button": "投稿する",
+    "ui_verified": true
   },
   "slots": {
     "morning": "07:00",
