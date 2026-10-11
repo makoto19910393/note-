@@ -7,7 +7,7 @@ from playwright.sync_api import sync_playwright
 
 def main():
     with sync_playwright() as p:
-        browser=p.chromium.launch(headless=True)
+        browser=p.chromium.launch(headless=False)
         context=browser.new_context(storage_state=json.loads(os.environ['NOTE_STORAGE_STATE']))
         page=context.new_page()
         collections=[]
@@ -26,6 +26,7 @@ def main():
         try:
             page.goto('https://note.com/notes?status=draft',wait_until='networkidle',timeout=60000)
             page.locator('body').wait_for(state='visible')
+            page.wait_for_function("document.body.innerText.length>100",timeout=30000)
             print('DRAFT_PAGE',json.dumps({'url':page.url,'title':page.title(),
                                         'headings':page.get_by_role('heading').all_text_contents()},ensure_ascii=False))
             links=page.get_by_role('link').evaluate_all(

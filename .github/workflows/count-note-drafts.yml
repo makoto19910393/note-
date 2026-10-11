@@ -19,4 +19,4 @@ jobs:
       - name: 下書き一覧を読む
         env:
           NOTE_STORAGE_STATE: ${{ secrets.NOTE_STORAGE_STATE }}
-        run: python scripts/count_note_drafts.py
+        run: xvfb-run -a python scripts/count_note_drafts.py
