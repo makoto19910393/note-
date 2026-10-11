@@ -32,9 +32,8 @@ def collect_dashboard(context):
                 pass
     page.on('response', receive)
     try:
-        page.goto('https://note.com/sitesettings/stats', wait_until='domcontentloaded', timeout=60000)
-        page.get_by_text('アクセス状況', exact=False).first.wait_for(timeout=45000)
-        page.wait_for_function("document.body.innerText.includes('スキ')", timeout=45000)
+        page.goto('https://note.com/dashboard', wait_until='domcontentloaded', timeout=60000)
+        page.wait_for_function("document.body.innerText.includes('ページビュー') && document.body.innerText.includes('スキ')", timeout=45000)
         text = page.locator('body').inner_text()
         tables = page.locator('table').evaluate_all("""tables=>tables.map(t=>({
           headers:[...t.querySelectorAll('thead th')].map(c=>c.innerText),
