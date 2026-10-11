@@ -727,5 +727,6 @@
     "enabled": true
   },
   "research_first": true,
-  "editorial_audit": true
+  "editorial_audit": true,
+  "automation_start_at": "2026-10-13T07:00:00+09:00"
 }

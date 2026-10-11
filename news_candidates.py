@@ -11,6 +11,37 @@ FEEDS=('https://www.bleepingcomputer.com/feed/',
        'https://www.bing.com/news/search?q=AI&format=rss&mkt=ja-JP')
 AI=re.compile(r'AI(?![a-z])|人工知能|生成|Claude|ChatGPT|Anthropic|OpenAI|Gemini|NVIDIA|Copilot|Higgsfield',re.I)
 
+INTERESTS={
+    'OpenAI':r'openai|chatgpt|gpt[-\s]?[0-9]',
+    'Anthropic':r'anthropic|claude|クロード',
+    'Google':r'google|gemini|グーグル|ジェミニ',
+    'Microsoft':r'microsoft|copilot|teams|マイクロソフト',
+    'NVIDIA':r'nvidia|エヌビディア',
+    'Higgsfield':r'higgsfield',
+    '動画':r'動画|video|sora|映像',
+    '音声':r'音声|voice|speech',
+    '仕事の実用':r'使い方|how to|副業|kindle|出版|議事録|プロフィール',
+    '安全性':r'安全|security|セキュリティ|なりすまし|詐欺|攻撃|attack',
+}
+
+
+def prioritize_candidates(candidates, insights):
+    """Use dashboard interests to rank already-fresh news without another AI call."""
+    if not insights.get('available'):
+        return candidates
+    weights={name:0 for name in INTERESTS}
+    for field,importance in (('high_view_titles',3),('readthrough_reference_titles',2),
+                             ('high_like_titles',1),('commented_titles',1)):
+        for rank,title in enumerate(insights.get(field,[])):
+            for name,pattern in INTERESTS.items():
+                if re.search(pattern,title,re.I):
+                    weights[name]+=importance/(rank+1)
+    def score(candidate):
+        return sum(weight for name,weight in weights.items()
+                   if re.search(INTERESTS[name],candidate['title'],re.I))
+    # Stable sorting retains newest-first order for equally relevant candidates.
+    return sorted(candidates,key=score,reverse=True)
+
 
 def current_candidates(now,max_age_hours=48):
     candidates=[];seen=set()

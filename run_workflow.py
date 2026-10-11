@@ -130,6 +130,9 @@ def main():
     config = json.loads((ROOT / "config.json").read_text())
     actual_now = datetime.now(ZoneInfo(config["timezone"]))
     scheduled, slot = scheduled_slot(config, actual_now, args.slot)
+    if not args.run_id and not generation_has_started(config, scheduled):
+        print('指定の開始時刻前です。記事生成・API利用は行いません。')
+        return
     output = ROOT / "content"
     mode = os.environ.get("NOTE_MODE", "auto")
     if mode == "auto":
@@ -164,13 +167,26 @@ def main():
             print("今回は読者実績を取得できませんでした。最新ニュースの調査・確認は続けます。")
     if not args.run_id:
         from news_candidates import current_candidates
-        config["_news_candidates"] = current_candidates(actual_now,config.get("max_news_age_hours",48))
+        from news_candidates import prioritize_candidates
+        config["_news_candidates"] = prioritize_candidates(
+            current_candidates(actual_now,config.get("max_news_age_hours",48)),
+            config.get('_reader_insights',{}))
         print("実行時の最新記事一覧を取得しました。候補数:",len(config["_news_candidates"]))
     selected_ids = args.run_id.split(',') if args.run_id else None
     if selected_ids and (len(selected_ids)>6 or len(set(selected_ids))!=len(selected_ids)
                          or any(not value or value.strip()!=value for value in selected_ids)):
         raise WorkflowError('既存原稿IDは空白なし・重複なしで6件まで指定してください。')
     run_batch(output,config,actual_now,scheduled,slot,mode,run_ids=selected_ids)
+
+
+def generation_has_started(config, scheduled):
+    value=config.get('automation_start_at')
+    if not value:
+        return True
+    start=datetime.fromisoformat(value)
+    if start.tzinfo is None:
+        raise WorkflowError('開始日時にはタイムゾーンが必要です。')
+    return scheduled>=start
 
 
 if __name__ == "__main__":

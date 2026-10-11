@@ -50,7 +50,7 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
       NOTE_USAGE_DIR: content/usage
-      REQUESTED_NOTE_MODE: ${{ github.event.inputs.mode || vars.NOTE_MODE || 'auto' }}
+      REQUESTED_NOTE_MODE: ${{ github.event.inputs.mode || 'auto' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
