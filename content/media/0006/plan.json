@@ -12,7 +12,7 @@
       ],
       "prompt": "黒い背景に濃紺グラデーション。中央に大きな太字日本語タイトル『ARTEXが攻撃に使われた』、下に三つの要点を白と黄色で縦に配置。ネオンシアンのアクセントライン。スマホで読みやすい構図。①を小さく配置。16:9。",
       "filename": "thumbnail.png",
-      "status": "review_pending",
+      "status": "ready",
       "attempts": 1,
       "artifact_run_id": "38131866970",
       "sha256": "ceb1d5b29143216919f360420bb15919e4c6ea5a56d74b1286d063e86eb2c281",
@@ -30,6 +30,13 @@
           "text_tokens": 0
         },
         "total_tokens": 1591
+      },
+      "review": {
+        "approved": true,
+        "issues": "",
+        "observed_title": "ARTEXが攻撃に使われた",
+        "observed_diagram_label": "①",
+        "unsupported_claims": []
       }
     },
     {
