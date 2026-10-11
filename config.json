@@ -686,7 +686,8 @@
     "body_selector": ".ProseMirror[contenteditable='true']",
     "proceed_button": "公開に進む",
     "publish_button": "投稿する",
-    "ui_verified": true
+    "ui_verified": true,
+    "mode": "publish"
   },
   "slots": {
     "morning": "07:00",

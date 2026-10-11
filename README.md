@@ -1,116 +1,72 @@
 # mako：朝・夜のAIニュース執筆とnote公開
 
-日本時間 **毎朝7時・毎夜19時** に、最新AIニュースの調査 → 執筆 → 原稿保存 → note公開を行う構成です。
-GitHub Actionsで動くため、このチャットやパソコンを開き続ける必要はありません。
-ただしGitHubの定時実行は遅延・未実行が発生することがあり、厳密な時刻は保証されません。
+日本時間の毎朝7時・毎夜19時に、最新AIニュースの調査、執筆、原稿保存、note公開を行います。
+GitHub Actionsで実行するため、Macやこのチャットを開いたままにする必要はありません。
+GitHubの定時実行には遅延や未実行があり、分単位の厳密な時刻は保証されません。
 
-## 現在の状態
+## 現在の設定
 
-- 調査・生成・保存と重複防止は実装済み。テストは外部APIを使わない架空資料で実行します。
-- note公開はブラウザ連携の実装を用意していますが、**実際のnote画面で未検証**です。
-  `config.json`の画面セレクターは仮設定です。画面確認・修正と下書きテストが必要です。
-- OpenAI APIキーとnoteログイン状態が必要です。ChatGPTの月額契約とは別にAPI利用料がかかります。
-- GitHubにファイルを反映し、認証と投稿画面の確認を終えるまでは自動運転は始まりません。
-- 既存75〜80記事の本文は未取得です。画像で確認できた一部のテーマだけ重複回避の参考にしています。
+- note：https://note.com/quiet_spirea2390
+- 初回の記事No.1：https://note.com/quiet_spirea2390/n/nb987b2314fe7
+- 2026-10-11、note下書き保存、公開操作、未ログインでのタイトル・本文表示を確認。
+- config.jsonのpublisher.modeはpublish、ui_verifiedはtrue。定時実行で公開します。
+- 記事番号はNo.1から新しく開始。過去のDriveやスプレッドシートは変更していません。
+- 既存のnote記事112件の公開タイトル・URLを重複回避に使用。全記事の本文調査ではありません。
+- 現在の定時投稿は無料AIニュースです。1,900円の有料副業シリーズは方針として保存し、まだ自動公開しません。
 
 ## 記事の方針
 
-- 著者：mako、対象：https://note.com/quiet_spirea2390
-- 記事No.1から、新しい記事を管理します。朝・夜それぞれ無料ニュースを1本。
-- 発行から48時間以内のニュースを選び、大手AIブランドを優先。
-- タイトルに【海外AI解説】または【国内AI学び】。
-- 「30秒で結論」→本文→「私の正直な感想」→「まとめ」→「参考リンク」。
-- 実体験は創作しません。具体例は想定例と明示します。
-- 2件以上の検索で確認された資料、日時、必要な見出しがない場合は停止。
-- 費用を抑えるため1回の生成で組み込みツールの呼び出しは最大5回、出力は最大12,000トークン。
-  これは1記事の処理量制限であり、月額費用の厳密な上限ではありません。
-- 日時や本文の事実はAIが検索資料から抽出します。形式チェックは独立した事実検証の代わりにはなりません。
-- 副業ノウハウは別シリーズとして1,900円、無料7割＋有料3割を維持。
-  今回の朝夜フローでは有料記事の生成・公開は行いません。実例・失敗談・素材を用意して別途組み込みます。
+直近48時間の情報を調べ、最低2件の参考資料と、直近の資料を最低1件確認します。
+大手AIブランドを優先し、既出のタイトルや参考資料との重複を避けます。
+海外は【海外AI解説】、国内は【国内AI学び】でタイトルを始め、学生向けという文言は付けません。
+構成は30秒で結論、本文、私の正直な感想、まとめ、参考リンク。
+事実と推測を区別し、本人が経験していない体験談・収益実績を作りません。
 
-## 動く流れ
+## 実行と保存
 
-1. GitHub Actionsが朝・夜に起動。
-2. OpenAI Responses APIのWeb検索で直近ニュースを調査。
-3. 過去の生成履歴を参照して1件選び、原稿を生成。
-4. 見出し、参考資料、発行日時、重複をチェック。
-5. `content/articles/YYYY-MM-DD/0001-morning.md`等に保存。
-6. 自分のnoteのログイン状態で編集画面に入力し、公開。
-7. ログアウト状態の別ブラウザで公開記事を確認。
-8. 原稿・番号・投稿URL・公開状態をGitHubに保存。失敗時も状態を保存。
+.github/workflows/note-drafts.ymlがUTC22時と10時に起動します。日本時間では7時と19時です。
+OpenAI Responses APIのweb_searchで調査し、content/articlesにMarkdown原稿を保存します。
+本文の入力を確認し、noteの無料記事として公開します。新しい未ログインのブラウザで
+公開記事のタイトルと本文の見出しを確認してから、公開済み状態を記録します。
+原稿とcontent/state.jsonはGitHubへ保存し、Actionsの成果物も30日間保管します。
 
-同日の同じ時間枠は再生成しません。公開結果が曖昧な場合は再投稿せず停止します。
-意味が同じニュースを完全に識別する仕組みではありません。題名・資料の一致とAIへの履歴提示を併用します。
+認証情報の値をコード、原稿、ログに表示する処理はありません。
+現在はGitHub SecretsのNOTE（またはOPENAI_API_KEY）をAI APIキー、
+NOTE_STORAGE_STATEをnoteのログイン状態として使用します。
+MAIL（またはNOTE_EMAIL）とNOTE_PASSWORDによるログインも実装していますが、
+クラウド接続ではnoteがreCAPTCHAを要求したため、手動で取得したログイン状態を優先します。
+API料金は購入済みクレジットから消費されます。ログイン期限切れや残高不足では処理が止まります。
 
-## 最初の設定（開始前に必要）
+## 手動実行
 
-コーデックスと一緒に一段ずつ行ってください。秘密の値をチャットに貼る必要はありません。
+GitHubのActions → 朝と夜のnote原稿 → Run workflowで実行します。
+modeのautoはconfig.jsonとVariablesの設定に従います。draftは下書きまで、publishは公開まで。
+run_idを指定すると既存原稿を使用し、AI APIによる記事の再生成は行いません。
+同じ時間枠の原稿や公開済み記事は重複作成・再投稿しません。
 
-1. このファイル一式を `makoto19910393/note-` の `main` に保存する。
-   現在リモートは空のため、最初のコミットを公開する必要があります。
-   この作業中にGitHub側へ反映したとは限りません。
-2. GitHubのリポジトリ → Settings → Secrets and variables → Actions → Secretsに
-   `OPENAI_API_KEY`を登録する。APIの請求画面で予算・利用量通知も確認する。
-   このリポジトリで登録済みの`NOTE`という名前もAPIキーとして使用できます。
-   `OPENAI_API_KEY`がある場合はそちらを優先します。`NOTE`はnoteのログイン情報ではありません。
-3. 手動実行でニュース生成を1回確認する。
-   モデル変更はVariablesの`OPENAI_MODEL`（既定`gpt-5-mini`）。Web検索対応モデルを選ぶ。
-4. GitHub Secretsに`NOTE_EMAIL`（noteのログインメール）と`NOTE_PASSWORD`を登録する。
-   メール・パスワードログインが使えるアカウントが対象です。Google/Appleログインのみ、
-   追加認証やCAPTCHAを要求された場合は止めて、対応する認証方法を確認します。
-   認証情報はチャットに貼らず、自分のGitHub Secretsに登録してください。
-   代替として、手元のブラウザでnoteにログインし、下記のログイン補助で状態を保存。
-   そのJSONをGitHub Secretsの`NOTE_STORAGE_STATE`に登録する。
-   ログイン権限を含むため、Git・チャット・共有ドライブには置かない。
-5. Variablesの`NOTE_MODE`を`draft`にして手動実行。
-   編集画面に正しく本文が入るか、無料設定か、保存先が確認できるか検証する。
-   実際の画面に応じて`config.json`のpublisher設定を修正する。
-6. 確認できたらVariablesの`NOTE_UI_VERIFIED`を`true`、`NOTE_MODE`を`publish`にする。
-   手動実行して公開ページと状態記録を確認する。この段階以降は朝夜の自動公開が有効になる。
+## 停止と復旧
 
-`NOTE_MODE`未設定／`disabled`は原稿作成だけです。`draft`は下書きまで、`publish`は公開までです。
-GitHub Secretsの値は公開されませんが、noteセッションは認証情報として大切に扱ってください。
-追加認証・ログイン切れ・画面変更・レート制限が起きたら停止します。回避処理は行いません。
-noteの利用条件と自動操作に関する制限は稼働前に確認してください。
+全停止はGitHub ActionsでワークフローをDisable workflowにします。
+投稿だけを止める場合はVariablesのNOTE_MODEをdisabledにします。原稿作成は続きます。
+Variablesの指定があればconfig.jsonより優先します。
 
-## ローカル実行
+公開直前にpublishing状態をGitHubへ保存します。保存に失敗したら公開ボタンを押しません。
+公開結果が不明ならpublication_uncertainにし、その原稿の自動再投稿を止めます。
+実際に公開済みの場合は、同じrun_idとmode=publish、verify_only=trueで
+再投稿せず公開状態を確認・復旧できます。未公開の場合は自動復旧できないので確認が必要です。
 
-原稿作成はPython 3.12の標準ライブラリだけで動作します。
+noteログインが切れた場合はMac用のnote-connect-mac-v2.zipを使用します。
+ZIPを展開しconnect-note-mac.commandを開き、案内ボタンに従って本人がログインします。
+コピー済みの接続情報をGitHub SecretsのNOTE_STORAGE_STATEに保存します。
+途中であとで続けるを選んだ場合は、同じファイルを再実行して登録を再開できます。
+接続情報はMacのLibrary/Application Support/note-connectに本人だけが読める権限で保存し、
+登録できたを選ぶと削除します。Google/AppleのCookieは書き出しません。
 
-```sh
-cd /workspace/note-
-python3 -m unittest discover -s tests -v
-python3 automation.py --slot morning
-```
+接続情報やパスワードをチャット、Gitのファイル、共有ドライブに貼り付けないでください。
+既存のNOTE_STORAGE_STATEがある場合は、GitHubの登録一覧で鉛筆ボタンから更新します。
 
-APIキーは環境変数に安全に設定してから実行してください。`.env`を自動では読みません。
-検証用fixtureは実ニュースではなく、公開しないでください。
+## 開発時の確認
 
-note操作の導入とログイン状態取得は次のとおりです。ログイン補助は画面のある手元のPCで行います。
-既存のチェックアウトを使用し、別のGit worktreeは作成しません。
-
-```sh
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements-publish.txt
-.venv/bin/python -m playwright install chromium
-.venv/bin/python login_note.py
-```
-
-Linuxで不足するブラウザのOS依存関係はPlaywrightの公式手順で導入します。
-
-## 停止・復旧
-
-- 全停止：GitHub → Actions →「朝と夜のnote原稿」→ Disable workflow。
-- 投稿のみ停止：Variablesの`NOTE_MODE`を`disabled`に変更。
-- 公開確認失敗：`publication_uncertain`の記事はnoteで実際の有無を確認する。
-  公開済みならURLと`note_posted: true`／`status: published`を保存する。
-  未公開と確認できた場合だけ`status: draft_saved`にして、同じ下書きから再開する。
-- 公開状態は`content/state.json`に記録。ファイルだけ削除して再実行しない。
-- GitHub実行では、公開前に`publishing`状態をリモートへ保存します。
-  これが失敗したら公開ボタンを押しません。公開後の保存に失敗しても、次の実行は
-  リモートの`publishing`状態で停止するため、確認してから復旧してください。
-- 認証期限切れ：ログイン補助を再実行し、GitHub Secretを更新。
-- 60日間活動のない公開リポジトリではGitHubの定時実行が無効化される場合があります。
-
-2026-10-10、GitHub Actionsで実APIによる記事No.1の生成・保存が成功しました。
-noteの認証・下書き保存・公開は未完了です。通常のGitHub実行では証明書検証を有効にしたまま接続します。
+python -m unittest discover -s tests -vで保存、重複防止、参照資料検証、失敗時の処理を確認します。
+投稿用の依存関係はrequirements-publish.txt、公開ブラウザの調査はbrowser_probe.pyです。
+TLS証明書の検証は有効なまま使用します。
