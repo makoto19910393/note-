@@ -273,7 +273,8 @@
         "reason": "ユーザー指定：過去投稿の作風、初心者向け本文、タイトル、画像5枚を改稿"
       },
       "stock_editorial_note": "Claudeは製品名。Forgeの未上場株案内を10/11閲覧。取引所のAnthropic株の終値を確認できないためチャート・価格を省略。",
-      "layout_revision": "2026-10-11-original-user-style-and-beginner-rewrite"
+      "layout_revision": "2026-10-11-original-user-style-and-beginner-rewrite",
+      "previous_owner_draft_backup_sha256": "fe6a51e4f597034a8502ac9b49b143b99b59ed3a4bbc429faa2b8bd495e58ce4"
     },
     {
       "number": 7,
