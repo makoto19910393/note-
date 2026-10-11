@@ -2,6 +2,7 @@
 import argparse
 from datetime import datetime, timedelta
 import json
+import hashlib
 import os
 import subprocess
 import sys
@@ -83,6 +84,8 @@ def run_batch(output,config,actual_now,scheduled,slot,mode,checkpoint=None,run_i
             if (mode=='draft' and record.get('status')=='draft_saved' and
                     record.get('draft_source_sha256')==record.get('sha256') and
                     record.get('media_upload',{}).get('verified')):
+                if hashlib.sha256((output/record['path']).read_bytes()).hexdigest()!=record['sha256']:
+                    raise WorkflowError('保存原稿の変更を確認してください。noteの下書きを上書きしません。')
                 print('確認済みの下書きを保持します。note上での手動編集を上書きしません:',run_id)
                 continue
             if record.get('media_plan'):

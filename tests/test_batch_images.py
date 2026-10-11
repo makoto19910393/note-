@@ -105,6 +105,29 @@ class ImageTests(unittest.TestCase):
 
     def tearDown(self):self.temp.cleanup()
 
+    def test_reviewed_draft_is_not_overwritten_even_with_publish_requested(self):
+        record={**self.record,'status':'draft_saved',
+                'draft_source_sha256':self.record['sha256'],'media_upload':{'verified':True}}
+        a.atomic_json(self.output/'state.json',{'articles':[record]})
+        config={**self.config,'publisher':{'manual_first_publication':True}}
+        with patch('publisher.publish') as publish, patch('media.ensure_images') as images:
+            run_batch(self.output,config,NOW,NOW,'evening','publish',
+                      checkpoint=lambda:None,run_ids=['test'])
+        publish.assert_not_called()
+        images.assert_not_called()
+
+    def test_changed_local_source_does_not_silently_claim_verified_draft(self):
+        record={**self.record,'status':'draft_saved',
+                'draft_source_sha256':self.record['sha256'],'media_upload':{'verified':True}}
+        a.atomic_json(self.output/'state.json',{'articles':[record]})
+        (self.output/'article.md').write_text('未確認の変更')
+        with patch('publisher.publish') as publish, patch('media.ensure_images') as images:
+            with self.assertRaisesRegex(a.WorkflowError,'保存原稿の変更'):
+                run_batch(self.output,self.config,NOW,NOW,'evening','draft',
+                          checkpoint=lambda:None,run_ids=['test'])
+        publish.assert_not_called()
+        images.assert_not_called()
+
     def test_ordered_five_images_and_completed_retry_never_rebills(self):
         import base64
         observed=[]

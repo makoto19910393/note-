@@ -120,6 +120,11 @@ def reader_insights(dashboard):
             'high_view_titles':[r['title'] for r in sorted(rows,key=lambda r:r['views'],reverse=True)[:5]],
             'high_like_titles':[r['title'] for r in sorted(rows,key=lambda r:r['likes'],reverse=True)[:5]],
             'commented_titles':[r['title'] for r in ranked if r['comments']>0][:5],
+            'high_impression_titles':[r['title'] for r in sorted(rows,key=lambda r:r['impressions'],reverse=True)[:5]],
+            'readthrough_reference_titles':[r['title'] for r in sorted(
+                [r for r in rows if r['impressions']>=100 and r['views']>=10],
+                key=lambda r:r['views']/r['impressions'],reverse=True)[:5]],
+            'rate_interpretation':'PV÷インプレッションやスキ÷PVは参考値。外部流入・繰り返し閲覧・本文を開かないスキがあるので厳密なクリック率や購入率として扱わない。',
             'interpretation':'露出と本文閲覧とスキとコメントは別々の指標。PVやスキ数を売上・購入率とみなさない。少数の反応だけで好みを断定しない。'}
 
 
