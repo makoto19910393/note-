@@ -128,7 +128,7 @@
       ],
       "prompt": "Three question cards and one prominent uncertainty caption. These are possible outcomes, not events that have occurred. No additional claims.",
       "filename": "diagram246.png",
-      "status": "generated",
+      "status": "review_pending",
       "attempts": 2,
       "artifact_run_id": "38108203018",
       "sha256": "d5222e0c0d28ab3f67f37fdb4a249c6ceb7862322315ad98c9e0960ee1f42d4a",
