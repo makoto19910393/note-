@@ -12,8 +12,9 @@
       ],
       "prompt": "黒と濃紺背景、ネオンシアンの太い見出し文字で「Teamsがディープフェイク警告」を中央に配置。下部に小さく日付『2026年11月予定』を白で配置。視覚はニュース見出し風、スマホで読みやすい大きめ文字、16:9。",
       "filename": "thumbnail.png",
-      "status": "planned",
-      "attempts": 0
+      "status": "generating",
+      "attempts": 1,
+      "artifact_run_id": "38108879984"
     },
     {
       "number": 1,
