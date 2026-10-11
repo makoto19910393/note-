@@ -165,7 +165,7 @@
       ],
       "prompt": "Three simple checklist rows and a prominent author suggestion label. No extra explanatory text.",
       "filename": "diagram247.png",
-      "status": "generated",
+      "status": "review_pending",
       "attempts": 2,
       "artifact_run_id": "38108203018",
       "sha256": "8f8229061d633e770f205424eff5da699a8de1c32ad4f5133c07258396cdbcac",
