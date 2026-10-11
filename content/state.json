@@ -125,45 +125,46 @@
     {
       "number": 5,
       "run_id": "2026-10-11-morning-2",
-      "title": "【海外AI解説】Microsoft Teamsが「第三者製ディープフェイク検出」を受け入れへ――会議でのなりすまし対策、11月提供見込み",
+      "title": "【海外AI解説】Teamsで「その顔、本物？」を確かめる時代へ――AIなりすまし対策、11月提供予定",
       "created_at": "2026-10-11T12:35:54.934262+09:00",
       "path": "articles/2026-10-11/0005-morning.md",
       "sources": [
-        "https://mc.merill.net/message/RM573451",
-        "https://morningoverview.com/microsoft-teams-will-let-companies-plug-in-outside-tools-that-flag-deepfakes-in-meetings",
-        "https://www.bleepingcomputer.com/news/security/microsoft-teams-to-add-third-party-deepfake-detection-impersonation-protection",
-        "https://www.techradar.com/pro/microsoft-teams-will-soon-be-able-to-spot-third-party-deepfakes-on-your-morning-meeting"
+        "https://www.microsoft.com/microsoft-365/roadmap?id=573451",
+        "https://www.microsoft.com/microsoft-365/roadmap?id=573157",
+        "https://www.techradar.com/pro/microsoft-teams-will-soon-be-able-to-spot-third-party-deepfakes-on-your-morning-meeting",
+        "https://www.bleepingcomputer.com/news/security/microsoft-teams-to-add-third-party-deepfake-detection-impersonation-protection/"
       ],
-      "sha256": "4af0f7c6350a51f533d7d9865677d38417aa8072f2c9b081d028e95d6627bc32",
+      "sha256": "b0e28e70fd804410c42f6f7db4315c25190e55a972fa4dbe3d3e686b568917bb",
       "status": "draft",
       "note_posted": false,
       "media_plan": "media/0005/plan.json",
       "source_details": [
         {
-          "title": "Microsoft 365 Message Center - RM573451: Third-party synthetic audio and video detection in Microsoft Teams",
-          "url": "https://mc.merill.net/message/RM573451",
+          "title": "Microsoft 365ロードマップ：外部の合成音声・映像検出との連携",
+          "url": "https://www.microsoft.com/microsoft-365/roadmap?id=573451",
           "published_at": "2026-10-07T00:00:00+00:00",
-          "supports": "Microsoftのメッセージセンターで、Teamsが認定された第三者の合成音声・映像検出ソリューションを組み込めるようになる旨（ロードマップ項目RM573451）を示している。"
+          "supports": "報道が引用した公式ロードマップの参照先。外部ツールが会議メディアを調べ、検出情報をTeamsへ渡す。"
+        },
+        {
+          "title": "Microsoft 365ロードマップ：なりすまし保護",
+          "url": "https://www.microsoft.com/microsoft-365/roadmap?id=573157",
+          "published_at": "2026-10-07T00:00:00+00:00",
+          "supports": "報道が引用した公式ロードマップの参照先。不審な会議参加者などに注意を促す計画。"
         },
         {
           "title": "Microsoft Teams will soon be able to spot third-party deepfakes on your morning meeting (TechRadar)",
           "url": "https://www.techradar.com/pro/microsoft-teams-will-soon-be-able-to-spot-third-party-deepfakes-on-your-morning-meeting",
           "published_at": "2026-10-09T13:05:00+00:00",
-          "supports": "TechRadarがロードマップ項目の内容を報じ、機能はTeamsデスクトップ・Mac・Webで動作し、11月に一般提供が予定されていると伝える。"
+          "supports": "直接読み直した報道。合成検出と身元に注意を促す保護は別の計画。検出信号連携と11月提供予定。詳細な判定方法や料金は確認できない。"
         },
         {
           "title": "Microsoft Teams to get support for third-party deepfake detection (BleepingComputer)",
           "url": "https://www.bleepingcomputer.com/news/security/microsoft-teams-to-add-third-party-deepfake-detection-impersonation-protection/",
           "published_at": "2026-10-08T00:00:00+00:00",
-          "supports": "BleepingComputerが同機能と、Teamsでの“なりすまし保護（impersonation protection）”の計画を報じ、管理者向けの展開方法など細部は未公開であると記載している。"
-        },
-        {
-          "title": "Microsoft Teams will let companies plug in outside tools that flag deepfakes in meetings (Morning Overview)",
-          "url": "https://morningoverview.com/microsoft-teams-will-let-companies-plug-in-outside-tools-that-flag-deepfakes-in-meetings/",
-          "published_at": "2026-10-10T08:00:00+00:00",
-          "supports": "Morning OverviewはMessage Centerの更新履歴を追跡し、発表文言が数回更新されている点や、展開フェーズ（ターゲット・リリース→一般提供）が示されていることを補足している。"
+          "supports": "直接読み直した報道。2026-10-09T13:05:00+00:00の公開日時をページ内メタデータでも確認。二つの計画と11月予定。"
         }
-      ]
+      ],
+      "layout_revision": "2026-10-11-user-review"
     }
   ],
   "next_diagram": 252
