@@ -110,6 +110,9 @@ def main():
         mode = config["publisher"].get("mode", "disabled")
     if mode not in ("disabled", "draft", "publish"):
         raise WorkflowError("NOTE_MODEはdisabled、draft、publishのいずれかを指定してください。")
+    if config["publisher"].get("manual_first_publication") and mode == "publish":
+        mode = "draft"
+        print("ユーザー確認期間のため下書き保存のみ行います。")
     # Check before spending on generation.
     if mode != "disabled" and not (os.environ.get("NOTE_STORAGE_STATE") or
                                     (os.environ.get("NOTE_EMAIL") and os.environ.get("NOTE_PASSWORD"))):

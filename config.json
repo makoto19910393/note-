@@ -687,7 +687,8 @@
     "proceed_button": "公開に進む",
     "publish_button": "投稿する",
     "ui_verified": true,
-    "mode": "publish"
+    "mode": "draft",
+    "manual_first_publication": true
   },
   "slots": {
     "morning": "07:00",

@@ -13,7 +13,7 @@ on:
         default: auto
         options: [auto, morning, evening]
       mode:
-        description: autoは設定に従う、draftは下書きテスト、publishは公開
+        description: autoは設定に従う、draftは下書き保存（ユーザー確認期間中は公開しません）
         type: choice
         default: auto
         options: [auto, disabled, draft, publish]
@@ -66,6 +66,8 @@ jobs:
           mode = os.environ['REQUESTED_NOTE_MODE']
           if mode == 'auto':
               mode = json.load(open('config.json'))['publisher'].get('mode', 'disabled')
+          if json.load(open('config.json'))['publisher'].get('manual_first_publication') and mode == 'publish':
+              mode = 'draft'
           if mode not in ('disabled', 'draft', 'publish'):
               raise SystemExit('Invalid note mode')
           with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
@@ -77,7 +79,7 @@ jobs:
         run: |
           python -m pip install -r requirements-publish.txt
           python -m playwright install --with-deps chromium
-      - name: 最新AIニュースを調べて執筆・noteへ投稿
+      - name: 最新AIニュースを調べて執筆・noteへ下書き保存
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY || secrets.NOTE }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
