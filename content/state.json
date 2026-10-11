@@ -166,13 +166,13 @@
       ],
       "layout_revision": "2026-10-11-original-user-style-and-beginner-rewrite",
       "note_editor_url": "https://editor.note.com/notes/ne9dd7bc5f076/edit",
-      "cover_needs_refresh": false,
+      "cover_needs_refresh": true,
       "media_hashes": [
-        "c9a457978631aae214b830ee657517743fffa60d0668645a64e364fc6c627c66",
-        "1163c014bb23b8e204f5aba6d22b0ba67c1aa8cf432daafe2dca7f6d6d1ae593",
-        "f0fb64ca975e3d61a05f1fe5e7f0842e31b9845b90ad8e29031698679bdebafa",
-        "fa60320892353fed217acb2e85e2d2a1a62f0f50e094420123a89baec7b075b8",
-        "17604a0302601b9ff9207f2c6eb17f8dd1ff19e0915d046cd052195b2e8861ce"
+        "f6ecb7ede1dde2baf6422a37593e1e608db9262c81be9ca87c628c58747248c4",
+        "cef10235c0909bdddd645a8e704049fb199b63fe30d53ddb0dfa17a8204a5de3",
+        "83a054d25277a2fe1b182540012c72c989c862d6d3e244f11cafefbf85ce4fe4",
+        "a2f99266fd95bffa1051b339dc3d38774209c62dd99c748206f29dc531c3a52e",
+        "6a478765f83266a16b1d638b5bb70b16e748c72381ff9a64baf1fa8d5fb44ea8"
       ],
       "media_upload": {
         "cover_uploaded": true,
