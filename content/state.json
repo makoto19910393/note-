@@ -350,7 +350,8 @@
         "url": "https://query1.finance.yahoo.com/v8/finance/chart/TENB?range=1mo&interval=1d",
         "news_causation_verified": false
       },
-      "layout_revision": "2026-10-11-original-user-style-and-beginner-rewrite"
+      "layout_revision": "2026-10-11-original-user-style-and-beginner-rewrite",
+      "previous_owner_draft_backup_sha256": "6bfe909c4e48760dbf7092b14f626b074ebfddf5dbef3acb29d35d211389598b"
     }
   ],
   "next_diagram": 260
