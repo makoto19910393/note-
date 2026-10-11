@@ -703,6 +703,6 @@
     "size": "1536x864",
     "max_attempts": 2,
     "first_diagram": 244,
-    "ui_verified": false
+    "ui_verified": true
   }
 }
