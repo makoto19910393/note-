@@ -5,6 +5,7 @@ import hashlib
 import hmac
 import json
 import os
+import re
 from pathlib import Path
 import subprocess
 import tempfile
@@ -21,8 +22,6 @@ def collect_dashboard(context):
         path = urlsplit(response.url).path
         if response.request.method != 'GET' or not path.startswith('/api/'):
             return
-        if not any(part in path.lower() for part in ('stats', 'analytics', 'impression')):
-            return
         if response.ok and 'json' in response.headers.get('content-type', ''):
             try:
                 data = response.json()
@@ -35,6 +34,8 @@ def collect_dashboard(context):
         page.goto('https://note.com/dashboard', wait_until='domcontentloaded', timeout=60000)
         page.get_by_text('ページビュー', exact=True).filter(visible=True).first.wait_for(timeout=45000)
         page.get_by_text('スキ', exact=True).filter(visible=True).first.wait_for(timeout=45000)
+        page.locator('a[href*="/n/"]').filter(visible=True).first.wait_for(timeout=45000)
+        page.get_by_text(re.compile(r'^\d[\d,]*$')).filter(visible=True).first.wait_for(timeout=45000)
         text = page.locator('body').inner_text()
         tables = [{'headers':table.locator('thead th').all_inner_texts(),
                    'rows':[row.locator('td').all_inner_texts() for row in table.locator('tbody tr').all()]}
