@@ -50,8 +50,9 @@
       ],
       "prompt": "濃紺背景、図解タイトル『① ARTEXの仕組み』。左から右へ流れる3つの大きなアイコン（起動、探索、実行）と短い要点を白と黄色で配置。ネオンシアンのラインで接続。16:9。",
       "filename": "diagram252.png",
-      "status": "planned",
-      "attempts": 0
+      "status": "generating",
+      "attempts": 1,
+      "artifact_run_id": "38131866970"
     },
     {
       "number": 2,
