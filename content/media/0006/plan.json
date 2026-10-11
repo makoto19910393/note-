@@ -90,7 +90,7 @@
       ],
       "prompt": "図解②を大きく表示。立体的な球体AIの周りに3つのシアン発光カード。文字はlabelsの指定表現だけ。下に役割のイメージと表示。別の言い換えや説明文を追加しない。",
       "filename": "diagram253.png",
-      "status": "generated",
+      "status": "review_pending",
       "attempts": 3,
       "artifact_run_id": "38132586766",
       "sha256": "4db0df9031477fc8733f34362022dad1ab9b0c437a40a30e25e7efa5f472f9b3",
