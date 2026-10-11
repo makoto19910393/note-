@@ -1,5 +1,5 @@
 {
-  "next_number": 6,
+  "next_number": 7,
   "articles": [
     {
       "number": 1,
@@ -189,7 +189,36 @@
       "draft_source_sha256": "b0e28e70fd804410c42f6f7db4315c25190e55a972fa4dbe3d3e686b568917bb",
       "rescheduled_from": "2026-10-11-morning-2",
       "saved_draft_verification_run": "38130450495"
+    },
+    {
+      "number": 6,
+      "run_id": "2026-10-11-evening-3",
+      "title": "【海外AI解説】ARTEXとClaudeエージェントが狙われた：韓国銀行への攻撃で明らかになった“エージェント化ツール”の実態と対策",
+      "created_at": "2026-10-11T19:25:30.272377+09:00",
+      "path": "articles/2026-10-11/0006-evening.md",
+      "sources": [
+        "https://www.bleepingcomputer.com/news/security/hacker-used-artex-ai-and-claude-agents-to-target-south-korean-banks",
+        "https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance"
+      ],
+      "sha256": "14d36ac57d7e6938f018d24725828e994945c6d9a5b993b8b9ecbbec81cbe247",
+      "status": "draft",
+      "note_posted": false,
+      "media_plan": "media/0006/plan.json",
+      "source_details": [
+        {
+          "title": "Unknown Threat Actor Uses AI-Driven ARTEX to Target South Korean Finance",
+          "url": "https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/",
+          "published_at": "2026-10-07T00:00:00+00:00",
+          "supports": "CrowdStrikeの技術分析。ARTEXの利用、回収されたアーティファクト（ARTEX設定、Claude Codeセッション履歴）、使用されたLLM（DeepSeek v4.1‑flash, GLM‑5.3, Grok 4.6）と攻撃時期を記載。"
+        },
+        {
+          "title": "Hacker used ARTEX AI and Claude agents to target South Korean banks",
+          "url": "https://www.bleepingcomputer.com/news/security/hacker-used-artex-ai-and-claude-agents-to-target-south-korean-banks/",
+          "published_at": "2026-10-10T10:16:00+00:00",
+          "supports": "BleepingComputerの報道。CrowdStrikeの分析を要約し、対象とされた銀行名（Shinhan, KB Kookmin, Hana）、顧客データ流出やシステム障害の影響、ARTEX開発者の対応（クローズド化）を伝える。"
+        }
+      ]
     }
   ],
-  "next_diagram": 252
+  "next_diagram": 256
 }
