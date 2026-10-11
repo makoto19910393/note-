@@ -17,6 +17,25 @@ from test_automation import CONFIG, NOW, response
 
 
 class BatchTests(unittest.TestCase):
+    def test_illustrated_draft_reserves_four_diagrams_and_reuses_plan(self):
+        data=response();article=json.loads(data['output'][1]['content'][0]['text'])
+        markers=[f'【ここに図解{x}を挿入｜確認用】' for x in '①②③④']
+        article['body']=article['body'].replace('## 私の正直な感想','\n'.join(markers)+'\n## 私の正直な感想')
+        article['body']=article['body'].replace('## まとめ','## よくある質問\n確認用FAQ\n## まとめ').replace('## 参考リンク','## この記事について\n架空のテストです。\n## 参考リンク')
+        article['images']=[{'number':i,'anchor':markers[i-1] if i else '', 'theme':'確認用','labels':['確認用'],'prompt':'one standalone image'} for i in range(5)]
+        article.update(hashtags=['#確認'+str(i) for i in range(10)],threads='確認用の文章です。どう思いますか？')
+        data['output'][1]['content'][0]['text']=json.dumps(article)
+        config={**CONFIG,'images':{'enabled':True,'first_diagram':244}}
+        with tempfile.TemporaryDirectory() as directory,patch.object(a,'make_request',return_value={}),patch.object(a,'call_api',return_value=data) as api, contextlib.redirect_stdout(io.StringIO()):
+            output=Path(directory)
+            a.run('morning',output,config,NOW,run_id='test')
+            a.run('morning',output,config,NOW,run_id='test')
+            self.assertEqual(api.call_count,1)
+            state=json.loads((output/'state.json').read_text())
+            self.assertEqual(state['next_diagram'],248)
+            plan=json.loads((output/state['articles'][0]['media_plan']).read_text())
+            self.assertEqual([x['filename'] for x in plan['items']],['thumbnail.png','diagram244.png','diagram245.png','diagram246.png','diagram247.png'])
+
     def test_three_independent_articles_and_retry_reuses_all(self):
         config={**CONFIG,'articles_per_slot':3}
         responses=[]

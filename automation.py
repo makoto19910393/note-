@@ -128,7 +128,8 @@ def make_request(config, state, now, slot):
 大手AIブランドを優先し、可能なら一次発表と独立した報道で照合する。
 既存記事と同じ出来事は避け、新展開がある場合だけ、その違いを明記する。
 タイトル冒頭は【海外AI解説】または【国内AI学び】。学生向けとは書かない。
-本文は3,000〜5,000文字を目安に、必要な内容があれば6,000〜7,000文字でもよい。
+本文は通常3,000〜4,000文字、詳しい説明が必要でも5,000文字程度を目安にする。
+特殊なテーマだけ6,000〜7,000文字まで可。上限は参考リンク込み7,000文字。
 文字数合わせで引き伸ばさない。短いニュースは簡潔にし、学生でも分かる説明と具体例を優先する。
 ## 30秒で結論（箇条書き）、本文の見出し、
 ## 私の正直な感想、## まとめ、## 参考リンクの順に構成する。
@@ -141,6 +142,9 @@ sourcesのURLは検索・閲覧ツールに表示されたURLをそのままコ�
 本文の参考リンクにもsourcesと同じURLをコピーし、推測でURLを組み立てない。
 発行日時を推測しない。少なくとも1件は対象期間内の資料で、その最新の出来事を中心に書く。
 本文に記事番号・販売価格は入れない。今回は無料のニュース記事のみ。
+bodyは完成したMarkdown本文。見出しは必ず行頭の「## 」で始め、見出し名を完全一致させる。
+必須見出しを裸の文字列・箇条書きにせず「## 30秒で結論」「## 私の正直な感想」
+「## まとめ」「## 参考リンク」をそのまま使う。本文という指示用見出しは使わない。
 適切な最新ニュースや裏付けを確認できないときは、titleとbodyを空文字、sourcesを空配列にする。
 """
     illustrated = config.get('images',{}).get('enabled',False)
@@ -152,6 +156,7 @@ sourcesのURLは検索・閲覧ツールに表示されたURLをそのままコ�
 本文に図解の位置を4か所だけ置く：【ここに図解①を挿入｜短いテーマ】〜④。
 同じ位置・同じ説明を4回繰り返さず、全体像、比較、仕組み、読者の判断などから最適な4つを選ぶ。
 imagesは順番固定の5要素。number=0はサムネイルでanchorは空文字、number=1〜4は図解①〜④。
+themeは15文字程度の短い日本語。labelsの各ラベルも原則15文字程度までで、長文を使わない。
 図解のanchorは本文の【ここに図解…】と完全一致する文字列。themeは短いテーマ、labelsは
 画像に表示する短く大きな日本語文字（最大9個）、promptはその画像1枚だけの構図の説明。
 サムネイルは強いニュース見出し、図解は本文を理解するための比較・流れ・関係図にする。
@@ -274,13 +279,14 @@ def validate_article(article, evidence, config, state, now):
     for heading in ["## 30秒で結論", "## 私の正直な感想", "## まとめ", "## 参考リンク"]:
         found = body.find(heading, position + 1)
         if found < 0:
-            raise WorkflowError("本文の構成が執筆ルールを満たしていません。")
+            raise WorkflowError(f'見出し「{heading}」がありません。行頭の## と見出し名を完全一致させてください。')
         position = found
     if config.get('images',{}).get('enabled'):
         validate_illustration_plan(article)
-        for heading in ['## よくある質問','## この記事について']:
-            if heading not in body:
-                raise WorkflowError('FAQまたは記事についての説明がありません。')
+        ordered=['## 私の正直な感想','## よくある質問','## まとめ','## この記事について','## 参考リンク']
+        positions=[body.find(heading) for heading in ordered]
+        if min(positions)<0 or positions!=sorted(positions):
+            raise WorkflowError('感想・FAQ・まとめ・記事について・参考リンクの順番が不正です。')
         readable = re.sub(r'\[([^\]]+)\]\(https?://[^)]+\)',r'\1',body)
         readable = re.sub(r'https?://\S+|\s|[#*_`]', '', readable)
         if len(readable)>config.get('max_article_chars',7000):
@@ -434,6 +440,11 @@ def run(slot, output, config, now=None, fixture=None, run_date=None, run_id=None
                     payload["instructions"] += "\n前回の候補は検証で不採用。理由を修正し、重複の場合は違う会社・製品の別の出来事を選ぶ。"
                 response = call_api(payload)
             article, evidence = extract_article(response)
+            # Only repair heading markup, without changing facts or adding text.
+            headings=['30秒で結論','私の正直な感想','よくある質問','まとめ','この記事について','参考リンク']
+            for heading in headings:
+                article['body']=re.sub(r'(?m)^'+re.escape(heading)+r'(?:[（(][^\n）)]*[）)])?\s*$',
+                                       '## '+heading,article['body'])
             try:
                 urls = validate_article(article, evidence, config, state, now)
                 verify_topic_novelty(article, config, state, output)

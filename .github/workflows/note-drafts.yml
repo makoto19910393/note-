@@ -122,4 +122,4 @@ jobs:
         with:
           name: note-drafts-${{ github.run_id }}
           path: content/
-          retention-days: 30
+          retention-days: 7

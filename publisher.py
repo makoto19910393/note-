@@ -55,10 +55,10 @@ def verify_public_article(browser, config, record):
                     data=response.json().get('data',{}) if response.ok else {}
                     if data.get('status')!='published' or not data.get('eyecatch') or data.get('price') not in (0,None):
                         raise WorkflowError('無料公開とサムネイルを確認できません。')
-                    article=page.locator('article')
-                    if not article.count():
-                        raise WorkflowError('公開本文を確認できません。')
-                    if article.locator('img').count()<4:
+                    images=re.findall(r'<img\b[^>]*\bsrc=["\']([^"\']+)',data.get('body',''))
+                    expected=record.get('image_urls',[])[1:]
+                    public_paths={urlsplit(html_module.unescape(x)).path for x in images}
+                    if len(expected)!=4 or not all(urlsplit(x).path in public_paths for x in expected):
                         raise WorkflowError('公開本文の図解4枚を確認できません。')
                 return url
             except Exception:
