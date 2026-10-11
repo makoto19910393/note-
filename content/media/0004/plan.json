@@ -91,7 +91,7 @@
       ],
       "prompt": "Two balanced large cards. Everyday icons. State this is the author’s explanation, not a company statement. No extra bullets.",
       "filename": "diagram245.png",
-      "status": "review_pending",
+      "status": "ready",
       "attempts": 2,
       "artifact_run_id": "38108203018",
       "sha256": "d2e45bd631fcac3b47a57304521f3454a74d6cfc60442015319d28bb914da775",
@@ -111,8 +111,9 @@
         "total_tokens": 613
       },
       "review": {
-        "approved": false,
-        "issues": "図解番号がない、または本文にない断定・説明が追加されている。指定ラベルだけで描き直す。"
+        "approved": true,
+        "issues": "",
+        "observed_title": "図解②：情報を守る／リスクを調べる（両立が必要／筆者の整理）"
       }
     },
     {
