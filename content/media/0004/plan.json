@@ -161,8 +161,9 @@
       ],
       "prompt": "16:9 図解④。背景は濃紺。見出し『ユーザーのチェックリスト』。縦に4つのチェックボックス（透明性、監査、データアクセス、通報窓口）。各チェック横に短い確認項目1行。下に小さく『重要データは二重確認を』と黄色文字。",
       "filename": "diagram247.png",
-      "status": "planned",
-      "attempts": 0
+      "status": "generating",
+      "attempts": 1,
+      "artifact_run_id": "38107631755"
     }
   ]
 }
