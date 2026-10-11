@@ -186,7 +186,7 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
         raise WorkflowError("原稿が生成後に変更されています。確認が必要です。")
     body = data.decode().split("\n", 1)[1].strip()
     from media import verified_media
-    from publisher_images import prepare_body, owner_draft, upload_images
+    from publisher_images import prepare_body, owner_draft, upload_images, save_draft
     plan=verified_media(output,record)
     body=prepare_body(body,plan)
     raw_session = os.environ.get("NOTE_STORAGE_STATE")
@@ -285,7 +285,7 @@ def publish(output, config, run_id, dry_run=False, before_publish=None):
             if not match or match.group(1) == "new":
                 raise WorkflowError("下書きの保存先を確認できません。公開せず停止します。")
             editor_url = "https://editor.note.com/notes/" + match.group(1) + "/edit"
-            page.get_by_role('button',name='下書き保存',exact=True).click()
+            save_draft(page)
             update_record(state_path, state, record, status="draft_saved", note_editor_url=editor_url)
             if before_publish:
                 before_publish()

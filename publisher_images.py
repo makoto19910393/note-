@@ -2,6 +2,7 @@
 import hashlib
 import json
 import re
+from urllib.parse import urlsplit
 
 from automation import WorkflowError, atomic_json
 
@@ -29,6 +30,16 @@ def owner_draft(context, note_id):
     return data
 
 
+def save_draft(page):
+    # A navigation immediately after the click can cancel the asynchronous save.
+    with page.expect_response(lambda r: r.request.method in ('POST','PUT','PATCH') and
+                              re.search(r'/api/[^/]+/(?:text_notes|notes)(?:/|$)',urlsplit(r.url).path),
+                              timeout=30000) as saved:
+        page.get_by_role('button', name='下書き保存', exact=True).click()
+    if not saved.value.ok:
+        raise WorkflowError('noteが下書き保存を拒否しました。')
+
+
 def uploaded_count(content, plan):
     """Every existing image must occur beneath the corresponding caption."""
     result = content.evaluate('''(el, captions) => {
@@ -51,7 +62,7 @@ def upload_images(page, context, output, state_path, state, record, plan, checkp
     note_id = re.search(r'/notes/(n[A-Za-z0-9]+)/', record['note_editor_url'] + '/').group(1)
 
     def save():
-        page.get_by_role('button', name='下書き保存', exact=True).click()
+        save_draft(page)
         # Reload to verify a server-saved draft, not merely local editor contents.
         page.goto(record['note_editor_url'], wait_until='domcontentloaded')
         content.wait_for(state='visible')

@@ -117,8 +117,8 @@ def article_schema(illustrated=False):
                 'explanations':{'type':'array','minItems':4,'maxItems':4,'items':pair(['heading','content'])},
                 'personal_view':{'type':'string'},
                 'faq':{'type':'array','minItems':3,'maxItems':5,'items':pair(['question','answer'])},
-                'summary':{'type':'string'},'about':{'type':'string'}},
-                'required':['intro','conclusions','explanations','personal_view','faq','summary','about']},
+                'summary':{'type':'string'}},
+                'required':['intro','conclusions','explanations','personal_view','faq','summary']},
             'images': {'type':'array','minItems':5,'maxItems':5,'items':{
                 'type':'object','additionalProperties':False,'properties':{
                     'number':{'type':'integer','minimum':0,'maximum':4},
@@ -167,6 +167,10 @@ bodyは完成したMarkdown本文。見出しは必ず行頭の「## 」で始�
 本文は「30秒で結論」→本文→「私の正直な感想」→「よくある質問」（3〜5問）→「まとめ」
 →「この記事について」→「参考リンク」の順。確認日と公式発表／報道／自分の意見を分ける。
 専門家ではなくAIを約1年使う一般ユーザーの自然な目線。確認できない体験談は創作しない。
+親しみのある丁寧な日本語。「自分が気になるのは」「例えば」など、具体的な視点で書く。
+「本稿」「可視化」「実務的インパクト」「合理的な推測」「短期的には〜長期的には〜」
+など、公文書・コンサル報告書のような表現を繰り返さない。読者へ指図せず、考え方と選択肢を説明する。
+専門語はその場で言い換える。機密＝外に出せない情報、第三者監査＝外部の人による点検、など。
 本文に図解の位置を4か所だけ置く：【ここに図解①を挿入｜短いテーマ】〜④。
 同じ位置・同じ説明を4回繰り返さず、全体像、比較、仕組み、読者の判断などから最適な4つを選ぶ。
 imagesは順番固定の5要素。number=0はサムネイルでanchorは空文字、number=1〜4は図解①〜④。
@@ -184,7 +188,8 @@ hashtagsは#で始まる10〜13個。本文に重ねて入れない。threadsは
 出力はsectionsに分けて書く。本文全体と図解位置はプログラムが組み立てる。
 introは読者の疑問から入る短い導入。conclusionsは結論3〜4点。explanationsはちょうど4節で、
 headingは読者の疑問、contentは完成した段落。各節は図解①〜④にそれぞれ対応する内容にする。
-personal_viewは正直な感想、faqは質問と回答、summaryはまとめ、aboutは確認日と情報の区分。
+personal_viewは正直な感想、faqは質問と回答、summaryはまとめ。確認日・記事についてはプログラムが付ける。
+フィールド名や作成システムの説明を読者向けの文章へ出さない。
 sections合計3,000〜4,000文字を目安。各説明節400〜600字程度、感想300〜500字程度。
 contentに見出し・図解マーカー・図解挿入位置の一覧を重ねて書かない。images.anchorは空文字でよい。
 """
@@ -303,7 +308,9 @@ def compose_article(article):
     article['images'][0]['anchor']=''
     parts.extend(['## 私の正直な感想',sections['personal_view'],'## よくある質問',
                   '\n\n'.join('### '+x['question']+'\n\n'+x['answer'] for x in sections['faq']),
-                  '## まとめ',sections['summary'],'## この記事について',sections['about'],
+                  '## まとめ',sections['summary'],'## この記事について',
+                  datetime.now(ZoneInfo('Asia/Tokyo')).strftime('確認日：%Y年%m月%d日（日本時間）。')+
+                  '公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。',
                   '## 参考リンク','\n'.join('- ['+x['title']+']('+x['url']+')' for x in article['sources'])])
     article['body']='\n\n'.join(parts)
     return article
@@ -319,6 +326,8 @@ def validate_article(article, evidence, config, state, now):
         raise WorkflowError('タイトルに学生向けという表記は入れません。')
     if len(body) < config["min_article_chars"]:
         raise WorkflowError("本文が短すぎるか、有効なニュースが見つかりませんでした。")
+    if re.search(r'\bsections\.(?:personal_view|intro|summary|about|explanations|faq)\b',body):
+        raise WorkflowError('読者向け本文に作成システムのフィールド名を入れないでください。')
     position = -1
     for heading in ["## 30秒で結論", "## 私の正直な感想", "## まとめ", "## 参考リンク"]:
         found = body.find(heading, position + 1)
