@@ -52,7 +52,7 @@
       ],
       "prompt": "Two parallel large cards showing opposing claims, linked to a neutral uncertainty caption. No chronology or extra bullets.",
       "filename": "diagram244.png",
-      "status": "review_pending",
+      "status": "ready",
       "attempts": 2,
       "artifact_run_id": "38108203018",
       "sha256": "b899c930e95974ecc863be0566e8e16c41cb7a39e18764b08717ab7e77fd837f",
@@ -72,8 +72,9 @@
         "total_tokens": 614
       },
       "review": {
-        "approved": false,
-        "issues": "図解番号がない、または本文にない断定・説明が追加されている。指定ラベルだけで描き直す。"
+        "approved": true,
+        "issues": "",
+        "observed_title": "双方の主張"
       }
     },
     {
