@@ -135,7 +135,7 @@
         "https://www.bleepingcomputer.com/news/security/microsoft-teams-to-add-third-party-deepfake-detection-impersonation-protection/"
       ],
       "sha256": "b0e28e70fd804410c42f6f7db4315c25190e55a972fa4dbe3d3e686b568917bb",
-      "status": "draft",
+      "status": "draft_saved",
       "note_posted": false,
       "media_plan": "media/0005/plan.json",
       "source_details": [
@@ -164,7 +164,8 @@
           "supports": "直接読み直した報道。2026-10-09T13:05:00+00:00の公開日時をページ内メタデータでも確認。二つの計画と11月予定。"
         }
       ],
-      "layout_revision": "2026-10-11-user-review"
+      "layout_revision": "2026-10-11-user-review",
+      "note_editor_url": "https://editor.note.com/notes/ne9dd7bc5f076/edit"
     }
   ],
   "next_diagram": 252
