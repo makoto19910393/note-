@@ -46,14 +46,18 @@ with sync_playwright() as p:
         if title.input_value() != title_text:
             raise RuntimeError('対象の下書きタイトルが一致しません。')
         print('draft',json.dumps(saved,ensure_ascii=False))
-        print('buttons',json.dumps(page.get_by_role('button').evaluate_all(
-            "els=>els.map((x,i)=>({i,text:x.textContent.trim(),label:x.getAttribute('aria-label'),svg:x.querySelector('svg')?.outerHTML}))"),ensure_ascii=False))
-        content.click()
-        page.keyboard.press('ControlOrMeta+End')
+        page.locator('button').filter(has=page.locator("svg[aria-label='画像を追加']")).click()
+        print('cover_menu',json.dumps(page.get_by_role('menuitem').all_text_contents(),ensure_ascii=False))
+        print('cover_buttons',json.dumps(page.get_by_role('button').all_text_contents(),ensure_ascii=False))
+        print('cover_inputs',json.dumps(page.locator("input[type='file']").evaluate_all("els=>els.map(x=>({accept:x.accept,multiple:x.multiple}))")))
+        page.keyboard.press('Escape')
+        content.locator('p').filter(has_text='【ここに図解①を挿入').click()
+        page.keyboard.press('End')
         page.keyboard.press('Enter')
+        page.get_by_role('button',name='メニューを開く',exact=True).click()
+        print('body_menu',json.dumps(page.get_by_role('menuitem').all_text_contents(),ensure_ascii=False))
+        print('body_buttons',json.dumps(page.get_by_role('button').all_text_contents(),ensure_ascii=False))
         page.screenshot(path='/tmp/review-editor.png')
-        print('end_buttons',json.dumps(page.get_by_role('button').evaluate_all(
-            "els=>els.map((x,i)=>({i,text:x.textContent.trim(),label:x.getAttribute('aria-label'),svg:x.querySelector('svg')?.outerHTML}))"),ensure_ascii=False))
     finally:
         context.close()
         browser.close()
