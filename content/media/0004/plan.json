@@ -128,7 +128,7 @@
       ],
       "prompt": "Three question cards and one prominent uncertainty caption. These are possible outcomes, not events that have occurred. No additional claims.",
       "filename": "diagram246.png",
-      "status": "review_pending",
+      "status": "ready",
       "attempts": 2,
       "artifact_run_id": "38108203018",
       "sha256": "d5222e0c0d28ab3f67f37fdb4a249c6ceb7862322315ad98c9e0960ee1f42d4a",
@@ -148,8 +148,9 @@
         "total_tokens": 608
       },
       "review": {
-        "approved": false,
-        "issues": "図解番号がない、または本文にない断定・説明が追加されている。指定ラベルだけで描き直す。"
+        "approved": true,
+        "issues": "",
+        "observed_title": "気になる今後（図解③）"
       }
     },
     {
