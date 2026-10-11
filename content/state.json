@@ -201,7 +201,7 @@
         "https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance"
       ],
       "sha256": "4d3c3291f45a528181d2be8a0b0421e8a31c7760de0c1d017b1763c694f80b8d",
-      "status": "draft",
+      "status": "draft_saved",
       "note_posted": false,
       "media_plan": "media/0006/plan.json",
       "source_details": [
@@ -219,7 +219,8 @@
         }
       ],
       "editorial_review": "Title corrected to distinguish attacker tools from bank targets; primary and secondary sources reread; identity remains unconfirmed.",
-      "manual_editorial_review": true
+      "manual_editorial_review": true,
+      "note_editor_url": "https://editor.note.com/notes/nae194d380626/edit"
     }
   ],
   "next_diagram": 256
