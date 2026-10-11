@@ -31,7 +31,8 @@ with sync_playwright() as p:
                 'text/html':new Blob([html],{type:'text/html'}),
                 'text/plain':new Blob([text],{type:'text/plain'})})])""",{'html':html,'text':body})
             content.click()
-            page.keyboard.press('ControlOrMeta+A')
+            content.evaluate("""el=>{el.focus();const r=document.createRange();r.selectNodeContents(el);
+                const s=window.getSelection();s.removeAllRanges();s.addRange(r);} """)
             page.keyboard.press('ControlOrMeta+V')
             page.wait_for_function("() => document.querySelector('.ProseMirror').innerText.includes('この記事について')")
             match = re.search(r'/notes/(n[A-Za-z0-9]+)/', page.url + '/')
@@ -52,25 +53,36 @@ with sync_playwright() as p:
                 'text/html':new Blob([html],{type:'text/html'}),
                 'text/plain':new Blob([text],{type:'text/plain'})})])""",{'html':html,'text':body})
             content.click()
-            page.keyboard.press('ControlOrMeta+A')
+            content.evaluate("""el=>{el.focus();const r=document.createRange();r.selectNodeContents(el);
+                const s=window.getSelection();s.removeAllRanges();s.addRange(r);} """)
             page.keyboard.press('ControlOrMeta+V')
             page.wait_for_function("() => document.querySelector('.ProseMirror').innerText.includes('この記事について')")
+            assert content.inner_text().count('30秒で結論')==1
+            assert 6000<=len(re.sub(r'\s','',content.inner_text()))<=7000
+        metadata=context.request.get('https://note.com/api/v3/notes/'+saved['note_id'])
+        if metadata.ok:
+            existing=metadata.json().get('data',{})
+            if existing.get('is_my_note') is not True:
+                raise RuntimeError('本人の記事ではありません。')
+            if existing.get('eyecatch'):
+                saved['cover_uploaded']=True
         if not saved.get('cover_uploaded'):
             page.locator('button').filter(has=page.locator("svg[aria-label='画像を追加']")).click()
             with page.expect_file_chooser() as chooser:
                 page.get_by_role('button',name='画像をアップロード',exact=False).click()
             chooser.value.set_files(str(ROOT / 'assets' / 'thumbnail.png'))
-            dialog = page.get_by_role('dialog')
+            dialog = page.get_by_role('dialog').filter(has=page.get_by_role('button',name='保存',exact=True))
             dialog.get_by_role('button',name='保存',exact=True).wait_for(state='visible')
             dialog.get_by_role('button',name='保存',exact=True).click()
-            dialog.wait_for(state='hidden')
+            page.locator('.CropModal__content').wait_for(state='hidden')
             page.get_by_role('button',name='下書き保存',exact=True).click()
             saved['cover_uploaded']=True
             MANIFEST.write_text(json.dumps(saved,ensure_ascii=False,indent=2)+'\n')
         for i in range(saved.get('uploaded_diagrams',0),4):
             marker = content.locator('p').filter(has_text=f'【ここに図解{"①②③④"[i]}を挿入')
             marker.click()
-            page.keyboard.press('End')
+            marker.evaluate("""el=>{const r=document.createRange();r.selectNodeContents(el);r.collapse(false);
+                const s=window.getSelection();s.removeAllRanges();s.addRange(r);} """)
             page.keyboard.press('Enter')
             page.get_by_role('button',name='メニューを開く',exact=True).click()
             image_option=page.get_by_text('画像',exact=True)
@@ -87,6 +99,8 @@ with sync_playwright() as p:
         content.wait_for(state='visible')
         assert content.locator('img').count()==4
         assert 'この記事について' in content.inner_text()
+        assert content.inner_text().count('30秒で結論')==1
+        assert 6000<=len(re.sub(r'\s','',content.inner_text()))<=7000
         response=context.request.get('https://note.com/api/v3/notes/'+saved['note_id'])
         if response.ok:
             data=response.json().get('data',{})
