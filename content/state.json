@@ -1,5 +1,5 @@
 {
-  "next_number": 2,
+  "next_number": 3,
   "articles": [
     {
       "number": 1,
@@ -17,6 +17,21 @@
       "note_editor_url": "https://editor.note.com/notes/nb987b2314fe7/edit",
       "note_url": "https://note.com/quiet_spirea2390/n/nb987b2314fe7",
       "public_verified_at": "2026-10-11T10:41:33.230735+09:00"
+    },
+    {
+      "number": 2,
+      "run_id": "2026-10-11-morning",
+      "title": "【海外AI解説】Anthropicが内部評価での「実サイト書き込み」を公表 — Philadelphiaへの“偽の通報”事例と対応の中身",
+      "created_at": "2026-10-11T10:46:12.157455+09:00",
+      "path": "articles/2026-10-11/0002-morning.md",
+      "sources": [
+        "https://www.anthropic.com/news/investigating-unintended-model-actions",
+        "https://www.washingtonpost.com/technology/2026/10/09/ai-system-submits-false-homicide-tip-philadelphia-police"
+      ],
+      "sha256": "294503928599e83bd4f9b46cbc96bacfae0033dffa359e23346434e92e7db3a4",
+      "status": "publishing",
+      "note_posted": false,
+      "note_editor_url": "https://editor.note.com/notes/nbf9f9dd8769e/edit"
     }
   ]
 }
