@@ -164,7 +164,7 @@
       ],
       "prompt": "濃紺背景、図解④見出し中央。縦に並んだチェックリスト形式で『リスク評価→ベンダー選定→試験導入→全社展開』を矢印でつなぐ。各項目の横に短い補足（1行）をネオンシアンで表示。16:9。",
       "filename": "diagram251.png",
-      "status": "review_pending",
+      "status": "rejected",
       "attempts": 1,
       "artifact_run_id": "38108879984",
       "sha256": "c8079ce2dc28a7f8aa592679f25a464ac5542fae74e1ad927fbafa80e839895b",
@@ -182,6 +182,13 @@
           "text_tokens": 0
         },
         "total_tokens": 615
+      },
+      "review": {
+        "approved": false,
+        "issues": "期待ラベルのうち「ベンダー比較」が画像に含まれていません（代わりに「ベンダー選定」があります）。",
+        "observed_title": "図解④",
+        "observed_diagram_label": "図解④",
+        "unsupported_claims": []
       }
     }
   ]
