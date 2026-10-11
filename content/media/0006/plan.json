@@ -88,7 +88,7 @@
       ],
       "prompt": "濃紺背景、図解タイトル『② LLMが担う仕事』。中央にLLMアイコン、周囲に矢印で『解析』『生成』『コマンド化』の3円を配置。各円に短い説明を白と黄色で。ネオンシアンのアクセント。16:9。",
       "filename": "diagram253.png",
-      "status": "review_pending",
+      "status": "rejected",
       "attempts": 2,
       "artifact_run_id": "38131866970",
       "sha256": "0d33ffe2f6eaa695b8032cef27c61af5921487eeaea121f17213e3d4ba35e88a",
@@ -109,8 +109,8 @@
       },
       "review": {
         "approved": false,
-        "issues": "図解に期待ラベルの一つ「行動計画化」が欠けています（代わりに「コマンド化」と表記）。図解番号とタイトルは確認できるが、expected_labelsの重要ラベルが欠落しているため不合格。",
-        "observed_title": "LLMが担う仕事",
+        "issues": "図解内の重要ラベルが記事のexpected_labelsと一致していません（期待: プロンプト生成、解析支援、行動計画化 → 画像: 「解析」「生成」「コマンド化」）。図解番号は正しいが、期待ラベルの語句が欠けているため不合格。",
+        "observed_title": "② LLMが担う仕事",
         "observed_diagram_label": "図解②",
         "unsupported_claims": []
       }
