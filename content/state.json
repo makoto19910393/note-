@@ -100,7 +100,8 @@
       "note_editor_url": "https://editor.note.com/notes/n1b5e26bf3f65/edit",
       "media_upload": {
         "cover_uploaded": true,
-        "diagrams": 4
+        "diagrams": 4,
+        "verified": true
       },
       "cover_needs_refresh": false,
       "media_hashes": [
@@ -110,7 +111,14 @@
         "d5222e0c0d28ab3f67f37fdb4a249c6ceb7862322315ad98c9e0960ee1f42d4a",
         "8f8229061d633e770f205424eff5da699a8de1c32ad4f5133c07258396cdbcac"
       ],
-      "cover_verified_run_id": "38108396221"
+      "cover_verified_run_id": "38108396221",
+      "image_urls": [
+        "https://assets.st-note.com/production/uploads/images/323106415/rectangle_large_type_2_0cae14f5904e36f208f96f25d43aa6a2.png?fit=bounds&quality=85&width=1280",
+        "https://assets.st-note.com/img/1791689411-HsRqazYhL8xSZbudn6VpTEwj.png",
+        "https://assets.st-note.com/img/1791689418-AgVZF4OLpksDax2JY8lSNKjo.png",
+        "https://assets.st-note.com/img/1791689425-TeX2VSpL89cODfz6Ki1h0RYw.png",
+        "https://assets.st-note.com/img/1791689665-jsl34UtkEm0wzxpRN8PWauQv.png"
+      ]
     }
   ],
   "next_diagram": 248
