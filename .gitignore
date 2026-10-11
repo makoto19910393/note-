@@ -8,3 +8,5 @@ note-session*.json
 .note-connect-venv/
 .browsers/
 browser-check/
+
+.private-editorial/

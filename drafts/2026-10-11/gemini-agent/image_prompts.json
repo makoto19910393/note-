@@ -1,0 +1,22 @@
+[
+  {
+    "filename": "thumbnail.png",
+    "prompt": "ONLY ONE IMAGE. Single standalone image. No collage. No split panels containing other diagrams. Do not include the other diagrams. Create one Japanese note news article THUMBNAIL, landscape strictly 16:9. Premium cinematic Japanese AI tech news cover, black/deep navy background, electric neon cyan-blue glow, very large impeccably legible Japanese bold typography in white and fluorescent yellow, sparse powerful composition, one friendly white/blue spherical 3D AI coworker on right, subtle Gmail envelope, Google Drive and document visual motifs. Exact large headline on left in two lines: 「GoogleのGemini agent」 「AIが『同僚』になる？」. Small supporting phrase 「Gmail・Driveで働くAI」. Small readable cyan badge 「Claudeも活用」 and unobtrusive bottom badge 「企業向け・限定プレビュー」. Not a technical chart. No diagram numbers. No additional invented feature, no profit promises, no student text. Keep all typography within generous safe margins, accurate Japanese, professional coherent high contrast."
+  },
+  {
+    "filename": "diagram240.png",
+    "prompt": "ONLY ONE IMAGE. Single standalone image. No collage. No split panels containing other diagrams. Do not include the other diagrams. makoのnote AIニュース記事用。過去の画像と合わせたハイクオリティな日本語のテック解説ビジュアル。濃紺と黒の背景、シアンブルーの柔らかい発光、白と黄色の非常に読みやすい太い日本語ゴシック文字、上品な立体感のあるアイコン。かわいい白い球体AIキャラクターを必要な場所だけ小さく使う。新聞の解説図のように情報を正確に整理し、大きな余白、整ったグリッド。日本語の文字を指定通り正確に描画。文字は大きく、スマホでも読みやすくする。人間の顔、企業公式画面の偽スクリーンショット、未確認の性能数字、学生向けの表示は入れない。 図解①を1枚生成。横長16:9。左上に「図解①」、タイトル「Gemini agentって何？」。中央に可愛い小さなAI球体、左に人が渡す目標のカード「来週の企画書を作って」、右に作業道具3枚のカード「Gmail」「Drive」「Docs」。下部に大きく3段階の流れ「目標を渡す」→「作業を進める」→「結果を返す」。最下部の短い補足「会社の情報と道具を使って仕事を進めるAI」。右上に「企業向け・限定プレビュー」。全テキストを正確に、詰め込まず大きく。"
+  },
+  {
+    "filename": "diagram241.png",
+    "prompt": "ONLY ONE IMAGE. Single standalone image. No collage. No split panels containing other diagrams. Do not include the other diagrams. makoのnote AIニュース記事用。過去の画像と合わせたハイクオリティな日本語のテック解説ビジュアル。濃紺と黒の背景、シアンブルーの柔らかい発光、白と黄色の非常に読みやすい太い日本語ゴシック文字、上品な立体感のあるアイコン。かわいい白い球体AIキャラクターを必要な場所だけ小さく使う。新聞の解説図のように情報を正確に整理し、大きな余白、整ったグリッド。日本語の文字を指定通り正確に描画。文字は大きく、スマホでも読みやすくする。人間の顔、企業公式画面の偽スクリーンショット、未確認の性能数字、学生向けの表示は入れない。 図解②を1枚生成。横長16:9。左上に「図解②」、タイトル「AIの使い方はどう変わる？」。左右2列の比較。左の列見出し「質問を中心に使う」、右の列見出し「仕事を任せて使う」。比較の行は3つのみ。1行目の項目「頼み方」、左「一つずつ質問」、右「完成してほしいものを伝える」。2行目の項目「進め方」、左「人が手順をつなぐ」、右「AIが複数の作業を進める」。3行目の項目「受け取るもの」、左「回答や文章」、右「作業の結果」。下端の補足「使い方の比較です。AI製品の性能順位ではありません。」。光る矢印とメール・資料・文書のアイコンを使い、すっきり見せる。"
+  },
+  {
+    "filename": "diagram242.png",
+    "prompt": "ONLY ONE IMAGE. Single standalone image. No collage. No split panels containing other diagrams. Do not include the other diagrams. makoのnote AIニュース記事用。過去の画像と合わせたハイクオリティな日本語のテック解説ビジュアル。濃紺と黒の背景、シアンブルーの柔らかい発光、白と黄色の非常に読みやすい太い日本語ゴシック文字、上品な立体感のあるアイコン。かわいい白い球体AIキャラクターを必要な場所だけ小さく使う。新聞の解説図のように情報を正確に整理し、大きな余白、整ったグリッド。日本語の文字を指定通り正確に描画。文字は大きく、スマホでも読みやすくする。人間の顔、企業公式画面の偽スクリーンショット、未確認の性能数字、学生向けの表示は入れない。 図解③を1枚生成。横長16:9。左上に「図解③」、タイトル「GoogleのAIにClaudeも？」。上中央の大きなカード「Gemini agent」、その下に短い説明「仕事に合うモデルを選ぶ」。枝分かれする2本の矢印で下の2枚の同じ大きさのカードへつなぐ。左カード「Gemini」「Google」、右カード「Claude」「Anthropic」。これ以外のモデル名や性能数値を追加しない。下に黄色で「窓口と、仕事をするモデルは別」。最下部に小さく読みやすく「利用できるモデル・設定・契約条件は確認が必要」。優劣を示す順位やVSの文字は使わない。"
+  },
+  {
+    "filename": "diagram243.png",
+    "prompt": "ONLY ONE IMAGE. Single standalone image. No collage. No split panels containing other diagrams. Do not include the other diagrams. makoのnote AIニュース記事用。過去の画像と合わせたハイクオリティな日本語のテック解説ビジュアル。濃紺と黒の背景、シアンブルーの柔らかい発光、白と黄色の非常に読みやすい太い日本語ゴシック文字、上品な立体感のあるアイコン。かわいい白い球体AIキャラクターを必要な場所だけ小さく使う。新聞の解説図のように情報を正確に整理し、大きな余白、整ったグリッド。日本語の文字を指定通り正確に描画。文字は大きく、スマホでも読みやすくする。人間の顔、企業公式画面の偽スクリーンショット、未確認の性能数字、学生向けの表示は入れない。 図解④を1枚生成。横長16:9。左上に「図解④」、タイトル「AIにどこまで任せる？」。編集者のおすすめとして、横3列の大きなカード。左は青色で「読む」「資料を探す・内容を整理」。中央はシアンで「作る」「企画書・メールの下書き」。右は黄色で「送る・変更する」「公開や送信は人が確認」。左から右へ矢印をつなぎ、最後の矢印の前に人間のチェックマークと停止点を大きく描く。下に短く「最初は、下書きまで任せる」、その下に補足「自分のおすすめの運用例。製品の標準設定を示す図ではありません。」。左下に鍵の小さなアイコンと「見せる資料も必要な分だけ」。大きな文字と余白で見やすく。"
+  }
+]
