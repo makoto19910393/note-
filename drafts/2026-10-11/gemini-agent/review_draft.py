@@ -88,9 +88,13 @@ with sync_playwright() as p:
             image_option=page.get_by_text('画像',exact=True)
             image_option.wait_for(state='visible')
             with page.expect_file_chooser() as chooser:
-                image_option.click()
+                # The floating menu follows the caret; scrolling its text target closes it.
+                # Dispatch the same UI click without scrolling the document.
+                image_option.dispatch_event('click')
             chooser.value.set_files(str(ROOT/'assets'/f'diagram{240+i}.png'))
             page.wait_for_function("n => document.querySelectorAll('.ProseMirror img').length >= n",arg=i+1)
+            page.wait_for_function("""() => Array.from(document.querySelectorAll('.ProseMirror img'))
+                .every(img=>img.complete && img.naturalWidth>0 && img.src.startsWith('https:'))""")
             page.get_by_role('button',name='下書き保存',exact=True).click()
             saved['uploaded_diagrams']=i+1
             MANIFEST.write_text(json.dumps(saved,ensure_ascii=False,indent=2)+'\n')
