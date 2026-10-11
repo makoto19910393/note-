@@ -173,7 +173,7 @@
       ],
       "prompt": "図解④。メール、ゴミ箱、コインの3Dアイコンと3枚の発光カード。 指定のlabelsと該当する図解番号だけを正確に表示。実際の製品画面や導入済み仕様ではなく、発言・筆者の提案の説明図。濃紺、シアンの光、白と黄色の太い立体文字。",
       "filename": "diagram259.png",
-      "status": "generated",
+      "status": "review_pending",
       "attempts": 1,
       "artifact_run_id": "38134213834",
       "sha256": "2f8eff094654878b0f1fa262a3c4d0c154a006feb381e2fa158be9f1a3dbbc9c",
