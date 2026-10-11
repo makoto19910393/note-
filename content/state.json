@@ -176,14 +176,15 @@
       ],
       "media_upload": {
         "cover_uploaded": true,
-        "diagrams": 4
+        "diagrams": 4,
+        "verified": true
       },
       "image_urls": [
-        "https://assets.st-note.com/production/uploads/images/323223542/rectangle_large_type_2_fe6c494647d569a99973cbdf9cdfc5c6.png?fit=bounds&quality=85&width=1280",
-        "https://assets.st-note.com/img/1791712940-zCuc9lw5HNtsTDSRjW8daiJy.png",
-        "https://assets.st-note.com/img/1791712946-aKsvbN6w71SdxChgBpko8Jy3.png",
-        "https://assets.st-note.com/img/1791712953-QGXdWbKEzfw7OrexlBtiaDh8.png",
-        "https://assets.st-note.com/img/1791712959-QTcwzMVHFCyve7PmZiEuYn01.png"
+        "https://assets.st-note.com/production/uploads/images/323325772/rectangle_large_type_2_2635d5cb128abbe9360313ab6d728d5a.png?fit=bounds&quality=85&width=1280",
+        "https://assets.st-note.com/img/1791729291-ncxZbRdB4oq5DiV7CFjhgTlp.png",
+        "https://assets.st-note.com/img/1791729298-V9KnJNYcCgp6j7y5QOhRHw3v.png",
+        "https://assets.st-note.com/img/1791729305-t2OIHSzF7WcbJpkEA4one0Dx.png",
+        "https://assets.st-note.com/img/1791729311-2XR7hcDmYLQVpojUnq84JkfG.png"
       ],
       "draft_source_sha256": "b0e28e70fd804410c42f6f7db4315c25190e55a972fa4dbe3d3e686b568917bb",
       "rescheduled_from": "2026-10-11-morning-2",
