@@ -1,0 +1,22 @@
+name: note下書き数を確認（読み取りのみ）
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  count:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: ブラウザを準備
+        run: |
+          python -m pip install -r requirements-publish.txt
+          python -m playwright install --with-deps chromium
+      - name: 下書き一覧を読む
+        env:
+          NOTE_STORAGE_STATE: ${{ secrets.NOTE_STORAGE_STATE }}
+        run: python scripts/count_note_drafts.py
