@@ -165,7 +165,16 @@
         }
       ],
       "layout_revision": "2026-10-11-user-review",
-      "note_editor_url": "https://editor.note.com/notes/ne9dd7bc5f076/edit"
+      "note_editor_url": "https://editor.note.com/notes/ne9dd7bc5f076/edit",
+      "cover_needs_refresh": true,
+      "media_hashes": [
+        "c9a457978631aae214b830ee657517743fffa60d0668645a64e364fc6c627c66",
+        "1163c014bb23b8e204f5aba6d22b0ba67c1aa8cf432daafe2dca7f6d6d1ae593",
+        "f0fb64ca975e3d61a05f1fe5e7f0842e31b9845b90ad8e29031698679bdebafa",
+        "fa60320892353fed217acb2e85e2d2a1a62f0f50e094420123a89baec7b075b8",
+        "17604a0302601b9ff9207f2c6eb17f8dd1ff19e0915d046cd052195b2e8861ce"
+      ],
+      "pending_cover_url": "https://assets.st-note.com/production/uploads/images/323223542/rectangle_large_type_2_fe6c494647d569a99973cbdf9cdfc5c6.png"
     }
   ],
   "next_diagram": 252
