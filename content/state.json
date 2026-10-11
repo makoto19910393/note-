@@ -308,13 +308,13 @@
       "manual_editorial_review": true,
       "source_dates_verified_from_page_metadata": true,
       "note_editor_url": "https://editor.note.com/notes/nca8f22e035b0/edit",
-      "cover_needs_refresh": false,
+      "cover_needs_refresh": true,
       "media_hashes": [
-        "55eea83ef317c033359f839949cca4560b9ffddd66231337d74f536b7e2322b0",
-        "a22a19d996dc1b7d231f5c5f750fc785e828c2d048300db42a5fee19d66a2e72",
-        "0941874a16b668cd1465a8f558319d8db9ae35c5bab7a055283453bf3555216a",
-        "36a7a1341909c52c367b830bfd775b81efa610ba993109ba58b4c3eac2ac116f",
-        "2f8eff094654878b0f1fa262a3c4d0c154a006feb381e2fa158be9f1a3dbbc9c"
+        "d0620218d11d32c9fb904f3ced7de4ee83a74615bcb744a88058d8e344dfa830",
+        "e20ef544e01341e525e888c586a3257e25163a3ae4ceebd3669e5a3dc570e151",
+        "88a08a0bce54a9cdc5702d9527e16562aa7b0f7cc80bcc3252e19f5792640e2e",
+        "91d06566edde26648bb69b0a65fd008fabe25f324aa6cd793e2d11878b86a7d2",
+        "886b09caab52c296badccd0e6bd66e8425b08c624221e0ec1f622ec6e6e58b75"
       ],
       "media_upload": {
         "cover_uploaded": true,
