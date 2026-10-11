@@ -254,7 +254,7 @@
         "https://www.tenable.com/cybersecurity-guide/principles/ai-governance"
       ],
       "sha256": "c42457a50d959b5667dd84fc99b55d982cb692fc488334529e3be9688b8fd2ee",
-      "status": "draft",
+      "status": "draft_saved",
       "note_posted": false,
       "media_plan": "media/0007/plan.json",
       "source_details": [
@@ -273,7 +273,8 @@
         }
       ],
       "manual_editorial_review": true,
-      "source_dates_verified_from_page_metadata": true
+      "source_dates_verified_from_page_metadata": true,
+      "note_editor_url": "https://editor.note.com/notes/nca8f22e035b0/edit"
     }
   ],
   "next_diagram": 260
