@@ -68,8 +68,8 @@
         "https://www.washingtonpost.com/business/2026/10/09/openai-chatgpt-ai-artificial-intelligence-safety/96046fae-c3d1-11f1-8170-681419af1cc9_story.html"
       ],
       "sha256": "3bb49857f214a44da22126a8d2467b816e5172a1eda20065c4bc5570bab9d184",
-      "status": "publishing",
-      "note_posted": false,
+      "status": "published",
+      "note_posted": true,
       "media_plan": "media/0004/plan.json",
       "source_details": [
         {
@@ -118,7 +118,9 @@
         "https://assets.st-note.com/img/1791689418-AgVZF4OLpksDax2JY8lSNKjo.png",
         "https://assets.st-note.com/img/1791689425-TeX2VSpL89cODfz6Ki1h0RYw.png",
         "https://assets.st-note.com/img/1791689665-jsl34UtkEm0wzxpRN8PWauQv.png"
-      ]
+      ],
+      "note_url": "https://note.com/quiet_spirea2390/n/n1b5e26bf3f65",
+      "published_at": "2026-10-11T12:39:33.950427+09:00"
     },
     {
       "number": 5,
