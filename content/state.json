@@ -166,7 +166,7 @@
       ],
       "layout_revision": "2026-10-11-original-user-style-and-beginner-rewrite",
       "note_editor_url": "https://editor.note.com/notes/ne9dd7bc5f076/edit",
-      "cover_needs_refresh": true,
+      "cover_needs_refresh": false,
       "media_hashes": [
         "f6ecb7ede1dde2baf6422a37593e1e608db9262c81be9ca87c628c58747248c4",
         "cef10235c0909bdddd645a8e704049fb199b63fe30d53ddb0dfa17a8204a5de3",
@@ -212,8 +212,7 @@
       },
       "previous_owner_draft_backup_sha256": "1ac33dfb94af98f7b2435fe0441b037c89b9cccac7eed21c6d3b6db7eb1b4c20",
       "owner_backup_for_source_sha256": "1a06c0275203824702abb241a74fab8068848d5aef0eb0d410a8281292876c6c",
-      "original_owner_backup_run": "38147115014",
-      "pending_cover_url": "https://assets.st-note.com/production/uploads/images/323325772/rectangle_large_type_2_2635d5cb128abbe9360313ab6d728d5a.png"
+      "original_owner_backup_run": "38147115014"
     },
     {
       "number": 6,
