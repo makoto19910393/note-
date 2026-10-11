@@ -25,6 +25,10 @@ on:
         description: 再投稿せず既存記事の公開状態だけを確認
         type: boolean
         default: false
+      inspect_editor:
+        description: 既存記事の編集操作名のみ確認
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -78,8 +82,11 @@ jobs:
           NOTE_HEADLESS: 'false'
           EXISTING_RUN_ID: ${{ github.event.inputs.run_id }}
           VERIFY_PUBLIC_ONLY: ${{ github.event.inputs.verify_only || 'false' }}
+          INSPECT_EDITOR_ONLY: ${{ github.event.inputs.inspect_editor || 'false' }}
         run: |
-          if [ "$VERIFY_PUBLIC_ONLY" = "true" ]; then
+          if [ "$INSPECT_EDITOR_ONLY" = "true" ]; then
+            xvfb-run -a python publisher.py --run-id "$EXISTING_RUN_ID" --inspect-editor
+          elif [ "$VERIFY_PUBLIC_ONLY" = "true" ]; then
             xvfb-run -a python publisher.py --run-id "$EXISTING_RUN_ID" --verify-only
           elif [ -n "$EXISTING_RUN_ID" ]; then
             xvfb-run -a python run_workflow.py --run-id "$EXISTING_RUN_ID"

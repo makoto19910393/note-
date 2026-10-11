@@ -74,6 +74,23 @@ def verify_saved_publication(output, config, run_id):
     print("再投稿せず、noteの公開済み記事を確認しました:", url)
 
 
+def inspect_editor(output, run_id):
+    from playwright.sync_api import sync_playwright
+    state = json.loads((output / "state.json").read_text())
+    record = pick_article(state, run_id)
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=os.environ.get("NOTE_HEADLESS", "true") != "false")
+        try:
+            context = browser.new_context(storage_state=json.loads(os.environ["NOTE_STORAGE_STATE"]))
+            page = context.new_page()
+            page.goto(record["note_editor_url"], wait_until="domcontentloaded")
+            page.locator("textarea[placeholder='記事タイトル'], input[placeholder='記事タイトル']").first.wait_for(state="visible")
+            print("記事編集ボタン:", json.dumps(page.get_by_role("button").all_text_contents(), ensure_ascii=False))
+            print("記事編集リンク名:", json.dumps(page.get_by_role("link").all_text_contents(), ensure_ascii=False))
+        finally:
+            browser.close()
+
+
 def publish(output, config, run_id, dry_run=False, before_publish=None):
     state_path = output / "state.json"
     state = json.loads(state_path.read_text())
@@ -230,6 +247,7 @@ def main():
     parser.add_argument("--run-id", required=True, help="例: 2026-10-10-morning")
     parser.add_argument("--draft-only", action="store_true")
     parser.add_argument("--verify-only", action="store_true", help="再投稿せず公開済み記事を確認する")
+    parser.add_argument("--inspect-editor", action="store_true", help="記事編集の操作名だけを確認する")
     args = parser.parse_args()
     lock = args.output / ".publisher.lock"
     locked = False
@@ -238,7 +256,9 @@ def main():
         os.close(fd)
         locked = True
         config = json.loads((ROOT / "config.json").read_text())
-        if args.verify_only:
+        if args.inspect_editor:
+            inspect_editor(args.output, args.run_id)
+        elif args.verify_only:
             verify_saved_publication(args.output, config, args.run_id)
         else:
             publish(args.output, config, args.run_id, args.draft_only)
