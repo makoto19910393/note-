@@ -54,7 +54,8 @@ def verify_topic_novelty(article, config, state, output):
                         "同じ会社・製品でも別の具体的な新発表ならfalse。既報への具体的な新展開が"
                         "本文と新しい資料に明記されている場合だけfalseにできる。判断理由を日本語で述べる。",
         "input": json.dumps({"candidate": article, "previous": previous}, ensure_ascii=False),
-        "max_output_tokens": 1500,
+        "max_output_tokens": 3000,
+        "reasoning": {"effort": "low"},
         "text": {"format": {"type": "json_schema", "name": "topic_novelty", "strict": True,
                              "schema": {"type": "object", "additionalProperties": False,
                                         "properties": {"duplicate": {"type": "boolean"}, "reason": {"type": "string"}},

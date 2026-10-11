@@ -106,10 +106,64 @@ def inspect_editor(output, run_id):
             browser.close()
 
 
+def withdraw_duplicate(output, config, run_id):
+    """Return only our verified accidental duplicate No.2 to draft."""
+    from playwright.sync_api import sync_playwright
+    state_path = output / "state.json"
+    state = json.loads(state_path.read_text())
+    record = pick_article(state, run_id)
+    if record.get("number") != 2 or record.get("note_url") != "https://note.com/quiet_spirea2390/n/nbf9f9dd8769e":
+        raise WorkflowError("重複記事No.2以外の公開状態は変更しません。")
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=os.environ.get("NOTE_HEADLESS", "true") != "false")
+        try:
+            context = browser.new_context(storage_state=json.loads(os.environ["NOTE_STORAGE_STATE"]))
+            page = context.new_page()
+            page.goto("https://note.com/notes", wait_until="domcontentloaded")
+            link = page.locator("a[href*='nbf9f9dd8769e']").first
+            link.wait_for(state="visible")
+            row = link.locator("xpath=ancestor::li[1]")
+            if record["title"] not in row.inner_text():
+                raise WorkflowError("重複記事の管理行が一致しません。")
+            row.get_by_role("button").click()
+            page.get_by_role("menuitem", name="下書きに戻す", exact=True).click()
+            try:
+                confirm = page.get_by_role("button", name="下書きに戻す", exact=True)
+                confirm.wait_for(state="visible", timeout=5000)
+                confirm.click()
+            except Exception:
+                print("下書き戻しの確認ボタン:", json.dumps(page.get_by_role("dialog").get_by_role("button").all_text_contents(), ensure_ascii=False))
+            public = browser.new_context()
+            check = public.new_page()
+            deadline = time.monotonic() + 30
+            unavailable = False
+            while time.monotonic() < deadline:
+                response = check.goto(record["note_url"], wait_until="domcontentloaded", timeout=15000)
+                if response and response.status in (404, 410):
+                    unavailable = True
+                    break
+                check.wait_for_timeout(2000)
+            if not unavailable:
+                raise WorkflowError("重複記事が非公開になったことを確認できません。状態は変更しません。")
+            page.goto(record["note_editor_url"], wait_until="domcontentloaded")
+            title = page.locator("textarea[placeholder='記事タイトル'], input[placeholder='記事タイトル']").first
+            title.wait_for(state="visible")
+            if title.input_value() != record["title"]:
+                raise WorkflowError("下書きの保全を確認できません。")
+            update_record(state_path, state, record, status="withdrawn_duplicate", note_posted=False,
+                          original_run_id=run_id, run_id=run_id + "-withdrawn",
+                          withdrawn_at=datetime.now(ZoneInfo(config["timezone"])).isoformat())
+            print("重複記事No.2を下書きに戻しました。原稿は保全され、公開URLは404です。")
+        finally:
+            browser.close()
+
+
 def publish(output, config, run_id, dry_run=False, before_publish=None):
     state_path = output / "state.json"
     state = json.loads(state_path.read_text())
     record = pick_article(state, run_id)
+    if record["status"] == "withdrawn_duplicate":
+        raise WorkflowError("重複により下書きに戻した記事は再公開しません。")
     if record.get("note_posted"):
         print("この原稿はnoteに公開済みです。再投稿しません。")
         return
@@ -263,6 +317,7 @@ def main():
     parser.add_argument("--draft-only", action="store_true")
     parser.add_argument("--verify-only", action="store_true", help="再投稿せず公開済み記事を確認する")
     parser.add_argument("--inspect-editor", action="store_true", help="記事編集の操作名だけを確認する")
+    parser.add_argument("--withdraw-duplicate", action="store_true")
     args = parser.parse_args()
     lock = args.output / ".publisher.lock"
     locked = False
@@ -271,7 +326,9 @@ def main():
         os.close(fd)
         locked = True
         config = json.loads((ROOT / "config.json").read_text())
-        if args.inspect_editor:
+        if args.withdraw_duplicate:
+            withdraw_duplicate(args.output, config, args.run_id)
+        elif args.inspect_editor:
             inspect_editor(args.output, args.run_id)
         elif args.verify_only:
             verify_saved_publication(args.output, config, args.run_id)

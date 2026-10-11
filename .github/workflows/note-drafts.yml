@@ -30,6 +30,11 @@ on:
         type: boolean
         default: false
 
+      withdraw_duplicate:
+        description: 誤って重複公開したNo.2だけを下書きへ戻す
+        type: boolean
+        default: false
+
 permissions:
   contents: write
 
@@ -82,9 +87,12 @@ jobs:
           NOTE_HEADLESS: 'false'
           EXISTING_RUN_ID: ${{ github.event.inputs.run_id }}
           VERIFY_PUBLIC_ONLY: ${{ github.event.inputs.verify_only || 'false' }}
+          WITHDRAW_DUPLICATE: ${{ github.event.inputs.withdraw_duplicate || 'false' }}
           INSPECT_EDITOR_ONLY: ${{ github.event.inputs.inspect_editor || 'false' }}
         run: |
-          if [ "$INSPECT_EDITOR_ONLY" = "true" ]; then
+          if [ "$WITHDRAW_DUPLICATE" = "true" ]; then
+            xvfb-run -a python publisher.py --run-id "$EXISTING_RUN_ID" --withdraw-duplicate
+          elif [ "$INSPECT_EDITOR_ONLY" = "true" ]; then
             xvfb-run -a python publisher.py --run-id "$EXISTING_RUN_ID" --inspect-editor
           elif [ "$VERIFY_PUBLIC_ONLY" = "true" ]; then
             xvfb-run -a python publisher.py --run-id "$EXISTING_RUN_ID" --verify-only
