@@ -720,5 +720,6 @@
   "trend_selection": {
     "enabled": true
   },
-  "research_first": true
+  "research_first": true,
+  "editorial_audit": true
 }

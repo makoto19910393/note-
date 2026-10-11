@@ -535,6 +535,9 @@ def run(slot, output, config, now=None, fixture=None, run_date=None, run_id=None
                                        '## '+heading,article['body'])
             try:
                 urls = validate_article(article, evidence, config, state, now)
+                if config.get("research_first") and config.get("editorial_audit") and not fixture:
+                    from editorial_audit import audit
+                    audit(article,data,config["model"])
                 verify_topic_novelty(article, config, state, output)
                 break
             except APIError:
