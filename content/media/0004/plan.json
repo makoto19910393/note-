@@ -91,24 +91,24 @@
       ],
       "prompt": "Two balanced large cards. Everyday icons. State this is the author’s explanation, not a company statement. No extra bullets.",
       "filename": "diagram245.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 2,
       "artifact_run_id": "38108203018",
-      "sha256": "e563ebaea2198c91c475784973c57178b0c6d735753e519996124d22ae670535",
+      "sha256": "d2e45bd631fcac3b47a57304521f3454a74d6cfc60442015319d28bb914da775",
       "width": 1536,
       "height": 864,
       "usage": {
-        "input_tokens": 257,
+        "input_tokens": 333,
         "input_tokens_details": {
           "image_tokens": 0,
-          "text_tokens": 257
+          "text_tokens": 333
         },
         "output_tokens": 280,
         "output_tokens_details": {
           "image_tokens": 280,
           "text_tokens": 0
         },
-        "total_tokens": 537
+        "total_tokens": 613
       },
       "review": {
         "approved": false,
