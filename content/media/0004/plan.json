@@ -165,24 +165,24 @@
       ],
       "prompt": "Three simple checklist rows and a prominent author suggestion label. No extra explanatory text.",
       "filename": "diagram247.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 2,
       "artifact_run_id": "38108203018",
-      "sha256": "e77ae13a6942fb3d5d0713be9fd6f232202e89f5fce490a7ab387d411ae0bda2",
+      "sha256": "8f8229061d633e770f205424eff5da699a8de1c32ad4f5133c07258396cdbcac",
       "width": 1536,
       "height": 864,
       "usage": {
-        "input_tokens": 248,
+        "input_tokens": 309,
         "input_tokens_details": {
           "image_tokens": 0,
-          "text_tokens": 248
+          "text_tokens": 309
         },
         "output_tokens": 280,
         "output_tokens_details": {
           "image_tokens": 280,
           "text_tokens": 0
         },
-        "total_tokens": 528
+        "total_tokens": 589
       },
       "review": {
         "approved": false,
