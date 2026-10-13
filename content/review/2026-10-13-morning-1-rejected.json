@@ -1,0 +1,194 @@
+{
+  "status": "rejected_not_published",
+  "reason": "校閲で修正が必要です: 本文中に『【ここに図解①を挿入』などの画像作成指示が残っています。記事本文には作成指示を残さないでください。図解の場所は編集用メモに置き換えるか削除してください。; 記事内の画像ラベル・プロンプトに『筆者の提案・意見』が反映されていません。本文で示した私見（例：公開と同時に再現性担保の手順が必要等）を画像にも明記してください（画像キャプションに『筆者の見解を含む』等の短い注記を入れる）。; 本文は概ね事実と私見を分けていますが、冒頭の要約や図解案に『未検証多数』等の表現があるため、未確認の正確性についてさらに明確に注意喚起する文言を一文追加してください（例：『個別の証明は第三者による検証を要する』）。; タイトルは適切ですが初心者向けに専門用語の説明（例：『未解決問題＝これまで解かれていない公知の数学問題』）が十分に入っているか確認してください。必要ならタイトル下に短い補足行を加えてください。; 記事の地域タグは『海外』で問題ありませんが、本文中で参照する報道や声明が英語圏発である旨（『英語圏の報道・声明に基づく』）を明記してください。; previous欄の過去記事群と重複がないことは確認できましたが、念のため記事末に『過去の当編集部の報道との重複はありません』と短く明記してください。",
+  "article": {
+    "title": "【海外AI解説】OpenAIが722本の数学原稿を公開、372件の未解決問題に対する解答を含む大量公開と学術界の反発",
+    "sources": [
+      {
+        "title": "Has OpenAI started the 'mathpocalypse'? Experts say AI's solving of iconic math problems may cause huge issues in the long run",
+        "url": "https://www.techradar.com/pro/has-openai-started-the-mathpocalypse-experts-say-ais-solving-of-iconic-math-problems-may-cause-huge-issues-in-the-long-run",
+        "published_at": "2026-10-12T00:00:00+00:00",
+        "supports": "件数（722本の原稿、372の未解決問題）や、公開に対する学術界の反発（Terence Taoの再掲など）を報じる。"
+      },
+      {
+        "title": "AHM Statement on OpenAI’s October 6 Release of Mathematical Documents — Statements (Association for Human Mathematics)",
+        "url": "https://www.ahmath.org/statements",
+        "published_at": "2026-10-07T00:00:00+00:00",
+        "supports": "AHMの公式声明本文を掲載。OpenAIの2026年10月6日の公開を明示的に非難し、研究者へ協力停止を呼びかけている。"
+      },
+      {
+        "title": "OpenAI sparks 'mathpocalypse' as it publishes full or partial solutions to 372 outstanding problems",
+        "url": "https://news.sky.com/story/openai-sparks-mathpocalypse-as-it-publishes-full-or-partial-solutions-to-372-outstanding-problems-13596633",
+        "published_at": "2026-10-08T00:00:00+00:00",
+        "supports": "TechRadarと同様にOpenAIの大量公開（722件の原稿、372件の問題）と学界の反応を伝える報道。"
+      }
+    ],
+    "sections": {
+      "intro": "OpenAIが10月6日にGitHubなどで数学関連の原稿を一括公開したと伝えられています。公開されたファイルは722本、うち372件が“未解決問題”への完全または部分的な解答を含むと報じられ、学術団体や研究者の強い反発を招いています。本稿は確認できた情報に基づき、何が起きたか、何が問題視されているかをやさしく整理します。",
+      "conclusions": [
+        "OpenAIは2026年10月6日に数学文書の大量公開を行ったと複数報道が確認している（722本、372件の未解決問題に関する解答を含む）。",
+        "学術団体AHMは公開方法を批判し、研究者へOpenAIとの協力停止を呼びかけている。声明では公開の規模や意図を問題視している。",
+        "個々の解答の正確さや再現性、生成過程の詳細は現時点で十分に検証されておらず、不確定な点が残る。",
+        "この出来事は研究文化や公開の在り方、AIと学術の関係の議論を加速させる可能性があるが、長期的影響はまだ予測できない。"
+      ],
+      "explanations": [
+        {
+          "heading": "### 何が公開されたのか（事実）",
+          "content": "報道とAHMの声明によれば、OpenAIは数学に関する原稿を一括で公開しました。TechRadarやSky Newsは公開数を722件、うち372件が従来「未解決」とされてきた問題への完全または部分的な解答を含むと報じています。AHMは公開日を2026年10月6日と明記しており、公開の事実自体は複数の信頼できる情報源で確認できます。個々の原稿の内容や解法の正しさは、各報道や声明の範囲外であり、多くは第三者による検証が行われていない点に注意が必要です。"
+        },
+        {
+          "heading": "### 学術界が何に反発しているのか（争点）",
+          "content": "AHMの声明では、一括公開の“やり方”が強く批判されています。声明は「700以上のファイルを一度に公開することは学術的示威ではなく権力の示威である」と指摘し、透明性や検証可能性、共同研究の倫理性などを問題にしています。報道は著名研究者の反応や再掲（例：Terence Taoの動き）も伝えており、学術的な検証プロセスをすっ飛ばした印象や、組織的利得（注目や影響力）を目的とした公開ではないかという懸念が広がっています。"
+        },
+        {
+          "heading": "### 何が未確定なのか（検証と再現性）",
+          "content": "公開された原稿群について、個別の証明が独立に査読・検証され正しいと断定されたかは不明です。TechRadar等も多くが未検証であると記載しています。また、これらの成果が内部で訓練されたモデルによる生成か、あるいは既存の人間の研究を基にしたものか、生成過程や計算履歴の再現可能性は公開資料からは明らかになっていません。したがって、当面は「公開された主張がそのまま正しい」とは見なせません。"
+        },
+        {
+          "heading": "### 今後どうなるか（短期的な影響）",
+          "content": "短期的には学術界での対話と検証が進む見込みです。AHMの呼びかけは研究者にOpenAIとの協力停止を促すもので、共同研究や資金面での関係に影響を与える可能性があります。一方で、公開物の中に有益なアイデアや手法が含まれていれば、迅速に検証され一部は吸収されるでしょう。長期的影響については、研究文化や評価基準、公開のルール作りといった制度的議論が必要であり、現時点で確定的な結論は出せません。"
+        }
+      ],
+      "personal_view": "私見としては、技術の進展自体は歓迎すべきですが『誰が、どのように、なぜ』という公開の文脈が重要だと感じます。大量一括公開はスピードやスケールを示せますが、学術の信頼性や検証のプロセスを軽視すると、結果的に研究コミュニティの混乱や対立を招きやすい。理想は公開と同時に再現性を担保する手順や外部査読の仕組みが整うことです。",
+      "faq": [
+        {
+          "question": "Q1: これらの解答は本当に正しいのですか？",
+          "answer": "A1: 現時点では個々の解答が独立に検証されたという報告は限定的です。報道は多くが未検証であると伝えており、正確性は専門家の査読や再現検証を待つ必要があります。"
+        },
+        {
+          "question": "Q2: OpenAIは何のために大量公開したのですか？",
+          "answer": "A2: 公開の意図についてOpenAI側の詳細説明が確認できないため断定はできません。報道は注目や影響力の獲得、研究結果の共有など複数の解釈を示していますが、公式な説明は確認できません。"
+        },
+        {
+          "question": "Q3: 一般の人や学生には関係ありますか？",
+          "answer": "A3: 直接の影響は限定的ですが、長期的には研究のやり方や教育カリキュラム、数学研究の評価基準に影響を及ぼす可能性があります。基本的には検証済みの結果に基づく学習を続けることが重要です。"
+        },
+        {
+          "question": "Q4: AHMの声明は数学界の総意ですか？",
+          "answer": "A4: AHMは声明を出していますが、その声明が数学界全体の総意を代表するかは不明です。AHMの呼びかけは影響力を持ち得ますが、各学会や研究者個人の立場は異なります。"
+        }
+      ],
+      "summary": "OpenAIによる722件の数学原稿（372件の未解決問題への解答含む）の大量公開は、事実として複数の報道とAHMの声明で確認されています。しかし、個別の解答の正確性や生成過程の再現性は未確定です。学術界からは公開方法に対する強い反発があり、今後は検証作業と議論が進む見込みです。読者は『公開された主張＝確定した成果』と短絡せず、専門家による検証を待つ姿勢が大切です。"
+    },
+    "images": [
+      {
+        "number": 0,
+        "anchor": "",
+        "theme": "サムネイル：事件の全体像",
+        "labels": [
+          "OpenAI",
+          "722本の原稿",
+          "372件の未解決問題",
+          "学術界の反発"
+        ],
+        "prompt": "16:9 横長、濃紺の背景にシアンと白・黄色の太い短い日本語を立体的に配置。中心に大きな「OpenAI」と書かれ、その周囲に「722本」「372件」「公開」のラベルをシアンで囲む。右下に小さく赤で「学術界の反発」と配置。余白を広く、読みやすい太文字で視覚的衝撃を出す。"
+      },
+      {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜図解①：公開されたファイルの内訳（概要）】",
+        "theme": "図解①：公開されたファイルの内訳（概要）",
+        "labels": [
+          "総数722本",
+          "未解決問題への解答372件",
+          "その他の原稿",
+          "未検証多数"
+        ],
+        "prompt": "16:9、黒に近い濃紺背景、シアンと白・黄色で短い日本語ラベル。左側に大きなファイルアイコン群（スタック）を配置し、上に「722」と表示。右側に分岐線で「372（未解決への解答）」と「その他」を示す。各要素は立体感を持たせ、広い余白で情報を整理。"
+      },
+      {
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜図解②：学術界の主な懸念点】",
+        "theme": "図解②：学術界の主な懸念点",
+        "labels": [
+          "透明性の欠如",
+          "再現性の不明",
+          "公開の意図と倫理",
+          "協力停止の呼びかけ"
+        ],
+        "prompt": "16:9、濃紺背景に大きな四つのアイコンを横並びに配置。各アイコン下にシアンの短い日本語キャプション（例：透明性の欠如）。アイコンは立体感を持たせ、白と黄色のアクセントで視線を誘導。余白を重視。"
+      },
+      {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜図解③：検証フローと未確定要素】",
+        "theme": "図解③：検証フローと未確定要素",
+        "labels": [
+          "公開",
+          "第三者による査読",
+          "再現検証",
+          "承認/否定",
+          "時間がかかる"
+        ],
+        "prompt": "16:9、濃紺背景。左から右へ流れる矢印で検証フローを示す図。各ステップは立体的なボックスで、上に短い日本語（公開、査読、再現、承認/否定）。未確定要素は黄色で強調。読みやすい配置と広い余白。"
+      },
+      {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜図解④：今後の注目ポイント（対話と制度）】",
+        "theme": "図解④：今後の注目ポイント（対話と制度）",
+        "labels": [
+          "研究者の対応",
+          "公開ルールの整備",
+          "再現性基準",
+          "教育への影響"
+        ],
+        "prompt": "16:9、濃紺背景、中央に円形のハブと4本の放射線で注目点を示すレイアウト。各放射線の先に短い日本語ラベル（上記）。色はシアンと黄色のアクセント、全体に立体感を付与し余白を確保。"
+      }
+    ],
+    "hashtags": [
+      "#OpenAI",
+      "#数学公開",
+      "#mathpocalypse",
+      "#AHM",
+      "#再現性",
+      "#学術倫理",
+      "#AI研究",
+      "#公開ルール",
+      "#研究文化",
+      "#検証待ち",
+      "#数学界",
+      "#AIと学術"
+    ],
+    "threads": "OpenAIが722本の数学原稿を公開、372件に解答含むと報道。学術団体が公開方法を批判、研究の検証と公開ルールが問われています。あなたはどこまでを信頼しますか？",
+    "body": "OpenAIが10月6日にGitHubなどで数学関連の原稿を一括公開したと伝えられています。公開されたファイルは722本、うち372件が“未解決問題”への完全または部分的な解答を含むと報じられ、学術団体や研究者の強い反発を招いています。本稿は確認できた情報に基づき、何が起きたか、何が問題視されているかをやさしく整理します。\n\n---\n\n## 30秒で結論\n\n- OpenAIは2026年10月6日に数学文書の大量公開を行ったと複数報道が確認している（722本、372件の未解決問題に関する解答を含む）。\n- 学術団体AHMは公開方法を批判し、研究者へOpenAIとの協力停止を呼びかけている。声明では公開の規模や意図を問題視している。\n- 個々の解答の正確さや再現性、生成過程の詳細は現時点で十分に検証されておらず、不確定な点が残る。\n- この出来事は研究文化や公開の在り方、AIと学術の関係の議論を加速させる可能性があるが、長期的影響はまだ予測できない。\n\n---\n\n## 何が公開されたのか（事実）\n\n報道とAHMの声明によれば、OpenAIは数学に関する原稿を一括で公開しました。TechRadarやSky Newsは公開数を722件、うち372件が従来「未解決」とされてきた問題への完全または部分的な解答を含むと報じています。AHMは公開日を2026年10月6日と明記しており、公開の事実自体は複数の信頼できる情報源で確認できます。個々の原稿の内容や解法の正しさは、各報道や声明の範囲外であり、多くは第三者による検証が行われていない点に注意が必要です。\n\n【ここに図解①を挿入｜図解①：公開されたファイルの内訳（概要）】\n\n---\n\n## 学術界が何に反発しているのか（争点）\n\nAHMの声明では、一括公開の“やり方”が強く批判されています。声明は「700以上のファイルを一度に公開することは学術的示威ではなく権力の示威である」と指摘し、透明性や検証可能性、共同研究の倫理性などを問題にしています。報道は著名研究者の反応や再掲（例：Terence Taoの動き）も伝えており、学術的な検証プロセスをすっ飛ばした印象や、組織的利得（注目や影響力）を目的とした公開ではないかという懸念が広がっています。\n\n【ここに図解②を挿入｜図解②：学術界の主な懸念点】\n\n---\n\n## 何が未確定なのか（検証と再現性）\n\n公開された原稿群について、個別の証明が独立に査読・検証され正しいと断定されたかは不明です。TechRadar等も多くが未検証であると記載しています。また、これらの成果が内部で訓練されたモデルによる生成か、あるいは既存の人間の研究を基にしたものか、生成過程や計算履歴の再現可能性は公開資料からは明らかになっていません。したがって、当面は「公開された主張がそのまま正しい」とは見なせません。\n\n【ここに図解③を挿入｜図解③：検証フローと未確定要素】\n\n---\n\n## 今後どうなるか（短期的な影響）\n\n短期的には学術界での対話と検証が進む見込みです。AHMの呼びかけは研究者にOpenAIとの協力停止を促すもので、共同研究や資金面での関係に影響を与える可能性があります。一方で、公開物の中に有益なアイデアや手法が含まれていれば、迅速に検証され一部は吸収されるでしょう。長期的影響については、研究文化や評価基準、公開のルール作りといった制度的議論が必要であり、現時点で確定的な結論は出せません。\n\n【ここに図解④を挿入｜図解④：今後の注目ポイント（対話と制度）】\n\n---\n\n## 私の正直な感想\n\n私見としては、技術の進展自体は歓迎すべきですが『誰が、どのように、なぜ』という公開の文脈が重要だと感じます。大量一括公開はスピードやスケールを示せますが、学術の信頼性や検証のプロセスを軽視すると、結果的に研究コミュニティの混乱や対立を招きやすい。理想は公開と同時に再現性を担保する手順や外部査読の仕組みが整うことです。\n\n---\n\n## よくある質問\n\n### Q1: これらの解答は本当に正しいのですか？\n\nA1: 現時点では個々の解答が独立に検証されたという報告は限定的です。報道は多くが未検証であると伝えており、正確性は専門家の査読や再現検証を待つ必要があります。\n\n### Q2: OpenAIは何のために大量公開したのですか？\n\nA2: 公開の意図についてOpenAI側の詳細説明が確認できないため断定はできません。報道は注目や影響力の獲得、研究結果の共有など複数の解釈を示していますが、公式な説明は確認できません。\n\n### Q3: 一般の人や学生には関係ありますか？\n\nA3: 直接の影響は限定的ですが、長期的には研究のやり方や教育カリキュラム、数学研究の評価基準に影響を及ぼす可能性があります。基本的には検証済みの結果に基づく学習を続けることが重要です。\n\n### Q4: AHMの声明は数学界の総意ですか？\n\nA4: AHMは声明を出していますが、その声明が数学界全体の総意を代表するかは不明です。AHMの呼びかけは影響力を持ち得ますが、各学会や研究者個人の立場は異なります。\n\n---\n\n## まとめ\n\nOpenAIによる722件の数学原稿（372件の未解決問題への解答含む）の大量公開は、事実として複数の報道とAHMの声明で確認されています。しかし、個別の解答の正確性や生成過程の再現性は未確定です。学術界からは公開方法に対する強い反発があり、今後は検証作業と議論が進む見込みです。読者は『公開された主張＝確定した成果』と短絡せず、専門家による検証を待つ姿勢が大切です。\n\n---\n\n## この記事について\n\n確認日：2026年10月13日（日本時間）。公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。\n\n---\n\n## 参考リンク\n\n- [Has OpenAI started the 'mathpocalypse'? Experts say AI's solving of iconic math problems may cause huge issues in the long run](https://www.techradar.com/pro/has-openai-started-the-mathpocalypse-experts-say-ais-solving-of-iconic-math-problems-may-cause-huge-issues-in-the-long-run)\n- [AHM Statement on OpenAI’s October 6 Release of Mathematical Documents — Statements (Association for Human Mathematics)](https://www.ahmath.org/statements)\n- [OpenAI sparks 'mathpocalypse' as it publishes full or partial solutions to 372 outstanding problems](https://news.sky.com/story/openai-sparks-mathpocalypse-as-it-publishes-full-or-partial-solutions-to-372-outstanding-problems-13596633)"
+  },
+  "evidence": [
+    "https://aeriontechnology.com/science/general/the-ai-mathpocalypse-artificial-intelligence-systems-crack-hundreds-of-unsolved-problems/ar-AA2dTTLk?ocid=verticals-feeds",
+    "https://blinkystar.com/t/ahm-openai-10-6/3648",
+    "https://breadcrumb.news/event/a4654c04-e106-4bb6-8142-7efa1e0c1627/openai-releases-hundreds-of-mathematical-proofs-stunning-and",
+    "https://exobrain.beehiiv.com/p/exobrain-weekly-ai-news-a0ca",
+    "https://explainx.ai/blog/openai-722-math-manuscripts-github-repo-what-to-check-2026",
+    "https://gokawiil.com/article/353059",
+    "https://iapsop.com/archive/materials/progressive_thinker/progressive_thinker_v5_n150_oct_8_1892.pdf",
+    "https://news.sky.com/story/openai-sparks-mathpocalypse-as-it-publishes-full-or-partial-solutions-to-372-outstanding-problems-13596633",
+    "https://nl.headtopics.com/news/openai-s-ai-generated-proofs-spark-controversy-in-88642254",
+    "https://paperweb.news/tech/topic?cat=ai",
+    "https://pasqualepillitteri.it/en/news/21555/ahm-openai-demonstration-of-power",
+    "https://priorprobability.com/2026/10/09/no-scientific-publications-without-human-representation",
+    "https://sempermitto.com/articles/2026/10/09/openai-withdraws-three-math-papers-amidst-controversy",
+    "https://stanfordtechreview.com/articles/terence-tao-openai-who-owns-mathematics",
+    "https://theweek.com/tech/mathspocalypse-now-has-ai-made-maths-pointless",
+    "https://tildes.net/~science/1wdo/association_for_human_mathematics_statement_on_openais_october_6_release_of_mathematical_documents",
+    "https://www.ahmath.org",
+    "https://www.ahmath.org/agmai-comments",
+    "https://www.ahmath.org/members",
+    "https://www.ahmath.org/statements",
+    "https://www.aijcrnet.com/journals/Vol_2_No_10_October_2012/11.pdf",
+    "https://www.ainewscycle.com/story/openai-s-massive-release-of-ai-generated-proofs-reshapes-research-mathematics-004e19e3",
+    "https://www.exobrain.co.uk/newsletter/2026-10-09",
+    "https://www.index.hr/vijesti/clanak/ai-rijesio-probleme-koji-su-matematicare-mucili-desetljecima-ovo-je-apokalipsa/2844800.aspx?index_ref=naslovnica_vijesti_ostalo_d_0",
+    "https://www.neakriti.gr/kosmos/2204731_mathimatikos-armageddonas-apo-tin-tehniti-noimosyni-i-openai-anakoinose-lyseis-se",
+    "https://www.reddit.com/r/ArtificialInteligence/comments/1x1tbvd/openai_publishes_solutions_to_more_than_370",
+    "https://www.reddit.com/r/OpenAI/comments/1x0gqmb/fields_medalist_terence_tao_reposts_statement",
+    "https://www.reddit.com/r/OpenAI/comments/1x4ffsj/openais_latest_blow_to_mathematicians_they_have",
+    "https://www.reddit.com/r/accelerate/comments/1x0go83/terence_tao_reposts_statement_from_the",
+    "https://www.reddit.com/r/accelerate/comments/1x3h43l/in_3_of_the_18_math_subfields_we_track_more_than",
+    "https://www.reddit.com/r/aiwars/comments/1x0de33/removed",
+    "https://www.reddit.com/r/aiwars/comments/1x0q1we/about_association_for_human_mathematics_statement",
+    "https://www.reddit.com/r/aiwars/comments/1x1gr1v/mathematicians_too_followed_in_the_footsteps_of",
+    "https://www.reddit.com/r/aiwars/comments/1x2vdd0/a_handy_form_letter_if_you_need_to_do_math",
+    "https://www.reddit.com/r/antiai/comments/1x0cqjr/the_advisory_group_on_mathematics_and_artificial",
+    "https://www.reddit.com/r/artificial/comments/1x0gpxr/fields_medalist_terence_tao_reposts_statement",
+    "https://www.reddit.com/r/singularity/comments/1x451jy/which_one_is_it",
+    "https://www.techradar.com/pro/has-openai-started-the-mathpocalypse-experts-say-ais-solving-of-iconic-math-problems-may-cause-huge-issues-in-the-long-run",
+    "https://www.thinkfacility.com/blog/mathematicians-urge-stop-working-with-openai-math-release"
+  ]
+}
