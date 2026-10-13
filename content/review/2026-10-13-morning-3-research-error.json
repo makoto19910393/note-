@@ -1,0 +1,8 @@
+{
+  "status": "not_published",
+  "reason": "調べたニュースが指定の国内・海外枠に一致しません。別区分で穴埋めしません。",
+  "attempted_candidate_urls": [
+    "https://www.itmedia.co.jp/aiplus/article/2610/13/2000002199/",
+    "https://www.techradar.com/pro/ai-agents-are-great-at-writing-new-code-but-then-the-human-bottleneck-slows-everything-down"
+  ]
+}
