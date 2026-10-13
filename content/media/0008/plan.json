@@ -50,7 +50,7 @@
       ],
       "prompt": "16:9、濃紺背景にシアンのラインで区切った3ブロック図。左に大きく『722』の白文字、中央に『372ファミリー』、右に『Leanライブラリ』のアイコン風図。各ブロック下に短い黄色の注釈テキストを立体的に配置。広い余白を取り、読みやすく。",
       "filename": "diagram260.png",
-      "status": "review_pending",
+      "status": "rejected",
       "attempts": 2,
       "artifact_run_id": "38339135842",
       "sha256": "42cb488c16697e9aa39b7c2b2407e686e90699abaff7fa5f0d755cf712eb4e8a",
@@ -71,12 +71,10 @@
       },
       "review": {
         "approved": false,
-        "issues": "本文にない断定を削除してください。Leanライブラリ添付 — 記事本文にLeanライブラリが添付されたとは明記されていません。",
+        "issues": "指定の図解番号を大きく表示してください。",
         "observed_title": "図解①：公開物の内訳",
         "observed_diagram_label": "①",
-        "unsupported_claims": [
-          "Leanライブラリ添付 — 記事本文にLeanライブラリが添付されたとは明記されていません。"
-        ]
+        "unsupported_claims": []
       }
     },
     {
