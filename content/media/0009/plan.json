@@ -53,9 +53,25 @@
       ],
       "prompt": "16:9 濃紺背景、左側にチャット画面の簡易アイコン、右側にAPIコネクタのアイコン。中央上に白シアンの短い日本語『サービス構成』、下に箇条書き風で『チャット』『API』『複数モデル（報道:6）』『日本語最適化』を白と黄色の太字で配置。広い余白、立体感。注記は入れない。",
       "filename": "diagram264.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "38437960029"
+      "artifact_run_id": "38437960029",
+      "sha256": "178b9404dea15b49a6eb04f1d621c672e4926a38cb281c57674ebbcb98193998",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1844,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 336
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2922
+      }
     },
     {
       "number": 2,
