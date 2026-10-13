@@ -12,7 +12,7 @@
       ],
       "prompt": "16:9のサムネイル、濃紺背景（黒寄り）にシアンのアクセント。中央に太い白と黄色の日本語短文『数学文献722本を公開』を立体的に配置。下部に小さく『検証が先決』の黄色ラベル。広い余白、立体感のある影、シンプルな幾何学模様。ブランド名や未確認の画面は入れない。",
       "filename": "thumbnail.png",
-      "status": "generated",
+      "status": "review_pending",
       "attempts": 1,
       "artifact_run_id": "38339135842",
       "sha256": "221c57555dba42cc23e67aa8e05a220eed4aa9362eb1e4897e72b261c2af2a3b",
