@@ -1,0 +1,170 @@
+{
+  "status": "rejected_not_published",
+  "reason": "校閲で修正が必要です: 画像ラベル／プロンプトの修正：図解④（短期的な試し方ガイド）など筆者の提案を含む画像について、必ず画像上に『筆者の提案・参考例』等の明記を追加してください。具体的には図解④のラベルや中央上の短文に『筆者の提案（参考）』を追記すること。; 画像プロンプトの一貫性確認：図解群のうち助言・推奨を示す図（特に図解④）に限らず、本文の提案的内容を視覚化する画像には“公式画面ではない／提案（筆者）”の注記を明示してください（例：図解④と図解①のキャプションに短い注記を入れる）。",
+  "article": {
+    "title": "【国内AI学び】SB Intuitions（Sarashinaサービス）が国産生成AI『Sarashina』の無償ベータを公開",
+    "sources": [
+      {
+        "title": "国産AI「Sarashina」が無料で試せるWebサイト、ソフトバンク子会社が公開　6つのAIモデルが呼び出せるAPIも - ITmedia NEWS",
+        "url": "https://www.itmedia.co.jp/news/article/2610/13/2000002224/",
+        "published_at": "2026-10-13T00:00:00+09:00",
+        "supports": "記事本文でSB Intuitionsが10月13日にSarashinaサービスの無償ベータを公開し、ウェブのチャット機能と6つのモデルをAPIで提供すると報じている."
+      },
+      {
+        "title": "国産生成AI「Sarashina」を利用できる「Sarashinaサービス」の無償ベータ版を提供開始 | SB Intuitions プレスリリース",
+        "url": "https://www.sbintuitions.co.jp/news/press/20261013_01/",
+        "published_at": "2026-10-13T00:00:00+09:00",
+        "supports": "SB Intuitions公式のプレスリリース（2026年10月13日付）で、Sarashina3シリーズの6モデル名と無償ベータ提供、ウェブチャットおよびAPI公開を明記している."
+      }
+    ],
+    "sections": {
+      "intro": "SB Intuitions（ソフトバンクの子会社）が、国産生成AI『Sarashina』を使える『Sarashinaサービス』の無償ベータ版を2026年10月13日に公開しました。ウェブのチャットで対話や翻訳を試せ、API経由で6つのモデルが呼べます。",
+      "conclusions": [
+        "SB Intuitionsが国産生成AI『Sarashina』の無償ベータを一般公開した（2026-10-13）。",
+        "利用者はウェブのチャットで対話や翻訳を体験でき、APIで6モデル（mini、nano、embedding、rerank、guard、translate）を呼び出せる。",
+        "料金・商用条件、データ取り扱い、パフォーマンス比較など重要な詳細は未公表で、今後の発表を待つ必要がある。"
+      ],
+      "explanations": [
+        {
+          "heading": "公開されたもの：何が使えるか",
+          "content": "今回の発表でSB Intuitionsは、一般向けのウェブチャットを公開しました。ユーザーはブラウザ上でSarashinaと対話したり、翻訳機能を試したりできます。企業・開発者向けにはAPIも公開され、プレスリリースで名示された6種類のモデル（Sarashina3 mini、Sarashina3 nano、Sarashina3 embedding、Sarashina3 rerank、Sarashina3 guard、Sarashina3 translate）を呼び出せると明記されています。これにより、簡易なチャット体験からシステム統合まで幅広い用途での試用が可能になります。"
+        },
+        {
+          "heading": "なぜ注目か：国内開発の意味と流れ",
+          "content": "Sarashinaは日本国内で開発・提供される生成AIの一つで、これまでSB Intuitionsは段階的にSarashinaシリーズ（例：Sarashina2-70Bや企業向けのSarashina mini API提供）を公開してきました。今回の無償ベータ公開は、その流れの延長線上にあります。国産モデルの公開は、言語や業務慣習に合わせた利用、国内事業者との連携、法規やデータ保護の議論で利点が期待されるため、国内利用者や企業の試用の敷居が下がる点で注目されています。"
+        },
+        {
+          "heading": "現時点で公表されていない重要点",
+          "content": "公式発表と報道で明確になっていない点がいくつかあります。無償ベータ後の正式な料金体系や商用利用条件、APIの無料枠やレート制限、入力データの保持期間や学習への利用可否（利用者データが学習に使われるかどうか）といったプライバシー関連の取り扱い、独立ベンチマークによる性能比較、商用向けのSLA（稼働保証）や国内データセンターでの提供の有無などは未公表です。これらは利用の可否や導入判断に直結するため、企業は今後の公式発表を確認する必要があります。"
+        },
+        {
+          "heading": "実務でどう使えるか（短期的な利用イメージ）",
+          "content": "短期的には次のような使い方が考えられます。まずはウェブ版で対話や翻訳を試し、回答の日本語品質や応答傾向を確認します。APIは試作段階のプロトタイプや社内ツールの検証に向きます（例えば社内FAQの検索改善にembeddingモデルを使う、生成結果の再評価にrerankを試す、翻訳業務にtranslateを当てる）。ただし、商用利用や機密データを扱う用途では、データ保持や学習利用の扱いが未確定な点に注意が必要です。"
+        }
+      ],
+      "personal_view": "個人的には、国産生成AIを手軽に試せる選択肢が増えるのは歓迎です。特に日本語品質や国内事業者との連携・法規対応を重視する組織には試用の価値があります。一方で、商用導入を見据えるならば、データ利用ポリシーやSLAなど未公開情報の開示を待ってから進めるのが安全だと感じます。",
+      "faq": [
+        {
+          "question": "Sarashinaサービスは誰でも使えますか？",
+          "answer": "はい。プレスリリースと報道によれば、無償ベータとして一般公開され、ウェブ上のチャット機能は誰でも試せる形で提供されています。ただし、アカウント作成や利用規約はサイトで確認してください。"
+        },
+        {
+          "question": "どんなモデルがAPIで使えますか？",
+          "answer": "公式発表ではSarashina3シリーズの6モデルが列挙されています。具体名はSarashina3 mini、Sarashina3 nano、Sarashina3 embedding、Sarashina3 rerank、Sarashina3 guard、Sarashina3 translateです。"
+        },
+        {
+          "question": "料金や商用利用はどうなりますか？",
+          "answer": "無償ベータの段階では、正式な料金体系や商用利用条件は公表されていません。これらは今後の発表を待つ必要があります。"
+        },
+        {
+          "question": "入力したデータは学習に使われますか？",
+          "answer": "現時点の公式発表・報道では、入力データの保持期間や学習利用の扱いに関する詳細は明示されていません。不明な点は公式ドキュメントや今後のリリースで確認してください。"
+        }
+      ],
+      "summary": "SB Intuitionsは2026年10月13日に国産生成AI『Sarashina』を一般向けに無償ベータ公開しました。ウェブチャットで対話・翻訳を試せ、APIで6種類のSarashina3モデルを呼べます。一方で料金体系やデータ利用など重要な詳細は未公表のため、商用利用を検討する際は今後の公式発表を注視してください。"
+    },
+    "images": [
+      {
+        "number": 0,
+        "anchor": "",
+        "theme": "サムネ：Sarashinaサービス公開",
+        "labels": [
+          "Sarashinaサービス",
+          "無償ベータ公開",
+          "SB Intuitions",
+          "2026-10-13",
+          "国産生成AI"
+        ],
+        "prompt": "16:9 横長、濃紺の背景にシアンのアクセント、太い白と黄色の短い日本語テキストで『Sarashinaサービス 無償ベータ公開』を中央に配置。右下にSB Intuitionsの簡潔なロゴ風マーク（抽象的、既存ブランドを模写しない）。広い余白、立体感のある影、シンプルでニュース速報風の構図。"
+      },
+      {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜図解①：公開内容の全体像】",
+        "theme": "図解①：公開内容の全体像",
+        "labels": [
+          "ウェブチャット",
+          "API",
+          "6モデル",
+          "対話・翻訳",
+          "試用可能"
+        ],
+        "prompt": "16:9、黒に近い濃紺背景、シアンのラインで左右に2つの大きなアイコンを配置（左:ブラウザ窓とチャット吹き出し、右:APIギアとコード断片）。中央上に白の短文『公開内容の全体像』、下に黄色の箇条書き風ラベル（ウェブチャット、6モデル、API）。広い余白、立体感、読みやすい配置。"
+      },
+      {
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜図解②：APIで呼べる6モデルの用途イメージ】",
+        "theme": "図解②：APIで呼べる6モデルの用途イメージ",
+        "labels": [
+          "mini/nano",
+          "embedding",
+          "rerank",
+          "guard",
+          "translate",
+          "用途別"
+        ],
+        "prompt": "16:9、濃紺背景にシアンと黄色のアイコンで6つの丸（2列3行）を並べ、それぞれに短い白文字ラベル（mini/nano、embedding、rerank、guard、translate、その他）。右側に簡潔な用途説明の吹き出し（例:検索改善、翻訳、ガード機能）。立体感と広い余白、読みやすさ重視。"
+      },
+      {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜図解③：注意点（未公表項目）】",
+        "theme": "図解③：注意点（未公表項目）",
+        "labels": [
+          "料金体系",
+          "データ利用",
+          "性能比較",
+          "SLA",
+          "確認が必要"
+        ],
+        "prompt": "16:9、ダークトーン背景に黄色の注意アイコンを左に大きく配置。右側に白い箇条書きで未公表の主要項目（料金体系、データ保持・学習利用、パフォーマンス比較、SLA）。シアンのラインで注意喚起を強調。視認性重視、余白たっぷり。"
+      },
+      {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜図解④：短期的な試し方ガイド】",
+        "theme": "図解④：短期的な試し方ガイド",
+        "labels": [
+          "まずはウェブで試す",
+          "APIは試作で利用",
+          "機密データは注意",
+          "公式発表を待つ"
+        ],
+        "prompt": "16:9、濃紺背景、左側にステップ形式の縦並びカード（ステップ1:ウェブで試す、ステップ2:APIでプロトタイプ、ステップ3:ポリシー確認）。カードはシアン縁取り、白背景の短い日本語テキスト、黄色の番号バッチ。広い余白で視線を誘導するレイアウト。"
+      }
+    ],
+    "hashtags": [
+      "#Sarashina",
+      "#SBIntuitions",
+      "#生成AI",
+      "#国産AI",
+      "#無償ベータ",
+      "#API",
+      "#機械翻訳",
+      "#日本語AI",
+      "#AIサービス",
+      "#データガバナンス",
+      "#AI開発",
+      "#テクノロジー"
+    ],
+    "threads": "SB Intuitionsが国産生成AI『Sarashina』の無償ベータを公開。ウェブで対話・翻訳を試せ、APIで6モデルが使える点は魅力。商用条件やデータ利用は未公表だが、まず何を試しますか？",
+    "body": "SB Intuitions（ソフトバンクの子会社）が、国産生成AI『Sarashina』を使える『Sarashinaサービス』の無償ベータ版を2026年10月13日に公開しました。ウェブのチャットで対話や翻訳を試せ、API経由で6つのモデルが呼べます。\n\n---\n\n## 30秒で結論\n\n- SB Intuitionsが国産生成AI『Sarashina』の無償ベータを一般公開した（2026-10-13）。\n- 利用者はウェブのチャットで対話や翻訳を体験でき、APIで6モデル（mini、nano、embedding、rerank、guard、translate）を呼び出せる。\n- 料金・商用条件、データ取り扱い、パフォーマンス比較など重要な詳細は未公表で、今後の発表を待つ必要がある。\n\n---\n\n## 公開されたもの：何が使えるか\n\n今回の発表でSB Intuitionsは、一般向けのウェブチャットを公開しました。ユーザーはブラウザ上でSarashinaと対話したり、翻訳機能を試したりできます。企業・開発者向けにはAPIも公開され、プレスリリースで名示された6種類のモデル（Sarashina3 mini、Sarashina3 nano、Sarashina3 embedding、Sarashina3 rerank、Sarashina3 guard、Sarashina3 translate）を呼び出せると明記されています。これにより、簡易なチャット体験からシステム統合まで幅広い用途での試用が可能になります。\n\n【ここに図解①を挿入｜図解①：公開内容の全体像】\n\n---\n\n## なぜ注目か：国内開発の意味と流れ\n\nSarashinaは日本国内で開発・提供される生成AIの一つで、これまでSB Intuitionsは段階的にSarashinaシリーズ（例：Sarashina2-70Bや企業向けのSarashina mini API提供）を公開してきました。今回の無償ベータ公開は、その流れの延長線上にあります。国産モデルの公開は、言語や業務慣習に合わせた利用、国内事業者との連携、法規やデータ保護の議論で利点が期待されるため、国内利用者や企業の試用の敷居が下がる点で注目されています。\n\n【ここに図解②を挿入｜図解②：APIで呼べる6モデルの用途イメージ】\n\n---\n\n## 現時点で公表されていない重要点\n\n公式発表と報道で明確になっていない点がいくつかあります。無償ベータ後の正式な料金体系や商用利用条件、APIの無料枠やレート制限、入力データの保持期間や学習への利用可否（利用者データが学習に使われるかどうか）といったプライバシー関連の取り扱い、独立ベンチマークによる性能比較、商用向けのSLA（稼働保証）や国内データセンターでの提供の有無などは未公表です。これらは利用の可否や導入判断に直結するため、企業は今後の公式発表を確認する必要があります。\n\n【ここに図解③を挿入｜図解③：注意点（未公表項目）】\n\n---\n\n## 実務でどう使えるか（短期的な利用イメージ）\n\n短期的には次のような使い方が考えられます。まずはウェブ版で対話や翻訳を試し、回答の日本語品質や応答傾向を確認します。APIは試作段階のプロトタイプや社内ツールの検証に向きます（例えば社内FAQの検索改善にembeddingモデルを使う、生成結果の再評価にrerankを試す、翻訳業務にtranslateを当てる）。ただし、商用利用や機密データを扱う用途では、データ保持や学習利用の扱いが未確定な点に注意が必要です。\n\n【ここに図解④を挿入｜図解④：短期的な試し方ガイド】\n\n---\n\n## 私の正直な感想\n\n個人的には、国産生成AIを手軽に試せる選択肢が増えるのは歓迎です。特に日本語品質や国内事業者との連携・法規対応を重視する組織には試用の価値があります。一方で、商用導入を見据えるならば、データ利用ポリシーやSLAなど未公開情報の開示を待ってから進めるのが安全だと感じます。\n\n---\n\n## よくある質問\n\n### Sarashinaサービスは誰でも使えますか？\n\nはい。プレスリリースと報道によれば、無償ベータとして一般公開され、ウェブ上のチャット機能は誰でも試せる形で提供されています。ただし、アカウント作成や利用規約はサイトで確認してください。\n\n### どんなモデルがAPIで使えますか？\n\n公式発表ではSarashina3シリーズの6モデルが列挙されています。具体名はSarashina3 mini、Sarashina3 nano、Sarashina3 embedding、Sarashina3 rerank、Sarashina3 guard、Sarashina3 translateです。\n\n### 料金や商用利用はどうなりますか？\n\n無償ベータの段階では、正式な料金体系や商用利用条件は公表されていません。これらは今後の発表を待つ必要があります。\n\n### 入力したデータは学習に使われますか？\n\n現時点の公式発表・報道では、入力データの保持期間や学習利用の扱いに関する詳細は明示されていません。不明な点は公式ドキュメントや今後のリリースで確認してください。\n\n---\n\n## まとめ\n\nSB Intuitionsは2026年10月13日に国産生成AI『Sarashina』を一般向けに無償ベータ公開しました。ウェブチャットで対話・翻訳を試せ、APIで6種類のSarashina3モデルを呼べます。一方で料金体系やデータ利用など重要な詳細は未公表のため、商用利用を検討する際は今後の公式発表を注視してください。\n\n---\n\n## この記事について\n\n確認日：2026年10月14日（日本時間）。公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。\n\n---\n\n## 参考リンク\n\n- [国産AI「Sarashina」が無料で試せるWebサイト、ソフトバンク子会社が公開　6つのAIモデルが呼び出せるAPIも - ITmedia NEWS](https://www.itmedia.co.jp/news/article/2610/13/2000002224/)\n- [国産生成AI「Sarashina」を利用できる「Sarashinaサービス」の無償ベータ版を提供開始 | SB Intuitions プレスリリース](https://www.sbintuitions.co.jp/news/press/20261013_01/)"
+  },
+  "evidence": [
+    "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YE76.pdf",
+    "https://links.sgx.com/FileOpen/SoftBank%20Corp_Final%20Offering%20Circular_Genesis%20%28with%20e-disclaimer%29.ashx?App=Prospectus&FileID=69574",
+    "https://www.dentsu.co.jp/en/news/item-cms/2025097-0925en.pdf",
+    "https://www.itmedia.co.jp/aiplus/article/2610/13/2000002210",
+    "https://www.itmedia.co.jp/news/article/2610/13/2000002224",
+    "https://www.kri.or.jp/know/img/pressrelease_20260226b.pdf",
+    "https://www.sbintuitions.co.jp/en/news",
+    "https://www.sbintuitions.co.jp/en/news/press/20260325_01",
+    "https://www.sbintuitions.co.jp/en/news/press/20260630_01",
+    "https://www.sbintuitions.co.jp/news/press/20261013_01",
+    "https://www.softbank.jp/biz/about/ai",
+    "https://www.softbank.jp/business/news/2026/0630-01",
+    "https://www.softbank.jp/corp/news/press/sbkk/2025/20251105_01",
+    "https://www.softbank.jp/corp/set/data/ir/documents/financial_reports/fy2025/pdf/sbkk_financial_report_20260209.pdf?202602_01=",
+    "https://www.softbank.jp/en/corp/news/press/sbkk/2025/20251029_01",
+    "https://www.softbank.jp/en/corp/news/press/sbkk/2025/20251105_01",
+    "https://www.softbank.jp/en/corp/set/data/ir/documents/integrated_reports/pdf/sbkk_integrated_report_2025_en.pdf",
+    "https://www.watch.impress.co.jp/docs/news/2147706.html"
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "next_number": 9,
+  "next_number": 10,
   "articles": [
     {
       "number": 1,
@@ -398,7 +398,44 @@
           "supports": "Independent news coverage summarizing OpenAI's release (722 manuscripts / 372 result families) and quoting community reactions and concerns about the broader implications. ([axios.com](https://www.axios.com/2026/10/08/openai-math-proofs-ai-model?utm_source=openai))"
         }
       ]
+    },
+    {
+      "number": 9,
+      "run_id": "2026-10-13-evening-2",
+      "title": "【国内AI学び】SB Intuitions「Sarashinaサービス」無償ベータ版を提供開始",
+      "created_at": "2026-10-14T02:21:50.979748+09:00",
+      "path": "articles/2026-10-13/0009-evening.md",
+      "sources": [
+        "https://ai.watch.impress.co.jp/docs/news/2147604.html",
+        "https://www.itmedia.co.jp/aiplus/article/2610/13/2000002210",
+        "https://www.sbintuitions.co.jp/news/press/20261013_01"
+      ],
+      "sha256": "8607d524a9a7bdcdeb0d83e0e3accbea9583452aeeb624df55fede52f281e67b",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "domestic",
+      "media_plan": "media/0009/plan.json",
+      "source_details": [
+        {
+          "title": "国産AI「Sarashina」を無料で試せる　ソフトバンク傘下が新サービスβ版　API・チャットに対応 - ITmedia AI＋",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2610/13/2000002210/",
+          "published_at": "2026-10-13T00:00:00+09:00",
+          "supports": "記事本文でSB Intuitionsが2026年10月13日に無償β提供を開始したこと、チャットとAPIで複数モデルを使える点、利用者フィードバックを収集する目的が記載されている."
+        },
+        {
+          "title": "国産生成AI「Sarashina」を利用できる「Sarashinaサービス」の無償ベータ版を提供開始 | SB Intuitions（公式プレスリリース）",
+          "url": "https://www.sbintuitions.co.jp/news/press/20261013_01/",
+          "published_at": "2026-10-13T00:00:00+09:00",
+          "supports": "SB Intuitionsの公式プレスリリースで10月13日のβ版提供開始、サービス構成（チャット・API）や目的（利用状況・フィードバック収集）を直接確認できる."
+        },
+        {
+          "title": "SB Intuitions、国産生成AIを使用可能「Sarashinaサービス」無償β版を提供開始 - AI Watch / Impress",
+          "url": "https://ai.watch.impress.co.jp/docs/news/2147604.html",
+          "published_at": "2026-10-13T00:00:00+09:00",
+          "supports": "第三報として同日付の技術ニュースが無償β提供の事実、モデル群や企業の位置づけ（ソフトバンク子会社）を補完している."
+        }
+      ]
     }
   ],
-  "next_diagram": 264
+  "next_diagram": 268
 }
