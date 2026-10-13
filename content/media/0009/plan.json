@@ -13,9 +13,25 @@
       ],
       "prompt": "16:9 濃紺の背景、中央に大きく白とシアンの太い短い日本語文字で『Sarashinaサービス 無償β版』、下部に小さく黄色で『SB Intuitions』。立体感のあるロゴ風処理、広い余白。モダンでシンプル、公式発表風のサムネ。",
       "filename": "thumbnail.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "38437960029"
+      "artifact_run_id": "38437960029",
+      "sha256": "a0158f07b1e3fac7858c62779bbaeaca0fc15a027dd566800e412c2686eaf36e",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1145,
+        "input_tokens_details": {
+          "image_tokens": 840,
+          "text_tokens": 305
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2223
+      }
     },
     {
       "number": 1,
