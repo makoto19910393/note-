@@ -1,5 +1,5 @@
 {
-  "next_number": 10,
+  "next_number": 11,
   "articles": [
     {
       "number": 1,
@@ -435,7 +435,44 @@
           "supports": "第三報として同日付の技術ニュースが無償β提供の事実、モデル群や企業の位置づけ（ソフトバンク子会社）を補完している."
         }
       ]
+    },
+    {
+      "number": 10,
+      "run_id": "2026-10-14-evening-3",
+      "title": "【海外AI解説】OpenAI — 研究員が本社会議室に隠し録音機を仕掛けた疑いで逮捕、社内AIで犯人特定と説明",
+      "created_at": "2026-10-14T23:53:50.680546+09:00",
+      "path": "articles/2026-10-14/0010-evening.md",
+      "sources": [
+        "https://apnews.com/article/7f512b2552ffcbbf8f1ebbb18f81a9ba",
+        "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-engineer-arrested-for-allegedly-planting-spy-device-in-office",
+        "https://www.justice.gov/usao-ndca/pr/saudi-national-arrested-installing-surreptitious-audio-recording-device-openai-san"
+      ],
+      "sha256": "5f60f23750936755c64bff7d520a448fc8cd0565de334ee08b1977d52bab53b1",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "overseas",
+      "media_plan": "media/0010/plan.json",
+      "source_details": [
+        {
+          "title": "OpenAI engineer arrested for allegedly planting spy device in office",
+          "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-engineer-arrested-for-allegedly-planting-spy-device-in-office/",
+          "published_at": "2026-10-13T18:33:00Z",
+          "supports": "Reports the arrest, DOJ allegations, OpenAI statement about using its models to investigate, and descriptive details about the discovered device."
+        },
+        {
+          "title": "Saudi National Arrested For Installing Surreptitious Audio Recording Device At OpenAI In San Francisco",
+          "url": "https://www.justice.gov/usao-ndca/pr/saudi-national-arrested-installing-surreptitious-audio-recording-device-openai-san",
+          "published_at": "2026-10-13T00:00:00Z",
+          "supports": "Official U.S. Attorney's Office press release (DOJ) with the criminal complaint summary, dates (device discovered Sept. 30, installed ~Sept. 28), arrest date (Oct. 9, 2026), and allegations about surveillance footage and evidence."
+        },
+        {
+          "title": "FBI arrests OpenAI employee accused of placing recording device in company conference room",
+          "url": "https://apnews.com/article/7f512b2552ffcbbf8f1ebbb18f81a9ba",
+          "published_at": "2026-10-13T00:00:00Z",
+          "supports": "Independent news reporting summarizing the DOJ complaint and arrest, corroborating timeline and key allegations."
+        }
+      ]
     }
   ],
-  "next_diagram": 268
+  "next_diagram": 272
 }
