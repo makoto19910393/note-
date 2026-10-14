@@ -54,7 +54,7 @@
       ],
       "prompt": "16:9、濃紺背景、左から右へ時系列の矢印。各ポイントに丸いアイコン（録音機、目のアイコン＝監視映像、警察バッジ）。矢印上に短い日本語ラベルをシアンと白で配置。右端に『逮捕』を黄色で強調。シンプルで読みやすい図解。",
       "filename": "diagram268.png",
-      "status": "review_pending",
+      "status": "rejected",
       "attempts": 1,
       "artifact_run_id": "38584514040",
       "sha256": "b0b6f1996ea1095b6208ec80d5cc1689b7aa3a268ca4158f92e66d1d29fccc7e",
@@ -72,6 +72,15 @@
           "text_tokens": 0
         },
         "total_tokens": 2914
+      },
+      "review": {
+        "approved": false,
+        "issues": "本文にない断定を削除してください。10/5 カメラ映像 — 本文にはカメラ映像の日付（10/5）の記載がないため、日付を断定する根拠が欠ける",
+        "observed_title": "発見と逮捕のタイムライン",
+        "observed_diagram_label": "①",
+        "unsupported_claims": [
+          "10/5 カメラ映像 — 本文にはカメラ映像の日付（10/5）の記載がないため、日付を断定する根拠が欠ける"
+        ]
       }
     },
     {
