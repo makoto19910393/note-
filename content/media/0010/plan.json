@@ -14,9 +14,25 @@
       ],
       "prompt": "16:9、濃紺背景にシアンと白の太い短い日本語、中央にOpenAIロゴ風の抽象的な丸いモチーフ（旧ロゴは使わない）、右側に小型のUSB型録音機のシルエット、左下に『会議室で発見』という白文字、右下に黄色の強調で『逮捕』と大きく配置。立体感と広い余白を確保し、プロっぽいニュースサムネ。",
       "filename": "thumbnail.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "38584514040"
+      "artifact_run_id": "38584514040",
+      "sha256": "2bacbed6aab6ff86908ace57ea72d4b42386d07ac5563300644cd6451c826786",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1182,
+        "input_tokens_details": {
+          "image_tokens": 840,
+          "text_tokens": 342
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2260
+      }
     },
     {
       "number": 1,
