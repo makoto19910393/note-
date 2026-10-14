@@ -1,0 +1,173 @@
+{
+  "status": "rejected_not_published",
+  "reason": "校閲で修正が必要です: 本文から『【ここに図解◯を挿入｜...】』などの作成指示（制作指示・挿入指示）をすべて削除すること。記事本文に制作指示が残っていると不合格です。; 画像ラベルのうち図解④（企業が今すぐ見直すべき対策）に必ず『※筆者の提案』と明記すること（画像が提案である旨を明示する必要があります）。; タイトルは分かりやすいが、記事冒頭か注釈で本文中に使う専門語（例：『内部解析（モデル）』『訴状』『暗号化された録音装置』等）を短く定義してAI初心者でも理解できるように明示すること。; 本文中の事実と筆者の意見が混在しないよう、既にある『私の正直な感想』等の意見部分は見出しと文体で明確に区切る（現状は分かれているが、さらに明瞭化してください）。; 画像のプロンプト／ラベルに事実を断定する表現（例：『発見：9月末報道』はOKだが、『設置日時確定』のような未確認断定を含めないこと）を避けること。",
+  "article": {
+    "title": "【海外AI解説】OpenAI：サンフランシスコ拠点で会議室に隠し録音機を設置、社員逮捕の一部始終",
+    "sources": [
+      {
+        "title": "OpenAI engineer arrested for allegedly planting spy device in office",
+        "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-engineer-arrested-for-allegedly-planting-spy-device-in-office/",
+        "published_at": "2026-10-13T00:00:00+00:00",
+        "supports": "Reports discovery of a sophisticated recording device in an OpenAI conference room; notes OpenAI used models to trace the device and referred the matter to the FBI; cites DOJ details and arrest."
+      },
+      {
+        "title": "Northern District of California | Saudi National Arrested For Installing Surreptitious Audio Recording Device At OpenAI",
+        "url": "https://www.justice.gov/usao-ndca/pr/saudi-national-arrested-installing-surreptitious-audio-recording-device-openai-san",
+        "published_at": "2026-10-13T00:00:00+00:00",
+        "supports": "Official Department of Justice press release summarizing the unsealed criminal complaint: identifies the arrested individual (Abdulrahman Alfozan), describes the device placement, related CCTV and chatbot-prompt allegations, arrest date (Oct 9, 2026), and that the conference room contained confidential meetings."
+      }
+    ],
+    "sections": {
+      "intro": "サンフランシスコのOpenAIオフィスで、重役用会議室に巧妙に隠された暗号化された録音装置が見つかり、会社の調査で特定された社員が逮捕されました。公式情報と司法発表を基に、何が起きたか・不確定な点・私たちが注意すべき点をわかりやすく整理します。",
+      "conclusions": [
+        "OpenAIの会議室で暗号化された録音デバイスが発見され、同社の内部解析を経て社員1名が特定され連邦当局に通報された。",
+        "逮捕されたのは35歳のサウジ国籍のエンジニア（司法発表ではAbdulrahman Alfozan）。9月下旬〜10月上旬の出来事を巡る刑事訴状が公表された（逮捕は10月9日）。",
+        "訴状は機器の設置場所や防犯カメラ映像、関連するチャットボットへのプロンプト投稿などを挙げるが、外部勢力の関与や録音が外部に送信されたか等は現時点で不明のまま。"
+      ],
+      "explanations": [
+        {
+          "heading": "何が見つかったのか（事実）",
+          "content": "司法省の発表と報道によると、OpenAIの重役が使用する会議室のテレビ裏のUSBポート付近に、暗号化・巧妙に隠されたオーディオ録音装置が設置されていました。会議室は機密研究やパートナー会議で通常使用されていたとされ、機器は専門家の確認で発見されました。発見日は9月末ごろと報告されています（出典: DOJ、報道）。"
+        },
+        {
+          "heading": "OpenAIの対応と捜査の流れ",
+          "content": "OpenAIは社内ツールやモデルを用いて機器の関連性を分析し、特定の従業員を指し示す結果を得て、連邦捜査当局に通報しました。その後、同社は当該社員を解雇し、FBIが関与して逮捕状執行へつながりました。司法発表は、会議室使用の様子を示すCCTV映像や、設置に関与したとされる人物の行動について記載しています。"
+        },
+        {
+          "heading": "訴状が示す追加の手がかりと未確定点",
+          "content": "訴状は、被疑者の配偶者に関連付けられたチャットボットアカウントから、録音機器の作り方や設置、難読化、遠隔アクセス、暗号化に関するプロンプトが送られていた期間（9月24〜30日）を挙げています。ただし、これらの事実が誰かの指示によるものか、または録音内容が外部に送信されたかどうかなど、外部関与や実際の情報流出の有無は現時点で確定していません。"
+        },
+        {
+          "heading": "私たちにとって何が変わるか（実務と教訓）",
+          "content": "企業の機微情報を扱う場では『物理的なセキュリティ』と『デジタル解析』の両面が重要です。今回のケースは、内部の解析能力を通じて懸念が早期に発見され、法執行につながった例です。一方で、設置の意図や範囲が未確定である以上、監視カメラの運用ルール、来訪者管理、デバイス検査のルーチン、職場でのチャットボット利用ポリシーなどの見直しが引き続き求められます。"
+        }
+      ],
+      "personal_view": "率直に言って、今回の事件は“内部の人間が物理的に設備を悪用する”というリスクを再確認させます。企業がAIや解析ツールで素早く手がかりを得られたのは良い一方で、未確定の点が残る限り、安易な結論は避けるべきです。私自身は、技術で問題を発見できる恩恵を評価しつつ、職場の信頼関係と透明なポリシー整備が同じくらい重要だと感じます。",
+      "faq": [
+        {
+          "question": "この事件で外部の政府が関与しているという証拠はありますか？",
+          "answer": "現時点で公開された訴状や報道は外部政府の指示・関与を確定するものではありません。訴状はいくつかの行為を指摘しますが、外部の関与は未確定です。"
+        },
+        {
+          "question": "録音が外部に送信されたかは分かりますか？",
+          "answer": "公開資料では、録音が外部に送信されたか、あるいはどのようなデータが回収できたかについては明記されていません。現時点では不明です。"
+        },
+        {
+          "question": "企業はどうすれば似たケースを防げますか？",
+          "answer": "物理的検査（会議室や設備の定期チェック）、厳格な入退室・来訪者管理、社内ツール利用のガバナンス、CCTV運用の改善、従業員教育と通報窓口の整備が有効です。"
+        },
+        {
+          "question": "OpenAIの内部解析がどの程度信用できる証拠になりますか？",
+          "answer": "企業の解析は捜査着手の重要なきっかけになりますが、刑事手続きでは法執行機関や裁判所による独立した検証が必要です。OpenAI自身の結論だけで最終的な有罪が確定するわけではありません。"
+        }
+      ],
+      "summary": "OpenAIの重役会議室で隠し録音装置が見つかり、同社の解析を受けて社員が連邦当局により逮捕されました。訴状は設置方法や関連行為を示しますが、外部関与や録音漏洩の有無など重要な点は未確定です。組織は物理・デジタル双方の対策を強化する必要があります。"
+    },
+    "images": [
+      {
+        "number": 0,
+        "anchor": "",
+        "theme": "サムネイル：事件の全体像",
+        "labels": [
+          "OpenAI会議室",
+          "隠し録音装置",
+          "逮捕",
+          "物理＋デジタル解析",
+          "注意喚起"
+        ],
+        "prompt": "16:9、濃紺〜黒背景、シアン・白・黄色の太い短い日本語テキスト（立体感）。中央に会議室のテレビ背面を示す簡略図、テレビ裏に小さな黒いデバイスのシルエット。左上に白で大きく「隠し録音発見」、右下にシアンで「OpenAI・逮捕」。広い余白、視認性重視、写真風ではなくフラットで立体的なグラフィック。"
+      },
+      {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜図解①：発見された機器の場所】",
+        "theme": "図解①：発見された機器の場所",
+        "labels": [
+          "テレビ裏",
+          "USBポート近傍",
+          "会議室レイアウト",
+          "機密会議使用",
+          "発見時期"
+        ],
+        "prompt": "16:9、濃紺背景、太いシアンと黄色の短い日本語ラベル。会議室平面図を簡潔に描き、テレビとテーブルの位置を示す。テレビ裏のUSBポート付近に赤い丸で機器を強調。右下に小さく「発見：9月末報道」。広い余白、図はフラットで読みやすく。"
+      },
+      {
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜図解②：OpenAIによる解析→通報の流れ】",
+        "theme": "図解②：OpenAIによる解析→通報の流れ",
+        "labels": [
+          "内部解析",
+          "モデル利用",
+          "従業員特定",
+          "FBI通報",
+          "解雇"
+        ],
+        "prompt": "16:9、黒〜濃紺背景、シアンの矢印で左から右へフロー図。左に「発見」、中央に「内部解析（モデル）」のアイコン、右に「FBI通報／逮捕」のアイコン。各段に短い白・黄色の日本語説明（例：「解析で関連性を特定」）。立体感あるボックスで視覚的に区切る。"
+      },
+      {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜図解③：訴状で指摘された補助証拠】",
+        "theme": "図解③：訴状で指摘された補助証拠",
+        "labels": [
+          "CCTV",
+          "チャットボットプロンプト",
+          "設置映像",
+          "日付範囲",
+          "関連行為"
+        ],
+        "prompt": "16:9、濃紺背景、複数の小アイコン（CCTVカメラ、チャット吹き出し、カレンダー）。それぞれに短い日本語ラベル（例：「CCTV: 目撃」・「チャット: 9/24–9/30」）。アイコン間は細いシアン線で結ぶ。強調色に黄色を使用。余白を十分に取る。"
+      },
+      {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜図解④：企業が今すぐ見直すべき対策】",
+        "theme": "図解④：企業が今すぐ見直すべき対策",
+        "labels": [
+          "物理検査",
+          "入退室管理",
+          "CCTV運用",
+          "ツール利用規定",
+          "従業員教育"
+        ],
+        "prompt": "16:9、濃紺背景、5つの縦並びアイコン（カギ、カードリーダー、カメラ、PCと盾、人物と吹き出し）に太い短い日本語ラベル。右側に短い説明テキスト（白）。全体はフラットだが立体感のあるボタン風デザインで、視認性重視。"
+      }
+    ],
+    "hashtags": [
+      "#OpenAI",
+      "#サイバーセキュリティ",
+      "#物理セキュリティ",
+      "#隠し録音",
+      "#FBI",
+      "#司法発表",
+      "#企業ガバナンス",
+      "#内部解析",
+      "#会議室セキュリティ",
+      "#プライバシー",
+      "#AIと安全",
+      "#組織リスク"
+    ],
+    "threads": "OpenAIの会議室で隠し録音装置が発見され社員逮捕。内部解析で発見→FBI通報までの流れが注目点。外部関与や録音流出は未確定ですが、企業で何を見直すべき？",
+    "body": "サンフランシスコのOpenAIオフィスで、重役用会議室に巧妙に隠された暗号化された録音装置が見つかり、会社の調査で特定された社員が逮捕されました。公式情報と司法発表を基に、何が起きたか・不確定な点・私たちが注意すべき点をわかりやすく整理します。\n\n---\n\n## 30秒で結論\n\n- OpenAIの会議室で暗号化された録音デバイスが発見され、同社の内部解析を経て社員1名が特定され連邦当局に通報された。\n- 逮捕されたのは35歳のサウジ国籍のエンジニア（司法発表ではAbdulrahman Alfozan）。9月下旬〜10月上旬の出来事を巡る刑事訴状が公表された（逮捕は10月9日）。\n- 訴状は機器の設置場所や防犯カメラ映像、関連するチャットボットへのプロンプト投稿などを挙げるが、外部勢力の関与や録音が外部に送信されたか等は現時点で不明のまま。\n\n---\n\n## 何が見つかったのか（事実）\n\n司法省の発表と報道によると、OpenAIの重役が使用する会議室のテレビ裏のUSBポート付近に、暗号化・巧妙に隠されたオーディオ録音装置が設置されていました。会議室は機密研究やパートナー会議で通常使用されていたとされ、機器は専門家の確認で発見されました。発見日は9月末ごろと報告されています（出典: DOJ、報道）。\n\n【ここに図解①を挿入｜図解①：発見された機器の場所】\n\n---\n\n## OpenAIの対応と捜査の流れ\n\nOpenAIは社内ツールやモデルを用いて機器の関連性を分析し、特定の従業員を指し示す結果を得て、連邦捜査当局に通報しました。その後、同社は当該社員を解雇し、FBIが関与して逮捕状執行へつながりました。司法発表は、会議室使用の様子を示すCCTV映像や、設置に関与したとされる人物の行動について記載しています。\n\n【ここに図解②を挿入｜図解②：OpenAIによる解析→通報の流れ】\n\n---\n\n## 訴状が示す追加の手がかりと未確定点\n\n訴状は、被疑者の配偶者に関連付けられたチャットボットアカウントから、録音機器の作り方や設置、難読化、遠隔アクセス、暗号化に関するプロンプトが送られていた期間（9月24〜30日）を挙げています。ただし、これらの事実が誰かの指示によるものか、または録音内容が外部に送信されたかどうかなど、外部関与や実際の情報流出の有無は現時点で確定していません。\n\n【ここに図解③を挿入｜図解③：訴状で指摘された補助証拠】\n\n---\n\n## 私たちにとって何が変わるか（実務と教訓）\n\n企業の機微情報を扱う場では『物理的なセキュリティ』と『デジタル解析』の両面が重要です。今回のケースは、内部の解析能力を通じて懸念が早期に発見され、法執行につながった例です。一方で、設置の意図や範囲が未確定である以上、監視カメラの運用ルール、来訪者管理、デバイス検査のルーチン、職場でのチャットボット利用ポリシーなどの見直しが引き続き求められます。\n\n【ここに図解④を挿入｜図解④：企業が今すぐ見直すべき対策】\n\n---\n\n## 私の正直な感想\n\n率直に言って、今回の事件は“内部の人間が物理的に設備を悪用する”というリスクを再確認させます。企業がAIや解析ツールで素早く手がかりを得られたのは良い一方で、未確定の点が残る限り、安易な結論は避けるべきです。私自身は、技術で問題を発見できる恩恵を評価しつつ、職場の信頼関係と透明なポリシー整備が同じくらい重要だと感じます。\n\n---\n\n## よくある質問\n\n### この事件で外部の政府が関与しているという証拠はありますか？\n\n現時点で公開された訴状や報道は外部政府の指示・関与を確定するものではありません。訴状はいくつかの行為を指摘しますが、外部の関与は未確定です。\n\n### 録音が外部に送信されたかは分かりますか？\n\n公開資料では、録音が外部に送信されたか、あるいはどのようなデータが回収できたかについては明記されていません。現時点では不明です。\n\n### 企業はどうすれば似たケースを防げますか？\n\n物理的検査（会議室や設備の定期チェック）、厳格な入退室・来訪者管理、社内ツール利用のガバナンス、CCTV運用の改善、従業員教育と通報窓口の整備が有効です。\n\n### OpenAIの内部解析がどの程度信用できる証拠になりますか？\n\n企業の解析は捜査着手の重要なきっかけになりますが、刑事手続きでは法執行機関や裁判所による独立した検証が必要です。OpenAI自身の結論だけで最終的な有罪が確定するわけではありません。\n\n---\n\n## まとめ\n\nOpenAIの重役会議室で隠し録音装置が見つかり、同社の解析を受けて社員が連邦当局により逮捕されました。訴状は設置方法や関連行為を示しますが、外部関与や録音漏洩の有無など重要な点は未確定です。組織は物理・デジタル双方の対策を強化する必要があります。\n\n---\n\n## この記事について\n\n確認日：2026年10月14日（日本時間）。公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。\n\n---\n\n## 参考リンク\n\n- [OpenAI engineer arrested for allegedly planting spy device in office](https://www.bleepingcomputer.com/news/artificial-intelligence/openai-engineer-arrested-for-allegedly-planting-spy-device-in-office/)\n- [Northern District of California | Saudi National Arrested For Installing Surreptitious Audio Recording Device At OpenAI](https://www.justice.gov/usao-ndca/pr/saudi-national-arrested-installing-surreptitious-audio-recording-device-openai-san)"
+  },
+  "evidence": [
+    "https://abc7news.com/post/employee-arrested-listening-device-found-sf-openai-conference-room-fbi-company-say/19936054",
+    "https://amp.dw.com/en/open-ai-employee-arrested-listening-saudi/a-79655491",
+    "https://apnews.com/article/32064fde8ad68c68f71d82336f7db525",
+    "https://apnews.com/article/789d4f5293fba45a22fcb62ebfbc2a41",
+    "https://apnews.com/article/7f512b2552ffcbbf8f1ebbb18f81a9ba",
+    "https://sfstandard.com/2026/10/13/openai-engineer-arrested-alleged-bugging-executive-conference-room",
+    "https://techcrunch.com/2026/10/13/fbi-arrests-openai-employee-accused-of-planting-hidden-recording-device-in-conference-room",
+    "https://www.afp.com/en/saudi-employee-arrested-allegedly-bugging-openai-office",
+    "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-engineer-arrested-for-allegedly-planting-spy-device-in-office",
+    "https://www.cbsnews.com/news/openai-employee-arrest-recording-device",
+    "https://www.justice.gov/opa/pr/saudi-national-arrested-installing-surreptitious-audio-recording-device-openai",
+    "https://www.justice.gov/usao-ndca/pr/saudi-national-arrested-installing-surreptitious-audio-recording-device-openai-san",
+    "https://www.reddit.com/r/AIGuild/comments/1x5d69v/openai_engineer_arrested_after_allegedly_planting",
+    "https://www.reddit.com/r/BetterOffline/comments/1x5dhyy/openai_engineer_arrested_in_bugging_of_executive",
+    "https://www.reddit.com/r/DailyTechNewsShow/comments/1x5aduy/openai_employee_arrested_by_fbi_after_planting_a",
+    "https://www.reddit.com/r/SecOpsDaily/comments/1x5bi6m/openai_engineer_arrested_for_allegedly_planting",
+    "https://www.reddit.com/r/news/comments/1x57rzc/openai_employee_reportedly_arrested_for_planting",
+    "https://www.reddit.com/r/sanfrancisco/comments/1x57nih/openai_engineer_arrested_in_bugging_of_executive",
+    "https://www.sfchronicle.com/bayarea/article/openai-engineer-arrested-hidden-recording-device-22475740.php",
+    "https://www.theinformation.com/briefings/openai-employee-arrested-allegedly-installing-office-listening-device",
+    "https://www.washingtonpost.com/technology/2026/10/13/fbi-arrests-openai-employee-allegedly-planting-bug-office"
+  ]
+}
