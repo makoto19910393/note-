@@ -54,9 +54,25 @@
       ],
       "prompt": "16:9、濃紺背景、左から右へ時系列の矢印。各ポイントに丸いアイコン（録音機、目のアイコン＝監視映像、警察バッジ）。矢印上に短い日本語ラベルをシアンと白で配置。右端に『逮捕』を黄色で強調。シンプルで読みやすい図解。",
       "filename": "diagram268.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "38584514040"
+      "artifact_run_id": "38584514040",
+      "sha256": "b0b6f1996ea1095b6208ec80d5cc1689b7aa3a268ca4158f92e66d1d29fccc7e",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1836,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 328
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2914
+      }
     },
     {
       "number": 2,
