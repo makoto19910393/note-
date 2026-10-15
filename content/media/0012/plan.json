@@ -15,9 +15,25 @@
       ],
       "prompt": "16:9、濃紺と黒を基調、シアンと白・黄色の太い短い日本語文字で「AISI」「AIセーフティの物差し」「報告会要約」を配置。中心に抽象的な“物差し”の立体的なアイコン（メジャー風）を配置、余白広めで立体感を出す。注意書きとして小さく「※公式画面ではありません」を明記。サムネはnote用。",
       "filename": "thumbnail.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "38753407147"
+      "artifact_run_id": "38753407147",
+      "sha256": "176718b92fb67bb71b595baf41c010a905547de488ee0f6796588058f13f36e0",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1182,
+        "input_tokens_details": {
+          "image_tokens": 840,
+          "text_tokens": 342
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2260
+      }
     },
     {
       "number": 1,
