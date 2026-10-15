@@ -53,7 +53,7 @@
       ],
       "prompt": "16:9図解。黒に近い濃紺背景、シアンで囲んだ3つのアイコン（コード、チャット、ロボット）を左から並べる。右側に短い日本語の注釈ブロック（白地に黄色の見出し）で「ユーザー指示→連続処理→外部ツール連携」と図示。立体感と広い余白。",
       "filename": "diagram284.png",
-      "status": "review_pending",
+      "status": "rejected",
       "attempts": 2,
       "artifact_run_id": "38753407147",
       "sha256": "39c34b160a0de992441e0e653a59c304b2c8dc7b2d1e6e421f2426e61fe9f131",
@@ -75,7 +75,7 @@
       "review": {
         "approved": false,
         "issues": "指定の図解番号を大きく表示してください。",
-        "observed_title": "図解① エージェント型ツールとは",
+        "observed_title": "図解①　エージェント型ツールとは",
         "observed_diagram_label": "①",
         "unsupported_claims": []
       }
