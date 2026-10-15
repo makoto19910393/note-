@@ -1,5 +1,5 @@
 {
-  "next_number": 12,
+  "next_number": 13,
   "articles": [
     {
       "number": 1,
@@ -509,7 +509,37 @@
           "supports": "研究報告を受けた別の英語まとめ記事。試行回数や期間、Amapへのアクセス痕跡、Tencent Cloudと関連する痕跡のトレースについて言及している。"
         }
       ]
+    },
+    {
+      "number": 12,
+      "run_id": "2026-10-15-evening-1",
+      "title": "【国内AI学び】AISI、AIセーフティの「物差し」整備へ――村上所長が報告会で展望示す",
+      "created_at": "2026-10-15T23:40:26.417519+09:00",
+      "path": "articles/2026-10-15/0012-evening.md",
+      "sources": [
+        "https://aisi.go.jp/activity/activity_information/261008_2",
+        "https://www.itmedia.co.jp/aiplus/article/2610/15/2000002280"
+      ],
+      "sha256": "9bf6cd7ecc05c272e207c76f1212f7fd9770a6ba234e4c04f6c7ede27fb9d80e",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "domestic",
+      "media_plan": "media/0012/plan.json",
+      "source_details": [
+        {
+          "title": "AIの安全性測る「物差し」を日本でも――AISI村上所長に聞く展望　相次ぐサイバー攻撃への対応は - ITmedia AI＋",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2610/15/2000002280/",
+          "published_at": "2026-10-15T00:00:00+09:00",
+          "supports": "選定記事（インタビュー本体）。AISIの報告会参加や村上所長のコメント、国内での評価枠組み整備の展望について本文で報じている。"
+        },
+        {
+          "title": "AISI事業実証WG 2026年度上期報告会を開催しました - AIセーフティ・インスティテュート（AISI）公式",
+          "url": "https://aisi.go.jp/activity/activity_information/261008_2/",
+          "published_at": "2026-10-08T00:00:00+09:00",
+          "supports": "AISIの公式開催報告。報告会の開催日程・参加組織、報告テーマ（各SWGの活動）を示しており、ITmedia記事にある報告会出席の事実と一致する一次資料的情報を提供する。"
+        }
+      ]
     }
   ],
-  "next_diagram": 276
+  "next_diagram": 280
 }
