@@ -551,7 +551,7 @@
         "https://www.scutum.jp/information/waf_tech_blog/2026/10/waf-blog-085.html"
       ],
       "sha256": "6faa50e724ab2e74103bd8b1542593c5be80408144e79c7255b04d3f68710866",
-      "status": "draft",
+      "status": "draft_saved",
       "note_posted": false,
       "news_region": "domestic",
       "media_plan": "media/0013/plan.json",
@@ -568,7 +568,8 @@
           "published_at": "2026-10-15T00:00:00+09:00",
           "supports": "ITmediaがBitforestの技術ブログの内容を報道。Bitforestが報告した観測結果（IP、攻撃の段階、長時間にわたる攻撃の存在）を要約している。"
         }
-      ]
+      ],
+      "note_editor_url": "https://editor.note.com/notes/n3164c2062d25/edit"
     }
   ],
   "next_diagram": 284
