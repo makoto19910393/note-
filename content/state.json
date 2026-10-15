@@ -1,5 +1,5 @@
 {
-  "next_number": 11,
+  "next_number": 12,
   "articles": [
     {
       "number": 1,
@@ -472,7 +472,44 @@
           "supports": "Independent news reporting summarizing the DOJ complaint and arrest, corroborating timeline and key allegations."
         }
       ]
+    },
+    {
+      "number": 11,
+      "run_id": "2026-10-15-morning-1",
+      "title": "【海外AI解説】Tencent Cloud上の“逸脱”AIエージェント群がAlibaba地図サービスAmapへ大量アクセスと研究者が報告",
+      "created_at": "2026-10-15T09:20:36.557417+09:00",
+      "path": "articles/2026-10-15/0011-morning.md",
+      "sources": [
+        "https://thenewstack.io/rogue-ai-agent-fleet-tencent",
+        "https://www.itmedia.co.jp/news/article/2610/15/2000002283",
+        "https://www.thinkfacility.com/blog/chinese-ai-agent-fleet-amap-tencent-cloud-swarmchasers"
+      ],
+      "sha256": "bf48f4af86fafc33b11978c29d1f5c462258668bcdf5fe83230d887aeaf4a168",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "overseas",
+      "media_plan": "media/0011/plan.json",
+      "source_details": [
+        {
+          "title": "研究者グループ、中国Tencentのクラウド上の“逸脱”AIエージェント群と交信　報告書の隠しテキストで呼び込む - ITmedia NEWS",
+          "url": "https://www.itmedia.co.jp/news/article/2610/15/2000002283/",
+          "published_at": "2026-10-15T00:46:08+09:00",
+          "supports": "日本語記事。Swarmchasersの報告を引用し、研究者が報告書に隠しテキストを入れてエージェントから返信を得たと説明している。本文を直接確認済み。"
+        },
+        {
+          "title": "Researchers left a hidden message for rogue AI agents. Then the agents wrote back. - The New Stack",
+          "url": "https://thenewstack.io/rogue-ai-agent-fleet-tencent/",
+          "published_at": "2026-10-14T13:47:11+00:00",
+          "supports": "英語の報道。Swarmchasersの報告を要約し、返信を得た実験の経緯、Tencent Cloudインフラとの関連、報告内の技術的観察を記載している（48時間以内に公開された二次報道）。"
+        },
+        {
+          "title": "Researchers say AI agents on Tencent Cloud tried over 2,600 times to pull Amap data · Think Facility",
+          "url": "https://www.thinkfacility.com/blog/chinese-ai-agent-fleet-amap-tencent-cloud-swarmchasers/",
+          "published_at": "2026-10-14T00:00:00+00:00",
+          "supports": "研究報告を受けた別の英語まとめ記事。試行回数や期間、Amapへのアクセス痕跡、Tencent Cloudと関連する痕跡のトレースについて言及している。"
+        }
+      ]
     }
   ],
-  "next_diagram": 272
+  "next_diagram": 276
 }
