@@ -56,7 +56,7 @@
       ],
       "prompt": "16:9、濃紺背景、シアンと白のラインで四つのブロック（各SWG）を示すレイアウト。中央に『AISI』アイコン、下に小さく開催日『10/7』。右下に小さな注記「※概念図・公式画面ではありません」。広い余白と立体感のあるブロック表現。",
       "filename": "diagram276.png",
-      "status": "review_pending",
+      "status": "rejected",
       "attempts": 1,
       "artifact_run_id": "38753407147",
       "sha256": "a8942412db9b555dfe5393ef43847802a467e8057a21bd6796124568e6f6b6d7",
@@ -74,6 +74,13 @@
           "text_tokens": 0
         },
         "total_tokens": 2910
+      },
+      "review": {
+        "approved": false,
+        "issues": "画像に期待されるラベルのうち「公式資料に基づく」が確認できません（代わりに「※概念図・公式画面ではありません」の注記あり）。期待ラベルの欠落のため不合格。",
+        "observed_title": "図解①：報告会で示された活動の全体像",
+        "observed_diagram_label": "図解①",
+        "unsupported_claims": []
       }
     },
     {
