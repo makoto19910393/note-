@@ -51,7 +51,7 @@
       ],
       "prompt": "16:9、濃紺背景にシアンと白の矢印で時間軸を表現。左から右へ『低速スキャン→大規模スキャン→既知脆弱性狙い→フォーム操作→ログイン総当たり』をアイコン付きで並べる。各フェーズに短い黄色の注釈と、中央に『192.236.229.229：8時間弱』の強調。広い余白で視認性重視。",
       "filename": "diagram280.png",
-      "status": "review_pending",
+      "status": "ready",
       "attempts": 1,
       "artifact_run_id": "38753407147",
       "sha256": "68b738e2def3c9d178a13ac4fc185522a2acb52adcff33456ddd2031755a8436",
@@ -69,6 +69,13 @@
           "text_tokens": 0
         },
         "total_tokens": 2909
+      },
+      "review": {
+        "approved": true,
+        "issues": "",
+        "observed_title": "攻撃の段階図",
+        "observed_diagram_label": "図解①",
+        "unsupported_claims": []
       }
     },
     {
