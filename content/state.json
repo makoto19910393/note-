@@ -1,5 +1,5 @@
 {
-  "next_number": 14,
+  "next_number": 15,
   "articles": [
     {
       "number": 1,
@@ -591,7 +591,37 @@
         "https://assets.st-note.com/img/1792076203-PAlgJXI3hCVbBForW0EnkvyK.png"
       ],
       "draft_source_sha256": "6faa50e724ab2e74103bd8b1542593c5be80408144e79c7255b04d3f68710866"
+    },
+    {
+      "number": 14,
+      "run_id": "2026-10-15-evening-3",
+      "title": "【海外AI解説】OpenAI／『The EU’s next chapter in AI is agentic』報告 — EUでエージェント型ツールが急拡大、だが「フロンティア企業」は欧米で偏在",
+      "created_at": "2026-10-15T23:40:26.417519+09:00",
+      "path": "articles/2026-10-15/0014-evening.md",
+      "sources": [
+        "https://openai.com/index/the-eus-next-chapter-in-ai-is-agentic",
+        "https://www.techradar.com/pro/the-eus-next-chapter-in-ai-is-agentic-new-openai-report-claims-agent-use-is-on-the-rise-across-europe-but-it-still-has-some-way-to-catch-up-to-other-markets"
+      ],
+      "sha256": "bd828a7c0c3598a2c892bb1efd1fac71f58bce6d950bca5d85c9e9f09ae72bf3",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "overseas",
+      "media_plan": "media/0014/plan.json",
+      "source_details": [
+        {
+          "title": "'The EU’s next chapter in AI is agentic' — TechRadar summary of OpenAI report",
+          "url": "https://www.techradar.com/pro/the-eus-next-chapter-in-ai-is-agentic-new-openai-report-claims-agent-use-is-on-the-rise-across-europe-but-it-still-has-some-way-to-catch-up-to-other-markets",
+          "published_at": "2026-10-15T00:00:00+00:00",
+          "supports": "Summarizes OpenAI’s report figures (55% agentic output tokens in EU business accounts, 8× SME growth since May 2026, country-level differences) and quotes OpenAI commentary (Sarah Friar)."
+        },
+        {
+          "title": "OpenAI — 'The EU’s next chapter in AI is agentic' / 'Europe’s Agentic Opportunity' (Economic Research report index)",
+          "url": "https://openai.com/index/the-eus-next-chapter-in-ai-is-agentic/",
+          "published_at": "2026-10-14T00:00:00+00:00",
+          "supports": "Primary source: OpenAI Economic Research blog/index for the report; reports agentic token share, SME growth (≈8.1×), frontier-firm shares (EU ≈10%, North America ≈65%), and recommended priorities (accessibility, affordability, skills)."
+        }
+      ]
     }
   ],
-  "next_diagram": 284
+  "next_diagram": 288
 }
