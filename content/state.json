@@ -569,7 +569,16 @@
           "supports": "ITmediaがBitforestの技術ブログの内容を報道。Bitforestが報告した観測結果（IP、攻撃の段階、長時間にわたる攻撃の存在）を要約している。"
         }
       ],
-      "note_editor_url": "https://editor.note.com/notes/n3164c2062d25/edit"
+      "note_editor_url": "https://editor.note.com/notes/n3164c2062d25/edit",
+      "cover_needs_refresh": true,
+      "media_hashes": [
+        "0f1fff68c464645503280b8f8a0a260e253c801ae8f7ebb87cb89bd57e7c1818",
+        "68b738e2def3c9d178a13ac4fc185522a2acb52adcff33456ddd2031755a8436",
+        "b7a5985995085edce61c48844290eadae7cdcb1ae7aaf18e94eb21d6b343b718",
+        "f73b5f15b7fcca349740ab349cb607f6cae3d3a40eeda4c127af8a43a565199e",
+        "397420eb4f3fd64aedccd2befc3fd15ee94eb443e44e0bfd7ce28ad5e67a7d92"
+      ],
+      "pending_cover_url": "https://assets.st-note.com/production/uploads/images/324792014/rectangle_large_type_2_8284e0fbec04f50d33c7eedf5e35e24c.png"
     }
   ],
   "next_diagram": 284
