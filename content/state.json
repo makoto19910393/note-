@@ -1,5 +1,5 @@
 {
-  "next_number": 13,
+  "next_number": 14,
   "articles": [
     {
       "number": 1,
@@ -539,7 +539,37 @@
           "supports": "AISIの公式開催報告。報告会の開催日程・参加組織、報告テーマ（各SWGの活動）を示しており、ITmedia記事にある報告会出席の事実と一致する一次資料的情報を提供する。"
         }
       ]
+    },
+    {
+      "number": 13,
+      "run_id": "2026-10-15-evening-2",
+      "title": "【国内AI学び】Scutum（ビットフォレスト）が国内Webサイトへの「AIエージェント」攻撃を報告、IPと8時間弱の段階的な振る舞いを公開",
+      "created_at": "2026-10-15T23:40:26.417519+09:00",
+      "path": "articles/2026-10-15/0013-evening.md",
+      "sources": [
+        "https://www.itmedia.co.jp/aiplus/article/2610/15/2000002284",
+        "https://www.scutum.jp/information/waf_tech_blog/2026/10/waf-blog-085.html"
+      ],
+      "sha256": "6faa50e724ab2e74103bd8b1542593c5be80408144e79c7255b04d3f68710866",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "domestic",
+      "media_plan": "media/0013/plan.json",
+      "source_details": [
+        {
+          "title": "AIエージェントによるウェブサイトへの攻撃の注意喚起 - WAF Tech Blog ｜ Scutum（ビットフォレスト技術ブログ）",
+          "url": "https://www.scutum.jp/information/waf_tech_blog/2026/10/waf-blog-085.html",
+          "published_at": "2026-10-14T00:00:00+09:00",
+          "supports": "Bitforest（Scutum）が10月10日夜から監視を行い、10月14日までに少なくとも3つのIPからの攻撃を検出したと記載。攻撃の各フェーズ・件数・使用User-Agent・『8時間弱』にわたる長期攻撃の推移を時系列で詳細に示している。検出手法は詳細非公開と明記している。"
+        },
+        {
+          "title": "国内WebサイトへのAIエージェント攻撃を観測　「8時間弱」続いた攻撃の推移を公開　国内セキュリティベンダー - ITmedia AI＋",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2610/15/2000002284/",
+          "published_at": "2026-10-15T00:00:00+09:00",
+          "supports": "ITmediaがBitforestの技術ブログの内容を報道。Bitforestが報告した観測結果（IP、攻撃の段階、長時間にわたる攻撃の存在）を要約している。"
+        }
+      ]
     }
   ],
-  "next_diagram": 280
+  "next_diagram": 284
 }
