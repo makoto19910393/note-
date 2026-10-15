@@ -14,7 +14,7 @@
       ],
       "prompt": "横長16:9のサムネイル。濃紺の背景にシアンと白・黄色の太い短い日本語テキストを立体的に配置。中央やや左に大きく「55%」と表示、右側に小さく「EUでエージェント型ツールが過半に」と日本語で入れる。OpenAIの旧ブランドやロゴは使わない。余白を広く、視認性高く。",
       "filename": "thumbnail.png",
-      "status": "generated",
+      "status": "review_pending",
       "attempts": 1,
       "artifact_run_id": "38753407147",
       "sha256": "c7ca62f631af36ebcaa92b2385b1764ee36d0320fb754d9405ec61271baeb2be",
