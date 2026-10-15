@@ -128,8 +128,9 @@
       ],
       "prompt": "16:9、濃紺背景。中央に盾のアイコン（WAF）を配置し、周囲に『レート制限』『CAPTCHA』『二段階認証』『脆弱性修正』『挙動監視』の短いラベルを円状に配置。各ラベルはシアン背景に白文字、重要度を黄色で示すアクセント。広い余白で読みやすく。",
       "filename": "diagram282.png",
-      "status": "planned",
-      "attempts": 0
+      "status": "generating",
+      "attempts": 1,
+      "artifact_run_id": "38753407147"
     },
     {
       "number": 4,
