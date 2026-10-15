@@ -13,9 +13,25 @@
       ],
       "prompt": "16:9、濃紺と黒を基調、シアンと白・黄色の太短い日本語キャプション。中央に大きく『AIエージェント攻撃を観測』の大見出し、右下に小さく『Scutum（ビットフォレスト） 2026/10/14』。背景に抽象的な攻撃のシルエット（点線で繋がるノード）と3つのIPアドレスを控えめに配置。立体感と広い余白。",
       "filename": "thumbnail.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "38753407147"
+      "artifact_run_id": "38753407147",
+      "sha256": "0f1fff68c464645503280b8f8a0a260e253c801ae8f7ebb87cb89bd57e7c1818",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1176,
+        "input_tokens_details": {
+          "image_tokens": 840,
+          "text_tokens": 336
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2254
+      }
     },
     {
       "number": 1,
