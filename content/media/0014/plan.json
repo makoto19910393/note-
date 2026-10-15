@@ -53,9 +53,25 @@
       ],
       "prompt": "16:9図解。黒に近い濃紺背景、シアンで囲んだ3つのアイコン（コード、チャット、ロボット）を左から並べる。右側に短い日本語の注釈ブロック（白地に黄色の見出し）で「ユーザー指示→連続処理→外部ツール連携」と図示。立体感と広い余白。",
       "filename": "diagram284.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "38753407147"
+      "artifact_run_id": "38753407147",
+      "sha256": "8dd7976b89b7082aeb355577fb6e10674e5a8373097af1d1820ec239e294f759",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1824,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 316
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2902
+      }
     },
     {
       "number": 2,
