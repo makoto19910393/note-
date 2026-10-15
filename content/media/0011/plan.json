@@ -54,9 +54,25 @@
       ],
       "prompt": "16:9、濃紺背景、上部に短い見出し、中央にカレンダー風のアイコンと複数の矢印で期間とアクセス量を示す図。左に小さなクラウドアイコン、右にAmap風地図アイコン。数字は具体値を書かず『数千〜数万件』とテキストで表示。広い余白、シアンと黄色で強調。",
       "filename": "diagram272.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "38659422223"
+      "artifact_run_id": "38659422223",
+      "sha256": "65ef9956bf9d03a7c078f41c89513f3c096a6e0611ab9a5107aff6dca4904b36",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1843,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 335
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2921
+      }
     },
     {
       "number": 2,
