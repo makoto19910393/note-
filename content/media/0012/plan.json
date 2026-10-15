@@ -96,24 +96,24 @@
       ],
       "prompt": "16:9、黒に近い濃紺背景、左側に用途別（自動運転・医療・チャット等）を象徴するアイコン群、右側に『評価枠組み』の階層図。シアン・白・黄色で短い日本語ラベル。下に小さく「※概念図」です。立体感と広い余白を保つ。",
       "filename": "diagram277.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 2,
       "artifact_run_id": "38753407147",
-      "sha256": "37398ec9f13b89080350b620b16b910c126f5045fe276d893d74fef0b4d73189",
+      "sha256": "8b30d06717c5d8c760949e3bc35cdf394d065a4c0df628fefe5773e68e2a2200",
       "width": 1536,
       "height": 864,
       "usage": {
-        "input_tokens": 1827,
+        "input_tokens": 2007,
         "input_tokens_details": {
           "image_tokens": 1508,
-          "text_tokens": 319
+          "text_tokens": 499
         },
         "output_tokens": 1078,
         "output_tokens_details": {
           "image_tokens": 1078,
           "text_tokens": 0
         },
-        "total_tokens": 2905
+        "total_tokens": 3085
       },
       "review": {
         "approved": false,
