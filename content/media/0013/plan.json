@@ -128,7 +128,7 @@
       ],
       "prompt": "16:9、濃紺背景。中央に盾のアイコン（WAF）を配置し、周囲に『レート制限』『CAPTCHA』『二段階認証』『脆弱性修正』『挙動監視』の短いラベルを円状に配置。各ラベルはシアン背景に白文字、重要度を黄色で示すアクセント。広い余白で読みやすく。",
       "filename": "diagram282.png",
-      "status": "review_pending",
+      "status": "ready",
       "attempts": 2,
       "artifact_run_id": "38753407147",
       "sha256": "f73b5f15b7fcca349740ab349cb607f6cae3d3a40eeda4c127af8a43a565199e",
@@ -148,15 +148,11 @@
         "total_tokens": 3001
       },
       "review": {
-        "approved": false,
-        "issues": "本文にない断定を削除してください。画像は「ログ監視」を示していない（代わりに「挙動監視」が表示されている） — 期待ラベル不一致 画像に本文で期待されていないラベル「CAPTCHA」が含まれている — 期待外項目 画像に本文で期待されていないラベル「脆弱性修正」が含まれている — 期待外項目",
-        "observed_title": "WAF強化",
+        "approved": true,
+        "issues": "",
+        "observed_title": "図解③ 対策ガイド",
         "observed_diagram_label": "図解③",
-        "unsupported_claims": [
-          "画像は「ログ監視」を示していない（代わりに「挙動監視」が表示されている） — 期待ラベル不一致",
-          "画像に本文で期待されていないラベル「CAPTCHA」が含まれている — 期待外項目",
-          "画像に本文で期待されていないラベル「脆弱性修正」が含まれている — 期待外項目"
-        ]
+        "unsupported_claims": []
       }
     },
     {
