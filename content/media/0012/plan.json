@@ -56,24 +56,24 @@
       ],
       "prompt": "16:9、濃紺背景、シアンと白のラインで四つのブロック（各SWG）を示すレイアウト。中央に『AISI』アイコン、下に小さく開催日『10/7』。右下に小さな注記「※概念図・公式画面ではありません」。広い余白と立体感のあるブロック表現。",
       "filename": "diagram276.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 2,
       "artifact_run_id": "38753407147",
-      "sha256": "a8942412db9b555dfe5393ef43847802a467e8057a21bd6796124568e6f6b6d7",
+      "sha256": "1e9430bc2aab86b851f03648f263b8a2904b8574c297a6fc7680f16f064e06a1",
       "width": 1536,
       "height": 864,
       "usage": {
-        "input_tokens": 1832,
+        "input_tokens": 1896,
         "input_tokens_details": {
           "image_tokens": 1508,
-          "text_tokens": 324
+          "text_tokens": 388
         },
         "output_tokens": 1078,
         "output_tokens_details": {
           "image_tokens": 1078,
           "text_tokens": 0
         },
-        "total_tokens": 2910
+        "total_tokens": 2974
       },
       "review": {
         "approved": false,
