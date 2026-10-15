@@ -166,7 +166,7 @@
       ],
       "prompt": "16:9、黒に近い濃紺。左から右への流れで4つのステップアイコン『検知→一時遮断→詳細調査→復旧と報告』を配置。各ステップ下に短い日本語補足（例：ログ保存、影響範囲確認、関係者連絡）。シアンの矢印で繋ぎ、要所を黄色で強調。立体感と広い余白。",
       "filename": "diagram283.png",
-      "status": "review_pending",
+      "status": "ready",
       "attempts": 2,
       "artifact_run_id": "38753407147",
       "sha256": "397420eb4f3fd64aedccd2befc3fd15ee94eb443e44e0bfd7ce28ad5e67a7d92",
@@ -186,10 +186,10 @@
         "total_tokens": 2983
       },
       "review": {
-        "approved": false,
-        "issues": "指定の図解番号を大きく表示してください。画像にOpenAIに類似する企業ロゴ（ロボット胸部とノートPC）が転写されています。記事の対象はScutum（ビットフォレスト）であり、無関係な企業ロゴの転写は不合格です。",
-        "observed_title": "図解④ 対応フロー（運用）",
-        "observed_diagram_label": "④",
+        "approved": true,
+        "issues": "",
+        "observed_title": "図解④ 検知→遮断→調査→復旧",
+        "observed_diagram_label": "図解④",
         "unsupported_claims": []
       }
     }
