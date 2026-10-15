@@ -14,8 +14,9 @@
       ],
       "prompt": "16:9、濃紺背景にシアンと白・黄色の太い短い日本語タイトルを中央に配置。左側にクラウドアイコン（立体的）、右側に地図アプリAmapの簡略地図アイコン風シルエット、中央下に細い矢印が多数Amapへ向かう様子を簡潔な線で表現。広い余白、立体感。画像内に小さく『※観測ベース・未確定』の注記を入れる。",
       "filename": "thumbnail.png",
-      "status": "planned",
-      "attempts": 0
+      "status": "generating",
+      "attempts": 1,
+      "artifact_run_id": "38659422223"
     },
     {
       "number": 1,
