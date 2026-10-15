@@ -89,24 +89,24 @@
       ],
       "prompt": "16:9、黒に近い濃紺背景。左側に列として3つのIP（38.54.56.121、185.196.220.130、192.236.229.229）を大きめに表示。右側に注意書きの吹き出しで『正規通信と重なる可能性あり』『検出ロジックは非公開』をシアンと黄色で強調。全体に立体的なカードデザイン。",
       "filename": "diagram281.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 2,
       "artifact_run_id": "38753407147",
-      "sha256": "3043b2290963670ef12c7c8aecb5f6a847e3f30f0ba9c8894c1130f2288198a8",
+      "sha256": "b7a5985995085edce61c48844290eadae7cdcb1ae7aaf18e94eb21d6b343b718",
       "width": 1536,
       "height": 864,
       "usage": {
-        "input_tokens": 1828,
+        "input_tokens": 1850,
         "input_tokens_details": {
           "image_tokens": 1508,
-          "text_tokens": 320
+          "text_tokens": 342
         },
         "output_tokens": 1078,
         "output_tokens_details": {
           "image_tokens": 1078,
           "text_tokens": 0
         },
-        "total_tokens": 2906
+        "total_tokens": 2928
       },
       "review": {
         "approved": false,
