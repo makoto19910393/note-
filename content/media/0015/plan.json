@@ -53,8 +53,9 @@
       ],
       "prompt": "16:9、黒に近い濃紺背景、左側に3つの円アイコン（小型、低コスト、高速）を縦に並べ、それぞれシアン・白・黄色でラベル。右側に簡潔な説明文を日本語でブロック状に配置。太い短い日本語文字で見出し「設計狙い」。広い余白、立体的なアイコン影。",
       "filename": "diagram288.png",
-      "status": "planned",
-      "attempts": 0
+      "status": "generating",
+      "attempts": 1,
+      "artifact_run_id": "38916514581"
     },
     {
       "number": 2,
