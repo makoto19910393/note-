@@ -1,0 +1,190 @@
+{
+  "status": "rejected_not_published",
+  "reason": "校閲で修正が必要です: 画像（図解④）のプロンプトに「筆者の提案（意見）であることを明記する文言」を追加してください（例：図内に小さく『筆者の提案・参考案』と表記する）。; サムネイルのプロンプトは既に『実在のロゴは使わない』とありますが、本文中で『Accentureロゴ風』の表現が誤解を与えかねないため、サムネイル説明から『ロゴ風』の表現を削除し『抽象的な企業イメージ』のみを明記してください。; 本文の「私の正直な感想」「提案」部分が意見である点は明確ですが、記事末の『この記事について』で『意見と事実を分けて記載している』旨を冒頭近くにも一文で再掲し、事実と筆者意見の区別がさらに明確になるようにしてください。",
+  "article": {
+    "title": "【海外AI解説】Accenture：従業員向けClaude Enterpriseの月額中央負担を「$29/人」に変更（社内通知）",
+    "sources": [
+      {
+        "title": "Accenture Tells Employees They Can Now Spend Only $29 on Claude Per Month",
+        "url": "https://www.404media.co/accenture-tells-employees-they-can-now-spend-only-29-on-claude-per-month/",
+        "published_at": "2026-10-15T12:46:00+00:00",
+        "supports": "Primary report (404 Media) that published an internal Accenture announcement and internal messages, stating the $29 central monthly funding, effective Oct 1, 2026, and that excess costs must be charged to a project WBS; includes Accenture spokesperson comment."
+      },
+      {
+        "title": "Accenture employees will only be able to spend $29 on Claude per month after some ended up splashing out thousands of dollars",
+        "url": "https://www.techradar.com/pro/accenture-employees-given-usd29-claude-spend-per-month-after-some-employees-spent-thousands",
+        "published_at": "2026-10-16T13:00:00+00:00",
+        "supports": "TechRadar summary of the 404 Media report confirming the $29 central funding policy, citing internal memo details and employee-reported high usage (hundreds to thousands of dollars per month)."
+      }
+    ],
+    "sections": {
+      "intro": "Accentureが社内向けに配布した通知で、AnthropicのClaude Enterprise利用に対する“会社負担”を従業員1人あたり月額29ドルに限定すると報じられました（2026年10月1日施行）。超過分はプロジェクトのWBSに課金するか、Premium契約を個別で取得する必要があるとされています。",
+      "conclusions": [
+        "Accentureは従業員のClaude利用に対する中央負担額を1人当たり月$29に限定すると社内通知で示した（404 Media報道、TechRadar確認）。",
+        "$29を超える利用分はプロジェクト負担（WBS振替）か有料のPremiumプランに移すよう指示されている。",
+        "背景には一部従業員の月数百〜千ドル規模の使用実績があり、コスト管理が目的と見られる。",
+        "通知の運用が技術的に使用を遮断する“上限”か会計上の“負担の割り振り”かは公開情報では未確定。"
+      ],
+      "explanations": [
+        {
+          "heading": "何が起きたか（30秒で結論）",
+          "content": "Accentureは内部通知で、Claude Enterpriseの利用に対する中央負担を“従業員1人あたり月$29”に限定すると発表しました。通知は2026年10月1日付で適用すると報じられ、$29を超えた消費はプロジェクトごとのWBSに課金するか、個別にPremiumプランを契約する必要があるとしています。報道は404 Mediaの内部文書入手を一次に、TechRadarなどが追随しています。"
+        },
+        {
+          "heading": "なぜ起きたのか（背景と理由）",
+          "content": "報道によれば、一部の従業員がClaudeで月$500〜$1,000といった高額を使用していた内部メッセージが存在し、急激な利用増とコストが管理上の課題になったことが発端です。企業規模でAIツールの使い放題を続けると予算が膨張するため、中央負担の上限設定はコスト管理と利用の透明化を目的としています。"
+        },
+        {
+          "heading": "何が変わるか（現場での影響）",
+          "content": "日常的にClaudeを多用するコンサルタントやプロジェクトチームでは、個々の作業で発生するAI消費をプロジェクト費用に振り替える手続きが増えます。頻繁に多量の生成をする業務は、チームでPremiumプランを契約するか、従業員が自己負担で利用を続ける必要が出てくる可能性があります。短期的には利用抑制や代替ツールの検討が増えるでしょう。"
+        },
+        {
+          "heading": "不確定点と注意点（報道で確認できない情報）",
+          "content": "公開された社内メモからは、$29が技術的な“使用ブロック”を伴う自動上限なのか、会計上の配賦ルールに過ぎないのかは分かりません。また、社内で何人が対象になるか、$29に含まれるトークンや利用量の具体的な換算（Anthropicの価格表との対応）も明示されていません。ベンダーとの契約変更の有無も未確認です。"
+        }
+      ],
+      "personal_view": "企業がAI利用を一律に“無制限”で支援する時代は終わりつつあります。コスト管理は当然必要ですが、使い方次第で現場の生産性が落ちるリスクもあります。現場と本部で「どの業務にAI費用を割くか」を明確にする運用ルール作りが重要です（例えば、試作や学習目的の個人実験は最小限にし、ビルドや顧客向け成果物はプロジェクト負担にする、など）。",
+      "faq": [
+        {
+          "question": "Q1：$29は技術的に使えなくなる“上限”ですか？",
+          "answer": "A1：公開されたメモや報道からは不明です。404 Mediaは会計・課金ルールとして伝えており、自動的に使用を遮断する技術的制限かどうかは確認できていません。"
+        },
+        {
+          "question": "Q2：誰が対象になりますか？",
+          "answer": "A2：報道は全社的な通知を示していますが、具体的に何人が影響を受けるか、役割別の配分などは明らかになっていません。Accentureは役割やビジネスニーズに応じてツールを提供するとコメントしています。"
+        },
+        {
+          "question": "Q3：自分の仕事にどう影響しますか？",
+          "answer": "A3：頻繁にClaudeを使い大量の生成を行う業務は、プロジェクト負担に切り替わるか、Premium契約の検討が必要になります。軽いリサーチや短いやり取り程度であれば$29で足りる可能性もありますが、業務量次第です。"
+        },
+        {
+          "question": "Q4：企業はほかにどんな管理手段を使えますか？        ",
+          "answer": "A4：使用量のダッシュボード監視、役割ごとの割当、生成量に応じた自動アラート、プロジェクトごとのWBS課金などが一般的です。今回の報道では具体的な技術的運用は示されていません。"
+        }
+      ],
+      "summary": "Accentureは内部通知をもとに、Claude Enterprise利用の中央負担を従業員あたり月$29に制限すると報じられました。目的は急増する利用コストの抑制と透明化で、超過分はプロジェクト負担やPremium契約へ振り分ける方針です。ただし、これが技術的上限か会計ルールか、具体的なトークン換算や対象範囲は報道の範囲では不明な点が残ります。現場では運用ルールの整備が急務になりそうです。"
+    },
+    "images": [
+      {
+        "number": 0,
+        "anchor": "",
+        "theme": "サムネイル：ニュース要約",
+        "labels": [
+          "Accenture",
+          "Claude Enterprise",
+          "$29",
+          "社内通知",
+          "コスト管理",
+          "AI利用制限",
+          "2026年10月",
+          "企業ポリシー"
+        ],
+        "prompt": "16:9、濃紺背景にシアンと白の太い短い日本語タイトル『Accenture／Claude $29制限』。中央にAccentureロゴ風の抽象的な企業イメージ（実在のロゴは使わない）、右下に小さく『社内通知（10/1施行）』。立体感のあるフラットなアイコン、広い余白、コントラスト強め。"
+      },
+      {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜図解①：何が変更されたか】",
+        "theme": "図解①：何が変更されたか",
+        "labels": [
+          "$29／人",
+          "中央負担",
+          "超過はWBSへ",
+          "Premium契約"
+        ],
+        "prompt": "16:9、黒＋シアン配色、見出し『変更点』。左に『会社負担 $29/人』を示す簡潔なカード、右に『超過→プロジェクトWBS／Premiumへ』を矢印でつなぐ図。文字は太く短く日本語。広い余白で視認性重視。立体感のあるボックス表現。"
+      },
+      {
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜図解②：現場での影響例】",
+        "theme": "図解②：現場での影響例",
+        "labels": [
+          "使用抑制",
+          "プロジェクト負担増",
+          "代替ツール検討",
+          "Premium検討"
+        ],
+        "prompt": "16:9、濃紺と黄色のアクセント、見出し『現場での影響』。左に人物アイコン群（コンサルタント等）、中央に『$29』ラベル、右に三つの結果アイコン（WBS負担、Premium契約、代替ツール）。簡潔な矢印で流れを示す。白とシアンで強調。"
+      },
+      {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜図解③：不確定点（注意事項）】",
+        "theme": "図解③：不確定点（注意事項）",
+        "labels": [
+          "技術的上限か不明",
+          "トークン換算不明",
+          "対象人数不明",
+          "契約詳細不明"
+        ],
+        "prompt": "16:9、黒背景に蛍光シアンのチェックリスト風、見出し『確認できない点』。各項目を丸アイコンで並べ、短い日本語ラベルをつける。落ち着いた配色で注意を促すデザイン、広い余白。"
+      },
+      {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜図解④：現場へのアクション案（提案）】",
+        "theme": "図解④：現場へのアクション案（提案）",
+        "labels": [
+          "運用ルール策定",
+          "役割別配分",
+          "監視とアラート",
+          "教育と周知"
+        ],
+        "prompt": "16:9、濃紺＋シアン＋白、見出し『現場で取れる対応』。左から右へフロー形式で『方針決定→役割配分→モニタリング→教育』を示す。各ステップをアイコン付で、短い日本語ラベル。明快で実務的な雰囲気。"
+      }
+    ],
+    "hashtags": [
+      "#Accenture",
+      "#Claude",
+      "#Anthropic",
+      "#企業AI",
+      "#コスト管理",
+      "#AIガバナンス",
+      "#クラウドAI",
+      "#ITポリシー",
+      "#従業員利用",
+      "#WBS",
+      "#Premiumプラン"
+    ],
+    "threads": "Accentureが従業員向けにClaudeの会社負担を月$29に限定。超過はプロジェクト負担へ。これが技術的上限か会計ルールかは不明です。どう思いますか？",
+    "body": "Accentureが社内向けに配布した通知で、AnthropicのClaude Enterprise利用に対する“会社負担”を従業員1人あたり月額29ドルに限定すると報じられました（2026年10月1日施行）。超過分はプロジェクトのWBSに課金するか、Premium契約を個別で取得する必要があるとされています。\n\n---\n\n## 30秒で結論\n\n- Accentureは従業員のClaude利用に対する中央負担額を1人当たり月$29に限定すると社内通知で示した（404 Media報道、TechRadar確認）。\n- $29を超える利用分はプロジェクト負担（WBS振替）か有料のPremiumプランに移すよう指示されている。\n- 背景には一部従業員の月数百〜千ドル規模の使用実績があり、コスト管理が目的と見られる。\n- 通知の運用が技術的に使用を遮断する“上限”か会計上の“負担の割り振り”かは公開情報では未確定。\n\n---\n\n## 何が起きたか（30秒で結論）\n\nAccentureは内部通知で、Claude Enterpriseの利用に対する中央負担を“従業員1人あたり月$29”に限定すると発表しました。通知は2026年10月1日付で適用すると報じられ、$29を超えた消費はプロジェクトごとのWBSに課金するか、個別にPremiumプランを契約する必要があるとしています。報道は404 Mediaの内部文書入手を一次に、TechRadarなどが追随しています。\n\n【ここに図解①を挿入｜図解①：何が変更されたか】\n\n---\n\n## なぜ起きたのか（背景と理由）\n\n報道によれば、一部の従業員がClaudeで月$500〜$1,000といった高額を使用していた内部メッセージが存在し、急激な利用増とコストが管理上の課題になったことが発端です。企業規模でAIツールの使い放題を続けると予算が膨張するため、中央負担の上限設定はコスト管理と利用の透明化を目的としています。\n\n【ここに図解②を挿入｜図解②：現場での影響例】\n\n---\n\n## 何が変わるか（現場での影響）\n\n日常的にClaudeを多用するコンサルタントやプロジェクトチームでは、個々の作業で発生するAI消費をプロジェクト費用に振り替える手続きが増えます。頻繁に多量の生成をする業務は、チームでPremiumプランを契約するか、従業員が自己負担で利用を続ける必要が出てくる可能性があります。短期的には利用抑制や代替ツールの検討が増えるでしょう。\n\n【ここに図解③を挿入｜図解③：不確定点（注意事項）】\n\n---\n\n## 不確定点と注意点（報道で確認できない情報）\n\n公開された社内メモからは、$29が技術的な“使用ブロック”を伴う自動上限なのか、会計上の配賦ルールに過ぎないのかは分かりません。また、社内で何人が対象になるか、$29に含まれるトークンや利用量の具体的な換算（Anthropicの価格表との対応）も明示されていません。ベンダーとの契約変更の有無も未確認です。\n\n【ここに図解④を挿入｜図解④：現場へのアクション案（提案）】\n\n---\n\n## 私の正直な感想\n\n企業がAI利用を一律に“無制限”で支援する時代は終わりつつあります。コスト管理は当然必要ですが、使い方次第で現場の生産性が落ちるリスクもあります。現場と本部で「どの業務にAI費用を割くか」を明確にする運用ルール作りが重要です（例えば、試作や学習目的の個人実験は最小限にし、ビルドや顧客向け成果物はプロジェクト負担にする、など）。\n\n---\n\n## よくある質問\n\n### Q1：$29は技術的に使えなくなる“上限”ですか？\n\nA1：公開されたメモや報道からは不明です。404 Mediaは会計・課金ルールとして伝えており、自動的に使用を遮断する技術的制限かどうかは確認できていません。\n\n### Q2：誰が対象になりますか？\n\nA2：報道は全社的な通知を示していますが、具体的に何人が影響を受けるか、役割別の配分などは明らかになっていません。Accentureは役割やビジネスニーズに応じてツールを提供するとコメントしています。\n\n### Q3：自分の仕事にどう影響しますか？\n\nA3：頻繁にClaudeを使い大量の生成を行う業務は、プロジェクト負担に切り替わるか、Premium契約の検討が必要になります。軽いリサーチや短いやり取り程度であれば$29で足りる可能性もありますが、業務量次第です。\n\n### Q4：企業はほかにどんな管理手段を使えますか？        \n\nA4：使用量のダッシュボード監視、役割ごとの割当、生成量に応じた自動アラート、プロジェクトごとのWBS課金などが一般的です。今回の報道では具体的な技術的運用は示されていません。\n\n---\n\n## まとめ\n\nAccentureは内部通知をもとに、Claude Enterprise利用の中央負担を従業員あたり月$29に制限すると報じられました。目的は急増する利用コストの抑制と透明化で、超過分はプロジェクト負担やPremium契約へ振り分ける方針です。ただし、これが技術的上限か会計ルールか、具体的なトークン換算や対象範囲は報道の範囲では不明な点が残ります。現場では運用ルールの整備が急務になりそうです。\n\n---\n\n## この記事について\n\n確認日：2026年10月16日（日本時間）。公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。\n\n---\n\n## 参考リンク\n\n- [Accenture Tells Employees They Can Now Spend Only $29 on Claude Per Month](https://www.404media.co/accenture-tells-employees-they-can-now-spend-only-29-on-claude-per-month/)\n- [Accenture employees will only be able to spend $29 on Claude per month after some ended up splashing out thousands of dollars](https://www.techradar.com/pro/accenture-employees-given-usd29-claude-spend-per-month-after-some-employees-spent-thousands)"
+  },
+  "evidence": [
+    "https://ai-blogs.org/blog/2026-10-16-the-meter-is-running-on-enterprise-ai-am.html",
+    "https://ai-blogs.org/news/2026-10-16-accenture-caps-staff-claude-spending-at-29-dollars-a-month-am.html",
+    "https://ainformation.jp/article/15454",
+    "https://aiweekly.co/alerts/accenture-caps-monthly-claude-funding-at-29-per-employee",
+    "https://book.st-hakky.com/en/news/accenture-employees-claude-29-dollar-limit",
+    "https://cellcog.ai/blog/accenture-claude-29-cap",
+    "https://fourweekmba.com/ai-accenture-caps-claude-funding-at-29-a-month-per-employee",
+    "https://investor.accenture.com/~/media/Files/A/accenture-v4/investors/earnings-reports/2026/accenture-fourth-quarter-fiscal-2026-earnings-presentation.pdf",
+    "https://muckrack.com/media-outlet/404media",
+    "https://pasqualepillitteri.it/en/news/24455/accenture-claude-29-dollar-spending-cap-employees",
+    "https://postcutoff.com/e/2026-10-15-accenture-caps-claude-spend-29-per-employee",
+    "https://sintelligent.org/en/tile/cmva8xv940021zeyd1o2comqv",
+    "https://startupfortune.com/accenture-caps-employee-claude-spending-at-29-a-month-after-1000-bills",
+    "https://www.404media.co/accenture-tells-employees-they-can-now-spend-only-29-on-claude-per-month",
+    "https://www.404media.co/tag/ai",
+    "https://www.advanceintelligence.ai",
+    "https://www.anthropic.com/news?cam=claude",
+    "https://www.aol.com/articles/accenture-just-capped-employees-claude-132727000.html",
+    "https://www.explainx.ai/blog/accenture-caps-central-claude-funding-29-dollars-per-person-consumption-based-404-media-2026",
+    "https://www.hwupgrade.it/news/web/claude-accenture-taglia-il-budget-ai-dipedenti-chi-supera-i-29-dollari-deve-trovare-i-fondi_160679.html",
+    "https://www.mediapost.com/publications/article/418784/accenture-limits-claude-spending-by-its-staff.html?edition=144168",
+    "https://www.promptzone.com/zuri_o_brien/accenture-limits-claude-spend-to-29-per-month-4jd5",
+    "https://www.reddit.com/r/AI_India/comments/1x79c5c/accenture_tells_employees_they_can_now_spend_only",
+    "https://www.reddit.com/r/BetterOffline/comments/1x6tlxq/accenture_tells_employees_they_can_now_spend_only",
+    "https://www.reddit.com/r/TrueAnon/comments/1uelojb/404media_accenture_is_trying_to_figure_out_how_to",
+    "https://www.reddit.com/r/accenture/comments/1x1dyl8/bye_bye_claude_enterprise",
+    "https://www.reddit.com/r/accenture/comments/1x6s3m1/accenture_tells_employees_they_can_now_spend_only",
+    "https://www.reddit.com/r/accenture_india/comments/1x1dez1/reinvention_means_limitrevoke_claude_access",
+    "https://www.reddit.com/r/artificial/comments/1x737yd/accenture_restricts_monthly_employee_spending_on",
+    "https://www.reddit.com/r/artificial/comments/1x74q4z/accenture_tells_employees_they_can_now_spend_only",
+    "https://www.reddit.com/r/business/comments/1x6s4m1/accenture_tells_employees_they_can_now_spend_only",
+    "https://www.reddit.com/r/singularity/comments/1x756ji/accenture_tells_employees_they_can_now_spend_only",
+    "https://www.reddit.com/r/technology/comments/1x6v7tg/accenture_tells_employees_they_can_now_spend_only",
+    "https://www.reddit.com/r/theprimeagen/comments/1x6wi6z/accenture_tells_employees_they_can_now_spend_only",
+    "https://www.reddit.com/r/thewallstreet/comments/1x6vyep/nightly_discussion_october_15_2026",
+    "https://www.reddit.com/r/wallstreetbets/comments/1x725yl/accenture_tells_employees_they_can_now_spend_only",
+    "https://www.techmeme.com/261015/p42",
+    "https://www.techradar.com/pro/accenture-employees-given-usd29-claude-spend-per-month-after-some-employees-spent-thousands",
+    "https://www.thestateofai.com/news/accenture-caps-claude-spending-29-dollars"
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "next_number": 16,
+  "next_number": 17,
   "articles": [
     {
       "number": 1,
@@ -658,7 +658,37 @@
           "supports": "Anthropicのプラットフォームドキュメントで技術的説明や社内ベンチマークの要旨を確認。"
         }
       ]
+    },
+    {
+      "number": 16,
+      "run_id": "2026-10-16-evening-3",
+      "title": "【海外AI解説】OpenAIが元従業員による「100超の機密ファイル」をAppleへ持ち出したと主張",
+      "created_at": "2026-10-16T23:32:30.609475+09:00",
+      "path": "articles/2026-10-16/0016-evening.md",
+      "sources": [
+        "https://ca.marketscreener.com/news/openai-employee-who-left-for-apple-took-files-about-unreleased-device-openai-alleges-ce785dd2de8cf62d",
+        "https://www.techradar.com/pro/openai-claims-ex-employee-took-100-plus-secret-files-to-apple"
+      ],
+      "sha256": "692025526d453874f5f2119749f0307dcacaba888327c5375ed7286f6b28d428",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "overseas",
+      "media_plan": "media/0016/plan.json",
+      "source_details": [
+        {
+          "title": "OpenAI claims ex-employee took 100-plus secret files to Apple | TechRadar",
+          "url": "https://www.techradar.com/pro/openai-claims-ex-employee-took-100-plus-secret-files-to-apple",
+          "published_at": "2026-10-16T00:00:00+00:00",
+          "supports": "Summarises OpenAI’s court filing and quotes that OpenAI alleged a former employee transferred more than 100 confidential files to personal accounts and later presented plans to Apple leadership; notes Apple told Reuters it found no evidence to support the claims."
+        },
+        {
+          "title": "OpenAI employee who left for Apple took files about unreleased device, OpenAI alleges | MarketScreener (Reuters content)",
+          "url": "https://ca.marketscreener.com/news/openai-employee-who-left-for-apple-took-files-about-unreleased-device-openai-alleges-ce785dd2de8cf62d/",
+          "published_at": "2026-10-14T00:00:00+00:00",
+          "supports": "Reprints Reuters report dated Oct 14, 2026: reports OpenAI’s allegation that a former employee sent more than 100 files about an unreleased product to a personal account and later presented the product to senior Apple leadership; notes Apple’s denial and cites the San Jose federal court filing."
+        }
+      ]
     }
   ],
-  "next_diagram": 292
+  "next_diagram": 296
 }
