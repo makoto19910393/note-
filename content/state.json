@@ -1,5 +1,5 @@
 {
-  "next_number": 15,
+  "next_number": 16,
   "articles": [
     {
       "number": 1,
@@ -621,7 +621,44 @@
           "supports": "Primary source: OpenAI Economic Research blog/index for the report; reports agentic token share, SME growth (≈8.1×), frontier-firm shares (EU ≈10%, North America ≈65%), and recommended priorities (accessibility, affordability, skills)."
         }
       ]
+    },
+    {
+      "number": 15,
+      "run_id": "2026-10-16-evening-2",
+      "title": "【国内AI学び】Anthropic Claude Haiku 5.5登場とITmediaの日本語コスパ検証",
+      "created_at": "2026-10-16T23:32:30.609475+09:00",
+      "path": "articles/2026-10-16/0015-evening.md",
+      "sources": [
+        "https://platform.claude.com/docs/en/models/haiku-5-5/overview",
+        "https://support.claude.com/ja/articles/12138966-%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%83%8E%E3%83%BC%E3%83%88",
+        "https://www.itmedia.co.jp/aiplus/article/2610/16/2000002313"
+      ],
+      "sha256": "25bc196a9b200228f12c76481d1acc1f8f11ed3e6d7e91d233a71689b9f44432",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "domestic",
+      "media_plan": "media/0015/plan.json",
+      "source_details": [
+        {
+          "title": "「Claude Haiku 5.5」は本当にコスパがいいのか？　3つの日本語タスクで検証してみた - ITmedia AI＋",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2610/16/2000002313/",
+          "published_at": "2026-10-16T01:14:18+00:00",
+          "supports": "選定された記事本文を直接確認。ITmediaが実施した3つの日本語タスクでの性能・コスト比較検証の記載を裏取りした。"
+        },
+        {
+          "title": "Release notes | Claude Help Center (Anthropic) — Claude Haiku 5.5 launch",
+          "url": "https://support.claude.com/ja/articles/12138966-%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%83%8E%E3%83%BC%E3%83%88",
+          "published_at": "2026-10-07T00:00:00+00:00",
+          "supports": "Anthropic公式のリリースノートでHaiku 5.5のローンチと設計狙い（小型・低コスト・高速）を確認。公式説明との照合に使用した。"
+        },
+        {
+          "title": "Claude Haiku 5.5 - Platform docs (Anthropic) / Model overview",
+          "url": "https://platform.claude.com/docs/en/models/haiku-5-5/overview?trk=article-ssr-frontend-pulse_little-text-block",
+          "published_at": "2026-10-07T00:00:00+00:00",
+          "supports": "Anthropicのプラットフォームドキュメントで技術的説明や社内ベンチマークの要旨を確認。"
+        }
+      ]
     }
   ],
-  "next_diagram": 288
+  "next_diagram": 292
 }
