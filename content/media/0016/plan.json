@@ -52,7 +52,7 @@
       ],
       "prompt": "16:9、濃紺背景、白とシアンの矢印で左から右へ進むタイムライン図。各ポイントに短い日本語ラベル（例：『6月上旬：転送』）を配置。図内に『事実（OpenAIの申立て）』という小さな注記を入れる。立体感と広い余白。",
       "filename": "diagram292.png",
-      "status": "review_pending",
+      "status": "rejected",
       "attempts": 1,
       "artifact_run_id": "38916514581",
       "sha256": "331791757d2975ab134a588fff9091ffcadbdc65b4c66cb00c035ba89c7feebf",
@@ -70,6 +70,13 @@
           "text_tokens": 0
         },
         "total_tokens": 2892
+      },
+      "review": {
+        "approved": false,
+        "issues": "指定の図解番号を大きく表示してください。",
+        "observed_title": "事実関係のタイムライン",
+        "observed_diagram_label": "①",
+        "unsupported_claims": []
       }
     },
     {
