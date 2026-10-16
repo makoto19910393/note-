@@ -1,0 +1,162 @@
+{
+  "status": "rejected_not_published",
+  "reason": "校閲で修正が必要です: 本文中の『【ここに図解①を挿入｜図解①役割定義】』などの画像作成指示を削除してください。本文に制作指示や編集指示を残さないことが求められます。図解が必要なら本文中では『図解：役割定義（概念図）』のように説明的に記載してください。; 画像ラベル／promptの各項目に、『記事内の提案である（提案的観点）』と明示してください。開発者指示に従い、筆者の提案は画像上にもその旨を明記する必要があります（例：図中に小さな注記「筆者の提案／要検証」といった文言を含める）。; 本文の『一部の具体数値は元データが明示されておらず、追加の裏取りが必要』という注意は入っていますが、該当する具体数値（例：『インドの若手エンジニア90%以上』『FDE求人の42倍増』等）を本文中の箇条書きや脚注で明確に列挙し、『出典未確認』として読者にわかる形で示してください。; タイトルについては概ね適切ですが、『AI初心者にも専門語を説明する』という要件を担保するため、タイトル下のリード（冒頭1段落目）で『翻訳する人＝業務の言語化・タスク分解・検証を担う役割』の一行定義を追加してください（本文には既に説明がありますが、冒頭で短く示すと可読性が上がります）。; 本文に“筆者の提案”と事実を混同させないよう、意見・提案部分を明確に見出し（例：『筆者の提案・所見』）に分離してください（現在は『私の正直な感想』があるが、提案的な手順を挙げた図解部分と混在しているため、分離を推奨）。",
+  "article": {
+    "title": "【国内AI学び】日本企業、AI導入で足りないのは『翻訳する人』――ITmedia記事が指摘した現場の課題と第一歩",
+    "sources": [
+      {
+        "title": "AI人材はインドにいる、でも足りないのは『翻訳する人』――日本企業とAIの間に生まれる新しい仕事",
+        "url": "https://blogs.itmedia.co.jp/osonoi/2026/10/aiai_5.html",
+        "published_at": "2026-10-16T00:00:00+09:00",
+        "supports": "主張の中心（日本企業とオフショア/AIの間に立つ“翻訳する人”の不足、役割定義、現場でできる第一歩）を本文から直接確認。"
+      },
+      {
+        "title": "Analytics translator: The new must-have role (McKinsey)",
+        "url": "https://www.mckinsey.com/capabilities/people-and-organization/our-insights/analytics-translator",
+        "published_at": "2018-02-01T00:00:00+00:00",
+        "supports": "『業務と技術の橋渡し（analytics translator）』という概念の原典。ITmedia記事が参照する職務概念の背景と整合することを確認。"
+      }
+    ],
+    "sections": {
+      "intro": "ITmedia（オルタナティブ・ブログ）で2026年10月16日付に掲載された記事は、日本企業がAIを活用する際に“技術人材は海外にいるが、現場の業務をAIに渡す役割＝『翻訳する人』が足りない”と指摘しています。本稿はその主張を分かりやすく整理し、現場で何が変わるか、あなたにどう関係するかを解説します。",
+      "conclusions": [
+        "日本企業はAIやオフショアに頼れる人材（技術実装側）が外部にいる一方、業務をAIに落とし込む『翻訳する人』が社内で不足していると指摘されている。",
+        "McKinseyの『Analytics translator』に相当する役割が、AI導入で重要になる。記事は役割定義と実務上の最初の手順（業務の書き出しや塗り分け）を提示している。",
+        "一部の具体的数値や求人動向は記事内で引用されているが、元データの全ては本文に明示されておらず、追加の裏取りが必要とされる点に注意。",
+        "企業がすぐに着手できる第一歩は『業務の見える化（書き出す）』と、AI／人／外部の棲み分けを現場で決めること。"
+      ],
+      "explanations": [
+        {
+          "heading": "① 何が起きたか（記事の主張を簡単に）",
+          "content": "ITmediaの記事は、日本企業のAI利活用で“開発できる人材はインドなど海外に多い”一方、業務をAI化する段階で必要になる“業務を言語化し、タスク分解して検証する人”――著者はこれを『翻訳する人』と呼んでいます。記事は既存の職務（ブリッジSE、McKinseyのAnalytics Translator、Palantir由来のFDEなど）を参照しながら、実務で欠けている役割を整理。具体的アクションとして、現場で業務を書き出す、AIで自動化すべきか人が残すべきかを塗り分ける、検証の仕組みを回すことを提案しています。"
+        },
+        {
+          "heading": "② なぜ今この話が重要なのか（背景と意味）",
+          "content": "AIや大規模なデータ処理の実装は専門エンジニアや海外の人材で賄えることが増えていますが、AIで何を自動化するかは業務理解がないと誤った適用につながります。McKinseyが2018年に提示した『Analytics translator』の概念は、事業側と技術側の橋渡しが成果に直結することを示してきました。今回の記事は、その考えを日本企業の組織慣行に合わせて再提示しており、現場での言語化・検証・利活用の回し方が重要だと説いています。"
+        },
+        {
+          "heading": "③ この記事で確認できる事実と、確認できない点",
+          "content": "確認できる事実：記事は『翻訳する人』の不足を主張し、役割や初手の行動案（業務を書き出す、AI/人/外注で塗り分ける等）を提示している点は本文で確認できます。また、McKinseyの『Analytics translator』概念を参照していることも確認済みです。確認できない点：記事内で示される幾つかの具体数値（例：インドの若手エンジニア90%以上、FDEや関連求人の増加率など）の一次データや出典は本文ですべて示されておらず、別途裏取りが必要です。また、実際にどの業界・規模で『翻訳する人』が採用・育成されているか、賃金や教育プログラムの広がりもこの記事だけでは分かりません。"
+        },
+        {
+          "heading": "④ 現場で何をすればいいか（業務ごとの具体的な第一歩）",
+          "content": "記事が示す現実的な第一歩は『業務を書き出すこと』です。具体的には、日々の仕事を細かくタスク化して、どの工程が定型化可能か、データ入力や判定などAIが得意な部分かを分けていきます。次に、結果の責任や検証方法（AIの出力を誰がどうチェックするか）を決め、技術実装は外部でも内製でもOKと割り切る。この“業務の言語化”こそが、技術者と事業者の間で共通理解を作る基盤になります。"
+        }
+      ],
+      "personal_view": "私見としては、この記事が指摘する“翻訳する人”のニーズは現実的で、特に中堅以下の企業や業務が複雑な業界では早急に必要になると感じます。一方で、記事が引用する具体数値の一部は元データが明示されておらず、導入計画の根拠としては追加調査が必要です。まずは小さな業務で書き出し→試験導入→検証を繰り返す“手触りのある”進め方を勧めます。",
+      "faq": [
+        {
+          "question": "Q: 『翻訳する人』とは具体的にどんなスキルを持つ人ですか？",
+          "answer": "A: 記事とMcKinseyの概念を合わせると、業務を言語化できる（業務棚卸し・タスク分解）、データやAIの出力を読み解き現場の意思決定に落とし込める、技術者と現場の間で要件を伝達・検証できるスキルが求められます。"
+        },
+        {
+          "question": "Q: どの企業規模でも必要ですか？",
+          "answer": "A: 必ずしも全社で専任ポジションが要るわけではありません。まずは業務の重要性・自動化の影響が大きい領域から担当者を決め、兼務で役割を持たせるなど段階的な導入が現実的です。"
+        },
+        {
+          "question": "Q: この記事だけで採用や研修を決めていいですか？",
+          "answer": "A: いいえ。記事は提案的な内容が中心で、一部の数値は一次資料が示されていないため、採用や予算決定には自社の実データでの検証や外部調査の裏取りを推奨します。"
+        },
+        {
+          "question": "Q: 具体的な最初の作業は何をすればよいですか？",
+          "answer": "A: 『業務を書き出すこと』です。業務フローをタスク単位で洗い出し、データの入力・判断・例外処理などを分け、AIに置ける部分と人が残す部分を現場で決めることが第一歩になります。"
+        }
+      ],
+      "summary": "ITmediaの記事は、日本企業がAIを使う際に『翻訳する人』という業務と言語をつなぐ役割が不足していると指摘しています。McKinseyのAnalytics translatorの考えと整合し、現場でできる第一歩は業務の可視化とAIと人の棲み分けを行うことです。ただし、記事内の一部の具体数値は元データが明示されておらず、導入の判断には追加の裏取りが必要です。"
+    },
+    "images": [
+      {
+        "number": 0,
+        "anchor": "",
+        "theme": "サムネ―見出し",
+        "labels": [
+          "日本企業とAIの橋渡し",
+          "翻訳する人が足りない",
+          "ITmedia 2026-10-16"
+        ],
+        "prompt": "16:9、濃紺背景、白とシアンの太い短い日本語でタイトル風に「翻訳する人が足りない」と大きく配置。副題に小さく黄色で「日本企業×AIの現場課題」。立体感のある文字、広い余白、シンプルなアイコン（人と歯車をつなぐ矢印）を左下に配置。"
+      },
+      {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜図解①役割定義】",
+        "theme": "図解①役割定義",
+        "labels": [
+          "翻訳する人とは",
+          "業務の言語化",
+          "技術⇆現場の橋渡し"
+        ],
+        "prompt": "16:9、黒に近い濃紺背景、白・シアン・黄色で3ブロックのレイアウト。中央に人物アイコン（翻訳者）、左に業務（書類アイコン）、右に技術（歯車とAPIアイコン）。矢印で双方向を示し、短い日本語ラベルを太字で配置。立体的な影と広い余白。"
+      },
+      {
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜図解②現場の第一歩】",
+        "theme": "図解②現場の第一歩",
+        "labels": [
+          "業務を書き出す",
+          "タスク分解",
+          "AI/人/外注の塗り分け"
+        ],
+        "prompt": "16:9、濃紺背景、左から右へ進む4ステップの図。ステップごとに円形アイコン（ノート、虫眼鏡、色分け、チェック）と短い日本語説明をシアンと白で配置。太い矢印で流れを示す。広い余白、立体感のあるボックス。"
+      },
+      {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜図解③検証と責任】",
+        "theme": "図解③検証と責任",
+        "labels": [
+          "検証ループ",
+          "誰が責任を取るか",
+          "監査と記録"
+        ],
+        "prompt": "16:9、濃紺背景、円形のループ図を中央に配置（AI出力→現場チェック→フィードバック→改善）。各節に小さな人物アイコンと短い日本語ラベルを白と黄色で配置。立体的な線と影で動きを強調。"
+      },
+      {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜図解④職務と学び方】",
+        "theme": "図解④職務と学び方",
+        "labels": [
+          "兼務から専任へ",
+          "必要スキル",
+          "学習の順序"
+        ],
+        "prompt": "16:9、濃紺背景、左にキャリアの矢印（兼務→専任）、中央にスキルセット（業務理解、データリテラシー、コミュニケーション）、右に学習ステップ（書き出し→実験→検証）。短い日本語ラベルを白とシアンで配置し、黄色で強調するポイントを一つ入れる。広い余白と立体感。"
+      }
+    ],
+    "hashtags": [
+      "#AI人材",
+      "#業務改革",
+      "#翻訳する人",
+      "#AnalyticsTranslator",
+      "#ITmedia",
+      "#現場主義",
+      "#業務可視化",
+      "#日本企業",
+      "#データ活用",
+      "#AI導入",
+      "#オフショア",
+      "#スキル開発"
+    ],
+    "threads": "日本企業のAI導入で本当に足りないのは“翻訳する人”──業務を書き出してAIと人の棲み分けを始めるべきではないですか？",
+    "body": "ITmedia（オルタナティブ・ブログ）で2026年10月16日付に掲載された記事は、日本企業がAIを活用する際に“技術人材は海外にいるが、現場の業務をAIに渡す役割＝『翻訳する人』が足りない”と指摘しています。本稿はその主張を分かりやすく整理し、現場で何が変わるか、あなたにどう関係するかを解説します。\n\n---\n\n## 30秒で結論\n\n- 日本企業はAIやオフショアに頼れる人材（技術実装側）が外部にいる一方、業務をAIに落とし込む『翻訳する人』が社内で不足していると指摘されている。\n- McKinseyの『Analytics translator』に相当する役割が、AI導入で重要になる。記事は役割定義と実務上の最初の手順（業務の書き出しや塗り分け）を提示している。\n- 一部の具体的数値や求人動向は記事内で引用されているが、元データの全ては本文に明示されておらず、追加の裏取りが必要とされる点に注意。\n- 企業がすぐに着手できる第一歩は『業務の見える化（書き出す）』と、AI／人／外部の棲み分けを現場で決めること。\n\n---\n\n## ① 何が起きたか（記事の主張を簡単に）\n\nITmediaの記事は、日本企業のAI利活用で“開発できる人材はインドなど海外に多い”一方、業務をAI化する段階で必要になる“業務を言語化し、タスク分解して検証する人”――著者はこれを『翻訳する人』と呼んでいます。記事は既存の職務（ブリッジSE、McKinseyのAnalytics Translator、Palantir由来のFDEなど）を参照しながら、実務で欠けている役割を整理。具体的アクションとして、現場で業務を書き出す、AIで自動化すべきか人が残すべきかを塗り分ける、検証の仕組みを回すことを提案しています。\n\n【ここに図解①を挿入｜図解①役割定義】\n\n---\n\n## ② なぜ今この話が重要なのか（背景と意味）\n\nAIや大規模なデータ処理の実装は専門エンジニアや海外の人材で賄えることが増えていますが、AIで何を自動化するかは業務理解がないと誤った適用につながります。McKinseyが2018年に提示した『Analytics translator』の概念は、事業側と技術側の橋渡しが成果に直結することを示してきました。今回の記事は、その考えを日本企業の組織慣行に合わせて再提示しており、現場での言語化・検証・利活用の回し方が重要だと説いています。\n\n【ここに図解②を挿入｜図解②現場の第一歩】\n\n---\n\n## ③ この記事で確認できる事実と、確認できない点\n\n確認できる事実：記事は『翻訳する人』の不足を主張し、役割や初手の行動案（業務を書き出す、AI/人/外注で塗り分ける等）を提示している点は本文で確認できます。また、McKinseyの『Analytics translator』概念を参照していることも確認済みです。確認できない点：記事内で示される幾つかの具体数値（例：インドの若手エンジニア90%以上、FDEや関連求人の増加率など）の一次データや出典は本文ですべて示されておらず、別途裏取りが必要です。また、実際にどの業界・規模で『翻訳する人』が採用・育成されているか、賃金や教育プログラムの広がりもこの記事だけでは分かりません。\n\n【ここに図解③を挿入｜図解③検証と責任】\n\n---\n\n## ④ 現場で何をすればいいか（業務ごとの具体的な第一歩）\n\n記事が示す現実的な第一歩は『業務を書き出すこと』です。具体的には、日々の仕事を細かくタスク化して、どの工程が定型化可能か、データ入力や判定などAIが得意な部分かを分けていきます。次に、結果の責任や検証方法（AIの出力を誰がどうチェックするか）を決め、技術実装は外部でも内製でもOKと割り切る。この“業務の言語化”こそが、技術者と事業者の間で共通理解を作る基盤になります。\n\n【ここに図解④を挿入｜図解④職務と学び方】\n\n---\n\n## 私の正直な感想\n\n私見としては、この記事が指摘する“翻訳する人”のニーズは現実的で、特に中堅以下の企業や業務が複雑な業界では早急に必要になると感じます。一方で、記事が引用する具体数値の一部は元データが明示されておらず、導入計画の根拠としては追加調査が必要です。まずは小さな業務で書き出し→試験導入→検証を繰り返す“手触りのある”進め方を勧めます。\n\n---\n\n## よくある質問\n\n### Q: 『翻訳する人』とは具体的にどんなスキルを持つ人ですか？\n\nA: 記事とMcKinseyの概念を合わせると、業務を言語化できる（業務棚卸し・タスク分解）、データやAIの出力を読み解き現場の意思決定に落とし込める、技術者と現場の間で要件を伝達・検証できるスキルが求められます。\n\n### Q: どの企業規模でも必要ですか？\n\nA: 必ずしも全社で専任ポジションが要るわけではありません。まずは業務の重要性・自動化の影響が大きい領域から担当者を決め、兼務で役割を持たせるなど段階的な導入が現実的です。\n\n### Q: この記事だけで採用や研修を決めていいですか？\n\nA: いいえ。記事は提案的な内容が中心で、一部の数値は一次資料が示されていないため、採用や予算決定には自社の実データでの検証や外部調査の裏取りを推奨します。\n\n### Q: 具体的な最初の作業は何をすればよいですか？\n\nA: 『業務を書き出すこと』です。業務フローをタスク単位で洗い出し、データの入力・判断・例外処理などを分け、AIに置ける部分と人が残す部分を現場で決めることが第一歩になります。\n\n---\n\n## まとめ\n\nITmediaの記事は、日本企業がAIを使う際に『翻訳する人』という業務と言語をつなぐ役割が不足していると指摘しています。McKinseyのAnalytics translatorの考えと整合し、現場でできる第一歩は業務の可視化とAIと人の棲み分けを行うことです。ただし、記事内の一部の具体数値は元データが明示されておらず、導入の判断には追加の裏取りが必要です。\n\n---\n\n## この記事について\n\n確認日：2026年10月16日（日本時間）。公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。\n\n---\n\n## 参考リンク\n\n- [AI人材はインドにいる、でも足りないのは『翻訳する人』――日本企業とAIの間に生まれる新しい仕事](https://blogs.itmedia.co.jp/osonoi/2026/10/aiai_5.html)\n- [Analytics translator: The new must-have role (McKinsey)](https://www.mckinsey.com/capabilities/people-and-organization/our-insights/analytics-translator)"
+  },
+  "evidence": [
+    "https://arxiv.org/abs/1802.04977",
+    "https://blogs.itmedia.co.jp/osonoi/2026/10/aiai_5.html",
+    "https://builtin.com/data-science/analytics-translator",
+    "https://mckinsey.com/~/media/mckinsey/business%20functions/mckinsey%20digital/our%20insights/driving%20impact%20at%20scale%20from%20automation%20and%20ai/driving-impact-at-scale-from-automation-and-ai.pdf",
+    "https://tdwi.org/articles/2022/09/29/adv-all-coming-soon-to-analytics-teams-analytics-translators.aspx",
+    "https://uat.mckinsey.de/capabilities/tech-and-ai/our-insights/five-lessons-from-ai-on-closing-quantums-talent-gap-before-its-too-late",
+    "https://www.forbes.com/sites/bernardmarr/2018/03/12/forget-data-scientists-and-hire-a-data-translator-instead",
+    "https://www.itechguides.com/analytics-translators-real-work-but-not-a-standardized-job-title",
+    "https://www.mckinsey.com/about-us/new-at-mckinsey-blog/the-new-analytics-translator-from-big-data-to-big-ideas",
+    "https://www.mckinsey.com/capabilities/people-and-organization/our-insights/analytics-translator",
+    "https://www.mckinsey.com/capabilities/quantumblack/our-insights/how-to-train-your-analytics-translators?cid=other-eml-shl-mip-mck",
+    "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/how-to-get-the-most-from-big-data",
+    "https://www.mckinsey.com/careers/life-at-mckinsey/our-culture-and-communities/careers-blog/andrea",
+    "https://www.mckinsey.com/careers/life-at-mckinsey/our-culture-and-communities/careers-blog/stavros",
+    "https://www.mckinsey.com/industries/financial-services/our-insights/building-an-effective-analytics-organization",
+    "https://www.mckinsey.com/~/media/McKinsey/Business%20Functions/Marketing%20and%20Sales/Our%20Insights/The%20future%20of%20personalization%20and%20how%20to%20get%20ready%20for%20it/The-future-of-personalization-and-how-to-get-ready-for-it.pdf",
+    "https://www.mckinsey.com/~/media/McKinsey/Business%20Functions/McKinsey%20Analytics/Our%20Insights/Analytics%20translator/Analytics-translator-The-new-must-have-role.pdf",
+    "https://www.mckinsey.com/~/media/McKinsey/Business%20Functions/McKinsey%20Analytics/Our%20Insights/Crossing%20the%20frontier%20How%20to%20apply%20AI%20for%20impact/Crossing-the-frontier-collection.ashx",
+    "https://www.mckinsey.de/~/media/McKinsey/Business%20Functions/Marketing%20and%20Sales/Our%20Insights/Four%20pathways%20to%20digital%20growth%20that%20work%20for%20B2B%20companies/Four-pathways-to-digital-growth-that-work-for-B2B-companies.pdf"
+  ]
+}
