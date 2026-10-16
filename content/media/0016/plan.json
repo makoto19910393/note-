@@ -13,7 +13,7 @@
       ],
       "prompt": "16:9、濃紺バックグラウンドにシアンと白で太い短い日本語の見出し。中央に抽象的な書類アイコンが点滅するイメージ、左側にOpenAI風色調の抽象的円、右側にApple風色調の抽象的円（実在ロゴは使わない）。立体感ある影、大きな余白。短い日本語文言は『機密ファイルはどこへ？』。",
       "filename": "thumbnail.png",
-      "status": "generated",
+      "status": "review_pending",
       "attempts": 1,
       "artifact_run_id": "38916514581",
       "sha256": "3ad37cd5b4b0895fb55b298e8d053cc7f032aad1c50d7f23a3999d8c9a59f663",
