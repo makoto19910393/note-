@@ -13,7 +13,7 @@
       ],
       "prompt": "16:9、濃紺から黒のグラデーション背景、シアンと白と黄色の太く短い日本語文字の立体的なレイアウト。中央に大きく「Claude Haiku 5.5」と白抜きで、下に黄色で「小型・低コスト・高速」と短いキャッチ。右下に小さく「ITmedia検証」をシアンで配置。広い余白、立体感のある影、フラットなアイコンや偽ブランド画面は描かない。",
       "filename": "thumbnail.png",
-      "status": "review_pending",
+      "status": "ready",
       "attempts": 1,
       "artifact_run_id": "38916514581",
       "sha256": "f8fc5814b6c98fba0727329a3782b49f8c90e885f259de0caaca9f0873b8ccf8",
@@ -31,6 +31,13 @@
           "text_tokens": 0
         },
         "total_tokens": 2269
+      },
+      "review": {
+        "approved": true,
+        "issues": "",
+        "observed_title": "Claude Haiku 5.5",
+        "observed_diagram_label": "",
+        "unsupported_claims": []
       }
     },
     {
