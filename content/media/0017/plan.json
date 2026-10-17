@@ -54,9 +54,25 @@
       ],
       "prompt": "16:9、濃紺背景にシアンと白のアイコンで4つの領域（データ整備、モデル調整、運用設計、安全性チェック）を並列表示。中央に『FDE』の円を置き、各領域へ矢印で接続する構図。太い白い日本語ラベルと黄色の要点テキストを短く配置。立体感あるシャドウ、広い余白。画像内に『筆者の意見・提案であり確認済み事実ではない』という短い注記を目立たない位置に入れる。",
       "filename": "diagram296.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "38985286077"
+      "artifact_run_id": "38985286077",
+      "sha256": "d3e6f377f7e7f10ae8500f27b8a4d2bd6a165f650f017131257c258ee2c73985",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1869,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 361
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2947
+      }
     },
     {
       "number": 2,
