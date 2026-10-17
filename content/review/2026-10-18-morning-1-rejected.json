@@ -1,0 +1,178 @@
+{
+  "status": "rejected_not_published",
+  "reason": "参考資料の発行日時を確認できません。",
+  "article": {
+    "title": "【海外AI解説】NVIDIAが提示した「エージェント安全は工学の課題」――OpenShellを軸にした実装原則の要点解説",
+    "sources": [
+      {
+        "title": "AIエージェントに「何を指示するか」より「何をさせないか」――NVIDIAが示す設計の原則：AIエージェントは「判断を誤る」が前提",
+        "url": "https://atmarkit.itmedia.co.jp/ait/articles/2610/16/news032.html",
+        "published_at": "2026-10-16",
+        "supports": "NVIDIAがブログで示したエージェント設計の要点（最小権限、ポリシー適用、監査ログ、テスト項目など）を日本語で要約している。"
+      },
+      {
+        "title": "AI Security Is an Engineering Problem — How to Solve It at Every Layer of the Agent Stack",
+        "url": "https://blogs.nvidia.com/blog/ai-security-agent-stack/",
+        "published_at": "2026-09-21",
+        "supports": "NVIDIA公式ブログ原文。エージェント安全を“エンジニアリング”と位置づけ、OpenShellなどの実装例や設計原則、検証・共同体での共有の重要性を説明している。"
+      }
+    ],
+    "sections": {
+      "intro": "NVIDIAが2026年9月に公開したブログ「AI Security Is an Engineering Problem」で、AIエージェントの安全設計を“モデル性能だけでなく実行環境や運用を含む工学問題”と位置づける提言を出しました。日本のITメディアも要約して紹介しています。ここでは、提言の要点と現実との距離、ユーザーが知っておくべき点をやさしく整理します。",
+      "conclusions": [
+        "NVIDIAはエージェントの“やってはいけないこと”を技術的に担保する仕組みを層別で示し、単なるモデル改善では不足すると明確化した。",
+        "具体例としてOpenShellを提示し、最小権限・ポリシー適用・監査ログ・人間承認などの実装方針を示しているが、即時導入の可否や移行コストは公表資料からは不明。",
+        "提言は攻撃想定の明確化と継続的検証を強調しており、業界横断の連携（Open Secure AI Alliance等）で知見共有を進める姿勢がある。",
+        "提言は実務的で有用だが、実際の複雑な攻撃やサプライチェーン侵害に対する有効性は独立評価が必要で、不確定要素が残る。"
+      ],
+      "explanations": [
+        {
+          "heading": "設計の枠組み：『能力を上げる』だけでなく『実行環境を守る』",
+          "content": "NVIDIAは、モデルの高性能化だけで安全が担保されるわけではないと明言します。提言では「アイデンティティ管理」「最小権限（必要最小限の認証情報）」「ポリシーによるアクセス制御」「重大操作に対する人の承認」など、エージェントが外部とやり取りする際の実行環境を厳格に設計することを求めています。これは、例えばエージェントが誤って機密データを送信したり、管理者権限での変更を行ったりするリスクを、モデルではなく実行時の仕組みで制御する考え方です。"
+        },
+        {
+          "heading": "OpenShell：提案する実装例とその役割",
+          "content": "NVIDIAはオープンソースのランタイム／フレームワーク「NVIDIA OpenShell」を実装例として挙げています。OpenShellはエージェントがファイルやネットワーク、システムリソースへアクセスする際のゲートのように振る舞い、サンドボックス実行やポリシーの適用、エージェント自身が変更できない領域での制御を可能にすると説明されています。企業やセキュリティベンダーと連携する設計とし、既存運用との接続や検査ポイントを置くことで導入先での安全性向上を目指しています。ただし、既存システムとの互換性や移行コストは公開資料では明確ではありません。"
+        },
+        {
+          "heading": "運用と検証：継続的テストとログの重要性",
+          "content": "NVIDIAは検証の反復を強く勧めています。具体的にはプロンプトインジェクションなど既知の攻撃を想定したテストケースを明確化し、本番導入前後に繰り返し検証すること、加えて呼び出し・認可・結果を保護されたログに残すことを提案しています。これにより、異常な振る舞いの追跡やフォレンジックが可能になり、運用中に見つかった弱点を迅速に修正できる運用フローが構築されます。"
+        },
+        {
+          "heading": "共同体と第三者評価の必要性",
+          "content": "NVIDIAはOpen Secure AI Allianceのような共同体を通じて設計やツールを共有し、防御側の知見を広げることを進めています。提言自体は実務的だが、現実の複雑な攻撃（連鎖的侵害、サプライチェーン攻撃など）に対する有効性を判断するには独立した第三者による実証評価や多様な導入事例が必要です。公開資料では連携事例（CiscoやJFrogなど）が示されていますが、総合的な効果測定は今後の検証課題です。"
+        }
+      ],
+      "personal_view": "NVIDIAの提言は実務目線で分かりやすく、モデル偏重になりがちな議論に有益な視点を加えています。私自身、エージェント運用で“疑わしい振る舞いをどう止めるか”の設計の弱さを何度か見てきたため、最小権限や人の承認といった“やってはいけないことを守る”方針には納得します。一方で、OpenShellの現場への導入容易性や既存ツールとの連携コストは個別調査が必要で、即効薬ではない点には注意が必要です。",
+      "faq": [
+        {
+          "question": "Q1: NVIDIAの提言は誰に向けたものですか？",
+          "answer": "主に企業のエンジニア、セキュリティ担当者、クラウド・プラットフォーム提供者向けです。エージェントを業務で運用する組織が安全設計を考えるための実務的ガイドラインとして提示されています。"
+        },
+        {
+          "question": "Q2: OpenShellはすぐに自社システムへ導入できますか？",
+          "answer": "公開資料ではOpenShellの設計や機能が示されていますが、既存の商用エージェント運用との互換性や移行コストは明記されていません。導入可否は自社環境での検証が必要です。"
+        },
+        {
+          "question": "Q3: 提言は攻撃を完全に防げますか？",
+          "answer": "いいえ。NVIDIAは多層防御と継続的検証を提唱しますが、複雑な連鎖攻撃やサプライチェーン攻撃に対する総合的な有効性は独立評価や多様な導入事例の検証が必要です。"
+        },
+        {
+          "question": "Q4: 個人ユーザーが知っておくべきポイントは？",
+          "answer": "個人でも、AIサービスがどのように外部リソースへアクセスするか（ファイル、メール、APIなど）を確認し、不要な権限を与えないことが第一歩です。サービス提供側の安全方針やログ・承認フローの有無も確認しましょう。"
+        }
+      ],
+      "summary": "NVIDIAのブログは、AIエージェントの安全を単なるモデル性能問題ではなく、実行環境・権限管理・運用・検証を含む工学的課題として捉え直す重要な提言です。OpenShellのような実装例を提示して多層防御と継続的検証を推奨する一方、導入性や実効性の評価は今後の課題として残ります。企業は今回の原則を参考に、自社の運用フローと防御策を見直すべきでしょう。"
+    },
+    "images": [
+      {
+        "number": 0,
+        "anchor": "",
+        "theme": "サムネ：NVIDIAのエージェント安全提言の概観",
+        "labels": [
+          "NVIDIA",
+          "エージェント安全",
+          "OpenShell",
+          "最小権限",
+          "監査ログ",
+          "人の承認",
+          "多層防御",
+          "連携"
+        ],
+        "prompt": "16:9 濃紺・黒背景にシアンと白・黄色の太い日本語。中央に大きく「NVIDIA エージェント安全の新方針」と表示。左右に簡潔なアイコン風の要素：鍵（最小権限）、盾（ポリシー）、歯車と人（人の承認）、ログの巻物（監査ログ）。立体感と広い余白。プロフェッショナルで技術系ニュースのサムネイル風。"
+      },
+      {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜図解①：設計方針のレイヤー図】",
+        "theme": "図解①：設計方針のレイヤー図",
+        "labels": [
+          "レイヤー構造",
+          "アイデンティティ管理",
+          "最小権限",
+          "ポリシー制御"
+        ],
+        "prompt": "16:9 濃紺背景、シアンと白のレイヤー図（縦積み）。上から『アイデンティティ管理』『認可／最小権限』『ポリシー適用』『監査・ログ』とラベル付け。右側に短い吹き出しで各レイヤーの役割を1行で記載。白・黄色の太い日本語ラベル、立体感のあるブロック図。"
+      },
+      {
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜図解②：OpenShellの役割と挙動イメージ】",
+        "theme": "図解②：OpenShellの役割と挙動イメージ",
+        "labels": [
+          "OpenShell",
+          "サンドボックス",
+          "リソース制御",
+          "連携ポイント"
+        ],
+        "prompt": "16:9 黒に近い濃紺背景。中央にOpenShellのボックスを配置し、左側にエージェント、右側にファイル・ネットワーク・システムのアイコンを描写。OpenShellボックスから矢印で制御・監査のラインが伸びる構図。白とシアンの線でアクセス制御を可視化。太い日本語ラベルと広い余白で説明的に。"
+      },
+      {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜図解③：運用フローと検証サイクル】",
+        "theme": "図解③：運用フローと検証サイクル",
+        "labels": [
+          "テストケース",
+          "継続的検証",
+          "フォレンジック",
+          "運用ループ"
+        ],
+        "prompt": "16:9 濃紺背景で円形のフローチャート。『設計→テスト（攻撃想定）→導入→監視・ログ→改善』の循環をシアンと白の矢印で表現。各ステップに短い注釈（1行）を配置。中央に小さく虫眼鏡アイコン（監査）と鍵アイコン（承認）を置き、立体感を出す。"
+      },
+      {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜図解④：導入時のチェックリスト（企業向け）】",
+        "theme": "図解④：導入時のチェックリスト（企業向け）",
+        "labels": [
+          "権限レビュー",
+          "承認フロー",
+          "互換性検証",
+          "ログ保護"
+        ],
+        "prompt": "16:9 濃紺背景。左にチェックリスト形式の大きな項目ボックス（白・黄色太字）、右に簡潔なアイコン群（盾、歯車、人、ファイル）。チェックリストには『権限最小化』『重大操作の人承認』『OpenShell互換性確認』『ログの保護・保持』を短い日本語で記載。広い余白、視認性重視。"
+      }
+    ],
+    "hashtags": [
+      "#NVIDIA",
+      "#AI安全",
+      "#エージェント",
+      "#OpenShell",
+      "#最小権限",
+      "#監査ログ",
+      "#サンドボックス",
+      "#セキュリティ設計",
+      "#継続的検証",
+      "#OpenSecureAIAlliance",
+      "#運用セキュリティ"
+    ],
+    "threads": "NVIDIAが『AIエージェントは工学で守る』と提言。OpenShellや最小権限、監査ログで実行環境を守る方針だが、導入性や実効性は検証が必要。企業はどこから手を付けるべきか？",
+    "body": "NVIDIAが2026年9月に公開したブログ「AI Security Is an Engineering Problem」で、AIエージェントの安全設計を“モデル性能だけでなく実行環境や運用を含む工学問題”と位置づける提言を出しました。日本のITメディアも要約して紹介しています。ここでは、提言の要点と現実との距離、ユーザーが知っておくべき点をやさしく整理します。\n\n---\n\n## 30秒で結論\n\n- NVIDIAはエージェントの“やってはいけないこと”を技術的に担保する仕組みを層別で示し、単なるモデル改善では不足すると明確化した。\n- 具体例としてOpenShellを提示し、最小権限・ポリシー適用・監査ログ・人間承認などの実装方針を示しているが、即時導入の可否や移行コストは公表資料からは不明。\n- 提言は攻撃想定の明確化と継続的検証を強調しており、業界横断の連携（Open Secure AI Alliance等）で知見共有を進める姿勢がある。\n- 提言は実務的で有用だが、実際の複雑な攻撃やサプライチェーン侵害に対する有効性は独立評価が必要で、不確定要素が残る。\n\n---\n\n## 設計の枠組み：『能力を上げる』だけでなく『実行環境を守る』\n\nNVIDIAは、モデルの高性能化だけで安全が担保されるわけではないと明言します。提言では「アイデンティティ管理」「最小権限（必要最小限の認証情報）」「ポリシーによるアクセス制御」「重大操作に対する人の承認」など、エージェントが外部とやり取りする際の実行環境を厳格に設計することを求めています。これは、例えばエージェントが誤って機密データを送信したり、管理者権限での変更を行ったりするリスクを、モデルではなく実行時の仕組みで制御する考え方です。\n\n【ここに図解①を挿入｜図解①：設計方針のレイヤー図】\n\n---\n\n## OpenShell：提案する実装例とその役割\n\nNVIDIAはオープンソースのランタイム／フレームワーク「NVIDIA OpenShell」を実装例として挙げています。OpenShellはエージェントがファイルやネットワーク、システムリソースへアクセスする際のゲートのように振る舞い、サンドボックス実行やポリシーの適用、エージェント自身が変更できない領域での制御を可能にすると説明されています。企業やセキュリティベンダーと連携する設計とし、既存運用との接続や検査ポイントを置くことで導入先での安全性向上を目指しています。ただし、既存システムとの互換性や移行コストは公開資料では明確ではありません。\n\n【ここに図解②を挿入｜図解②：OpenShellの役割と挙動イメージ】\n\n---\n\n## 運用と検証：継続的テストとログの重要性\n\nNVIDIAは検証の反復を強く勧めています。具体的にはプロンプトインジェクションなど既知の攻撃を想定したテストケースを明確化し、本番導入前後に繰り返し検証すること、加えて呼び出し・認可・結果を保護されたログに残すことを提案しています。これにより、異常な振る舞いの追跡やフォレンジックが可能になり、運用中に見つかった弱点を迅速に修正できる運用フローが構築されます。\n\n【ここに図解③を挿入｜図解③：運用フローと検証サイクル】\n\n---\n\n## 共同体と第三者評価の必要性\n\nNVIDIAはOpen Secure AI Allianceのような共同体を通じて設計やツールを共有し、防御側の知見を広げることを進めています。提言自体は実務的だが、現実の複雑な攻撃（連鎖的侵害、サプライチェーン攻撃など）に対する有効性を判断するには独立した第三者による実証評価や多様な導入事例が必要です。公開資料では連携事例（CiscoやJFrogなど）が示されていますが、総合的な効果測定は今後の検証課題です。\n\n【ここに図解④を挿入｜図解④：導入時のチェックリスト（企業向け）】\n\n---\n\n## 私の正直な感想\n\nNVIDIAの提言は実務目線で分かりやすく、モデル偏重になりがちな議論に有益な視点を加えています。私自身、エージェント運用で“疑わしい振る舞いをどう止めるか”の設計の弱さを何度か見てきたため、最小権限や人の承認といった“やってはいけないことを守る”方針には納得します。一方で、OpenShellの現場への導入容易性や既存ツールとの連携コストは個別調査が必要で、即効薬ではない点には注意が必要です。\n\n---\n\n## よくある質問\n\n### Q1: NVIDIAの提言は誰に向けたものですか？\n\n主に企業のエンジニア、セキュリティ担当者、クラウド・プラットフォーム提供者向けです。エージェントを業務で運用する組織が安全設計を考えるための実務的ガイドラインとして提示されています。\n\n### Q2: OpenShellはすぐに自社システムへ導入できますか？\n\n公開資料ではOpenShellの設計や機能が示されていますが、既存の商用エージェント運用との互換性や移行コストは明記されていません。導入可否は自社環境での検証が必要です。\n\n### Q3: 提言は攻撃を完全に防げますか？\n\nいいえ。NVIDIAは多層防御と継続的検証を提唱しますが、複雑な連鎖攻撃やサプライチェーン攻撃に対する総合的な有効性は独立評価や多様な導入事例の検証が必要です。\n\n### Q4: 個人ユーザーが知っておくべきポイントは？\n\n個人でも、AIサービスがどのように外部リソースへアクセスするか（ファイル、メール、APIなど）を確認し、不要な権限を与えないことが第一歩です。サービス提供側の安全方針やログ・承認フローの有無も確認しましょう。\n\n---\n\n## まとめ\n\nNVIDIAのブログは、AIエージェントの安全を単なるモデル性能問題ではなく、実行環境・権限管理・運用・検証を含む工学的課題として捉え直す重要な提言です。OpenShellのような実装例を提示して多層防御と継続的検証を推奨する一方、導入性や実効性の評価は今後の課題として残ります。企業は今回の原則を参考に、自社の運用フローと防御策を見直すべきでしょう。\n\n---\n\n## この記事について\n\n確認日：2026年10月18日（日本時間）。公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。\n\n---\n\n## 参考リンク\n\n- [AIエージェントに「何を指示するか」より「何をさせないか」――NVIDIAが示す設計の原則：AIエージェントは「判断を誤る」が前提](https://atmarkit.itmedia.co.jp/ait/articles/2610/16/news032.html)\n- [AI Security Is an Engineering Problem — How to Solve It at Every Layer of the Agent Stack](https://blogs.nvidia.com/blog/ai-security-agent-stack/)"
+  },
+  "evidence": [
+    "https://arxiv.org/abs/2603.12230",
+    "https://arxiv.org/abs/2607.24866",
+    "https://arxiv.org/abs/2607.26069",
+    "https://atmarkit.itmedia.co.jp/ait/articles/2610/16/news032.html",
+    "https://blogs.nvidia.com/blog/2026/09/21/ai-security-agent-stack",
+    "https://blogs.nvidia.com/blog/ai-security-agent-stack",
+    "https://blogs.nvidia.com/blog/secure-autonomous-ai-agents-openshell",
+    "https://blogs.nvidia.com/blog/tag/cybersecurity/page/2",
+    "https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring",
+    "https://developer.nvidia.com/blog/run-autonomous-self-evolving-agents-more-safely-with-nvidia-openshell",
+    "https://developer.nvidia.com/blog/run-autonomous-self-evolving-agents-more-safely-with-nvidia-openshell?ncid=pa-srch-bing-157-prsp-rsa-en-us-1-l4",
+    "https://developer.nvidia.com/blog/where-security-fits-in-an-ai-agent-stack",
+    "https://en.wikipedia.org/wiki/Nvidia_OpenShell",
+    "https://investor.cisco.com/files/doc_news/Cisco-Secure-AI-Factory-with-NVIDIA-Makes-AI-Easier-to-Deploy-and-Secure-Anywhere-Organizations-Need-It-2026.pdf",
+    "https://investors.jfrog.com/files/doc_news/JFrog-Delivers-Trust-Layer-for-AI-Driven-Software-with-NVIDIA-2026.pdf",
+    "https://keynews.ai/news/ai-security-is-an-engineering-problem-how-to-solve-it-48764",
+    "https://nvdium.com/en/articles/361548484",
+    "https://nvidianews.nvidia.com/_gallery/download_pdf/6a1d093c3d633297c61c2625",
+    "https://research.nvidia.com/ai-security",
+    "https://research.nvidia.com/ai-security/publications?page=0",
+    "https://www.nvidia.com/en-us/ai/openshell",
+    "https://www.reddit.com/r/AI_Governance/comments/1wsqtic/nvidia_launches_ai_security_tools_to_prevent",
+    "https://www.reddit.com/r/ArtificialInteligence/comments/1wt5ujs/we_tested_nvidias_new_openshell_agent_sandbox_it",
+    "https://www.reddit.com/r/cybersecurity/comments/1wt5mnc/we_tested_nvidias_new_ai_agent_sandbox_openshell",
+    "https://www.reddit.com/r/technology/comments/1ws5wp2/jensen_huang_says_ai_safety_is_an_engineering",
+    "https://www.speedrunlab.ai/papers/inside-nemoclaw-v1.0.pdf",
+    "https://www.techradar.com/pro/nvidia-ceo-jensen-huang-hails-openclaw-as-helping-the-future-of-robotics-but-calls-for-controls-so-we-can-realize-the-incredible-future-potential-of-the-technology-that-were-building"
+  ]
+}
