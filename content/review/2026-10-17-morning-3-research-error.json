@@ -1,0 +1,7 @@
+{
+  "status": "not_published",
+  "reason": "参考URLが有効なHTTPS URLではありません。",
+  "attempted_candidate_urls": [
+    "https://www.nikkei.com/article/DGXZRSP713990_W6A011C2000000/"
+  ]
+}
