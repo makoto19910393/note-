@@ -14,8 +14,9 @@
       ],
       "prompt": "16:9、濃紺を基調に黒とシアンのアクセント、太い白い日本語見出し『FDE大増員』を中央に配置。サブテキストに『現地で支えるエンジニア／AWS・Anthropic・OpenAI』を短く黄色で添える。背景に抽象的な企業ビルのシルエットと人のアイコンが点在し、立体的な影を付ける。広い余白、読みやすい太字、筆者の意見は画像内に記載しない。",
       "filename": "thumbnail.png",
-      "status": "planned",
-      "attempts": 0
+      "status": "generating",
+      "attempts": 1,
+      "artifact_run_id": "38985286077"
     },
     {
       "number": 1,
