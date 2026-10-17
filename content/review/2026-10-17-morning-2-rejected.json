@@ -1,0 +1,205 @@
+{
+  "status": "rejected_not_published",
+  "reason": "原稿の校閲を完了できませんでした。",
+  "article": {
+    "title": "【海外AI解説】OpenAI（元共同創設者）アンドレイ・カパシティの名言「英語が最も熱い新しいプログラミング言語だ」がTechRadarで再掲（2026-10-16）",
+    "sources": [
+      {
+        "title": "Quote of the day by OpenAI co-founder Andrej Karpathy: 'The hottest new programming language is English' — signalling the shift to natural language dominance in the AI era",
+        "url": "https://www.techradar.com/pro/quote-of-the-day-by-openai-co-founder-andrej-karpathy-the-hottest-new-programming-language-is-english-signalling-the-shift-to-natural-language-dominance-in-the-ai-era",
+        "published_at": "2026-10-16T22:00:00+00:00",
+        "supports": "Contains the quoted line and frames it as indicative of a shift to natural-language-driven programming; is the selected candidate article and was opened and read for this check."
+      },
+      {
+        "title": "Quote Origin: The Hottest New Programming Language Is English",
+        "url": "https://quoteinvestigator.com/2024/10/20/hottest-program/",
+        "published_at": "2024-10-20T00:00:00+00:00",
+        "supports": "Investigative tracing that identifies Andrej Karpathy's X/Twitter post on January 24, 2023 as the origin of the quote."
+      }
+    ],
+    "sections": {
+      "intro": "TechRadarが2026年10月16日に、OpenAIの元共同創設者アンドレイ・カパシティ（Andrej Karpathy）の有名な一言「The hottest new programming language is English（最も熱い新しいプログラミング言語は英語だ）」を取り上げました。本稿は、その出典と意味、私たちの生活や学びにどう影響するかをやさしく解説します。",
+      "conclusions": [
+        "この一言はKarpathyが2023年にX（旧Twitter）で投稿した発言に由来することが確認されており、TechRadarはそれを再掲・解説しているにとどまる。",
+        "意図するところは「自然言語でAIを操作し、プログラミングに近い役割を果たす流れ」が強まっているという観察であり、コード不要化の主張とは別に段階的な変化を示すもの。",
+        "一般の人にとっては、『英語で指示すればAIが動く』という期待が現実化しつつあるが、正確さや説明責任、学習の方法はまだ重要な課題として残る。"
+      ],
+      "explanations": [
+        {
+          "heading": "### 30秒で結論",
+          "content": "Karpathyの言葉は『英語などの自然言語がプログラミングの入口になる時代』を端的に表しています。TechRadarはこの見方を再掲しましたが、元発言は2023年の投稿が起点で、新発言を示す確証は確認できません。"
+        },
+        {
+          "heading": "### 1) 発言の来歴と今回の報道の位置づけ",
+          "content": "調査で確認できる限り、このフレーズはKarpathyが2023年1月24日にXで投稿したのが出所とされています（Quote Investigatorが追跡）。TechRadarの記事（2026-10-16）はその有名なラインを再提示し、『自然言語優勢の時代』という文脈で解説しています。つまり今回の報道は『名言の再掲と解説』であり、必ずしもKarpathy本人の最近の新発言を示す証拠はありません（未確認事項）。"
+        },
+        {
+          "heading": "### 2) それは何を意味するか：実務・学習への影響",
+          "content": "ここで言う『英語がプログラミング言語になる』とは、プログラミングの入口や指示手段が人間の自然言語に寄っていくという意味です。例えば、英語で『この表を月別に集計してグラフを作って』と指示すれば、AIが適切なコードや手順を生成してくれる。だが精度・セキュリティ・意図の明確化は依然として必要で、完全にコードを書かなくていい時代が即来るわけではありません。"
+        },
+        {
+          "heading": "### 3) 注意点と未確定要素",
+          "content": "今回のTechRadar記事は引用と解説が中心で、Karpathyが直前に同旨の新発言をしたという裏取りはできていません。また『英語』と明示される点は英語圏を想定した表現であり、他言語やローカル環境での自然言語主導化の状況は別問題です。法規制、倫理、プロフェッショナルなソフトウェア開発の役割は今後も残ります。"
+        }
+      ],
+      "personal_view": "個人的には、この種の一言がニュースになるのは便利さと危うさの両面を示していると思います。確かに自然言語でAIとやり取りできると学習の敷居は下がりますが、『言った通りに動くか』を検証する能力は今まで以上に重要になります。私は以前、AIに頼って仕様詰めを甘くしたら期待した出力が出ず手戻りが多かった経験があり、言語で指示する力と検証力の両方が必要だと感じています。",
+      "faq": [
+        {
+          "question": "Q: この発言は『プログラマーの仕事が要らなくなる』と同義ですか？",
+          "answer": "A: いいえ。自然言語でAIを操作できる領域は広がりますが、仕様設計、検証、セキュリティ、性能最適化などプロの役割は残ります。AIが生成するコードの品質管理や要件解釈は人間側の重要な仕事です。"
+        },
+        {
+          "question": "Q: 日本語や他言語でも同じ流れになりますか？",
+          "answer": "A: 概念としては同じですが、現状は英語での資源やツールが充実しているため英語優位が目立ちます。日本語対応の進展は進んでいますが、品質やエコシステムの差があります。"
+        },
+        {
+          "question": "Q: すぐに何を学べばいいですか？",
+          "answer": "A: 基礎的なロジック（条件分岐やデータ構造の考え方）と、AIに対する指示（プロンプト設計）を並行して学ぶのが現実的です。『英語の説明でどう期待を伝えるか』も役立ちます。"
+        }
+      ],
+      "summary": "TechRadarが再掲したKarpathyの言葉は、自然言語を通じたAI操作の重要性を端的に示しています。出典は2023年のKarpathy投稿にさかのぼることが確認できますが、今回の報道は再提示・解説が中心で新発言の裏取りはできていません。私たちに必要なのは『自然言語で指示できる力』と『AI出力を検証する力』の両方です。"
+    },
+    "images": [
+      {
+        "number": 0,
+        "anchor": "",
+        "theme": "サムネ：見出し＋視覚的インパクト",
+        "labels": [
+          "濃紺背景",
+          "シアン強調",
+          "太い白日本語見出し",
+          "短い副題",
+          "広い余白",
+          "立体感"
+        ],
+        "prompt": "16:9 濃紺ベースにシアンのアクセント、太い白文字で大きく「英語が新しいプログラミング言語？」と短く表示。副題を黄色で短く入れる。立体感のあるシンプルなグラフィック要素（波形か吹き出し）と広い余白。人物写真や旧ブランドは使わない。"
+      },
+      {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜図解①：発言の来歴（タイムライン）】",
+        "theme": "図解①：発言の来歴（タイムライン）",
+        "labels": [
+          "タイムライン",
+          "2023起点",
+          "2024追跡",
+          "2026再掲",
+          "シンプル図解",
+          "濃紺背景"
+        ],
+        "prompt": "16:9 濃紺背景、左から右へ3点のタイムライン（2023: Karpathy X投稿、2024: Quote Investigator追跡、2026: TechRadar再掲）それぞれに短い白文字ラベルとシアンの丸アイコン。広い余白・立体感。旧ブランドや未確認の画面は入れない。"
+      },
+      {
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜図解②：『英語がプログラミング言語』の意味】",
+        "theme": "図解②：『英語がプログラミング言語』の意味",
+        "labels": [
+          "自然言語の役割",
+          "指示→生成の流れ",
+          "例示",
+          "注意点",
+          "濃紺シアン配色"
+        ],
+        "prompt": "16:9 濃紺背景、中央にフロー図（左: 人間の英語指示、中央: AI、右: 出力（コード/ドキュメント/グラフ））。矢印はシアン、各ブロックに短い白文字注釈。右下に小さく注意点（検証が必要）を黄色で強調。"
+      },
+      {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜図解③：実務・学習で変わること（使い分け）】",
+        "theme": "図解③：実務・学習で変わること（使い分け）",
+        "labels": [
+          "学習の優先順位",
+          "プロンプト設計",
+          "コード理解",
+          "検証スキル",
+          "濃紺基調"
+        ],
+        "prompt": "16:9 濃紺背景、左右2カラムの図。左カラムに『今まで重視』(コード手書き等)、右カラムに『これから重要』(プロンプト設計・検証)をシアンと白で対比。中央に薄い立体の矢印で移行を示す。広い余白。"
+      },
+      {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜図解④：注意ポイント（精度・倫理・言語の偏り）】",
+        "theme": "図解④：注意ポイント（精度・倫理・言語の偏り）",
+        "labels": [
+          "倫理",
+          "精度",
+          "言語格差",
+          "検証",
+          "濃紺"
+        ],
+        "prompt": "16:9 濃紺背景に4つの丸アイコンを格子状に配置（精度、説明責任、言語の偏り、セキュリティ）。各アイコンはシアンと黄色のアクセントで強調。下部に短い白文字で『検証と運用ルールが必要』と記載。"
+      }
+    ],
+    "hashtags": [
+      "#AI",
+      "#自然言語",
+      "#プログラミング",
+      "#AndrejKarpathy",
+      "#TechRadar",
+      "#プロンプト設計",
+      "#AI教育",
+      "#日本語対応",
+      "#AI倫理",
+      "#検証力",
+      "#ノーコード",
+      "#英語優位"
+    ],
+    "threads": "Karpathyの「英語が新しいプログラミング言語だ」は自然言語主導の流れを端的に示す。ただし出典は2023年で、今回のTechRadarは再掲に留まる。あなたは自然言語で何を任せたいですか？",
+    "body": "TechRadarが2026年10月16日に、OpenAIの元共同創設者アンドレイ・カパシティ（Andrej Karpathy）の有名な一言「The hottest new programming language is English（最も熱い新しいプログラミング言語は英語だ）」を取り上げました。本稿は、その出典と意味、私たちの生活や学びにどう影響するかをやさしく解説します。\n\n---\n\n## 30秒で結論\n\n- この一言はKarpathyが2023年にX（旧Twitter）で投稿した発言に由来することが確認されており、TechRadarはそれを再掲・解説しているにとどまる。\n- 意図するところは「自然言語でAIを操作し、プログラミングに近い役割を果たす流れ」が強まっているという観察であり、コード不要化の主張とは別に段階的な変化を示すもの。\n- 一般の人にとっては、『英語で指示すればAIが動く』という期待が現実化しつつあるが、正確さや説明責任、学習の方法はまだ重要な課題として残る。\n\n---\n\n## 30秒で結論\n\nKarpathyの言葉は『英語などの自然言語がプログラミングの入口になる時代』を端的に表しています。TechRadarはこの見方を再掲しましたが、元発言は2023年の投稿が起点で、新発言を示す確証は確認できません。\n\n【ここに図解①を挿入｜図解①：発言の来歴（タイムライン）】\n\n---\n\n## 1) 発言の来歴と今回の報道の位置づけ\n\n調査で確認できる限り、このフレーズはKarpathyが2023年1月24日にXで投稿したのが出所とされています（Quote Investigatorが追跡）。TechRadarの記事（2026-10-16）はその有名なラインを再提示し、『自然言語優勢の時代』という文脈で解説しています。つまり今回の報道は『名言の再掲と解説』であり、必ずしもKarpathy本人の最近の新発言を示す証拠はありません（未確認事項）。\n\n【ここに図解②を挿入｜図解②：『英語がプログラミング言語』の意味】\n\n---\n\n## 2) それは何を意味するか：実務・学習への影響\n\nここで言う『英語がプログラミング言語になる』とは、プログラミングの入口や指示手段が人間の自然言語に寄っていくという意味です。例えば、英語で『この表を月別に集計してグラフを作って』と指示すれば、AIが適切なコードや手順を生成してくれる。だが精度・セキュリティ・意図の明確化は依然として必要で、完全にコードを書かなくていい時代が即来るわけではありません。\n\n【ここに図解③を挿入｜図解③：実務・学習で変わること（使い分け）】\n\n---\n\n## 3) 注意点と未確定要素\n\n今回のTechRadar記事は引用と解説が中心で、Karpathyが直前に同旨の新発言をしたという裏取りはできていません。また『英語』と明示される点は英語圏を想定した表現であり、他言語やローカル環境での自然言語主導化の状況は別問題です。法規制、倫理、プロフェッショナルなソフトウェア開発の役割は今後も残ります。\n\n【ここに図解④を挿入｜図解④：注意ポイント（精度・倫理・言語の偏り）】\n\n---\n\n## 私の正直な感想\n\n個人的には、この種の一言がニュースになるのは便利さと危うさの両面を示していると思います。確かに自然言語でAIとやり取りできると学習の敷居は下がりますが、『言った通りに動くか』を検証する能力は今まで以上に重要になります。私は以前、AIに頼って仕様詰めを甘くしたら期待した出力が出ず手戻りが多かった経験があり、言語で指示する力と検証力の両方が必要だと感じています。\n\n---\n\n## よくある質問\n\n### Q: この発言は『プログラマーの仕事が要らなくなる』と同義ですか？\n\nA: いいえ。自然言語でAIを操作できる領域は広がりますが、仕様設計、検証、セキュリティ、性能最適化などプロの役割は残ります。AIが生成するコードの品質管理や要件解釈は人間側の重要な仕事です。\n\n### Q: 日本語や他言語でも同じ流れになりますか？\n\nA: 概念としては同じですが、現状は英語での資源やツールが充実しているため英語優位が目立ちます。日本語対応の進展は進んでいますが、品質やエコシステムの差があります。\n\n### Q: すぐに何を学べばいいですか？\n\nA: 基礎的なロジック（条件分岐やデータ構造の考え方）と、AIに対する指示（プロンプト設計）を並行して学ぶのが現実的です。『英語の説明でどう期待を伝えるか』も役立ちます。\n\n---\n\n## まとめ\n\nTechRadarが再掲したKarpathyの言葉は、自然言語を通じたAI操作の重要性を端的に示しています。出典は2023年のKarpathy投稿にさかのぼることが確認できますが、今回の報道は再提示・解説が中心で新発言の裏取りはできていません。私たちに必要なのは『自然言語で指示できる力』と『AI出力を検証する力』の両方です。\n\n---\n\n## この記事について\n\n確認日：2026年10月17日（日本時間）。公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。\n\n---\n\n## 参考リンク\n\n- [Quote of the day by OpenAI co-founder Andrej Karpathy: 'The hottest new programming language is English' — signalling the shift to natural language dominance in the AI era](https://www.techradar.com/pro/quote-of-the-day-by-openai-co-founder-andrej-karpathy-the-hottest-new-programming-language-is-english-signalling-the-shift-to-natural-language-dominance-in-the-ai-era)\n- [Quote Origin: The Hottest New Programming Language Is English](https://quoteinvestigator.com/2024/10/20/hottest-program/)"
+  },
+  "evidence": [
+    "https://api.pageplace.de/preview/DT0400.9781098164577_A49445155/preview-9781098164577_A49445155.pdf",
+    "https://arxiv.org/abs/2511.17696",
+    "https://connected.silverfin.com/hubfs/20231123%20-%20Silverfin.pdf",
+    "https://en.wikipedia.org/wiki/Vibe_coding",
+    "https://explainx.ai/blog/english-programming-language-karpathy-2026-perspective",
+    "https://godigital.claconnect.com/wp-content/uploads/2024/09/SLG-Data-Analytics-Run-Final-9.12.2024.pdf",
+    "https://hoctroviet.blogspot.com/2026/08/the-hottest-new-programming-language-is.html?m=1",
+    "https://labs.sogeti.com/wp-content/uploads/sites/2/2026/04/00680-Vibe-Coding-EN.pdf",
+    "https://lhaonline.org/common/Uploaded%20files/Education/Annual%20Meetings/InduSubaiya_LHA_012924_final.pdf",
+    "https://listserv.linguistlist.org/pipermail/ads-l/2023-October/164261.html",
+    "https://lpc.events/event/19/contributions/2215/attachments/1934/4140/LPC%202025_%20The%20Singularity%20on%20Testing%20Linux%20is%20Here.pdf",
+    "https://news.ycombinator.com/item?id=45658734",
+    "https://quoteinvestigator.com/2024/10/20/hottest-program",
+    "https://reliabilitywhisperer.substack.com/p/after-the-phase-shift-what-llms-are",
+    "https://rtcp24.com/technology",
+    "https://rumor.press/technology",
+    "https://storage.googleapis.com/site-media-prod/meetings/NANOG93/5200/20250202_Zhang_Using_Ai_Agents_v1.pdf",
+    "https://superx.so/creators/karpathy",
+    "https://threadreaderapp.com/user/karpathy",
+    "https://time.com/6272103/ai-prompt-engineer-job",
+    "https://twstalker.com/karpathy/status/1617979122625712128",
+    "https://vapc.org/vapc/wp-content/uploads/2023/05/VPC-Rao-Presentation-on-GAI-May-5-2023.pdf",
+    "https://vibecodinghistory.com/andrej-karpathy",
+    "https://vibecodinghistory.com/karpathy-moment",
+    "https://viveksgag.substack.com/p/english-is-not-the-hottest-new-programming",
+    "https://windowsforum.com/news/karpathys-english-is-programming-quote-ai-prompting-vs-deterministic-code.448768?amp=1",
+    "https://www.axios.com/newsletters/axios-ai-plus-2d17a9d3-f170-4613-b966-2de6924b45af",
+    "https://www.crayon.com/contentassets/6b55ebd1d5b44595970b632b1d4e8348/azure-openai-solutioning-and-optimization-webinar-4_25_23-1.pdf",
+    "https://www.cuny.edu/wp-content/uploads/sites/4/media-assets/Teaching-matters-growth-x-AI_Accessibility.pdf",
+    "https://www.linkedin.com/videos/mattmedved_the-hottest-new-programming-language-is-activity-7435061334788079617-DkA4",
+    "https://www.politesi.polimi.it/retrieve/74f693db-1225-4952-9dbc-2fc020f3aec8/2025_07_Zoni.pdf",
+    "https://www.reddit.com/r/AIDangers/comments/1vz06d4/andrej_karpathy_just_told_engineers_the_hottest",
+    "https://www.reddit.com/r/AILounge/comments/1vz08hq/andrej_karpathy_just_told_engineers_the_hottest",
+    "https://www.reddit.com/r/AI_enterprise/comments/1vz07kj/andrej_karpathy_just_told_engineers_the_hottest",
+    "https://www.reddit.com/r/Agent_AI/comments/1vz04uy/andrej_karpathy_just_told_engineers_the_hottest",
+    "https://www.reddit.com/r/ArtificialInteligence/comments/1h0l67i",
+    "https://www.reddit.com/r/BetfairAiTrading/comments/1qs8f7r/the_hottest_new_programming_language_is_english",
+    "https://www.reddit.com/r/CodingTR/comments/1pwekkr/karpathy_programc%C4%B1_olarak_kendimi_hi%C3%A7_bu_kadar",
+    "https://www.reddit.com/r/CreatorsAI/comments/1vz0cti/andrej_karpathy_just_told_engineers_the_hottest",
+    "https://www.reddit.com/r/FutureOfWork/comments/1vz0dn9/andrej_karpathy_just_told_engineers_the_hottest",
+    "https://www.reddit.com/r/OpenAI/comments/1rsdve4/best_tech_tweet_of_all_time",
+    "https://www.reddit.com/r/aisolobusinesses/comments/1vz09io/andrej_karpathy_just_told_engineers_the_hottest",
+    "https://www.reddit.com/r/developersIndia/comments/17arf4v",
+    "https://www.reddit.com/r/singularity/comments/1wo3crl/looking_back_at_how_it_all_started_vibe_coding",
+    "https://www.reddit.com/r/vibecoding/comments/1q0nm28/2025_goal_vibecoded_my_way_to_a_shipped_mobile",
+    "https://www.reddit.com/r/vibecodingisfuture/comments/1jfn3j0",
+    "https://www.techradar.com/computing",
+    "https://www.techradar.com/computing/software",
+    "https://www.techradar.com/opinion",
+    "https://www.techradar.com/pro",
+    "https://www.techradar.com/pro/quote-of-the-day-by-openai-co-founder-andrej-karpathy-the-hottest-new-programming-language-is-english-signalling-the-shift-to-natural-language-dominance-in-the-ai-era",
+    "https://www.techspot.com/news/105912-rise-ai-coding-tools-english-hot-new-programming.html",
+    "https://www6.twstalker.com/karpathy/status/1617979122625712128",
+    "https://x.com/karpathy/status/1617979122625712128",
+    "https://zoeministries.com/wp-content/uploads/2025/12/AI-Bible-2026_Final-Manuscript-5.pdf"
+  ]
+}

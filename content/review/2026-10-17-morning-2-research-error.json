@@ -1,0 +1,8 @@
+{
+  "status": "not_published",
+  "reason": "下調べの出典URLを検索結果と照合できません。",
+  "attempted_candidate_urls": [
+    "https://www.techradar.com/pro/quote-of-the-day-by-openai-co-founder-andrej-karpathy-the-hottest-new-programming-language-is-english-signalling-the-shift-to-natural-language-dominance-in-the-ai-era",
+    "https://www.techradar.com/pro/accenture-employees-given-usd29-claude-spend-per-month-after-some-employees-spent-thousands"
+  ]
+}
