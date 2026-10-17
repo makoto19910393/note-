@@ -94,7 +94,7 @@
       ],
       "prompt": "16:9、濃紺背景。左から右へ横並びのカード形式でAnthropic/AWS/OpenAIを配置し、それぞれの公開された『投資額／研修目標』を短い日本語で表示（数値は出典に基づく表現のみ、過度な強調なし）。右端にTechRadarの言及を小さく示し『求人6倍』の注記を配置。太いシアンと白文字、広い余白。画像内に『筆者の意見・提案であり確認済み事実ではない』の注記を入れる。",
       "filename": "diagram297.png",
-      "status": "generated",
+      "status": "review_pending",
       "attempts": 2,
       "artifact_run_id": "38985286077",
       "sha256": "99658dfe5aa59903efbe52927fa6970d49f612b4a72244498e3cd003024c8d2c",
