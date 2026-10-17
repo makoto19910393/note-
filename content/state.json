@@ -1,5 +1,5 @@
 {
-  "next_number": 17,
+  "next_number": 18,
   "articles": [
     {
       "number": 1,
@@ -688,7 +688,51 @@
           "supports": "Reprints Reuters report dated Oct 14, 2026: reports OpenAI’s allegation that a former employee sent more than 100 files about an unreleased product to a personal account and later presented the product to senior Apple leadership; notes Apple’s denial and cites the San Jose federal court filing."
         }
       ]
+    },
+    {
+      "number": 17,
+      "run_id": "2026-10-17-morning-1",
+      "title": "【海外AI解説】AWS・Anthropic・OpenAIが現地配置エンジニア（FDE）を大量投入へ — 企業向け導入支援を拡大する動き",
+      "created_at": "2026-10-17T09:13:18.279413+09:00",
+      "path": "articles/2026-10-17/0017-morning.md",
+      "sources": [
+        "https://aws.amazon.com/blogs/apn/new-fde-pathways-for-aws-partners-get-ready-for-production-agentic-ai-delivery",
+        "https://openai.com/index/openai-launches-the-deployment-company",
+        "https://www.anthropic.com/news/claude-frontier-academy",
+        "https://www.techradar.com/pro/thousands-of-specialized-engineers-deployed-by-aws-anthropic-to-prove-ai-is-worth-the-investment"
+      ],
+      "sha256": "2e3b7c714c0100fd6a4cefbe4398c7008014bb9f30483ab89b1fe7fc602cb0ff",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "overseas",
+      "media_plan": "media/0017/plan.json",
+      "source_details": [
+        {
+          "title": "Thousands of specialized engineers deployed by AWS, Anthropic to prove AI is worth the investment - TechRadar",
+          "url": "https://www.techradar.com/pro/thousands-of-specialized-engineers-deployed-by-aws-anthropic-to-prove-ai-is-worth-the-investment",
+          "published_at": "2026-10-16T00:00:00+00:00",
+          "supports": "TechRadarによる各社のForward Deployed Engineer（FDE）関連の拡大報と、Lightcastの求人数増加データ（米国で約6倍、2026年1–9月で約7,300件）を要約している。"
+        },
+        {
+          "title": "Anthropic invests $100 million to train 10,000 engineers and tackle the enterprise AI talent gap - Anthropic (news)",
+          "url": "https://www.anthropic.com/news/claude-frontier-academy",
+          "published_at": "2026-10-02T00:00:00+00:00",
+          "supports": "Anthropicの公式発表。$100Mの投資で最大10,000名のエンジニア育成を目指すプログラム（Claude Frontier Academy等）について説明している。"
+        },
+        {
+          "title": "Introducing Forward Deployed Engineering for Partners: Get Ready for Production Agentic AI Delivery - AWS Partner Network (APN) Blog",
+          "url": "https://aws.amazon.com/blogs/apn/new-fde-pathways-for-aws-partners-get-ready-for-production-agentic-ai-delivery/",
+          "published_at": "2026-10-01T00:00:00+00:00",
+          "supports": "AWS公式ブログ。Forward Deployed Engineering（FDE）組織の立ち上げと、顧客現場での導入支援を拡大するための投資（過去に発表された$1B規模の取組を言及）を説明している。"
+        },
+        {
+          "title": "OpenAI launches the Deployment Company (DeployCo) - OpenAI",
+          "url": "https://openai.com/index/openai-launches-the-deployment-company/",
+          "published_at": "2026-05-11T00:00:00+00:00",
+          "supports": "OpenAIの公式発表。DeployCoの立ち上げと、顧客向けにエンジニアを派遣して導入を支援するモデル（ローンチ時に数十億ドル規模の支援あり）を説明している。"
+        }
+      ]
     }
   ],
-  "next_diagram": 296
+  "next_diagram": 300
 }
