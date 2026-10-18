@@ -1,5 +1,5 @@
 {
-  "next_number": 18,
+  "next_number": 19,
   "articles": [
     {
       "number": 1,
@@ -732,7 +732,44 @@
           "supports": "OpenAIの公式発表。DeployCoの立ち上げと、顧客向けにエンジニアを派遣して導入を支援するモデル（ローンチ時に数十億ドル規模の支援あり）を説明している。"
         }
       ]
+    },
+    {
+      "number": 18,
+      "run_id": "2026-10-18-evening-2",
+      "title": "【国内AI学び】Apple・iPhone DuoとSiri AI（Apple Intelligence）の連携が示す“ポストスマートフォン”的体験",
+      "created_at": "2026-10-18T22:46:35.155966+09:00",
+      "path": "articles/2026-10-18/0018-evening.md",
+      "sources": [
+        "https://wired.jp/article/iphone-duo-ai-post-smartphone",
+        "https://www.apple.com/iphone-duo/specs",
+        "https://www.apple.com/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo"
+      ],
+      "sha256": "2737d4b8c2ba3830ec62f6c7e64d9c2ce56198dc5afba51290fd913aa09049c8",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "domestic",
+      "media_plan": "media/0018/plan.json",
+      "source_details": [
+        {
+          "title": "iPhone DuoとAIの融合から、“ポストスマートフォン”のかたちが見えてきた | WIRED.jp",
+          "url": "https://wired.jp/article/iphone-duo-ai-post-smartphone/",
+          "published_at": "2026-10-18T00:00:00+09:00",
+          "supports": "WIREDによる試用レポートで、iPhone Duoの折りたたみ設計、外側5.4インチ／内側7.6インチの表示や日本価格（36万4,800円から）／Siri AI（日本語ベータ試用）の利便性評価を記載している。"
+        },
+        {
+          "title": "Open up to new possibilities with iPhone Duo - Apple",
+          "url": "https://www.apple.com/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/",
+          "published_at": "2026-10-15T00:00:00+09:00",
+          "supports": "Apple公式の製品発表更新。iPhone Duoのプレオーダー開始日（2026-10-16）と発売日（2026-10-23）、ディスプレイ仕様、A20 Pro搭載、iOS（Apple Intelligence / Siri AI）対応について公式仕様と説明を提供している。"
+        },
+        {
+          "title": "iPhone Duo - 製品ページ / Tech Specs - Apple",
+          "url": "https://www.apple.com/iphone-duo/specs/",
+          "published_at": "2026-09-09T00:00:00+09:00",
+          "supports": "Apple公式の技術仕様ページ。ディスプレイサイズや解像度、重量、対応容量、Apple Pencil対応などの詳細スペックを確認できる。"
+        }
+      ]
     }
   ],
-  "next_diagram": 300
+  "next_diagram": 304
 }
