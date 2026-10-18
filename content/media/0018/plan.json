@@ -54,7 +54,7 @@
       ],
       "prompt": "16:9、濃紺背景。中央に折りたたみ状態と開いた状態のiPhone Duoの簡潔な図を並べて配置。外側の小画面に『通知確認』、内側大画面に『資料表示』の短い黄色ラベルを付ける。図はフラットで立体感を少し出す。白とシアンのラインでサイズ数値（5.4\"、7.6\"）を示す。余白を多めに。",
       "filename": "diagram300.png",
-      "status": "generated",
+      "status": "review_pending",
       "attempts": 2,
       "artifact_run_id": "39132994576",
       "sha256": "32103901c5db9658194b1a171d4a018c9128cb4df6ac061da8da74fd370fe72b",
