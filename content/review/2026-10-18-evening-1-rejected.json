@@ -1,0 +1,179 @@
+{
+  "status": "rejected_not_published",
+  "reason": "校閲で修正が必要です: 本文中に『【ここに図解①を挿入｜図解①：…】』のような画像作成指示（編集指示）が残っています。本文は作成指示を含めず、図版の差し込み位置は編集側で扱う旨に修正してください。; 記事に添付する画像のプロンプト／デザイン指定（images配下のprompt）は『筆者の提案』に当たるため、画像自体にその旨（例：「筆者の図解案」など）を明記してください。また、プロンプトは外部公開用の設計指示にならないよう簡潔化してください。; 図解やサムネイルのラベルに『iPhone Duo』『Siri AI』『Apple Intelligence』など製品名が含まれますが、図中で公式画面や認定画面を偽装する表現にならないよう注意喚起を付記してください（例：『図はイメージです。公式画面ではありません』）。; 本文の『私の正直な感想』と事実部分の区別は明確ですが、WIREDの価格（36万4,800円から）やプレオーダー・発売日などは必ず出典を近接して明示してください（既に出典あり）。特に価格や発売日についてはWIREDとApple Newsroomのどちらが情報源かを本文内で明示してください。; 画像ラベル・説明にある詳細なデザイン要望（色指定や文字配置など）は編集指示に相当します。公開記事のメタ情報としては『図解イメージ（筆者案）』程度に留め、具体的な制作指示は削除してください。; タイトルは国内タグと内容は合致していますが、本文冒頭で『国内／海外』判断の理由（日本の価格表記・WIRED.jpが対象である点）を短く付記すると、regionとregion_reasonとの整合性がより明確になります。",
+  "article": {
+    "title": "【国内AI学び】Apple・iPhone DuoとSiri AI統合、“ポストスマートフォン”の視点で何が変わるか",
+    "sources": [
+      {
+        "title": "iPhone DuoとAIの融合から、“ポストスマートフォン”のかたちが見えてきた | WIRED.jp",
+        "url": "https://wired.jp/article/iphone-duo-ai-post-smartphone/",
+        "published_at": "2026-10-18T00:00:00+09:00",
+        "supports": "WIRED.jpによる製品体験をもとに、iPhone Duoのフォームファクター、Siri AIの利用感、Apple Intelligenceと組み合わせた“ポストスマートフォン”的な見方を解説している。"
+      },
+      {
+        "title": "Open up to new possibilities with iPhone Duo - Apple Newsroom (update)",
+        "url": "https://www.apple.com/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/",
+        "published_at": "2026-10-15T00:00:00-07:00",
+        "supports": "Apple公式の更新記事。iPhone Duoの仕様、iOS 27 / Siri AI（Apple Intelligence）との連携、プレオーダー開始日などの公式情報を提供している。"
+      },
+      {
+        "title": "Apple unveils iPhone Duo - Apple Newsroom (original release)",
+        "url": "https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/",
+        "published_at": "2026-09-09T00:00:00-07:00",
+        "supports": "AppleによるiPhone Duoの初回発表資料。発表日と主要な機能（Siri AI、Apple Intelligenceの導入を含む）を説明している。"
+      }
+    ],
+    "sections": {
+      "intro": "Appleの折りたたみiPhone「iPhone Duo」と、iOS 27で本格展開するSiri AI（Apple Intelligence）の連携が話題です。WIRED.jpの体験記事とApple公式情報をもとに、何ができるようになるのかをやさしく解説します。",
+      "conclusions": [
+        "iPhone Duoは折りたたみフォームにより『持ち方・使い方』が変わり、Siri AIは個人コンテキストを活かすことで操作の手間を減らす狙いがある。",
+        "Appleはプライバシー重視の設計を繰り返し示しているが、処理の場所や細部はユーザーの実運用で検証が必要。",
+        "『ポストスマートフォン』とは単一の新機種ではなく、複数デバイスとAIが連携する使用体験の総体を指す観点が強調されている。"
+      ],
+      "explanations": [
+        {
+          "heading": "iPhone Duoの形と使い勝手はどう変わるか",
+          "content": "iPhone Duoは折りたたみで、開いたときに約7.6インチの内部ディスプレイ、閉じた状態で外側に約5.4インチの表示があると公式・報道で記されています。折りたたみは画面を大きく使える一方、片手操作やポケット収まりなど従来の利便性とのトレードオフが出ます。WIREDの体験では、作業領域が増えることでメモやマルチタスク系の操作感は向上するとされますが、耐久性や長期の使い勝手（ヒンジ耐久、折り目感）は現時点で一般ユーザーの実測が不足しており結論は未定です。"
+        },
+        {
+          "heading": "Siri AI（Apple Intelligence）は何ができるか",
+          "content": "AppleはSiri AIとApple IntelligenceをiOS 27で提供し、カレンダーや位置情報、iCloud内の個人データを文脈として利用して応答や操作支援を行うと説明しています。つまり『あなたが今何をしているか』を踏まえた案内やタスク実行が期待されます。ただし、日本語での実用性能（自然さや理解精度）や、どの処理が端末内で行われるかなどの詳細は、実際の利用と公式の追加技術資料が必要です。"
+        },
+        {
+          "heading": "プライバシー設計と“プライベートクラウドコンピューティング”",
+          "content": "Appleはプライバシー面で『プライベートクラウドコンピューティング』のような仕組みを示し、個人データの保護を強調しています。これは、すべてを外部サーバーに送りっぱなしにするのではなく、端末側やiCloudの暗号化された領域とサーバー処理を組み合わせる設計を指すとAppleは説明しています。ただし、具体的にどの処理が端末内で完結し、どの処理がサーバー側へ送られるかの境界は公式情報とユーザーの検証が揃うまで不明確な部分があります。"
+        },
+        {
+          "heading": "『ポストスマートフォン』という見方は何を意味するか",
+          "content": "WIREDはiPhone Duoを単独の“次世代スマホ”と見るのではなく、折りたたみデバイス、AirPods、Apple Watchなど複数のハードとSiri AI（Apple Intelligence）がつながる『使い方のセット』として説明します。たとえば、音声での操作・画面をまたいだコンテキスト共有・周辺デバイスとのシームレスな引き継ぎなどが重視されます。ただし、こうした世界観が一般の生活でどの程度受け入れられるかは、価格（WIREDは日本の参考価格を36万4,800円からと記載）や実際の利便性、エコシステムへの依存度次第で変わります。"
+        }
+      ],
+      "personal_view": "個人的には、折りたたみフォームとAIの組合せは確かに新しい可能性を感じますが、重要なのは“日常の本当に面倒なこと”が減るかどうかです。プライバシー説明の具体性と日本語での対話品質の実感が出るまでは、慎重な評価が必要だと考えます。",
+      "faq": [
+        {
+          "question": "iPhone Duoはいつ買えるの？",
+          "answer": "Apple公式は一部地域でプレオーダーを2026年10月16日（米国太平洋時間）に開始すると発表しています。日本の全モデル別の発売開始日や店頭での実機レビューは現時点で確定情報が不足しています。"
+        },
+        {
+          "question": "Siri AIは日本語でどれくらい賢い？",
+          "answer": "AppleはSiri AIの日本語提供を示していますが、会話品質やアプリ画面の理解精度など実運用での評価は、ユーザーによる実測や追加の技術資料が出るまで断定できません。"
+        },
+        {
+          "question": "プライバシーは本当に守られる？",
+          "answer": "Appleはプライバシー重視の設計を公表していますが、どの処理が端末内で行われ、どのデータがサーバーへ送られるかの細部は未確認です。運用実態の検証が必要です。"
+        },
+        {
+          "question": "『ポストスマートフォン』って何が便利になる？",
+          "answer": "複数デバイスとAIが連携することで、音声や自動化でのタスク完了、画面をまたいだ作業のスムーズ化、コンテキストに応じた提案などが期待されます。ただし、価格やエコシステムへの依存が広がる点は考慮が必要です。"
+        }
+      ],
+      "summary": "iPhone DuoとSiri AI（Apple Intelligence）の組合せは、ハードとAIの連携で新しい使い方を提案します。WIREDの体験記事はその可能性を示しますが、耐久性や日本語でのAI性能、プライバシー運用の詳細は、実機レビューと追加の公式技術情報が揃うまで不確定です。"
+    },
+    "images": [
+      {
+        "number": 0,
+        "anchor": "",
+        "theme": "サムネイル：iPhone DuoとAI連携のイメージ",
+        "labels": [
+          "iPhone Duo",
+          "Siri AI",
+          "ポストスマートフォン",
+          "折りたたみ",
+          "Apple Intelligence"
+        ],
+        "prompt": "16:9、濃紺背景にシアンと白の立体的なアクセント。中央に折りたたみiPhoneを斜めから見せ、開いた大画面と閉じた外画面を対比で表示。右上に小さく吹き出し風のアイコンで『Siri AI』の波形を白で描く。太い短い日本語で白文字『iPhone Duo』、シアンで『AIとつながる』と配置。広い余白を取りモダンで情報誌風のサムネ。"
+      },
+      {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜図解①：フォームファクターの変化】",
+        "theme": "図解①：フォームファクターの変化",
+        "labels": [
+          "開いた時 7.6インチ",
+          "閉じた時 5.4インチ",
+          "片手操作の差",
+          "ポケット収まり"
+        ],
+        "prompt": "16:9、黒背景にシアンと黄色の太線で折りたたみiPhoneの断面を左右に対比。左に開いた画面のイラストと『7.6インチ』、右に閉じた状態と『5.4インチ』を配置。下部に短い箇条書き風の白文字で『メリット』『注意点』をアイコン付きで示す。広い余白と立体感を持たせる。"
+      },
+      {
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜図解②：Siri AIができること（概念）】",
+        "theme": "図解②：Siri AIができること（概念）",
+        "labels": [
+          "カレンダー連携",
+          "位置情報",
+          "iCloudの文脈",
+          "音声操作"
+        ],
+        "prompt": "16:9、濃紺背景。中心に円形のハブ（Siri AI）を配置し、そこからカレンダー、地図、メモ、メールのアイコンへシアンの線で接続。各アイコンの近くに短い白文字で機能説明（例：予定調整、到着案内）を配置。右下に注意書き風に『処理の場所は一部不明』を黄色で表示。"
+      },
+      {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜図解③：プライバシー設計の概要】",
+        "theme": "図解③：プライバシー設計の概要",
+        "labels": [
+          "端末内処理",
+          "iCloud暗号化",
+          "サーバー処理",
+          "不確定な境界"
+        ],
+        "prompt": "16:9、黒背景。左にスマホアイコン（端末内処理）、中央に鍵付きのiCloudアイコン（暗号化）、右にクラウドサーバーのアイコンを並べ、矢印でデータの流れを示す。シアンと黄色で境界線を強調し、下部に短く『詳細は未確定』と白で添える。立体感と広い余白。"
+      },
+      {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜図解④：ポストスマートフォンの利用イメージ】",
+        "theme": "図解④：ポストスマートフォンの利用イメージ",
+        "labels": [
+          "iPhone Duo中心の連携",
+          "AirPodsでの操作",
+          "Apple Watchの通知引継ぎ",
+          "複数デバイスのシームレス体験"
+        ],
+        "prompt": "16:9、濃紺背景。中央にiPhone Duoのアイコンを置き、周囲にAirPods、Apple Watch、Macを円で配置。各デバイスにシアンのラインで接続し、小さい吹き出しで『音声で返信』『通知継続』『画面引継ぎ』などの短文を白で表示。下部に黄色で『エコシステム依存に注意』と記載。"
+      }
+    ],
+    "hashtags": [
+      "#iPhoneDuo",
+      "#Apple",
+      "#SiriAI",
+      "#AppleIntelligence",
+      "#折りたたみスマホ",
+      "#ポストスマートフォン",
+      "#プライバシー",
+      "#iOS27",
+      "#WIRED",
+      "#国内AI学び",
+      "#AIと日常",
+      "#ガジェット"
+    ],
+    "threads": "iPhone DuoとSiri AIの組合せは可能性大。大画面×文脈理解で何が変わる？プライバシーと実用性はどう評価すべき？",
+    "body": "Appleの折りたたみiPhone「iPhone Duo」と、iOS 27で本格展開するSiri AI（Apple Intelligence）の連携が話題です。WIRED.jpの体験記事とApple公式情報をもとに、何ができるようになるのかをやさしく解説します。\n\n---\n\n## 30秒で結論\n\n- iPhone Duoは折りたたみフォームにより『持ち方・使い方』が変わり、Siri AIは個人コンテキストを活かすことで操作の手間を減らす狙いがある。\n- Appleはプライバシー重視の設計を繰り返し示しているが、処理の場所や細部はユーザーの実運用で検証が必要。\n- 『ポストスマートフォン』とは単一の新機種ではなく、複数デバイスとAIが連携する使用体験の総体を指す観点が強調されている。\n\n---\n\n## iPhone Duoの形と使い勝手はどう変わるか\n\niPhone Duoは折りたたみで、開いたときに約7.6インチの内部ディスプレイ、閉じた状態で外側に約5.4インチの表示があると公式・報道で記されています。折りたたみは画面を大きく使える一方、片手操作やポケット収まりなど従来の利便性とのトレードオフが出ます。WIREDの体験では、作業領域が増えることでメモやマルチタスク系の操作感は向上するとされますが、耐久性や長期の使い勝手（ヒンジ耐久、折り目感）は現時点で一般ユーザーの実測が不足しており結論は未定です。\n\n【ここに図解①を挿入｜図解①：フォームファクターの変化】\n\n---\n\n## Siri AI（Apple Intelligence）は何ができるか\n\nAppleはSiri AIとApple IntelligenceをiOS 27で提供し、カレンダーや位置情報、iCloud内の個人データを文脈として利用して応答や操作支援を行うと説明しています。つまり『あなたが今何をしているか』を踏まえた案内やタスク実行が期待されます。ただし、日本語での実用性能（自然さや理解精度）や、どの処理が端末内で行われるかなどの詳細は、実際の利用と公式の追加技術資料が必要です。\n\n【ここに図解②を挿入｜図解②：Siri AIができること（概念）】\n\n---\n\n## プライバシー設計と“プライベートクラウドコンピューティング”\n\nAppleはプライバシー面で『プライベートクラウドコンピューティング』のような仕組みを示し、個人データの保護を強調しています。これは、すべてを外部サーバーに送りっぱなしにするのではなく、端末側やiCloudの暗号化された領域とサーバー処理を組み合わせる設計を指すとAppleは説明しています。ただし、具体的にどの処理が端末内で完結し、どの処理がサーバー側へ送られるかの境界は公式情報とユーザーの検証が揃うまで不明確な部分があります。\n\n【ここに図解③を挿入｜図解③：プライバシー設計の概要】\n\n---\n\n## 『ポストスマートフォン』という見方は何を意味するか\n\nWIREDはiPhone Duoを単独の“次世代スマホ”と見るのではなく、折りたたみデバイス、AirPods、Apple Watchなど複数のハードとSiri AI（Apple Intelligence）がつながる『使い方のセット』として説明します。たとえば、音声での操作・画面をまたいだコンテキスト共有・周辺デバイスとのシームレスな引き継ぎなどが重視されます。ただし、こうした世界観が一般の生活でどの程度受け入れられるかは、価格（WIREDは日本の参考価格を36万4,800円からと記載）や実際の利便性、エコシステムへの依存度次第で変わります。\n\n【ここに図解④を挿入｜図解④：ポストスマートフォンの利用イメージ】\n\n---\n\n## 私の正直な感想\n\n個人的には、折りたたみフォームとAIの組合せは確かに新しい可能性を感じますが、重要なのは“日常の本当に面倒なこと”が減るかどうかです。プライバシー説明の具体性と日本語での対話品質の実感が出るまでは、慎重な評価が必要だと考えます。\n\n---\n\n## よくある質問\n\n### iPhone Duoはいつ買えるの？\n\nApple公式は一部地域でプレオーダーを2026年10月16日（米国太平洋時間）に開始すると発表しています。日本の全モデル別の発売開始日や店頭での実機レビューは現時点で確定情報が不足しています。\n\n### Siri AIは日本語でどれくらい賢い？\n\nAppleはSiri AIの日本語提供を示していますが、会話品質やアプリ画面の理解精度など実運用での評価は、ユーザーによる実測や追加の技術資料が出るまで断定できません。\n\n### プライバシーは本当に守られる？\n\nAppleはプライバシー重視の設計を公表していますが、どの処理が端末内で行われ、どのデータがサーバーへ送られるかの細部は未確認です。運用実態の検証が必要です。\n\n### 『ポストスマートフォン』って何が便利になる？\n\n複数デバイスとAIが連携することで、音声や自動化でのタスク完了、画面をまたいだ作業のスムーズ化、コンテキストに応じた提案などが期待されます。ただし、価格やエコシステムへの依存が広がる点は考慮が必要です。\n\n---\n\n## まとめ\n\niPhone DuoとSiri AI（Apple Intelligence）の組合せは、ハードとAIの連携で新しい使い方を提案します。WIREDの体験記事はその可能性を示しますが、耐久性や日本語でのAI性能、プライバシー運用の詳細は、実機レビューと追加の公式技術情報が揃うまで不確定です。\n\n---\n\n## この記事について\n\n確認日：2026年10月18日（日本時間）。公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。\n\n---\n\n## 参考リンク\n\n- [iPhone DuoとAIの融合から、“ポストスマートフォン”のかたちが見えてきた | WIRED.jp](https://wired.jp/article/iphone-duo-ai-post-smartphone/)\n- [Open up to new possibilities with iPhone Duo - Apple Newsroom (update)](https://www.apple.com/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/)\n- [Apple unveils iPhone Duo - Apple Newsroom (original release)](https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/)"
+  },
+  "evidence": [
+    "https://images.apple.com/ca/newsroom/2026/09/apple-unveils-iphone-duo",
+    "https://images.apple.com/ca/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo",
+    "https://images.apple.com/cm/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo",
+    "https://images.apple.com/ie/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo",
+    "https://images.apple.com/in/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo",
+    "https://images.apple.com/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo",
+    "https://investor.apple.com/investor-relations",
+    "https://wired.jp/article/iphone-duo-ai-post-smartphone",
+    "https://www.apple.com/apple-events",
+    "https://www.apple.com/gw/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo",
+    "https://www.apple.com/in/os/pdf/All_New_Features_iOS_26_Sept_2025.pdf",
+    "https://www.apple.com/iphone-duo",
+    "https://www.apple.com/ml/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo",
+    "https://www.apple.com/newsroom",
+    "https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant",
+    "https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo",
+    "https://www.apple.com/newsroom/2026/09/major-updates-for-apples-software-platforms-are-now-available",
+    "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here",
+    "https://www.apple.com/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo",
+    "https://www.apple.com/newsroom/archive/apple-intelligence",
+    "https://www.apple.com/os/pdf/All_New_Features_iOS_26_Sept_2025.pdf",
+    "https://www.apple.com/os/pdf/All_New_Features_iOS_26_Sept_2025.pdf?pubDate=20250929",
+    "https://www.apple.com/ph/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo",
+    "https://www.apple.com/uk/newsroom/2026/09/apple-unveils-iphone-duo",
+    "https://www.apple.com/uk/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo"
+  ]
+}
