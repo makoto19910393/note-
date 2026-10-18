@@ -15,8 +15,9 @@
       ],
       "prompt": "16:9のサムネイル、濃紺の背景にシアンと白・黄色の太い短い日本語を左寄せで配置。右側に斜めに開いたiPhone Duoのシルエット（折りたたみを強調）を立体感あるレンダリングで配置。左上に大きく白文字で「iPhone Duo」、左下に黄色で「Siri AI連携」と短く入れる。広い余白、高コントラスト、Appleの旧ロゴや画面の実際のUIは描かない。",
       "filename": "thumbnail.png",
-      "status": "planned",
-      "attempts": 0
+      "status": "generating",
+      "attempts": 1,
+      "artifact_run_id": "39132994576"
     },
     {
       "number": 1,
