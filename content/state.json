@@ -1,5 +1,5 @@
 {
-  "next_number": 20,
+  "next_number": 21,
   "articles": [
     {
       "number": 1,
@@ -799,7 +799,44 @@
           "supports": "Anthropicによる一次報告ページ。社内データ（雇用・エージェントログ・カレンダー・採用記録等）と従業員インタビューに基づく分析を提示し、エージェント稼働時間や採用構成の変化、メタワークの増加などを報告している（ITmediaの記事の出所）。"
         }
       ]
+    },
+    {
+      "number": 20,
+      "run_id": "2026-10-19-evening-1",
+      "title": "【国内AI学び】NTTテクノクロスがプロジェクト分析ソリューション「PromanAIde」を提供開始、AIでPMO支援する『AI‑PMO』構想を提示",
+      "created_at": "2026-10-20T01:48:11.788458+09:00",
+      "path": "articles/2026-10-19/0020-evening.md",
+      "sources": [
+        "https://cloud.watch.impress.co.jp/docs/news/2146984.html",
+        "https://www.itmedia.co.jp/enterprise/articles/2610/19/news068.html",
+        "https://www.ntt-tx.co.jp/whatsnew/2026/261008.html"
+      ],
+      "sha256": "2c8ac600615e5004120d6e921fb363d111faf7816e6c6fec1622c0c87d454ba7",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "domestic",
+      "media_plan": "media/0020/plan.json",
+      "source_details": [
+        {
+          "title": "AIエージェントの業務管理、答えは「プロジェクト管理」にある？　NTTテクノクロスの「AI-PMO」構想を基に考察：Weekly Memo - ITmedia エンタープライズ",
+          "url": "https://www.itmedia.co.jp/enterprise/articles/2610/19/news068.html",
+          "published_at": "2026-10-19T13:25:00+09:00",
+          "supports": "ITmediaの記事はNTTテクノクロスの10月8日の発表を受け、会見の説明内容と『AI‑PMO／PromanAIde』の狙いを要約・考察している。"
+        },
+        {
+          "title": "NTTテクノクロス、熟練PMの判断観点を再現したAIでプロジェクトを分析・可視化するソリューション「PromanAIde」を提供開始",
+          "url": "https://www.ntt-tx.co.jp/whatsnew/2026/261008.html",
+          "published_at": "2026-10-08T00:00:00+09:00",
+          "supports": "NTTテクノクロスの公式プレスリリース。提供開始日、製品の目的・機能、AI‑PMO構想としての位置づけを正式に説明している（本文確認済み）。"
+        },
+        {
+          "title": "NTTテクノクロス、「AI‑PMO」構想第1弾のプロジェクト分析ソリューション「PromanAIde」を提供 - クラウド Watch",
+          "url": "https://cloud.watch.impress.co.jp/docs/news/2146984.html",
+          "published_at": "2026-10-09T10:30:00+09:00",
+          "supports": "第三者メディア（Impress Cloud Watch）による報道。NTTの発表内容を要約し、会見の実施を確認している。"
+        }
+      ]
     }
   ],
-  "next_diagram": 308
+  "next_diagram": 312
 }
