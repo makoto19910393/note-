@@ -13,9 +13,25 @@
       ],
       "prompt": "16:9濃紺背景、中央に立体的な白い円形メダル風オブジェクト、その上に太いシアンの日本語テキスト『PromanAIde』、左下に小さく白字で『AI‑PMO 第一弾』、広い余白、ハイコントラスト、現代的で企業向けのデザイン、ノイズなし、高解像度",
       "filename": "thumbnail.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "39288487675"
+      "artifact_run_id": "39288487675",
+      "sha256": "260ff1011b8fe2248afbb68ea813b4f99d6c9c60e1d28b84e85810729e710dfa",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1155,
+        "input_tokens_details": {
+          "image_tokens": 840,
+          "text_tokens": 315
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2233
+      }
     },
     {
       "number": 1,
