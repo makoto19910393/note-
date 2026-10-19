@@ -18,24 +18,24 @@
       ],
       "prompt": "16:9 濃紺の背景に立体的なシアンのエレメント、中央に大胆な太い白と黄色の日本語見出し『Anthropic 報告書：エージェント稼働6倍』。下部に小さく『初級採用27%→9%（2024→2026）』。広い余白、シンプルでニュース性のある構図、高コントラスト、洗練されたモダンデザイン。",
       "filename": "thumbnail.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 2,
       "artifact_run_id": "39178754490",
-      "sha256": "2b676a309d29d8c614c4e8d4e592dbd7a84c1c66a6a485e9651280b238bbc51e",
+      "sha256": "f2af3802f669ef5446fe53518445fab49c09ef913c9efcad2f1b9ca541b155c1",
       "width": 1536,
       "height": 864,
       "usage": {
-        "input_tokens": 1214,
+        "input_tokens": 1284,
         "input_tokens_details": {
           "image_tokens": 840,
-          "text_tokens": 374
+          "text_tokens": 444
         },
         "output_tokens": 1078,
         "output_tokens_details": {
           "image_tokens": 1078,
           "text_tokens": 0
         },
-        "total_tokens": 2292
+        "total_tokens": 2362
       },
       "review": {
         "approved": false,
