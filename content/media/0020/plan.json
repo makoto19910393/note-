@@ -13,7 +13,7 @@
       ],
       "prompt": "16:9濃紺背景、中央に立体的な白い円形メダル風オブジェクト、その上に太いシアンの日本語テキスト『PromanAIde』、左下に小さく白字で『AI‑PMO 第一弾』、広い余白、ハイコントラスト、現代的で企業向けのデザイン、ノイズなし、高解像度",
       "filename": "thumbnail.png",
-      "status": "review_pending",
+      "status": "rejected",
       "attempts": 1,
       "artifact_run_id": "39288487675",
       "sha256": "260ff1011b8fe2248afbb68ea813b4f99d6c9c60e1d28b84e85810729e710dfa",
@@ -31,6 +31,16 @@
           "text_tokens": 0
         },
         "total_tokens": 2233
+      },
+      "review": {
+        "approved": false,
+        "issues": "本文にない断定を削除してください。『PromanAlde』という表記（記事は『PromanAIde』） — 重大な誤字で本文と一致しないため不合格。 『AI‑PMO 第一弾』という断定 — 記事では『AI‑PMO構想を提示』とあるのみで“第一弾”である根拠が本文にないため不合格。",
+        "observed_title": "PromanAlde",
+        "observed_diagram_label": "",
+        "unsupported_claims": [
+          "『PromanAlde』という表記（記事は『PromanAIde』） — 重大な誤字で本文と一致しないため不合格。",
+          "『AI‑PMO 第一弾』という断定 — 記事では『AI‑PMO構想を提示』とあるのみで“第一弾”である根拠が本文にないため不合格。"
+        ]
       }
     },
     {
