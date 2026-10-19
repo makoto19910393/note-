@@ -1,0 +1,8 @@
+{
+  "status": "not_published",
+  "reason": "調べたニュースが指定の国内・海外枠に一致しません。別区分で穴埋めしません。",
+  "attempted_candidate_urls": [
+    "https://kn.itmedia.co.jp/kn/article/2610/19/2000002342/",
+    "https://www.techradar.com/phones/oppo-phones/the-premium-market-is-dominated-by-two-brands-i-believe-consumers-would-be-interested-in-a-third-oppos-european-ceo-explains-his-strategy-for-breaking-the-apple-and-samsung-duopoly-and-how-chatbots-like-chatgpt-could-hold-the-key"
+  ]
+}
