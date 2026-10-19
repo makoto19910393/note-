@@ -58,24 +58,24 @@
       ],
       "prompt": "16:9 濃紺背景、左側に人間のシルエットと労働時間の棒、右側に複数の小さなエージェントアイコンと長い棒で稼働時間を示す対比図。シアンと黄で強調、太い短い日本語キャプション『3月にAIが人間を超える』『8月：対話型で6倍』。視覚的に差がわかるシンプルなレイアウト。",
       "filename": "diagram304.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 2,
       "artifact_run_id": "39178754490",
-      "sha256": "2ddc5092e8a4562d3a959d7892343af7cb2918e89ea42d77325734d92128f2a7",
+      "sha256": "ef2b36ad74b3d882081178d85b25d4b5b59988989e1ed0049f301a089bf2031f",
       "width": 1536,
       "height": 864,
       "usage": {
-        "input_tokens": 1861,
+        "input_tokens": 1883,
         "input_tokens_details": {
           "image_tokens": 1508,
-          "text_tokens": 353
+          "text_tokens": 375
         },
         "output_tokens": 1078,
         "output_tokens_details": {
           "image_tokens": 1078,
           "text_tokens": 0
         },
-        "total_tokens": 2939
+        "total_tokens": 2961
       },
       "review": {
         "approved": false,
