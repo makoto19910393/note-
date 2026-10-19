@@ -1,0 +1,178 @@
+{
+  "status": "rejected_not_published",
+  "reason": "校閲で修正が必要です: 本文中の『【ここに図解①を挿入｜図解①：症状の見え方』等の画像挿入指示をすべて削除してください。本文に制作指示やレイアウト指示を残さず、本文は記事本文のみ（図解のキャプションや説明文は可）にしてください。; 全ての画像メタデータ／プロンプトに「図解は筆者による整理・解説であり、公式画面や公式デザインの複製ではない」旨の短い注記を加えてください（例：図解は筆者の説明用で公式画面ではありません）。これは『筆者の提案は画像にもその旨を明記』という要件に対応するためです。; 記事冒頭または画像キャプションのいずれか分かりやすい場所に、本件の地域タグが『海外』である理由（Microsoft製品の米国拠点と公式サポート文書が一次情報である点）を簡潔に追記してください（地域とregion_reasonが資料と一致していることの明示）。; 本文中の事実・未確定事項の区別は良好ですが、『私の正直な感想』の直前に、読者にとっての実務上の推奨（管理者確認や公式トラブルシュート参照）を再掲して、筆者意見と手順推奨を明確に分離してください。; 確認済み事項として、previous欄の過去記事群を照合した結果、本件と同一の発表・事件（Microsoftが公開したOutlookのCopilotボタン不具合の修正）を扱う過去記事は存在しない旨を短く本文内（または『この記事について』欄）に明記してください。",
+  "article": {
+    "title": "【海外AI解説】Microsoft（Outlook）──クラシックOutlookで消えたCopilotボタンの不具合が修正されました",
+    "sources": [
+      {
+        "title": "Microsoft fixes classic Outlook bug that hid Copilot buttons",
+        "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-bug-that-hid-copilot-buttons-in-classic-outlook/",
+        "published_at": "2026-10-19T08:44:00+00:00",
+        "supports": "Summarizes Microsoft’s support update, lists symptoms, notes Microsoft blamed a bug retrieving account info from Outlook profiles, and records Microsoft’s recommended troubleshooters and temporary workaround."
+      },
+      {
+        "title": "Copilot buttons are missing in classic Outlook for Windows (Microsoft Support - known issues)",
+        "url": "https://support.microsoft.com/en-gb/support/known-issues/copilot-buttons-gone-classic-outlook-windows",
+        "published_at": "2026-10-15T00:00:00+00:00",
+        "supports": "Microsoft’s official known-issues support page describing the missing Copilot entry points in classic Outlook, root causes, troubleshooting guidance, and workaround (including 'Show Apps in Outlook')."
+      }
+    ],
+    "sections": {
+      "intro": "クラシック版Outlookのデスクトップで、一部ユーザーの画面からCopilotの操作ボタンが消える問題が報告されていました。Microsoftはサポート文書を更新し、原因と一時対処、解決が進んでいることを明らかにしました。本稿は影響の範囲、原因、対処法、利用者が今すぐできる確認手順を平易に解説します（確認日：2026-10-20）。",
+      "conclusions": [
+        "Microsoftは、クラシックOutlookでCopilotボタンが表示されない不具合を「修正済み」と発表したが、全チャネルへの完全展開時期は明示していない。",
+        "根本原因はOutlookプロファイルから一部アカウント情報を取得できないバグで、ライセンスや設定、更新チャネルなど他の要因でも発生し得る。",
+        "短期的な回避策としてユーザー単位で「Show Apps in Outlook」を有効化する手順が案内されている。Copilot自体はOutlook on the webや単体Copilotアプリ等の他の入り口から利用可能。"
+      ],
+      "explanations": [
+        {
+          "heading": "何が起きたか（症状）",
+          "content": "一部WindowsユーザーのクラシックOutlookで、画面右上リボン上部や左側アプリバー（More Apps）、リボンのカスタマイズ項目などにCopilotのボタンが表示されなくなる事象が報告されました。影響を受けたユーザーは、Add Appsの「Open」が機能しない、リボンのカスタマイズがグレー表示になる、などの症状を確認しています。この記事で扱うのはこの「ボタンが消える」表示問題に限定します。"
+        },
+        {
+          "heading": "原因とMicrosoftの説明",
+          "content": "Microsoft公式は、主な原因として『OutlookがユーザーのOutlookプロファイルから一部のアカウント情報を取得できないバグ』を挙げています。ただし、ライセンス種別（Copilot Chat（Basic）やMicrosoft 365 Copilot（Premium）など）、Microsoft 365アプリの構成、更新チャネル、プライバシー設定、環境依存の要因も併存すると説明しており、単一原因ではない可能性があります。"
+        },
+        {
+          "heading": "利用者が今すぐできる対処（短期ワークアラウンド）",
+          "content": "Microsoftが案内する一時的な回避策は、クラシックOutlookの設定で「Show Apps in Outlook」を有効にする方法です（File > Options > Advanced > check 'Show Apps in Outlook'）。この設定変更で多くの場合、Copilotの入口が復帰しました。加えて、Microsoftは公式のトラブルシューターと『Microsoft 365のアプリでCopilotボタンが見つからない場合の手順』を参照するよう推奨しています。"
+        },
+        {
+          "heading": "運用面の注意と未確定事項",
+          "content": "Microsoftは『修正済み』としていますが、発表は全チャネル・全テナントへの一斉展開完了日時を示していません。影響を受けたユーザー数は公表されておらず、組織（テナント）レベルで管理者の追加対応が必要かどうかも不明です。特に企業環境では、ポリシーやグループ構成が絡むと個々の端末で異なる挙動が出る可能性があるため、IT管理者は公式トラブルシュートを確認してください。"
+        }
+      ],
+      "personal_view": "正直なところ、UIの入口が消える問題はユーザー体験として非常に目立つので、早めの通知と回避手順の提供は評価できます。一方で、影響範囲の数字や展開スケジュールが示されない点は不安材料です。個人利用なら回避策で対応できる場合が多いですが、企業利用者は管理者と連携して確認したほうが安心です。",
+      "faq": [
+        {
+          "question": "Q1: 自分でまず何を確認すれば良いですか？",
+          "answer": "まずクラシックOutlookで右上や左のアプリバーにCopilotのボタンが無いか確認し、File > Options > Advancedで『Show Apps in Outlook』がオンになっているか試してください。それでも表示されない場合はMicrosoftのトラブルシューターやサポートページを参照してください。"
+        },
+        {
+          "question": "Q2: ライセンスがあれば必ずCopilotが表示されますか？",
+          "answer": "いいえ。ライセンスが適切でも、今回のようにプロファイル情報取得の問題やアプリ設定、更新チャネル、プライバシー設定など複数要因で表示されないことがあります。"
+        },
+        {
+          "question": "Q3: 管理者側で追加対応は必要ですか？",
+          "answer": "Microsoftは個別環境での要因も挙げており、テナントレベルの設定やポリシーによっては管理者の介入が必要になる可能性があります。企業環境ではIT管理者に状況を共有し、公式ガイダンスに従ってください。"
+        },
+        {
+          "question": "Q4: Copilotは他から使えますか？",
+          "answer": "はい。CopilotはOutlook on the web（OWA）や単体のMicrosoft Copilotアプリ／Web体験から利用可能で、今回の表示バグの影響を受けない案内経路もあります。"
+        }
+      ],
+      "summary": "MicrosoftはクラシックOutlookでのCopilotボタン消失問題を修正済みと発表しましたが、原因はOutlookプロファイル情報の取得失敗に加え、設定やライセンスなど複数要因が絡んでおり、完全な展開時期や影響範囲は不明です。個人ユーザーは設定の『Show Apps in Outlook』を試し、企業ユーザーは管理者と連携して公式トラブルシュートを参照してください。"
+    },
+    "images": [
+      {
+        "number": 0,
+        "anchor": "",
+        "theme": "サムネ（濃紺＋シアン）",
+        "labels": [
+          "Outlook",
+          "Copilot",
+          "ボタン消失",
+          "修正済み",
+          "2026-10"
+        ],
+        "prompt": "16:9のサムネイル、濃紺と黒の背景にシアンのアクセント。太い白と黄色の短い日本語文字で『Outlookで消えたCopilotボタン、修正済み』と配置。画面右側に簡略化したOutlookウィンドウのアイコン（偽装なし）を立体的に置き、広い余白。視認性高く、プロフェッショナルなニュース用デザイン。"
+      },
+      {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜図解①：症状の見え方】",
+        "theme": "図解①：症状の見え方",
+        "labels": [
+          "症状",
+          "消える場所",
+          "リボン上",
+          "左アプリバー",
+          "Add Apps"
+        ],
+        "prompt": "16:9図解。濃紺背景、シアンのラインでアウトラインを描いたクラシックOutlookの簡略UI図。右上リボン、左のアプリバー、Add Appsボタンの位置を太い白矢印と黄色の短い日本語ラベルで示す。各消失箇所を赤い×印で強調。広い余白、立体感。"
+      },
+      {
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜図解②：原因（公式説明）】",
+        "theme": "図解②：原因（公式説明）",
+        "labels": [
+          "原因",
+          "プロファイル情報取得失敗",
+          "他の要因",
+          "ライセンス",
+          "更新チャネル"
+        ],
+        "prompt": "16:9図解。濃紺背景。中央にファイルフォルダ風のアイコン（Outlookプロファイルを示唆する抽象アイコン）、そこから情報取得の矢印が断たれるイメージをシアンで表現。周囲に『ライセンス』『更新チャネル』『プライバシー設定』など丸ラベルを置き、点線で関連付け。太い白・黄色の短い日本語ラベル付き、立体感。"
+      },
+      {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜図解③：短期ワークアラウンド手順】",
+        "theme": "図解③：短期ワークアラウンド手順",
+        "labels": [
+          "手順",
+          "File > Options > Advanced",
+          "Show Apps in Outlook",
+          "復帰",
+          "試す順序"
+        ],
+        "prompt": "16:9図解。濃紺背景。左に簡略化したメニュー階層（File → Options → Advanced）を縦に表示し、右側にチェックボックス『Show Apps in Outlook』がオンになる様子を大きく示す。チェックを入れるとCopilotアイコンが復帰するアニメ風の矢印で表現。白と黄色の日本語ラベル、広い余白。"
+      },
+      {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜図解④：別のアクセス経路と注意点】",
+        "theme": "図解④：別のアクセス経路と注意点",
+        "labels": [
+          "代替経路",
+          "OWA",
+          "Copilotアプリ",
+          "管理者確認",
+          "未確定情報"
+        ],
+        "prompt": "16:9図解。濃紺背景。左に『Outlook on the web (OWA)』アイコン風の抽象図、中央に『Copilotアプリ／Web』アイコン、右に管理者の盾アイコンを配置。矢印で『使える』を示し、下部に小さく『影響範囲・展開時期は不明』の注意文を白い短い日本語で記載。デザインは立体感と広い余白。"
+      }
+    ],
+    "hashtags": [
+      "#Microsoft",
+      "#Outlook",
+      "#Copilot",
+      "#ソフトウェア不具合",
+      "#ITトラブル",
+      "#Windows",
+      "#クラシックOutlook",
+      "#製品アップデート",
+      "#テクノロジー",
+      "#初心者向け",
+      "#復旧手順",
+      "#ワークアラウンド",
+      "#CyberNews"
+    ],
+    "threads": "クラシックOutlookで消えたCopilotボタンの不具合が修正されました。個人は設定で対処可能、企業は管理者確認を。あなたのOutlookでは表示されていますか？",
+    "body": "クラシック版Outlookのデスクトップで、一部ユーザーの画面からCopilotの操作ボタンが消える問題が報告されていました。Microsoftはサポート文書を更新し、原因と一時対処、解決が進んでいることを明らかにしました。本稿は影響の範囲、原因、対処法、利用者が今すぐできる確認手順を平易に解説します（確認日：2026-10-20）。\n\n---\n\n## 30秒で結論\n\n- Microsoftは、クラシックOutlookでCopilotボタンが表示されない不具合を「修正済み」と発表したが、全チャネルへの完全展開時期は明示していない。\n- 根本原因はOutlookプロファイルから一部アカウント情報を取得できないバグで、ライセンスや設定、更新チャネルなど他の要因でも発生し得る。\n- 短期的な回避策としてユーザー単位で「Show Apps in Outlook」を有効化する手順が案内されている。Copilot自体はOutlook on the webや単体Copilotアプリ等の他の入り口から利用可能。\n\n---\n\n## 何が起きたか（症状）\n\n一部WindowsユーザーのクラシックOutlookで、画面右上リボン上部や左側アプリバー（More Apps）、リボンのカスタマイズ項目などにCopilotのボタンが表示されなくなる事象が報告されました。影響を受けたユーザーは、Add Appsの「Open」が機能しない、リボンのカスタマイズがグレー表示になる、などの症状を確認しています。この記事で扱うのはこの「ボタンが消える」表示問題に限定します。\n\n【ここに図解①を挿入｜図解①：症状の見え方】\n\n---\n\n## 原因とMicrosoftの説明\n\nMicrosoft公式は、主な原因として『OutlookがユーザーのOutlookプロファイルから一部のアカウント情報を取得できないバグ』を挙げています。ただし、ライセンス種別（Copilot Chat（Basic）やMicrosoft 365 Copilot（Premium）など）、Microsoft 365アプリの構成、更新チャネル、プライバシー設定、環境依存の要因も併存すると説明しており、単一原因ではない可能性があります。\n\n【ここに図解②を挿入｜図解②：原因（公式説明）】\n\n---\n\n## 利用者が今すぐできる対処（短期ワークアラウンド）\n\nMicrosoftが案内する一時的な回避策は、クラシックOutlookの設定で「Show Apps in Outlook」を有効にする方法です（File > Options > Advanced > check 'Show Apps in Outlook'）。この設定変更で多くの場合、Copilotの入口が復帰しました。加えて、Microsoftは公式のトラブルシューターと『Microsoft 365のアプリでCopilotボタンが見つからない場合の手順』を参照するよう推奨しています。\n\n【ここに図解③を挿入｜図解③：短期ワークアラウンド手順】\n\n---\n\n## 運用面の注意と未確定事項\n\nMicrosoftは『修正済み』としていますが、発表は全チャネル・全テナントへの一斉展開完了日時を示していません。影響を受けたユーザー数は公表されておらず、組織（テナント）レベルで管理者の追加対応が必要かどうかも不明です。特に企業環境では、ポリシーやグループ構成が絡むと個々の端末で異なる挙動が出る可能性があるため、IT管理者は公式トラブルシュートを確認してください。\n\n【ここに図解④を挿入｜図解④：別のアクセス経路と注意点】\n\n---\n\n## 私の正直な感想\n\n正直なところ、UIの入口が消える問題はユーザー体験として非常に目立つので、早めの通知と回避手順の提供は評価できます。一方で、影響範囲の数字や展開スケジュールが示されない点は不安材料です。個人利用なら回避策で対応できる場合が多いですが、企業利用者は管理者と連携して確認したほうが安心です。\n\n---\n\n## よくある質問\n\n### Q1: 自分でまず何を確認すれば良いですか？\n\nまずクラシックOutlookで右上や左のアプリバーにCopilotのボタンが無いか確認し、File > Options > Advancedで『Show Apps in Outlook』がオンになっているか試してください。それでも表示されない場合はMicrosoftのトラブルシューターやサポートページを参照してください。\n\n### Q2: ライセンスがあれば必ずCopilotが表示されますか？\n\nいいえ。ライセンスが適切でも、今回のようにプロファイル情報取得の問題やアプリ設定、更新チャネル、プライバシー設定など複数要因で表示されないことがあります。\n\n### Q3: 管理者側で追加対応は必要ですか？\n\nMicrosoftは個別環境での要因も挙げており、テナントレベルの設定やポリシーによっては管理者の介入が必要になる可能性があります。企業環境ではIT管理者に状況を共有し、公式ガイダンスに従ってください。\n\n### Q4: Copilotは他から使えますか？\n\nはい。CopilotはOutlook on the web（OWA）や単体のMicrosoft Copilotアプリ／Web体験から利用可能で、今回の表示バグの影響を受けない案内経路もあります。\n\n---\n\n## まとめ\n\nMicrosoftはクラシックOutlookでのCopilotボタン消失問題を修正済みと発表しましたが、原因はOutlookプロファイル情報の取得失敗に加え、設定やライセンスなど複数要因が絡んでおり、完全な展開時期や影響範囲は不明です。個人ユーザーは設定の『Show Apps in Outlook』を試し、企業ユーザーは管理者と連携して公式トラブルシュートを参照してください。\n\n---\n\n## この記事について\n\n確認日：2026年10月20日（日本時間）。公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。\n\n---\n\n## 参考リンク\n\n- [Microsoft fixes classic Outlook bug that hid Copilot buttons](https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-bug-that-hid-copilot-buttons-in-classic-outlook/)\n- [Copilot buttons are missing in classic Outlook for Windows (Microsoft Support - known issues)](https://support.microsoft.com/en-gb/support/known-issues/copilot-buttons-gone-classic-outlook-windows)"
+  },
+  "evidence": [
+    "https://adoption.microsoft.com/files/outlook/New-Outlook-for-Windows_Resource-listing.pdf",
+    "https://learn.microsoft.com/en-us/answers/questions/5992960/copilot-greyed-out-in-outlook",
+    "https://learn.microsoft.com/en-us/answers/questions/6013707/outlook-and-copilot",
+    "https://learn.microsoft.com/en-us/answers/questions/6030005/copilot-is-greyed-out-in-outlook-classic",
+    "https://mc.merill.net/message/MC1441784?v=3",
+    "https://support.microsoft.com/de-de/support/known-issues/copilot-buttons-gone-classic-outlook-windows",
+    "https://support.microsoft.com/en-gb/support/known-issues/copilot-buttons-gone-classic-outlook-windows",
+    "https://support.microsoft.com/en-us/office/foundations-experiences/how-to-find-and-enable-missing-copilot-button-in-microsoft-365-apps",
+    "https://support.microsoft.com/es-es/support/known-issues/copilot-buttons-gone-classic-outlook-windows",
+    "https://support.microsoft.com/ja-jp/support/known-issues/copilot-buttons-gone-classic-outlook-windows",
+    "https://support.microsoft.com/nl-nl/support/known-issues/copilot-buttons-gone-classic-outlook-windows",
+    "https://support.microsoft.com/ru-ru/support/known-issues/copilot-buttons-gone-classic-outlook-windows",
+    "https://techcommunity.microsoft.com/discussions/microsoft365copilot/copilot-button-in-outlook-365-app/4555052/replies/4555978",
+    "https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-bug-that-hid-copilot-buttons-in-classic-outlook",
+    "https://www.reddit.com/r/CopilotMicrosoft/comments/1r2b6bi/did_microsoft_pull_copilot_chat_from_office_for",
+    "https://www.reddit.com/r/CopilotPro/comments/1pdws0y/help_please_copilot_not_appearingworking_in",
+    "https://www.reddit.com/r/Office365/comments/1udpztq/copilot_button_in_outlook_classic_gone_missing",
+    "https://www.reddit.com/r/Outlook/comments/1vzmimc/alti_copilot_feature_no_longer_showing_on_outlook",
+    "https://www.reddit.com/r/microsoft365/comments/1pirl8a/help_disabling_copilot_button_inside_word_365",
+    "https://www.reddit.com/r/microsoft_365_copilot/comments/1i8p6id/cant_get_copilot_icon_in_any_apps",
+    "https://www.reddit.com/r/microsoft_365_copilot/comments/1nfbocg",
+    "https://www.reddit.com/r/microsoft_365_copilot/comments/1oktrg8/copilot_chat_button_in_office_365_apps",
+    "https://www.reddit.com/r/microsoft_365_copilot/comments/1szhj8g/copilot_and_classic_outlook",
+    "https://www.youtube.com/watch?v=8Eu_Jl6b3ok",
+    "https://www.youtube.com/watch?v=zcP4zROc6uI"
+  ]
+}
