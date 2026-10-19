@@ -1,5 +1,5 @@
 {
-  "next_number": 19,
+  "next_number": 20,
   "articles": [
     {
       "number": 1,
@@ -769,7 +769,37 @@
           "supports": "Apple公式の技術仕様ページ。ディスプレイサイズや解像度、重量、対応容量、Apple Pencil対応などの詳細スペックを確認できる。"
         }
       ]
+    },
+    {
+      "number": 19,
+      "run_id": "2026-10-19-morning-1",
+      "title": "【海外AI解説】Anthropicが社内データで報告書公開：AIエージェント稼働が人間の6倍、初級採用比率は27％→9％に",
+      "created_at": "2026-10-19T08:59:49.106597+09:00",
+      "path": "articles/2026-10-19/0019-morning.md",
+      "sources": [
+        "https://www.anthropic.com/research/employment-at-anthropic",
+        "https://www.itmedia.co.jp/news/article/2610/19/2000002353"
+      ],
+      "sha256": "6839d45ee8ba2403614a3eda7d49519b3215bab80d0d44564e769a38694c5375",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "overseas",
+      "media_plan": "media/0019/plan.json",
+      "source_details": [
+        {
+          "title": "Anthropic、社内でAIエージェントの稼働時間が人間の6倍に　技術系初級職の採用比率は27％→9％に激減 - ITmedia NEWS",
+          "url": "https://www.itmedia.co.jp/news/article/2610/19/2000002353/",
+          "published_at": "2026-10-19T08:02:00+09:00",
+          "supports": "ITmediaはAnthropicが10月16日に公開した2本の報告書を要約。エージェント稼働時間が3月に人間を超え、8月に対話型で6倍となった点や、採用比率の変化（27%→9%）などの主要数字を伝えている。"
+        },
+        {
+          "title": "How employment is changing at Anthropic",
+          "url": "https://www.anthropic.com/research/employment-at-anthropic",
+          "published_at": "2026-10-16T00:00:00+00:00",
+          "supports": "Anthropicによる一次報告ページ。社内データ（雇用・エージェントログ・カレンダー・採用記録等）と従業員インタビューに基づく分析を提示し、エージェント稼働時間や採用構成の変化、メタワークの増加などを報告している（ITmediaの記事の出所）。"
+        }
+      ]
     }
   ],
-  "next_diagram": 304
+  "next_diagram": 308
 }
