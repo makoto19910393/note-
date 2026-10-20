@@ -14,8 +14,9 @@
       ],
       "prompt": "16:9 濃紺背景、中央に大きく白と黄色の太い日本語文字『Fulfillment Flow 発表』、左上に小さくIFS Softeonロゴ風の抽象的なマーク（実在ロゴは使用しない）、右下に短いキャッチ『倉庫に“文脈”を』。立体感のある文字、広い余白、シアンのアクセントライン。",
       "filename": "thumbnail.png",
-      "status": "planned",
-      "attempts": 0
+      "status": "generating",
+      "attempts": 1,
+      "artifact_run_id": "39350738497"
     },
     {
       "number": 1,
