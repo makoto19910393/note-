@@ -14,7 +14,7 @@
       ],
       "prompt": "16:9 濃紺背景、中央に大きく白と黄色の太い日本語文字『Fulfillment Flow 発表』、左上に小さくIFS Softeonロゴ風の抽象的なマーク（実在ロゴは使用しない）、右下に短いキャッチ『倉庫に“文脈”を』。立体感のある文字、広い余白、シアンのアクセントライン。",
       "filename": "thumbnail.png",
-      "status": "review_pending",
+      "status": "ready",
       "attempts": 1,
       "artifact_run_id": "39350738497",
       "sha256": "d61539a3a1b51894af540629ad35fed8c53089952b6eb12a90235acaa1f50514",
@@ -32,6 +32,13 @@
           "text_tokens": 0
         },
         "total_tokens": 2242
+      },
+      "review": {
+        "approved": true,
+        "issues": "画像は記事内容（IFS Softeon、Fulfillment Flow、倉庫向けAI、発表）と整合。目立つ誤字・旧ブランド表記・無関係企業ロゴはなし。図解番号は未表示のため不要。",
+        "observed_title": "IFS Softeon / Fulfillment Flow 発表（倉庫向けAI）",
+        "observed_diagram_label": "",
+        "unsupported_claims": []
       }
     },
     {
