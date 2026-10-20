@@ -1,5 +1,5 @@
 {
-  "next_number": 21,
+  "next_number": 22,
   "articles": [
     {
       "number": 1,
@@ -836,7 +836,44 @@
           "supports": "第三者メディア（Impress Cloud Watch）による報道。NTTの発表内容を要約し、会見の実施を確認している。"
         }
       ]
+    },
+    {
+      "number": 21,
+      "run_id": "2026-10-20-morning-3",
+      "title": "【国内AI学び】IFS Softeonが倉庫向けコンテキスト認識AI『Fulfillment Flow』を発表",
+      "created_at": "2026-10-20T09:58:33.655076+09:00",
+      "path": "articles/2026-10-20/0021-morning.md",
+      "sources": [
+        "https://monoist.itmedia.co.jp/mn/articles/2610/20/news044.html",
+        "https://prtimes.jp/main/html/rd/p/000000175.000064235.html",
+        "https://www.softeon.com/news/ifs-softeon-launches-fulfillment-flow-to-bring-context-aware-ai-to-warehouse-operations"
+      ],
+      "sha256": "733df2c71640e8159f26f0565e26e4c956810263d20a1736b3642768bc046d1a",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "domestic",
+      "media_plan": "media/0021/plan.json",
+      "source_details": [
+        {
+          "title": "「保守的な日本の現場に合う」導入2500時間の壁を壊す倉庫AI、IFS Softeonの真価：サプライチェーン改革（1/2 ページ） - MONOist",
+          "url": "https://monoist.itmedia.co.jp/mn/articles/2610/20/news044.html",
+          "published_at": "2026-10-20T00:00:00+09:00",
+          "supports": "本文での発表概要、IFS Unleashedでの公開、6つの現場特化型AIエージェント等の記載（日本語記事・選定候補のURLを直接開いて確認）"
+        },
+        {
+          "title": "IFS Softeon Launches Fulfillment Flow to Bring Context-Aware AI to Warehouse Operations - Softeon",
+          "url": "https://www.softeon.com/news/ifs-softeon-launches-fulfillment-flow-to-bring-context-aware-ai-to-warehouse-operations/",
+          "published_at": "2026-10-13T00:00:00+00:00",
+          "supports": "Softeon公式による製品発表リリース。Fulfillment Flowの目的（倉庫業務へコンテキスト認識AIを組み込む点）を確認"
+        },
+        {
+          "title": "IFS Softeon、倉庫業務向けコンテキスト認識AI 「Fulfillment Flow」を発表 | IFSジャパン（PR TIMES掲載）",
+          "url": "https://prtimes.jp/main/html/rd/p/000000175.000064235.html",
+          "published_at": "2026-10-14T00:00:00+09:00",
+          "supports": "IFS／IFSジャパンによる日本向けリリース文。発表日・カンファレンスでの公開・製品の目的に関する補助的情報を確認"
+        }
+      ]
     }
   ],
-  "next_diagram": 312
+  "next_diagram": 316
 }
