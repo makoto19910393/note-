@@ -55,7 +55,7 @@
       ],
       "prompt": "16:9 濃紺背景、中央に6つの丸い立体アイコンをリングでつなぎ配置、それぞれに短い白字ラベル（入荷、在庫、ピッキング、梱包、出荷、監視）。中央に大きくシアンの円で『コンテキスト』と表示。太い黄色の矢印で情報の流れを示す。広い余白。",
       "filename": "diagram312.png",
-      "status": "generated",
+      "status": "review_pending",
       "attempts": 2,
       "artifact_run_id": "39350738497",
       "sha256": "56232f0e23bee384e347a3ef4c50b974837c5508ad0a51d23800a2b401ff206b",
