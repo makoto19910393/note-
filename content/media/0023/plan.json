@@ -94,9 +94,25 @@
       ],
       "prompt": "16:9、濃紺背景。中央にProject Perceptionの円形ハブ（シアン）を配置し、周囲に6つの円（ID/データ/エンドポイント/ネットワーク/クラウド/ランタイム）を放射状に配置。各円は白文字と黄色の短い日本語。ハブから各円へシンプルなラインで接続。余白を広く保ち視認性を重視。",
       "filename": "diagram321.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "39521342419"
+      "artifact_run_id": "39521342419",
+      "sha256": "098c7f0d1074b1044aa1db10938110c5e0669b621a6f222582283cf2e1596c7e",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1832,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 324
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2910
+      }
     },
     {
       "number": 3,
