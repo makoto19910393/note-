@@ -53,8 +53,9 @@
       ],
       "prompt": "1テーマ図解、濃紺背景にシアンラインで左右に分割。左に『タスク』、右に『結果』の短い日本語アイコンと説明。中心に丸で『20言語』。数値は具体値を描かず、改善を矢印で示す視覚。広い余白、太い日本語ラベル、平易な構図。",
       "filename": "diagram316.png",
-      "status": "planned",
-      "attempts": 0
+      "status": "generating",
+      "attempts": 1,
+      "artifact_run_id": "39521342419"
     },
     {
       "number": 2,
