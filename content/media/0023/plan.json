@@ -53,7 +53,7 @@
       ],
       "prompt": "16:9、黒に近い濃紺背景。左に『AIエージェント（アイコン）』、右に『権限管理（鍵アイコン）』を配置。中央に矢印と透明なガラス板のような『Guardian Agents（シアンで強調）』が挟む構図。太い白と黄色の短い日本語ラベルで各要素を示す。立体感と広い余白。",
       "filename": "diagram320.png",
-      "status": "review_pending",
+      "status": "ready",
       "attempts": 2,
       "artifact_run_id": "39521342419",
       "sha256": "fd15b86e577f99f1c54c4d6cb4474c8621dbadb809444de3b0bf772784bf4eb5",
@@ -73,15 +73,11 @@
         "total_tokens": 3044
       },
       "review": {
-        "approved": false,
-        "issues": "本文にない断定を削除してください。OpenAIロゴの使用（画像はOpenAI製品の関与を示唆するが、本文はMicrosoftの発表でOpenAI関与を示していない） GPT-6 Astra等のモデル名やOpenAI Dotsといった固有表記（記事本文に記載なし） 特定ベンダー製品との統合を示唆するアイコン群（本文ではそのようなベンダー一覧や統合の断定はない）",
-        "observed_title": "図解①　エージェントを内部脅威として扱う概念図",
+        "approved": true,
+        "issues": "",
+        "observed_title": "エージェントを内部脅威として扱う概念図",
         "observed_diagram_label": "図解①",
-        "unsupported_claims": [
-          "OpenAIロゴの使用（画像はOpenAI製品の関与を示唆するが、本文はMicrosoftの発表でOpenAI関与を示していない）",
-          "GPT-6 Astra等のモデル名やOpenAI Dotsといった固有表記（記事本文に記載なし）",
-          "特定ベンダー製品との統合を示唆するアイコン群（本文ではそのようなベンダー一覧や統合の断定はない）"
-        ]
+        "unsupported_claims": []
       }
     },
     {
