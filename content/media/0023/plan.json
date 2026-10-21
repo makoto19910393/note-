@@ -53,24 +53,24 @@
       ],
       "prompt": "16:9、黒に近い濃紺背景。左に『AIエージェント（アイコン）』、右に『権限管理（鍵アイコン）』を配置。中央に矢印と透明なガラス板のような『Guardian Agents（シアンで強調）』が挟む構図。太い白と黄色の短い日本語ラベルで各要素を示す。立体感と広い余白。",
       "filename": "diagram320.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 2,
       "artifact_run_id": "39521342419",
-      "sha256": "c63144c775db4b0cab1e2e690ebd407584c4e3eab8b5cbb58baa45234ceccad8",
+      "sha256": "fd15b86e577f99f1c54c4d6cb4474c8621dbadb809444de3b0bf772784bf4eb5",
       "width": 1536,
       "height": 864,
       "usage": {
-        "input_tokens": 1841,
+        "input_tokens": 1966,
         "input_tokens_details": {
           "image_tokens": 1508,
-          "text_tokens": 333
+          "text_tokens": 458
         },
         "output_tokens": 1078,
         "output_tokens_details": {
           "image_tokens": 1078,
           "text_tokens": 0
         },
-        "total_tokens": 2919
+        "total_tokens": 3044
       },
       "review": {
         "approved": false,
