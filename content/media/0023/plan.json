@@ -173,9 +173,25 @@
       ],
       "prompt": "16:9、濃紺背景。左側にチェックリスト風の白いボックスを縦に並べ、各ボックスに黄色の短い日本語で『可用性未定』『価格未発表』『統合範囲不明』『誤検知リスク』『運用負荷』を配置。右側に小さな注釈エリア（白文字）で『PoCでの検証を推奨』と表示。シンプルで読みやすく、余白十分。",
       "filename": "diagram323.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "39521342419"
+      "artifact_run_id": "39521342419",
+      "sha256": "63f96957b1c7708a4425c10c1ab3a0d45d9686d1951fc7619903b803684d2765",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1858,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 350
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2936
+      }
     }
   ]
 }
