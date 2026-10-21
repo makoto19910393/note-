@@ -14,8 +14,9 @@
       ],
       "prompt": "16:9、濃紺背景にシアンのグラデーション、中央に大きく太い白文字で「Guardian Agents」と表示、下に太い黄色の短い日本語で「エージェントを内部脅威として扱う」。右下に小さくMicrosoft風の抽象的なロゴ要素（正式ロゴは使わない）。広い余白と立体感、モダンでニュース記事向け。",
       "filename": "thumbnail.png",
-      "status": "planned",
-      "attempts": 0
+      "status": "generating",
+      "attempts": 1,
+      "artifact_run_id": "39521342419"
     },
     {
       "number": 1,
