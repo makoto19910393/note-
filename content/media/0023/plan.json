@@ -133,9 +133,25 @@
       ],
       "prompt": "16:9、黒に近い濃紺背景。左から右へ流れるフローチャート形式。『検出（センサー）→評価（リスクスコア）→制御（権限調整/隔離）』の3段をシアンのボックスで示し、下に短い黄色の日本語説明を付ける。矢印は立体感のあるデザインで、各ステップに小さなアイコンを配置。",
       "filename": "diagram322.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "39521342419"
+      "artifact_run_id": "39521342419",
+      "sha256": "3364982762d060b001b331a4bb1093a358ff92f14533d6ca10470b25328316ab",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1834,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 326
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2912
+      }
     },
     {
       "number": 4,
