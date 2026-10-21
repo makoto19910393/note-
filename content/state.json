@@ -1,5 +1,5 @@
 {
-  "next_number": 22,
+  "next_number": 23,
   "articles": [
     {
       "number": 1,
@@ -873,7 +873,37 @@
           "supports": "IFS／IFSジャパンによる日本向けリリース文。発表日・カンファレンスでの公開・製品の目的に関する補助的情報を確認"
         }
       ]
+    },
+    {
+      "number": 22,
+      "run_id": "2026-10-21-morning-1",
+      "title": "【海外AI解説】OpenAIが発表：GPT‑6ファミリーがCOBOL移行とMultiLangBenchで大幅改善",
+      "created_at": "2026-10-21T09:27:03.382961+09:00",
+      "path": "articles/2026-10-21/0022-morning.md",
+      "sources": [
+        "https://openai.com/index/low-resource-programming-languages",
+        "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-says-gpt-61-sol-is-dramatically-better-at-migrating-legacy-code"
+      ],
+      "sha256": "38c035fb1124caae3445db052ee3f3b76f080b6fa5b1986e9fb790c8669dcf10",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "overseas",
+      "media_plan": "media/0022/plan.json",
+      "source_details": [
+        {
+          "title": "OpenAI — Advancing coding in low‑resource programming languages",
+          "url": "https://openai.com/index/low-resource-programming-languages/",
+          "published_at": "2026-10-19T00:00:00+00:00",
+          "supports": "Primary source: describes MultiLangBench and COBOL migration evaluation, reports quantitative results (GPT‑6 Astra 87.4% MultiLangBench avg; GPT‑6.1 Sol 86.6% COBOL migration at low reasoning effort; 97.9% at higher effort) and links to GitHub for the evaluation suite."
+        },
+        {
+          "title": "OpenAI says GPT‑6.1 Sol is dramatically better at migrating legacy code — BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-says-gpt-61-sol-is-dramatically-better-at-migrating-legacy-code/",
+          "published_at": "2026-10-20T00:00:00+00:00",
+          "supports": "Secondary reporting summarizing OpenAI’s blog post and quoting key figures (COBOL, Fortran, Visual Basic improvements and the 86.6% COBOL migration figure for GPT‑6.1 Sol)."
+        }
+      ]
     }
   ],
-  "next_diagram": 316
+  "next_diagram": 320
 }
