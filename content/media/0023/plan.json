@@ -53,8 +53,9 @@
       ],
       "prompt": "16:9、黒に近い濃紺背景。左に『AIエージェント（アイコン）』、右に『権限管理（鍵アイコン）』を配置。中央に矢印と透明なガラス板のような『Guardian Agents（シアンで強調）』が挟む構図。太い白と黄色の短い日本語ラベルで各要素を示す。立体感と広い余白。",
       "filename": "diagram320.png",
-      "status": "planned",
-      "attempts": 0
+      "status": "generating",
+      "attempts": 1,
+      "artifact_run_id": "39521342419"
     },
     {
       "number": 2,
