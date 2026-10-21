@@ -1,5 +1,5 @@
 {
-  "next_number": 23,
+  "next_number": 24,
   "articles": [
     {
       "number": 1,
@@ -903,7 +903,37 @@
           "supports": "Secondary reporting summarizing OpenAI’s blog post and quoting key figures (COBOL, Fortran, Visual Basic improvements and the 86.6% COBOL migration figure for GPT‑6.1 Sol)."
         }
       ]
+    },
+    {
+      "number": 23,
+      "run_id": "2026-10-21-morning-2",
+      "title": "【海外AI解説】Microsoft：Guardian Agents と Project Perception 拡張で「AIエージェントを内部脅威として扱う」発表",
+      "created_at": "2026-10-21T09:27:03.382961+09:00",
+      "path": "articles/2026-10-21/0023-morning.md",
+      "sources": [
+        "https://www.microsoft.com/en-us/security/blog/2026/10/19/agents-are-your-newest-insiders-security-must-move-at-their-speed",
+        "https://www.techradar.com/pro/security/microsoft-admits-frontier-models-cant-be-trusted-unveils-new-security-tools-to-treat-ai-agents-as-insider-threats"
+      ],
+      "sha256": "885b7864619c989c68af68eb7124cadc857d502d4d193d477f00d58441bbbe96",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "overseas",
+      "media_plan": "media/0023/plan.json",
+      "source_details": [
+        {
+          "title": "Agents are your newest insiders. Security must move at their speed.",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/10/19/agents-are-your-newest-insiders-security-must-move-at-their-speed/",
+          "published_at": "2026-10-19T00:00:00+00:00",
+          "supports": "Primary Microsoft Security blog post by Nadim Abdo describing 'agentic insiders', Guardian Agents, Project Perception extensions, and new dynamic controls to discover, score, and constrain AI agents in enterprise environments. ([microsoft.com](https://www.microsoft.com/en-us/security/blog/2026/10/19/agents-are-your-newest-insiders-security-must-move-at-their-speed/?utm_source=openai))"
+        },
+        {
+          "title": "Microsoft admits 'frontier models can't be trusted', unveils new security tools to treat AI agents as insider threats",
+          "url": "https://www.techradar.com/pro/security/microsoft-admits-frontier-models-cant-be-trusted-unveils-new-security-tools-to-treat-ai-agents-as-insider-threats",
+          "published_at": "2026-10-20T00:00:00+00:00",
+          "supports": "TechRadar article (Oct 20, 2026) summarizing Microsoft's announcement, listing Guardian Agents, Dynamic Permissions, Dynamic Agent Risk, and examples of agent types Microsoft says it will discover/manage. Confirms and paraphrases key claims from Microsoft's blog. ([techradar.com](https://www.techradar.com/pro/security/microsoft-admits-frontier-models-cant-be-trusted-unveils-new-security-tools-to-treat-ai-agents-as-insider-threats))"
+        }
+      ]
     }
   ],
-  "next_diagram": 320
+  "next_diagram": 324
 }
