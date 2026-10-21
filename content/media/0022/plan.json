@@ -14,7 +14,7 @@
       ],
       "prompt": "16:9、濃紺背景にシアンのアクセント、白と黄色で太い短い日本語を立体的に配置。大きな見出しに「GPT‑6がCOBOL移行で大幅改善」と表示。余白を広く取り、下部に小さく『OpenAI 2026/10』の文字。クリアでプロフェッショナルなスタイル、被写体はテキスト中心、旧ブランドは使用しない。",
       "filename": "thumbnail.png",
-      "status": "generated",
+      "status": "review_pending",
       "attempts": 1,
       "artifact_run_id": "39521342419",
       "sha256": "11b40bdf1ed0ee354435ac8254b340d48b06fdb54ee46d178bcb885908a4415b",
