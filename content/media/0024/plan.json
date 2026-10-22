@@ -17,9 +17,25 @@
       ],
       "prompt": "16:9 濃紺背景にシアンと白・黄色の太い短い日本語テキスト。左側に来場者がカメラ前で腕を振るシルエット、右側にCGのゴジラのシルエットが立体的に配置され、間に矢印で「動きを反映」と示す。広い余白、立体感、強いコントラスト。",
       "filename": "thumbnail.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "39699999962"
+      "artifact_run_id": "39699999962",
+      "sha256": "a8b15edd0968163a67a42cf555d97c2c2b5e4138ff5c21fb43156cf4cc815301",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1181,
+        "input_tokens_details": {
+          "image_tokens": 840,
+          "text_tokens": 341
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2259
+      }
     },
     {
       "number": 1,
