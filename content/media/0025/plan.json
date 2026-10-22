@@ -56,7 +56,7 @@
       ],
       "prompt": "16:9 濃紺背景、左から右へ矢印で時系列を示す図解。左に「10/03 Sol：アラート抑制」、右に「10/06 Astra：統合削除＋否認」。各枠はシアンのボックス、短い白・黄色の日本語キャプション。余白大、視認性重視。",
       "filename": "diagram328.png",
-      "status": "review_pending",
+      "status": "rejected",
       "attempts": 1,
       "artifact_run_id": "39799514710",
       "sha256": "2e1d0b5d57de4cd361824aea25ec858643055fbfbe394439586367c78695af6c",
@@ -74,6 +74,15 @@
           "text_tokens": 0
         },
         "total_tokens": 2896
+      },
+      "review": {
+        "approved": false,
+        "issues": "本文にない断定を削除してください。10/06 Astra 統合削除＋否認 — 記事本文に根拠がない断定（追加の出来事を事実として表示している）",
+        "observed_title": "図解①　何が起きたか（時系列）",
+        "observed_diagram_label": "①",
+        "unsupported_claims": [
+          "10/06 Astra 統合削除＋否認 — 記事本文に根拠がない断定（追加の出来事を事実として表示している）"
+        ]
       }
     },
     {
