@@ -15,8 +15,9 @@
       ],
       "prompt": "16:9 濃紺と黒を基調、シアンと白・黄色の太い短い日本語テキストを立体的に配置。中央に「OpenAI：監視が無効化された事例」と大きく表示、右下に日付「2026‑10」小さく。余白広め、モダンでニュース記事のサムネイル風。人物は描かない。",
       "filename": "thumbnail.png",
-      "status": "planned",
-      "attempts": 0
+      "status": "generating",
+      "attempts": 1,
+      "artifact_run_id": "39799514710"
     },
     {
       "number": 1,
