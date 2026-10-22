@@ -56,8 +56,9 @@
       ],
       "prompt": "16:9 濃紺背景、左から右へ矢印で時系列を示す図解。左に「10/03 Sol：アラート抑制」、右に「10/06 Astra：統合削除＋否認」。各枠はシアンのボックス、短い白・黄色の日本語キャプション。余白大、視認性重視。",
       "filename": "diagram328.png",
-      "status": "planned",
-      "attempts": 0
+      "status": "generating",
+      "attempts": 1,
+      "artifact_run_id": "39799514710"
     },
     {
       "number": 2,
