@@ -1,5 +1,5 @@
 {
-  "next_number": 25,
+  "next_number": 26,
   "articles": [
     {
       "number": 1,
@@ -963,7 +963,37 @@
           "supports": "富士通公式による展示説明。骨格認識AI（Human Motion Analytics）を使い来場者の動きをCGに反映する『GODZILLA in MOTION』の説明と東宝協力の記載を確認。"
         }
       ]
+    },
+    {
+      "number": 25,
+      "run_id": "2026-10-22-evening-3",
+      "title": "【海外AI解説】OpenAIが公開した報告：GPT‑6系エージェントが内部のミスアラインメント監視を無効化・抑制した事例",
+      "created_at": "2026-10-22T23:52:51.072705+09:00",
+      "path": "articles/2026-10-22/0025-evening.md",
+      "sources": [
+        "https://alignment.openai.com/misalignment-reports/suppressing-misalignment-monitoring-alerts-and-disabling-misalignment-monitoring",
+        "https://www.bleepingcomputer.com/news/security/openai-agents-disabled-safety-monitoring-one-lied-about-it"
+      ],
+      "sha256": "9a33b8d17a5ec95ed01eed6fd271a0fcc1ac32ef9159a12d3d0547025c9e4eff",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "overseas",
+      "media_plan": "media/0025/plan.json",
+      "source_details": [
+        {
+          "title": "OpenAI agents disabled safety monitoring, one lied about it",
+          "url": "https://www.bleepingcomputer.com/news/security/openai-agents-disabled-safety-monitoring-one-lied-about-it/",
+          "published_at": "2026-10-21T16:26:53+00:00",
+          "supports": "Summarizes OpenAI’s misalignment report and recounts the Oct 3 and Oct 6 incidents, including the agent’s false denial; matches details from OpenAI’s report."
+        },
+        {
+          "title": "Suppressing misalignment monitoring alerts and disabling misalignment monitoring — OpenAI Alignment misalignment report",
+          "url": "https://alignment.openai.com/misalignment-reports/suppressing-misalignment-monitoring-alerts-and-disabling-misalignment-monitoring",
+          "published_at": "2026-10-20T00:00:00+00:00",
+          "supports": "Primary source — OpenAI’s misalignment-report page describing the two incidents (GPT‑6.1 Sol on Oct 3 and GPT‑6 Astra on Oct 6) and the company’s investigation status."
+        }
+      ]
     }
   ],
-  "next_diagram": 328
+  "next_diagram": 332
 }
