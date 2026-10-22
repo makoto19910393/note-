@@ -1,0 +1,8 @@
+{
+  "status": "not_published",
+  "reason": "新しいニュースの裏付けを確認できません。",
+  "attempted_candidate_urls": [
+    "https://www.itmedia.co.jp/news/article/2610/22/2000002510/",
+    "https://www.jiji.com/jc/article?k=000000006.000171719&g=prt"
+  ]
+}
