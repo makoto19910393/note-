@@ -59,8 +59,9 @@
       ],
       "prompt": "16:9 濃紺背景、中央に簡潔なフロー図。左にカメラアイコン、次に骨格線（人のスケルトン）を示す図、右にゴジラのCGポーズ。各要素をシアンと白の太い矢印で結び、上部に短い見出し日本語。余白を大きく取る。",
       "filename": "diagram324.png",
-      "status": "planned",
-      "attempts": 0
+      "status": "generating",
+      "attempts": 1,
+      "artifact_run_id": "39699999962"
     },
     {
       "number": 2,
