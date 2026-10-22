@@ -101,7 +101,7 @@
       ],
       "prompt": "16:9 濃紺背景、左に『体操採点』の小アイコンと説明、中央にHMAロゴ風の抽象図、右に応用先をアイコン並列（スポーツ、医療、博物館、防災）。各項目をシアン・黄色の短いキャプションで補足。",
       "filename": "diagram325.png",
-      "status": "review_pending",
+      "status": "rejected",
       "attempts": 1,
       "artifact_run_id": "39699999962",
       "sha256": "a9679712e5be3e1a7217d657a7a9b020d9a557e29d8e60cbde1ef4a1e21aa3d7",
@@ -119,6 +119,13 @@
           "text_tokens": 0
         },
         "total_tokens": 2898
+      },
+      "review": {
+        "approved": false,
+        "issues": "指定の図解番号を大きく表示してください。",
+        "observed_title": "図解②　技術の出自と応用領域",
+        "observed_diagram_label": "②",
+        "unsupported_claims": []
       }
     },
     {
