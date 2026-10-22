@@ -1,0 +1,173 @@
+{
+  "status": "rejected_not_published",
+  "reason": "校閲で修正が必要です: 本文中に『【ここに図解①を挿入｜…】』のような画像作成指示・配置指示が残っています。本文は読者向けの完成記事であるべきで、作成指示や編集用プレースホルダを残さないでください。画像の説明やキャプションは別の付録欄にまとめるか、編集ワークフロー側で扱ってください。; タイトルをもう少し平易にして、AI初心者向けに専門語を短く説明してください。例えば『Model Garden（Googleのモデル配布プラットフォーム）』のような括弧説明を入れると要件に合致します。; 『筆者の提案』や私見は記事内で明確に区別されていますが、画像ラベル（図解④など）に『筆者の提案』と入れる旨を本文中でも一度だけ明記してください（画像が独立して出る場合に私見であることが確実になるように）。; 見出しや段落は概ね短めですが、いくつかの長い段落（特に導入部と結論の段落）をさらに分割して『短い段落で読めること』の要件に合わせてください。; 本文中での不確定情報・未発表事項（一般提供日・価格・参加企業名・実装の詳細）は明確に『未確定』と繰り返していますが、記事先頭の要約（30秒で結論）に『未確定項目一覧』を短く箇条書きで追加してください（読者が一目で不確定点を把握できるようにするため）。",
+  "article": {
+    "title": "【海外AI解説】Google Cloud：Model GardenにOpenAIのGPT‑6ファミリー追加を発表（プライベートプレビュー開始）",
+    "sources": [
+      {
+        "title": "Google Cloudに「Astra」含むOpenAIのモデルが追加　「主要3社のクローズドモデル使える唯一のハイパースケーラー」に（ITmedia AI＋）",
+        "url": "https://www.itmedia.co.jp/aiplus/article/2610/22/2000002487/",
+        "published_at": "2026-10-22T08:52:00+09:00",
+        "supports": "日本語記事で発表内容の要点（Model GardenへのGPT‑6 Astra／Sol／Luna追加、プライベートプレビュー、ZDRや請求一元化の説明）を引用・要約している。"
+      },
+      {
+        "title": "Google Cloud brings OpenAI models to customers | Google Cloud Blog",
+        "url": "https://cloud.google.com/blog/products/ai-machine-learning/google-cloud-brings-openai-models-to-customers",
+        "published_at": "2026-10-21T00:00:00+00:00",
+        "supports": "公式プレス／ブログ。Model GardenへのOpenAIモデル追加（GPT‑6 Astra／GPT‑6.1 Sol／GPT‑6 Luna）、プライベートプレビュー開始、データ保持方針とMarketplace経由の取引などを直接確認できる一次資料。"
+      },
+      {
+        "title": "OpenAI expands its cloud reach with Google deal (Axios)",
+        "url": "https://www.axios.com/2026/10/21/openai-google-cloud-ai-models",
+        "published_at": "2026-10-21T12:00:07+00:00",
+        "supports": "英語の報道記事。Google Cloud上でOpenAIモデルを販売する協業の要旨と市場的な意義を補完している。"
+      }
+    ],
+    "sections": {
+      "intro": "米国時間2026年10月21日（日本時間22日）、Google Cloudは自社のModel GardenにOpenAIの最新GPT‑6系モデル（GPT‑6 Astra、GPT‑6.1 Sol、GPT‑6 Luna）を追加し、限定された企業向けプライベートプレビューを開始すると発表しました。本記事はGoogle Cloudの公式ブログと日本語報道（ITmedia）および英語報道（Axios）に基づいています（確認日：2026-10-22）。",
+      "conclusions": [
+        "Google CloudはOpenAIの上位モデルを自社インフラ上で提供し、請求や契約を一元化できる形でModel Gardenに追加した。",
+        "提供はまず一部顧客向けのプライベートプレビューで、一般提供日や価格は未定。",
+        "Google側は顧客データ（プロンプトや出力）をモデル学習に使わないと説明し、Zero Data Retention（ZDR）オプションを近日提供予定としている。",
+        "今回の連携はクローズドモデルを複数ハイパースケール事業者の同一プラットフォームで扱う動きとして注目されるが、運用面・価格面の詳細は不明な点が多い。"
+      ],
+      "explanations": [
+        {
+          "heading": "1) 何が発表されたか（要点）",
+          "content": "公式発表によれば、OpenAIのGPT‑6系主要モデル（GPT‑6 Astra、GPT‑6.1 Sol、GPT‑6 Luna）がGoogle CloudのModel Gardenに追加され、まずは一部企業向けのプライベートプレビュー提供を始めます。Model Garden上でこれらモデルを稼働させることで、企業はGoogle Cloudの既存の契約やMarketplaceを通じた調達・請求の仕組みに組み込める点が強調されています。発表文では「モデルはGoogle Cloudのインフラ上に配置される」と明記されており、Google側は顧客データの扱いについても説明しています（出典：Google Cloud Blog、ITmedia）。"
+        },
+        {
+          "heading": "2) ユーザーにとって何が変わるか（影響）",
+          "content": "簡単に言うと、企業がOpenAIの上位モデルを使う際の入り口が増え、Googleのクラウド契約で管理できるようになります。例えば、既にGoogle Cloudの契約や請求体系を使っている会社は、別途OpenAIと直接契約する手間や請求の二重管理を減らせる可能性があります。ただし、一般提供の条件や価格、レート制限などは未発表のため、コストや利用可否は現時点で不明です。なおGoogleは顧客プロンプトやコンテキスト、出力を“指定された境界内に保持”し、モデル学習には使用しないと説明しており、プライバシー面の配慮が打ち出されています（出典：Google Cloud Blog、ITmedia）。"
+        },
+        {
+          "heading": "3) 技術面とセキュリティの説明（確認できている範囲）",
+          "content": "公式情報では、モデルはGoogle Cloudのインフラ上で稼働すると記載されますが、具体的な分離方法（どのハードウェアやConfidential Computeの具体仕様を使うか）や処理の詳細は公開されていません。GoogleはZero Data Retention（ZDR）オプションの提供を明記し、これは顧客データをモデルの学習に用いないことをより強く保証するオプションと理解されますが、ZDRの正確な実装詳細や監査方法、適用範囲も未発表です（出典：Google Cloud Blog）。これらの点はプライベートプレビュー期間に合わせて技術文書で追って公開される可能性があります。"
+        },
+        {
+          "heading": "4) 市場的意義と今後の見通し（報道の補足）",
+          "content": "複数の報道は、今回の協業をOpenAIのクラウド販売チャネル拡大の一環と見ています。Googleは『主要3社のクローズドモデルを同一プラットフォームで使える唯一のハイパースケーラー』と主張しており、Anthropicや自社モデルと並べて選択肢を提供することで、企業顧客の利便性を狙う狙いがあります。一方で、価格設定やレート、プレビュー参加企業の範囲など不明点が多く、実際の導入が広がるかは条件次第です（出典：ITmedia、Axios）。"
+        }
+      ],
+      "personal_view": "私見（明示）：今回の発表は『選択肢を増やす』という点で企業側の利便性を高める良い動きだと感じます。特に既にGoogle Cloudを中心に運用している企業では、契約・請求管理の簡素化は魅力的です。ただし、重要な決め手になるのは価格・レートとデータ保護の実装詳細です。ZDRの実現方法や適用範囲が明確にならないままでは、機密データを多く扱う企業は慎重になるでしょう。以上は確認済み情報を基にした私見であり、未発表の点に関する推測を含みます。",
+      "faq": [
+        {
+          "question": "Q: いつ誰でも使えるようになりますか？",
+          "answer": "A: 現時点ではプライベートプレビューが一部顧客向けに開始された段階で、一般提供（GA）の日付や対象範囲は未発表です。Googleは段階的に拡大するとしていますが、公開されたスケジュールはありません。"
+        },
+        {
+          "question": "Q: Google経由で使うとデータはOpenAIに渡されますか？",
+          "answer": "A: Googleの説明では、顧客のプロンプトやコンテキスト、モデル出力は指定された境界内に保持され、モデルの学習に使用されないとしています。さらにZero Data Retention（ZDR）オプションを近日提供予定と説明しています。ただし、ZDRの技術的実装や監査方法の詳細は未公開です。"
+        },
+        {
+          "question": "Q: 価格や性能はOpenAI直販と同じですか？",
+          "answer": "A: 価格やレート制限、直販との料金差に関する具体的な情報は公表されていません。これらはプライベートプレビューや今後の発表で明らかになる見込みです。"
+        },
+        {
+          "question": "Q: 中小企業や個人開発者も使えますか？",
+          "answer": "A: まずは企業向けのプライベートプレビューです。一般提供時の対象に個人や中小企業が含まれるかは未定で、情報が出るまで不明です。"
+        }
+      ],
+      "summary": "Google CloudはOpenAIのGPT‑6ファミリーをModel Gardenに追加し、まず一部企業向けのプライベートプレビュー提供を始めました。主な利点はGoogleの既存契約や請求体系でOpenAIモデルを扱える点、そしてデータ保持に関する選択肢（ZDR）の提示です。一方で、一般提供日・価格・参加条件・技術的な分離方式など未確定の点が多く、導入の実際の影響は今後の発表を待つ必要があります。"
+    },
+    "images": [
+      {
+        "number": 0,
+        "anchor": "",
+        "theme": "サムネ：発表の全体像",
+        "labels": [
+          "Google Cloud",
+          "OpenAI",
+          "GPT‑6ファミリー",
+          "Model Garden",
+          "プライベートプレビュー",
+          "ZDR予定",
+          "企業向け"
+        ],
+        "prompt": "16:9構図、濃紺背景にシアンと白・黄色の太い短い日本語テキスト。中央に大きく「Google CloudにOpenAI GPT‑6が登場」と表示、左上に小さめでGoogle Cloudのロゴ風の抽象的な雲アイコン（商標や本物のロゴを模さない抽象的表現）、右下に小さく「限定プレビュー開始／2026-10-21発表」と入れる。立体感のあるボックスと広い余白。誤解を招く公式画面風のデザインは避ける。"
+      },
+      {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜図解①：流れ（Model Garden経由の利用イメージ）】",
+        "theme": "図解①：流れ（Model Garden経由の利用イメージ）",
+        "labels": [
+          "Model Garden",
+          "Marketplace経由",
+          "契約・請求一元化",
+          "OpenAIモデル配置",
+          "企業顧客"
+        ],
+        "prompt": "16:9、黒に近い濃紺背景、シアンの線で左から右へ矢印の流れ図。左端に『企業（既存Google契約）』、中央に『Model Garden（Google Cloud上）』ボックス、右端に『OpenAI GPT‑6（Astra/Sol/Luna）』。各ボックスに短い白文字で説明を入れる。スタイリッシュで説明的、公式画面風は避ける。"
+      },
+      {
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜図解②：データ保持とZDRの位置づけ】",
+        "theme": "図解②：データ保持とZDRの位置づけ",
+        "labels": [
+          "顧客データ保持",
+          "Zero Data Retention（ZDR）",
+          "モデル学習へ不使用（説明）",
+          "保護オプションは近日提供"
+        ],
+        "prompt": "16:9、濃紺背景に円形の分割図。中央に『顧客データ』、外側に通常の保持レベルとZDRオプションの違いをシアンと黄色で対比表示。テキストは簡潔に「学習に使用しない（Google説明）」などの要約文。技術的詳細は未表示と明記する。"
+      },
+      {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜図解③：不明点と確認中の項目】",
+        "theme": "図解③：不明点と確認中の項目",
+        "labels": [
+          "一般提供日未定",
+          "価格・レート不明",
+          "参加企業は一部のみ",
+          "実装詳細は未公開"
+        ],
+        "prompt": "16:9、黒系背景に黄色の見出しブロック『要確認』。下に4つのアイテムを左右2列で並べ、各アイテムに短い説明（例：一般提供日→未定）。落ち着いた配色で注意喚起を促すデザイン。"
+      },
+      {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜図解④：企業が検討すべきチェックポイント（筆者の提案）】",
+        "theme": "図解④：企業が検討すべきチェックポイント（筆者の提案）",
+        "labels": [
+          "契約・請求の統合可否（確認）",
+          "ZDRの適用範囲確認",
+          "試験導入でコスト見積りを",
+          "データ分類ポリシーの確認"
+        ],
+        "prompt": "16:9、濃紺背景、左上に『筆者の提案』の黄色ラベル（説明的で私見であることを明示）。4つのチェックリストを縦に配置し、各項目に簡潔な補足文。デザインは余白多めで読みやすく、公式表示を偽装しない。"
+      }
+    ],
+    "hashtags": [
+      "#GoogleCloud",
+      "#OpenAI",
+      "#GPT6",
+      "#ModelGarden",
+      "#クラウドAI",
+      "#プライベートプレビュー",
+      "#ZDR",
+      "#AI導入",
+      "#企業向けAI",
+      "#データ保護",
+      "#CloudMarketplace",
+      "#ハイパースケーラー"
+    ],
+    "threads": "Google CloudがModel GardenでOpenAIのGPT‑6系を提供開始。まずは企業向けプレビュー、価格やGA日は未定。企業は何を優先確認すべき？",
+    "body": "米国時間2026年10月21日（日本時間22日）、Google Cloudは自社のModel GardenにOpenAIの最新GPT‑6系モデル（GPT‑6 Astra、GPT‑6.1 Sol、GPT‑6 Luna）を追加し、限定された企業向けプライベートプレビューを開始すると発表しました。本記事はGoogle Cloudの公式ブログと日本語報道（ITmedia）および英語報道（Axios）に基づいています（確認日：2026-10-22）。\n\n---\n\n## 30秒で結論\n\n- Google CloudはOpenAIの上位モデルを自社インフラ上で提供し、請求や契約を一元化できる形でModel Gardenに追加した。\n- 提供はまず一部顧客向けのプライベートプレビューで、一般提供日や価格は未定。\n- Google側は顧客データ（プロンプトや出力）をモデル学習に使わないと説明し、Zero Data Retention（ZDR）オプションを近日提供予定としている。\n- 今回の連携はクローズドモデルを複数ハイパースケール事業者の同一プラットフォームで扱う動きとして注目されるが、運用面・価格面の詳細は不明な点が多い。\n\n---\n\n## 1) 何が発表されたか（要点）\n\n公式発表によれば、OpenAIのGPT‑6系主要モデル（GPT‑6 Astra、GPT‑6.1 Sol、GPT‑6 Luna）がGoogle CloudのModel Gardenに追加され、まずは一部企業向けのプライベートプレビュー提供を始めます。Model Garden上でこれらモデルを稼働させることで、企業はGoogle Cloudの既存の契約やMarketplaceを通じた調達・請求の仕組みに組み込める点が強調されています。発表文では「モデルはGoogle Cloudのインフラ上に配置される」と明記されており、Google側は顧客データの扱いについても説明しています（出典：Google Cloud Blog、ITmedia）。\n\n【ここに図解①を挿入｜図解①：流れ（Model Garden経由の利用イメージ）】\n\n---\n\n## 2) ユーザーにとって何が変わるか（影響）\n\n簡単に言うと、企業がOpenAIの上位モデルを使う際の入り口が増え、Googleのクラウド契約で管理できるようになります。例えば、既にGoogle Cloudの契約や請求体系を使っている会社は、別途OpenAIと直接契約する手間や請求の二重管理を減らせる可能性があります。ただし、一般提供の条件や価格、レート制限などは未発表のため、コストや利用可否は現時点で不明です。なおGoogleは顧客プロンプトやコンテキスト、出力を“指定された境界内に保持”し、モデル学習には使用しないと説明しており、プライバシー面の配慮が打ち出されています（出典：Google Cloud Blog、ITmedia）。\n\n【ここに図解②を挿入｜図解②：データ保持とZDRの位置づけ】\n\n---\n\n## 3) 技術面とセキュリティの説明（確認できている範囲）\n\n公式情報では、モデルはGoogle Cloudのインフラ上で稼働すると記載されますが、具体的な分離方法（どのハードウェアやConfidential Computeの具体仕様を使うか）や処理の詳細は公開されていません。GoogleはZero Data Retention（ZDR）オプションの提供を明記し、これは顧客データをモデルの学習に用いないことをより強く保証するオプションと理解されますが、ZDRの正確な実装詳細や監査方法、適用範囲も未発表です（出典：Google Cloud Blog）。これらの点はプライベートプレビュー期間に合わせて技術文書で追って公開される可能性があります。\n\n【ここに図解③を挿入｜図解③：不明点と確認中の項目】\n\n---\n\n## 4) 市場的意義と今後の見通し（報道の補足）\n\n複数の報道は、今回の協業をOpenAIのクラウド販売チャネル拡大の一環と見ています。Googleは『主要3社のクローズドモデルを同一プラットフォームで使える唯一のハイパースケーラー』と主張しており、Anthropicや自社モデルと並べて選択肢を提供することで、企業顧客の利便性を狙う狙いがあります。一方で、価格設定やレート、プレビュー参加企業の範囲など不明点が多く、実際の導入が広がるかは条件次第です（出典：ITmedia、Axios）。\n\n【ここに図解④を挿入｜図解④：企業が検討すべきチェックポイント（筆者の提案）】\n\n---\n\n## 私の正直な感想\n\n私見（明示）：今回の発表は『選択肢を増やす』という点で企業側の利便性を高める良い動きだと感じます。特に既にGoogle Cloudを中心に運用している企業では、契約・請求管理の簡素化は魅力的です。ただし、重要な決め手になるのは価格・レートとデータ保護の実装詳細です。ZDRの実現方法や適用範囲が明確にならないままでは、機密データを多く扱う企業は慎重になるでしょう。以上は確認済み情報を基にした私見であり、未発表の点に関する推測を含みます。\n\n---\n\n## よくある質問\n\n### Q: いつ誰でも使えるようになりますか？\n\nA: 現時点ではプライベートプレビューが一部顧客向けに開始された段階で、一般提供（GA）の日付や対象範囲は未発表です。Googleは段階的に拡大するとしていますが、公開されたスケジュールはありません。\n\n### Q: Google経由で使うとデータはOpenAIに渡されますか？\n\nA: Googleの説明では、顧客のプロンプトやコンテキスト、モデル出力は指定された境界内に保持され、モデルの学習に使用されないとしています。さらにZero Data Retention（ZDR）オプションを近日提供予定と説明しています。ただし、ZDRの技術的実装や監査方法の詳細は未公開です。\n\n### Q: 価格や性能はOpenAI直販と同じですか？\n\nA: 価格やレート制限、直販との料金差に関する具体的な情報は公表されていません。これらはプライベートプレビューや今後の発表で明らかになる見込みです。\n\n### Q: 中小企業や個人開発者も使えますか？\n\nA: まずは企業向けのプライベートプレビューです。一般提供時の対象に個人や中小企業が含まれるかは未定で、情報が出るまで不明です。\n\n---\n\n## まとめ\n\nGoogle CloudはOpenAIのGPT‑6ファミリーをModel Gardenに追加し、まず一部企業向けのプライベートプレビュー提供を始めました。主な利点はGoogleの既存契約や請求体系でOpenAIモデルを扱える点、そしてデータ保持に関する選択肢（ZDR）の提示です。一方で、一般提供日・価格・参加条件・技術的な分離方式など未確定の点が多く、導入の実際の影響は今後の発表を待つ必要があります。\n\n---\n\n## この記事について\n\n確認日：2026年10月22日（日本時間）。公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。\n\n---\n\n## 参考リンク\n\n- [Google Cloudに「Astra」含むOpenAIのモデルが追加　「主要3社のクローズドモデル使える唯一のハイパースケーラー」に（ITmedia AI＋）](https://www.itmedia.co.jp/aiplus/article/2610/22/2000002487/)\n- [Google Cloud brings OpenAI models to customers | Google Cloud Blog](https://cloud.google.com/blog/products/ai-machine-learning/google-cloud-brings-openai-models-to-customers)\n- [OpenAI expands its cloud reach with Google deal (Axios)](https://www.axios.com/2026/10/21/openai-google-cloud-ai-models)"
+  },
+  "evidence": [
+    "https://arstechnica.com/ai/2026/10/openais-latest-ai-models-are-coming-to-google-cloud-and-antigravity",
+    "https://cloud.google.com/blog/products/ai-machine-learning/google-cloud-brings-openai-models-to-customers",
+    "https://deploymentsafety.openai.com/gpt-6-october/cybersecurity-capabilities",
+    "https://finance.yahoo.com/technology/ai/articles/openai-models-available-google-cloud-132243349.html",
+    "https://mlllm.io/articles/3579-openai-models-arrive-on-google-cloud-gpt-6-and-codex-to-appear-in-model-garden",
+    "https://openai.com/index/gpt-6-astra",
+    "https://roboticaguide.com/openai-google-cloud-gpt-6-astra-model-garden-price",
+    "https://www.advanceintelligence.ai",
+    "https://www.axios.com/2026/10/21/openai-google-cloud-ai-models",
+    "https://www.investing.com/news/stock-market-news/openai-to-sell-its-top-models-on-google-cloud-in-latest-enterprise-push-4962854",
+    "https://www.itmedia.co.jp/aiplus/article/2610/22/2000002487",
+    "https://www.marketerfizz.com/news/openai-google-cloud-private-preview-controls",
+    "https://www.reddit.com/r/CodexAutomation/comments/1xbofqe/openai_and_google_cloud_announce_codex_access",
+    "https://www.testingcatalog.com/google-cloud-adds-openai-models-in-private-preview",
+    "https://www.theinformation.com/briefings/openai-bring-models-google-cloud"
+  ]
+}
