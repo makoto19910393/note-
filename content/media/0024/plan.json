@@ -101,8 +101,9 @@
       ],
       "prompt": "16:9 濃紺背景、左に『体操採点』の小アイコンと説明、中央にHMAロゴ風の抽象図、右に応用先をアイコン並列（スポーツ、医療、博物館、防災）。各項目をシアン・黄色の短いキャプションで補足。",
       "filename": "diagram325.png",
-      "status": "planned",
-      "attempts": 0
+      "status": "generating",
+      "attempts": 1,
+      "artifact_run_id": "39699999962"
     },
     {
       "number": 3,
