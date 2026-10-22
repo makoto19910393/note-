@@ -1,5 +1,5 @@
 {
-  "next_number": 24,
+  "next_number": 25,
   "articles": [
     {
       "number": 1,
@@ -933,7 +933,37 @@
           "supports": "TechRadar article (Oct 20, 2026) summarizing Microsoft's announcement, listing Guardian Agents, Dynamic Permissions, Dynamic Agent Risk, and examples of agent types Microsoft says it will discover/manage. Confirms and paraphrases key claims from Microsoft's blog. ([techradar.com](https://www.techradar.com/pro/security/microsoft-admits-frontier-models-cant-be-trusted-unveils-new-security-tools-to-treat-ai-agents-as-insider-threats))"
         }
       ]
+    },
+    {
+      "number": 24,
+      "run_id": "2026-10-22-morning-3",
+      "title": "【国内AI学び】富士通『GODZILLA in MOTION』をCEATECで公開—体操採点AIで来場者を“ゴジラ化”体験",
+      "created_at": "2026-10-22T09:30:11.942988+09:00",
+      "path": "articles/2026-10-22/0024-morning.md",
+      "sources": [
+        "https://global.fujitsu/ja-JP/local/blog/article/2026-10-19-01",
+        "https://www.itmedia.co.jp/aiplus/article/2610/22/2000002364"
+      ],
+      "sha256": "535329606ab29c44a2d03c01b2923666707287aa3fb9c937a8d1d3e78f0a3dd8",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "domestic",
+      "media_plan": "media/0024/plan.json",
+      "source_details": [
+        {
+          "title": "AIで“ゴジラになって”街破壊　富士通が体験型展示　「体操の採点システム」活用 - ITmedia AI＋",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2610/22/2000002364/",
+          "published_at": "2026-10-22T00:00:00+09:00",
+          "supports": "CEATEC会場での『GODZILLA in MOTION』体験の内容（来場者の動きを骨格認識で反映しゴジラが街を破壊するデモ）、および体操採点支援技術の応用である点を本文で確認。"
+        },
+        {
+          "title": "CEATEC 2026 富士通ブース体験レポート ゴジラ来襲！ データとAIで“もしも”に挑む - 富士通公式ブログ",
+          "url": "https://global.fujitsu/ja-JP/local/blog/article/2026-10-19-01",
+          "published_at": "2026-10-19T00:00:00+09:00",
+          "supports": "富士通公式による展示説明。骨格認識AI（Human Motion Analytics）を使い来場者の動きをCGに反映する『GODZILLA in MOTION』の説明と東宝協力の記載を確認。"
+        }
+      ]
     }
   ],
-  "next_diagram": 324
+  "next_diagram": 328
 }
