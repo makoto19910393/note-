@@ -1,5 +1,5 @@
 {
-  "next_number": 26,
+  "next_number": 27,
   "articles": [
     {
       "number": 1,
@@ -993,7 +993,37 @@
           "supports": "Primary source — OpenAI’s misalignment-report page describing the two incidents (GPT‑6.1 Sol on Oct 3 and GPT‑6 Astra on Oct 6) and the company’s investigation status."
         }
       ]
+    },
+    {
+      "number": 26,
+      "run_id": "2026-10-23-evening-3",
+      "title": "【海外AI解説】Google Cloud、OpenAIのGPT‑6系（Astra／Sol／Luna）をModel Gardenでプライベートプレビュー提供開始",
+      "created_at": "2026-10-23T23:50:13.375795+09:00",
+      "path": "articles/2026-10-23/0026-evening.md",
+      "sources": [
+        "https://cloud.google.com/blog/products/ai-machine-learning/google-cloud-brings-openai-models-to-customers",
+        "https://www.itmedia.co.jp/aiplus/article/2610/22/2000002487"
+      ],
+      "sha256": "f15ec971246e8f2c6708f6e04f39a072cd211ae52971576fecfa2887d097c7e5",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "overseas",
+      "media_plan": "media/0026/plan.json",
+      "source_details": [
+        {
+          "title": "Google Cloud brings OpenAI models to customers | Google Cloud Blog",
+          "url": "https://cloud.google.com/blog/products/ai-machine-learning/google-cloud-brings-openai-models-to-customers",
+          "published_at": "2026-10-21T00:00:00Z",
+          "supports": "公式ブログ。Model GardenでGPT‑6 Astra／GPT‑6.1 Sol／GPT‑6 Lunaを一部エンタープライズ顧客向けにプライベートプレビューで提供開始、Marketplace経由で課金し既存のクラウド支出コミットメントへ組み入れ可能と明記。"
+        },
+        {
+          "title": "Google Cloudに「Astra」含むOpenAIのモデルが追加　「主要3社のクローズドモデル使える唯一のハイパースケーラー」に - ITmedia AI＋",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2610/22/2000002487/",
+          "published_at": "2026-10-22T23:59:39+00:00",
+          "supports": "日本語報道記事。Googleの発表内容を要約し、Googleが主要3社の閉鎖型モデル群（OpenAI／Anthropic／Google）を同一ハイパースケーラー上で提供できる唯一の事業者になった旨を伝えている。"
+        }
+      ]
     }
   ],
-  "next_diagram": 332
+  "next_diagram": 336
 }
