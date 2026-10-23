@@ -17,9 +17,25 @@
       ],
       "prompt": "16:9、濃紺背景にシアンと白・黄色の太い短い日本語。中央に大きく「Google Cloud × OpenAI」、下部に「GPT‑6系をModel Gardenでプライベートプレビュー」と短く表示。立体感のあるロゴ風モチーフ（実在のロゴは避ける）、広い余白、モダンで企業向けのデザイン。",
       "filename": "thumbnail.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "39971576117"
+      "artifact_run_id": "39971576117",
+      "sha256": "50448717b3e263440ae64d018f8c5e16e2da3110a72047cb0563f4c85204091b",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1159,
+        "input_tokens_details": {
+          "image_tokens": 840,
+          "text_tokens": 319
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2237
+      }
     },
     {
       "number": 1,
