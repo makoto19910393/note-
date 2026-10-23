@@ -56,9 +56,25 @@
       ],
       "prompt": "16:9、濃紺背景、シアンのアクセントライン。左にアイコン風のModel Gardenボックス、中央に矢印でGPT‑6（Astra/Sol/Luna）を示す円、右に請求書アイコンと『Marketplace経由で単一請求』の短い日本語。太いフォント、広い余白、立体感。",
       "filename": "diagram332.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "39971576117"
+      "artifact_run_id": "39971576117",
+      "sha256": "c92abf52a196dcc24529e9d09ac071612131b65b1e783addfc3f205de3ec2eae",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1813,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 305
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2891
+      }
     },
     {
       "number": 2,
