@@ -1,0 +1,8 @@
+{
+  "status": "not_published",
+  "reason": "新しいニュースの裏付けを確認できません。",
+  "attempted_candidate_urls": [
+    "https://www.itmedia.co.jp/aiplus/article/2610/23/2000002368/",
+    "https://www.msn.com/ja-jp/technology/artificial-intelligence/%E4%BF%A1%E8%B6%8A%E5%8C%96%E5%AD%A6-%E5%AF%8C%E5%A3%AB%E3%83%95%E3%82%A4%E3%83%AB%E3%83%A0%E3%82%82-%E7%94%9F%E6%88%90ai%E3%82%92%E6%94%AF%E3%81%88%E3%82%8B%E5%8D%8A%E5%B0%8E%E4%BD%93%E7%B4%A0%E6%9D%90%E3%81%AB-%E6%97%A5%E6%9C%AC%E3%81%AE%E5%8B%9D%E6%A9%9F-%E3%81%8C%E3%81%82%E3%82%8B%E4%BC%81%E6%A5%AD%E3%81%AE%E5%AE%9F%E5%90%8D/ar-AA2fREMC"
+  ]
+}
