@@ -1,0 +1,166 @@
+{
+  "status": "rejected_not_published",
+  "reason": "同じ発表資料の記事が作成済みです。別の話題を選ぶ必要があります。",
+  "article": {
+    "title": "【海外AI解説】OpenAIが低リソース言語評価を公開 — COBOL移行評価で大幅改善を報告",
+    "sources": [
+      {
+        "title": "1バイト違えば不合格のCOBOL移行、OpenAI新モデルの正解率は？：AIニュースピックアップ - ITmedia エンタープライズ",
+        "url": "https://www.itmedia.co.jp/enterprise/articles/2610/22/news077.html",
+        "published_at": "2026-10-23T00:00:00+09:00",
+        "supports": "ITmediaの記事本文を確認。OpenAIが発表したMultiLangBenchとCOBOL移行評価の要旨（1バイト差で不合格とする隠しテストの判定基準、GPT‑6系列の改善など）を報じている."
+      },
+      {
+        "title": "Advancing coding in low‑resource programming languages - OpenAI (official)",
+        "url": "https://openai.com/index/low-resource-programming-languages/?shem=dsdf,sharefoc,agadiscoversdl,,sh/x/discover/m1/4",
+        "published_at": "2026-10-19T00:00:00+00:00",
+        "supports": "OpenAI自身の研究/技術投稿。MultiLangBenchの設計・GitHub公開、20言語でのGPT‑6 Astraの87.4%スコア、COBOL移行評価の判定方法（バイト単位の出力一致を要求するhidden tests）およびGPT‑6.1 Solの86.6%（低reasoning）→97.9%（高reasoning）という数値を直接示している."
+      }
+    ],
+    "sections": {
+      "intro": "OpenAIが2026年10月19日に、低リソースのプログラミング言語向け評価を公開しました。特にCOBOLの既存コードを別言語に移行する評価で大幅な改善を示したと報告されています。本稿では何が発表されたか、なぜ注目か、あなたにどう関係するかをやさしく整理します。",
+      "conclusions": [
+        "OpenAIはMultiLangBenchとCOBOL移行評価の2種類を公開し、GPT‑6系列で大きな性能改善を報告した。",
+        "COBOL移行評価は「出力がバイト単位で完全一致」する隠しテストを使い、GPT‑6.1 Solは高推論設定で97.9%の正解率を報告したが、これはOpenAI自身の評価結果である。",
+        "公開評価は再現可能な部分（MultiLangBenchの一部）と隠しテスト部分（COBOLの隠しテストは非公開）が混在し、実運用で同等の成果が得られるかは未確定である。",
+        "実務での移行では外部システム依存や暗黙の業務ルールなど、評価外の要素が成功を左右するため注意が必要だ。"
+      ],
+      "explanations": [
+        {
+          "heading": "何が公開されたのか（2種類の評価）",
+          "content": "OpenAIは「MultiLangBench」と「COBOL移行評価」の2種類を発表しました。MultiLangBenchは20の低リソース言語でSQLite互換のデータベースエンジンを一から作れるかを確かめるもので、GitHub上に評価セットや手順が公開されています。一方、COBOL移行評価は既存のCOBOLプログラムをC++/Java/Kotlin/Python/Rustなどへ移して、出力がバイト単位で完全一致するかどうかを隠しテストで判定する、より厳密な評価です。"
+        },
+        {
+          "heading": "発表された主な数値（改善の程度）",
+          "content": "OpenAIの報告によれば、MultiLangBenchでGPT‑6 Astraは最大推論設定で平均87.4%の合格率を出し、従来のGPT‑5.6 Solの26.8%から大きく改善しました。またCOBOL移行評価では、GPT‑6.1 Solが低推論（low reasoning）で86.6%、高推論で97.9%の正解率を示し、GPT‑5.6 Solの5.4%から劇的な差が出ています。これらはOpenAI自身が公開した数値です。"
+        },
+        {
+          "heading": "評価の判定方法と公開範囲の違い",
+          "content": "COBOL移行評価の判定は非常に厳しく、『観測可能な出力がバイト単位で完全一致すること』を合格条件にしています。こうした判定は隠しテスト（hidden tests）で行われ、隠しテストの具体的なセットそのものは公開されていません。一方で、MultiLangBenchの評価セットや実行手順はGitHubで公開され、第三者が再現しやすい形で提供されています。"
+        },
+        {
+          "heading": "実務とのギャップと注意点",
+          "content": "公開結果は設計されたテストに基づくものであり、実際のシステム移行で必要な周辺作業（外部APIとの連携、暗黙のビジネスルール、テストカバレッジ不足など）が含まれるかどうかは不明です。したがって、これらの数字がそのまま既存の銀行系や基幹システムの自動移行の可否を保証するわけではありません。OpenAI自身の評価と公開済みテストだけが根拠である点を踏まえる必要があります。"
+        }
+      ],
+      "personal_view": "正直に言うと、今回の数値は非常に目を引きます。特にCOBOLの移行でバイト単位一致という厳格な基準を用いて高スコアを出した点は驚きですが、隠しテストの非公開性と実システム特有の複雑さを考えると、すぐに『完全自動で安全に移行できる』と結論づけるのは早計です。まずは公開されたMultiLangBenchを第三者が再現し、限定的な実案件で段階的に検証するのが現実的だと考えます。",
+      "faq": [
+        {
+          "question": "この発表で今すぐCOBOL移行が自動化できますか？",
+          "answer": "いいえ。OpenAIの公表データは設計された評価に基づくもので、隠しテストや公開テストの条件が実業務と完全一致するわけではありません。外部依存や業務ルールなど評価外の要素があるため、段階的な検証と人的チェックが必要です。"
+        },
+        {
+          "question": "発表の数値は誰でも再現できますか？",
+          "answer": "部分的には再現可能です。MultiLangBenchの評価セットや手順はGitHubで公開されていますが、COBOL移行評価に使われた隠しテスト一式は公開されていません。したがって同一条件で完全再現するのは難しい場合があります。"
+        },
+        {
+          "question": "この結果はどんな企業に影響しますか？",
+          "answer": "主にレガシーシステム（COBOL等）を抱える金融・政府系・大手企業の移行プロジェクト関係者が注目するでしょう。ただし直ちに導入するより、検証用の小規模プロジェクトで評価することをおすすめします。"
+        },
+        {
+          "question": "OpenAIはコスト面でも改善を示していますか？",
+          "answer": "OpenAIはGPT‑6.1 Solが比較的低コストで動かせる設定を示し、性能向上とコスト削減の両立を主張しています。ただし具体的な料金や運用コストは利用形態によって変わるため、不明な点は多いです。"
+        }
+      ],
+      "summary": "OpenAIは低リソース言語向けに2種類の評価を公開し、特にCOBOL移行評価で大きな改善を報告しました。公開データは魅力的ですが、隠しテストの非公開性と実務における周辺要素の影響を踏まえると、即時の全面導入は慎重に判断すべきです。まずは公開されたベンチマークの再現と、限定的な実案件での段階的検証を進めてください。"
+    },
+    "images": [
+      {
+        "number": 0,
+        "anchor": "",
+        "theme": "サムネ：発表の概要と注目点",
+        "labels": [
+          "OpenAI発表",
+          "低リソース言語",
+          "COBOL移行",
+          "高スコア報告",
+          "注意点あり"
+        ],
+        "prompt": "16:9、濃紺の背景にシアンと白・黄色の太い短い日本語テキスト。中央に大きく「OpenAI 低リソース言語評価 公開」と表示、下部に小さめで「COBOL移行で大幅改善」と入れる。立体感のあるタイトル、広い余白、シンプルなアイコンで小さなコンピュータと古い書類のシルエットを左下に配置。黒に近い濃紺、シアンのアクセント、太いゴシック日本語。"
+      },
+      {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜図解①：MultiLangBenchの仕組み】",
+        "theme": "図解①：MultiLangBenchの仕組み",
+        "labels": [
+          "MultiLangBench",
+          "20言語",
+          "SQLite互換",
+          "GitHub公開",
+          "再現可能"
+        ],
+        "prompt": "16:9、濃紺背景。左に簡略化したデータベースアイコン、中央に20本のライン（各言語を象徴）を描き、右に『SQLite互換エンジンを一から構築』の矢印。上部に短い日本語見出し「MultiLangBench」、下部に小さめで「GitHubで公開」と表示。シアンと白・黄色で強調、広い余白、平易な図解。"
+      },
+      {
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜図解②：COBOL移行評価の判定基準】",
+        "theme": "図解②：COBOL移行評価の判定基準",
+        "labels": [
+          "COBOL移行評価",
+          "バイト単位一致",
+          "隠しテスト",
+          "厳格判定",
+          "実機とは別"
+        ],
+        "prompt": "16:9、濃紺背景。中央に2つのファイルアイコン（左がCOBOL出力、右が移行後の出力）を並べ、間に拡大鏡でバイトを示すイメージ。上部に見出し「バイト単位で完全一致が合格基準」、下部に小さく「hidden tests（非公開）」と表示。シアンと黄色のアクセント、立体感と広い余白。"
+      },
+      {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜図解③：性能改善のイメージ】",
+        "theme": "図解③：性能改善のイメージ",
+        "labels": [
+          "GPT‑6系列",
+          "改善率",
+          "低→高reasoning",
+          "例：GPT‑6.1高で97.9%",
+          "実績はOpenAI発表"
+        ],
+        "prompt": "16:9、濃紺背景。左に旧モデル（小さめのバー）と右にGPT‑6系列（大きめのバー）をシンプルな棒グラフで比較。グラフ上に短く「GPT‑5.6: 低」「GPT‑6.1: 高」とラベル付け。下部に小さく「OpenAI公表のスコア」と入れる。シアン・白・黄色で視認性を確保、立体的なバー、広い余白。"
+      },
+      {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜図解④：実務での注意点（ギャップ）】",
+        "theme": "図解④：実務での注意点（ギャップ）",
+        "labels": [
+          "実運用ギャップ",
+          "外部依存",
+          "暗黙の業務ルール",
+          "テストカバレッジ",
+          "段階的検証推奨"
+        ],
+        "prompt": "16:9、濃紺背景。中央に分岐する道のイラスト（左が『評価環境』、右が『実運用』）。右側に複数のアイコン（API連携、ドキュメント、人的レビュー）を配置して実務の複雑さを示す。上に見出し「評価と実務のギャップ」、下に小さく「段階的検証を推奨」と表示。シアンと黄色で要点を強調、立体感、広い余白。"
+      }
+    ],
+    "hashtags": [
+      "#OpenAI",
+      "#COBOL",
+      "#LowResourceLanguages",
+      "#MultiLangBench",
+      "#AI移行",
+      "#GPT6",
+      "#ソフトウェア移行",
+      "#IT運用",
+      "#AIベンチマーク",
+      "#レガシーシステム",
+      "#プログラミング",
+      "#技術解説"
+    ],
+    "threads": "OpenAIがCOBOLなど低リソース言語向け評価を公開。高スコアは注目だが隠しテストの非公開性と実運用のギャップに注意すべきではないですか？",
+    "body": "OpenAIが2026年10月19日に、低リソースのプログラミング言語向け評価を公開しました。特にCOBOLの既存コードを別言語に移行する評価で大幅な改善を示したと報告されています。本稿では何が発表されたか、なぜ注目か、あなたにどう関係するかをやさしく整理します。\n\n---\n\n## 30秒で結論\n\n- OpenAIはMultiLangBenchとCOBOL移行評価の2種類を公開し、GPT‑6系列で大きな性能改善を報告した。\n- COBOL移行評価は「出力がバイト単位で完全一致」する隠しテストを使い、GPT‑6.1 Solは高推論設定で97.9%の正解率を報告したが、これはOpenAI自身の評価結果である。\n- 公開評価は再現可能な部分（MultiLangBenchの一部）と隠しテスト部分（COBOLの隠しテストは非公開）が混在し、実運用で同等の成果が得られるかは未確定である。\n- 実務での移行では外部システム依存や暗黙の業務ルールなど、評価外の要素が成功を左右するため注意が必要だ。\n\n---\n\n## 何が公開されたのか（2種類の評価）\n\nOpenAIは「MultiLangBench」と「COBOL移行評価」の2種類を発表しました。MultiLangBenchは20の低リソース言語でSQLite互換のデータベースエンジンを一から作れるかを確かめるもので、GitHub上に評価セットや手順が公開されています。一方、COBOL移行評価は既存のCOBOLプログラムをC++/Java/Kotlin/Python/Rustなどへ移して、出力がバイト単位で完全一致するかどうかを隠しテストで判定する、より厳密な評価です。\n\n【ここに図解①を挿入｜図解①：MultiLangBenchの仕組み】\n\n---\n\n## 発表された主な数値（改善の程度）\n\nOpenAIの報告によれば、MultiLangBenchでGPT‑6 Astraは最大推論設定で平均87.4%の合格率を出し、従来のGPT‑5.6 Solの26.8%から大きく改善しました。またCOBOL移行評価では、GPT‑6.1 Solが低推論（low reasoning）で86.6%、高推論で97.9%の正解率を示し、GPT‑5.6 Solの5.4%から劇的な差が出ています。これらはOpenAI自身が公開した数値です。\n\n【ここに図解②を挿入｜図解②：COBOL移行評価の判定基準】\n\n---\n\n## 評価の判定方法と公開範囲の違い\n\nCOBOL移行評価の判定は非常に厳しく、『観測可能な出力がバイト単位で完全一致すること』を合格条件にしています。こうした判定は隠しテスト（hidden tests）で行われ、隠しテストの具体的なセットそのものは公開されていません。一方で、MultiLangBenchの評価セットや実行手順はGitHubで公開され、第三者が再現しやすい形で提供されています。\n\n【ここに図解③を挿入｜図解③：性能改善のイメージ】\n\n---\n\n## 実務とのギャップと注意点\n\n公開結果は設計されたテストに基づくものであり、実際のシステム移行で必要な周辺作業（外部APIとの連携、暗黙のビジネスルール、テストカバレッジ不足など）が含まれるかどうかは不明です。したがって、これらの数字がそのまま既存の銀行系や基幹システムの自動移行の可否を保証するわけではありません。OpenAI自身の評価と公開済みテストだけが根拠である点を踏まえる必要があります。\n\n【ここに図解④を挿入｜図解④：実務での注意点（ギャップ）】\n\n---\n\n## 私の正直な感想\n\n正直に言うと、今回の数値は非常に目を引きます。特にCOBOLの移行でバイト単位一致という厳格な基準を用いて高スコアを出した点は驚きですが、隠しテストの非公開性と実システム特有の複雑さを考えると、すぐに『完全自動で安全に移行できる』と結論づけるのは早計です。まずは公開されたMultiLangBenchを第三者が再現し、限定的な実案件で段階的に検証するのが現実的だと考えます。\n\n---\n\n## よくある質問\n\n### この発表で今すぐCOBOL移行が自動化できますか？\n\nいいえ。OpenAIの公表データは設計された評価に基づくもので、隠しテストや公開テストの条件が実業務と完全一致するわけではありません。外部依存や業務ルールなど評価外の要素があるため、段階的な検証と人的チェックが必要です。\n\n### 発表の数値は誰でも再現できますか？\n\n部分的には再現可能です。MultiLangBenchの評価セットや手順はGitHubで公開されていますが、COBOL移行評価に使われた隠しテスト一式は公開されていません。したがって同一条件で完全再現するのは難しい場合があります。\n\n### この結果はどんな企業に影響しますか？\n\n主にレガシーシステム（COBOL等）を抱える金融・政府系・大手企業の移行プロジェクト関係者が注目するでしょう。ただし直ちに導入するより、検証用の小規模プロジェクトで評価することをおすすめします。\n\n### OpenAIはコスト面でも改善を示していますか？\n\nOpenAIはGPT‑6.1 Solが比較的低コストで動かせる設定を示し、性能向上とコスト削減の両立を主張しています。ただし具体的な料金や運用コストは利用形態によって変わるため、不明な点は多いです。\n\n---\n\n## まとめ\n\nOpenAIは低リソース言語向けに2種類の評価を公開し、特にCOBOL移行評価で大きな改善を報告しました。公開データは魅力的ですが、隠しテストの非公開性と実務における周辺要素の影響を踏まえると、即時の全面導入は慎重に判断すべきです。まずは公開されたベンチマークの再現と、限定的な実案件での段階的検証を進めてください。\n\n---\n\n## この記事について\n\n確認日：2026年10月24日（日本時間）。公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。\n\n---\n\n## 参考リンク\n\n- [1バイト違えば不合格のCOBOL移行、OpenAI新モデルの正解率は？：AIニュースピックアップ - ITmedia エンタープライズ](https://www.itmedia.co.jp/enterprise/articles/2610/22/news077.html)\n- [Advancing coding in low‑resource programming languages - OpenAI (official)](https://openai.com/index/low-resource-programming-languages/?shem=dsdf,sharefoc,agadiscoversdl,,sh/x/discover/m1/4)"
+  },
+  "evidence": [
+    "https://geroundtable.com/openai-cobol-migration-low-resource-coding",
+    "https://gpt-6.org/news/multilangbench-gpt6-cobol-migration",
+    "https://openai.com/index/low-resource-programming-languages?shem=dsdf%2Csharefoc%2Cagadiscoversdl%2C%2Csh%2Fx%2Fdiscover%2Fm1%2F4",
+    "https://pulse.adyog.com/insights/openai-cobol-migration-tests-parity",
+    "https://runtimewire.com/article/openai-low-resource-language-coding-benchmarks",
+    "https://www.digitalapplied.com/blog/openai-cobol-migration-low-resource-languages-results",
+    "https://www.itmedia.co.jp",
+    "https://www.itmedia.co.jp/enterprise/articles/2610/22/news077.html",
+    "https://www.itmedia.co.jp/enterprise/series/42905/spv",
+    "https://www.orcarouter.ai/blog/gpt-6-1-sol-cobol-legacy-migration",
+    "https://www.pk-sharma.com/briefing/openai-multilangbench-cobol-migration-scores-test-limits",
+    "https://www.reddit.com/r/CodexAutomation/comments/1xadm0e/openai_releases_multilangbench_and_reports",
+    "https://www.thefrontier.dev/articles/openai-multilangbench-cobol"
+  ]
+}

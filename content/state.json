@@ -1,5 +1,5 @@
 {
-  "next_number": 27,
+  "next_number": 28,
   "articles": [
     {
       "number": 1,
@@ -1023,7 +1023,51 @@
           "supports": "日本語報道記事。Googleの発表内容を要約し、Googleが主要3社の閉鎖型モデル群（OpenAI／Anthropic／Google）を同一ハイパースケーラー上で提供できる唯一の事業者になった旨を伝えている。"
         }
       ]
+    },
+    {
+      "number": 27,
+      "run_id": "2026-10-24-morning-1",
+      "title": "【海外AI解説】PHP（php2shell）――AIが支援して発見された致命的RCE脆弱性と緊急対応の経緯",
+      "created_at": "2026-10-24T09:23:12.088998+09:00",
+      "path": "articles/2026-10-24/0027-morning.md",
+      "sources": [
+        "https://fortune.com/2026/10/21/ai-tools-discovered-the-php-vulnerability-that-could-take-down-70-of-the-internet-now-the-race-is-on-to-patch-it-before-ai-powered-hackers-attack",
+        "https://www.csoonline.com/article/4239359/php2shell-exposes-the-weakness-in-coordinated-vulnerability-disclosure-2.html",
+        "https://www.itmedia.co.jp/business/articles/2610/22/news053.html",
+        "https://www.techtarget.com/cybersecurity/news/366652613/PHP2Shell-disclosure-unravels-after-leaks-forced-early-patch-drop?amp=1"
+      ],
+      "sha256": "c97882ff75e43bcb19c0d4f9e11fcf7b48927be447589bbbe0687ebe0d234144",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "overseas",
+      "media_plan": "media/0027/plan.json",
+      "source_details": [
+        {
+          "title": "“緊急メンテの夜”までの一部始終は？　8月にAIで「PHPの重大な脆弱性」発見→OpenAIが即応チームを招集",
+          "url": "https://www.itmedia.co.jp/business/articles/2610/22/news053.html",
+          "published_at": "2026-10-22T13:30:00+09:00",
+          "supports": "日本での夜間の予防的緊急メンテや、記事が伝える『8月にAIで発見／OpenAIが対応』という経緯の記載。本文を開き確認済み."
+        },
+        {
+          "title": "AI helped discover the PHP vulnerability that could take down 70% of the internet",
+          "url": "https://fortune.com/2026/10/21/ai-tools-discovered-the-php-vulnerability-that-could-take-down-70-of-the-internet-now-the-race-is-on-to-patch-it-before-ai-powered-hackers-attack/",
+          "published_at": "2026-10-21T14:48:00-04:00",
+          "supports": "脆弱性（php2shell / CVE-2026-109618・109619）の概要、AIが検出プロセスに関与したとする説明、パッチと緊急対応の時系列的記述。"
+        },
+        {
+          "title": "PHP2Shell disclosure unravels after leaks forced early patch drop",
+          "url": "https://www.techtarget.com/cybersecurity/news/366652613/PHP2Shell-disclosure-unravels-after-leaks-forced-early-patch-drop?amp=1",
+          "published_at": "2026-10-22T00:00:00+00:00",
+          "supports": "脆弱性のCVE番号、リークによる公開前の流出・パッチ前倒しの経緯、複数主体が関わっていたとする調査系報道を確認。"
+        },
+        {
+          "title": "PHP2Shell exposes the weakness in coordinated vulnerability disclosure",
+          "url": "https://www.csoonline.com/article/4239359/php2shell-exposes-the-weakness-in-coordinated-vulnerability-disclosure-2.html",
+          "published_at": "2026-10-22T00:00:00+00:00",
+          "supports": "PHPプロジェクト側の既往経緯や、AIを用いた監査のタイムライン、公開後の脆弱性対応の課題に関する解説。"
+        }
+      ]
     }
   ],
-  "next_diagram": 336
+  "next_diagram": 340
 }
