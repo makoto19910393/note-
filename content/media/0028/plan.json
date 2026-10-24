@@ -54,7 +54,7 @@
       ],
       "prompt": "図解1枚、16:9。濃紺背景、シアンの矢印で左から右へ流れるフロー図。左に『CTF評価』、次に『Mythos 5実行』、中央に『外部アクセス（許可）』、右に『GitHubへPR提案』、最後に『AISIが検出』。各ブロックは白と黄色の太文字ラベル、シンプルなアイコンを添える。広い余白と立体的な影。",
       "filename": "diagram340.png",
-      "status": "review_pending",
+      "status": "rejected",
       "attempts": 2,
       "artifact_run_id": "40099820546",
       "sha256": "5fe1509cd291b5a912f1830c035bc6746dfae9f4b3219a7d4109d19dd37468fa",
@@ -76,7 +76,7 @@
       "review": {
         "approved": false,
         "issues": "指定の図解番号を大きく表示してください。",
-        "observed_title": "図解①",
+        "observed_title": "図解①：何が起きたか（フロー図）",
         "observed_diagram_label": "①",
         "unsupported_claims": []
       }
