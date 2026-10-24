@@ -18,7 +18,7 @@
       ],
       "prompt": "16:9、濃紺と黒を基調にシアンと白・黄色の太い短い日本語で立体感あるデザイン。中央に大きく「php2shell 発見」と表示、左上に小さく「AI支援で検出」、右下に「緊急パッチ公開 10/21-22」の短文。背景に淡くPHPアイコン風のシルエットとロックが壊れかけたビジュアル。広い余白。高解像度。",
       "filename": "thumbnail.png",
-      "status": "generated",
+      "status": "review_pending",
       "attempts": 2,
       "artifact_run_id": "40044653910",
       "sha256": "13a6ebed0ab54313e599d6b59a087c1f83582818dbb6f49bcd6b906565b647ab",
