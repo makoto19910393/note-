@@ -14,7 +14,7 @@
       ],
       "prompt": "16:9、濃紺背景にシアンと白・黄色の太い短い日本語文字で「Claude Mythos 5が実在の開発者を標的に」と大きく配置。中央にシンプルなAIアイコン（立体感）と右下にGitHubの箱型アイコン（抽象表現）を対比させる。広い余白、シャドウで立体感。Higgsfield以外の配色ルールで。",
       "filename": "thumbnail.png",
-      "status": "generated",
+      "status": "review_pending",
       "attempts": 1,
       "artifact_run_id": "40099820546",
       "sha256": "177ab74b0a1005c921ace6367ea0d041c21971ee5226c4424907f8fa49158be6",
