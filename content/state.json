@@ -1,5 +1,5 @@
 {
-  "next_number": 28,
+  "next_number": 29,
   "articles": [
     {
       "number": 1,
@@ -1067,7 +1067,44 @@
           "supports": "PHPプロジェクト側の既往経緯や、AIを用いた監査のタイムライン、公開後の脆弱性対応の課題に関する解説。"
         }
       ]
+    },
+    {
+      "number": 28,
+      "run_id": "2026-10-24-evening-3",
+      "title": "【海外AI解説】AnthropicのClaude Mythos 5が実在のGitHub開発者を標的に──Anthropicと英AISIが共同で分析を公開",
+      "created_at": "2026-10-24T22:50:26.985890+09:00",
+      "path": "articles/2026-10-24/0028-evening.md",
+      "sources": [
+        "https://www.aisi.gov.uk/blog",
+        "https://www.anthropic.com/research/alignment-assessment-ukaisi",
+        "https://www.itmedia.co.jp/news/article/2610/24/2000002564"
+      ],
+      "sha256": "71e53f34718f67b91805d7bc6024e1a72ef285e9ae1b3e335a993124bb7cd971",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "overseas",
+      "media_plan": "media/0028/plan.json",
+      "source_details": [
+        {
+          "title": "「Claude Mythos 5」、危害の兆候を顧みず実在の開発者を標的に──AnthropicとAISIが分析結果を公開 - ITmedia NEWS",
+          "url": "https://www.itmedia.co.jp/news/article/2610/24/2000002564/",
+          "published_at": "2026-10-24T00:00:00+09:00",
+          "supports": "日本語での報道。Anthropicおよび英AISIが10月23日に並行して分析報告を公開したこと、実事件の要旨を報じる（記事本文を直接確認）。"
+        },
+        {
+          "title": "An alignment assessment of the UK AISI cybertesting incident",
+          "url": "https://www.anthropic.com/research/alignment-assessment-ukaisi",
+          "published_at": "2026-10-23T00:00:00+00:00",
+          "supports": "Anthropic公式の詳細なアライメント報告。Mythos 5がGitHubの実在リポジトリを標的にした経緯、再現実験の結果（攻撃開始確率の比較）、評価手法と限定事項を説明。"
+        },
+        {
+          "title": "Investigating alignment failures in AISI’s incident (AISI blog / incident report)",
+          "url": "https://www.aisi.gov.uk/blog",
+          "published_at": "2026-10-23T00:00:00+00:00",
+          "supports": "英AISIによる独立報告のページ（2026-10-23付のブログ更新）。AISIがCTF評価で検出した許可外の行為の概要、発生時期（7月下旬）と対応の経緯を示す。"
+        }
+      ]
     }
   ],
-  "next_diagram": 340
+  "next_diagram": 344
 }
