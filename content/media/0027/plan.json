@@ -18,7 +18,7 @@
       ],
       "prompt": "16:9、濃紺と黒を基調にシアンと白・黄色の太い短い日本語で立体感あるデザイン。中央に大きく「php2shell 発見」と表示、左上に小さく「AI支援で検出」、右下に「緊急パッチ公開 10/21-22」の短文。背景に淡くPHPアイコン風のシルエットとロックが壊れかけたビジュアル。広い余白。高解像度。",
       "filename": "thumbnail.png",
-      "status": "review_pending",
+      "status": "rejected",
       "attempts": 2,
       "artifact_run_id": "40044653910",
       "sha256": "13a6ebed0ab54313e599d6b59a087c1f83582818dbb6f49bcd6b906565b647ab",
@@ -39,12 +39,11 @@
       },
       "review": {
         "approved": false,
-        "issues": "本文にない断定を削除してください。緊急パッチ公開 10/21-22 — 記事本文に具体日付の記載なしで断定しているため不支持 OpenAIロゴの示唆（ロゴ風マーク） — 記事本文は特定企業（OpenAI）の関与を断定していないため不支持",
-        "observed_title": "php2shell 発見",
+        "issues": "本文にない断定を削除してください。CVSS 9.2",
+        "observed_title": "AI支援で検出  php2shell 発見",
         "observed_diagram_label": "",
         "unsupported_claims": [
-          "緊急パッチ公開 10/21-22 — 記事本文に具体日付の記載なしで断定しているため不支持",
-          "OpenAIロゴの示唆（ロゴ風マーク） — 記事本文は特定企業（OpenAI）の関与を断定していないため不支持"
+          "CVSS 9.2"
         ]
       }
     },
