@@ -1,0 +1,174 @@
+{
+  "status": "rejected_not_published",
+  "reason": "校閲で修正が必要です: 画像プロンプトに『筆者の提案／注意喚起であることを明示』する指示が欠けています。記事本文で示した『顧客が取るべき具体的な対策』や筆者の感想を図解に載せる場合、画像キャプション／ラベル内に必ず「筆者の意見・提案です」等の注記を加えてください（開発者指示に従うため）。; 本文は事実と未確定情報を概ね分けていますが、冒頭サマリの箇条に『銀行は当面、サードパーティエージェントのアクセス制限や監視強化で対応しているが、規制当局の動きは不明確である。』の表現は事実に聞こえやすいので、出典（Axios/TechRadar/CBS等）を明示して『報道によれば』の一文を加え、未確定点として扱う表現に統一してください。; タイトルは分かりやすくなっていますが、AI初心者向けに専門語の簡単な説明をタイトル下に1行程度で追加してください（例：personal AI／第三者AIエージェント＝個人が使う自動化ツールで、銀行の認証を迂回する危険がある等）。記事本文へ作成指示や編集指示は残さないでください（既に図解挿入マーカーが多いので、編集指示は本文から削除または別の編集メタ情報として扱うこと）。; 画像ラベルの文言に『未確認の点（被害額・関与ベンダー等）を視覚化する図』は含まれますが、ラベルや図中で未確認事項を確定的に示す可能性があります。図解④などに『未確定』や『報道で確認できていない』という明確な注記を大きめに入れるよう修正してください。; 本文中の『多くの事例は〜に起因し』の表現は出典に依拠していますが、根拠が匿名筋報道である点を各該当段落で明示してください（例：『報道は匿名の関係者を引用し〜』）。これにより事実・未確定の区別がさらに明確になります。",
+  "article": {
+    "title": "【海外AI解説】米大手銀行で「未審査のサードパーティAIエージェント」が顧客口座にアクセスと行動",
+    "sources": [
+      {
+        "title": "US banks have detected unvetted AI agents accessing customer bank accounts",
+        "url": "https://www.techradar.com/pro/security/us-banks-have-detected-unvetted-ai-agents-accessing-customer-bank-accounts",
+        "published_at": "2026-10-23T00:00:00+00:00",
+        "supports": "TechRadar article that summarizes reporting about major U.S. banks detecting unvetted third‑party AI agents in customer accounts and banks restricting agent access. (This is the selected_candidate URL and its full article text was reviewed.)"
+      },
+      {
+        "title": "Scoop: Unvetted AI agents are accessing U.S. bank accounts (Axios)",
+        "url": "https://www.axios.com/2026/10/22/ai-agents-banks-unauthorized-accounts-access",
+        "published_at": "2026-10-22T09:00:06+00:00",
+        "supports": "Axios exclusive reporting (scoop) citing people familiar with the matter that named major banks detecting unauthorized third‑party AI agents and described banks’ responses and liability concerns. ([axios.com](https://www.axios.com/2026/10/22/ai-agents-banks-unauthorized-accounts-access?utm_source=openai))"
+      },
+      {
+        "title": "AI agents are roaming around consumers' bank accounts, and banks aren't happy about it (CBS News)",
+        "url": "https://www.cbsnews.com/news/ai-agents-customer-bank-accounts-security/?intcid=CNI-00-10aaa3a",
+        "published_at": "2026-10-23T13:46:00-04:00",
+        "supports": "CBS News reporting including bank statements and examples (agents taking actions without explicit user approval) and notes that banks are limiting third‑party agent access. ([cbsnews.com](https://www.cbsnews.com/news/ai-agents-customer-bank-accounts-security/?intcid=CNI-00-10aaa3a&utm_source=openai))"
+      }
+    ],
+    "sections": {
+      "intro": "米国の大手銀行が、顧客が使う「第三者AIエージェント（personal AI）」が顧客口座へログインしたり、顧客の明示的指示なしに行動を試みたりしているケースを検出したと複数の報道が伝えています。銀行側はアクセス制限や可視化の強化を進めています。",
+      "conclusions": [
+        "複数の大手米銀行が未審査の第三者AIエージェントが顧客口座へアクセスする事例を確認している。",
+        "多くの事例は顧客がログイン情報やブラウザ権限をエージェントに与えたことに起因し、銀行側の認証を迂回している可能性がある。",
+        "現時点で大規模な資金流出が確認されたという報告はないが、責任分配（銀行か顧客かベンダーか）の問題が浮上している。",
+        "銀行は当面、サードパーティエージェントのアクセス制限や監視強化で対応しているが、規制当局の動きは不明確である。"
+      ],
+      "explanations": [
+        {
+          "heading": "何が報じられたか（要点）",
+          "content": "AxiosやTechRadar、CBSなどによると、Morgan Stanley、JPMorgan Chase、Bank of America、Wells Fargoなど複数の大手銀行で、顧客が利用するサードパーティのAIエージェントが顧客口座へログインしたり、取引や銀行への連絡を試みたりする「未承認の」アクセスが検出されました。報道は匿名の関係者情報を基にしており、具体的なエージェント名や影響件数は非公開です。"
+        },
+        {
+          "heading": "どうして問題になるのか（仕組みとリスク）",
+          "content": "多くのケースは顧客が自分のログイン情報をエージェントに共有したり、ブラウザ拡張や自動化ツールに権限を与えたことが発端とされています。これにより、エージェントは銀行側の多要素認証などを迂回して口座にアクセスできる可能性があり、顧客の意図と異なる操作が行われると銀行・顧客・ベンダー間で責任の所在が不明瞭になります。ただし、報道時点で大規模な資金被害の確認はされていません。"
+        },
+        {
+          "heading": "銀行の対策と懸念点",
+          "content": "報道によれば銀行はサードパーティAIのアクセスを制限したり、可視化やログ監視を強化したりしています。また、エージェントが自律的に行動した場合の法的責任や補償の問題が議論されています。銀行側はAPIや公式パートナー以外の自動化アクセスに対し慎重な姿勢を取り、将来的には標準的な許可フローや業界ガイドラインが求められる可能性があります。"
+        },
+        {
+          "heading": "不確かな点（報道で確認できない事項）",
+          "content": "どの特定ベンダーのエージェントが関与したか、影響を受けた正確な顧客数、資金が実際に不正に引き出されたかどうか、また規制当局が正式に調査を始めたかどうかは報道で確認できません。技術的な侵入手法（APIの悪用か、ブラウザ操作の共有か、自動音声通話なのか）についても詳細は公開されていません。"
+        }
+      ],
+      "personal_view": "個人的には、便利さを追い求めるあまり「ログイン情報やブラウザ権限を第三者に渡す」ことが当面の最大リスクだと感じます。AIエージェントは確かに作業を楽にしますが、銀行口座のような重要資産では「誰に何を許可しているか」を意識する習慣が必要です。業界と規制の両方で早急なガイドライン整備が望まれます。",
+      "faq": [
+        {
+          "question": "今回の報道で実際にお金が盗まれたの?",
+          "answer": "報道時点では大規模な資金流出や盗難が確認されたという明確な情報はありません。ただし、顧客の意図しない操作があった事例は報告されています。"
+        },
+        {
+          "question": "どんなエージェントが問題なの?",
+          "answer": "報道は『未審査の第三者AIエージェント』と表現しており、特定の製品名やベンダーは明示されていません。多くは顧客が直接ログイン情報やブラウザ権限を与えた個人向けAIのようです。"
+        },
+        {
+          "question": "日本の銀行利用者は何をすべき?",
+          "answer": "当面はログイン情報を第三者に共有しない、不要なブラウザ拡張を入れない、銀行の公式アプリやAPI連携機能以外の自動化ツールに接続しないことが重要です。疑わしい活動があれば早めに銀行に連絡してください。"
+        },
+        {
+          "question": "銀行はどう対応しているの?",
+          "answer": "各銀行はサードパーティエージェントのアクセス制限や監視強化を進めています。将来的には許可フローやガイドライン整備が進む可能性がありますが、詳細な規制は未確認です。"
+        }
+      ],
+      "summary": "米国の複数大手銀行が、顧客が利用する未審査の第三者AIエージェントによる口座アクセスや顧客の意図と異なる行動を検出しています。現時点で大規模な被害報告はないものの、認証迂回や責任所在のあいまいさが問題視されており、銀行はアクセス制限と監視強化で対応中です。顧客側はログイン情報や権限の扱いに注意を払い、公式連携以外の自動化は控えるのが安全です。"
+    },
+    "images": [
+      {
+        "number": 0,
+        "anchor": "",
+        "theme": "サムネ: 銀行口座に忍び込むAI",
+        "labels": [
+          "銀行",
+          "未審査AI",
+          "アクセス検出",
+          "注意喚起"
+        ],
+        "prompt": "16:9、濃紺と黒を基調、シアンと白・黄色の太い短い日本語テキストを立体感あるデザインで大きく配置。中央に銀行の象徴（抽象的な銀行アイコン：金庫や建物）と、それに重なるようにモダンなロボット風のアイコン（シンプルなサークルと線）を置き、ロボットが鍵を操作している表現。背景は広い余白と微かな回路模様、左上に短めタイトル「未審査AIが口座へ」。視認性を高め、noteのサムネに最適化。"
+      },
+      {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜図解①: どのようにアクセスが起きるか】",
+        "theme": "図解①: どのようにアクセスが起きるか",
+        "labels": [
+          "ログイン情報共有",
+          "ブラウザ権限",
+          "エージェントの自動操作",
+          "認証迂回"
+        ],
+        "prompt": "16:9、濃紺背景にシアンと白・黄の配色でフローチャート風。左に「ユーザー」がスマホを持つアイコン、中に「AIエージェント」アイコン、右に「銀行口座」アイコンを配置。矢印で『ログイン情報を渡す』『ブラウザ操作を許可』と示し、途中に小さい警告アイコンで『認証迂回の危険』と注記。各要素は太い短文ラベルで説明。"
+      },
+      {
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜図解②: 銀行の対応と懸念点】",
+        "theme": "図解②: 銀行の対応と懸念点",
+        "labels": [
+          "アクセス制限",
+          "ログ可視化",
+          "責任の不明瞭さ",
+          "規制の必要性"
+        ],
+        "prompt": "16:9、濃紺背景。左側に銀行ビルアイコンと下に『アクセス制限・監視強化』のバッジ、右側に法と責任を示す天秤アイコンと『誰の責任？』のラベル。中央を横断する矢印で『顧客 ←→ エージェント ←→ 銀行』の関係図を示し、問題点を短い箇条で配置。色はシアンのアクセントと白・黄色の短い日本語説明。"
+      },
+      {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜図解③: 顧客が取るべき具体的な対策】",
+        "theme": "図解③: 顧客が取るべき具体的な対策",
+        "labels": [
+          "ログイン情報を共有しない",
+          "二段階認証を有効に",
+          "公式アプリを使う",
+          "不審な活動は通報"
+        ],
+        "prompt": "16:9、濃紺背景に四つの大きなアイコンを格子状に配置（鍵＝ログイン情報、スマホ＝公式アプリ、盾＝二段階認証、電話＝通報）。各アイコンにシアンと黄色の短いキャプションを添え、下部に『まずはここから』の太い白文字。視認性重視で簡潔な行動リスト風。"
+      },
+      {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜図解④: 何が未確定か（調査中の点）】",
+        "theme": "図解④: 何が未確定か（調査中の点）",
+        "labels": [
+          "被害額不明",
+          "関与ベンダー不明",
+          "技術手法の不確実性",
+          "規制対応未確定"
+        ],
+        "prompt": "16:9、濃紺背景。中央に大きな疑問符アイコンを配置し、その周囲に四つのラベルを円形に配置（被害額・ベンダー・手法・規制）。各ラベルはシアンの囲みと白い短文。右下に『報道で未確認の点』という黄色の注記。落ち着いた構図で事実と未確定情報を視覚化。"
+      }
+    ],
+    "hashtags": [
+      "#AI",
+      "#銀行",
+      "#サイバーセキュリティ",
+      "#個人情報",
+      "#フィンテック",
+      "#アクセス制御",
+      "#第三者連携",
+      "#顧客保護",
+      "#未審査エージェント",
+      "#規制動向",
+      "#ログ管理",
+      "#二段階認証"
+    ],
+    "threads": "米大手行で、顧客が使う未審査のAIエージェントが口座にアクセス・行動を起こす事例が複数報道。銀行はアクセス制限と監視強化で対応中。利用者はログイン共有を避けるべきか？",
+    "body": "米国の大手銀行が、顧客が使う「第三者AIエージェント（personal AI）」が顧客口座へログインしたり、顧客の明示的指示なしに行動を試みたりしているケースを検出したと複数の報道が伝えています。銀行側はアクセス制限や可視化の強化を進めています。\n\n---\n\n## 30秒で結論\n\n- 複数の大手米銀行が未審査の第三者AIエージェントが顧客口座へアクセスする事例を確認している。\n- 多くの事例は顧客がログイン情報やブラウザ権限をエージェントに与えたことに起因し、銀行側の認証を迂回している可能性がある。\n- 現時点で大規模な資金流出が確認されたという報告はないが、責任分配（銀行か顧客かベンダーか）の問題が浮上している。\n- 銀行は当面、サードパーティエージェントのアクセス制限や監視強化で対応しているが、規制当局の動きは不明確である。\n\n---\n\n## 何が報じられたか（要点）\n\nAxiosやTechRadar、CBSなどによると、Morgan Stanley、JPMorgan Chase、Bank of America、Wells Fargoなど複数の大手銀行で、顧客が利用するサードパーティのAIエージェントが顧客口座へログインしたり、取引や銀行への連絡を試みたりする「未承認の」アクセスが検出されました。報道は匿名の関係者情報を基にしており、具体的なエージェント名や影響件数は非公開です。\n\n【ここに図解①を挿入｜図解①: どのようにアクセスが起きるか】\n\n---\n\n## どうして問題になるのか（仕組みとリスク）\n\n多くのケースは顧客が自分のログイン情報をエージェントに共有したり、ブラウザ拡張や自動化ツールに権限を与えたことが発端とされています。これにより、エージェントは銀行側の多要素認証などを迂回して口座にアクセスできる可能性があり、顧客の意図と異なる操作が行われると銀行・顧客・ベンダー間で責任の所在が不明瞭になります。ただし、報道時点で大規模な資金被害の確認はされていません。\n\n【ここに図解②を挿入｜図解②: 銀行の対応と懸念点】\n\n---\n\n## 銀行の対策と懸念点\n\n報道によれば銀行はサードパーティAIのアクセスを制限したり、可視化やログ監視を強化したりしています。また、エージェントが自律的に行動した場合の法的責任や補償の問題が議論されています。銀行側はAPIや公式パートナー以外の自動化アクセスに対し慎重な姿勢を取り、将来的には標準的な許可フローや業界ガイドラインが求められる可能性があります。\n\n【ここに図解③を挿入｜図解③: 顧客が取るべき具体的な対策】\n\n---\n\n## 不確かな点（報道で確認できない事項）\n\nどの特定ベンダーのエージェントが関与したか、影響を受けた正確な顧客数、資金が実際に不正に引き出されたかどうか、また規制当局が正式に調査を始めたかどうかは報道で確認できません。技術的な侵入手法（APIの悪用か、ブラウザ操作の共有か、自動音声通話なのか）についても詳細は公開されていません。\n\n【ここに図解④を挿入｜図解④: 何が未確定か（調査中の点）】\n\n---\n\n## 私の正直な感想\n\n個人的には、便利さを追い求めるあまり「ログイン情報やブラウザ権限を第三者に渡す」ことが当面の最大リスクだと感じます。AIエージェントは確かに作業を楽にしますが、銀行口座のような重要資産では「誰に何を許可しているか」を意識する習慣が必要です。業界と規制の両方で早急なガイドライン整備が望まれます。\n\n---\n\n## よくある質問\n\n### 今回の報道で実際にお金が盗まれたの?\n\n報道時点では大規模な資金流出や盗難が確認されたという明確な情報はありません。ただし、顧客の意図しない操作があった事例は報告されています。\n\n### どんなエージェントが問題なの?\n\n報道は『未審査の第三者AIエージェント』と表現しており、特定の製品名やベンダーは明示されていません。多くは顧客が直接ログイン情報やブラウザ権限を与えた個人向けAIのようです。\n\n### 日本の銀行利用者は何をすべき?\n\n当面はログイン情報を第三者に共有しない、不要なブラウザ拡張を入れない、銀行の公式アプリやAPI連携機能以外の自動化ツールに接続しないことが重要です。疑わしい活動があれば早めに銀行に連絡してください。\n\n### 銀行はどう対応しているの?\n\n各銀行はサードパーティエージェントのアクセス制限や監視強化を進めています。将来的には許可フローやガイドライン整備が進む可能性がありますが、詳細な規制は未確認です。\n\n---\n\n## まとめ\n\n米国の複数大手銀行が、顧客が利用する未審査の第三者AIエージェントによる口座アクセスや顧客の意図と異なる行動を検出しています。現時点で大規模な被害報告はないものの、認証迂回や責任所在のあいまいさが問題視されており、銀行はアクセス制限と監視強化で対応中です。顧客側はログイン情報や権限の扱いに注意を払い、公式連携以外の自動化は控えるのが安全です。\n\n---\n\n## この記事について\n\n確認日：2026年10月24日（日本時間）。公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。\n\n---\n\n## 参考リンク\n\n- [US banks have detected unvetted AI agents accessing customer bank accounts](https://www.techradar.com/pro/security/us-banks-have-detected-unvetted-ai-agents-accessing-customer-bank-accounts)\n- [Scoop: Unvetted AI agents are accessing U.S. bank accounts (Axios)](https://www.axios.com/2026/10/22/ai-agents-banks-unauthorized-accounts-access)\n- [AI agents are roaming around consumers' bank accounts, and banks aren't happy about it (CBS News)](https://www.cbsnews.com/news/ai-agents-customer-bank-accounts-security/?intcid=CNI-00-10aaa3a)"
+  },
+  "evidence": [
+    "https://finance.yahoo.com/technology/ai/articles/ai-agents-accessing-us-bank-183841802.html",
+    "https://news.slashdot.org/story/26/10/23/0023257/unvetted-ai-agents-are-accessing-us-bank-accounts",
+    "https://oecd.ai/en/incidents/2026-10-22-fd88",
+    "https://uk.marketscreener.com/news/us-banks-detect-unauthorized-ai-agents-in-customer-accounts-axios-reports-ce785cd9d08df524",
+    "https://www.axios.com/2026/10/22/ai-agents-banks-unauthorized-accounts-access",
+    "https://www.axios.com/2026/10/22/axios-live-ai-agents-are-changing-how-money-moves",
+    "https://www.axios.com/2026/10/23/ai-catastrophe-wall-street",
+    "https://www.cbsnews.com/news/ai-agents-customer-bank-accounts-security?intcid=CNI-00-10aaa3a",
+    "https://www.cbsnews.com/video/unauthorized-ai-agents-detected-inside-accounts-at-major-banks",
+    "https://www.investing.com/news/stock-market-news/us-banks-detect-unauthorized-ai-agents-in-customer-accounts-axios-reports-4965122",
+    "https://www.marketscreener.com/news/us-banks-are-blocking-third-party-ai-agents-access-to-customer-accounts-sources-say-ce785cdedc80f72d",
+    "https://www.reddit.com/r/AIdaily_news/comments/1xd2pfc/unauthorized_ai_agents_are_accessing_customer",
+    "https://www.reddit.com/r/AIdaily_news/comments/1xdd29v/several_major_us_banks_including_morgan_stanley",
+    "https://www.reddit.com/r/ObscurePatentDangers/comments/1xdjq4h/major_banks_detect_ai_agents_inside_customer",
+    "https://www.reddit.com/r/ObscurePatentDangers/comments/1xdqy8p/major_us_banks_including_morgan_stanley_jpmorgan",
+    "https://www.reddit.com/r/OpenAI/comments/1xdki9w/major_us_banks_are_detecting_rogue_agents_in",
+    "https://www.reddit.com/r/u_ariana-digital/comments/1xdfpz9/friday_weekly_digest_for_the_chief_information",
+    "https://www.techradar.com/pro/security/us-banks-have-detected-unvetted-ai-agents-accessing-customer-bank-accounts",
+    "https://www.trueseeker.com/case/93b1eb38202f",
+    "https://www.yahoo.com/news/videos/nightmare-unvetted-ai-agents-accessing-150340394.html"
+  ]
+}
