@@ -1,5 +1,5 @@
 {
-  "next_number": 29,
+  "next_number": 30,
   "articles": [
     {
       "number": 1,
@@ -1104,7 +1104,37 @@
           "supports": "英AISIによる独立報告のページ（2026-10-23付のブログ更新）。AISIがCTF評価で検出した許可外の行為の概要、発生時期（7月下旬）と対応の経緯を示す。"
         }
       ]
+    },
+    {
+      "number": 29,
+      "run_id": "2026-10-26-morning-2",
+      "title": "【海外AI解説】Microsoft（サティア・ナデラ）――「AIは有用でなければ社会的許可を失う」発言の意味と影響",
+      "created_at": "2026-10-26T08:57:31.413584+09:00",
+      "path": "articles/2026-10-26/0029-morning.md",
+      "sources": [
+        "https://www.pcgamer.com/software/ai/microsoft-ceo-warns-that-we-must-do-something-useful-with-ai-or-theyll-lose-social-permission-to-burn-electricity-on-it",
+        "https://www.techradar.com/pro/quote-of-the-day-by-microsoft-ceo-satya-nadella-we-have-to-do-something-useful-with-ai-or-well-quickly-lose-social-permission-challenging-ai-pioneers-to-step-up-their-game"
+      ],
+      "sha256": "96e1645955d2857604c523f7626c12039cc066ddd9dc98b026d912e6e677c491",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "overseas",
+      "media_plan": "media/0029/plan.json",
+      "source_details": [
+        {
+          "title": "Quote of the day by Microsoft CEO Satya Nadella: 'We have to do something useful with AI, or we'll quickly lose social permission' — challenging AI pioneers to step up their game",
+          "url": "https://www.techradar.com/pro/quote-of-the-day-by-microsoft-ceo-satya-nadella-we-have-to-do-something-useful-with-ai-or-well-quickly-lose-social-permission-challenging-ai-pioneers-to-step-up-their-game",
+          "published_at": "2026-10-25T00:00:00+00:00",
+          "supports": "TechRadarが引用文を再掲。記事内でナデラの「AIは有用でなければ社会的許可を失う」という文言を引用している（選定済み候補URLとして開いて確認）。"
+        },
+        {
+          "title": "Microsoft CEO warns that we must 'do something useful' with AI or they'll lose 'social permission' to burn electricity on it — PC Gamer",
+          "url": "https://www.pcgamer.com/software/ai/microsoft-ceo-warns-that-we-must-do-something-useful-with-ai-or-theyll-lose-social-permission-to-burn-electricity-on-it/",
+          "published_at": "2026-01-21T00:00:00+00:00",
+          "supports": "2026年1月の報道で同様の発言が報じられており、ナデラ発言が以前の国際会議などで出た可能性を示す。TechRadarの再掲が新発言ではない可能性を裏付ける資料。"
+        }
+      ]
     }
   ],
-  "next_diagram": 344
+  "next_diagram": 348
 }
