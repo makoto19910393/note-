@@ -88,9 +88,25 @@
       ],
       "prompt": "16:9、濃紺背景、中央に大きな上下矢印アイコン（上が『規模拡大』下が『効率化』）。右側に三つの白い短い日本語の箇条書き（省エネ化、ユースケース検証、説明責任）。左下に小さく「例えば：モデル圧縮、特化モデル導入」の黄色短文。シアンのアクセントラインと立体影。",
       "filename": "diagram345.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "40247008045"
+      "artifact_run_id": "40247008045",
+      "sha256": "2f767a746243c93abeb4525500359a00b3bcf8c35d4a6bb83a1bf1bf61ac663d",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1823,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 315
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2901
+      }
     },
     {
       "number": 3,
