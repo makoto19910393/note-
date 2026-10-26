@@ -50,7 +50,7 @@
       ],
       "prompt": "16:9、黒に近い濃紺背景、シアンの線で三つの円（要点）を横並びに配置。各円内に白い短い日本語ラベル（左「AIは有用であること」中央「資源消費の懸念」右「社会的許可」）。下部に小さな黄色の短文で『TechRadar（2026-10-25）再掲』の注記。立体感と広い余白。",
       "filename": "diagram344.png",
-      "status": "generated",
+      "status": "review_pending",
       "attempts": 2,
       "artifact_run_id": "40247008045",
       "sha256": "75df101288c933b9c913ce729bc340c55b5fa978016240fcfe013d46d7790fb9",
