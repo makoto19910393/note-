@@ -12,9 +12,25 @@
       ],
       "prompt": "16:9、濃紺の背景にシアンと白・黄色の太い短い日本語テキストが中央に大きく配置されるサムネイル。立体感のある影と広い余白。左上に小さく『海外AI解説』の白文字バッジ。中央テキスト（日本語太字）：「AIは有用でなければ社会の許可を失う」下に小さく「Satya Nadella（Microsoft）」と英語サブテキスト。過去のスクリーン画像やロゴは使わない。",
       "filename": "thumbnail.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "40247008045"
+      "artifact_run_id": "40247008045",
+      "sha256": "5af2bb0fbcb58f85b93c1fb1c5755b7d22c281a0dba2ef697d0d7a53e0f7dad2",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1189,
+        "input_tokens_details": {
+          "image_tokens": 840,
+          "text_tokens": 349
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2267
+      }
     },
     {
       "number": 1,
