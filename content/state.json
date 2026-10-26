@@ -1,5 +1,5 @@
 {
-  "next_number": 30,
+  "next_number": 31,
   "articles": [
     {
       "number": 1,
@@ -1134,7 +1134,37 @@
           "supports": "2026年1月の報道で同様の発言が報じられており、ナデラ発言が以前の国際会議などで出た可能性を示す。TechRadarの再掲が新発言ではない可能性を裏付ける資料。"
         }
       ]
+    },
+    {
+      "number": 30,
+      "run_id": "2026-10-26-evening-1",
+      "title": "【国内AI学び】サイボウズが551社調査 公表した『大企業のAI活用実態（第1弾）』の要点とあなたへの影響",
+      "created_at": "2026-10-27T01:40:57.674836+09:00",
+      "path": "articles/2026-10-26/0030-evening.md",
+      "sources": [
+        "https://prtimes.jp/main/html/rd/p/000000356.000027677.html",
+        "https://www.itmedia.co.jp/enterprise/articles/2610/24/news003.html"
+      ],
+      "sha256": "7e96cec19c31dcfaa3aba46478ef30a82609982892207cc28537f14b3262da3c",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "domestic",
+      "media_plan": "media/0030/plan.json",
+      "source_details": [
+        {
+          "title": "なぜ日本の大企業はAIを活用しても「会社を変えられない」のか？　サイボウズが551社を調査：IT調査ピックアップ - ITmedia エンタープライズ",
+          "url": "https://www.itmedia.co.jp/enterprise/articles/2610/24/news003.html",
+          "published_at": "2026-10-26T15:00:00+09:00",
+          "supports": "記事本文で調査結果の主要数値（回答社数、実施期間、各比率、課題、人材育成・推進組織の割合など）を確認した。"
+        },
+        {
+          "title": "サイボウズ「大企業におけるAI活用実態調査」第１弾を公開 ― プレスリリース（PR TIMES）",
+          "url": "https://prtimes.jp/main/html/rd/p/000000356.000027677.html",
+          "published_at": "2026-10-06T00:00:00+09:00",
+          "supports": "サイボウズ社のプレスリリース（調査公表）で、調査概要（対象、実施方法、回答数）および主要集計結果の要旨を確認した。"
+        }
+      ]
     }
   ],
-  "next_diagram": 348
+  "next_diagram": 352
 }
