@@ -14,7 +14,7 @@
       ],
       "prompt": "濃紺背景に白とシアンの太い日本語テキストで「サイボウズ 551社調査 AI活用実態」を大きく配置。左上に小さく日付「2026年7月調査」、右下に短い黄色帯で「大企業の今」を入れる。立体感のあるフォント、広い余白。16:9。",
       "filename": "thumbnail.png",
-      "status": "review_pending",
+      "status": "ready",
       "attempts": 1,
       "artifact_run_id": "40359608195",
       "sha256": "a0789358b9bf78d2550101787c0b29a79db586a24a936bf6eab89272c3169e31",
@@ -32,6 +32,13 @@
           "text_tokens": 0
         },
         "total_tokens": 2237
+      },
+      "review": {
+        "approved": true,
+        "issues": "なし。画像はサムネイル用途で、期待ラベル（サイボウズ／551社／AI活用実態／2026年7月調査／9割がAI導入）を読み取れる。デザインは候補作風（濃紺・シアン発光・立体感・太い白・黄色文字）に合致。",
+        "observed_title": "サイボウズ 551社調査 AI活用実態（2026年7月調査、9割がAI導入）",
+        "observed_diagram_label": "",
+        "unsupported_claims": []
       }
     },
     {
