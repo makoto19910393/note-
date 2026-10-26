@@ -91,7 +91,7 @@
       ],
       "prompt": "濃紺背景、縦に3つの横バー（シアン、白、黄色）で上から使用率を表現。各バーの左にアイコン風の簡易図（文書、虫眼鏡、グラフ）を白で描き、右端に太いパーセント表記。見出しに短く「使われ方トップ3」。16:9。",
       "filename": "diagram349.png",
-      "status": "generated",
+      "status": "review_pending",
       "attempts": 1,
       "artifact_run_id": "40359608195",
       "sha256": "2babff76b10c9258a91f3b172e607e97b42459a7701622bbb9bd51449df03cf3",
