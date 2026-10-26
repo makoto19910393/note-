@@ -169,24 +169,24 @@
       ],
       "prompt": "濃紺背景、左右に分かれた構図。左に推進体制（兼任・専任）を示すアイコンと割合、右に人材育成とKPIの差を示す棒グラフ風の図。中央に短いキャプション「体制はあるが評価が追いつかない」。16:9。",
       "filename": "diagram351.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 2,
       "artifact_run_id": "40359608195",
-      "sha256": "abeced64feb2d5bc6ffad6414cd2e11537674ca1e9768717322294e4c1460563",
+      "sha256": "12fb86d51f08f1d57bb8ac249f2c963e7761038e96b0523e21cf3f0ddca17768",
       "width": 1536,
       "height": 864,
       "usage": {
-        "input_tokens": 1807,
+        "input_tokens": 1829,
         "input_tokens_details": {
           "image_tokens": 1508,
-          "text_tokens": 299
+          "text_tokens": 321
         },
         "output_tokens": 1078,
         "output_tokens_details": {
           "image_tokens": 1078,
           "text_tokens": 0
         },
-        "total_tokens": 2885
+        "total_tokens": 2907
       },
       "review": {
         "approved": false,
