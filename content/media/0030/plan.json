@@ -130,9 +130,25 @@
       ],
       "prompt": "黒に近い濃紺背景、左側に縦並びのアイコン（人、盾、鍵、データ）をシアンで描き、右側に課題と割合を太い白文字で配置。上部に短い説明「課題が拡大を抑える」。16:9。",
       "filename": "diagram350.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "40359608195"
+      "artifact_run_id": "40359608195",
+      "sha256": "ad0d1a4ebeecc6f152dd01bf219b9d424b7e6d6763b0780170fac70f8aee7f35",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1805,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 297
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2883
+      }
     },
     {
       "number": 4,
