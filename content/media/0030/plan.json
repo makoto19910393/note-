@@ -14,8 +14,9 @@
       ],
       "prompt": "濃紺背景に白とシアンの太い日本語テキストで「サイボウズ 551社調査 AI活用実態」を大きく配置。左上に小さく日付「2026年7月調査」、右下に短い黄色帯で「大企業の今」を入れる。立体感のあるフォント、広い余白。16:9。",
       "filename": "thumbnail.png",
-      "status": "planned",
-      "attempts": 0
+      "status": "generating",
+      "attempts": 1,
+      "artifact_run_id": "40359608195"
     },
     {
       "number": 1,
