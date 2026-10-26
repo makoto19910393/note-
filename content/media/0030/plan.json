@@ -53,7 +53,7 @@
       ],
       "prompt": "黒に近い濃紺背景、中心に円グラフ風の円をシアンと白の段で表現。各セグメントに太い白字で割合ラベルを添え、下に短い説明「多くは業務効率化の段階」。右下にサイボウズのロゴは入れない。16:9。",
       "filename": "diagram348.png",
-      "status": "generated",
+      "status": "review_pending",
       "attempts": 1,
       "artifact_run_id": "40359608195",
       "sha256": "781a3ba3256666629d2ac07857ab85084e850efe63d8bbbe6c469ec5a46c39a5",
