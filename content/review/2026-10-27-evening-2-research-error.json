@@ -1,0 +1,8 @@
+{
+  "status": "not_published",
+  "reason": "新しいニュースの裏付けを確認できません。",
+  "attempted_candidate_urls": [
+    "https://news.mynavi.jp/techplus/kikaku/sateraito_AI_guide-2/",
+    "https://www.asahi.com/and/pressrelease/16998137"
+  ]
+}
