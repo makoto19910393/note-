@@ -1,0 +1,180 @@
+{
+  "status": "rejected_not_published",
+  "reason": "校閲で修正が必要です: 本文に残っている『【ここに図解①を挿入｜…】』などの制作指示を削除してください。記事本文は最終記事として読める状態にし、編集者向けの画像挿入指示やワークフローメモを残さないこと。; 画像のキャプション／プロンプトに『筆者の提案・意見である』旨の明示を必ず追加してください（サムネ・図解を問わず）。規定により、筆者の提案や行動指示は画像にも明記する必要があります。; サムネイルと図解のプロンプトはブランドロゴや実製品写真を使わない点は守られていますが、画像ラベルから『Nvidia』表記は問題ないものの、図解中で『公式発表無し』等の未確定表現を強調する際は『未確認情報』の注記を明記してください。; 本文の『私の正直な感想』などの見解と事実の分離は良好です。ただし見出しや冒頭で“海外”タグとregionが一致していることを明示する短い注記（例：『本件は海外（米Nvidia関連）の報道に基づく』）を入れてください。; 参考リンクと出典は適切に挙げられています。なお、記事中で『Nvidiaが生産停止を発表した』と誤解されうる表現は避け、現状の不確定点（Nvidia公式声明未確認）を強調したままにしてください（既に記載あり。変更点があれば本文で明確に）。",
+  "article": {
+    "title": "【海外AI解説】Nvidia — RTX 5090が小売から消える、供給打ち切りの噂と品薄で高騰する転売価格",
+    "sources": [
+      {
+        "title": "Nvidia's RTX 5090 stock is looking shakier by the day, as more rumors suggest this GPU is in vanishingly short supply — and it's set to become even pricier",
+        "url": "https://www.techradar.com/computing/gpu/nvidias-rtx-5090-stock-is-looking-shakier-by-the-day-as-more-rumors-suggest-this-gpu-is-in-vanishingly-short-supply-and-its-set-to-become-even-pricier",
+        "published_at": "2026-10-27T14:19:32+00:00",
+        "supports": "Summarises retailer removals, rumours about board‑partner order cuts and the prospect of rising reseller prices; used as the selected_candidate and opened for direct confirmation of article body."
+      },
+      {
+        "title": "Nvidia cuts off RTX 5090 GPU supply, board partner says - Notebookcheck",
+        "url": "https://www.notebookcheck.net/Nvidia-cuts-off-RTX-5090-GPU-supply-board-partner-says.1434416.0.html",
+        "published_at": "2026-10-26T00:00:00+00:00",
+        "supports": "Reports a board‑partner claim that Nvidia is no longer accepting new RTX 5090 orders and notes suppliers saw reduced projections for RTX 5090 related parts."
+      },
+      {
+        "title": "Nvidia's RTX 5090 vanishes from online retail in the US — third‑party sellers now demand as much as $9,500 for Nvidia's fastest GPU",
+        "url": "https://www.tomshardware.com/pc-components/gpus/nvidias-rtx-5090-vanishes-from-online-retail-in-the-us-third-party-sellers-now-demand-as-much-as-usd9-500-for-nvidias-fastest-gpu",
+        "published_at": "2026-10-15T00:00:00+00:00",
+        "supports": "Documents disappearance from online retailers and high reseller listing prices; provides corroborating reporting of scarcity."
+      }
+    ],
+    "sections": {
+      "intro": "NvidiaのハイエンドGPU「RTX 5090」が、オンライン小売サイトやメーカーマーケットプレイスから姿を消し、ボードパートナーや複数メディアが“供給停止”や“注文受付停止”の可能性を報じています。転売価格の高騰も確認され、ゲーム／クリエイティブ／AI用途のユーザーにとって気になる動きです。",
+      "conclusions": [
+        "複数メディアが中〜下旬にかけてRTX 5090の小売在庫が急減したと報告している。",
+        "少なくとも1社のボードパートナーは『新規RTX 5090の受注を停止した』と媒体に述べており、部品発注が削減されたとの指摘がある（ただしNvidia公式の生産停止声明はソースで確認できない）。",
+        "転売・二次流通では非常に高い提示価格が出ており、一部地域では入手難と価格上昇が進んでいる。",
+        "正式な停止の有無、企業向け転用の有無、影響範囲・期間は未確定で、追加の公式発表が必要。"
+      ],
+      "explanations": [
+        {
+          "heading": "何が報じられているか（事実の整理）",
+          "content": "TechRadar、Notebookcheck、Tom's Hardwareなどが、10月中旬以降にRTX 5090の小売リストが消えたこと、サードパーティの高額出品が目立つことを報じています。Notebookcheckはボードパートナーの供給関連発言を引用し、『新規注文を受け付けていない』という主張を伝えています。ただし、これらは報道と関係者向けの発言に基づく複数の“伝聞”であり、Nvidia自身の公式声明は確認できていません。"
+        },
+        {
+          "heading": "何が不明か（確認できない点）",
+          "content": "公開された資料の範囲では、Nvidiaが正式に生産を止めたかは不明です。また、もし出荷が減っているとしても、数量がどの程度か、どの市場（地域・小売チャネル）が最も影響を受けているか、企業向け（AI/サーバー）に回されたかどうかは確認できません。これらは現時点で未確定情報です。"
+        },
+        {
+          "heading": "ユーザーにとって何が変わるか（実務的影響）",
+          "content": "短期的にはハイエンドGPUを狙うゲーマー、クリエイター、個人でのAI実験をする人にとって入手性が下がり、価格が上がる可能性が高いです。例えば新規購入を検討している場合、正規ルートでの入荷待ちか、価格の割高な中古／転売を選ぶかの判断が生じます。企業や研究機関は供給面での不確実性を織り込む必要があります。"
+        },
+        {
+          "heading": "今後の注目点（確認すべき情報）",
+          "content": "Nvidiaからの公式声明、主要ボードパートナーの追加コメント、各国小売の在庫復活状況、及び転売相場の推移が確認の要点です。正式な生産停止があれば時期や対象ラインの説明が出るはずで、出荷が一時的な調整か恒久的な切替かで市場影響は大きく変わります。"
+        }
+      ],
+      "personal_view": "私の率直な見解としては、現時点の報道は複数の供給側の“変化”を示していますが、Nvidiaの公式発表がない限り『確定した生産停止』とは言い切れません。短期的な騒ぎで転売価格が跳ね上がっている可能性が高く、購入予定があるなら落ち着いて正規流通の復活や公式発表を待つのが無難です。",
+      "faq": [
+        {
+          "question": "Nvidiaは本当にRTX 5090の生産を止めたのですか？",
+          "answer": "現時点の公開された記事や関係者の発言では『新規受注を受け付けていない』『部品発注が減った』という報告がある一方、Nvidiaが公式に生産停止を発表したという確認は取れていません。"
+        },
+        {
+          "question": "転売価格が高いのは本当に品薄が原因ですか？",
+          "answer": "報道は小売在庫の減少と高額な転売リスティングを同時に伝えています。需給のアンバランスで価格が上がっている可能性が高いですが、転売価格は投機的要因にも左右されます。"
+        },
+        {
+          "question": "個人で買うべきか、待つべきか？",
+          "answer": "急ぎでなければ正規販売の再入荷やNvidiaの公式発表を待つのが安全です。急ぐ場合は価格と保証をよく確認してください。"
+        },
+        {
+          "question": "この動きはAI用途（サーバ向け）と関係がありますか？",
+          "answer": "報道の一部では企業向け回帰の可能性を示唆する声がありますが、公開情報では『企業向けに回されている』と断言できる根拠は示されていません。"
+        }
+      ],
+      "summary": "複数メディアと少なくとも1つのボードパートナーの発言が、RTX 5090の小売在庫の消失と受注停止の可能性を示していますが、Nvidiaの公式な生産停止声明は確認できていません。短期的な影響としては流通在庫の減少と転売価格の上昇が起きており、正式発表を待って行動するのが安全です。"
+    },
+    "images": [
+      {
+        "number": 0,
+        "anchor": "",
+        "theme": "サムネ：品薄と高騰",
+        "labels": [
+          "RTX 5090",
+          "品薄",
+          "価格高騰",
+          "供給停止疑い",
+          "Nvidia"
+        ],
+        "prompt": "16:9のサムネイル、濃紺の背景にシアンと白・黄色の太い短い日本語文字で『RTX 5090 品薄で高騰』と表示。GPUイラストは抽象的な半透明の基板パネルを右側に配置、左側に大きな文字。立体感・広い余白を持たせ、ブランドロゴや実際の製品写真を使わないデザイン。"
+      },
+      {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜図解①：報道の流れ】",
+        "theme": "図解①：報道の流れ",
+        "labels": [
+          "10月中旬〜下旬",
+          "小売リスト消失",
+          "ボードパートナー発言",
+          "転売価格上昇"
+        ],
+        "prompt": "16:9図解。濃紺背景、シアンの矢印で時系列を示す縦フロー（左上→右下）。各ポイントは白い丸で囲み黄色の短見出し（例：小売消失）と短い説明文。右下に余白で‘公式発表無し’と強調。立体感を出す影付きのボックス。"
+      },
+      {
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜図解②：ユーザーへの影響】",
+        "theme": "図解②：ユーザーへの影響",
+        "labels": [
+          "個人購入",
+          "ゲーマー",
+          "クリエイター",
+          "法人/研究機関",
+          "価格リスク"
+        ],
+        "prompt": "16:9図解。濃紺背景、中央に大きな円形で『影響』、そこから5本のシアンの線が放射状に伸びて各利用者カテゴリへ接続。各カテゴリは白い短ラベルと一言影響（例：価格上昇）を表示。下部に小さい文字で『例：入手ルートを選ぶ必要』と記載。"
+      },
+      {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜図解③：確認すべき情報】",
+        "theme": "図解③：確認すべき情報",
+        "labels": [
+          "公式声明",
+          "小売在庫復活",
+          "供給先の変化",
+          "転売相場推移"
+        ],
+        "prompt": "16:9図解。濃紺背景、左にチェックリスト形式の白いボックス（シアンのチェックマーク）、右に説明文。タイトルは太い黄色文字で『要確認』。各項目は短い一文で要点を示す。余白を大きくとり読みやすく。"
+      },
+      {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜図解④：購入時の判断フロー】",
+        "theme": "図解④：購入時の判断フロー",
+        "labels": [
+          "急ぎか？",
+          "正規ルート待つ",
+          "転売購入の注意",
+          "保証確認"
+        ],
+        "prompt": "16:9図解。濃紺背景、シアンの分岐フローチャートで『購入判断』を示す。始点は『欲しい？』の白丸、分岐は黄色の短テキスト（例：急ぎ/待てる）、終点にそれぞれの推奨アクション（例：正規待ち／正規以外は保証確認）。図は立体感あるカードで表現。"
+      }
+    ],
+    "hashtags": [
+      "#Nvidia",
+      "#RTX5090",
+      "#GPU",
+      "#品薄",
+      "#転売",
+      "#ハードウェア",
+      "#PCパーツ",
+      "#AI",
+      "#供給問題",
+      "#テクノロジー",
+      "#在庫",
+      "#価格動向"
+    ],
+    "threads": "RTX 5090が小売から消え、転売で高額出品が目立っています。公式の生産停止声明は未確認—今どう動くのが賢明ですか？",
+    "body": "NvidiaのハイエンドGPU「RTX 5090」が、オンライン小売サイトやメーカーマーケットプレイスから姿を消し、ボードパートナーや複数メディアが“供給停止”や“注文受付停止”の可能性を報じています。転売価格の高騰も確認され、ゲーム／クリエイティブ／AI用途のユーザーにとって気になる動きです。\n\n---\n\n## 30秒で結論\n\n- 複数メディアが中〜下旬にかけてRTX 5090の小売在庫が急減したと報告している。\n- 少なくとも1社のボードパートナーは『新規RTX 5090の受注を停止した』と媒体に述べており、部品発注が削減されたとの指摘がある（ただしNvidia公式の生産停止声明はソースで確認できない）。\n- 転売・二次流通では非常に高い提示価格が出ており、一部地域では入手難と価格上昇が進んでいる。\n- 正式な停止の有無、企業向け転用の有無、影響範囲・期間は未確定で、追加の公式発表が必要。\n\n---\n\n## 何が報じられているか（事実の整理）\n\nTechRadar、Notebookcheck、Tom's Hardwareなどが、10月中旬以降にRTX 5090の小売リストが消えたこと、サードパーティの高額出品が目立つことを報じています。Notebookcheckはボードパートナーの供給関連発言を引用し、『新規注文を受け付けていない』という主張を伝えています。ただし、これらは報道と関係者向けの発言に基づく複数の“伝聞”であり、Nvidia自身の公式声明は確認できていません。\n\n【ここに図解①を挿入｜図解①：報道の流れ】\n\n---\n\n## 何が不明か（確認できない点）\n\n公開された資料の範囲では、Nvidiaが正式に生産を止めたかは不明です。また、もし出荷が減っているとしても、数量がどの程度か、どの市場（地域・小売チャネル）が最も影響を受けているか、企業向け（AI/サーバー）に回されたかどうかは確認できません。これらは現時点で未確定情報です。\n\n【ここに図解②を挿入｜図解②：ユーザーへの影響】\n\n---\n\n## ユーザーにとって何が変わるか（実務的影響）\n\n短期的にはハイエンドGPUを狙うゲーマー、クリエイター、個人でのAI実験をする人にとって入手性が下がり、価格が上がる可能性が高いです。例えば新規購入を検討している場合、正規ルートでの入荷待ちか、価格の割高な中古／転売を選ぶかの判断が生じます。企業や研究機関は供給面での不確実性を織り込む必要があります。\n\n【ここに図解③を挿入｜図解③：確認すべき情報】\n\n---\n\n## 今後の注目点（確認すべき情報）\n\nNvidiaからの公式声明、主要ボードパートナーの追加コメント、各国小売の在庫復活状況、及び転売相場の推移が確認の要点です。正式な生産停止があれば時期や対象ラインの説明が出るはずで、出荷が一時的な調整か恒久的な切替かで市場影響は大きく変わります。\n\n【ここに図解④を挿入｜図解④：購入時の判断フロー】\n\n---\n\n## 私の正直な感想\n\n私の率直な見解としては、現時点の報道は複数の供給側の“変化”を示していますが、Nvidiaの公式発表がない限り『確定した生産停止』とは言い切れません。短期的な騒ぎで転売価格が跳ね上がっている可能性が高く、購入予定があるなら落ち着いて正規流通の復活や公式発表を待つのが無難です。\n\n---\n\n## よくある質問\n\n### Nvidiaは本当にRTX 5090の生産を止めたのですか？\n\n現時点の公開された記事や関係者の発言では『新規受注を受け付けていない』『部品発注が減った』という報告がある一方、Nvidiaが公式に生産停止を発表したという確認は取れていません。\n\n### 転売価格が高いのは本当に品薄が原因ですか？\n\n報道は小売在庫の減少と高額な転売リスティングを同時に伝えています。需給のアンバランスで価格が上がっている可能性が高いですが、転売価格は投機的要因にも左右されます。\n\n### 個人で買うべきか、待つべきか？\n\n急ぎでなければ正規販売の再入荷やNvidiaの公式発表を待つのが安全です。急ぐ場合は価格と保証をよく確認してください。\n\n### この動きはAI用途（サーバ向け）と関係がありますか？\n\n報道の一部では企業向け回帰の可能性を示唆する声がありますが、公開情報では『企業向けに回されている』と断言できる根拠は示されていません。\n\n---\n\n## まとめ\n\n複数メディアと少なくとも1つのボードパートナーの発言が、RTX 5090の小売在庫の消失と受注停止の可能性を示していますが、Nvidiaの公式な生産停止声明は確認できていません。短期的な影響としては流通在庫の減少と転売価格の上昇が起きており、正式発表を待って行動するのが安全です。\n\n---\n\n## この記事について\n\n確認日：2026年10月28日（日本時間）。公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。\n\n---\n\n## 参考リンク\n\n- [Nvidia's RTX 5090 stock is looking shakier by the day, as more rumors suggest this GPU is in vanishingly short supply — and it's set to become even pricier](https://www.techradar.com/computing/gpu/nvidias-rtx-5090-stock-is-looking-shakier-by-the-day-as-more-rumors-suggest-this-gpu-is-in-vanishingly-short-supply-and-its-set-to-become-even-pricier)\n- [Nvidia cuts off RTX 5090 GPU supply, board partner says - Notebookcheck](https://www.notebookcheck.net/Nvidia-cuts-off-RTX-5090-GPU-supply-board-partner-says.1434416.0.html)\n- [Nvidia's RTX 5090 vanishes from online retail in the US — third‑party sellers now demand as much as $9,500 for Nvidia's fastest GPU](https://www.tomshardware.com/pc-components/gpus/nvidias-rtx-5090-vanishes-from-online-retail-in-the-us-third-party-sellers-now-demand-as-much-as-usd9-500-for-nvidias-fastest-gpu)"
+  },
+  "evidence": [
+    "https://hardwarebrief.com/article/nvidia-denies-geforce-rtx-5090-discontinuation-4f5357c5",
+    "https://hwbusters.com/news/nvidia-says-the-rtx-5090-isnt-discontinued-but-supply-is-tight-and-street-prices-hit-8500",
+    "https://investors.rtx.com/static-files/49483b45-33f0-4069-8662-84f3104c4a34",
+    "https://nvidianews.nvidia.com/_gallery/download_pdf/677c9a9c3d6332e22e6c8571",
+    "https://videocardz.com/newz/geforce-rtx-5090-is-disappearing-from-stores-first-listing-hits-9600",
+    "https://wccftech.com/nvidias-rtx-5090-disappears-from-its-marketplace-adding-fuel-to-discontinuation-rumors",
+    "https://www.briocean.com/wp-content/uploads/2025/10/7a2fb3a4784b5427463daf33bf17d14b.pdf",
+    "https://www.briocean.com/wp-content/uploads/2025/11/download-file-7.pdf",
+    "https://www.club386.com/nvidia-is-likely-no-longer-accepting-rtx-5090-gpu-and-vram-orders-from-graphics-card-makers",
+    "https://www.neowin.net/news/nvidia-denies-reports-of-rtx-5090-discontinuation",
+    "https://www.notebookcheck.net/Nvidia-cuts-off-RTX-5090-GPU-supply-board-partner-says.1434416.0.html",
+    "https://www.pcgamer.com/hardware/graphics-cards/graphics-card-price-watch-deals",
+    "https://www.pcgamer.com/hardware/graphics-cards/two-entire-pallets-of-rtx-5090s-have-gone-missing-from-a-brazilian-airport-usd495-000-worth-of-unobtanium-graphics-cards-now-presumably-at-large",
+    "https://www.pcgamer.com/hardware/graphics-cards/where-have-all-the-rtx-5090s-gone-stock-of-the-high-end-gpu-is-disappearing-from-us-online-retailers",
+    "https://www.pcgamer.com/software/ai/youve-taken-us-free-cash-flow-negative-as-a-company-so-congratulations-amazon-has-plenty-of-nvidia-gpus-but-not-enough-energy-to-power-its-ai-boom",
+    "https://www.reddit.com/r/nvidia/comments/1xg4wbd/nvidia_reportedly_not_accepting_rtx_5090_orders",
+    "https://www.reddit.com/r/pcmasterrace/comments/1xg44k7/nvidia_reportedly_not_accepting_rtx_5090_orders",
+    "https://www.techotick.com/articles/2026/10/why-is-the-rtx-5090-hard-to-find-discontinuation-rumours-explained",
+    "https://www.techradar.com/computing/gpu/is-the-gpu-stock-crisis-down-to-real-shortages-or-has-the-market-been-manipulated-gamers-wont-like-the-theory-floated-by-one-analyst",
+    "https://www.techradar.com/computing/gpu/nvidias-rtx-5090-stock-is-looking-shakier-by-the-day-as-more-rumors-suggest-this-gpu-is-in-vanishingly-short-supply-and-its-set-to-become-even-pricier",
+    "https://www.tomshardware.com/pc-components/gpus/gpus-from-nvidia-rtx-5090-stolen-usd470-000-shipment-from-brazil-airport-appear-for-sale-online-identified-by-serial-numbers-three-employees-identified-by-police-helped-steal-equipment",
+    "https://www.tomshardware.com/pc-components/gpus/leaked-video-exposes-how-chinese-factories-are-stripping-rtx-5090s-to-fuel-ai-custom-partner-cards-to-nvidia-founders-editions-on-the-chopping-block",
+    "https://www.tomshardware.com/pc-components/gpus/nvidia-rtx-5090-disappears-from-micro-center-amid-rumors-of-a-production-halt-retailer-flags-flagship-as-not-carried-as-stock-mysteriously-vanishes",
+    "https://www.tomshardware.com/pc-components/gpus/nvidias-rtx-5090-vanishes-from-online-retail-in-the-us-third-party-sellers-now-demand-as-much-as-usd9-500-for-nvidias-fastest-gpu"
+  ]
+}

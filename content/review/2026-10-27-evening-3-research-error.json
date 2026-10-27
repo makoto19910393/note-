@@ -1,0 +1,8 @@
+{
+  "status": "not_published",
+  "reason": "下調べの出典URLを検索結果と照合できません。",
+  "attempted_candidate_urls": [
+    "https://www.techradar.com/computing/gpu/nvidias-rtx-5090-stock-is-looking-shakier-by-the-day-as-more-rumors-suggest-this-gpu-is-in-vanishingly-short-supply-and-its-set-to-become-even-pricier",
+    "https://www.itmedia.co.jp/news/article/2610/27/2000002644/"
+  ]
+}
