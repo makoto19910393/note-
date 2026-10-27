@@ -1,0 +1,180 @@
+{
+  "status": "rejected_not_published",
+  "reason": "校閲で修正が必要です: サムネイル／図解画像に『発言に基づく主張で裏取り未確認』の注記を必ず入れる（特に大きく表示している「約$10M」表記が確定事実でないことを明記）。画像は公式画面ではない旨も明記すること。; タイトルは読みやすさを優先して短縮を検討する（例: 『【海外AI解説】OpenClaw制作者ピーター・スタインバーガーがCloudflare Connectで「1か月で約1000万ドル分のOpenAIトークンを消費した」と発言』）。同時に本文冒頭かタイトル直下に“トークン＝API利用量の単位（課金対象）”といった1行の初心者向け説明を入れること。; 本文で『先月』『支払い元』『内訳』が未確定である点は適切に分離しているが、冒頭サマリーや図解キャプションにも未確定性を明確に繰り返す（読者が見出しだけで誤解しないように）。; 本文中の画像挿入箇所（図解①〜④）のキャプションにそれぞれ『情報は報道の引用に基づく。金額・支払い元・期間の裏取りはできていない』と短く明記すること。; previous欄に同一事件の重複がないことを確認済みと明記する（編集メモ）。同一発言・同一会場の別角度報道は重複扱いで不合格なので、今後同記事内容で別角度の再掲載を行わないこと。",
+  "article": {
+    "title": "【海外AI解説】OpenClaw制作者ピーター・スタインバーガーが「1か月で約1,000万ドル分のOpenAIトークンを消費した」と発言",
+    "sources": [
+      {
+        "title": "OpenClaw creator Peter Steinberger claims he spent $10 million in tokens in a single month",
+        "url": "https://www.techradar.com/pro/openclaw-creator-peter-steinberger-claims-he-spent-usd10-million-in-tokens-in-just-a-month-but-luckily-openai-can-afford-it",
+        "published_at": "2026-10-26T00:00:00+00:00",
+        "supports": "Reports Steinberger's claim at Cloudflare Connect 2026, quotes his comment that not all token spending is useful, and notes he joined OpenAI in February 2026."
+      },
+      {
+        "title": "OpenClaw creator says he spent $10 million in tokens last month",
+        "url": "https://www.theregister.com/ai-and-ml/2026/10/21/openclaw-creator-says-he-spent-10-million-in-tokens-last-month/5304573",
+        "published_at": "2026-10-21T21:40:00+00:00",
+        "supports": "First public reporting of the on-stage remark; attributes the figure to Steinberger speaking with Cloudflare CTO Dane Knecht at Cloudflare Connect and reproduces the quoted lines about token budgets and usefulness."
+      },
+      {
+        "title": "OpenClaw creator puts last month’s token bill at $10M, The Register reports",
+        "url": "https://thenextweb.com/news/openclaw-steinberger-10m-tokens-cloudflare-connect",
+        "published_at": "2026-10-23T13:49:00+00:00",
+        "supports": "Summarises The Register reporting of the Cloudflare Connect exchange, explains what tokens are, and repeats Steinberger’s quoted remark that not all spending is useful."
+      }
+    ],
+    "sections": {
+      "intro": "米サンフランシスコで開かれたCloudflare Connect 2026の壇上で、OpenClawの制作者でありOpenAI技術スタッフのPeter（Pete）Steinberger氏が「1か月で約1,000万ドル分のOpenAIトークンを使った」と発言しました。報道は複数メディアが同じ発言を伝えていますが、数字の裏取りや精緻な内訳は公開されていません。",
+      "conclusions": [
+        "Steinberger氏本人がCloudflare Connectで「約1,000万ドル分のトークンを1か月で消費した」と発言したことは複数媒体で確認できる事実です。",
+        "氏本人も『すべてが有用だったわけではない』と述べ、実験的・無駄な消費が含まれる可能性を示しています。",
+        "報道は発言を引用しているが、支払い元や厳密な期間、監査による確認は公表されておらず不確定情報が残ります。",
+        "この発言は大規模なAPIコストの存在を示し、開発・運用のコスト管理や効率化の重要性を改めて浮き彫りにしました。"
+      ],
+      "explanations": [
+        {
+          "heading": "1) 何が起きたか（事実のみ）",
+          "content": "Cloudflare Connect 2026のパネルで、OpenClawの制作者で現OpenAI技術スタッフのPeter Steinberger氏が「先月で約1,000万ドル分のOpenAIトークンを消費した」と語りました。複数の報道（The Register、TechRadar、The Next Web）がこの発言を引用して伝えています。氏は同時に『すべてが有用だったわけではない』と述べ、実験的な試行も含まれていることを示唆しました。"
+        },
+        {
+          "heading": "2) 重要な未確定点（何がわかっていないか）",
+          "content": "報道は発言をそのまま伝えていますが、①その金額が監査・請求書で確認されたか、②誰のアカウントに課金されたか（個人、OpenAI側、プロジェクト資金か）、③『先月』が暦月のどの月を指すか、という点は公開されていません。また『どれくらいが有用でどれくらいが実験的だったか』の内訳も示されていません。これらは現時点で不明です。"
+        },
+        {
+          "heading": "3) 何が変わるか（開発者・企業への示唆）",
+          "content": "短期間で巨額のAPIトークンが動くことは、モデル実験のスケールが急速に大きくなっている証拠です。例えば、大規模な自動テストやパラメータ探索、生成タスクの大量実行が裏にある可能性があります。結果として、費用管理（予算上限、モニタリング、効率化）や実験設計の見直し、トークン単価と運用コストのバランス再検討が必要になります。"
+        },
+        {
+          "heading": "4) 一般の人への関係性（あなたにどう影響するか）",
+          "content": "一般ユーザーが直接この発言で即座に料金負担を受けるわけではありませんが、AIサービスの普及と高頻度のモデル実行が続けば、最終的に有料サービスの価格や無料枠の縮小、あるいは企業側の利用制限といった形で影響する可能性があります。個人でAIを試す場合は、API利用時のコストや無駄な呼び出しを避ける基本的な設計（バッチ処理、サンプリング回数の制御など）を心がけるべきです。"
+        }
+      ],
+      "personal_view": "正直な感想として、この発言はショッキングですが驚きすぎる必要はありません。先端開発では『試して学ぶ』フェーズが続くため、一時的にコストが膨らむことはあり得ます。ただ、発言が公表されたことでコスト管理の重要性が改めて注目され、開発現場の「無駄を減らす工夫」や、プロジェクト予算の透明化が促されるきっかけになると期待しています。",
+      "faq": [
+        {
+          "question": "Q1: この1,000万ドルは本当に正確ですか？",
+          "answer": "A1: 報道はSteinberger氏の壇上発言を引用して伝えています。現時点で公開された監査資料やOpenAI側の確認はなく、数字は氏の発言に基づくものです。"
+        },
+        {
+          "question": "Q2: 誰がその費用を払ったのですか？",
+          "answer": "A2: 支払い元（個人、OpenAI、プロジェクト資金など）は報道からは不明です。発言の文脈から複数の可能性があり得ますが、確認された情報はありません。"
+        },
+        {
+          "question": "Q3: 一般ユーザーは何をすべきですか？",
+          "answer": "A3: 個人利用であれば、API利用時は無料枠やクォータを確認し、呼び出し回数や生成量を抑える設計（例: バッチ化、レスポンス長の制限）を心がけるのが実務的です。"
+        },
+        {
+          "question": "Q4: 企業側の影響はありますか？",
+          "answer": "A4: 大規模にモデルを活用する企業は、請求監視、コストアラート、効率化ツールの導入を再検討する必要が出てきます。"
+        }
+      ],
+      "summary": "Cloudflare Connect 2026でのSteinberger氏の発言は、AI開発の現場で短期間に巨額のAPIコストが発生し得ることを示しています。一方で、発言の数字の裏取りや支払い元、内訳は確認されておらず不確定要素が残ります。開発者や企業はコスト管理と効率化の重要性を改めて評価する必要があります。"
+    },
+    "images": [
+      {
+        "number": 0,
+        "anchor": "",
+        "theme": "サムネ：大きなトークン請求",
+        "labels": [
+          "OpenClaw",
+          "1か月で約$10M",
+          "Cloudflare Connect",
+          "発言報道",
+          "コスト問題"
+        ],
+        "prompt": "16:9 濃紺の背景にシアンと白・黄色の太い短い日本語テキストが立体的に配置されたサムネ。中央に大きな「約$10M」の文字、サブで「OpenClaw制作者が発言」「Cloudflare Connect」を配置。広い余白、近未来のUIパネル風のアクセント、人物写真は使わない。シンプルで視認性高く。"
+      },
+      {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜図解①：発言の時系列と場所】",
+        "theme": "図解①：発言の時系列と場所",
+        "labels": [
+          "Cloudflare Connect 2026",
+          "壇上発言",
+          "日付不確定",
+          "複数媒体が報道"
+        ],
+        "prompt": "16:9 濃紺背景、シアンと白の線で壇上を示すアイコン的図。左に小さくステージ、右にテキスト吹き出し「約$10Mを消費」と表示。タイムラインの矢印と『報道: The Register / TechRadar / The Next Web』の小ラベル。広い余白、平面的ではなくやや立体感を出す。"
+      },
+      {
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜図解②：確定事項と未確定事項の分離】",
+        "theme": "図解②：確定事項と未確定事項の分離",
+        "labels": [
+          "確定: 発言内容",
+          "未確定: 支払い元",
+          "未確定: 期間詳細",
+          "未確定: 有用性の内訳"
+        ],
+        "prompt": "16:9 濃紺背景、中央に二分割されたボード。左は白背景で『確定事項』をシアンで箇条書き、右は黒に黄色の枠で『未確定事項』を列挙。矢印やチェックマーク、疑問符アイコンを使って視覚的に区別。短い日本語ラベルのみで説明。"
+      },
+      {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜図解③：開発・運用への示唆（コスト管理のチェックリスト）】",
+        "theme": "図解③：開発・運用への示唆（コスト管理のチェックリスト）",
+        "labels": [
+          "予算上限設定",
+          "利用モニタリング",
+          "実験設計の見直し",
+          "効率化"
+        ],
+        "prompt": "16:9 濃紺背景、左にチェックリスト形式のボード（シアンのチェックボックスと太い日本語）、右に簡単なアイコン（アラート、グラフ、歯車）。各項目は短く『予算上限』『モニタリング』『バッチ処理』『レスポンス制御』など。立体感と広い余白。"
+      },
+      {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜図解④：一般ユーザーへの影響イメージ】",
+        "theme": "図解④：一般ユーザーへの影響イメージ",
+        "labels": [
+          "無料枠の変化",
+          "サービス価格",
+          "利用時の注意",
+          "設計の工夫"
+        ],
+        "prompt": "16:9 濃紺背景、中央にスマートフォンのシルエットと小さなクラウドアイコン。周囲に短い日本語ラベルで『無料枠の変化』『サービス価格への波及』『API利用時の注意』を配置。色はシアン・白・黄色でコントラストを強め、読みやすくまとめる。"
+      }
+    ],
+    "hashtags": [
+      "#OpenClaw",
+      "#OpenAI",
+      "#CloudflareConnect",
+      "#AIコスト",
+      "#トークン請求",
+      "#AI開発",
+      "#API運用",
+      "#費用管理",
+      "#モデル実験",
+      "#TechNews",
+      "#Steinberger",
+      "#生成AI"
+    ],
+    "threads": "OpenClawの制作者が壇上で「1か月で約$10Mのトークンを消費」と発言。数字は本人の発言に基づき、支払い元や内訳は不明です。AI開発のコスト管理、あなたはどう考えますか?",
+    "body": "米サンフランシスコで開かれたCloudflare Connect 2026の壇上で、OpenClawの制作者でありOpenAI技術スタッフのPeter（Pete）Steinberger氏が「1か月で約1,000万ドル分のOpenAIトークンを使った」と発言しました。報道は複数メディアが同じ発言を伝えていますが、数字の裏取りや精緻な内訳は公開されていません。\n\n---\n\n## 30秒で結論\n\n- Steinberger氏本人がCloudflare Connectで「約1,000万ドル分のトークンを1か月で消費した」と発言したことは複数媒体で確認できる事実です。\n- 氏本人も『すべてが有用だったわけではない』と述べ、実験的・無駄な消費が含まれる可能性を示しています。\n- 報道は発言を引用しているが、支払い元や厳密な期間、監査による確認は公表されておらず不確定情報が残ります。\n- この発言は大規模なAPIコストの存在を示し、開発・運用のコスト管理や効率化の重要性を改めて浮き彫りにしました。\n\n---\n\n## 1) 何が起きたか（事実のみ）\n\nCloudflare Connect 2026のパネルで、OpenClawの制作者で現OpenAI技術スタッフのPeter Steinberger氏が「先月で約1,000万ドル分のOpenAIトークンを消費した」と語りました。複数の報道（The Register、TechRadar、The Next Web）がこの発言を引用して伝えています。氏は同時に『すべてが有用だったわけではない』と述べ、実験的な試行も含まれていることを示唆しました。\n\n【ここに図解①を挿入｜図解①：発言の時系列と場所】\n\n---\n\n## 2) 重要な未確定点（何がわかっていないか）\n\n報道は発言をそのまま伝えていますが、①その金額が監査・請求書で確認されたか、②誰のアカウントに課金されたか（個人、OpenAI側、プロジェクト資金か）、③『先月』が暦月のどの月を指すか、という点は公開されていません。また『どれくらいが有用でどれくらいが実験的だったか』の内訳も示されていません。これらは現時点で不明です。\n\n【ここに図解②を挿入｜図解②：確定事項と未確定事項の分離】\n\n---\n\n## 3) 何が変わるか（開発者・企業への示唆）\n\n短期間で巨額のAPIトークンが動くことは、モデル実験のスケールが急速に大きくなっている証拠です。例えば、大規模な自動テストやパラメータ探索、生成タスクの大量実行が裏にある可能性があります。結果として、費用管理（予算上限、モニタリング、効率化）や実験設計の見直し、トークン単価と運用コストのバランス再検討が必要になります。\n\n【ここに図解③を挿入｜図解③：開発・運用への示唆（コスト管理のチェックリスト）】\n\n---\n\n## 4) 一般の人への関係性（あなたにどう影響するか）\n\n一般ユーザーが直接この発言で即座に料金負担を受けるわけではありませんが、AIサービスの普及と高頻度のモデル実行が続けば、最終的に有料サービスの価格や無料枠の縮小、あるいは企業側の利用制限といった形で影響する可能性があります。個人でAIを試す場合は、API利用時のコストや無駄な呼び出しを避ける基本的な設計（バッチ処理、サンプリング回数の制御など）を心がけるべきです。\n\n【ここに図解④を挿入｜図解④：一般ユーザーへの影響イメージ】\n\n---\n\n## 私の正直な感想\n\n正直な感想として、この発言はショッキングですが驚きすぎる必要はありません。先端開発では『試して学ぶ』フェーズが続くため、一時的にコストが膨らむことはあり得ます。ただ、発言が公表されたことでコスト管理の重要性が改めて注目され、開発現場の「無駄を減らす工夫」や、プロジェクト予算の透明化が促されるきっかけになると期待しています。\n\n---\n\n## よくある質問\n\n### Q1: この1,000万ドルは本当に正確ですか？\n\nA1: 報道はSteinberger氏の壇上発言を引用して伝えています。現時点で公開された監査資料やOpenAI側の確認はなく、数字は氏の発言に基づくものです。\n\n### Q2: 誰がその費用を払ったのですか？\n\nA2: 支払い元（個人、OpenAI、プロジェクト資金など）は報道からは不明です。発言の文脈から複数の可能性があり得ますが、確認された情報はありません。\n\n### Q3: 一般ユーザーは何をすべきですか？\n\nA3: 個人利用であれば、API利用時は無料枠やクォータを確認し、呼び出し回数や生成量を抑える設計（例: バッチ化、レスポンス長の制限）を心がけるのが実務的です。\n\n### Q4: 企業側の影響はありますか？\n\nA4: 大規模にモデルを活用する企業は、請求監視、コストアラート、効率化ツールの導入を再検討する必要が出てきます。\n\n---\n\n## まとめ\n\nCloudflare Connect 2026でのSteinberger氏の発言は、AI開発の現場で短期間に巨額のAPIコストが発生し得ることを示しています。一方で、発言の数字の裏取りや支払い元、内訳は確認されておらず不確定要素が残ります。開発者や企業はコスト管理と効率化の重要性を改めて評価する必要があります。\n\n---\n\n## この記事について\n\n確認日：2026年10月27日（日本時間）。公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。\n\n---\n\n## 参考リンク\n\n- [OpenClaw creator Peter Steinberger claims he spent $10 million in tokens in a single month](https://www.techradar.com/pro/openclaw-creator-peter-steinberger-claims-he-spent-usd10-million-in-tokens-in-just-a-month-but-luckily-openai-can-afford-it)\n- [OpenClaw creator says he spent $10 million in tokens last month](https://www.theregister.com/ai-and-ml/2026/10/21/openclaw-creator-says-he-spent-10-million-in-tokens-last-month/5304573)\n- [OpenClaw creator puts last month’s token bill at $10M, The Register reports](https://thenextweb.com/news/openclaw-steinberger-10m-tokens-cloudflare-connect)"
+  },
+  "evidence": [
+    "https://cdnc.heyzine.com/files/uploaded/v3/064dbfc8811c0a372edda5f6bf08012c7b6ae97f-1.pdf",
+    "https://en.wikipedia.org/wiki/Peter_Steinberger_%28programmer%29",
+    "https://expert.com.ua/en/229609-ai-ahenti-10-mln-na-tokeni-ta-maybutne-rozrobki.html",
+    "https://fourweekmba.com/ai-openais-steinberger-puts-last-months-token-spend-near-10m",
+    "https://insiderllm.com/pdfs/openclaw-openai-acquihire-what-it-means.pdf",
+    "https://insiderllm.com/pdfs/openclaw-security-report-february-2026.pdf",
+    "https://labs.cloudsecurityalliance.org/wp-content/uploads/2026/05/CSA_research_note_openclaw-claw-chain-cve_20260517-csa-styled.pdf",
+    "https://newruntime.com/posts/openclaw-creator-says-he-spent-10-million-in-729428",
+    "https://overpivot.com/pete-steinberger-10m-token-burn-50416",
+    "https://pages.oasis.security/rs/106-PZV-596/images/openclaw-vulnerability.pdf?version=0",
+    "https://techcrunch.com/2026/02/15/openclaw-creator-peter-steinberger-joins-openai",
+    "https://techxplore.com/news/2026-02-openai-hires-creator-openclaw-ai.pdf",
+    "https://thenextweb.com/news/openclaw-steinberger-10m-tokens-cloudflare-connect",
+    "https://www.aiinsiders.net/article/openai-engineer-says-he-ran-up-a-dollar10-million-ai-bill",
+    "https://www.aol.com/articles/openclaws-creator-used-1-3-163037000.html",
+    "https://www.cloudflare.com/connect/speakers",
+    "https://www.computerworld.com/article/4239772/openclaw-creator-spent-10-million-on-ai-tokens-last-month-2.html",
+    "https://www.pcgamer.com/software/ai/the-creator-of-openclaw-used-usd1-300-000-of-openai-tokens-in-30-days-which-is-a-hell-of-a-perk",
+    "https://www.reddit.com/r/OpenAI/comments/1r5ptks/openclaw_is_about_to_be_closedclawopenai_in",
+    "https://www.reddit.com/r/myclaw/comments/1xciy6e/openclaw_creator_peter_steinberger_says_he_spent",
+    "https://www.reddit.com/r/technology/comments/1xc2lp6/openclaw_creator_says_he_spent_10_million_in",
+    "https://www.techradar.com/pro/openclaw-creator-peter-steinberger-claims-he-spent-usd10-million-in-tokens-in-just-a-month-but-luckily-openai-can-afford-it",
+    "https://www.theregister.com/ai-and-ml/2026/10/21/openclaw-creator-says-he-spent-10-million-in-tokens-last-month/5304573",
+    "https://www.tomsguide.com/ai/openai-hires-the-developer-behind-openclaw-this-is-how-ai-agents-grow-up",
+    "https://www.tomshardware.com/tech-industry/artificial-intelligence/openclaw-creator-burns-through-1-3-million-in-openai-api-tokens-in-a-single-month"
+  ]
+}
