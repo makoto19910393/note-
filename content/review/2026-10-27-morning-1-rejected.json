@@ -1,0 +1,187 @@
+{
+  "status": "rejected_not_published",
+  "reason": "校閲で修正が必要です: 本文から『【ここに図解…】』などの図版作成指示をすべて削除する（記事本文に制作指示や画像生成プロンプトを残さないこと）。; 画像のラベル／キャプションに『筆者の見解・提案』や『NVIDIAの試算／未検証』など、事実と筆者意見・未確認の主張を明確に区別する注記を入れるよう画像メタ情報を修正する（例：節水数値を表示する図には必ず『NVIDIAの試算（未検証）』と付記）。; 図解②（冷却と節水）の画像文言から未検証の数値を単独で断定的に示す表現を取り除き、必ず『NVIDIAの試算：2GW想定で日間5,400万Lの節水（NVIDIA試算／第三者検証未確認）』のように出典と未確定性を明記する。; 画像プロンプトやラベルから、公式の画面やUIの偽装を連想させる文言（例：実在の運用画面のスクリーンショット風指示）を削除する。; 本文冒頭と末尾に『出典（NVIDIA公式リリース、TechRadar）と、筆者の意見・推奨は区別している』旨の短い注記を目立つ位置に残す（現在の形式に近いが、画像にも同様の注記を追加する）。; タイトルについては『海外』タグおよびNVIDIA/DSX PODと出来事が明確に分かる点は良いが、AI初心者向けに『Vera Rubin（NVL72世代のAIアクセラレータ）とは何か』を本文冒頭で1〜2行で明示する文を追加する（専門語の簡潔な説明）。; 本文中の『最短14日で稼働』等の主張は、NVIDIA側の条件（『サイトが事前に電力等の準備を整えている場合』）を明確に近接して記載する。既に記載があるため、表現の整合性を再確認し、読者が主張の出所と条件を即座に理解できるようにする。",
+  "article": {
+    "title": "【海外AI解説】NVIDIA／DSX POD（Vera Rubin採用）を発表：工場組立てでAIデータセンター導入を短縮、節水や電力最適化をうたうリファレンス設計",
+    "sources": [
+      {
+        "title": "Nvidia reveals its mega DSX POD modular 'AI factory' — so could the latest Vera Rubin hardware actually help make data centers more energy efficient?",
+        "url": "https://www.techradar.com/pro/nvidia-reveals-its-mega-dsx-pod-modular-ai-factory-featuring-the-latest-vera-rubin-hardware-and-a-promise-to-make-data-centers-more-energy-efficient",
+        "published_at": "2026-10-26T00:00:00+00:00",
+        "supports": "TechRadarの記事本文でDSX PODの設計・導入短縮（6か月→14日）・2GWでの5,400万リットル/日の水節約試算・DSX MaxLPS/DSX Flexの機能説明・パートナー企業名・2027年初出荷見込みを確認。"
+      },
+      {
+        "title": "NVIDIA Introduces DSX POD AI Factories to Accelerate Europe’s Infrastructure Deployment (NVIDIA press release / investor site)",
+        "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Introduces-DSX-POD-AI-Factories-to-Accelerate-Europes-Infrastructure-Deployment/default.aspx",
+        "published_at": "2026-10-21T00:00:00+00:00",
+        "supports": "NVIDIA公式リリースでDSX PODリファレンス設計の発表、Vera Rubin NVL72を出発点とする設計、パートナー一覧、工場組立て済みモジュールの提供時期（早期2027）などを確認。"
+      }
+    ],
+    "sections": {
+      "intro": "NVIDIAがGTC Berlinで「DSX POD」と呼ぶ“モジュール式AIファクトリー”のリファレンス設計を発表しました。Vera Rubin世代（NVL72を含む）ハードウェアを基盤に、工場で組み立て済みのコンテナ／ラック単位で納入することで、現地組立てに比べ導入期間を大幅に短縮するとしています。",
+      "conclusions": [
+        "NVIDIAはDSX PODで『工場組立てモジュール』を提供し、サイト側の受け入れ準備が整えば導入を最短14日まで短縮できると主張している（従来は最長6か月の想定）。",
+        "冷却は閉ループの液体冷却＋屋外ドライクーラーを基本とし、NVIDIAは2GW規模で日間5,400万リットルの水が節約できると試算しているが、試算方法や第三者検証は未確認。",
+        "DSXはソフトウェア面（MaxLPSやFlexなど）で電力効率や需給連動の消費制御をうたう。MaxLPSは『同じトークン出力を30%程度少ない電力で実現できる可能性』を示しているが、適用範囲やベンチマークの詳細は不明。",
+        "NVIDIAはDell、HPE、Lenovo、Schneider Electric、Vertivらと協業し、出荷は早期2027年を見込む。実運用での効果や導入スピードはサイト準備や地域条件に左右される点に注意。"
+      ],
+      "explanations": [
+        {
+          "heading": "何が発表されたか（要点）",
+          "content": "NVIDIAはDSX PODという“AIファクトリーのリファレンス設計”を発表しました。これは単なるサーバー販売ではなく、ラック・配線・冷却・電力配分などを含んだ工場で組み立て済みのモジュール（コンテナ型のユニット）を提供する考え方です。発表資料では、Vera Rubin（NVL72を含む）ハードウェアを出発点とする設計を示しており、パートナー企業（Dell、HPE、Lenovo、Schneider Electric、Vertivなど）が製造・供給に関与します。NVIDIAは、サイト側が事前に電力や冷却、ネットワークの受け入れ準備を整えていれば、従来の現地組立てと比べて導入期間を大きく短縮でき、『最長約6か月→最短14日』という数字を提示しました。記事・リリースは『早期2027年出荷見込み』としています。これが意味するのは、AIモデルのための大規模な計算インフラを“部品を現地で組む”のではなく、“完成済みのブロックを搬入して稼働させる”方式に変える試みだという点です。"
+        },
+        {
+          "heading": "冷却・水使用・電力効率の主張とその限界",
+          "content": "NVIDIAはDSX PODの冷却方式として閉ループの液体冷却と屋外ドライクーラーを組み合わせる設計を示しています。これにより蒸発による水の損失を抑えることができ、NVIDIAは2GW規模で従来の冷却塔ベースの方式と比べて『日間5,400万リットルの水を節約できる』と試算しています。また、DSXに含まれるソフトウェア群（例：DSX MaxLPS、DSX Flex）は電力効率の改善や電力需給に応じた消費調整を担うと説明されています。MaxLPSは『同じトークン出力を約30%少ない電力で実現できる可能性』を示唆し、Flexは電力網の需給や価格に応じてデータセンター消費を制御する仕組みです。ただし重要なのは、これらの数値や効果はNVIDIA自身の試算・主張に基づく点です。公開資料や記事では、試算に使った前提やベンチマーク条件、第三者による独立検証については確認できていません。水や電力の実際の節約量、電力削減率は運用地域の気候、負荷の種類やパターン、サイト側の準備状況により大きく変わるため、NVIDIAの提示値をそのまま鵜呑みにするのは避けるべきです。"
+        },
+        {
+          "heading": "導入スピード短縮の実務的な意味と懸念点",
+          "content": "『最短14日で稼働』という主張は注目に値しますが、現実には前提条件が重要です。NVIDIAの説明は“サイトが事前に電力・冷却・ネットワーク等の受け入れ準備が整っている場合”を想定しています。つまり、工場組立て済みのモジュールを現地に運び込んで接続する作業自体は短縮されますが、そもそも適切な容量の電源供給契約や変圧設備、配管やダクトの敷設、地域の法規（設置許認可や環境規制）などの準備が必要です。地域ごとの規制や既存インフラの余力、天候や地形による設置制約によっては導入が長引く可能性があります。また、想定どおりの運用効率を出すための現地での微調整（冷却設定、システムのチューニング、電力網との連携テスト等）も必要です。したがって『14日』は理想的な最短ケースであり、多くの実案件ではより長い期間がかかる可能性があります。"
+        },
+        {
+          "heading": "事業者への影響と利用場面の見立て",
+          "content": "DSX PODの登場は、大規模なモデル訓練や推論を自社で運用したいクラウド以外の事業者（大企業のオンプレミス、テレコム事業者、地域のクラウドプロバイダー等）にとって魅力になる可能性があります。工場組立てモジュールは導入スピードや標準化、保守の統一化などで運用コストの見通しを立てやすくするため、インフラの拡張を計画している事業者にとって選択肢が増えます。パートナー企業のラインナップ（Dell、HPE、Lenovo、Schneider、Vertivなど）を見ると、既存のデータセンター機器サプライチェーンと連携して幅広い市場を狙っていると読めます。一方、地域別の電力事情や気候、環境規制、さらにはDSX MaxLPS/Flexが示す省電力効果の実効性がワークロード毎に異なる点は導入判断の鍵になります。結論として、DSX PODは導入の“敷居を下げる”提案だが、効果の大きさと導入スピードは個別案件で変わるため、導入前の実地検証と条件整理が不可欠です。"
+        }
+      ],
+      "personal_view": "正直に言うと、NVIDIAのDSX PODは“インフラ提供の考え方”としては合理的で魅力的です。完成モジュールで標準化してしまえば設置や保守が速く、メーカー側が最適化した状態で届けられる利点があります。ただし企業が発表する節水・省電力の数値は理想値に見えるため、現地の実データでの検証や第三者評価が出るまでは楽観は禁物です。導入が速い・効率が高いという主張は、運用環境の前提次第で大きく変わります。身近な例で言えば、『家の家具を組み立てて渡す業者』は便利でも、搬入経路や家の間取りによっては追加作業が必要になる、というイメージに近いです（例えば：搬入経路が狭ければ分割や追加工事が必要になる）。",
+      "faq": [
+        {
+          "question": "DSX PODは一般の企業でも買えるのですか？",
+          "answer": "NVIDIAはリファレンス設計と製造パートナー群を発表しています。実際の購買・導入はNVIDIAとパートナーを通じて提供される形になると考えられます。小規模なオフィス向けの“個人向け製品”ではなく、大規模なデータセンター用途を想定したソリューションです。"
+        },
+        {
+          "question": "『14日で稼働』は本当に達成できるのですか？",
+          "answer": "発表は『サイトが事前に電力・冷却・ネットワークなどの受け入れ準備が整っている場合』に最短14日としています。現地の準備や規制対応、電力契約などが整っていないケースではこれより長くなる可能性が高いです。短期間稼働を目指すなら事前のインフラ整備が鍵です。"
+        },
+        {
+          "question": "NVIDIAの節水・省電力の数値は信用できる？",
+          "answer": "現時点で示されているのはNVIDIA側の試算です。試算の前提やベンチマーク条件、第三者による検証データは公開されておらず、地域やワークロードで結果が変わるため、導入前に独立した検証やPoCを行うことをおすすめします。"
+        },
+        {
+          "question": "DSX MaxLPSやFlexは既存のデータセンターでも使えますか？",
+          "answer": "発表ではDSXはハードウェア＋ソフトウェアのパッケージとして説明されていますが、既存データセンターへの適用可否（互換性や効果）は個別の技術的評価が必要です。詳細はNVIDIAとパートナーの提供情報を確認してください。"
+        }
+      ],
+      "summary": "NVIDIAのDSX PODは、Vera Rubinハードウェアを基盤にした“工場組立て済みモジュール”によるAIインフラのリファレンス設計です。導入スピード短縮や閉ループ液冷＋ドライクーラーによる節水、省電力化をうたいますが、提示されている数値はNVIDIAの試算に基づき、第三者検証や現地での再現性は未確認です。導入の効果とスピードはサイト準備や地域条件に大きく左右されるため、個別の検証が重要です。"
+    },
+    "images": [
+      {
+        "number": 0,
+        "anchor": "",
+        "theme": "サムネ：ニュース見出し",
+        "labels": [
+          "NVIDIA",
+          "DSX POD",
+          "Vera Rubin",
+          "工場組立て",
+          "短縮14日",
+          "節水試算"
+        ],
+        "prompt": "16:9、濃紺と黒を基調にシアンと白・黄色の太い短い日本語。中央に大きく「DSX POD」と表示、左上に小さく「NVIDIA」、右下に「工場組立てで導入短縮」と短い一文。立体感のあるボックス風パネル背景、広い余白。"
+      },
+      {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜図解①：構成イメージ】",
+        "theme": "図解①：構成イメージ",
+        "labels": [
+          "モジュール",
+          "工場組立て",
+          "ラック",
+          "配線",
+          "冷却"
+        ],
+        "prompt": "16:9、濃紺背景にシアンと白の立体的な図形でコンテナ型モジュールが並ぶイラスト。各モジュールから矢印で『電力』『ネットワーク』『冷却』のラベルを示す。右下に短く「工場で完成→現地搬入」の説明文。"
+      },
+      {
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜図解②：冷却と節水の要点】",
+        "theme": "図解②：冷却と節水の要点",
+        "labels": [
+          "液体冷却",
+          "ドライクーラー",
+          "節水試算",
+          "蒸発抑制"
+        ],
+        "prompt": "16:9、黒背景に黄色とシアンのコントラスト。閉ループ液体回路の断面図風イラストと屋外ドライクーラーの簡略図を並べ、“蒸発による水損失を削減”を短く示す。右上に注釈で『NVIDIA試算：2GWで日間5,400万L節水（試算）』と記載（数値は表示可）。"
+      },
+      {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜図解③：ソフトウェア機能（MaxLPS/Flex）】",
+        "theme": "図解③：ソフトウェア機能（MaxLPS/Flex）",
+        "labels": [
+          "MaxLPS",
+          "Flex",
+          "電力最適化",
+          "需給連動"
+        ],
+        "prompt": "16:9、濃紺の背景に四角いパネルが並ぶUI風の図解。左に『MaxLPS→低電力で同等出力』、右に『Flex→需給連動で消費調整』の短い説明を太文字で配置。中央に電力網のイメージを小さく描く。"
+      },
+      {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜図解④：導入のチェックリスト】",
+        "theme": "図解④：導入のチェックリスト",
+        "labels": [
+          "電力準備",
+          "冷却準備",
+          "ネットワーク",
+          "許認可",
+          "現地調整"
+        ],
+        "prompt": "16:9、濃紺背景にチェックボックス形式の図解。各チェック項目をシアンの大きなアイコンと短い日本語で示す。下部に小さく「14日稼働は条件付き」の注意書き。"
+      }
+    ],
+    "hashtags": [
+      "#NVIDIA",
+      "#DSXPOD",
+      "#VeraRubin",
+      "#データセンター",
+      "#液体冷却",
+      "#節水",
+      "#電力最適化",
+      "#AIインフラ",
+      "#GTCBerlin",
+      "#省エネ"
+    ],
+    "threads": "NVIDIAがDSX PODを発表。工場組立てモジュールで導入短縮や節水をうたうが、実データでの検証は未確認。あなたの施設で導入は現実的ですか？",
+    "body": "NVIDIAがGTC Berlinで「DSX POD」と呼ぶ“モジュール式AIファクトリー”のリファレンス設計を発表しました。Vera Rubin世代（NVL72を含む）ハードウェアを基盤に、工場で組み立て済みのコンテナ／ラック単位で納入することで、現地組立てに比べ導入期間を大幅に短縮するとしています。\n\n---\n\n## 30秒で結論\n\n- NVIDIAはDSX PODで『工場組立てモジュール』を提供し、サイト側の受け入れ準備が整えば導入を最短14日まで短縮できると主張している（従来は最長6か月の想定）。\n- 冷却は閉ループの液体冷却＋屋外ドライクーラーを基本とし、NVIDIAは2GW規模で日間5,400万リットルの水が節約できると試算しているが、試算方法や第三者検証は未確認。\n- DSXはソフトウェア面（MaxLPSやFlexなど）で電力効率や需給連動の消費制御をうたう。MaxLPSは『同じトークン出力を30%程度少ない電力で実現できる可能性』を示しているが、適用範囲やベンチマークの詳細は不明。\n- NVIDIAはDell、HPE、Lenovo、Schneider Electric、Vertivらと協業し、出荷は早期2027年を見込む。実運用での効果や導入スピードはサイト準備や地域条件に左右される点に注意。\n\n---\n\n## 何が発表されたか（要点）\n\nNVIDIAはDSX PODという“AIファクトリーのリファレンス設計”を発表しました。これは単なるサーバー販売ではなく、ラック・配線・冷却・電力配分などを含んだ工場で組み立て済みのモジュール（コンテナ型のユニット）を提供する考え方です。発表資料では、Vera Rubin（NVL72を含む）ハードウェアを出発点とする設計を示しており、パートナー企業（Dell、HPE、Lenovo、Schneider Electric、Vertivなど）が製造・供給に関与します。NVIDIAは、サイト側が事前に電力や冷却、ネットワークの受け入れ準備を整えていれば、従来の現地組立てと比べて導入期間を大きく短縮でき、『最長約6か月→最短14日』という数字を提示しました。記事・リリースは『早期2027年出荷見込み』としています。これが意味するのは、AIモデルのための大規模な計算インフラを“部品を現地で組む”のではなく、“完成済みのブロックを搬入して稼働させる”方式に変える試みだという点です。\n\n【ここに図解①を挿入｜図解①：構成イメージ】\n\n---\n\n## 冷却・水使用・電力効率の主張とその限界\n\nNVIDIAはDSX PODの冷却方式として閉ループの液体冷却と屋外ドライクーラーを組み合わせる設計を示しています。これにより蒸発による水の損失を抑えることができ、NVIDIAは2GW規模で従来の冷却塔ベースの方式と比べて『日間5,400万リットルの水を節約できる』と試算しています。また、DSXに含まれるソフトウェア群（例：DSX MaxLPS、DSX Flex）は電力効率の改善や電力需給に応じた消費調整を担うと説明されています。MaxLPSは『同じトークン出力を約30%少ない電力で実現できる可能性』を示唆し、Flexは電力網の需給や価格に応じてデータセンター消費を制御する仕組みです。ただし重要なのは、これらの数値や効果はNVIDIA自身の試算・主張に基づく点です。公開資料や記事では、試算に使った前提やベンチマーク条件、第三者による独立検証については確認できていません。水や電力の実際の節約量、電力削減率は運用地域の気候、負荷の種類やパターン、サイト側の準備状況により大きく変わるため、NVIDIAの提示値をそのまま鵜呑みにするのは避けるべきです。\n\n【ここに図解②を挿入｜図解②：冷却と節水の要点】\n\n---\n\n## 導入スピード短縮の実務的な意味と懸念点\n\n『最短14日で稼働』という主張は注目に値しますが、現実には前提条件が重要です。NVIDIAの説明は“サイトが事前に電力・冷却・ネットワーク等の受け入れ準備が整っている場合”を想定しています。つまり、工場組立て済みのモジュールを現地に運び込んで接続する作業自体は短縮されますが、そもそも適切な容量の電源供給契約や変圧設備、配管やダクトの敷設、地域の法規（設置許認可や環境規制）などの準備が必要です。地域ごとの規制や既存インフラの余力、天候や地形による設置制約によっては導入が長引く可能性があります。また、想定どおりの運用効率を出すための現地での微調整（冷却設定、システムのチューニング、電力網との連携テスト等）も必要です。したがって『14日』は理想的な最短ケースであり、多くの実案件ではより長い期間がかかる可能性があります。\n\n【ここに図解③を挿入｜図解③：ソフトウェア機能（MaxLPS/Flex）】\n\n---\n\n## 事業者への影響と利用場面の見立て\n\nDSX PODの登場は、大規模なモデル訓練や推論を自社で運用したいクラウド以外の事業者（大企業のオンプレミス、テレコム事業者、地域のクラウドプロバイダー等）にとって魅力になる可能性があります。工場組立てモジュールは導入スピードや標準化、保守の統一化などで運用コストの見通しを立てやすくするため、インフラの拡張を計画している事業者にとって選択肢が増えます。パートナー企業のラインナップ（Dell、HPE、Lenovo、Schneider、Vertivなど）を見ると、既存のデータセンター機器サプライチェーンと連携して幅広い市場を狙っていると読めます。一方、地域別の電力事情や気候、環境規制、さらにはDSX MaxLPS/Flexが示す省電力効果の実効性がワークロード毎に異なる点は導入判断の鍵になります。結論として、DSX PODは導入の“敷居を下げる”提案だが、効果の大きさと導入スピードは個別案件で変わるため、導入前の実地検証と条件整理が不可欠です。\n\n【ここに図解④を挿入｜図解④：導入のチェックリスト】\n\n---\n\n## 私の正直な感想\n\n正直に言うと、NVIDIAのDSX PODは“インフラ提供の考え方”としては合理的で魅力的です。完成モジュールで標準化してしまえば設置や保守が速く、メーカー側が最適化した状態で届けられる利点があります。ただし企業が発表する節水・省電力の数値は理想値に見えるため、現地の実データでの検証や第三者評価が出るまでは楽観は禁物です。導入が速い・効率が高いという主張は、運用環境の前提次第で大きく変わります。身近な例で言えば、『家の家具を組み立てて渡す業者』は便利でも、搬入経路や家の間取りによっては追加作業が必要になる、というイメージに近いです（例えば：搬入経路が狭ければ分割や追加工事が必要になる）。\n\n---\n\n## よくある質問\n\n### DSX PODは一般の企業でも買えるのですか？\n\nNVIDIAはリファレンス設計と製造パートナー群を発表しています。実際の購買・導入はNVIDIAとパートナーを通じて提供される形になると考えられます。小規模なオフィス向けの“個人向け製品”ではなく、大規模なデータセンター用途を想定したソリューションです。\n\n### 『14日で稼働』は本当に達成できるのですか？\n\n発表は『サイトが事前に電力・冷却・ネットワークなどの受け入れ準備が整っている場合』に最短14日としています。現地の準備や規制対応、電力契約などが整っていないケースではこれより長くなる可能性が高いです。短期間稼働を目指すなら事前のインフラ整備が鍵です。\n\n### NVIDIAの節水・省電力の数値は信用できる？\n\n現時点で示されているのはNVIDIA側の試算です。試算の前提やベンチマーク条件、第三者による検証データは公開されておらず、地域やワークロードで結果が変わるため、導入前に独立した検証やPoCを行うことをおすすめします。\n\n### DSX MaxLPSやFlexは既存のデータセンターでも使えますか？\n\n発表ではDSXはハードウェア＋ソフトウェアのパッケージとして説明されていますが、既存データセンターへの適用可否（互換性や効果）は個別の技術的評価が必要です。詳細はNVIDIAとパートナーの提供情報を確認してください。\n\n---\n\n## まとめ\n\nNVIDIAのDSX PODは、Vera Rubinハードウェアを基盤にした“工場組立て済みモジュール”によるAIインフラのリファレンス設計です。導入スピード短縮や閉ループ液冷＋ドライクーラーによる節水、省電力化をうたいますが、提示されている数値はNVIDIAの試算に基づき、第三者検証や現地での再現性は未確認です。導入の効果とスピードはサイト準備や地域条件に大きく左右されるため、個別の検証が重要です。\n\n---\n\n## この記事について\n\n確認日：2026年10月27日（日本時間）。公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。\n\n---\n\n## 参考リンク\n\n- [Nvidia reveals its mega DSX POD modular 'AI factory' — so could the latest Vera Rubin hardware actually help make data centers more energy efficient?](https://www.techradar.com/pro/nvidia-reveals-its-mega-dsx-pod-modular-ai-factory-featuring-the-latest-vera-rubin-hardware-and-a-promise-to-make-data-centers-more-energy-efficient)\n- [NVIDIA Introduces DSX POD AI Factories to Accelerate Europe’s Infrastructure Deployment (NVIDIA press release / investor site)](https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Introduces-DSX-POD-AI-Factories-to-Accelerate-Europes-Infrastructure-Deployment/default.aspx)"
+  },
+  "evidence": [
+    "https://counterpointresearch.com/en/insights/nvidia-gtc-berlin",
+    "https://developer.nvidia.com/blog/nvidia-vera-rubin-pod-seven-chips-five-rack-scale-systems-one-ai-supercomputer",
+    "https://gadgetsnow.indiatimes.com/tech-news/nvidias-dsx-pod-promises-ai-data-centres-in-14-days-with-lower-cooling-water-use/articleshow/135116534.cms",
+    "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Introduces-DSX-POD-AI-Factories-to-Accelerate-Europes-Infrastructure-Deployment/default.aspx",
+    "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Vera-Rubin-Opens-Agentic-AI-Frontier",
+    "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Vera-Rubin-Ramps-Into-Full-Production-to-Power-Agentic-AI-Factories-Worldwide/default.aspx?f_link_type=f_linkinlinenote&flow_extra=eyJpbmxpbmVfZGlzcGxheV9wb3NpdGlvbiI6MCwiZG9",
+    "https://nvidianews.nvidia.com/_gallery/download_pdf/69b85a013d6332dff2d26c27",
+    "https://nvidianews.nvidia.com/_gallery/download_pdf/69b861f93d6332071dde0148",
+    "https://nvidianews.nvidia.com/_gallery/download_pdf/69c11da33d63324e40d61ab9",
+    "https://nvidianews.nvidia.com/_gallery/download_pdf/6a1d00153d63326b41775867",
+    "https://nvidianews.nvidia.com/helper-search-news?ct=releases&page=1&q=scale+ai+value",
+    "https://nvidianews.nvidia.com/news/latest?page=12",
+    "https://nvidianews.nvidia.com/news/latest?page=18",
+    "https://nvidianews.nvidia.com/news/rubin-platform-ai-supercomputer",
+    "https://nvidianews.nvidia.com/news/vera-rubin-dsx-ai-factory-reference-design?page=3",
+    "https://nvidianews.nvidia.com/news/vera-rubin-full-production-agentic-ai-factory",
+    "https://nvidianews.nvidia.com/news?c=21926",
+    "https://prtimes.jp/main/html/rd/p/000000667.000012662.html",
+    "https://s22.q4cdn.com/268397047/files/doc_news/2026/06/DSX-Vera-Rubin-Ref-Arch-News-Release_FINAL_053026.pdf",
+    "https://thegpu.ai/p/gpu-daily-2026-10-22",
+    "https://thegpu.ai/p/nvidia-gtc-berlin-2026-full-breakdown",
+    "https://theinference.org/article/trane-buys-its-own-coil-supplier-the-day-nvidia-promises-near-zero-water-ai-factories",
+    "https://www.at-pulse.com/stories/3883",
+    "https://www.businesskorea.co.kr/news/articleView.html?idxno=279439",
+    "https://www.datacenterdynamics.com/en/news/nvidia-launches-dsx-pod-claims-the-vera-rubin-reference-architecture-will-make-ai-data-centers-more-water-and-energy-efficient",
+    "https://www.hindustantimes.com/world-news/us-news/nvidia-launches-new-ai-data-center-system-to-cut-setup-time-from-six-months-to-14-days-101792590793260.html",
+    "https://www.reddit.com/r/AMD_Stock/comments/1xfqz8a/nvidia_cuts_hbm4_speed_and_nvlink_bandwidth",
+    "https://www.reddit.com/r/AustralianDataCentres/comments/1xgdwwr/four_predictions_for_factorybuilt_ai_data_centres",
+    "https://www.reddit.com/r/Mag7shares/comments/1xbkudz/nvidia_announces_plug_and_play_vera_rubin_racks",
+    "https://www.reddit.com/r/MarketFluxHub/comments/1xbqpsv/nvidia_unveils_ai_safety_platform_dsx_pod_data",
+    "https://www.reddit.com/r/NBIS_Stock/comments/1xgdu8c/nvidia_dsx_pods",
+    "https://www.stocktitan.net/articles/nvidia-279-billion-ai-bet-suppliers",
+    "https://www.storagereview.com/news/nvidia-gtc-berlin-2026-dsx-pod-14-day-ai-factory-substrate-openshell-ai-ran",
+    "https://www.techradar.com/pro/nvidia-reveals-its-mega-dsx-pod-modular-ai-factory-featuring-the-latest-vera-rubin-hardware-and-a-promise-to-make-data-centers-more-energy-efficient",
+    "https://www.tomshardware.com/tech-industry/artificial-intelligence/behind-the-scenes-at-nvidias-engineering-superlab-vera-rubin-nvl72-running-openai-workloads-800vdc-demonstrated-and-more",
+    "https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidias-huang-vows-to-deliver-giant-amounts-of-vera-rubin-company-says-that-our-roadmap-is-intact",
+    "https://xenospectrum.com/en/nvidia-dsx-pod-factory-deployment"
+  ]
+}

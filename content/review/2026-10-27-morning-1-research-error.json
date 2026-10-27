@@ -1,0 +1,8 @@
+{
+  "status": "not_published",
+  "reason": "下調べの出典URLを検索結果と照合できません。",
+  "attempted_candidate_urls": [
+    "https://www.techradar.com/pro/nvidia-reveals-its-mega-dsx-pod-modular-ai-factory-featuring-the-latest-vera-rubin-hardware-and-a-promise-to-make-data-centers-more-energy-efficient",
+    "https://www.techradar.com/pro/openclaw-creator-peter-steinberger-claims-he-spent-usd10-million-in-tokens-in-just-a-month-but-luckily-openai-can-afford-it"
+  ]
+}
