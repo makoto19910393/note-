@@ -174,7 +174,7 @@
       ],
       "prompt": "16:9、濃紺背景に白とシアンのアイコン配置。五つの丸で対策項目を並べ、中央に『今すぐ確認』の黄色ラベル。各丸に短い日本語（最小権限、ログ、二段階認証、ベンダー確認、通知）を入れる。モダンで実務的なデザイン、余白を大きめに。",
       "filename": "diagram359.png",
-      "status": "review_pending",
+      "status": "rejected",
       "attempts": 2,
       "artifact_run_id": "40725932067",
       "sha256": "37ca445b30d0d921de805648bd1435caf2176a0f335d1b4f1a04f5cf1f577ce6",
@@ -195,10 +195,12 @@
       },
       "review": {
         "approved": false,
-        "issues": "指定の図解番号を大きく表示してください。",
+        "issues": "本文にない断定を削除してください。OpenAIのロゴ表示（記事にない企業関連の表記）",
         "observed_title": "図解④：利用者・企業の対策ポイント",
-        "observed_diagram_label": "④",
-        "unsupported_claims": []
+        "observed_diagram_label": "4",
+        "unsupported_claims": [
+          "OpenAIのロゴ表示（記事にない企業関連の表記）"
+        ]
       }
     }
   ]
