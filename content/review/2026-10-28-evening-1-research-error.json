@@ -1,0 +1,7 @@
+{
+  "status": "not_published",
+  "reason": "調べたニュースが指定の国内・海外枠に一致しません。別区分で穴埋めしません。",
+  "attempted_candidate_urls": [
+    "https://www.techradar.com/pro/oracle-co-ceo-mike-sicilia-questions-whether-all-of-todays-work-will-be-necessary-going-forward-says-ai-will-give-people-more-time-to-be-human"
+  ]
+}
