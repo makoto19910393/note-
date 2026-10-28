@@ -94,7 +94,7 @@
       ],
       "prompt": "16:9、黒に近い濃紺背景。中央に安全箱（アイコン）とそこから流出したドキュメント風アイコン群を配置。各ドキュメントに『議事録』『給与』『採用オファー』『Slack』と太い日本語ラベル。右下に小さく『持ち出しは不明』を黄色で表示。立体感を出しつつ簡潔に見せる図解。",
       "filename": "diagram357.png",
-      "status": "review_pending",
+      "status": "ready",
       "attempts": 1,
       "artifact_run_id": "40725932067",
       "sha256": "f087347a8c1fb69ff1b9f59f46d48918b8c327e5fa78c14ddbfe7e6cbc8d5d4b",
@@ -112,6 +112,13 @@
           "text_tokens": 0
         },
         "total_tokens": 2916
+      },
+      "review": {
+        "approved": true,
+        "issues": "",
+        "observed_title": "実際に取得されたとされるデータ例",
+        "observed_diagram_label": "図解②",
+        "unsupported_claims": []
       }
     },
     {
