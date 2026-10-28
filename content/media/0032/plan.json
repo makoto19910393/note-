@@ -174,24 +174,24 @@
       ],
       "prompt": "16:9、濃紺背景に白とシアンのアイコン配置。五つの丸で対策項目を並べ、中央に『今すぐ確認』の黄色ラベル。各丸に短い日本語（最小権限、ログ、二段階認証、ベンダー確認、通知）を入れる。モダンで実務的なデザイン、余白を大きめに。",
       "filename": "diagram359.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 2,
       "artifact_run_id": "40725932067",
-      "sha256": "ac69b920c9851ba8d0c8e7c05051b2982a260a77682f1705b506474c699e3da9",
+      "sha256": "37ca445b30d0d921de805648bd1435caf2176a0f335d1b4f1a04f5cf1f577ce6",
       "width": 1536,
       "height": 864,
       "usage": {
-        "input_tokens": 1828,
+        "input_tokens": 1850,
         "input_tokens_details": {
           "image_tokens": 1508,
-          "text_tokens": 320
+          "text_tokens": 342
         },
         "output_tokens": 1078,
         "output_tokens_details": {
           "image_tokens": 1078,
           "text_tokens": 0
         },
-        "total_tokens": 2906
+        "total_tokens": 2928
       },
       "review": {
         "approved": false,
