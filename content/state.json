@@ -1,5 +1,5 @@
 {
-  "next_number": 32,
+  "next_number": 33,
   "articles": [
     {
       "number": 1,
@@ -1201,7 +1201,37 @@
           "supports": "Official product announcement describing Terra’s capabilities (visual reasoning, computer use), availability as gpt-6.1-terra, and referencing safety and testing context."
         }
       ]
+    },
+    {
+      "number": 32,
+      "run_id": "2026-10-28-evening-3",
+      "title": "【海外AI解説】Anthropic：Cathedralが“12時間未満”で社内ビジネスシステムへ到達と報告",
+      "created_at": "2026-10-29T01:26:52.470647+09:00",
+      "path": "articles/2026-10-28/0032-evening.md",
+      "sources": [
+        "https://www.techradar.com/pro/security/ai-startup-claims-it-hacked-anthropic-in-12-hours-gains-access-to-employee-details-and-internal-messages",
+        "https://www.washingtonpost.com/technology/2026/10/26/researchers-cybersecurity-start-up-cathedral-got-inside-anthropic"
+      ],
+      "sha256": "722c15ad78e31e13d9ec506a3804231d7b4e332ed057c150c9ffe2c010330765",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "overseas",
+      "media_plan": "media/0032/plan.json",
+      "source_details": [
+        {
+          "title": "Researchers at cybersecurity start-up Cathedral got inside Anthropic",
+          "url": "https://www.washingtonpost.com/technology/2026/10/26/researchers-cybersecurity-start-up-cathedral-got-inside-anthropic/",
+          "published_at": "2026-10-26T00:00:00+00:00",
+          "supports": "Washington Postの報道に基づき、CathedralがAIエージェントを用い、営業・人事・ITの一部システムへ到達したと報告。Anthropicは限定的アクセスの確認、当日中に経路を遮断、ソースコードやモデル重み・顧客メッセージは影響なしと述べている。"
+        },
+        {
+          "title": "AI startup claims it hacked Anthropic in 12 hours, gains access to employee details and internal messages",
+          "url": "https://www.techradar.com/pro/security/ai-startup-claims-it-hacked-anthropic-in-12-hours-gains-access-to-employee-details-and-internal-messages",
+          "published_at": "2026-10-28T00:00:00+00:00",
+          "supports": "TechRadarの報道も、Cathedralの主張とAnthropicの声明（限定的アクセスの確認・当日中に遮断・コードやモデル重みは未アクセス）を要約している。"
+        }
+      ]
     }
   ],
-  "next_diagram": 356
+  "next_diagram": 360
 }
