@@ -54,7 +54,7 @@
       ],
       "prompt": "16:9、黒に近い濃紺背景。左上に小さめのアイコン風のモニターとカメラのシルエット、中央に白太字で「何が新しい？」、その下にシアンの箇条書きで「低コスト」「視覚推論に強い」「コンピュータ操作の補助」「API: gpt-6.1-terra」。広い余白で読みやすく、全体に立体的な影をつける。",
       "filename": "diagram352.png",
-      "status": "generated",
+      "status": "review_pending",
       "attempts": 2,
       "artifact_run_id": "40612608467",
       "sha256": "ad888c484540b27f19dd9d5d7490b39f008f57963028720c5a3af468124c6aa6",
