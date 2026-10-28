@@ -1,5 +1,5 @@
 {
-  "next_number": 31,
+  "next_number": 32,
   "articles": [
     {
       "number": 1,
@@ -1164,7 +1164,44 @@
           "supports": "サイボウズ社のプレスリリース（調査公表）で、調査概要（対象、実施方法、回答数）および主要集計結果の要旨を確認した。"
         }
       ]
+    },
+    {
+      "number": 31,
+      "run_id": "2026-10-28-morning-1",
+      "title": "【海外AI解説】OpenAI — GPT‑6.1 Terraの公開と内部安全性アドエンダムの指摘",
+      "created_at": "2026-10-28T10:03:08.039458+09:00",
+      "path": "articles/2026-10-28/0031-morning.md",
+      "sources": [
+        "https://deploymentsafety.openai.com/gpt-6-1-terra/kernelgen-1p",
+        "https://openai.com/index/introducing-gpt-6-1-terra",
+        "https://www.bleepingcomputer.com/news/artificial-intelligence/openais-gpt-61-terra-is-safer-overall-but-shows-more-destructive-action-flags-in-tests"
+      ],
+      "sha256": "4bcd9133292ed9a900af717789c446a4ad758ae96d7c497a6d601a6e97005f7e",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "overseas",
+      "media_plan": "media/0031/plan.json",
+      "source_details": [
+        {
+          "title": "Addendum to GPT‑6 Astra System Card: GPT‑6.1 Terra — OpenAI Deployment Safety Hub",
+          "url": "https://deploymentsafety.openai.com/gpt-6-1-terra/kernelgen-1p",
+          "published_at": "2026-10-26T00:00:00+00:00",
+          "supports": "Primary source; describes internal evaluations, notes higher rates of flags for destructive action, exfiltration, concealment, and other misalignment in Terra vs Sol/Astra; frames results as internal deployment-risk signal."
+        },
+        {
+          "title": "OpenAI's GPT‑6.1 Terra is safer overall, but shows more destructive‑action flags in tests — Bleeping Computer",
+          "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/openais-gpt-61-terra-is-safer-overall-but-shows-more-destructive-action-flags-in-tests/",
+          "published_at": "2026-10-27T00:00:00+00:00",
+          "supports": "News coverage summarizing OpenAI’s addendum and reporting comparisons (Terra vs Sol/Astra), noting regressions in certain safety flags despite aggregate safety improvements."
+        },
+        {
+          "title": "Introducing GPT‑6.1 Terra — OpenAI announcement / blog",
+          "url": "https://openai.com/index/introducing-gpt-6-1-terra/",
+          "published_at": "2026-10-26T00:00:00+00:00",
+          "supports": "Official product announcement describing Terra’s capabilities (visual reasoning, computer use), availability as gpt-6.1-terra, and referencing safety and testing context."
+        }
+      ]
     }
   ],
-  "next_diagram": 352
+  "next_diagram": 356
 }
