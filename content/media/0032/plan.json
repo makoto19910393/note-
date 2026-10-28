@@ -54,7 +54,7 @@
       ],
       "prompt": "16:9、濃紺背景にシアンと白で描くフラットな概念図。左に「外部ベンダー」アイコン、中央に「脆弱性」を示す亀裂アイコン、右に「Anthropic内部システム」アイコン群（営業/人事/ITのラベル）。AIエージェントは点線の矢印で複数経路を試す様子を表現。太い短い日本語ラベルを各要所に配置。広い余白、視線の流れが明確な構図。",
       "filename": "diagram356.png",
-      "status": "generated",
+      "status": "review_pending",
       "attempts": 1,
       "artifact_run_id": "40725932067",
       "sha256": "7983bcb69c314dd81fbc942ab13d207bb7e904026cb56e611675ba7be23cda56",
