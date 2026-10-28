@@ -14,9 +14,25 @@
       ],
       "prompt": "16:9、濃紺と黒を基調にシアンと白・黄色の太い短い日本語を配置したサムネ。中央左にAnthropicの文字（白）、右下にCathedral（黄色）を配置。中央に大きな短い見出し「12時間で到達」を白抜きで立体感あるフォント。背景に薄いサプライチェーンとクラウドの簡略図（線と点）。広い余白、読みやすい構図、プロフェッショナルで緊急感のあるトーン。",
       "filename": "thumbnail.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "40725932067"
+      "artifact_run_id": "40725932067",
+      "sha256": "862db1ebbc2477447d1c7231986b1667eb71ed947b2f1272e7f6f92fada38a68",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1183,
+        "input_tokens_details": {
+          "image_tokens": 840,
+          "text_tokens": 343
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2261
+      }
     },
     {
       "number": 1,
