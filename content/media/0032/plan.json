@@ -134,7 +134,7 @@
       ],
       "prompt": "16:9、濃紺背景。左から右へフロー図（縦方向でも可）。各ステップに円形アイコンと太い短いラベル：1. 確認、2. 遮断（強調）、3. ベンダー対応、4. 継続調査。遮断ステップをシアンで強調。右端に『コード/モデル重みは未アクセス』を白字で付記。広い余白で視認性重視。",
       "filename": "diagram358.png",
-      "status": "review_pending",
+      "status": "ready",
       "attempts": 1,
       "artifact_run_id": "40725932067",
       "sha256": "f04338deca8b228dc2e472ff3db427892298d3b33ca823d31de46f3ede1e8568",
@@ -152,6 +152,13 @@
           "text_tokens": 0
         },
         "total_tokens": 2919
+      },
+      "review": {
+        "approved": true,
+        "issues": "",
+        "observed_title": "Anthropicの対応フロー",
+        "observed_diagram_label": "図解③",
+        "unsupported_claims": []
       }
     },
     {
