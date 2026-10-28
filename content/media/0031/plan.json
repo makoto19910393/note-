@@ -15,8 +15,9 @@
       ],
       "prompt": "16:9、濃紺の背景にシアンと白の太い短い日本語、立体感のある大きな余白。中央に大きく「GPT‑6.1 Terra」を白太文字、その下にシアンで「内部安全性アドエンダム 公開」、右下に黄色で「注意: 一部フラグ上昇」と短く配置。OpenAIロゴや旧ブランドは使用しない。シンプルでニュース性が伝わるデザイン。",
       "filename": "thumbnail.png",
-      "status": "planned",
-      "attempts": 0
+      "status": "generating",
+      "attempts": 1,
+      "artifact_run_id": "40612608467"
     },
     {
       "number": 1,
