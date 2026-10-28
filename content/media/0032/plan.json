@@ -134,9 +134,25 @@
       ],
       "prompt": "16:9、濃紺背景。左から右へフロー図（縦方向でも可）。各ステップに円形アイコンと太い短いラベル：1. 確認、2. 遮断（強調）、3. ベンダー対応、4. 継続調査。遮断ステップをシアンで強調。右端に『コード/モデル重みは未アクセス』を白字で付記。広い余白で視認性重視。",
       "filename": "diagram358.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "40725932067"
+      "artifact_run_id": "40725932067",
+      "sha256": "f04338deca8b228dc2e472ff3db427892298d3b33ca823d31de46f3ede1e8568",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1841,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 333
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2919
+      }
     },
     {
       "number": 4,
