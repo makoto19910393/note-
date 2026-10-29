@@ -1,5 +1,5 @@
 {
-  "next_number": 35,
+  "next_number": 36,
   "articles": [
     {
       "number": 1,
@@ -1291,7 +1291,44 @@
           "supports": "TrendAI（Trend Micro）のDeep Research。公開サーバー上の記録解析を一次資料として、Case AでCyberStrikeAIが使われた44体エージェントの構成、対象組織数、挙動の具体的所見を示している。"
         }
       ]
+    },
+    {
+      "number": 35,
+      "run_id": "2026-10-29-evening-2",
+      "title": "【国内AI学び】デル・テクノロジーズ：新社長ジョン・ロボトムが日本市場での事業戦略と調査結果を発表（2026年10月27日）",
+      "created_at": "2026-10-30T01:35:48.411055+09:00",
+      "path": "articles/2026-10-29/0035-evening.md",
+      "sources": [
+        "https://monoist.itmedia.co.jp/mn/articles/2610/29/news032.html",
+        "https://www.dell.com/ja-jp/blog/904620",
+        "https://www.itmedia.co.jp/enterprise/articles/2610/28/news032.html"
+      ],
+      "sha256": "a0ea34290fbc87e6fdd287358567a8d9d2f40b8417f4f2f2a3d819f722e960f5",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "domestic",
+      "media_plan": "media/0035/plan.json",
+      "source_details": [
+        {
+          "title": "AI導入から成果創出へ　デル・テクノロジーズ新社長が示す日本市場の事業戦略：メカ設計ニュース（MONOist）",
+          "url": "https://monoist.itmedia.co.jp/mn/articles/2610/29/news032.html",
+          "published_at": "2026-10-29T06:30:00+09:00",
+          "supports": "記者会見の開催日（2026年10月27日）、ロボトム氏の発言、Modern Enterprise Readiness Study 2026の日本向け集計（58%等）、AI Innovation LabやTech Rally Residency Tokyoの紹介を本文で確認。"
+        },
+        {
+          "title": "デル・テクノロジーズ、日本における新社長を発表（公式ブログ／Dell Technologies Japan）",
+          "url": "https://www.dell.com/ja-jp/blog/904620/",
+          "published_at": "2026-08-17T00:00:00+09:00",
+          "supports": "ジョン・ロボトム氏の日本法人代表取締役社長就任（2026年8月17日付）の公式発表（就任事実の一次資料）。"
+        },
+        {
+          "title": "導入は進んだが、成果はまだ　デル新社長が指摘する日本企業の“AIギャップ”（ITmedia エンタープライズ）",
+          "url": "https://www.itmedia.co.jp/enterprise/articles/2610/28/news032.html",
+          "published_at": "2026-10-28T11:30:00+09:00",
+          "supports": "10月27日の記者会見の報道要旨、調査結果の数字（日本における生成AI活用の進捗や企業の懸念）およびロボトム氏の課題指摘を確認。"
+        }
+      ]
     }
   ],
-  "next_diagram": 368
+  "next_diagram": 372
 }
