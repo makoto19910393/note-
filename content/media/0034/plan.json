@@ -54,7 +54,7 @@
       ],
       "prompt": "16:9、濃紺背景。左から右へ流れるフローチャート風の図。各ステップを丸いボックスで示し、矢印とともに『偵察→脆弱性探索→侵入実行→情報持ち出し→報告書作成』の順。各ボックスはシアンの縁取り、内部は黒または濃紺で白い短い日本語ラベル。下部に『44体のエージェントが役割分担』の補足テキスト。余白を広く取る。",
       "filename": "diagram364.png",
-      "status": "review_pending",
+      "status": "rejected",
       "attempts": 2,
       "artifact_run_id": "40913052757",
       "sha256": "2f907eea2a66fdf0f093e75053fbe340426f2e512e9336d12916358cbc575540",
@@ -76,7 +76,7 @@
       "review": {
         "approved": false,
         "issues": "指定の図解番号を大きく表示してください。",
-        "observed_title": "攻撃フロー（分業化されたエージェント）",
+        "observed_title": "図解①：攻撃フロー（分業化されたエージェント）",
         "observed_diagram_label": "①",
         "unsupported_claims": []
       }
