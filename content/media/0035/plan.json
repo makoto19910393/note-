@@ -132,9 +132,25 @@
       ],
       "prompt": "16:9 図解。濃紺背景、左から右へフロー図（矢印）。左に「体験ラボ」、中央に「検証・評価」、右に「導入・運用」の3段階ボックス。各ボックス下に短い補足（例：環境構築、セキュリティ評価、運用設計）。色はシアン／黄色のアクセント、太い短い日本語、広い余白。",
       "filename": "diagram370.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "40913052757"
+      "artifact_run_id": "40913052757",
+      "sha256": "c8bcd48744c9a56fb4cf85e536fdc6d94a2946512a86779d45aff56084f27f0f",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1846,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 338
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2924
+      }
     },
     {
       "number": 4,
