@@ -18,9 +18,25 @@
       ],
       "prompt": "16:9、濃紺背景＋シアンのアクセント、白と黄色の太い短い日本語でタイトル風。左側にNVIDIAロゴ風（ブランド色を連想させる抽象的形状）、右側に原子力施設のシルエットとサーバールームのアイコンを並列配置。中央に大きく『廃炉サイトをAIファクトリーに？』と白太字、下に小さく『調査段階・再稼働はしない』を黄色で表示。立体感と広い余白を持たせる。",
       "filename": "thumbnail.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "40801644100"
+      "artifact_run_id": "40801644100",
+      "sha256": "1daf249749fb12c91b3cda986fd7a20ac954df4471a20c9dad0be5f90fcfd466",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1220,
+        "input_tokens_details": {
+          "image_tokens": 840,
+          "text_tokens": 380
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2298
+      }
     },
     {
       "number": 1,
