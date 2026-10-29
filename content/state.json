@@ -1,5 +1,5 @@
 {
-  "next_number": 33,
+  "next_number": 34,
   "articles": [
     {
       "number": 1,
@@ -1231,7 +1231,37 @@
           "supports": "TechRadarの報道も、Cathedralの主張とAnthropicの声明（限定的アクセスの確認・当日中に遮断・コードやモデル重みは未アクセス）を要約している。"
         }
       ]
+    },
+    {
+      "number": 33,
+      "run_id": "2026-10-29-morning-1",
+      "title": "【海外AI解説】NVIDIA＋PreussenElektraが検討 — 廃炉済みドイツ原発を『AIファクトリー』にする可能性を調査",
+      "created_at": "2026-10-29T10:39:10.159856+09:00",
+      "path": "articles/2026-10-29/0033-morning.md",
+      "sources": [
+        "https://www.techradar.com/pro/nvidia-wants-to-turn-old-nuclear-power-plants-into-huge-ai-data-centers-but-says-it-draws-the-line-at-turning-them-back-on",
+        "https://www.world-nuclear-news.org/articles/nvidia-to-consider-data-centres-at-former-german-nuclear-sites"
+      ],
+      "sha256": "f7bd85164539384bc0749d724c8e16649524ccc27b6b1c0eefc97925aa84bd05",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "overseas",
+      "media_plan": "media/0033/plan.json",
+      "source_details": [
+        {
+          "title": "Nvidia wants to turn old nuclear power plants into huge AI data centers — but says it draws the line at turning them back on",
+          "url": "https://www.techradar.com/pro/nvidia-wants-to-turn-old-nuclear-power-plants-into-huge-ai-data-centers-but-says-it-draws-the-line-at-turning-them-back-on",
+          "published_at": "2026-10-29T01:05:00+00:00",
+          "supports": "Reports the NVIDIA–PreussenElektra preliminary agreement, notes focus on grid links/water access and that no reactors will be restarted; emphasizes the exploratory nature and lack of binding deals."
+        },
+        {
+          "title": "NVIDIA to consider data centres at former German nuclear sites",
+          "url": "https://www.world-nuclear-news.org/articles/nvidia-to-consider-data-centres-at-former-german-nuclear-sites",
+          "published_at": "2026-10-27T00:00:00+00:00",
+          "supports": "Industry outlet coverage noting the collaboration to assess conversion of PEL decommissioned sites into AI factories and contextual information about Germany’s reactor shutdowns and decommissioning responsibilities."
+        }
+      ]
     }
   ],
-  "next_diagram": 360
+  "next_diagram": 364
 }
