@@ -1,5 +1,5 @@
 {
-  "next_number": 34,
+  "next_number": 35,
   "articles": [
     {
       "number": 1,
@@ -1261,7 +1261,37 @@
           "supports": "Industry outlet coverage noting the collaboration to assess conversion of PEL decommissioned sites into AI factories and contextual information about Germany’s reactor shutdowns and decommissioning responsibilities."
         }
       ]
+    },
+    {
+      "number": 34,
+      "run_id": "2026-10-29-evening-1",
+      "title": "【国内AI学び】TrendAI（トレンドマイクロ）報告 — CyberStrikeAIを悪用した44体エージェントが日本組織を標的に",
+      "created_at": "2026-10-30T01:35:48.411055+09:00",
+      "path": "articles/2026-10-29/0034-evening.md",
+      "sources": [
+        "https://www.gizmodo.jp/article/2610-ai-cyber-attack-agents-japan",
+        "https://www.trendaisecurity.com/en-us/resources-insights/deep-research/not-only-artex-the-different-levels-ai-is-used-in-attacks-targeting-japan"
+      ],
+      "sha256": "5c6be50e0566298e9d158d14028e31a5ddb549345c6039f410fed06a04289fc1",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "domestic",
+      "media_plan": "media/0034/plan.json",
+      "source_details": [
+        {
+          "title": "サイバー攻撃もAIで分業…。44体のエージェントが日本の組織を狙っていた",
+          "url": "https://www.gizmodo.jp/article/2610-ai-cyber-attack-agents-japan/",
+          "published_at": "2026-10-29T12:15:00+09:00",
+          "supports": "Gizmodo JapanはTrendAIの解析を日本語で要約して伝えており、44エージェント構成、19組織のうち16が日本、偽の日本語ログイン画面自動生成などを報告内容として示している。"
+        },
+        {
+          "title": "Not Only ARTEX: The Different Levels AI is Used in Attacks Targeting Japan",
+          "url": "https://www.trendaisecurity.com/en-us/resources-insights/deep-research/not-only-artex-the-different-levels-ai-is-used-in-attacks-targeting-japan",
+          "published_at": "2026-10-27T00:00:00+00:00",
+          "supports": "TrendAI（Trend Micro）のDeep Research。公開サーバー上の記録解析を一次資料として、Case AでCyberStrikeAIが使われた44体エージェントの構成、対象組織数、挙動の具体的所見を示している。"
+        }
+      ]
     }
   ],
-  "next_diagram": 364
+  "next_diagram": 368
 }
