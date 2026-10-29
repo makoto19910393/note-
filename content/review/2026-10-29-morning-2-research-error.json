@@ -1,0 +1,7 @@
+{
+  "status": "not_published",
+  "reason": "調べたニュースが指定の国内・海外枠に一致しません。別区分で穴埋めしません。",
+  "attempted_candidate_urls": [
+    "https://www.itmedia.co.jp/aiplus/article/2610/29/2000002685/"
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "status": "rejected_not_published",
+  "reason": "参考資料の発行日時を確認できません。",
+  "article": {
+    "title": "【海外AI解説】Google（DeepMind）／Gemini 4 Carbonを発表、まずはサイバー防御組織向けに限定提供",
+    "sources": [
+      {
+        "title": "Google、「Gemini 4 Carbon」発表　「Argon」公開から2週間、サイバー防御能力などを強化 - ITmedia NEWS",
+        "url": "https://www.itmedia.co.jp/news/article/2610/29/2000002690/",
+        "published_at": "2026-10-29T07:13:00+09:00",
+        "supports": "ITmediaの記事本文を確認。発表日・提供対象（Fairwind Program等）・性能向上点・ベンチマークスコア・価格表記などを報告している。"
+      },
+      {
+        "title": "Introducing Gemini 4 Carbon - Google Blog (Google Research/DeepMind)",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+        "published_at": "2026-10-28",
+        "supports": "Google公式の発表記事（Gemini 4 Carbonの機能説明、性能比較、提供ポリシー、紹介価格の表記など）。現地掲載：2026-10-28。"
+      },
+      {
+        "title": "Gemini — Google DeepMind (models page)",
+        "url": "https://deepmind.google/models/gemini/",
+        "published_at": "2026-10-28",
+        "supports": "DeepMind公式のモデル一覧ページ。Gemini 4 Carbonを含むモデル情報と関連評価／メソドロジーへの参照が確認できる。"
+      }
+    ],
+    "sections": {
+      "intro": "Google（DeepMind）は現地時間2026年10月28日に、新しいGeminiシリーズの派生モデル「Gemini 4 Carbon」を発表しました。まずはサイバー防御組織向けに限定提供し、安全性検証とフィードバックを得ながら段階的に展開する予定です。この記事では何が変わるのか、いつ使えるのか、あなたにどう関係するかを分かりやすく説明します（確認日：2026-10-29）。",
+      "conclusions": [
+        "Gemini 4 CarbonはGemini 4 Argonの改良版として発表され、特にサイバーセキュリティ関連の能力と安全性に重点を置いている（発表：2026-10-28）。",
+        "提供はまずサイバー防御組織などに限定され、一般開放や開発者向けの完全提供開始日は未公表。段階的な拡大を見込むとGoogleは説明している。",
+        "Googleの示す内部／公開ベンチマークではArgonよりスコアが向上し、プロンプト攻撃耐性などいくつかの指標で改善が報告されているが、第三者による独立検証は今後必要。",
+        "価格は発表時点でArgonと同額の紹介価格が示されており、トークン単価の表記（入力2ドル/100万トークン・出力10ドル/100万トークン）が公式に確認されている。"
+      ],
+      "explanations": [
+        {
+          "heading": "Gemini 4 Carbonとは何か（30秒で結論）",
+          "content": "Gemini 4 CarbonはGoogle（DeepMind）が10月28日に発表した、既存のGemini 4 Argonを基に安全性とサイバー防御能力を強化した派生モデルです。まずサイバー防御組織向けに限定提供し、実運用でのフィードバックを得ながら段階的に提供範囲を広げる方針と発表されています。公式は内部・公開ベンチマークでArgonより高いスコアと、プロンプトインジェクション耐性の改善を示しています。"
+        },
+        {
+          "heading": "何が改善されたのか（性能・安全性の要点）",
+          "content": "Googleの説明では、Carbonは長時間にわたる複雑タスクやサイバーセキュリティ関連の分析で性能が改善され、コーディングの安全性（安全なコード生成の成功率向上）やハルシネーション低減、アライメント問題の改善も挙げられています。内部・公開指標（例：Artificial Analysis Intelligence Index v5.0など）ではArgonの50に対してCarbonは59と報告され、間接的プロンプトインジェクション攻撃の成功率はArgonの0.7%からCarbonで0.0%に低下したとされています。ただしこれらはGoogle側の測定結果で、手法や再現性の詳細は公開されていない点に注意が必要です。"
+        },
+        {
+          "heading": "提供範囲と利用可能時期（読者に関係する点）",
+          "content": "現在の発表で明確なのは、まずサイバー防御組織向けに限定して提供するということです。具体的にはGoogleのFairwind Program参加組織などが対象となり、そこでのフィードバックを踏まえて段階的に提供を広げるとされています。一方で、一般開放や開発者向けの正式な公開日程は未公表です。つまり、普通の個人開発者や小さな企業がすぐに使えるようになるわけではありません。"
+        },
+        {
+          "heading": "ベンチマーク・安全性主張の取り扱い（注意点）",
+          "content": "発表には内部および公開ベンチマークの数値や攻撃成功率の低下など具体的な数値が示されていますが、これらはGoogleの測定結果です。第三者による独立した再検証レポートが今後必要になります。特に『0.0%』といった値は興味深いものの、測定条件や攻撃の定義に依存します。読者は『改善が報告された』という事実を押さえつつ、外部評価の結果を待つべきです。"
+        }
+      ],
+      "personal_view": "正直に言うと、短期間でArgonに続けてCarbonを出した点は速度感があり驚きます。サイバー防御を優先する限定展開は安全重視の姿勢として理解できますが、『まずは限られた組織での運用→段階的拡大』という流れが実際にうまく機能するかは検証が必要です。個人や中小企業が恩恵を受けられるのはもう少し先になりそうです。",
+      "faq": [
+        {
+          "question": "Gemini 4 Carbonはすぐに一般利用できますか？",
+          "answer": "いいえ。発表ではまずサイバー防御組織向けに限定提供するとされ、一般提供の開始日は未公表です。段階的な展開が行われる予定です。"
+        },
+        {
+          "question": "発表されたベンチマークは信頼できますか？",
+          "answer": "発表値はGoogle（DeepMind）による内部・公開指標の結果です。改善の方向性は示されていますが、独立した第三者による検証が今後必要です。"
+        },
+        {
+          "question": "価格はどうなりますか？",
+          "answer": "発表時点でArgonと同額の紹介価格が示されています。公式に記載されたトークン単価は入力2ドル/100万トークン・出力10ドル/100万トークンです。"
+        },
+        {
+          "question": "セキュリティが本当に強くなったのか、個人はどう関係しますか？",
+          "answer": "Googleはプロンプト攻撃耐性の改善などを報告していますが、その詳細条件や第三者検証は未発表です。個人利用が可能になれば、より安全なコード生成や攻撃耐性が期待できますが、それまでは主に大規模組織での評価フェーズです。"
+        }
+      ],
+      "summary": "Gemini 4 Carbonは、Gemini 4 Argonの改良モデルとして2026-10-28に発表され、サイバー防御能力と安全性を重視してまず限定提供されます。Googleは内部・公開ベンチマークで改善を示していますが、一般提供日は未定で、第三者による検証が今後の注目点です。個人や中小企業の利用は当面先になる見込みです。"
+    },
+    "images": [
+      {
+        "number": 0,
+        "anchor": "",
+        "theme": "サムネ：発表の要点",
+        "labels": [
+          "Gemini 4 Carbon 発表",
+          "2026-10-28",
+          "サイバー防御向け限定提供",
+          "性能・安全性強化"
+        ],
+        "prompt": "16:9、濃紺背景、シアンと白・黄色の太い短い日本語。中央に大きく「Gemini 4 Carbon 発表」。下段に小さく「2026-10-28」「サイバー防御向け限定提供」。立体感のあるタイトル、広い余白、シンプルなアイコンでAIチップと盾を右側に配置。鮮やかなコントラスト、プロフェッショナルなニュース用デザイン。"
+      },
+      {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜図解①：何が変わったか（改善点の一覧）】",
+        "theme": "図解①：何が変わったか（改善点の一覧）",
+        "labels": [
+          "改善点まとめ",
+          "サイバー防御",
+          "長時間タスク",
+          "安全なコード生成",
+          "ハルシネーション低減"
+        ],
+        "prompt": "16:9、濃紺背景、シアンと白・黄色の太い短い日本語。左に簡潔な見出し「改善点まとめ」。中央に5つのアイコン縦並び（盾＝サイバー防御、時計＝長時間処理、コード＝安全なコード、頭＝ハルシネーション低減、チェック＝アライメント改善）。各アイコンに短い一語ラベル。広い余白と立体感。"
+      },
+      {
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜図解②：提供スケジュール（限定提供→段階的拡大）】",
+        "theme": "図解②：提供スケジュール（限定提供→段階的拡大）",
+        "labels": [
+          "提供スケジュール",
+          "限定提供",
+          "評価期間",
+          "段階的拡大",
+          "一般公開 未定"
+        ],
+        "prompt": "16:9、濃紺背景、シアンと白・黄色の太い短い日本語。横向きの段階図：左から右へ『限定提供（サイバー防御組織）→評価・フィードバック→段階的拡大→一般公開（未定）』のフロー。各段に短い説明テキストとシンプルなアイコン。視認性重視、余白たっぷり。"
+      },
+      {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜図解③：ベンチマークと注意点（内部測定と外部検証の違い）】",
+        "theme": "図解③：ベンチマークと注意点（内部測定と外部検証の違い）",
+        "labels": [
+          "ベンチマーク",
+          "内部測定",
+          "公開指標",
+          "外部検証 必要",
+          "注意点"
+        ],
+        "prompt": "16:9、濃紺背景、シアンと白・黄色の太い短い日本語。左右2カラム構成。左に『Googleの報告』として簡潔な数値例（Argon→Carbonのスコア向上イメージ）をアイコン化。右に『注意点』として『測定条件』『再現性』『第三者検証』を箇条書き。バランス良く、立体的なボックスで区切る。"
+      },
+      {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜図解④：あなたへの影響（個人・中小企業・大企業）】",
+        "theme": "図解④：あなたへの影響（個人・中小企業・大企業）",
+        "labels": [
+          "影響",
+          "個人は待機",
+          "中小企業は限定的",
+          "大企業・官公庁は先行導入",
+          "次の注目点"
+        ],
+        "prompt": "16:9、濃紺背景、シアンと白・黄色の太い短い日本語。縦3ブロックで『個人』『中小企業』『大企業・官公庁』を比較表示。各ブロックに短い文（例えば：『個人→利用は先』『大企業→評価・導入先行』）と対応する小アイコン。下部に『注目：第三者検証・公開時期』を強調。余白多めで読みやすく。"
+      }
+    ],
+    "hashtags": [
+      "#Gemini4Carbon",
+      "#GoogleAI",
+      "#DeepMind",
+      "#サイバーセキュリティ",
+      "#AI安全性",
+      "#プロンプトインジェクション",
+      "#モデル評価",
+      "#AIニュース",
+      "#限定提供",
+      "#ベンチマーク",
+      "#AI公開",
+      "#AI開発",
+      "#技術解説"
+    ],
+    "threads": "GoogleがGemini 4 Carbonを発表。まずはサイバー防御組織向けに限定提供、性能と安全性の改善を主張。一般公開日は未定。第三者検証をどう見るべき？",
+    "body": "Google（DeepMind）は現地時間2026年10月28日に、新しいGeminiシリーズの派生モデル「Gemini 4 Carbon」を発表しました。まずはサイバー防御組織向けに限定提供し、安全性検証とフィードバックを得ながら段階的に展開する予定です。この記事では何が変わるのか、いつ使えるのか、あなたにどう関係するかを分かりやすく説明します（確認日：2026-10-29）。\n\n---\n\n## 30秒で結論\n\n- Gemini 4 CarbonはGemini 4 Argonの改良版として発表され、特にサイバーセキュリティ関連の能力と安全性に重点を置いている（発表：2026-10-28）。\n- 提供はまずサイバー防御組織などに限定され、一般開放や開発者向けの完全提供開始日は未公表。段階的な拡大を見込むとGoogleは説明している。\n- Googleの示す内部／公開ベンチマークではArgonよりスコアが向上し、プロンプト攻撃耐性などいくつかの指標で改善が報告されているが、第三者による独立検証は今後必要。\n- 価格は発表時点でArgonと同額の紹介価格が示されており、トークン単価の表記（入力2ドル/100万トークン・出力10ドル/100万トークン）が公式に確認されている。\n\n---\n\n## Gemini 4 Carbonとは何か（30秒で結論）\n\nGemini 4 CarbonはGoogle（DeepMind）が10月28日に発表した、既存のGemini 4 Argonを基に安全性とサイバー防御能力を強化した派生モデルです。まずサイバー防御組織向けに限定提供し、実運用でのフィードバックを得ながら段階的に提供範囲を広げる方針と発表されています。公式は内部・公開ベンチマークでArgonより高いスコアと、プロンプトインジェクション耐性の改善を示しています。\n\n【ここに図解①を挿入｜図解①：何が変わったか（改善点の一覧）】\n\n---\n\n## 何が改善されたのか（性能・安全性の要点）\n\nGoogleの説明では、Carbonは長時間にわたる複雑タスクやサイバーセキュリティ関連の分析で性能が改善され、コーディングの安全性（安全なコード生成の成功率向上）やハルシネーション低減、アライメント問題の改善も挙げられています。内部・公開指標（例：Artificial Analysis Intelligence Index v5.0など）ではArgonの50に対してCarbonは59と報告され、間接的プロンプトインジェクション攻撃の成功率はArgonの0.7%からCarbonで0.0%に低下したとされています。ただしこれらはGoogle側の測定結果で、手法や再現性の詳細は公開されていない点に注意が必要です。\n\n【ここに図解②を挿入｜図解②：提供スケジュール（限定提供→段階的拡大）】\n\n---\n\n## 提供範囲と利用可能時期（読者に関係する点）\n\n現在の発表で明確なのは、まずサイバー防御組織向けに限定して提供するということです。具体的にはGoogleのFairwind Program参加組織などが対象となり、そこでのフィードバックを踏まえて段階的に提供を広げるとされています。一方で、一般開放や開発者向けの正式な公開日程は未公表です。つまり、普通の個人開発者や小さな企業がすぐに使えるようになるわけではありません。\n\n【ここに図解③を挿入｜図解③：ベンチマークと注意点（内部測定と外部検証の違い）】\n\n---\n\n## ベンチマーク・安全性主張の取り扱い（注意点）\n\n発表には内部および公開ベンチマークの数値や攻撃成功率の低下など具体的な数値が示されていますが、これらはGoogleの測定結果です。第三者による独立した再検証レポートが今後必要になります。特に『0.0%』といった値は興味深いものの、測定条件や攻撃の定義に依存します。読者は『改善が報告された』という事実を押さえつつ、外部評価の結果を待つべきです。\n\n【ここに図解④を挿入｜図解④：あなたへの影響（個人・中小企業・大企業）】\n\n---\n\n## 私の正直な感想\n\n正直に言うと、短期間でArgonに続けてCarbonを出した点は速度感があり驚きます。サイバー防御を優先する限定展開は安全重視の姿勢として理解できますが、『まずは限られた組織での運用→段階的拡大』という流れが実際にうまく機能するかは検証が必要です。個人や中小企業が恩恵を受けられるのはもう少し先になりそうです。\n\n---\n\n## よくある質問\n\n### Gemini 4 Carbonはすぐに一般利用できますか？\n\nいいえ。発表ではまずサイバー防御組織向けに限定提供するとされ、一般提供の開始日は未公表です。段階的な展開が行われる予定です。\n\n### 発表されたベンチマークは信頼できますか？\n\n発表値はGoogle（DeepMind）による内部・公開指標の結果です。改善の方向性は示されていますが、独立した第三者による検証が今後必要です。\n\n### 価格はどうなりますか？\n\n発表時点でArgonと同額の紹介価格が示されています。公式に記載されたトークン単価は入力2ドル/100万トークン・出力10ドル/100万トークンです。\n\n### セキュリティが本当に強くなったのか、個人はどう関係しますか？\n\nGoogleはプロンプト攻撃耐性の改善などを報告していますが、その詳細条件や第三者検証は未発表です。個人利用が可能になれば、より安全なコード生成や攻撃耐性が期待できますが、それまでは主に大規模組織での評価フェーズです。\n\n---\n\n## まとめ\n\nGemini 4 Carbonは、Gemini 4 Argonの改良モデルとして2026-10-28に発表され、サイバー防御能力と安全性を重視してまず限定提供されます。Googleは内部・公開ベンチマークで改善を示していますが、一般提供日は未定で、第三者による検証が今後の注目点です。個人や中小企業の利用は当面先になる見込みです。\n\n---\n\n## この記事について\n\n確認日：2026年10月29日（日本時間）。公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。\n\n---\n\n## 参考リンク\n\n- [Google、「Gemini 4 Carbon」発表　「Argon」公開から2週間、サイバー防御能力などを強化 - ITmedia NEWS](https://www.itmedia.co.jp/news/article/2610/29/2000002690/)\n- [Introducing Gemini 4 Carbon - Google Blog (Google Research/DeepMind)](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/)\n- [Gemini — Google DeepMind (models page)](https://deepmind.google/models/gemini/)"
+  },
+  "evidence": [
+    "https://arstechnica.com/ai/2026/10/google-announces-gemini-4-carbon-its-latest-frontier-ai-model-that-you-cant-use",
+    "https://blog.google/innovation-and-ai/models-and-research",
+    "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon",
+    "https://blog.google/intl/es-419/noticias-de-la-empresa/tecnologia/introducing-gemini-4-carbon",
+    "https://blog.google/products-and-platforms/products/gemini",
+    "https://cincodias.elpais.com/companias/2026-10-01/google-lanza-su-nuevo-modelo-gemini-y-reta-a-openai-y-anthropic-en-plena-polemica-sobre-los-riesgos-de-la-ia.html",
+    "https://cincodias.elpais.com/smartlife/lifestyle/2026-10-01/gemini-4-argon-nuevo-modelo-inteligencia-artificial-google.html",
+    "https://deepmind.google/blog",
+    "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation",
+    "https://deepmind.google/models/gemini",
+    "https://en.wikipedia.org/wiki/Gemini_%28language_model%29",
+    "https://en.wikipedia.org/wiki/Google_Gemini",
+    "https://en.wikipedia.org/wiki/List_of_large_language_models",
+    "https://s206.q4cdn.com/479360582/files/doc_events/2026/Apr/29/2026_Q1_Earnings_Transcript.pdf",
+    "https://s206.q4cdn.com/479360582/files/doc_events/2026/Jun/02/Alphabet-Investor-Presentation-June-2026.pdf",
+    "https://venturebeat.com/technology/google-unveils-gemini-4-carbon-retaking-the-worlds-no-1-spot-on-updated-harder-benchmarks-but-access-is-limited",
+    "https://www.axios.com/2026/09/30/google-gemini-4",
+    "https://www.investing.com/news/stock-market-news/google-announces-gemini-4-flagship-ai-model-after-months-of-delays-4925832",
+    "https://www.investing.com/news/stock-market-news/google-launches-gemini-4-carbon-ai-model-with-cybersecurity-focus-4980426",
+    "https://www.itmedia.co.jp/news/article/2610/29/2000002690",
+    "https://www.itpro.com/cloud/cloud-computing/google-cloud-next-2026-googles-unique-advantages",
+    "https://www.reddit.com/r/ArtificialInteligence/comments/1x9y5nz/anthropic_google_and_openai_prepare_new_ai_models",
+    "https://www.reddit.com/r/GeminiAI/comments/1wtykdm/is_gemini_4_pro_actually_dropping_tomorrow_or_is",
+    "https://www.reddit.com/r/GeminiAI/comments/1x292ly/a_new_checkpoint_of_google_has_been_spotted",
+    "https://www.reddit.com/r/GeminiAI/comments/1x2a2tp/google_announced_gemini_4_carbon_but_gemini_5_is",
+    "https://www.reddit.com/r/GeminiAI/comments/1xab0mi/google_working_on_gemini_4_carbon_an_upgrade_to",
+    "https://www.reddit.com/r/GeminiAI/comments/1xdcnya/gemini_4_carbon_checkpoint_leaks_sightings_new",
+    "https://www.reddit.com/r/GoogleGemini/comments/1wp3ugs/gemini_4_confirmed_in_not_so_late_2026_by",
+    "https://www.reddit.com/r/NewsStarWorld/comments/1x9y74u/anthropic_google_and_openai_prepare_new_ai_models",
+    "https://www.reddit.com/r/google_antigravity/comments/1x5n5e3/dont_worry_gemini_4_argon_will_roll_out_to_agy",
+    "https://www.theinformation.com/briefings/google-launches-gemini-4-carbon-second-major-ai-model-month"
+  ]
+}
