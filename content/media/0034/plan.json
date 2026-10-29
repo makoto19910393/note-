@@ -14,7 +14,7 @@
       ],
       "prompt": "16:9、濃紺〜黒背景を基調にシアンと白・黄色の太い短い日本語を配置。中央に立体的なサーバー群のアイコンが並び、そこから多数（44を示す）光の線が日本列島のシルエットへ向かう構図。上部に大きく『CyberStrikeAI』、下部に小さく『44体のエージェントが日本を標的に』の日本語テキスト。広い余白、立体感、コーポレートな雰囲気。",
       "filename": "thumbnail.png",
-      "status": "review_pending",
+      "status": "ready",
       "attempts": 1,
       "artifact_run_id": "40913052757",
       "sha256": "739c7bc36cb54bfad18d4a22611ba578cdabb6e4de7e5abcf6d7b561cd8fadec",
@@ -32,6 +32,13 @@
           "text_tokens": 0
         },
         "total_tokens": 2281
+      },
+      "review": {
+        "approved": true,
+        "issues": "",
+        "observed_title": "CyberStrikeAI",
+        "observed_diagram_label": "",
+        "unsupported_claims": []
       }
     },
     {
