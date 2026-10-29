@@ -58,9 +58,25 @@
       ],
       "prompt": "16:9、黒に近い濃紺背景、中央に廃炉サイトの断面イラスト（送電線、変電設備、敷地、河川の接近）をシンプルに表現。右に吹き出しで『高容量送電』『広い敷地』『冷却用水』をシアン枠の短い日本語で配置。下部に小さく『既存インフラを活かす可能性』を白太字で表示。",
       "filename": "diagram360.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "40801644100"
+      "artifact_run_id": "40801644100",
+      "sha256": "7cba60d46585ca34d57546f31eaf89fdafa68efba487eedc80c8855ce27c3892",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1847,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 339
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2925
+      }
     },
     {
       "number": 2,
