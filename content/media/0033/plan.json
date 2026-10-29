@@ -18,7 +18,7 @@
       ],
       "prompt": "16:9、濃紺背景＋シアンのアクセント、白と黄色の太い短い日本語でタイトル風。左側にNVIDIAロゴ風（ブランド色を連想させる抽象的形状）、右側に原子力施設のシルエットとサーバールームのアイコンを並列配置。中央に大きく『廃炉サイトをAIファクトリーに？』と白太字、下に小さく『調査段階・再稼働はしない』を黄色で表示。立体感と広い余白を持たせる。",
       "filename": "thumbnail.png",
-      "status": "review_pending",
+      "status": "rejected",
       "attempts": 1,
       "artifact_run_id": "40801644100",
       "sha256": "1daf249749fb12c91b3cda986fd7a20ac954df4471a20c9dad0be5f90fcfd466",
@@ -36,6 +36,16 @@
           "text_tokens": 0
         },
         "total_tokens": 2298
+      },
+      "review": {
+        "approved": false,
+        "issues": "本文にない断定を削除してください。OpenAI（ChatGPT）やOpenAIのマスコットが関与していることを示唆している：記事本文ではNVIDIAとPreussenElektraの『評価・調査』についてのみ記載されており、OpenAIの関与は述べられていないため根拠なし。 画像がNVIDIAの施設や運用中のAIデータセンターが既に稼働していることを示唆している：記事は『調査段階』であり、既存の稼働や確定した施設稼働を示す断定は本文にないため不適切。",
+        "observed_title": "廃炉サイトをAIファクトリーに？",
+        "observed_diagram_label": "",
+        "unsupported_claims": [
+          "OpenAI（ChatGPT）やOpenAIのマスコットが関与していることを示唆している：記事本文ではNVIDIAとPreussenElektraの『評価・調査』についてのみ記載されており、OpenAIの関与は述べられていないため根拠なし。",
+          "画像がNVIDIAの施設や運用中のAIデータセンターが既に稼働していることを示唆している：記事は『調査段階』であり、既存の稼働や確定した施設稼働を示す断定は本文にないため不適切。"
+        ]
       }
     },
     {
