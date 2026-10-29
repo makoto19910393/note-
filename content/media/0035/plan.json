@@ -132,7 +132,7 @@
       ],
       "prompt": "16:9 図解。濃紺背景、左から右へフロー図（矢印）。左に「体験ラボ」、中央に「検証・評価」、右に「導入・運用」の3段階ボックス。各ボックス下に短い補足（例：環境構築、セキュリティ評価、運用設計）。色はシアン／黄色のアクセント、太い短い日本語、広い余白。",
       "filename": "diagram370.png",
-      "status": "review_pending",
+      "status": "rejected",
       "attempts": 2,
       "artifact_run_id": "40913052757",
       "sha256": "49b944a71ece6f4d68dde909ca6b183a21458401b9bd02cf3569956d60299c1c",
@@ -153,15 +153,13 @@
       },
       "review": {
         "approved": false,
-        "issues": "本文にない断定を削除してください。AI Innovation Lab（画像に固有プログラム名を断定的に記載しているが記事に記載なし） Tech Rally Residency Tokyo（画像に固有プログラム名を断定的に記載しているが記事に記載なし） PoC→運用化支援（表現は記事の趣旨と近いが“運用化支援”を固有サービスとして断定している） セキュリティ評価（画像は具体的サービス提供を断定しているが記事は課題として言及しているのみ） 4,000以上のアプリと連携（記事中に根拠なく示された数値・機能であり未記載）",
-        "observed_title": "図解③　デルが提供する支援の流れ",
+        "issues": "本文にない断定を削除してください。AI Innovation Lab／Tech Rally Residency Tokyo／PoC→運用化支援などの具体的プログラムをデルが提供している（記事には記載なし） 『4,000以上のアプリと連携』という具体的な数値（記事に根拠なし） 複数の第三者企業アプリ（Slack,Gmail,Google Drive,Notion,Shopify,Figma,GitHub,OneDrive,Trello等）と連携していると断定（記事に記載なし and 無関係ロゴの転写）",
+        "observed_title": "図解③　デルが提供する支援の流れ（ラボ→検証→導入）",
         "observed_diagram_label": "③",
         "unsupported_claims": [
-          "AI Innovation Lab（画像に固有プログラム名を断定的に記載しているが記事に記載なし）",
-          "Tech Rally Residency Tokyo（画像に固有プログラム名を断定的に記載しているが記事に記載なし）",
-          "PoC→運用化支援（表現は記事の趣旨と近いが“運用化支援”を固有サービスとして断定している）",
-          "セキュリティ評価（画像は具体的サービス提供を断定しているが記事は課題として言及しているのみ）",
-          "4,000以上のアプリと連携（記事中に根拠なく示された数値・機能であり未記載）"
+          "AI Innovation Lab／Tech Rally Residency Tokyo／PoC→運用化支援などの具体的プログラムをデルが提供している（記事には記載なし）",
+          "『4,000以上のアプリと連携』という具体的な数値（記事に根拠なし）",
+          "複数の第三者企業アプリ（Slack,Gmail,Google Drive,Notion,Shopify,Figma,GitHub,OneDrive,Trello等）と連携していると断定（記事に記載なし and 無関係ロゴの転写）"
         ]
       }
     },
