@@ -54,7 +54,7 @@
       ],
       "prompt": "16:9 図解。濃紺背景、中央に簡潔な円グラフを配置（色はシアン系と薄グレー）。左にテキストで「世界35カ国 2,950人」、右に「日本 150人」と短く示す。グラフ内に目立つラベルで「58%」と表示（白抜きのシアン背景）。下に短い注記：『詳細内訳は限定公表』。広い余白、読みやすい太い日本語。",
       "filename": "diagram368.png",
-      "status": "review_pending",
+      "status": "ready",
       "attempts": 1,
       "artifact_run_id": "40913052757",
       "sha256": "cb4b902fca8831405c0313e17baf46b9b0b3d9e107fd5b8510a65b840416500d",
@@ -72,6 +72,13 @@
           "text_tokens": 0
         },
         "total_tokens": 2938
+      },
+      "review": {
+        "approved": true,
+        "issues": "",
+        "observed_title": "図解①　調査の全体像 (Modern Enterprise Readiness Study 2026)",
+        "observed_diagram_label": "図解①",
+        "unsupported_claims": []
       }
     },
     {
