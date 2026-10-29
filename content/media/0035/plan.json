@@ -93,8 +93,9 @@
       ],
       "prompt": "16:9 図解。濃紺背景で4つの四角（シアン、白、黄色、薄グレー）を並列に配置、それぞれに太い短い見出しを入れる（例：Trusted AI、人材不足、投資/ROI、インフラ）。下部に短い一文ずつの説明（各40字程度）。立体的な影、余白を大きめに。",
       "filename": "diagram369.png",
-      "status": "planned",
-      "attempts": 0
+      "status": "generating",
+      "attempts": 1,
+      "artifact_run_id": "40913052757"
     },
     {
       "number": 3,
