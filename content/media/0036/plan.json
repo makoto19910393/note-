@@ -93,7 +93,7 @@
       ],
       "prompt": "縦横比16:9、黒に近い濃紺背景。中央に4つの円がやや立体的に並び、それぞれにシアンのアイコン（データ＋フォルダ、テキスト比較、メタデータ消去、法の天秤）。円の下に短い日本語ラベル。右下に『未確定ポイント』と小見出し。視認性の高い太いフォント、広い余白。",
       "filename": "diagram373.png",
-      "status": "review_pending",
+      "status": "ready",
       "attempts": 1,
       "artifact_run_id": "40987438345",
       "sha256": "8f4815e919eefd91009d4ac3d2970a5b8fff1021dae7f173899adab818ecbf29",
@@ -111,6 +111,13 @@
           "text_tokens": 0
         },
         "total_tokens": 2928
+      },
+      "review": {
+        "approved": true,
+        "issues": "",
+        "observed_title": "何が争点か（技術＋法律）",
+        "observed_diagram_label": "図解②",
+        "unsupported_claims": []
       }
     },
     {
