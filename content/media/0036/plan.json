@@ -15,7 +15,7 @@
       ],
       "prompt": "縦横比16:9、背景は濃紺〜黒のグラデーション、アクセントにシアン。左側に大きく白＋黄色の太い日本語見出し「Anthropicがエルヴィス歌詞で提訴？」、右側に控えめなAnthropicを示す抽象的なロゴ風の円形図（既存ロゴを直接使わない）。下部に小さく英字で 'Claude'。立体感のあるシャドウ、広い余白、視認性重視。",
       "filename": "thumbnail.png",
-      "status": "generated",
+      "status": "review_pending",
       "attempts": 1,
       "artifact_run_id": "40987438345",
       "sha256": "d5ada7e42e1a2dd22c6788d1bfdf09ca4f70a8d1e933afe05b6b119d9b64440b",
