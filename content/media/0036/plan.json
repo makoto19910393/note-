@@ -54,9 +54,25 @@
       ],
       "prompt": "縦横比16:9、濃紺背景にシアンと白のアイコンでタイムライン風図。左から右へ『2026-10-23 訴状提出（裁判所アイコン）→ 主張（歌詞取り込み、CMI削除のアイコン）→ 求める賠償（ドル札アイコン）→ 今後の手続き（法廷のハンマー）』という流れをシンプルに示す。各アイコン下に短い日本語ラベル、広い余白、立体感。",
       "filename": "diagram372.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "40987438345"
+      "artifact_run_id": "40987438345",
+      "sha256": "6a5e3eecc631a7718f0749abdb2e42ada1bcf57572552027d3703571eef72940",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1855,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 347
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2933
+      }
     },
     {
       "number": 2,
