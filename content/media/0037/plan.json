@@ -16,9 +16,25 @@
       ],
       "prompt": "濃紺背景、太いシアンと白の短い日本語テキスト、立体感のある見出し配置。左上に大きく「東京エレクトロン デバイス」、中央に太字で「決算説明会が語ったこと」、右下に目立つ帯で「優先供給は基本的にない（ITmedia要旨）」と入れる。広い余白、16:9、黒とシアン基調、白・黄色のアクセント。公式画面を模した要素は使わない。",
       "filename": "thumbnail.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "41090730237"
+      "artifact_run_id": "41090730237",
+      "sha256": "8eb903fa08c82b34110303b53129eeac0f1669ac4c875b2af1e0f1585e411800",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1207,
+        "input_tokens_details": {
+          "image_tokens": 840,
+          "text_tokens": 367
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2285
+      }
     },
     {
       "number": 1,
