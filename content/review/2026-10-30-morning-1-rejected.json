@@ -1,0 +1,165 @@
+{
+  "status": "rejected_not_published",
+  "reason": "校閲で修正が必要です: 本文中に複数の「【ここに図解①を挿入｜...】」の作成指示が残っているため不合格です。記事本文は作成指示や編集用プレースホルダを含まず完結させてください。; 画像キャプション／図解素材の指示は本文から削除するか、別の画像仕様書として提出してください。本文中に図解の挿入指示を残さないこと。; 記事内の『私の正直な感想』や提案を示す箇所について、画像でも提案である旨を明記するよう画像ラベル／素材案を修正してください（筆者の提案は画像にもその旨を明記する必要があります）。; タイトルは概ね要件を満たしていますが、初心者向けの専門語（例：RVS＝Remote Vision System、SBIR/STTR）を短い注釈で補う見出し行を追加してください（本文冒頭の30秒結論でも簡潔に定義してください）。; 本文は事実と意見を分けている点は良好です。ただし公募原文への要確認点を強調する箇所を1–2文でさらに明記し、『正確な応募要件・評価基準は必ず公募原文（DAF27TZ01-DV001）で確認する』という注意を冒頭に入れてください。; 記事に含まれる画像ラベル（サムネ等）で『2026年11月締切』の表記は公表された情報に基づきますが、締切日が公式で変更される可能性がある点を補足してください（例：締切は公開報道を基に記載、最終確認は公募公式ページで行う旨）。",
+  "article": {
+    "title": "【海外AI解説】米空軍SBIR：KC-46空中給油映像を解析し自動デブリーフを生成するAI募集",
+    "sources": [
+      {
+        "title": "The US Air Force wants to use AI to help with its mid-air refuelling problems",
+        "url": "https://www.techradar.com/pro/the-us-air-force-wants-to-use-ai-to-help-with-mid-air-refuelling-problems",
+        "published_at": "2026-10-30T01:10:00+00:00",
+        "supports": "Summarizes the Air Force SBIR/STTR solicitation: AI computer-vision to analyze tanker video (KC-46 focus), generate overlays/heat maps/timelines, and provide consistent automated assessments; notes Nov 25, 2026 submission date."
+      },
+      {
+        "title": "US Air Force wants AI to assist aerial refueling",
+        "url": "https://www.defensenews.com/industry/techwatch/2026/10/23/us-air-force-wants-ai-to-assist-aerial-refueling/",
+        "published_at": "2026-10-23T00:00:00+00:00",
+        "supports": "Defense News article (citing the SBIR) quotes the solicitation language on leveraging computer vision, machine learning, flight-dynamics analytics to extract performance metrics and produce actionable post-flight feedback; confirms KC-46/RVS focus and Nov. 25 application deadline."
+      }
+    ],
+    "sections": {
+      "intro": "米空軍が公募するSBIR/STTR（トピック: DAF27TZ01-DV001）は、KC-46給油機のカメラ映像をAIで解析し、計測データ・視覚化・自動デブリーフを短時間で作るシステムを求めています。訓練や教官のレビューに組み込むことを想定した研究開発案件です。",
+      "conclusions": [
+        "米空軍は給油訓練の評価を自動化・標準化するため、映像解析とフライト解析を組み合わせたAIを求めている。",
+        "初期フォーカスはKC-46のRVS（Remote Vision System）映像で、プロトタイプを実機の受油機タイプで示すことが期待される。",
+        "期待される出力はグラフィカルオーバーレイ、色分け評価、イベントタイムライン、VR/AR再生などで、短時間で自動生成する目標が明示されている。",
+        "提出は中小企業枠のSBIR/STTRで、公開情報では締切が2026年11月25日となっているが、詳細は公募原文で確認が必要。"
+      ],
+      "explanations": [
+        {
+          "heading": "1) 何が求められているのか（概要）",
+          "content": "公募では、タanker（給油機）、refuelling boom/ホース、受油機を映像から追跡し、位置・速度・整列具合・接近率など複数の幾何学指標を自動で算出するコンピュータビジョンとフライト解析を求めています。最終的に教官や整備者が使えるデブリーフ・教材を短時間で出力することがゴールです。"
+        },
+        {
+          "heading": "2) 出力イメージと訓練への組込み方",
+          "content": "公開情報が示す期待出力は、画面上のグラフィカルオーバーレイ（軌跡や位置表示）、色分け／ヒートマップによる性能表示、重要イベント（接触・逸脱など）のタイムライン、そしてVR/ARの没入型再生環境です。これにより教官は映像確認の手間を減らし、一貫した評価基準でフィードバックできるようになります。"
+        },
+        {
+          "heading": "3) 技術面でのチャレンジと不明点",
+          "content": "昼夜・気象・カメラ視角の変化やRVS独特の映像特性、複数機が重なる状況での個体識別が技術課題です。公表情報は目標指標や合格基準の詳細、データ取り扱い（機密映像の安全な処理）や最終契約金額については明確でなく、申請者は公募原文で精査する必要があります。"
+        },
+        {
+          "heading": "4) 期待される影響と採用の可能性",
+          "content": "成功すれば、給油訓練の効率化・安全性向上・評価の標準化につながります。教官の主観に左右されない一貫したデブリーフで訓練品質が上がり、訓練回数当たりの学習効果が改善される可能性があります。一方、データセキュリティや運用トレードオフの検討も必須です。"
+        }
+      ],
+      "personal_view": "実務での映像解析は複雑ですが、給油のように定義しやすい幾何指標がある課題はAI化の合理性が高いです。とはいえ、機密映像や安全性の観点から実運用に移すまでの壁は技術以外にも大きく、教官やパイロットの信頼を得る検証設計が鍵になります。",
+      "faq": [
+        {
+          "question": "この公募は誰が応募できますか？",
+          "answer": "公表情報ではSBIR/STTRの小規模事業者枠（small businesses）が対象です。正確な応募条件は公募原文を確認してください。"
+        },
+        {
+          "question": "対象はどの機体ですか？",
+          "answer": "初期の技術焦点はKC-46ペガサス給油機とそのRemote Vision System（RVS）映像です。"
+        },
+        {
+          "question": "提出期限はいつですか？",
+          "answer": "公開された報道では締切が2026年11月25日とされていますが、公式公募情報で最終確認してください。"
+        },
+        {
+          "question": "安全性や機密映像の扱いはどうなりますか？",
+          "answer": "公開された要約にはデータ保護への言及がありますが、実際の要件や運用フローの詳細は公募原文で不明です。"
+        }
+      ],
+      "summary": "米空軍のSBIR/STTRは、KC-46のRVS映像を対象にコンピュータビジョンと解析を組み合わせ、短時間で自動デブリーフや可視化を提供するプロトタイプを募集しています。訓練効率化と評価の標準化が狙いで、提出は中小企業向け。実運用へ向けては技術面だけでなくデータ管理・検証計画が重要になります。"
+    },
+    "images": [
+      {
+        "number": 0,
+        "anchor": "",
+        "theme": "サムネ：濃紺背景に白・シアンの太字",
+        "labels": [
+          "米空軍SBIR",
+          "KC-46給油映像AI",
+          "自動デブリーフ",
+          "2026年11月締切"
+        ],
+        "prompt": "16:9、濃紺背景、立体感のある白・シアン・黄色の太い短い日本語見出し『米空軍×AI 給油映像を自動解析』を大きく配置、広い余白、黒に近いグラデーション、シンプルな飛行機シルエットと小さなRVSカメラアイコンを右下に配し、プロフェッショナルで目立つサムネ構図。"
+      },
+      {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜図解①：システム全体像】",
+        "theme": "図解①：システム全体像",
+        "labels": [
+          "入力：RVS映像",
+          "解析：物体追跡",
+          "計測：位置・速度",
+          "出力：デブリーフ"
+        ],
+        "prompt": "16:9、濃紺背景、図解1枚、左から右へフロー。左にRVSカメラ映像を示すアイコン、中央にAI解析モジュール（ビジュアル的な回路/ネットワーク）を配置、右に出力（タイムライン、オーバーレイ、VRアイコン）を配置。各要素はシアンと白のラインで結び、短い日本語ラベルを太字で表示。広い余白、立体感。"
+      },
+      {
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜図解②：計測する指標例】",
+        "theme": "図解②：計測する指標例",
+        "labels": [
+          "相対位置",
+          "整列度",
+          "閉じ速度",
+          "接近イベント"
+        ],
+        "prompt": "16:9、濃紺背景、中央に給油機と受油機の簡潔な側面シルエット、矢印で相対位置や速度を示す。各矢印にシアンの短ラベル（例: 相対位置）を付け、右側に簡易グラフと色分け（緑=良好、赤=逸脱）を並べる。読みやすく教育的な図解。"
+      },
+      {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜図解③：出力形式（オーバーレイ・タイムライン・VR）】",
+        "theme": "図解③：出力形式（オーバーレイ・タイムライン・VR）",
+        "labels": [
+          "グラフィカルオーバーレイ",
+          "イベントタイムライン",
+          "ヒートマップ",
+          "VR/AR再生"
+        ],
+        "prompt": "16:9、濃紺背景、左に映像上のオーバーレイ例（軌跡と位置マーカー）、中央にイベントタイムライン（時間軸上にアイコン）、右にVRヘッドセットのアイコンと小さな没入再生画面。色はシアン・白・黄色で強調。短い日本語ラベルを付け、視覚的に区別できるレイアウト。"
+      },
+      {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜図解④：導入効果と課題】",
+        "theme": "図解④：導入効果と課題",
+        "labels": [
+          "効果：標準化",
+          "効果：時間短縮",
+          "課題：データ管理",
+          "課題：検証"
+        ],
+        "prompt": "16:9、濃紺背景、左右二分割レイアウト。左側に効果を示すアイコン群（チェックマーク、時計短縮、教官アイコン）、右側に課題を示すアイコン群（鍵=セキュリティ、虫眼鏡=検証、複雑なカメラ視角）。各項目に短い日本語ラベル。シアンと黄色で効果/課題を視覚的に分ける。"
+      }
+    ],
+    "hashtags": [
+      "#米空軍",
+      "#SBIR",
+      "#AI",
+      "#コンピュータビジョン",
+      "#空中給油",
+      "#KC46",
+      "#訓練自動化",
+      "#RVS",
+      "#防衛技術",
+      "#デブリーフ",
+      "#VRAR",
+      "#データセキュリティ"
+    ],
+    "threads": "米空軍がKC-46の給油映像をAIで解析するSBIRを公募。自動デブリーフで訓練効率化を狙うが、実運用はどう検証する？",
+    "body": "米空軍が公募するSBIR/STTR（トピック: DAF27TZ01-DV001）は、KC-46給油機のカメラ映像をAIで解析し、計測データ・視覚化・自動デブリーフを短時間で作るシステムを求めています。訓練や教官のレビューに組み込むことを想定した研究開発案件です。\n\n---\n\n## 30秒で結論\n\n- 米空軍は給油訓練の評価を自動化・標準化するため、映像解析とフライト解析を組み合わせたAIを求めている。\n- 初期フォーカスはKC-46のRVS（Remote Vision System）映像で、プロトタイプを実機の受油機タイプで示すことが期待される。\n- 期待される出力はグラフィカルオーバーレイ、色分け評価、イベントタイムライン、VR/AR再生などで、短時間で自動生成する目標が明示されている。\n- 提出は中小企業枠のSBIR/STTRで、公開情報では締切が2026年11月25日となっているが、詳細は公募原文で確認が必要。\n\n---\n\n## 1) 何が求められているのか（概要）\n\n公募では、タanker（給油機）、refuelling boom/ホース、受油機を映像から追跡し、位置・速度・整列具合・接近率など複数の幾何学指標を自動で算出するコンピュータビジョンとフライト解析を求めています。最終的に教官や整備者が使えるデブリーフ・教材を短時間で出力することがゴールです。\n\n【ここに図解①を挿入｜図解①：システム全体像】\n\n---\n\n## 2) 出力イメージと訓練への組込み方\n\n公開情報が示す期待出力は、画面上のグラフィカルオーバーレイ（軌跡や位置表示）、色分け／ヒートマップによる性能表示、重要イベント（接触・逸脱など）のタイムライン、そしてVR/ARの没入型再生環境です。これにより教官は映像確認の手間を減らし、一貫した評価基準でフィードバックできるようになります。\n\n【ここに図解②を挿入｜図解②：計測する指標例】\n\n---\n\n## 3) 技術面でのチャレンジと不明点\n\n昼夜・気象・カメラ視角の変化やRVS独特の映像特性、複数機が重なる状況での個体識別が技術課題です。公表情報は目標指標や合格基準の詳細、データ取り扱い（機密映像の安全な処理）や最終契約金額については明確でなく、申請者は公募原文で精査する必要があります。\n\n【ここに図解③を挿入｜図解③：出力形式（オーバーレイ・タイムライン・VR）】\n\n---\n\n## 4) 期待される影響と採用の可能性\n\n成功すれば、給油訓練の効率化・安全性向上・評価の標準化につながります。教官の主観に左右されない一貫したデブリーフで訓練品質が上がり、訓練回数当たりの学習効果が改善される可能性があります。一方、データセキュリティや運用トレードオフの検討も必須です。\n\n【ここに図解④を挿入｜図解④：導入効果と課題】\n\n---\n\n## 私の正直な感想\n\n実務での映像解析は複雑ですが、給油のように定義しやすい幾何指標がある課題はAI化の合理性が高いです。とはいえ、機密映像や安全性の観点から実運用に移すまでの壁は技術以外にも大きく、教官やパイロットの信頼を得る検証設計が鍵になります。\n\n---\n\n## よくある質問\n\n### この公募は誰が応募できますか？\n\n公表情報ではSBIR/STTRの小規模事業者枠（small businesses）が対象です。正確な応募条件は公募原文を確認してください。\n\n### 対象はどの機体ですか？\n\n初期の技術焦点はKC-46ペガサス給油機とそのRemote Vision System（RVS）映像です。\n\n### 提出期限はいつですか？\n\n公開された報道では締切が2026年11月25日とされていますが、公式公募情報で最終確認してください。\n\n### 安全性や機密映像の扱いはどうなりますか？\n\n公開された要約にはデータ保護への言及がありますが、実際の要件や運用フローの詳細は公募原文で不明です。\n\n---\n\n## まとめ\n\n米空軍のSBIR/STTRは、KC-46のRVS映像を対象にコンピュータビジョンと解析を組み合わせ、短時間で自動デブリーフや可視化を提供するプロトタイプを募集しています。訓練効率化と評価の標準化が狙いで、提出は中小企業向け。実運用へ向けては技術面だけでなくデータ管理・検証計画が重要になります。\n\n---\n\n## この記事について\n\n確認日：2026年10月30日（日本時間）。公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。\n\n---\n\n## 参考リンク\n\n- [The US Air Force wants to use AI to help with its mid-air refuelling problems](https://www.techradar.com/pro/the-us-air-force-wants-to-use-ai-to-help-with-mid-air-refuelling-problems)\n- [US Air Force wants AI to assist aerial refueling](https://www.defensenews.com/industry/techwatch/2026/10/23/us-air-force-wants-ai-to-assist-aerial-refueling/)"
+  },
+  "evidence": [
+    "https://afwerx.com/get-funded",
+    "https://aieval.org/digest/topics/daf27tz01-dv001-ai-enabled-computed-vision-air-to-air-refueling-performance-assessment",
+    "https://app.govly.com/public/opportunities/17212935",
+    "https://conferencereport.gpo.gov/documents/826-118-301-complete-pdf/hr301.pdf",
+    "https://dahlia-radish-6m9t.squarespace.com/fod/daf-sttr-daf27tz01-dv001-ai-air-refueling-performance-pilot-debrief",
+    "https://demandsignal.oodaloop.com/ai/ai-enabled-computed-vision-air-to-air-refueling-performance-assessment-b84503e9",
+    "https://sbirsignal.com/opportunity/4466/daf27tz01-dv001-usaf-sttr-ai-enabled-computed-vision-air-to-air-refueling",
+    "https://www.congress.gov/118/bills/hr2670/BILLS-118hr2670enr.pdf",
+    "https://www.congress.gov/119/crec/2025/09/09/171/147/CREC-2025-09-09.pdf",
+    "https://www.defenceandtechnology.com/en/the-ai-era-for-tanker-aircraft",
+    "https://www.defensenews.com/industry/techwatch/2026/10/23/us-air-force-wants-ai-to-assist-aerial-refueling",
+    "https://www.defensenews.com/news/your-military/2026/09/09/us-air-force-seeks-rapidly-deployable-drone-swarms-for-base-security",
+    "https://www.fedready.us/sbir/air-force",
+    "https://www.govchime.com/opportunities/fa8625-27-r-b001-foreign-military-sales",
+    "https://www.govinfo.gov/content/pkg/CHRG-118shrg55293/pdf/CHRG-118shrg55293.pdf",
+    "https://www.highergov.com/contract-opportunity/ai-enabled-computed-vision-air-to-air-refueling-pe-daf27tz01-dv001-pre-release-sbir-65ddf",
+    "https://www.techradar.com/pro/the-us-air-force-wants-to-use-ai-to-help-with-mid-air-refuelling-problems"
+  ]
+}

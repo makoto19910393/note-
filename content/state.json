@@ -1,5 +1,5 @@
 {
-  "next_number": 36,
+  "next_number": 37,
   "articles": [
     {
       "number": 1,
@@ -1328,7 +1328,51 @@
           "supports": "10月27日の記者会見の報道要旨、調査結果の数字（日本における生成AI活用の進捗や企業の懸念）およびロボトム氏の課題指摘を確認。"
         }
       ]
+    },
+    {
+      "number": 36,
+      "run_id": "2026-10-30-morning-1",
+      "title": "【海外AI解説】Anthropic（Claude）に対するエルヴィス・プレスリー権利者の訴訟：274曲の歌詞を学習に使用したと主張",
+      "created_at": "2026-10-30T10:43:01.318617+09:00",
+      "path": "articles/2026-10-30/0036-morning.md",
+      "sources": [
+        "https://ailawsuittracker.com/cases/abg-epe-ip-llc-v-anthropic-pbc-5-26-cv-12473",
+        "https://news.bloomberglaw.com/litigation/elvis-presleys-estate-sues-anthropic-for-copyright-infringement",
+        "https://www.techradar.com/ai-platforms-assistants/anthropic-sued-for-allegedly-using-274-elvis-presley-songs-in-ai-training-and-its-about-time-ai-companies-faced-the-music",
+        "https://www.theguardian.com/us-news/2026/oct/25/elvis-presley-anthropic-lawsuit-ai-models-music"
+      ],
+      "sha256": "283df708e6a0c2b81e73bbf24707b118c3160ddc1c6dfe15dc863b848cde33e0",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "overseas",
+      "media_plan": "media/0036/plan.json",
+      "source_details": [
+        {
+          "title": "Anthropic sued for allegedly using 274 Elvis Presley songs in AI training — and it's about time AI companies faced the music",
+          "url": "https://www.techradar.com/ai-platforms-assistants/anthropic-sued-for-allegedly-using-274-elvis-presley-songs-in-ai-training-and-its-about-time-ai-companies-faced-the-music",
+          "published_at": "2026-10-30T01:00:00+00:00",
+          "supports": "Selected candidate article; summarizes the lawsuit and quotes industry context. Page was opened and its article text reviewed for this research."
+        },
+        {
+          "title": "Elvis Presley catalog owners sue Anthropic alleging copyright infringement",
+          "url": "https://www.theguardian.com/us-news/2026/oct/25/elvis-presley-anthropic-lawsuit-ai-models-music",
+          "published_at": "2026-10-25T14:25:00+00:00",
+          "supports": "Independent major news outlet reporting on the Oct 23, 2026 complaint, confirms plaintiffs, number of songs alleged (274), and claims about stripping credits and reproductions."
+        },
+        {
+          "title": "Anthropic Sued for Using Elvis Lyrics to Train Claude (Bloomberg Law)",
+          "url": "https://news.bloomberglaw.com/litigation/elvis-presleys-estate-sues-anthropic-for-copyright-infringement",
+          "published_at": "2026-10-26T12:43:00+00:00",
+          "supports": "Legal-focused reporting (Bloomberg Law) that cites the filed complaint and summarizes allegations including removal of copyright management information and the filing location/date."
+        },
+        {
+          "title": "ABG EPE IP v. Anthropic (case entry) — AI Lawsuit Tracker",
+          "url": "https://ailawsuittracker.com/cases/abg-epe-ip-llc-v-anthropic-pbc-5-26-cv-12473/",
+          "published_at": "2026-10-28T00:00:00+00:00",
+          "supports": "Court tracker entry listing complaint filing date (Oct 23, 2026), case number 5:26-cv-12473, parties, and key allegations; useful for docket-level confirmation."
+        }
+      ]
     }
   ],
-  "next_diagram": 372
+  "next_diagram": 376
 }
