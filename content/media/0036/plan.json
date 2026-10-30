@@ -132,24 +132,24 @@
       ],
       "prompt": "縦横比16:9、濃紺背景。左側に企業向けチェックリスト（シアンのチェックマーク付き短文の箇条書き）、右側に個人利用者向けの注意（公開・商用利用時の注意喚起アイコン）。中央に薄い区切りライン。太字の短い日本語ラベルと広い余白。",
       "filename": "diagram374.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 2,
       "artifact_run_id": "40987438345",
-      "sha256": "65b0070d358757ee0ddd4286fd458b80b104f2b86c60f490a89578b48c202147",
+      "sha256": "a14d65339003cf4ac2506a6b208ae7b83f38473459ea4f33eb2b38916ebaf67f",
       "width": 1536,
       "height": 864,
       "usage": {
-        "input_tokens": 1820,
+        "input_tokens": 1952,
         "input_tokens_details": {
           "image_tokens": 1508,
-          "text_tokens": 312
+          "text_tokens": 444
         },
         "output_tokens": 1078,
         "output_tokens_details": {
           "image_tokens": 1078,
           "text_tokens": 0
         },
-        "total_tokens": 2898
+        "total_tokens": 3030
       },
       "review": {
         "approved": false,
