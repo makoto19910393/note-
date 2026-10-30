@@ -54,7 +54,7 @@
       ],
       "prompt": "濃紺背景、シアンのアイコンでスピーチバブルを表現。中央に短く「優先供給は基本的にない」と大きく置き、その下に小さめの白文字で『ITmedia要旨・10/29説明会』と入れる。広い余白、16:9、立体的なテキストシャドウ。公式発言の全文は載せない。",
       "filename": "diagram376.png",
-      "status": "review_pending",
+      "status": "ready",
       "attempts": 1,
       "artifact_run_id": "41090730237",
       "sha256": "92fdca7ebec573eda477308669bf2f4335a90148013722a13209519f832a31b6",
@@ -72,6 +72,13 @@
           "text_tokens": 0
         },
         "total_tokens": 2891
+      },
+      "review": {
+        "approved": true,
+        "issues": "",
+        "observed_title": "発言のまとめ　優先供給は基本的にない",
+        "observed_diagram_label": "図解①",
+        "unsupported_claims": []
       }
     },
     {
