@@ -1,5 +1,5 @@
 {
-  "next_number": 37,
+  "next_number": 38,
   "articles": [
     {
       "number": 1,
@@ -1372,7 +1372,37 @@
           "supports": "Court tracker entry listing complaint filing date (Oct 23, 2026), case number 5:26-cv-12473, parties, and key allegations; useful for docket-level confirmation."
         }
       ]
+    },
+    {
+      "number": 37,
+      "run_id": "2026-10-30-evening-1",
+      "title": "【国内AI学び】東京エレクトロン デバイス、決算説明会で「AIデータセンター向け優先供給は基本的にない」と説明",
+      "created_at": "2026-10-31T01:32:22.392111+09:00",
+      "path": "articles/2026-10-30/0037-evening.md",
+      "sources": [
+        "https://www.itmedia.co.jp/business/articles/2610/30/news064.html",
+        "https://www.teldevice.co.jp/ir/kinfo.html"
+      ],
+      "sha256": "8f78442eaae0f4d490d635b8da5fb5dcceb4bb903b32e857875d827b37983c35",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "domestic",
+      "media_plan": "media/0037/plan.json",
+      "source_details": [
+        {
+          "title": "なぜ「半導体の供給はデータセンター優先」に見えるのか　AIブームの実像、東京エレクトロン デバイス幹部が明かす（ITmedia ビジネスオンライン）",
+          "url": "https://www.itmedia.co.jp/business/articles/2610/30/news064.html",
+          "published_at": "2026-10-30T12:00:00+09:00",
+          "supports": "ITmediaが2026年10月30日付で掲載。記事は10月29日の東京エレクトロン デバイス中間決算説明会での幹部発言（『AIデータセンター向けに優先的に供給することは基本的にない』等）を要旨として伝えている。"
+        },
+        {
+          "title": "決算説明会資料・2027年3月期 第2四半期（中間期）決算（東京エレクトロン デバイス IR）",
+          "url": "https://www.teldevice.co.jp/ir/kinfo.html",
+          "published_at": "2026-10-28T00:00:00+09:00",
+          "supports": "東京エレクトロン デバイスのIRページ（2027年3月期 第2四半期決算資料／説明会資料を公開）。決算資料で半導体・電子デバイス事業の売上増や説明会の開催日（10月29日の説明会実施がIRスケジュール上で確認できる）を確認した。"
+        }
+      ]
     }
   ],
-  "next_diagram": 376
+  "next_diagram": 380
 }

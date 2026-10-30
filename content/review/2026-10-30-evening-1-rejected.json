@@ -1,0 +1,174 @@
+{
+  "status": "rejected_not_published",
+  "reason": "校閲で修正が必要です: 画像群の説明・図解プロンプトに「筆者の提案」や『図は筆者作成の解説図であり公式画面ではない』旨の明示を追加してください。現在の画像ラベル／プロンプトは説明図の指示だが、開発指示に従う要件（筆者の提案は画像にもその旨を明記）を満たしていません。; サムネ・図解の文言で『教科書が無料で使える』など一見公式表現に見える文言を、必ず補注（例：『公式発表を基に筆者が要約した見出し』や『利用条件は出版社・アカウントによる』等）を付けてください。偽の公式画面と誤認されないよう明確化が必要です。; タイトルは概ね適切ですが、初心者向けの専門語説明をより明示する観点から、記事冒頭に『Gemini Notebook／Expert Intelligenceとは（短い一文）』を追記してください。タイトル自体は短く読みやすいので変更不要。; 本文の『日本でも利用可』の扱いは慎重で良いですが、冒頭の要約箇所に『日本での利用可はITmediaの報道に基づくが、アカウント種別や管理者設定で利用可否が変わる可能性がある（利用可否は個別確認を）』という短い但し書きをもっと目立つ位置（30秒で結論内の先頭）へ移してください。; 本文中で未確定事項（対象タイトルの一覧、出版社ごとのライセンス、出典表示方法、将来の拡大予定）を列挙している点は良好です。これらを『要チェック（確認方法）』として、ユーザーが実際に確認すべき操作手順（公式ページでの確認箇所や、Workspace管理者に問い合わせる項目の例）を一つずつ箇条書きで追記してください（新事実を創作しない範囲で）。; 参考リンク欄は一次ソースを含んでいる点は良いです。なおタイトル・本文・画像ラベルが調査資料と整合することは確認できるため、上記修正を反映後に再審査してください。",
+  "article": {
+    "title": "【国内AI学び】Google・Gemini Notebookが数百冊の教科書を無料で提供開始",
+    "sources": [
+      {
+        "title": "Gemini Notebook adds hundreds of textbooks",
+        "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/new-access-textbooks/",
+        "published_at": "2026-10-29T00:00:00+00:00",
+        "supports": "Google公式ブログの発表。米国・インドの出版社（例: OpenStax、Open Textbook Library、S Chand Publishing）を明記し、Gemini Notebook上で無料でアクセス可能と説明している。"
+      },
+      {
+        "title": "Gemini Notebook、無料で数百冊の教科書にアクセス可能に　米国・インドの出版社提供　日本でも利用可 - ITmedia AI＋",
+        "url": "https://www.itmedia.co.jp/aiplus/article/2610/30/2000002760/",
+        "published_at": "2026-10-30T00:00:00+09:00",
+        "supports": "国内ITメディアによる速報記事。Google発表を引用し、日本でも利用可能と報じている。"
+      }
+    ],
+    "sections": {
+      "intro": "Googleは2026年10月29日、Gemini Notebookに『Textbooks（教科書）』機能を追加し、米国とインドの出版社が提供する「数百冊」の教科書に追加料金なしでアクセスできるようにしたと発表しました。国内メディアも日本での利用可否を伝えていますが、利用条件には注意点があります。",
+      "conclusions": [
+        "Gemini Notebook上でOpenStaxなどの教育出版社提供の教科書を無料で参照し、要約・クイズ・学習ガイド等の学習支援機能と組み合わせて使える。",
+        "Googleはこの機能を『Expert Intelligence』の一部として説明しており、信頼できる教科書を参照しながら学習支援ができることを目指している。",
+        "公開情報では「数百冊」とあるが、対象タイトルの一覧やライセンスの細部、アカウント種別ごとの提供条件は明確にされていない。",
+        "日本の利用はITmediaが『利用可』と報じているが、アカウントの種類や管理者設定によってはアクセスの可否が異なる可能性がある。"
+      ],
+      "explanations": [
+        {
+          "heading": "機能の中身：教科書をどう使えるのか",
+          "content": "発表によれば、Gemini Notebookの『Textbooks（教科書）』では、OpenStaxやOpen Textbook Libraryなどの出版社が提供する教科書を、追加料金なしで参照できるようになります。Notebook上で教科書の本文を開いて読むだけでなく、要約や理解度チェック用のクイズ、学習ガイド作成といった支援ツールが組み合わされます。GoogleはこれをExpert Intelligenceの一部と位置づけ、信頼できる教材を明示して学習支援する意図を示しています。ただし、公開された説明だけでは対象となる個別タイトルの全リストや、教科書の全文をどのように表示・引用するかの細部は不明です。"
+        },
+        {
+          "heading": "誰が利用できるのか（日本での可否を含む）",
+          "content": "ITmediaは日本でも利用可能と報じていますが、公式発表は英語での公開（米国発）です。一般的にこうした提供ではアカウント種別（個人アカウント、教育機関アカウント、Workspace管理者設定など）によってアクセス範囲が異なることがあり得ます。公表資料の範囲では、全ユーザーに同一条件で提供されるか、管理者のポリシーで制限されるかまでは明示されていません。日本の利用可否は「可能」と報じられているものの、ご自身のアカウントで実際にアクセスできるかは、実際にGemini Notebookを開いて確認する必要があります。"
+        },
+        {
+          "heading": "ライセンスと今後の拡大可能性（不確定な点）",
+          "content": "Googleは複数の出版社との提供を挙げていますが、『数百冊』の範囲が出版社の全タイトルを含むのか、選定されたカタログのみかは公表資料からは特定できません。加えて、出版社側とのライセンス条件（教材の全文表示、引用範囲、データ利用に関する制限など）や、将来的に対象出版社や国の拡大があるかどうかも明記されていません。したがって、特定タイトルを教育現場で使う場合は、その書籍のライセンス表示や利用条件を個別に確認することをおすすめします。"
+        },
+        {
+          "heading": "実務上の使い方・注意点（学習者と教育者向け）",
+          "content": "例えば、学生が自習で教科書を読んで要点をGeminiで要約させ、理解度確認のクイズを自動生成する、といった使い方が想定されます。一方で、授業資料にそのまま転載する場合や商用利用、配布を行う場合はライセンス条件を確認する必要があります。また、教科書のどの部分がどのように引用・出典表示されるかはケースバイケースで、出力に出典が明示されるかどうかは不確定です。組織で導入する場合は管理者が提供設定を確認し、教育機関の方針に照らして運用ルールを決めてください。"
+        }
+      ],
+      "personal_view": "公式発表は学習支援の利便性向上をうたっており魅力的ですが、現場で安心して使うには対象タイトルの明示やアカウントごとの提供条件、引用ルールの詳細が欲しいところです。まずは自分のアカウントで使えるか試し、授業や配布で使う際は出版社の条件を確認しましょう。",
+      "faq": [
+        {
+          "question": "今回の教科書は完全に無料で使えますか？",
+          "answer": "Googleは追加料金なしでアクセスできると説明していますが、タイトルごとのライセンスや利用範囲は公開情報だけでは不明です。授業資料や配布など二次利用をする場合は個別にライセンス確認が必要です。"
+        },
+        {
+          "question": "日本のすべてのユーザーが同じように使えますか？",
+          "answer": "ITmediaは『日本でも利用可』と報じていますが、アカウント種別やWorkspaceの管理設定によって利用可否が変わる可能性があります。実際の可否は自身のアカウントで確認してください。"
+        },
+        {
+          "question": "教科書の本文は全文検索や全文引用できますか？",
+          "answer": "公開情報では教科書を参照しながら学習支援ができるとありますが、全文の取り扱いや引用の範囲は書籍やライセンス条件で異なる可能性があり、不明な点は出版社の案内やサービス画面で確認が必要です。"
+        },
+        {
+          "question": "将来的に日本語教材や他国の出版社が追加されますか？",
+          "answer": "Googleの発表では現時点で米国・インドの出版社が例示されています。今後の拡大予定については明示されていません。"
+        }
+      ],
+      "summary": "Gemini Notebookの『Textbooks』追加は、無料で参照できる教科書と学習支援ツールを組み合わせる動きで、個人学習や授業準備の効率化に役立ちます。ただし、対象タイトルの詳細やアカウント別の提供条件、引用・二次利用のルールなどは明確でないため、実際に使う前に自分の環境での可否確認とライセンス確認を行ってください。"
+    },
+    "images": [
+      {
+        "number": 0,
+        "anchor": "",
+        "theme": "サムネ",
+        "labels": [
+          "Gemini Notebook",
+          "教科書無料",
+          "Google",
+          "学びの支援",
+          "日本でも利用可"
+        ],
+        "prompt": "16:9のサムネイル、濃紺と黒を基調にシアンと白・黄色で太い短い日本語を配置。中央に大きく「教科書が無料で使える」と白太字、下部に小さく「Gemini Notebook / Google」とシアンで配置。立体感のあるボックスと広い余白、教育を連想させる淡い教科書アイコンを背景に薄く配置。読みやすさ重視で一目で伝わる構図。"
+      },
+      {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜図解①_仕組み】",
+        "theme": "図解①_仕組み",
+        "labels": [
+          "何が変わるか",
+          "Textbooks機能",
+          "要約・クイズ",
+          "Expert Intelligence"
+        ],
+        "prompt": "図解①、縦向きではなく横長、濃紺背景にシアンと白のアイコンで3ステップを並べる構図。左から『教科書（本のアイコン）』→『Gemini Notebook（ノートPCアイコン）』→『学習支援（クイズとノートのアイコン）』を矢印でつなぐ。各アイコン下に太短文で日本語ラベルを白または黄色で配置。広い余白と立体感を出す。"
+      },
+      {
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜図解②_利用者別の注意点】",
+        "theme": "図解②_利用者別の注意点",
+        "labels": [
+          "学生向け注意",
+          "教育者向け注意",
+          "管理者設定",
+          "ライセンス確認"
+        ],
+        "prompt": "図解②、濃紺背景。3列レイアウトで『学生』『教育者』『管理者』を丸アイコンと短い箇条で示す。各列の見出しはシアン、注意点は白テキストで短く。下部に小さく『まずは自分のアカウントで確認を』と黄色で強調。視認性を優先し広めの余白を確保。"
+      },
+      {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜図解③_未確定要素】",
+        "theme": "図解③_未確定要素",
+        "labels": [
+          "対象タイトル不明",
+          "出典表示の範囲",
+          "他国・出版社の拡大",
+          "二次利用の条件"
+        ],
+        "prompt": "図解③、濃紺背景に4つのブロックで未確定点を表示。各ブロックはシアンの枠で囲み、見出しを太字白、本文を短い白テキストで示す。右下に小さく『要チェック』を黄色で置き、視線を誘導。整然としたグリッド構成で読みやすさ重視。"
+      },
+      {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜図解④_活用例】",
+        "theme": "図解④_活用例",
+        "labels": [
+          "自習の流れ",
+          "授業準備",
+          "クイズ生成",
+          "要約利用例"
+        ],
+        "prompt": "図解④、濃紺背景。左に『教科書を開く』中央に『要約とクイズ生成』右に『授業で活用』の三段構成をイラストで示す。各部分をシアンの線で繋ぎ、短い日本語キャプションを白で入れる。下部に小さく『出版社の使用条件を確認』と黄色で注意喚起。立体感と広い余白で情報が詰まりすぎない構図。"
+      }
+    ],
+    "hashtags": [
+      "#GeminiNotebook",
+      "#Google",
+      "#教科書",
+      "#教育AI",
+      "#ExpertIntelligence",
+      "#OpenStax",
+      "#学び",
+      "#EdTech",
+      "#無料教材",
+      "#日本でも利用可",
+      "#AI学習支援"
+    ],
+    "threads": "GoogleのGemini Notebookが数百冊の教科書を無料で提供開始。学習支援の利便性は高まるが、対象タイトルや引用ルールは不明。まず自分のアカウントで確認しましたか？",
+    "body": "Googleは2026年10月29日、Gemini Notebookに『Textbooks（教科書）』機能を追加し、米国とインドの出版社が提供する「数百冊」の教科書に追加料金なしでアクセスできるようにしたと発表しました。国内メディアも日本での利用可否を伝えていますが、利用条件には注意点があります。\n\n---\n\n## 30秒で結論\n\n- Gemini Notebook上でOpenStaxなどの教育出版社提供の教科書を無料で参照し、要約・クイズ・学習ガイド等の学習支援機能と組み合わせて使える。\n- Googleはこの機能を『Expert Intelligence』の一部として説明しており、信頼できる教科書を参照しながら学習支援ができることを目指している。\n- 公開情報では「数百冊」とあるが、対象タイトルの一覧やライセンスの細部、アカウント種別ごとの提供条件は明確にされていない。\n- 日本の利用はITmediaが『利用可』と報じているが、アカウントの種類や管理者設定によってはアクセスの可否が異なる可能性がある。\n\n---\n\n## 機能の中身：教科書をどう使えるのか\n\n発表によれば、Gemini Notebookの『Textbooks（教科書）』では、OpenStaxやOpen Textbook Libraryなどの出版社が提供する教科書を、追加料金なしで参照できるようになります。Notebook上で教科書の本文を開いて読むだけでなく、要約や理解度チェック用のクイズ、学習ガイド作成といった支援ツールが組み合わされます。GoogleはこれをExpert Intelligenceの一部と位置づけ、信頼できる教材を明示して学習支援する意図を示しています。ただし、公開された説明だけでは対象となる個別タイトルの全リストや、教科書の全文をどのように表示・引用するかの細部は不明です。\n\n【ここに図解①を挿入｜図解①_仕組み】\n\n---\n\n## 誰が利用できるのか（日本での可否を含む）\n\nITmediaは日本でも利用可能と報じていますが、公式発表は英語での公開（米国発）です。一般的にこうした提供ではアカウント種別（個人アカウント、教育機関アカウント、Workspace管理者設定など）によってアクセス範囲が異なることがあり得ます。公表資料の範囲では、全ユーザーに同一条件で提供されるか、管理者のポリシーで制限されるかまでは明示されていません。日本の利用可否は「可能」と報じられているものの、ご自身のアカウントで実際にアクセスできるかは、実際にGemini Notebookを開いて確認する必要があります。\n\n【ここに図解②を挿入｜図解②_利用者別の注意点】\n\n---\n\n## ライセンスと今後の拡大可能性（不確定な点）\n\nGoogleは複数の出版社との提供を挙げていますが、『数百冊』の範囲が出版社の全タイトルを含むのか、選定されたカタログのみかは公表資料からは特定できません。加えて、出版社側とのライセンス条件（教材の全文表示、引用範囲、データ利用に関する制限など）や、将来的に対象出版社や国の拡大があるかどうかも明記されていません。したがって、特定タイトルを教育現場で使う場合は、その書籍のライセンス表示や利用条件を個別に確認することをおすすめします。\n\n【ここに図解③を挿入｜図解③_未確定要素】\n\n---\n\n## 実務上の使い方・注意点（学習者と教育者向け）\n\n例えば、学生が自習で教科書を読んで要点をGeminiで要約させ、理解度確認のクイズを自動生成する、といった使い方が想定されます。一方で、授業資料にそのまま転載する場合や商用利用、配布を行う場合はライセンス条件を確認する必要があります。また、教科書のどの部分がどのように引用・出典表示されるかはケースバイケースで、出力に出典が明示されるかどうかは不確定です。組織で導入する場合は管理者が提供設定を確認し、教育機関の方針に照らして運用ルールを決めてください。\n\n【ここに図解④を挿入｜図解④_活用例】\n\n---\n\n## 私の正直な感想\n\n公式発表は学習支援の利便性向上をうたっており魅力的ですが、現場で安心して使うには対象タイトルの明示やアカウントごとの提供条件、引用ルールの詳細が欲しいところです。まずは自分のアカウントで使えるか試し、授業や配布で使う際は出版社の条件を確認しましょう。\n\n---\n\n## よくある質問\n\n### 今回の教科書は完全に無料で使えますか？\n\nGoogleは追加料金なしでアクセスできると説明していますが、タイトルごとのライセンスや利用範囲は公開情報だけでは不明です。授業資料や配布など二次利用をする場合は個別にライセンス確認が必要です。\n\n### 日本のすべてのユーザーが同じように使えますか？\n\nITmediaは『日本でも利用可』と報じていますが、アカウント種別やWorkspaceの管理設定によって利用可否が変わる可能性があります。実際の可否は自身のアカウントで確認してください。\n\n### 教科書の本文は全文検索や全文引用できますか？\n\n公開情報では教科書を参照しながら学習支援ができるとありますが、全文の取り扱いや引用の範囲は書籍やライセンス条件で異なる可能性があり、不明な点は出版社の案内やサービス画面で確認が必要です。\n\n### 将来的に日本語教材や他国の出版社が追加されますか？\n\nGoogleの発表では現時点で米国・インドの出版社が例示されています。今後の拡大予定については明示されていません。\n\n---\n\n## まとめ\n\nGemini Notebookの『Textbooks』追加は、無料で参照できる教科書と学習支援ツールを組み合わせる動きで、個人学習や授業準備の効率化に役立ちます。ただし、対象タイトルの詳細やアカウント別の提供条件、引用・二次利用のルールなどは明確でないため、実際に使う前に自分の環境での可否確認とライセンス確認を行ってください。\n\n---\n\n## この記事について\n\n確認日：2026年10月31日（日本時間）。公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。\n\n---\n\n## 参考リンク\n\n- [Gemini Notebook adds hundreds of textbooks](https://blog.google/innovation-and-ai/products/gemini-notebook/new-access-textbooks/)\n- [Gemini Notebook、無料で数百冊の教科書にアクセス可能に　米国・インドの出版社提供　日本でも利用可 - ITmedia AI＋](https://www.itmedia.co.jp/aiplus/article/2610/30/2000002760/)"
+  },
+  "evidence": [
+    "https://blog.google/innovation-and-ai/products/gemini-notebook/expert-intelligence-leading-sources",
+    "https://blog.google/innovation-and-ai/products/gemini-notebook/new-access-textbooks",
+    "https://blog.google/innovation-and-ai/products/gemini-notebook/new-study-tools-september-2026",
+    "https://bytefwd.com/gemini-notebook-free-textbooks",
+    "https://edu.google.com/ai-gemini-notebook",
+    "https://librarylearningspace.com/gemini-notebook-makes-hundreds-of-textbooks-available",
+    "https://manuals.plus/m/ad2b231a5b90a8edb7f724daa6e3092805d7075bbb8ade2a6effcc11a0417d7a.pdf",
+    "https://services.google.com/fh/files/misc/backtoschool_launch_guide_2025.pdf",
+    "https://services.google.com/fh/files/misc/gemini_education_onepager.pdf",
+    "https://services.google.com/fh/files/misc/gemini_glossary_uk.pdf",
+    "https://services.google.com/fh/files/misc/gfe_generative_ai_resources.pdf",
+    "https://workspaceupdates.googleblog.com/2026/09/introducing-expert-intelligence-in-Gemini-Notebook.html",
+    "https://www.androidauthority.com/gemini-notebook-textbooks-feature-3729932",
+    "https://www.eiu.edu/rsi/images/pd-WhatsNewGoogleEdu-2025.pdf",
+    "https://www.gadgets360.com/ai/news/google-adds-free-textbooks-to-gemini-notebook-india-us-12258437",
+    "https://www.infodocket.com/2026/10/29/googles-gemini-notebook-now-providing-access-to-hundreds-of-open-textbooks-materials-from-openstax-open-textbook-library-more",
+    "https://www.itmedia.co.jp/aiplus/article/2610/30/2000002760",
+    "https://www.moneycontrol.com/education/google-gemini-notebook-adds-hundreds-of-free-textbooks-for-students-in-india-and-us-article-14064303.html",
+    "https://www.ndtv.com/education/google-big-announcement-geminis-new-feature-lets-students-access-hundreds-of-free-textbooks-12256945",
+    "https://www.reddit.com/r/Bard/comments/1w04zak/expert_intelligence_a_new_way_for_you_to_engage",
+    "https://www.reddit.com/r/GeminiNotebook/comments/1w04617/expert_intelligence_in_gemini_notebook",
+    "https://www.reddit.com/r/Gemini_Notebook/comments/1x940nm/update_on_the_ai_plus_downgrade_its_also_going_to",
+    "https://www.reddit.com/r/WGU_Business/comments/1xczvz2/does_anyone_have_a_review_of_google_gemini",
+    "https://www.reddit.com/r/notebooklm/comments/1srspp8/anyone_else_still_not_have_gemini_integration",
+    "https://www.reddit.com/r/notebooklm/comments/1xa14h0/update_on_changes_to_notes_from_the_gemini",
+    "https://www.reddit.com/r/notebooklm/comments/1xgmqp2/googles_announcement_says_gemini_can_add_a_chat"
+  ]
+}
