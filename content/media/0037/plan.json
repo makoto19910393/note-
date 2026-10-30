@@ -93,8 +93,9 @@
       ],
       "prompt": "濃紺背景、左側に白いドキュメントアイコン、右側に短い箇条で『売上増／半導体・電子デバイス事業』『EC事業の伸長』をシアンと白で配置。16:9、太い短文、日本語。実際の数値や公式のチャートは入れない。",
       "filename": "diagram377.png",
-      "status": "planned",
-      "attempts": 0
+      "status": "generating",
+      "attempts": 1,
+      "artifact_run_id": "41090730237"
     },
     {
       "number": 3,
