@@ -1,0 +1,7 @@
+{
+  "status": "not_published",
+  "reason": "調べたニュースが指定の国内・海外枠に一致しません。別区分で穴埋めしません。",
+  "attempted_candidate_urls": [
+    "https://www.techradar.com/pro/its-100-percent-a-national-security-threat-accenture-contractor-connected-an-ai-agent-to-the-pentagons-secure-network-and-then-sent-data-to-a-high-risk-website"
+  ]
+}
