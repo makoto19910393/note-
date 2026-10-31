@@ -1,0 +1,8 @@
+{
+  "status": "not_published",
+  "reason": "下調べの出典URLを検索結果と照合できません。",
+  "attempted_candidate_urls": [
+    "https://www.techradar.com/ai-platforms-assistants/openai/sam-altman-says-openai-wont-slow-science-paper-blitz-even-though-academics-are-calling-it-a-giant-bomb",
+    "https://www.itmedia.co.jp/enterprise/articles/2610/31/news009.html"
+  ]
+}
