@@ -1,0 +1,174 @@
+{
+  "status": "rejected_not_published",
+  "reason": "校閲で修正が必要です: 本文に残っている「【ここに図解①を挿入」等の画像作成指示（制作指示のプレースホルダ）を削除してください。記事本文には編集・公開用の図挿入指示を残さないことが求められます。; 記事内の画像メタデータ／プロンプトで筆者提案や意見を図示する意図がある場合、それが『筆者の提案である』ことを画像ラベルにも明記してください（例：図やサムネに小さく「※図は筆者の説明用です」等）。開発指示に従い、筆者提案を画像にも明示する必要があります。; 本文の段落や見出しで、事実と筆者意見の分離は概ね良好ですが、冒頭と要約部分で「一般提供開始」を事実として伝えた後、未確定項目（料金・国内提供可否・データ取扱いの詳細）がある旨をさらに強調して読者が混同しないよう明確化してください（短い一文追加で可）。; 記事タイトルの『【海外AI解説】Anthropic Claude EnterpriseがSmart reports・In‑app surveys・Pooled group budgetsを一般提供開始』は適切ですが、本文内に画像作成指示を残さない点の修正を行ってから最終チェックを行ってください。; previousに同社関連の別記事が多数ありますが、今回の内容は10月28日の公式プロダクト発表に基づく新規報道です。もしpreviousに同一の発表（同じ日付・同一機能の発表）が含まれている場合は重複扱いとなるため、編集履歴を確認して同一事件の重複でないことを再確認してください。",
+  "article": {
+    "title": "【海外AI解説】Anthropic Claude EnterpriseがSmart reports・In‑app surveys・Pooled group budgetsを一般提供開始",
+    "sources": [
+      {
+        "title": "AIの「費用対効果が分からない」問題、解決へ？　Claude Enterprise搭載の「3つの新機能」：AIニュースピックアップ - ITmedia エンタープライズ",
+        "url": "https://www.itmedia.co.jp/enterprise/articles/2610/31/news009.html",
+        "published_at": "2026-10-31T09:00:00+09:00",
+        "supports": "ITmediaの記事はAnthropicの発表（10月28日）を引用し、3機能の機能概要と実務上の意義（費用対効果の把握）を解説している."
+      },
+      {
+        "title": "Smart reports, surveys, and pooled group budgets for Claude Enterprise - Claude (Anthropic)",
+        "url": "https://claude.com/resources/articles/smart-reports-surveys-pooled-budgets",
+        "published_at": "2026-10-28T00:00:00+00:00",
+        "supports": "Anthropic公式のプロダクト発表（2026年10月28日）。各機能（Smart reports/In‑app surveys/Pooled group budgets）の仕様・目的・管理者向け操作や利用上の注意（HIPAA等構成依存）を説明している."
+      }
+    ],
+    "sections": {
+      "intro": "米AI企業Anthropicは2026年10月28日に、企業向けプラン「Claude Enterprise」に3つの新機能を一般提供開始しました。チームでの利用状況を見える化し、価値の測定や予算管理をしやすくする狙いです。以下で何が変わるか、あなたの職場でどう使えるかをやさしく解説します。",
+      "conclusions": [
+        "AnthropicはSmart reports・In‑app surveys・Pooled group budgetsを2026年10月28日に正式発表。企業向けに一般提供を開始した。",
+        "Smart reportsは会話サンプルを分析してワークストリーム別の費用・成果物・ボトルネックを可視化する機能。",
+        "In‑app surveysはアプリ内での利用者アンケート配信・編集・出力を可能にし、導入効果や業務影響を組織内で測定できる。",
+        "Pooled group budgetsはチーム単位の月間予算共有と閾値通知で消費の偏りを減らす仕組み。ただし料金や日本での提供可否は公表されていない。"
+      ],
+      "explanations": [
+        {
+          "heading": "Smart reportsとは何か（何ができるか）",
+          "content": "Smart reportsは、チーム・期間・製品などを指定してClaudeが会話履歴のサンプルを自動で分析し、作業をワークストリームごとに分類します。各ワークストリームについて「費用（消費）」「成果物」「起きているボトルネック（例：コネクター不足や外部ツール呼び出し失敗）」を示し、改善のための推奨事項とテンプレート保存機能を提供します。これにより「どこでコストがかかっているか」「どの作業が効率化に寄与しているか」を把握しやすくなります。"
+        },
+        {
+          "heading": "In‑app surveysの狙いと使い方",
+          "content": "In‑app surveysはClaudeのアプリ内でアンケートを配信できる機能で、利用者視点の価値評価（時間短縮効果や業務中断時の影響など）を定量的に集められます。管理者は設問の編集、配信スケジュール設定、回答のスプレッドシート出力が可能です。また、組織が顧客管理の暗号鍵を持つ構成でも有効化でき、アンケート回答を顧客データとして扱える点が強調されています。ただし、Anthropic側が回答データをサービス改善にどう使うかは公開情報で限定的です。"
+        },
+        {
+          "heading": "Pooled group budgetsで何が改善するか",
+          "content": "Pooled group budgetsはチーム向けに1つの月間予算を割り当て、チームメンバーで共有する仕組みです。個人ごとの上限は維持しつつ、早期に一部ユーザーが予算を使い切る／他が使わないといった偏りを抑えられます。また、管理者へは使用率が設定閾値（例：50％・75％・95％・100％）に達した際に通知が行くため、予算超過の前に対応しやすくなります。料金体系や日本での提供時期は明示されていません。"
+        },
+        {
+          "heading": "運用上の注意点と未解決のポイント",
+          "content": "公式発表は機能概要を示しますが、具体的な導入コスト（料金への影響）や日本での提供可否、Smart reportsが分析に使う会話サンプルの選別基準・保存期間、In‑app surveysの回答データの取り扱い（Anthropic側での利用範囲）などは明確でない点があります。HIPAAなどのコンプライアンス構成で挙動が異なる旨は公式に注記されています。導入前にはデータ保持・プライバシーの詳細確認が必要です。"
+        }
+      ],
+      "personal_view": "率直に言うと、この3機能は企業が「AIを入れた後に何が起きているか」を測るための重要な一歩です。特にSmart reportsは“見えないコスト”を掘り下げられるので、経営側に説明しやすくなります。ただし、実運用で本当に安心できるかはデータ取扱いや料金の詳細次第で、検証環境での試用と契約前の確認が不可欠です。",
+      "faq": [
+        {
+          "question": "Q: これらの機能は日本でも使えますか？",
+          "answer": "A: 発表資料ではグローバル仕様の説明が中心で、日本国内での提供可否やローカル対応スケジュールは明示されていません。導入を検討する場合はAnthropicの営業窓口や日本の販売パートナーに確認してください。"
+        },
+        {
+          "question": "Q: Smart reportsが会話内容をAnthropicに送るのでは？プライバシーは大丈夫？",
+          "answer": "A: 公式は機能概要とHIPAA等の構成依存を明記していますが、会話サンプルの選別基準や保存期間など詳細は限定的です。機密データ扱いの場合は、データ保持・暗号化・ログ管理を契約で明確にする必要があります。"
+        },
+        {
+          "question": "Q: Pooled group budgetsはコスト削減に直結しますか？",
+          "answer": "A: チーム単位の予算共有と閾値通知で消費の偏りを抑えられるため、無駄遣いの早期発見には有効です。ただし総コストそのものの削減効果は運用ルール次第です。"
+        },
+        {
+          "question": "Q: アンケート結果はAnthropicがサービス改善に使いますか？",
+          "answer": "A: 発表ではアンケートを顧客データとして扱える旨が示されていますが、Anthropic側がどの範囲で利用するか（匿名化・集計利用の可否など）は明確ではありません。利用前に取り扱いルールを確認してください。"
+        }
+      ],
+      "summary": "Anthropicの新機能は、AI導入後の「見える化」と「運用管理」を強化するものです。Smart reportsで成果とボトルネックを洗い出し、In‑app surveysで利用者の実感を集め、Pooled group budgetsで予算の偏りを抑える。導入前に料金とデータ扱いの詳細を確認することが重要です。"
+    },
+    "images": [
+      {
+        "number": 0,
+        "anchor": "",
+        "theme": "サムネ: 概要",
+        "labels": [
+          "Anthropic",
+          "Claude Enterprise",
+          "3つの新機能",
+          "費用対効果を見える化"
+        ],
+        "prompt": "16:9、濃紺背景にシアンと白・黄色の太い短い日本語、立体感があるグラフィック。中央に大きく「3つの新機能」と表示、左上に小さく「Anthropic Claude Enterprise」、右下にアイコン3つ（レポート、アンケート、予算共有）をシンプルに並べる。広い余白で読みやすく、noteのサムネに最適。"
+      },
+      {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜図解①: Smart reportsの仕組み】",
+        "theme": "図解①: Smart reportsの仕組み",
+        "labels": [
+          "Smart reports",
+          "会話サンプル分析",
+          "ワークストリーム分類",
+          "費用・成果物・ボトルネック"
+        ],
+        "prompt": "16:9、黒に近い濃紺背景、シアンと白の線でフローチャート風。左から「会話サンプル」→中央で「分析（Smart reports）」→右に分岐して「費用」「成果物」「ボトルネック」の3ボックス。各ボックスに黄色い短いラベルを配置。立体的な影を付け、余白を多めに。"
+      },
+      {
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜図解②: In‑app surveysの流れ】",
+        "theme": "図解②: In‑app surveysの流れ",
+        "labels": [
+          "In‑app surveys",
+          "設問編集",
+          "配信",
+          "回答出力"
+        ],
+        "prompt": "16:9、濃紺背景、シアンと白で画面イメージを示す。左に「設問編集」アイコン、中央に「配信」ボタン風の図、右に「回答をスプレッドシートで出力」アイコン。各工程を矢印でつなぎ、黄色い短い注釈を付ける。読みやすい大きめフォントで。"
+      },
+      {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜図解③: Pooled group budgetsの働き】",
+        "theme": "図解③: Pooled group budgetsの働き",
+        "labels": [
+          "Pooled budgets",
+          "チーム共有",
+          "個人上限維持",
+          "閾値通知"
+        ],
+        "prompt": "16:9、濃紺背景、シアンで複数の人アイコンを中央の共通財布アイコンにつなぐ図。上に小さなゲージを並べて50%/75%/95%/100%の閾値を示し、達成時にベルの通知アイコンが点灯する表現。白と黄色で短い日本語ラベルを配置。"
+      },
+      {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜図解④: 導入時のチェックポイント】",
+        "theme": "図解④: 導入時のチェックポイント",
+        "labels": [
+          "料金確認",
+          "データ保持",
+          "暗号化",
+          "試用検証",
+          "契約内容"
+        ],
+        "prompt": "16:9、黒寄り濃紺背景にチェックリスト形式の図。左に5つのチェックボックス（料金確認、データ保持、暗号化、試用検証、契約内容）を縦に配置、右に短い説明の吹き出しを3つだけ付ける。シアンと黄色のアクセントで重要ポイントを強調。余白を確保し視認性高く。"
+      }
+    ],
+    "hashtags": [
+      "#Anthropic",
+      "#ClaudeEnterprise",
+      "#SmartReports",
+      "#InAppSurveys",
+      "#PooledBudgets",
+      "#AI運用",
+      "#費用対効果",
+      "#AI導入",
+      "#データガバナンス",
+      "#企業向けAI",
+      "#ITmedia",
+      "#アップデート"
+    ],
+    "threads": "AnthropicがClaude Enterpriseに3機能を一般提供。導入で「見える化」進むが、料金やデータ扱いは要確認。自社で試すなら最初に何を確認しますか？",
+    "body": "米AI企業Anthropicは2026年10月28日に、企業向けプラン「Claude Enterprise」に3つの新機能を一般提供開始しました。チームでの利用状況を見える化し、価値の測定や予算管理をしやすくする狙いです。以下で何が変わるか、あなたの職場でどう使えるかをやさしく解説します。\n\n---\n\n## 30秒で結論\n\n- AnthropicはSmart reports・In‑app surveys・Pooled group budgetsを2026年10月28日に正式発表。企業向けに一般提供を開始した。\n- Smart reportsは会話サンプルを分析してワークストリーム別の費用・成果物・ボトルネックを可視化する機能。\n- In‑app surveysはアプリ内での利用者アンケート配信・編集・出力を可能にし、導入効果や業務影響を組織内で測定できる。\n- Pooled group budgetsはチーム単位の月間予算共有と閾値通知で消費の偏りを減らす仕組み。ただし料金や日本での提供可否は公表されていない。\n\n---\n\n## Smart reportsとは何か（何ができるか）\n\nSmart reportsは、チーム・期間・製品などを指定してClaudeが会話履歴のサンプルを自動で分析し、作業をワークストリームごとに分類します。各ワークストリームについて「費用（消費）」「成果物」「起きているボトルネック（例：コネクター不足や外部ツール呼び出し失敗）」を示し、改善のための推奨事項とテンプレート保存機能を提供します。これにより「どこでコストがかかっているか」「どの作業が効率化に寄与しているか」を把握しやすくなります。\n\n【ここに図解①を挿入｜図解①: Smart reportsの仕組み】\n\n---\n\n## In‑app surveysの狙いと使い方\n\nIn‑app surveysはClaudeのアプリ内でアンケートを配信できる機能で、利用者視点の価値評価（時間短縮効果や業務中断時の影響など）を定量的に集められます。管理者は設問の編集、配信スケジュール設定、回答のスプレッドシート出力が可能です。また、組織が顧客管理の暗号鍵を持つ構成でも有効化でき、アンケート回答を顧客データとして扱える点が強調されています。ただし、Anthropic側が回答データをサービス改善にどう使うかは公開情報で限定的です。\n\n【ここに図解②を挿入｜図解②: In‑app surveysの流れ】\n\n---\n\n## Pooled group budgetsで何が改善するか\n\nPooled group budgetsはチーム向けに1つの月間予算を割り当て、チームメンバーで共有する仕組みです。個人ごとの上限は維持しつつ、早期に一部ユーザーが予算を使い切る／他が使わないといった偏りを抑えられます。また、管理者へは使用率が設定閾値（例：50％・75％・95％・100％）に達した際に通知が行くため、予算超過の前に対応しやすくなります。料金体系や日本での提供時期は明示されていません。\n\n【ここに図解③を挿入｜図解③: Pooled group budgetsの働き】\n\n---\n\n## 運用上の注意点と未解決のポイント\n\n公式発表は機能概要を示しますが、具体的な導入コスト（料金への影響）や日本での提供可否、Smart reportsが分析に使う会話サンプルの選別基準・保存期間、In‑app surveysの回答データの取り扱い（Anthropic側での利用範囲）などは明確でない点があります。HIPAAなどのコンプライアンス構成で挙動が異なる旨は公式に注記されています。導入前にはデータ保持・プライバシーの詳細確認が必要です。\n\n【ここに図解④を挿入｜図解④: 導入時のチェックポイント】\n\n---\n\n## 私の正直な感想\n\n率直に言うと、この3機能は企業が「AIを入れた後に何が起きているか」を測るための重要な一歩です。特にSmart reportsは“見えないコスト”を掘り下げられるので、経営側に説明しやすくなります。ただし、実運用で本当に安心できるかはデータ取扱いや料金の詳細次第で、検証環境での試用と契約前の確認が不可欠です。\n\n---\n\n## よくある質問\n\n### Q: これらの機能は日本でも使えますか？\n\nA: 発表資料ではグローバル仕様の説明が中心で、日本国内での提供可否やローカル対応スケジュールは明示されていません。導入を検討する場合はAnthropicの営業窓口や日本の販売パートナーに確認してください。\n\n### Q: Smart reportsが会話内容をAnthropicに送るのでは？プライバシーは大丈夫？\n\nA: 公式は機能概要とHIPAA等の構成依存を明記していますが、会話サンプルの選別基準や保存期間など詳細は限定的です。機密データ扱いの場合は、データ保持・暗号化・ログ管理を契約で明確にする必要があります。\n\n### Q: Pooled group budgetsはコスト削減に直結しますか？\n\nA: チーム単位の予算共有と閾値通知で消費の偏りを抑えられるため、無駄遣いの早期発見には有効です。ただし総コストそのものの削減効果は運用ルール次第です。\n\n### Q: アンケート結果はAnthropicがサービス改善に使いますか？\n\nA: 発表ではアンケートを顧客データとして扱える旨が示されていますが、Anthropic側がどの範囲で利用するか（匿名化・集計利用の可否など）は明確ではありません。利用前に取り扱いルールを確認してください。\n\n---\n\n## まとめ\n\nAnthropicの新機能は、AI導入後の「見える化」と「運用管理」を強化するものです。Smart reportsで成果とボトルネックを洗い出し、In‑app surveysで利用者の実感を集め、Pooled group budgetsで予算の偏りを抑える。導入前に料金とデータ扱いの詳細を確認することが重要です。\n\n---\n\n## この記事について\n\n確認日：2026年10月31日（日本時間）。公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。\n\n---\n\n## 参考リンク\n\n- [AIの「費用対効果が分からない」問題、解決へ？　Claude Enterprise搭載の「3つの新機能」：AIニュースピックアップ - ITmedia エンタープライズ](https://www.itmedia.co.jp/enterprise/articles/2610/31/news009.html)\n- [Smart reports, surveys, and pooled group budgets for Claude Enterprise - Claude (Anthropic)](https://claude.com/resources/articles/smart-reports-surveys-pooled-budgets)"
+  },
+  "evidence": [
+    "https://adtestbench.com/news/anthropic-gives-claude-enterprise-reports-on-what-ai-spend-buys",
+    "https://anthropicstocknews.com/news/claude-enterprise-introduces-team-usage-reports-and-pooled-budgets",
+    "https://chasingnext.com/updates/in-app-surveys-and-pooled-group-budgets-in-claude-enterprise",
+    "https://claude.com",
+    "https://claude.com/resources/articles/smart-reports-surveys-pooled-budgets",
+    "https://claude.com/resources/product-announcements",
+    "https://claudenews.com/news/smart-reports-surveys-and-pooled-group-budgets-for-claude-enterprise",
+    "https://investors.intuit.com/_assets/_43694f8d0ec7d5d50f7769decd94f081/intuit/news/2026-02-24_Intuit_and_Anthropic_Partner_to_Bring_Trusted_1305.pdf",
+    "https://newruntime.com/posts/smart-reports-surveys-and-pooled-group-budgets-for-a069d3",
+    "https://news.aistacksignal.com/claude-enterprise-budgets",
+    "https://support.claude.com/en/articles/14782391-claude-enterprise-consumption-guide",
+    "https://www-cdn.anthropic.com/096d94c1a91c6480806d8f24b2344c7e2a4bc666.pdf",
+    "https://www-cdn.anthropic.com/097c63b5fe7dd8b14866e1f15bb1910ec713658a.pdf",
+    "https://www-cdn.anthropic.com/50384a465da97cce5cbd3abfa752f5b39d7b7f65.pdf",
+    "https://www-cdn.anthropic.com/82fce012122e850bdfb7eecb1feb73800f01c213.pdf",
+    "https://www-cdn.anthropic.com/9ff93dfa8f445c932415d335c88852ef47f1201e.pdf",
+    "https://www.aicodex.to/articles/claude-enterprise-surveys-pooled-budgets",
+    "https://www.aiearlyedition.com/tools/anthropic-claude-enterprise-smart-reports",
+    "https://www.backofficebeat.com/briefs/2026-10-29",
+    "https://www.itmedia.co.jp/enterprise/articles/2610/31/news009.html",
+    "https://www.reddit.com/r/ClaudeAI/comments/1x08td0/discussion_hub_for_new_claude_incident_issue_with",
+    "https://www.reddit.com/r/ClaudeAI/comments/1xenuvt/claude_weekly_roundup_oct_1925_two_claude_code",
+    "https://www.reddit.com/r/ClaudeAI/comments/1xeq9ps/unified_claude_chat_cowork_in_one_is_now_ga_for",
+    "https://www.reddit.com/r/claudexplorers/comments/1wtmrfh/new_anthropic_user_survey",
+    "https://www.reddit.com/r/private_equity/comments/1s84pwp/anybody_using_claude_for_enterprise"
+  ]
+}
