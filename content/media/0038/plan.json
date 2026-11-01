@@ -92,7 +92,7 @@
       ],
       "prompt": "16:9 濃紺背景、中央にメッシュ状のネットワーク図（ノードと線）、左側にクラウドとオンプレのアイコン、右側に『再現手順』『テスト結果』のカード風ボックス。カードは白とシアンで強調。上部に短い日本語説明。",
       "filename": "diagram381.png",
-      "status": "generated",
+      "status": "review_pending",
       "attempts": 2,
       "artifact_run_id": "41327064375",
       "sha256": "51b0ce07cb4f853fa8bfb83768170c799158d87438c54fe42c22eca3fa6cb89b",
