@@ -1,0 +1,8 @@
+{
+  "status": "not_published",
+  "reason": "下調べの出典URLを検索結果と照合できません。",
+  "attempted_candidate_urls": [
+    "https://www.itmedia.co.jp/news/article/2611/01/2000002776/",
+    "https://www.techradar.com/pro/anthropic-hiring-manager-says-he-stopped-giving-coding-interviews-because-claude-is-better-at-them-and-tells-junior-engineers-that-hunger-beats-tenure"
+  ]
+}

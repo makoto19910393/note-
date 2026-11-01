@@ -1,0 +1,192 @@
+{
+  "status": "rejected_not_published",
+  "reason": "校閲で修正が必要です: 画像ラベル／図解の説明に「筆者の提案・図解であり公式画面ではない」旨を明記してください（developer指示：筆者の提案は画像にもその旨を明記する必要あり）。具体箇所：すべての画像のlabels欄・図解のキャプションに短い注記を追加。; タイトルを初心者向けにわかりやすく修正してください。例：『【海外AI解説】OpenAI・Google・Microsoftがrobots.txt（サイトのクローラ制御ファイル）で\"AI学習拒否/許可\"の共通シグナルに対応表明』のように、robots.txtの意味をカッコ書きで補足して下さい。; 本文冒頭か『この記事について』欄で、各社の『表明＝方針表明／予定』と確定済みの実装（まだ公表されていない項目）を箇条書きで明確に分離してください（事実／予定／未確定の混同をより明瞭に）。",
+  "article": {
+    "title": "【海外AI解説】OpenAI・Google・Microsoftがrobots.txtで\"AI学習拒否/許可\"の共通シグナルに対応表明",
+    "sources": [
+      {
+        "title": "AI学習への利用拒否をrobots.txtで一括指定へ　OpenAIやGoogleなどが対応表明",
+        "url": "https://www.itmedia.co.jp/news/article/2611/01/2000002776/",
+        "published_at": "2026-11-01T08:31:00+09:00",
+        "supports": "ITmediaの記事本文で、OpenAI／Google／Microsoftの10月30日発表、IETFに提出されたdraftの概要、各社の対応予定（OpenAI: 数カ月以内、Google: 2027年対応目標、Microsoft: 2027年2月1日適用開始予定）を確認した。"
+      },
+      {
+        "title": "Making it easier for websites to express AI training preferences",
+        "url": "https://openai.com/index/helping-websites-express-ai-training-preferences/",
+        "published_at": "2026-10-30T00:00:00+00:00",
+        "supports": "OpenAI公式ページで、共通シグナルをrobots.txtで表明する仕組みを尊重する旨と『共通シグナルに対応する』ことを表明している点を確認した（実装時期は今後公表するとしている）。"
+      },
+      {
+        "title": "Supporting a shared AI training control for websites — Google Search Central",
+        "url": "https://developers.google.cn/search/blog/2026/10/ai-training-control",
+        "published_at": "2026-10-30T00:00:00+00:00",
+        "supports": "Googleの公式開発者ブログ（Search Central）で、robots.txtの共通トークン（__usage_ai-training）をサポートする方針、Google‑Extendedとの関係、対応を2027年に目指す旨を確認した。"
+      },
+      {
+        "title": "draft-kelley-aipref-training-preference-signal-00 - Machine-Readable Training Preference Signal",
+        "url": "https://datatracker.ietf.org/doc/draft-kelley-aipref-training-preference-signal/",
+        "published_at": "2026-10-30T00:00:00+00:00",
+        "supports": "IETF Datatracker上のInternet‑Draft本文を確認し、robots.txtにおけるUser‑Agentトークン\"__usage_ai-training\"の仕様案（Disallow/Allowで学習利用意向を示す）およびドラフトがAIPREF作業群向けに提出された事実を確認した。"
+      }
+    ],
+    "sections": {
+      "intro": "主要AI事業者が、ウェブサイト運営者の「AI学習に使って良いか」をrobots.txtで機械的に表明する共通シグナルに対応する方針を表明しました。技術仕様はIETFのdraftにまとめられています。",
+      "conclusions": [
+        "OpenAI、Google、Microsoftなど大手がrobots.txtの共通トークンによる学習指定へ対応表明を出した（出典：OpenAI公式、Google Search Central、ITmedia）。",
+        "仕様案はIETFのdraftでUser-Agentに\"__usage_ai-training\"を置き、Disallow/Allowで学習利用の意向を示す方式を提案している（出典：IETF draft）。",
+        "実装や適用開始時期は各社で異なり、法的効果や小規模事業者の同一運用など不確定な点が残る。"
+      ],
+      "explanations": [
+        {
+          "heading": "共通シグナルとは何か（30秒で理解）",
+          "content": "共通シグナルは、robots.txtファイルに機械が読めるトークンを置くことで『このサイトのコンテンツをAIの学習に使ってよい／使うな』という意向を示す仕組みです。IETFのdraftではUser‑Agentに\"__usage_ai-training\"というトークンを用い、Disallow/Allowで学習利用の可否を指定する方式が提案されています。"
+        },
+        {
+          "heading": "今回の発表で何が変わるのか",
+          "content": "OpenAI、Google、Microsoftが対応を表明したことで、大手サービスの取り組みとして業界の標準化が進む可能性があります。具体的には、サイト運営者がrobots.txtで学習利用を拒否すれば、各社がそれを読み取って自社の学習データに含めない方針を取る方向です。ただし、実際の実装時期や細かな解釈ルール（ページ単位での扱い、既存データの遡及的処理など）は各社の実装方針に依存します。"
+        },
+        {
+          "heading": "実装のタイムラインと会社ごとの差",
+          "content": "公開情報によればOpenAIは数カ月以内に対応を進める意向、Googleは2027年を目標、Microsoftは2027年2月1日から新設定の読み取り適用を予定しています（出典：各社発表、ITmedia記事）。Anthropicも実装作業を始めたと報告しており、主要ベンダーの対応が数カ月〜1年程度のスパンで進む見込みです。"
+        },
+        {
+          "heading": "注意点：未確定の範囲と影響の限界",
+          "content": "重要な未確定点は複数あります。第1に、このrobots.txtによる表明が法的効力を持つか（既に学習に使われたデータの扱いを含め）は未示です。第2に、小規模なAI事業者や個別のデータ利用ケースが一律に従うかどうかは不明です。第3に、どの行為を「学習に使う」と見なすかの技術的解釈や例外処理は各社の実装次第で変わるため、運用ルールはまだ流動的です。"
+        }
+      ],
+      "personal_view": "今回の取り組みはウェブ運営者にとって“意思表示の手段”が正式に整う重要な一歩です。私自身は、透明な意思表示が可能になる点は歓迎しますが、実務上の効果を得るには各社の実装詳細や小規模事業者の対応も含めた運用の成熟が必要だと感じます。",
+      "faq": [
+        {
+          "question": "robots.txtだけで本当にAIの学習から守れるのですか？",
+          "answer": "現時点では『有力な手段になり得るが完全ではない』と理解してください。大手が対応すれば効果は大きい一方で、法的効力や全事業者の一貫した遵守が保証されているわけではありません。"
+        },
+        {
+          "question": "既に学習に使われたデータはどうなるのですか？",
+          "answer": "公開資料では遡及的な取り扱い（過去データの削除など）については示されていません。既存データの扱いは未確定です。"
+        },
+        {
+          "question": "サイトごとだけでなくページ単位で指定できますか？",
+          "answer": "Microsoftはrobots.txtの共通シグナルに加え、metaタグやHTTPヘッダによるページ単位指定を優先するとしており、ページ単位の指定が可能になる方向性が示されています。ただし最終的な扱いは各社の実装次第です。"
+        },
+        {
+          "question": "小さなAIベンダーや海外のクローラーは従いますか？",
+          "answer": "現時点で全ベンダーの一律遵守は確認されていません。主要大手は表明しましたが、小規模事業者の対応は別途確認が必要です。"
+        }
+      ],
+      "summary": "IETFのdraftで提案されたrobots.txtの共通トークン\"__usage_ai-training\"を使う仕組みに、OpenAI・Google・Microsoftなど主要ベンダーが対応表明しました。これによりウェブ運営者が機械的に『学習利用の可否』を示せるようになりますが、実装時期、法的効力、全事業者の一貫した運用など未確定な点が残ります。"
+    },
+    "images": [
+      {
+        "number": 0,
+        "anchor": "",
+        "theme": "サムネ：共通シグナルの到来",
+        "labels": [
+          "共通シグナル",
+          "robots.txt",
+          "AI学習拒否",
+          "OpenAI",
+          "Google",
+          "Microsoft",
+          "IETF",
+          "ウェブ運営者向け",
+          "導入"
+        ],
+        "prompt": "濃紺の背景に大きく太いシアンと白の日本語タイトル風の文字列「robots.txtでAI学習の可否を一括指定」。右下にOpenAI、Google、Microsoftのロゴ風の抽象的なアイコン（企業名は控えめに）。中央にrobots.txtのテキストファイル風の立体的なカードと、そのカード上に\"__usage_ai-training: Disallow/Allow\"と黄色で目立たせる。広い余白、立体感、短い太い日本語テキスト。16:9。"
+      },
+      {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜図解①：仕組みの全体像】",
+        "theme": "図解①：仕組みの全体像",
+        "labels": [
+          "robots.txt",
+          "__usage_ai-training",
+          "Disallow/Allow",
+          "クローラー読み取り",
+          "学習制御"
+        ],
+        "prompt": "黒背景にシアンと白の簡潔な図解。左にウェブサイトのrobots.txt（四角いカード）、中央に矢印がAI事業者のアイコン群へ伸びる。矢印上に\"__usage_ai-training\"ラベル。右側に3つのAI事業者の抽象アイコンがあり、それぞれがカードを読んで「学習する/しない」を示すチェックと×。黄色で重要ポイントを強調。広い余白、16:9。"
+      },
+      {
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜図解②：会社ごとの対応スケジュール】",
+        "theme": "図解②：会社ごとの対応スケジュール",
+        "labels": [
+          "OpenAI: 数カ月",
+          "Google: 2027目標",
+          "Microsoft: 2027-02-01",
+          "Anthropic",
+          "タイムライン"
+        ],
+        "prompt": "濃紺の横長タイムライン図。左から右へ時間軸。ポイントに白い丸とシアンの線でOpenAI（\"数カ月以内\"）、Google（\"2027年目標\"）、Microsoft（\"2027-02-01適用予定\"）、Anthropic（\"実装開始報告\"）を配置。各ポイント下に短い黄色のラベル。視覚的に分かりやすく、余白を多めに。16:9。"
+      },
+      {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜図解③：制限の範囲と未確定点】",
+        "theme": "図解③：制限の範囲と未確定点",
+        "labels": [
+          "法的効力不明",
+          "既存データの扱い",
+          "小規模事業者の対応",
+          "技術的解釈",
+          "運用の流動性"
+        ],
+        "prompt": "黒背景にシンプルなチェックリスト風の図。左側に四角いチェック欄で\"確定\"項目はシアンでチェック、右側に\"未確定\"項目は黄色で疑問符を付ける。未確定の項目として「法的効力」「既存データ扱い」「小規模事業者の一貫性」「技術的解釈」を配置。視認性重視、16:9。"
+      },
+      {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜図解④：サイト運営者ができること】",
+        "theme": "図解④：サイト運営者ができること",
+        "labels": [
+          "robots.txt更新",
+          "metaタグ",
+          "ポリシー明記",
+          "確認と監査",
+          "問い合わせ先"
+        ],
+        "prompt": "濃紺背景に白とシアンのアイコン付き短いリスト。アイコンはファイル（robots.txt更新）、タグ（metaタグ）、文書（利用規約に明記）、虫眼鏡（確認・監査）、メール（問い合わせ）を示す。各項目は短い説明文を黄色で強調。16:9、余白を広めに。"
+      }
+    ],
+    "hashtags": [
+      "#AI",
+      "#robotsTXT",
+      "#OpenAI",
+      "#Google",
+      "#Microsoft",
+      "#IETF",
+      "#AIPREF",
+      "#データガバナンス",
+      "#ウェブ運営",
+      "#機械学習",
+      "#プライバシー",
+      "#Web開発"
+    ],
+    "threads": "OpenAI・Google・Microsoftがrobots.txtの共通トークンで“学習利用の可否”を表明。運用はこれから整うが、サイト運営者の意思表示手段としては大きな前進。実用化で何が変わりますか？",
+    "body": "主要AI事業者が、ウェブサイト運営者の「AI学習に使って良いか」をrobots.txtで機械的に表明する共通シグナルに対応する方針を表明しました。技術仕様はIETFのdraftにまとめられています。\n\n---\n\n## 30秒で結論\n\n- OpenAI、Google、Microsoftなど大手がrobots.txtの共通トークンによる学習指定へ対応表明を出した（出典：OpenAI公式、Google Search Central、ITmedia）。\n- 仕様案はIETFのdraftでUser-Agentに\"__usage_ai-training\"を置き、Disallow/Allowで学習利用の意向を示す方式を提案している（出典：IETF draft）。\n- 実装や適用開始時期は各社で異なり、法的効果や小規模事業者の同一運用など不確定な点が残る。\n\n---\n\n## 共通シグナルとは何か（30秒で理解）\n\n共通シグナルは、robots.txtファイルに機械が読めるトークンを置くことで『このサイトのコンテンツをAIの学習に使ってよい／使うな』という意向を示す仕組みです。IETFのdraftではUser‑Agentに\"__usage_ai-training\"というトークンを用い、Disallow/Allowで学習利用の可否を指定する方式が提案されています。\n\n【ここに図解①を挿入｜図解①：仕組みの全体像】\n\n---\n\n## 今回の発表で何が変わるのか\n\nOpenAI、Google、Microsoftが対応を表明したことで、大手サービスの取り組みとして業界の標準化が進む可能性があります。具体的には、サイト運営者がrobots.txtで学習利用を拒否すれば、各社がそれを読み取って自社の学習データに含めない方針を取る方向です。ただし、実際の実装時期や細かな解釈ルール（ページ単位での扱い、既存データの遡及的処理など）は各社の実装方針に依存します。\n\n【ここに図解②を挿入｜図解②：会社ごとの対応スケジュール】\n\n---\n\n## 実装のタイムラインと会社ごとの差\n\n公開情報によればOpenAIは数カ月以内に対応を進める意向、Googleは2027年を目標、Microsoftは2027年2月1日から新設定の読み取り適用を予定しています（出典：各社発表、ITmedia記事）。Anthropicも実装作業を始めたと報告しており、主要ベンダーの対応が数カ月〜1年程度のスパンで進む見込みです。\n\n【ここに図解③を挿入｜図解③：制限の範囲と未確定点】\n\n---\n\n## 注意点：未確定の範囲と影響の限界\n\n重要な未確定点は複数あります。第1に、このrobots.txtによる表明が法的効力を持つか（既に学習に使われたデータの扱いを含め）は未示です。第2に、小規模なAI事業者や個別のデータ利用ケースが一律に従うかどうかは不明です。第3に、どの行為を「学習に使う」と見なすかの技術的解釈や例外処理は各社の実装次第で変わるため、運用ルールはまだ流動的です。\n\n【ここに図解④を挿入｜図解④：サイト運営者ができること】\n\n---\n\n## 私の正直な感想\n\n今回の取り組みはウェブ運営者にとって“意思表示の手段”が正式に整う重要な一歩です。私自身は、透明な意思表示が可能になる点は歓迎しますが、実務上の効果を得るには各社の実装詳細や小規模事業者の対応も含めた運用の成熟が必要だと感じます。\n\n---\n\n## よくある質問\n\n### robots.txtだけで本当にAIの学習から守れるのですか？\n\n現時点では『有力な手段になり得るが完全ではない』と理解してください。大手が対応すれば効果は大きい一方で、法的効力や全事業者の一貫した遵守が保証されているわけではありません。\n\n### 既に学習に使われたデータはどうなるのですか？\n\n公開資料では遡及的な取り扱い（過去データの削除など）については示されていません。既存データの扱いは未確定です。\n\n### サイトごとだけでなくページ単位で指定できますか？\n\nMicrosoftはrobots.txtの共通シグナルに加え、metaタグやHTTPヘッダによるページ単位指定を優先するとしており、ページ単位の指定が可能になる方向性が示されています。ただし最終的な扱いは各社の実装次第です。\n\n### 小さなAIベンダーや海外のクローラーは従いますか？\n\n現時点で全ベンダーの一律遵守は確認されていません。主要大手は表明しましたが、小規模事業者の対応は別途確認が必要です。\n\n---\n\n## まとめ\n\nIETFのdraftで提案されたrobots.txtの共通トークン\"__usage_ai-training\"を使う仕組みに、OpenAI・Google・Microsoftなど主要ベンダーが対応表明しました。これによりウェブ運営者が機械的に『学習利用の可否』を示せるようになりますが、実装時期、法的効力、全事業者の一貫した運用など未確定な点が残ります。\n\n---\n\n## この記事について\n\n確認日：2026年11月01日（日本時間）。公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。\n\n---\n\n## 参考リンク\n\n- [AI学習への利用拒否をrobots.txtで一括指定へ　OpenAIやGoogleなどが対応表明](https://www.itmedia.co.jp/news/article/2611/01/2000002776/)\n- [Making it easier for websites to express AI training preferences](https://openai.com/index/helping-websites-express-ai-training-preferences/)\n- [Supporting a shared AI training control for websites — Google Search Central](https://developers.google.cn/search/blog/2026/10/ai-training-control)\n- [draft-kelley-aipref-training-preference-signal-00 - Machine-Readable Training Preference Signal](https://datatracker.ietf.org/doc/draft-kelley-aipref-training-preference-signal/)"
+  },
+  "evidence": [
+    "https://arxiv.org/abs/2607.14447",
+    "https://assets.publishing.service.gov.uk/media/68a5aa50a6acbbc7fb96a3b2/DMG_Media.pdf",
+    "https://chatgptiseatingtheworld.com/wp-content/uploads/2025/07/In_Re__OpenAI_Inc_Copyright_In-Ziff-Davis-First-Am-Complaint-July-7-2025.pdf",
+    "https://datatracker.ietf.org/doc/draft-kelley-aipref-training-preference-signal",
+    "https://datatracker.ietf.org/wg/aipref/documents",
+    "https://developers.google.cn/search/blog/2026/10/ai-training-control",
+    "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers",
+    "https://en.wikipedia.org/wiki/OpenAI",
+    "https://internetsociety.github.io/IETF-Ornithology/IETF-Ornithology.pdf",
+    "https://interoperable-europe.ec.europa.eu/sites/default/files/custom-page/attachment/2026-03/cnect_rollingplan_ict_2026_spr_pr1.pdf",
+    "https://iptc.org/download/events/phmdc2025/IPTC-PHMDC-2025-Brendan_Quinn-AIPrefs.pdf",
+    "https://mailarchive.ietf.org/arch/msg/ai-control/mddjatOxSR0h6GmLRBWlc839c7w",
+    "https://newruntime.com/posts/google-microsoft-openai-and-anthropic-back-a-shared-051b67",
+    "https://news.littlewolflabs.com/posts/2026-10-30-shared-ai-training-opt-out",
+    "https://openai.com/index/helping-websites-express-ai-training-preferences",
+    "https://ppc.land/google-and-bing-back-one-robots-txt-rule-to-opt-out-of-ai-training",
+    "https://ppc.land/google-microsoft-openai-and-anthropic-back-one-ai-training-opt-out",
+    "https://saaslinkbuilding.com/blog/shared-ai-training-opt-out-robots-txt",
+    "https://www.courthousenews.com/wp-content/uploads/2025/05/google-proposed-findings-of-fact-search-remedy-trial.pdf",
+    "https://www.ietf.org/ietf-ftp/internet-drafts/draft-wallace-aipref-grant-binding-03.html",
+    "https://www.itmedia.co.jp/news/article/2611/01/2000002776",
+    "https://www.reddit.com/r/aeo/comments/1x0ze9y/is_most_aeo_advice_optimising_for_the_wrong_bots",
+    "https://www.reddit.com/r/aeo/comments/1x5rpjr/data_ai_bot_rules_bot_protection_and_product",
+    "https://www.reddit.com/r/webdev/comments/1xavzcl/how_to_configure_robotstxt_for_modern_crawlers"
+  ]
+}
