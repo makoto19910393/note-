@@ -1,0 +1,1 @@
+OracleがOpenAIのサイバーモデルを採用した『Oracle AI Security Mesh』が発表。AIは“新規作成”ではなく“過去の脆弱性を掘り起こす”とAltman。これ、個人や会社はまず何を優先すべき？

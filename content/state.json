@@ -1,5 +1,5 @@
 {
-  "next_number": 38,
+  "next_number": 39,
   "articles": [
     {
       "number": 1,
@@ -1402,7 +1402,37 @@
           "supports": "東京エレクトロン デバイスのIRページ（2027年3月期 第2四半期決算資料／説明会資料を公開）。決算資料で半導体・電子デバイス事業の売上増や説明会の開催日（10月29日の説明会実施がIRスケジュール上で確認できる）を確認した。"
         }
       ]
+    },
+    {
+      "number": 38,
+      "run_id": "2026-11-01-evening-3",
+      "title": "【海外AI解説】OpenAI×Oracle：サム・アルトマン登壇、AIが“過去数十年の脆弱性を掘り起こす”と発言／Oracleが「Oracle AI Security Mesh」を発表",
+      "created_at": "2026-11-02T01:35:40.780332+09:00",
+      "path": "articles/2026-11-01/0038-evening.md",
+      "sources": [
+        "https://www.oracle.com/africa/news/announcement/ai-world-oracle-advances-enterprise-security-for-the-ai-era-2026-10-27",
+        "https://www.techradar.com/pro/security/ai-is-not-creating-the-problem-openai-ceo-sam-altman-says-ai-is-merely-uncovering-all-the-vulnerabilities-weve-accumulated-over-the-years"
+      ],
+      "sha256": "f487d351b20bd3fec1984cb4f38f09503f09ebd0e58bd3ddc02bcb03521d1350",
+      "status": "draft",
+      "note_posted": false,
+      "news_region": "overseas",
+      "media_plan": "media/0038/plan.json",
+      "source_details": [
+        {
+          "title": "'AI is not creating the problem': OpenAI CEO Sam Altman says AI is merely uncovering all the vulnerabilities we've accumulated over the years",
+          "url": "https://www.techradar.com/pro/security/ai-is-not-creating-the-problem-openai-ceo-sam-altman-says-ai-is-merely-uncovering-all-the-vulnerabilities-weve-accumulated-over-the-years",
+          "published_at": "2026-11-01T00:00:00+00:00",
+          "supports": "Reports Altman's on-stage comments at Oracle AI World and describes Oracle's new 'AI Security Mesh' partnership with OpenAI; includes the quoted line that AI is surfacing decades of security issues."
+        },
+        {
+          "title": "Oracle Advances Enterprise Security for the AI Era (Oracle press announcement — Oracle AI World, LAS VEGAS)",
+          "url": "https://www.oracle.com/africa/news/announcement/ai-world-oracle-advances-enterprise-security-for-the-ai-era-2026-10-27/",
+          "published_at": "2026-10-27T00:00:00+00:00",
+          "supports": "Official Oracle announcement of 'Oracle AI Security Mesh' using OpenAI cyber/frontier models; describes the service goals and deployment context at Oracle AI World."
+        }
+      ]
     }
   ],
-  "next_diagram": 380
+  "next_diagram": 384
 }

@@ -1,0 +1,185 @@
+{
+  "status": "rejected_not_published",
+  "reason": "校閲で修正が必要です: 画像キャプション／ラベルに“筆者の提案／意見を含む”旨を明記してください（画像プロンプト／ラベル一覧にその注記が必要）。; 本文中の『私の正直な感想』を残すのは可だが、画像にも同様の注意書きがない点を修正してください（開示の一貫性）。; 本文は事実と分析を分けているが、タイトル下に短い定義（robots.txtや__usage_ai-training の意味）をさらに一文で追記して、AI初心者でも用語が一読で分かるようにしてください。; 記事内にある企業対応時期の記述（OpenAI: 今後数カ月内、Google: 2027目標、Microsoft: 2027-02-01）について、出典（各社公式発表のリンク）をタイトル直後の要約近くに再掲して事実根拠を明確にしてください。; 図解の案内文（【ここに図解①】等）が残っているが、生成する図が『公式画面の模写』に見えないよう、注記を入れて『概念図・イメージ図であり公式UIではない』旨を明示してください。",
+  "article": {
+    "title": "【海外AI解説】OpenAI・Google・Microsoftら、robots.txtでAI学習の可否を一括指定する“共通シグナル”に対応表明",
+    "sources": [
+      {
+        "title": "AI学習への利用拒否をrobots.txtで一括指定へ　OpenAIやGoogleなどが対応表明 - ITmedia NEWS",
+        "url": "https://www.itmedia.co.jp/news/article/2611/01/2000002776/",
+        "published_at": "2026-11-01T08:31:00+09:00",
+        "supports": "日本語記事。IETFドラフトとOpenAI/Google/Microsoft/Anthropicの対応表明を整理。Microsoftの読み取り開始日やGoogle‑Extendedとの扱いなどを確認できる。"
+      },
+      {
+        "title": "Making it easier for websites to express AI training preferences | OpenAI",
+        "url": "https://openai.com/index/helping-websites-express-ai-training-preferences/?trk=public_post_comment-text",
+        "published_at": "2026-10-30T00:00:00+00:00",
+        "supports": "OpenAI公式告知（Oct 30, 2026）。共通シグナルをhonorする旨と対応予定（今後数カ月以内）を表明している。"
+      },
+      {
+        "title": "draft-kelley-aipref-training-preference-signal-00 - Machine-Readable Training Preference Signal | IETF Datatracker",
+        "url": "https://datatracker.ietf.org/doc/draft-kelley-aipref-training-preference-signal/",
+        "published_at": "2026-10-30T00:00:00+00:00",
+        "supports": "IETF Internet‑Draft（提出日Oct 30, 2026）。__usage_ai-training トークンやディレクティブ例、仕様案の性質を確認できる。"
+      },
+      {
+        "title": "Supporting a shared AI training control for websites | Google Search Central Blog",
+        "url": "https://developers.google.cn/search/blog/2026/10/ai-training-control",
+        "published_at": "2026-10-30T00:00:00+00:00",
+        "supports": "Google公式説明（Oct 30, 2026）。共通シグナルを2027年対応でサポートする旨とGoogle‑Extendedとの関係を示している。"
+      }
+    ],
+    "sections": {
+      "intro": "Webサイト運営者が、自分のサイトをAIモデルの学習に使わせるかどうかをrobots.txtファイルで一括指定できる「共通シグナル」について、OpenAI・Google・Microsoft（Anthropicも実装を進めていると報告）が対応方針を公表しました。提案はIETFのInternet‑Draftとして示されています。",
+      "conclusions": [
+        "IETFのドラフトはrobots.txt内にUser-Agentグループ名\"__usage_ai-training\"を置き、Disallow/Allowで学習利用の可否を示す方式を提案している。",
+        "主要AIプラットフォーマは対応方針を表明しており、対応開始時期は企業ごとに異なる（OpenAI：数カ月内、Google：2027年目標、Microsoft：2027-02-01から読み取り開始を表明）。",
+        "この指定は従来のクロール制御（サイト自体のクロール可否）とは独立しており、学習用途に特化した意思表示になると各社は説明している。",
+        "実運用での細かな例外扱い、法的効力、業界全体の順守状況は現時点で未確定であり、注意が必要。"
+      ],
+      "explanations": [
+        {
+          "heading": "提案された共通シグナルとは何か",
+          "content": "IETFのInternet‑Draft『Machine‑Readable Training Preference Signal』は、robots.txtのUser‑Agentグループ名として\"__usage_ai-training\"というポリシートークンを用いる方式を示しています。ドラフトでは、User-Agent: __usage_ai-training の下で Disallow を書けばAI学習への利用拒否、Allow を書けば許可になる例が示されています。例えば Disallow: / と Allow: /press-kit/ とすれば、/press-kit/ は学習に使ってよいがそれ以外は不可、という指定が可能です。あくまでこれはInternet‑Draft（提案段階の文書）であり、将来の標準化動向に左右されます。"
+        },
+        {
+          "heading": "各社の表明と対応スケジュール",
+          "content": "OpenAIは公式告知でこの共通シグナルを尊重する姿勢を示し、対応を\"今後数カ月以内\"に行うと述べています。GoogleはSearch Centralのブログで対応を2027年に行う目標を明言し、自社の既存制御（Google‑Extended）との整合性を説明しました。Microsoftは新設定の読み取りを2027年2月1日から開始すると公表しています。Anthropicについては、実装を進めていると報告されています。企業ごとに導入時期や読み取りのタイミングが異なる点が実務上重要です。"
+        },
+        {
+          "heading": "従来のrobots.txtとの関係",
+          "content": "各社の公開説明によれば、この共通シグナルは従来のクロール禁止や許可を示すrobots.txt記述とは独立した意思表示です。つまり、クロール自体は許可しても学習利用は拒否するといった細かい指定が可能になります。Googleはさらに、サイトが共通シグナルで学習利用を拒否し、かつGoogle‑Extendedの指定がない場合はGoogle‑Extendedによる利用も拒否扱いにする方針を示しています。これはウェブ運営者がより明確に意図を示せるようにするための配慮です。"
+        },
+        {
+          "heading": "未確定の点と運用上の注意点",
+          "content": "公表情報からは、実運用でどのような例外が社内的に置かれるか（例えば既存の個別契約やサービス間での差分扱い）はまだ確定していません。また、中小のAI事業者や第三者クローラーがこのトークンをどれだけ尊重するか、業界全体の順守状況も不明です。robots.txtでの意思表示の法的効力や裁判での扱われ方も現時点では明確でないため、企業や運営者はこの指定を導入する際に法務や契約面のチェックを続ける必要があります。"
+        }
+      ],
+      "personal_view": "短期的にはウェブ運営者にとって使いやすいツールが増えるという前向きな面があります。私見としては、規格が浸透するまで数年単位の時間がかかる可能性が高く、運用の詳細や例外ルールを企業がどう決めるかで実効性が左右されると感じます。実務担当者はドラフトの内容を早めに確認し、社内ルールや契約条項との整合性を検討しておくと安心です。",
+      "faq": [
+        {
+          "question": "この指定をrobots.txtに書けば、すべてのAIが必ず従いますか？",
+          "answer": "現時点の公開情報では主要プラットフォーマ（OpenAI、Google、Microsoftなど）は対応を表明していますが、業界全体や小規模事業者が必ず従う保証はありません。順守状況は今後の動向次第です。"
+        },
+        {
+          "question": "他のrobots.txt指示（クロール禁止）と両立できますか？",
+          "answer": "はい。提案は学習利用の意思表示に特化したもので、従来のクロール制御とは独立して扱われると各社は説明しています。サイト側はクロール可否と学習利用の可否を別々に指定できます。"
+        },
+        {
+          "question": "この指定を書いたら法的に確実に学習利用を止められますか？",
+          "answer": "公開情報では法的効力についての確定的な説明はありません。裁判でどう扱われるかや既存訴訟・契約への影響は未確定のため、法務と相談することをおすすめします。"
+        },
+        {
+          "question": "具体的にどのようにrobots.txtに書けばいいですか？",
+          "answer": "IETFドラフトの例では、User-Agent: __usage_ai-training を作り、その下に Disallow: / や Allow: /press-kit/ のように記述します。ただしドラフトは提案段階であり、将来的な標準化の変更に注意してください。"
+        }
+      ],
+      "summary": "IETF提案の共通シグナル（__usage_ai-training）を使えば、robots.txtでAI学習の可否を明示できるようになります。OpenAI、Google、Microsoftらが対応方針を表明しており、導入時期は企業により異なります。ただし実運用の例外扱いや法的な扱い、業界全体の順守はまだ不確定で、導入時は慎重な検討が必要です。"
+    },
+    "images": [
+      {
+        "number": 0,
+        "anchor": "",
+        "theme": "サムネイル",
+        "labels": [
+          "共通シグナル",
+          "robots.txt",
+          "AI学習制御",
+          "主要企業表明"
+        ],
+        "prompt": "16:9、濃紺から黒の背景、シアンと白・黄色の太い短い日本語。中央に大きく「robots.txtでAI学習を制御」と表示。背景に透ける形でWebサイトのファイルアイコンとロボットのシルエット、右下にOpenAI・Google・Microsoftのロゴ風（抽象的な円と四角で企業名は直接書かない）を配置。立体感と広い余白。"
+      },
+      {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜仕組み図解】",
+        "theme": "仕組み図解",
+        "labels": [
+          "__usage_ai-training",
+          "Allow/Disallow",
+          "例示",
+          "robots.txt"
+        ],
+        "prompt": "16:9、濃紺背景、中央に大きなrobots.txtファイルの図。ファイル内にUser-Agent: __usage_ai-training と書かれ、その下に Allow: /press-kit/ と Disallow: / のブロックを左右に並べて示す。左に許可、右に拒否を示すシアンと赤のラベル。簡潔な矢印で\"学習OK/学習NG\"を示す。白と黄色の太い日本語キャプションあり。"
+      },
+      {
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜各社の対応時期比較】",
+        "theme": "各社の対応時期比較",
+        "labels": [
+          "OpenAI",
+          "Google",
+          "Microsoft",
+          "Anthropic",
+          "タイムライン"
+        ],
+        "prompt": "16:9、濃紺背景、横長タイムライン図。左から右へ時系列でOpenAI（今後数カ月内）、Google（2027目標）、Microsoft（2027-02-01読み取り開始）、Anthropic（実装進行中）をアイコン化して配置。各社の吹き出しで対応方針を短く示す。白・シアン・黄色の太文字キャプション。"
+      },
+      {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜運用上の注意点】",
+        "theme": "運用上の注意点",
+        "labels": [
+          "例外",
+          "法的効力",
+          "第三者順守",
+          "企業内ルール"
+        ],
+        "prompt": "16:9、濃紺背景、四つのアイコンで注意点を分けて配置（例外処理、法的検討、第三者順守、契約整備）。各アイコン下に短い黄色の日本語ラベル。中央に警告マークを小さく配置し、余白多めで見やすく。立体感のあるボタン風デザイン。"
+      },
+      {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜導入手順（簡易）】",
+        "theme": "導入手順（簡易）",
+        "labels": [
+          "チェックリスト",
+          "robots.txt編集",
+          "テスト",
+          "法務確認"
+        ],
+        "prompt": "16:9、濃紺背景、縦並びのチェックリスト形式。チェック項目例を4つ（ドラフト確認、robots.txt追加、主要サービスの対応確認、法務検討）を白いチェックボックス風に並べる。右側に短い説明テキスト。シアン・黄色の強調文字で要点を示す。"
+      }
+    ],
+    "hashtags": [
+      "#AI",
+      "#robots.txt",
+      "#IETF",
+      "#OpenAI",
+      "#Google",
+      "#Microsoft",
+      "#AI学習制御",
+      "#ウェブ運営",
+      "#プライバシー",
+      "#技術解説",
+      "#Web制作",
+      "#法務"
+    ],
+    "threads": "robots.txtにUser-Agent: __usage_ai-trainingを書くだけでAI学習を制御できるかも。主要社が対応表明したけど実効性はどうなる？",
+    "body": "Webサイト運営者が、自分のサイトをAIモデルの学習に使わせるかどうかをrobots.txtファイルで一括指定できる「共通シグナル」について、OpenAI・Google・Microsoft（Anthropicも実装を進めていると報告）が対応方針を公表しました。提案はIETFのInternet‑Draftとして示されています。\n\n---\n\n## 30秒で結論\n\n- IETFのドラフトはrobots.txt内にUser-Agentグループ名\"__usage_ai-training\"を置き、Disallow/Allowで学習利用の可否を示す方式を提案している。\n- 主要AIプラットフォーマは対応方針を表明しており、対応開始時期は企業ごとに異なる（OpenAI：数カ月内、Google：2027年目標、Microsoft：2027-02-01から読み取り開始を表明）。\n- この指定は従来のクロール制御（サイト自体のクロール可否）とは独立しており、学習用途に特化した意思表示になると各社は説明している。\n- 実運用での細かな例外扱い、法的効力、業界全体の順守状況は現時点で未確定であり、注意が必要。\n\n---\n\n## 提案された共通シグナルとは何か\n\nIETFのInternet‑Draft『Machine‑Readable Training Preference Signal』は、robots.txtのUser‑Agentグループ名として\"__usage_ai-training\"というポリシートークンを用いる方式を示しています。ドラフトでは、User-Agent: __usage_ai-training の下で Disallow を書けばAI学習への利用拒否、Allow を書けば許可になる例が示されています。例えば Disallow: / と Allow: /press-kit/ とすれば、/press-kit/ は学習に使ってよいがそれ以外は不可、という指定が可能です。あくまでこれはInternet‑Draft（提案段階の文書）であり、将来の標準化動向に左右されます。\n\n【ここに図解①を挿入｜仕組み図解】\n\n---\n\n## 各社の表明と対応スケジュール\n\nOpenAIは公式告知でこの共通シグナルを尊重する姿勢を示し、対応を\"今後数カ月以内\"に行うと述べています。GoogleはSearch Centralのブログで対応を2027年に行う目標を明言し、自社の既存制御（Google‑Extended）との整合性を説明しました。Microsoftは新設定の読み取りを2027年2月1日から開始すると公表しています。Anthropicについては、実装を進めていると報告されています。企業ごとに導入時期や読み取りのタイミングが異なる点が実務上重要です。\n\n【ここに図解②を挿入｜各社の対応時期比較】\n\n---\n\n## 従来のrobots.txtとの関係\n\n各社の公開説明によれば、この共通シグナルは従来のクロール禁止や許可を示すrobots.txt記述とは独立した意思表示です。つまり、クロール自体は許可しても学習利用は拒否するといった細かい指定が可能になります。Googleはさらに、サイトが共通シグナルで学習利用を拒否し、かつGoogle‑Extendedの指定がない場合はGoogle‑Extendedによる利用も拒否扱いにする方針を示しています。これはウェブ運営者がより明確に意図を示せるようにするための配慮です。\n\n【ここに図解③を挿入｜運用上の注意点】\n\n---\n\n## 未確定の点と運用上の注意点\n\n公表情報からは、実運用でどのような例外が社内的に置かれるか（例えば既存の個別契約やサービス間での差分扱い）はまだ確定していません。また、中小のAI事業者や第三者クローラーがこのトークンをどれだけ尊重するか、業界全体の順守状況も不明です。robots.txtでの意思表示の法的効力や裁判での扱われ方も現時点では明確でないため、企業や運営者はこの指定を導入する際に法務や契約面のチェックを続ける必要があります。\n\n【ここに図解④を挿入｜導入手順（簡易）】\n\n---\n\n## 私の正直な感想\n\n短期的にはウェブ運営者にとって使いやすいツールが増えるという前向きな面があります。私見としては、規格が浸透するまで数年単位の時間がかかる可能性が高く、運用の詳細や例外ルールを企業がどう決めるかで実効性が左右されると感じます。実務担当者はドラフトの内容を早めに確認し、社内ルールや契約条項との整合性を検討しておくと安心です。\n\n---\n\n## よくある質問\n\n### この指定をrobots.txtに書けば、すべてのAIが必ず従いますか？\n\n現時点の公開情報では主要プラットフォーマ（OpenAI、Google、Microsoftなど）は対応を表明していますが、業界全体や小規模事業者が必ず従う保証はありません。順守状況は今後の動向次第です。\n\n### 他のrobots.txt指示（クロール禁止）と両立できますか？\n\nはい。提案は学習利用の意思表示に特化したもので、従来のクロール制御とは独立して扱われると各社は説明しています。サイト側はクロール可否と学習利用の可否を別々に指定できます。\n\n### この指定を書いたら法的に確実に学習利用を止められますか？\n\n公開情報では法的効力についての確定的な説明はありません。裁判でどう扱われるかや既存訴訟・契約への影響は未確定のため、法務と相談することをおすすめします。\n\n### 具体的にどのようにrobots.txtに書けばいいですか？\n\nIETFドラフトの例では、User-Agent: __usage_ai-training を作り、その下に Disallow: / や Allow: /press-kit/ のように記述します。ただしドラフトは提案段階であり、将来的な標準化の変更に注意してください。\n\n---\n\n## まとめ\n\nIETF提案の共通シグナル（__usage_ai-training）を使えば、robots.txtでAI学習の可否を明示できるようになります。OpenAI、Google、Microsoftらが対応方針を表明しており、導入時期は企業により異なります。ただし実運用の例外扱いや法的な扱い、業界全体の順守はまだ不確定で、導入時は慎重な検討が必要です。\n\n---\n\n## この記事について\n\n確認日：2026年11月02日（日本時間）。公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。\n\n---\n\n## 参考リンク\n\n- [AI学習への利用拒否をrobots.txtで一括指定へ　OpenAIやGoogleなどが対応表明 - ITmedia NEWS](https://www.itmedia.co.jp/news/article/2611/01/2000002776/)\n- [Making it easier for websites to express AI training preferences | OpenAI](https://openai.com/index/helping-websites-express-ai-training-preferences/?trk=public_post_comment-text)\n- [draft-kelley-aipref-training-preference-signal-00 - Machine-Readable Training Preference Signal | IETF Datatracker](https://datatracker.ietf.org/doc/draft-kelley-aipref-training-preference-signal/)\n- [Supporting a shared AI training control for websites | Google Search Central Blog](https://developers.google.cn/search/blog/2026/10/ai-training-control)"
+  },
+  "evidence": [
+    "https://apnews.com/article/2f8a2b9024d4f06793bcca12f8089d20",
+    "https://arxiv.org/abs/2510.10315",
+    "https://arxiv.org/abs/2607.14447",
+    "https://bytefwd.com/openai-google-shared-ai-training-signal-robots-txt",
+    "https://chatgptiseatingtheworld.com/wp-content/uploads/2025/07/In_Re__OpenAI_Inc_Copyright_In-Ziff-Davis-First-Am-Complaint-July-7-2025.pdf",
+    "https://datatracker.ietf.org/doc/draft-kelley-aipref-training-preference-signal",
+    "https://developers.google.cn/search/blog/2026/10/ai-training-control",
+    "https://devpulsedaily.vercel.app/post/ai-training-opt-out-robots-txt-usage-ai-training",
+    "https://en.wikipedia.org/wiki/OpenAI",
+    "https://internetsociety.github.io/IETF-Ornithology/IETF-Ornithology.pdf",
+    "https://interoperable-europe.ec.europa.eu/sites/default/files/custom-page/attachment/2026-03/cnect_rollingplan_ict_2026_spr_pr1.pdf",
+    "https://jnabear.com/robots-txt-ai-training-opt-out",
+    "https://openai.com/index/helping-websites-express-ai-training-preferences",
+    "https://storage.googleapis.com/gweb-uniblog-publish-prod/documents/Google_response_to_UK_Copyright__AI_Consultation_February_2025_hLpZUuW.pdf",
+    "https://thesuperintelligencenews.com/articles/ai-training-opt-out-signal-tracker-google-microsoft-openai-anthropic-dates",
+    "https://unhyd.com/article/ai-training-opt-out-robots-txt-openai-google-microsoft",
+    "https://www.aiearlyedition.com/rulebook/robots-txt-shared-ai-training-opt-out",
+    "https://www.axios.com/2026/04/14/google-launches-ai-jobs-push",
+    "https://www.itmedia.co.jp/news/article/2611/01/2000002776",
+    "https://www.musicbusinessworldwide.com/files/2026/03/EMBARGOED-COPY.pdf",
+    "https://www.pk-sharma.com/briefing/openai-honor-common-robots-txt-signal-for-ai-training-preferences-what-the-post-says-and-does-not-establish",
+    "https://www.reddit.com/r/ChatGPTPro/comments/1wj9qam/trying_to_get_site_accessible_to_chatgpt_again",
+    "https://www.sanctity.ai/signal/aipref-training-signal-e067",
+    "https://www.searchenginejournal.com/google-microsoft-openai-shared-ai-training-opt-out/595387"
+  ]
+}
