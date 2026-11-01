@@ -13,7 +13,7 @@
       ],
       "prompt": "16:9 濃紺背景、中央にステージのシルエット（人影2、左にスピーカーネームの短い日本語テキスト）、右下に『Oracle AI Security Mesh』の太い白文字、上部にサブテキストで『AIが過去の脆弱性を掘り起こす』と黄色の太字で表示。立体感のあるライト、広い余白、公式画面の模写はしないことを明確に示す注記を添える。",
       "filename": "thumbnail.png",
-      "status": "generated",
+      "status": "review_pending",
       "attempts": 1,
       "artifact_run_id": "41327064375",
       "sha256": "18e46f89e0229dedb5bcacc41fb4c9826260df782d62f9ab83945133d75f954c",
