@@ -52,9 +52,25 @@
       ],
       "prompt": "16:9 黒にシアンのアクセント、中央に大きな拡大鏡アイコン（立体感）、拡大鏡の中に小さなコード断片やサーバーアイコンを配置。左に短い日本語で『AIが隠れた脆弱性を可視化』、右に箇条で『発見→再現手順→優先順位』を白文字。広い余白。",
       "filename": "diagram380.png",
-      "status": "generating",
+      "status": "generated",
       "attempts": 1,
-      "artifact_run_id": "41327064375"
+      "artifact_run_id": "41327064375",
+      "sha256": "891cfdc61179fa1ceca9bfdb4fc53563c6e13781d809edb41a87b01eb5853912",
+      "width": 1536,
+      "height": 864,
+      "usage": {
+        "input_tokens": 1872,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 364
+        },
+        "output_tokens": 1078,
+        "output_tokens_details": {
+          "image_tokens": 1078,
+          "text_tokens": 0
+        },
+        "total_tokens": 2950
+      }
     },
     {
       "number": 2,
