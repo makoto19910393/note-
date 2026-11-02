@@ -1,0 +1,8 @@
+{
+  "status": "not_published",
+  "reason": "調べたニュースが指定の国内・海外枠に一致しません。別区分で穴埋めしません。",
+  "attempted_candidate_urls": [
+    "https://www.techradar.com/pro/anthropic-wants-to-use-claude-ai-to-help-discover-new-lifesaving-drugs-says-the-best-way-to-identify-and-work-through-these-bottlenecks-is-to-get-deeply-involved-in-real-drug-programs",
+    "https://www.techradar.com/ai-platforms-assistants/elon-musk-tried-to-prove-grok-could-beat-christopher-nolan-instead-he-proved-why-human-filmmakers-matter"
+  ]
+}
