@@ -1,0 +1,184 @@
+{
+  "status": "rejected_not_published",
+  "reason": "校閲で修正が必要です: 本文中の『【ここに図解①を挿入｜…】』など“図解挿入”の制作指示をすべて削除すること（記事本文に制作指示や編集メモを残さない）。; 全画像（サムネ・図解含む）に、筆者の提案や見解を含む場合は画像上に小さく『※筆者見解を含むイラストです／公式画面ではありません』等の注記を明記すること（画像ラベルと本文の分離を明確化）。; タイトルは既に『海外』タグを含むが、冒頭でrobots.txtの役割が初心者にもすぐ分かる一文（例：\"robots.txtはサイトが自動クローラに対してアクセス可否を示す仕組みです\"）を短く追加して、専門語の簡潔な定義を確実に出すこと。; 本文内の『私の正直な感想』やQ&Aと事実部分の区分は良いが、未確定点（遡及効力・間接収集・優先順位の解釈）について『現時点で確認できる一次資料の記述』と『筆者の推測』を明確に一文でさらに区別すること（読者が事実と意見を即座に区別できるように）。; previous欄の存在を踏まえ、今回の記事が過去のどの報道・発表と“同一の発表”ではないかを一文で明記すること（例：\"本件は各社が共通のrobots.txtトークン支持を表明した新たな共同声明に関するもので、previousにあるAnthropic等の個別事件とは別件です\"）。",
+  "article": {
+    "title": "【海外AI解説】OpenAI・Googleらがrobots.txtで『AI学習からの一括オプトアウト』共通トークンを支持",
+    "sources": [
+      {
+        "title": "AI学習への利用拒否をrobots.txtで一括指定へ　OpenAIやGoogleなどが対応表明 - ITmedia NEWS",
+        "url": "https://www.itmedia.co.jp/news/article/2611/01/2000002776/",
+        "published_at": "2026-10-31T23:31:07+00:00",
+        "supports": "国内向け記事。ITmediaが企業発表を要約して報道（原典の英語発表への言及と日付を含む）。本文を確認し、選定対象の一次報道として使用した。"
+      },
+      {
+        "title": "Making it easier for websites to express AI training preferences | OpenAI",
+        "url": "https://openai.com/index/helping-websites-express-ai-training-preferences/?trk=public_post_comment-text",
+        "published_at": "2026-10-30T00:00:00+00:00",
+        "supports": "OpenAI公式ブログ。robots.txtでの共通シグナル採用を表明する原典の一つで、__usage_ai-trainingの採用表明や運用方針の説明を含む。"
+      },
+      {
+        "title": "Supporting a shared AI training control for websites | Google Search Central Blog",
+        "url": "https://developers.google.cn/search/blog/2026/10/ai-training-control",
+        "published_at": "2026-10-30T00:00:00+00:00",
+        "supports": "Google公式（Search Central）。共通トークンの取り扱いや、__usage_ai-trainingをGoogle-Extendedとどう関連付けて解釈するかを明示している。"
+      }
+    ],
+    "sections": {
+      "intro": "主要AIベンダー（OpenAI、Google、Microsoft、Anthropicなど）が、ウェブサイト運営者がrobots.txtで『AI学習の可否』を一括で示せる共通トークンを支持すると発表しました。これはウェブ上のコンテンツをAI学習から排除する意思を、より明確に伝える仕組みの標準化を目指す動きです。",
+      "conclusions": [
+        "主要ベンダーはrobots.txt内の共通policy token「__usage_ai-training」を尊重すると表明した。",
+        "サイト側が当該トークンでオプトアウトを指定すれば、参加ベンダーはその意思を運用に反映する予定。ただし遡及効力などは不明瞭な点が残る。",
+        "Googleは特記事項として、__usage_ai-trainingでオプトアウトかつGoogle-Extended未明示なら『Google-Extended拒否』と解釈するとしている。",
+        "技術的にはIETF周辺の議論や既存のrobots.txt拡張と整合する形で公表されたが、実運用や例外ルートの扱いに不確定要素がある。"
+      ],
+      "explanations": [
+        {
+          "heading": "共通トークンとは何か（30秒で結論）",
+          "content": "結論：__usage_ai-trainingという“policy token”をrobots.txtで指定することで、サイト運営者がAI学習の可否を一括で示せるようにする提案です。主要ベンダーがこれを『尊重する（honor）』と表明したため、今後は各社がこの指定を読み取って学習データの取り扱いを調整する運用を行う予定です。"
+        },
+        {
+          "heading": "技術的な仕組みと指定方法",
+          "content": "技術的にはrobots.txtの既存ルール・グループ形式で__usage_ai-trainingを記述します（たとえば Disallow: / / Allow: / などと同じルール群内で指定）。OpenAIとGoogleの説明では、サイトが該当トークンで『オプトアウト』を明示すると、参加ベンダー側はその意図を尊重する方針です。Googleはさらに、Google-Extendedという別の拡張指示との関係を明示しています。"
+        },
+        {
+          "heading": "残る不確定点（何が未解決か）",
+          "content": "主要な未確定点は少なくとも四つあります：1) 既に収集・学習済みのデータに対する遡及効力（過去データを削除するか否か）が明示されていない、2) サードパーティやデータブローカーを通した間接的収集ルートの取り扱い範囲、3) robots.txt以外の公開APIや公開データセット経由の取り込み制限、4) 同一ページに複数の指示がある場合の優先順位と解釈の一貫性。公式発表は運用方針の方向性を示すに留まり、詳細は今後の議論次第です。"
+        },
+        {
+          "heading": "サイト運営者・一般ユーザーへの影響",
+          "content": "サイト運営者は、新トークンをrobots.txtに追加することでAI学習を拒否する意思表示が可能になります。例えば小規模ブログや出版社が自分のコンテンツをAI学習に使われたくない場合、明示的なオプトアウトを設定できます。ただし、上記の不確定点（既存データへの効力や間接収集の扱い）があるため、完全な防御にはならない可能性があります。一般ユーザーには直接的な操作は少ないものの、将来的に検索や生成モデルの出力に反映されるコンテンツの取り扱いに影響が出る可能性があります。"
+        }
+      ],
+      "personal_view": "私の正直な感想：ウェブ上で『自分のコンテンツをAIに使ってほしくない』という意思を明確化できる仕組みが標準化されるのは前進だと感じます。ただし、既存データの扱いや間接ルートの遮断といった重要な点が未解決で、運用の実効性は今後の実装と監査に依存します。運営側の負担を増やさず、確実に権利を守る仕組みになるかが鍵です。",
+      "faq": [
+        {
+          "question": "Q1: robots.txtに追加すればすぐにAI学習から完全に排除されますか？",
+          "answer": "いいえ。主要ベンダーは新トークンを尊重すると表明していますが、既に学習済みのデータへの遡及効力や、サードパーティ経由の間接的な収集をどこまで遮断できるかは未確定です。即時かつ完全な遮断を保証するものではありません。"
+        },
+        {
+          "question": "Q2: トークンの書き方は難しいですか？",
+          "answer": "技術的には既存のrobots.txtルール・グループの形式で記述します。具体的な記述例はOpenAIやGoogleの公式ページで案内が出ていますが、初めての方は管理者やホスティング業者に相談すると安全です。"
+        },
+        {
+          "question": "Q3: 個人ブログでもこのオプトアウトを使えますか？",
+          "answer": "はい。robots.txtは個人サイトでも使える標準的なファイルです。サイトのルートに配置してトークンを追加すれば意思表示は可能ですが、前述の実効性の限界を理解しておいてください。"
+        },
+        {
+          "question": "Q4: 企業間で対応にばらつきはありますか？",
+          "answer": "発表時点でOpenAI・Google・Microsoft・Anthropicなど主要ベンダーが支持を表明していますが、参加企業の一覧は今後変動する可能性があります。各社の実運用や遵守状況にばらつきが出る可能性はあります。"
+        }
+      ],
+      "summary": "OpenAIやGoogleらの表明は、ウェブサイト運営者がrobots.txtでAI学習の可否を一括指定できる共通トークン「__usage_ai-training」を支持する方向を示しました。サイト側の意思表示が読み取られやすくなる点は前向きですが、既存データへの遡及効力や間接的収集ルートの扱いなど未解決の課題が残ります。今後の技術仕様の確定と実装状況を注視してください。"
+    },
+    "images": [
+      {
+        "number": 0,
+        "anchor": "",
+        "theme": "サムネ：共通トークンでAI学習を制御するイメージ",
+        "labels": [
+          "共通トークン",
+          "__usage_ai-training",
+          "robots.txt",
+          "OpenAI・Google等が支持",
+          "運用は今後詳細化",
+          "海外ニュース",
+          "mako解説"
+        ],
+        "prompt": "16:9 濃紺背景、中央に大きなrobots.txtファイルの抽象アイコン（矩形のドキュメント）を立体感ある表現で配置。ドキュメント上に太い白文字で「__usage_ai-training」、その周囲に小さくOpenAIやGoogleなどを示す抽象的なマーク（ロゴは使わず円や四角のアイコン）を配置。左上に短い太い黄色の日本語テキスト「海外ニュース」、下部に白の太い短い日本語で「AI学習一括オプトアウト支持」。広い余白、シアンのラインでアクセント。公式ロゴは使わない旨を小さく明記するスペースを空ける。"
+      },
+      {
+        "number": 1,
+        "anchor": "【ここに図解①を挿入｜図解①：仕組みの概略（トークンの流れ）】",
+        "theme": "図解①：仕組みの概略（トークンの流れ）",
+        "labels": [
+          "図解①",
+          "robots.txt記述",
+          "サイト運営者の意思表示",
+          "ベンダーが尊重",
+          "反映される運用"
+        ],
+        "prompt": "16:9 黒に近い紺背景、左に小さなサイトアイコン→中央にrobots.txtドキュメント→右に複数のベンダーを表す抽象アイコン群という左から右のフロー図。中央ドキュメント上に太い白文字で「__usage_ai-training」。フローにはシアンの矢印、各要素に短い黄色のラベル。視覚的に『意思表示→読み取り→運用』を示す。広い余白と立体感。"
+      },
+      {
+        "number": 2,
+        "anchor": "【ここに図解②を挿入｜図解②：残る不確定点（事実／未確定／筆者見解の分離）】",
+        "theme": "図解②：残る不確定点（事実／未確定／筆者見解の分離）",
+        "labels": [
+          "図解②",
+          "事実",
+          "未確定点",
+          "筆者見解",
+          "遡及効力",
+          "間接収集"
+        ],
+        "prompt": "16:9 濃紺背景を3つの縦長ボックスで分割（左：事実、中央：未確定点、右：筆者見解）。左ボックスは白で太い見出し「事実」と箇条書き、中央は黄色で「未確定点」、右はシアンで「筆者見解」。各項目は短い日本語ラベル（遡及効力、API経路、優先順位など）。下部に小さく注記領域を作り『画像はイラスト、公式画面ではありません』と記載するスペースを空ける。立体的なカード表現。"
+      },
+      {
+        "number": 3,
+        "anchor": "【ここに図解③を挿入｜図解③：サイト運営者ができること（実務チェックリスト）】",
+        "theme": "図解③：サイト運営者ができること（実務チェックリスト）",
+        "labels": [
+          "図解③",
+          "実務チェック",
+          "robots.txt更新",
+          "法務確認",
+          "サードパーティ確認"
+        ],
+        "prompt": "16:9 黒背景、中央にチェックリスト風のイラスト（四つのチェックボックス）。各チェック項目は短い太い日本語ラベル：1 robots.txtに__usage_ai-training追加、2 既存データの扱い確認、3 サードパーティの配布を確認、4 法務に相談。チェックボックスはシアンで強調、ラベルは白と黄色の太字。広い余白とシンプルな構図。"
+      },
+      {
+        "number": 4,
+        "anchor": "【ここに図解④を挿入｜図解④：今後の注視ポイント（経過観察）】",
+        "theme": "図解④：今後の注視ポイント（経過観察）",
+        "labels": [
+          "図解④",
+          "実装状況",
+          "監査・透明性",
+          "参加企業の拡大",
+          "標準化の進展"
+        ],
+        "prompt": "16:9 濃紺背景、時計と虫眼鏡を組み合わせたメタファーアイコンを中央に配置。周囲に短い日本語ラベルで『実装状況』『監査・透明性』『参加企業の拡大』『標準化の進展』を配置。色はシアンと黄でアクセント。視覚的に『時間をかけて監視する』イメージ。立体感のあるアイコンと広い余白。"
+      }
+    ],
+    "hashtags": [
+      "#AI",
+      "#robotsTXT",
+      "#OpenAI",
+      "#Google",
+      "#AI学習",
+      "#オプトアウト",
+      "#ウェブ運用",
+      "#データ利用",
+      "#プライバシー",
+      "#標準化",
+      "#技術解説"
+    ],
+    "threads": "OpenAIやGoogleらがrobots.txtで使える共通トークン「__usage_ai-training」を支持。サイト運営者の意思表示は可能に。ただし既存データや間接収集の扱いは未確定。あなたのサイトはどう対応しますか？",
+    "body": "主要AIベンダー（OpenAI、Google、Microsoft、Anthropicなど）が、ウェブサイト運営者がrobots.txtで『AI学習の可否』を一括で示せる共通トークンを支持すると発表しました。これはウェブ上のコンテンツをAI学習から排除する意思を、より明確に伝える仕組みの標準化を目指す動きです。\n\n---\n\n## 30秒で結論\n\n- 主要ベンダーはrobots.txt内の共通policy token「__usage_ai-training」を尊重すると表明した。\n- サイト側が当該トークンでオプトアウトを指定すれば、参加ベンダーはその意思を運用に反映する予定。ただし遡及効力などは不明瞭な点が残る。\n- Googleは特記事項として、__usage_ai-trainingでオプトアウトかつGoogle-Extended未明示なら『Google-Extended拒否』と解釈するとしている。\n- 技術的にはIETF周辺の議論や既存のrobots.txt拡張と整合する形で公表されたが、実運用や例外ルートの扱いに不確定要素がある。\n\n---\n\n## 共通トークンとは何か（30秒で結論）\n\n結論：__usage_ai-trainingという“policy token”をrobots.txtで指定することで、サイト運営者がAI学習の可否を一括で示せるようにする提案です。主要ベンダーがこれを『尊重する（honor）』と表明したため、今後は各社がこの指定を読み取って学習データの取り扱いを調整する運用を行う予定です。\n\n【ここに図解①を挿入｜図解①：仕組みの概略（トークンの流れ）】\n\n---\n\n## 技術的な仕組みと指定方法\n\n技術的にはrobots.txtの既存ルール・グループ形式で__usage_ai-trainingを記述します（たとえば Disallow: / / Allow: / などと同じルール群内で指定）。OpenAIとGoogleの説明では、サイトが該当トークンで『オプトアウト』を明示すると、参加ベンダー側はその意図を尊重する方針です。Googleはさらに、Google-Extendedという別の拡張指示との関係を明示しています。\n\n【ここに図解②を挿入｜図解②：残る不確定点（事実／未確定／筆者見解の分離）】\n\n---\n\n## 残る不確定点（何が未解決か）\n\n主要な未確定点は少なくとも四つあります：1) 既に収集・学習済みのデータに対する遡及効力（過去データを削除するか否か）が明示されていない、2) サードパーティやデータブローカーを通した間接的収集ルートの取り扱い範囲、3) robots.txt以外の公開APIや公開データセット経由の取り込み制限、4) 同一ページに複数の指示がある場合の優先順位と解釈の一貫性。公式発表は運用方針の方向性を示すに留まり、詳細は今後の議論次第です。\n\n【ここに図解③を挿入｜図解③：サイト運営者ができること（実務チェックリスト）】\n\n---\n\n## サイト運営者・一般ユーザーへの影響\n\nサイト運営者は、新トークンをrobots.txtに追加することでAI学習を拒否する意思表示が可能になります。例えば小規模ブログや出版社が自分のコンテンツをAI学習に使われたくない場合、明示的なオプトアウトを設定できます。ただし、上記の不確定点（既存データへの効力や間接収集の扱い）があるため、完全な防御にはならない可能性があります。一般ユーザーには直接的な操作は少ないものの、将来的に検索や生成モデルの出力に反映されるコンテンツの取り扱いに影響が出る可能性があります。\n\n【ここに図解④を挿入｜図解④：今後の注視ポイント（経過観察）】\n\n---\n\n## 私の正直な感想\n\n私の正直な感想：ウェブ上で『自分のコンテンツをAIに使ってほしくない』という意思を明確化できる仕組みが標準化されるのは前進だと感じます。ただし、既存データの扱いや間接ルートの遮断といった重要な点が未解決で、運用の実効性は今後の実装と監査に依存します。運営側の負担を増やさず、確実に権利を守る仕組みになるかが鍵です。\n\n---\n\n## よくある質問\n\n### Q1: robots.txtに追加すればすぐにAI学習から完全に排除されますか？\n\nいいえ。主要ベンダーは新トークンを尊重すると表明していますが、既に学習済みのデータへの遡及効力や、サードパーティ経由の間接的な収集をどこまで遮断できるかは未確定です。即時かつ完全な遮断を保証するものではありません。\n\n### Q2: トークンの書き方は難しいですか？\n\n技術的には既存のrobots.txtルール・グループの形式で記述します。具体的な記述例はOpenAIやGoogleの公式ページで案内が出ていますが、初めての方は管理者やホスティング業者に相談すると安全です。\n\n### Q3: 個人ブログでもこのオプトアウトを使えますか？\n\nはい。robots.txtは個人サイトでも使える標準的なファイルです。サイトのルートに配置してトークンを追加すれば意思表示は可能ですが、前述の実効性の限界を理解しておいてください。\n\n### Q4: 企業間で対応にばらつきはありますか？\n\n発表時点でOpenAI・Google・Microsoft・Anthropicなど主要ベンダーが支持を表明していますが、参加企業の一覧は今後変動する可能性があります。各社の実運用や遵守状況にばらつきが出る可能性はあります。\n\n---\n\n## まとめ\n\nOpenAIやGoogleらの表明は、ウェブサイト運営者がrobots.txtでAI学習の可否を一括指定できる共通トークン「__usage_ai-training」を支持する方向を示しました。サイト側の意思表示が読み取られやすくなる点は前向きですが、既存データへの遡及効力や間接的収集ルートの扱いなど未解決の課題が残ります。今後の技術仕様の確定と実装状況を注視してください。\n\n---\n\n## この記事について\n\n確認日：2026年11月02日（日本時間）。公式発表や報道で確認できた内容と、筆者の意見を分けて記載しています。公開後に情報が更新される場合があります。\n\n---\n\n## 参考リンク\n\n- [AI学習への利用拒否をrobots.txtで一括指定へ　OpenAIやGoogleなどが対応表明 - ITmedia NEWS](https://www.itmedia.co.jp/news/article/2611/01/2000002776/)\n- [Making it easier for websites to express AI training preferences | OpenAI](https://openai.com/index/helping-websites-express-ai-training-preferences/?trk=public_post_comment-text)\n- [Supporting a shared AI training control for websites | Google Search Central Blog](https://developers.google.cn/search/blog/2026/10/ai-training-control)"
+  },
+  "evidence": [
+    "https://arxiv.org/abs/2607.14447",
+    "https://developers.google.cn/search/blog/2026/10/ai-training-control",
+    "https://downloads.regulations.gov/COLC-2023-0006-8906/attachment_1.pdf",
+    "https://en.wikipedia.org/wiki/OpenAI",
+    "https://iptc.org/wp-content/uploads/2025/05/IPTC-Generative-AI-Opt-Out-Best-Practices.pdf",
+    "https://jnabear.com/robots-txt-ai-training-opt-out",
+    "https://newruntime.com/posts/google-microsoft-openai-and-anthropic-back-one-robots-4b3c0b",
+    "https://news.littlewolflabs.com/posts/2026-10-30-shared-ai-training-opt-out",
+    "https://nvdium.com/en/articles/993659541",
+    "https://openai.com/index/helping-websites-express-ai-training-preferences",
+    "https://pbxscience.com/openai-google-microsoft-and-anthropic-back-a-shared-robots-txt-signal-for-ai-training-opt-outs",
+    "https://storage.googleapis.com/gweb-uniblog-publish-prod/documents/Google_response_to_UK_Copyright__AI_Consultation_February_2025_hLpZUuW.pdf",
+    "https://thebackroomtech.com/google-microsoft-shared-robots-txt-ai-training-opt-out",
+    "https://thenextweb.com/news/ai-training-opt-out-robots-txt-google-openai-microsoft-anthropic",
+    "https://www.aiearlyedition.com/rulebook/robots-txt-shared-ai-training-opt-out",
+    "https://www.digitalcameraworld.com/tech/social-media/is-meta-about-to-scrape-photography-websites-to-train-ai-meta-delays-terms-update-after-huge-backlash-from-creators",
+    "https://www.ietf.org/ietf-ftp/slides/slides-aicontrolws-openai-position-paper-00.pdf",
+    "https://www.ietf.org/slides/slides-aicontrolws-ai-robotstxt-00.pdf",
+    "https://www.itmedia.co.jp/news/article/2611/01/2000002776",
+    "https://www.musicbusinessworldwide.com/files/2026/03/EMBARGOED-COPY.pdf",
+    "https://www.reddit.com/r/aeo/comments/1vsr4er/we_blocked_a_page_in_robotstxt_then_asked_8_ai",
+    "https://www.searchenginejournal.com/google-microsoft-openai-shared-ai-training-opt-out/595387",
+    "https://www.skimwire.com/ai-training-opt-out-robots-txt-openai-google-microsoft-anthropic"
+  ]
+}
